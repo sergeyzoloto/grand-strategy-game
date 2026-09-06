@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: south-asia
     note: Rural electrification across most of colonial and early postcolonial India lags urban electrification by many decades, with the resulting urban-rural electricity access gap directly shaping which regions could adopt electricity-dependent agricultural and industrial technology and which couldn't, well into the 20th century.
-prereqs: [ENG-009]
+prereqs: [ENG-009, NAT-012]
 enables: []
 see_also: [ENG-018]
 contested: true

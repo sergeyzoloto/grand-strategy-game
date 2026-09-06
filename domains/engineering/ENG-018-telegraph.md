@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: africa
     note: The completion of the all-British "Cape to Cairo" telegraph line concept and various submarine cable connections extend telegraph coverage across colonial Africa specifically to serve imperial administrative and commercial coordination, with the resulting network's geography shaped entirely by colonial territorial control rather than by any pre-existing African communication-route pattern.
-prereqs: []
+prereqs: [NAT-012]
 enables: []
 see_also: [ENG-019]
 contested: false
