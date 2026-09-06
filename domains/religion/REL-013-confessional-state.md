@@ -19,7 +19,7 @@ absence:
   - region: europe
     note: The Peace of Augsburg's cuius regio, eius religio principle (1555) and its later reaffirmation at Westphalia (1648) formalize confessional-state sovereignty specifically as a conflict-management device between rival Christian confessions within one broader civilizational and legal framework — a solution to a specifically intra-Christian problem rather than a general template for religious-political organization applicable everywhere.
 prereqs: [REL-006, LAW-011]
-enables: [REL-017]
+enables: [REL-017, DIP-006]
 see_also: []
 contested: false
 contested_note: ""

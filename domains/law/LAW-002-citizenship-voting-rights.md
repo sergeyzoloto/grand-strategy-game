@@ -19,7 +19,7 @@ absence:
   - region: middle-east
     note: Islamic dhimmi status grants protected non-Muslim subjects secure legal standing, property rights, and religious autonomy under a specific tax obligation (jizya), without extending full political participation rights — a durable, well-defined intermediate legal category between citizen and foreigner that neither the Athenian nor Roman models have a direct equivalent for.
 prereqs: [LAW-001]
-enables: [LAW-009, LAW-014]
+enables: [LAW-009, LAW-014, DIP-010]
 see_also: []
 contested: false
 contested_note: ""

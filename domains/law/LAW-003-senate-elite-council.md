@@ -23,7 +23,7 @@ absence:
     note: Councils of elders and lineage-based advisory bodies across many African political traditions provide comparable elite-coalition and consensus-building function to a formal senate without the same fixed, permanent institutional membership or written procedural rules — legitimacy and authority to advise resting on age, lineage, and earned status rather than on codified office.
 prereqs: [LAW-001]
 enables: []
-see_also: []
+see_also: [DIP-003]
 contested: false
 contested_note: ""
 stats_touched: []

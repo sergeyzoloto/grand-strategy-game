@@ -19,7 +19,7 @@ absence:
   - region: africa
     note: East African Swahili coast city-states (from roughly 800) are themselves the receiving end of this pattern rather than the colonizing end for most of this period — Indian Ocean trading-post colonization runs into the coast from Arabia, Persia, and India, making the Swahili coast a node in someone else's network before it becomes, in its city-states, a comparable network of its own.
 prereqs: []
-enables: [MIG-012]
+enables: [MIG-012, DIP-007]
 see_also: [MIG-005]
 contested: false
 contested_note: ""
