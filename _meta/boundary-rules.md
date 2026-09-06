@@ -1,0 +1,92 @@
+# Boundary Rules
+
+## Multi-domain
+
+Every entry has exactly one canonical `domain` — it decides the file's folder
+and its ID prefix, permanently. Nothing about that is up for negotiation per
+entry.
+
+Relevance to other domains is handled separately, by `domains_touched`: any
+number of domain names, for domains this entry matters to without owning it.
+Content is **never duplicated across domains** — `domains_touched` is a pointer,
+not a second copy of the entry living under another domain's roof.
+
+If an entry seems to genuinely need two `## Mechanism` sections — one COM read,
+one FIN read, say, each substantial in its own right — that's not a
+multi-domain entry, it's **two entries**. Split it, give each half its own
+canonical domain and ID, and link them with `prereqs`/`enables` (or `see_also`
+if the link is non-directional). One entry, one Mechanism, one owning domain is
+the rule; a topic that resists that is telling you it's actually two.
+
+Topics that span many entries — not just two — get a thread page in
+`_meta/threads/` instead of being stitched together via frontmatter. A thread
+page contains **links only**: no prose duplicating what's already in the linked
+entries' Mechanism/Social consequence/Hook sections. Its job is to be the map,
+not another copy of the territory.
+
+These are the domain pairs that most often tempt a double-home for a single
+entry — useful for deciding canonical `domain` before deciding whether
+`domains_touched`, a split, or a thread page is the right way to handle the
+rest.
+
+## COM / FIN
+
+- **COM (commerce)** owns goods in motion and the institutions that move them:
+  trade routes, merchant networks, market integration, logistics.
+- **FIN (finance)** owns value abstracted across time: credit, banking, fiscal
+  machinery, money itself.
+
+A trade route is COM. The bank that finances the trade route is FIN. Silver as a
+commodity flowing through a market is COM; silver as the base of a monetary
+system is FIN — an entry can legitimately be canonically COM for its market
+effects while carrying `finance` in `domains_touched` for its monetary ones (see
+`COM-011`). If the FIN read grows a Mechanism section of its own, split it out.
+
+## WAR / ENG
+
+- **ENG (engineering)** owns technique — the artifact, the method of making it.
+- **WAR (war)** owns doctrine and its social organization — how the technique
+  gets used, organized, and who it puts in charge.
+
+Gunpowder metallurgy is ENG. The infantry doctrine and standing-army financing it
+enables is WAR.
+
+## NAT / ENG
+
+- **NAT (natural sciences)** owns the knowledge-generating method and institution — how
+  a society comes to know things, and the institutions that produce that
+  knowledge.
+- **ENG (engineering)** owns applied capability — turning known principles into
+  working artifacts and processes.
+
+The scientific method / experimental societies are NAT. The steam engine built
+on that knowledge is ENG.
+
+## REL / PHI
+
+- **REL (religion)** owns institution, practice, community, and endowment — the
+  church, the temple, the ritual calendar, the property it holds.
+- **PHI (philosophy)** owns systematic argument — the doctrine as a structure of
+  reasoning, independent of its institutional carrier.
+
+Monasticism as a landholding, labor-organizing institution is REL. Scholastic
+argument about universals is PHI.
+
+## LAW / DIP
+
+- **LAW (law)** owns internal enforceable obligation — contracts, property,
+  courts, within a polity.
+- **DIP (diplomacy)** owns inter-polity relation — treaties, alliances,
+  recognition, envoys.
+
+A treaty is always DIP, even though it's technically a legal instrument — the
+inter-polity axis wins.
+
+## MIG / all
+
+**MIG (migration)** owns movement as a process with its own mechanics: what
+triggers it, how it propagates, what it costs, what it carries. A _specific_
+migration event that's mostly interesting for its effect on one domain stays in
+that domain (e.g. a labor migration that mainly matters for its commercial
+effect stays COM) and cross-references MIG for the generic movement mechanic it
+instantiates.
