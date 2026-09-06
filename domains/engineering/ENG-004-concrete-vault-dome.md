@@ -22,7 +22,7 @@ absence:
   - region: east-asia
     note: Chinese architectural tradition largely does not adopt masonry vault or dome construction at comparable scale to the Mediterranean and Islamic traditions, favoring instead a wood post-and-beam and bracket (dougong) system for large interior spans — a deliberate, sustained alternative structural philosophy rather than an unmet aspiration toward vaulting.
 prereqs: []
-enables: [ENG-013]
+enables: [ENG-013, REL-004]
 see_also: []
 contested: false
 contested_note: ""

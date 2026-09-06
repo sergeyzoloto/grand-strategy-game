@@ -22,7 +22,7 @@ absence:
   - region: middle-east
     note: Widespread suppression or slow adoption of movable-type printing in Ottoman lands for Arabic-script material persists into the 18th century (religious and calligraphic-guild objections to mechanically reproducing sacred script), meaning the silent-private-reading habitus this entry tracks develops on a substantially delayed timeline here relative to both Europe and East Asia, for institutional rather than technological reasons.
 prereqs: [ENG-006]
-enables: []
+enables: [REL-016]
 see_also: [HLT-022]
 contested: true
 contested_note: "How much silent, private reading habits actually changed cognition or selfhood ('the interior self' as a historically new psychological formation) versus simply changing the visible record of already-existing interior life is genuinely disputed among historians of reading and of the self. Model as a habitus shift with a real but modest, gradually-accumulating effect on privacy/introspection-linked stats, rather than a discrete unlock of 'inner life' that didn't exist before print."
