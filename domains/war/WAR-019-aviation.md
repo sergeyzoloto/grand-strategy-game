@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: africa
     note: No African state fields an independent military aviation doctrine or air force in this era — air power over African theatres in both World Wars is entirely a colonial-power asset, deployed by and answering to external commands rather than to any African polity, consistent with the broader industrial-base absence already noted in MAR-025's battleship entry.
-prereqs: [WAR-004, WAR-008]
+prereqs: [WAR-004, WAR-008, ENG-020]
 enables: []
 see_also: [MAR-028]
 contested: true
