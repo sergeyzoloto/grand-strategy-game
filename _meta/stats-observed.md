@@ -36,3 +36,4 @@ One line per invented variable, in the order encountered.
 | urban absorption capacity | MIG-016 | a city's ability to house/employ/service incoming migrants without strain. |
 | border friction          | MIG-017  | legal/administrative barrier to movement imposed independent of migration cost. |
 | skill differential       | MIG-019  | gap in institutional/career opportunity driving skilled-labor migration.   |
+| naval prestige           | MAR-018  | a state's naval standing as measured by internationally-comparable capital-ship metrics, resettable to near-zero by a single capital-ship design leap. |

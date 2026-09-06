@@ -90,3 +90,32 @@ migration event that's mostly interesting for its effect on one domain stays in
 that domain (e.g. a labor migration that mainly matters for its commercial
 effect stays COM) and cross-references MIG for the generic movement mechanic it
 instantiates.
+
+## MAR / (WAR, ENG, COM, FIN)
+
+**MAR (maritime)** owns the sea as a theatre with its own mechanics, the same
+way MIG owns movement — carved out of whichever domain would otherwise claim
+it, specifically because the maritime instance is numerous and coherent enough
+to deserve one home rather than being scattered across four:
+
+- Naval warfare — warship classes, naval doctrine and strategy, naval
+  institutions (Admiralty, Marines) — is MAR, not WAR. WAR keeps land and air
+  warfare doctrine.
+- Navigation and shipbuilding technique (celestial/ocean navigation, the
+  chronometer, sail rig) is MAR, not ENG. ENG keeps land-based and general
+  technique.
+- Maritime trade infrastructure and practice (ports, shipping, sea lanes,
+  containerization) is MAR, not COM. COM keeps land-based and general
+  commerce.
+- Maritime-specific financial instruments (marine insurance) are MAR, not
+  FIN. FIN keeps general financial instruments.
+
+This is a deliberate exception to the WAR/ENG, SCI-adjacent, and COM/FIN
+splits above: a warship's doctrine and its hull technique both live in the
+same MAR entry rather than being pulled apart the way gunpowder metallurgy
+(ENG) and infantry doctrine (WAR) are, because on land those are two
+substantial, independently-developing stories and at sea, for this project's
+purposes, they aren't. `domains_touched` still points to WAR/ENG/COM/FIN
+where a specific entry's non-maritime angle is substantial (a war fought
+partly at sea touches WAR; a chronometer's horology touches ENG), but doesn't
+require a split the way a genuinely two-Mechanism entry would.

@@ -42,7 +42,7 @@ tags: []
 - **id** — see [conventions.md](conventions.md). Frozen forever.
 - **title** — human-readable name of the entry.
 - **legacy_ref** — optional bridge to the original chat-list label. See conventions.md.
-- **domain** — exactly one of the 12 domain names (lowercase, matches the folder and
+- **domain** — exactly one of the 13 domain names (lowercase, matches the folder and
   the ID prefix). Canonical and permanent — see [boundary-rules.md](boundary-rules.md)
   for how to pick it when an entry has a foot in two domains.
 - **domains_touched** — any number of domain names this entry matters to without

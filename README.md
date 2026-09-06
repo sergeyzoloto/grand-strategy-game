@@ -1,7 +1,7 @@
 # Grand Strategy Game — Design Wiki
 
 A private design-reference wiki documenting ~300 historical events and technologies
-across 12 domains, each one terminating in a game mechanic. This is a **design
+across 13 domains, each one terminating in a game mechanic. This is a **design
 document with historical justification**, not an encyclopedia — every entry exists
 because it earns a mechanic, not because it's historically interesting on its own.
 
@@ -22,7 +22,7 @@ later.
 ## Domains
 
 `agriculture` `health` `commerce` `law` `religion` `war` `finance` `engineering`
-`sciences` `philosophy` `diplomacy` `migration`
+`nature` `philosophy` `diplomacy` `migration` `maritime`
 
 ## Start here
 

@@ -23,6 +23,7 @@ number after deleting an entry. If an entry is cut, its number stays retired.
 | PHI  | philosophy  |
 | DIP  | diplomacy   |
 | MIG  | migration   |
+| MAR  | maritime    |
 
 ## Filenames
 
