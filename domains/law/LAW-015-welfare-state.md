@@ -18,9 +18,9 @@ region_variants:
 absence:
   - region: africa
     note: Formal state-administered welfare systems on the European model remain limited across most of colonial and early postcolonial Africa in this era, with social protection continuing to run substantially through extended family, lineage, and community obligation networks rather than through state-administered entitlement programs — informal but real social insurance existing alongside, not preceding, formal state welfare systems elsewhere.
-prereqs: [FIN-016]
+prereqs: []
 enables: []
-see_also: [REL-015]
+see_also: [REL-015, FIN-016]
 contested: false
 contested_note: ""
 stats_touched: []

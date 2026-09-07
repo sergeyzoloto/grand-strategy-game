@@ -26,7 +26,7 @@ absence:
     note: Contemporary and neighboring China explicitly rejects a hereditary land-for-service feudal structure in favor of the centralized examination-based bureaucracy (LAW-004) covered elsewhere in this domain — the same broad era and region producing two structurally opposite answers to the same underlying problem of binding local administration and military service to central authority.
 prereqs: [LAW-001, AGR-012]
 enables: []
-see_also: [LAW-004, AGR-015, AGR-020]
+see_also: [LAW-004, AGR-015, AGR-020, WAR-001]
 contested: false
 contested_note: ""
 stats_touched: []

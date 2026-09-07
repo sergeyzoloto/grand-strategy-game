@@ -4,7 +4,7 @@ title: Universal Suffrage
 legacy_ref:
 domain: law
 domains_touched: []
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: 1893
