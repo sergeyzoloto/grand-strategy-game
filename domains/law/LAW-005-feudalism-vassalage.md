@@ -7,10 +7,10 @@ domains_touched: [war, agriculture]
 tier: core
 status: drafted
 confidence: high
-date_start: 800
+date_start: 250
 date_end: 1400
 date_precision: era
-regions: [europe, east-asia, africa]
+regions: [europe, east-asia, africa, mediterranean]
 region_variants:
   - region: east-asia
     date_start: 1185
@@ -18,12 +18,15 @@ region_variants:
   - region: africa
     date_start: 1270
     note: The Ethiopian gult system grants land and the right to collect tribute from its cultivators to nobles and religious institutions in exchange for military and administrative service to the crown, a land-for-service legal bond reaching comparable institutional maturity to European and Japanese feudalism through fully independent development.
+  - region: mediterranean
+    date_start: 250
+    note: The late Roman colonate, developing from the 3rd century and reaching full legal codification by the early 4th, legally binds tenant farmers (coloni) to the land they work in order to guarantee continued cultivation and tax and grain-quota fulfillment (AGR-012) under mounting fiscal and labor pressure — a hereditary land-bound status well before the term "feudalism" or its medieval institutions exist, and a documented precursor relationship to this entry's later land-for-service bond rather than an unrelated coincidence of similar-looking arrangements, though built around guaranteeing labor and tax obligation specifically rather than military service.
 absence:
   - region: east-asia
     note: Contemporary and neighboring China explicitly rejects a hereditary land-for-service feudal structure in favor of the centralized examination-based bureaucracy (LAW-004) covered elsewhere in this domain — the same broad era and region producing two structurally opposite answers to the same underlying problem of binding local administration and military service to central authority.
-prereqs: [LAW-001]
+prereqs: [LAW-001, AGR-012]
 enables: []
-see_also: [LAW-004, AGR-012, AGR-015, AGR-020]
+see_also: [LAW-004, AGR-015, AGR-020]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -38,7 +41,10 @@ either directly.
 
 ## Timing
 
-European feudal relationships formalize substantially from around 800
+The Roman colonate's hereditary tenant-land-binding, this entry's
+earliest and most distant case, develops from the 3rd century and
+reaches full legal codification by the early 4th; European feudal
+relationships proper formalize substantially later, from around 800
 (intensifying after the Carolingian Empire's fragmentation), reaching
 mature legal codification through the following centuries; Japanese
 feudalism under shogunate rule develops on a separate timeline from 1185,
@@ -68,7 +74,13 @@ and particular rather than owed to an abstract office or state.
 
 ## Regional specifics
 
-Japanese feudalism reaches comparable legal and institutional
+The Roman colonate binds coloni to their land hereditarily under
+provisioning and fiscal pressure (AGR-012) rather than through a
+military-service oath — a land-bound status converting what began as
+ordinary tenancy into something structurally much closer to serfdom
+well before the term or the medieval institution exists, guaranteeing
+continued cultivation and tax and grain-quota fulfillment specifically
+rather than trading land for a lord's armed service. Japanese feudalism reaches comparable legal and institutional
 sophistication to European feudalism — codified obligations, formalized
 land tenure, inheritance rules — through entirely independent development,
 showing the land-for-service bond is a recurring institutional answer to a

@@ -19,8 +19,8 @@ absence:
   - region: africa
     note: The scale and destination pattern of forced removal varies enormously by African region and era depending on which coastal and interior polities and networks participated as suppliers versus which stayed largely outside the Atlantic system, a highly uneven geography of involvement rather than a uniform continent-wide phenomenon — the demographic and social impact was not remotely equivalent everywhere captives were drawn from.
 prereqs: []
-enables: [REL-010]
-see_also: [MIG-012, AGR-017]
+enables: [REL-010, AGR-017]
+see_also: [MIG-012]
 contested: true
 contested_note: "Total mortality across the full forced-migration chain (capture and marching to the coast, coastal holding, the Middle Passage crossing itself, and initial 'seasoning' after arrival) is harder to establish with confidence than Middle Passage mortality alone, and estimates of overall demographic impact on African source regions and societies remain actively debated and revised as records are digitized and reanalyzed (the Trans-Atlantic Slave Trade Database being the main ongoing effort). Model total forced-migration mortality as a range with meaningful uncertainty bands rather than a single point estimate, and treat demographic-impact-on-source-region as a genuinely separate, more uncertain question from transport mortality itself."
 stats_touched: [displacement pressure, settler footprint]

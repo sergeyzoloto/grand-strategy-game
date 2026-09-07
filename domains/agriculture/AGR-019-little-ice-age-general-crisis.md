@@ -4,7 +4,7 @@ title: The Little Ice Age and the General Crisis
 legacy_ref:
 domain: agriculture
 domains_touched: [war, finance]
-tier: core
+tier: standard
 status: drafted
 confidence: medium
 date_start: 1560

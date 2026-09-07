@@ -3,7 +3,7 @@ id: ENG-020
 title: The Internal Combustion Engine
 legacy_ref:
 domain: engineering
-domains_touched: [war, commerce]
+domains_touched: [war, commerce, agriculture]
 tier: core
 status: drafted
 confidence: high
@@ -19,7 +19,7 @@ absence:
   - region: east-asia
     note: Japanese automotive and internal-combustion manufacturing capability develops only from the 1920s-1930s, later than European and American capability, through a combination of licensed foreign technology and domestic development — arriving after the technology's initial maturation elsewhere rather than as an early independent adopter, a slower uptake than several other industrial technologies covered in this record.
 prereqs: [ENG-010]
-enables: []
+enables: [AGR-021]
 see_also: [ENG-015]
 contested: false
 contested_note: ""

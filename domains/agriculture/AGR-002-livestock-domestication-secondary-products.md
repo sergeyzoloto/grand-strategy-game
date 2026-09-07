@@ -22,8 +22,8 @@ absence:
   - region: africa
     note: Most of sub-Saharan Africa never develops a comparable dense livestock-domestication package independent of Old World imports (cattle pastoralism arrives via diffusion rather than local domestication in most regions), constrained substantially by the tsetse-belt disease ecology that makes large livestock unviable across much of the continent's productive land — an ecological ceiling on the domesticate roster itself, not a lack of pastoralist social organization.
 prereqs: [AGR-001]
-enables: [AGR-003, AGR-007, AGR-014]
-see_also: [HLT-005]
+enables: [AGR-003, AGR-007, AGR-014, AGR-023, AGR-024]
+see_also: [HLT-005, AGR-027]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -20,7 +20,7 @@ absence:
     note: The Chinese agrarian core, protected behind an early and sustained state investment in frontier fortification (culminating in the Great Wall system) specifically aimed at separating steppe pastoralist territory from settled farmland, shows the pastoralist-cultivator conflict cycle can be substantially suppressed, though never eliminated, through sustained state-level infrastructure investment rather than only through the local land-use negotiation the cycle otherwise runs on.
 prereqs: [AGR-002]
 enables: []
-see_also: [WAR-006, MIG-007]
+see_also: [WAR-006, MIG-007, AGR-024]
 contested: false
 contested_note: ""
 stats_touched: [soil fertility]

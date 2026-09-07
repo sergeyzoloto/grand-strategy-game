@@ -4,7 +4,7 @@ title: Wet-Rice Intensification (Champa Rice)
 legacy_ref:
 domain: agriculture
 domains_touched: []
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: -5000

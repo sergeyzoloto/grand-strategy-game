@@ -3,7 +3,7 @@ id: AGR-018
 title: The Columbian Exchange and Collapse
 legacy_ref:
 domain: agriculture
-domains_touched: [migration, health]
+domains_touched: [migration, health, maritime]
 tier: core
 status: drafted
 confidence: high
@@ -21,8 +21,8 @@ region_variants:
 absence:
   - region: americas
     note: This entry's American side is defined by absence and reversal rather than gain — the same contact event that transfers American crops outward also produces catastrophic depopulation (HLT-017) severe enough that large areas of previously cultivated land are abandoned and revert to forest, a documented land-use collapse distinct from, though caused by the same event as, HLT-017's disease-mortality mechanism.
-prereqs: [AGR-001]
-enables: []
+prereqs: [AGR-001, MAR-008]
+enables: [AGR-025]
 see_also: [HLT-017, AGR-019]
 contested: true
 contested_note: "Whether Americas-wide agricultural land abandonment following population collapse was severe and widespread enough to constitute a measurable global atmospheric carbon sink (regrowing forest absorbing enough carbon dioxide to contribute to the roughly contemporaneous Little Ice Age cooling, AGR-019) is an active, disputed research question in environmental history and paleoclimatology, with estimates of the abandoned-land carbon effect varying considerably across studies. Model the land-abandonment and reforestation event itself as well documented, while treating its specific quantitative contribution to global climate cooling as a separate, more uncertain claim from the land-use collapse itself."

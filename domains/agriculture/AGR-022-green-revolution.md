@@ -18,9 +18,9 @@ region_variants:
 absence:
   - region: east-asia
     note: China's own major grain-yield gains in this era run substantially through a different institutional channel — collective-era agricultural reorganization and later household-responsibility-system decollectivization — layered on top of, rather than substituting for, the same high-yield-variety and fertilizer technology package, showing the Green Revolution's seed-and-chemical technology and a society's land-tenure institutions are separable variables that combine differently by country.
-prereqs: [AGR-005]
+prereqs: [AGR-005, ENG-012]
 enables: []
-see_also: [ENG-012]
+see_also: []
 contested: true
 contested_note: "The Green Revolution's land-tenure consequence specifically — that the seed-fertilizer-irrigation package's capital requirements systematically favored larger landholders and irrigated regions, widening rural inequality even as aggregate national yield and food-security outcomes improved — is documented but its relative weight against the aggregate food-security gain is debated, distinct from ENG-012's separate contested question about the package's environmental and input-dependency costs. Model the yield gain and the distributional/inequality consequence as two separately-tracked effects (design principle 3, authority/efficacy-style separation applied to aggregate-gain versus distributional-consequence), rather than netting one against the other into a single verdict."
 stats_touched: [yield ceiling]

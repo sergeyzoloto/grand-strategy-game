@@ -46,3 +46,4 @@ One line per invented variable, in the order encountered.
 | caravan viability threshold | COM-028 | the minimum pooled merchant participation/capital below which a long-distance overland crossing isn't viable at any price, and above which marginal joiners are cheap. |
 | network fragility         | COM-030  | the degree to which a trade network's peak throughput and value are coupled to its own specialization, so that a shock of a given size produces cascading rather than proportional loss. |
 | route capacity            | COM-031  | a depleting pool (design principle 4) of a physical trade route's carrying capacity, drawn down by silting/weathering by default and restored only by standing maintenance investment. |
+| crop failure correlation  | AGR-025  | the degree to which a pathogen or shock striking a genetically-uniform monoculture damages the whole dependent food supply simultaneously rather than being contained to a fraction of it. |
