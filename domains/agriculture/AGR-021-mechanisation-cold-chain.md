@@ -20,7 +20,7 @@ absence:
     note: Farm mechanization adoption across much of South Asia lags substantially behind the American and European pace through this era, with animal traction (AGR-007) remaining the dominant field-preparation method on most smallholdings well past mid-century — a gap in capital availability and average farm-plot size (mechanization favoring large consolidated holdings, AGR-020) rather than in the technology's availability as such.
 prereqs: [AGR-007, ENG-020]
 enables: []
-see_also: [COM-025]
+see_also: [COM-025, ENG-030]
 contested: false
 contested_note: ""
 stats_touched: []

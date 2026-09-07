@@ -19,7 +19,7 @@ absence:
   - region: south-asia
     note: Despite South Asia's much older wootz steel tradition (see COM-013), the region does not independently develop or rapidly adopt Bessemer-scale bulk steel production in this era, remaining reliant on imported industrial steel for large-scale construction and rail use well into the following century — a case where deep prior metallurgical sophistication in one register (small-batch, exceptional-quality blade steel) doesn't translate into a head start on an unrelated, bulk-industrial-process innovation.
 prereqs: [COM-013]
-enables: [COM-024]
+enables: [COM-024, ENG-026]
 see_also: []
 contested: false
 contested_note: ""

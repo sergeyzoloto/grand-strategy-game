@@ -17,7 +17,7 @@ absence:
     note: Precision machine-tool capability in East Asia develops only through later direct technology transfer during industrial modernization, with no independently-developed precision boring, turning, or milling tradition preceding that transfer — consistent with the broader pattern already noted for steam power (ENG-009) of this specific cluster of industrial technologies originating and initially concentrating in Europe and the Americas alone.
 prereqs: [ENG-009]
 enables: [ENG-005, ENG-020, ENG-021]
-see_also: []
+see_also: [ENG-029]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -14,7 +14,7 @@ regions: [europe]
 region_variants: []
 absence:
   - region: americas
-    note: American engineering practice in this era adopts and applies thermodynamic theory largely as an import from European science rather than contributing to its original theoretical development, consistent with the broader pattern in this record of American industrial strength concentrating in applied engineering and manufacturing scale (ENG-005, ENG-015) rather than in foundational theoretical physics during this specific period.
+    note: American engineering practice in this era adopts and applies thermodynamic theory largely as an import from European science rather than contributing to its original theoretical development, consistent with the broader pattern in this record of American industrial strength concentrating in applied engineering and manufacturing scale (ENG-005, COM-023's assembly line) rather than in foundational theoretical physics during this specific period.
 prereqs: [NAT-004]
 enables: []
 see_also: [ENG-009]
@@ -64,7 +64,7 @@ explain an already-successful British engineering technology — a case
 where theory follows and explains practice rather than the more common
 theory-enables-practice sequence elsewhere in this record. American
 engineering's comparative strength in applying and scaling technology
-(ENG-005's interchangeable parts, ENG-015's assembly line) rather than in
+(ENG-005's interchangeable parts, COM-023's assembly line) rather than in
 originating foundational theoretical physics during the same period shows
 theoretical and applied engineering leadership can concentrate in
 different places even within the same broader industrial era.

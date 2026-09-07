@@ -14,13 +14,13 @@ regions: [europe, americas]
 region_variants:
   - region: americas
     date_start: 1908
-    note: Henry Ford's Model T, combined with the moving assembly line (ENG-015), converts the automobile from an expensive novelty into a mass-market consumer good within a few years, doing for personal transport what mechanized textile production did for cloth a century earlier.
+    note: Henry Ford's Model T, combined with the moving-assembly-line factory discipline (COM-023), converts the automobile from an expensive novelty into a mass-market consumer good within a few years, doing for personal transport what mechanized textile production did for cloth a century earlier.
 absence:
   - region: east-asia
     note: Japanese automotive and internal-combustion manufacturing capability develops only from the 1920s-1930s, later than European and American capability, through a combination of licensed foreign technology and domestic development — arriving after the technology's initial maturation elsewhere rather than as an early independent adopter, a slower uptake than several other industrial technologies covered in this record.
 prereqs: [ENG-010]
 enables: [AGR-021]
-see_also: [ENG-015]
+see_also: [COM-023]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -38,7 +38,7 @@ weight, which is what makes practical automobiles, and later aircraft
 Nikolaus Otto's four-stroke engine (1876) establishes the basic practical
 design; Rudolf Diesel's compression-ignition variant (from the 1890s) adds
 a more fuel-efficient alternative; mass-market automotive application
-matures with Ford's Model T and moving assembly line (ENG-015) by 1913.
+matures with Ford's Model T and moving assembly line (COM-023) by 1913.
 
 ## Mechanism
 
@@ -52,17 +52,17 @@ equivalent never achieved at comparable scale.
 
 ## Social consequence
 
-Mass-market automobiles built on this engine and Ford's assembly line
-(ENG-015) restructure personal mobility and urban geography around private
-vehicle ownership over the following decades, a transformation of daily
-life and city design as significant in its own domain as railways were for
-long-distance transport a century earlier.
+Mass-market automobiles built on this engine and Ford's moving-assembly-
+line factory discipline (COM-023) restructure personal mobility and urban
+geography around private vehicle ownership over the following decades, a
+transformation of daily life and city design as significant in its own
+domain as railways were for long-distance transport a century earlier.
 
 ## Regional specifics
 
 Ford's Model T converts the automobile from an expensive novelty into a
 genuine mass-market good within a few years specifically by combining the
-internal combustion engine with assembly-line production (ENG-015),
+internal combustion engine with assembly-line production (COM-023),
 neither innovation alone being sufficient for that outcome. Japanese
 automotive capability developing only from the 1920s-1930s, later than
 several other industrial technologies this record documents Japan adopting
@@ -76,6 +76,6 @@ intent to adopt them.
 Internal combustion's power-to-weight advantage over steam is what makes
 personal road vehicles and eventually powered flight (WAR-019) practical —
 but the mass-market automobile specifically required pairing this engine
-with assembly-line production (ENG-015) simultaneously, neither the engine
+with assembly-line production (COM-023) simultaneously, neither the engine
 nor the production method alone being sufficient for the transformation
 each is usually credited with individually.

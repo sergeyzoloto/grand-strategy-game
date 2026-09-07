@@ -16,7 +16,7 @@ absence:
   - region: east-asia
     note: Comparable steam-power development does not occur independently in East Asia despite otherwise sophisticated mechanical and metallurgical traditions in this era, and the technology arrives only through direct Western technical transfer during the following century's industrial-modernization efforts — a genuinely Europe-originated technology rather than one with an independent regional counterpart to compare against.
 prereqs: [NAT-004]
-enables: [COM-023, COM-024, ENG-010, ENG-015, ENG-019]
+enables: [COM-023, COM-024, ENG-010, ENG-016, ENG-019, ENG-030]
 see_also: [NAT-009]
 contested: false
 contested_note: ""

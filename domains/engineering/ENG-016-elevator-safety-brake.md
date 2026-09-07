@@ -15,9 +15,9 @@ region_variants: []
 absence:
   - region: europe
     note: European elevator adoption follows the American safety-brake demonstration and subsequent skyscraper development with a lag rather than developing independently in parallel, since Europe's comparatively more limited early skyscraper construction (driven by different urban land-value and building-code conditions) reduced the immediate commercial pressure to solve safe high-speed vertical transport that drove American development.
-prereqs: []
+prereqs: [ENG-009]
 enables: []
-see_also: [ENG-013]
+see_also: [ENG-013, ENG-026]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -34,8 +34,10 @@ that had kept elevators a freight-only, rarely-ridden novelty.
 Freight hoists using ropes or chains predate Otis's innovation by decades
 but carry an unacceptable fall risk for passenger use; Otis's safety brake
 demonstration in 1852 and subsequent commercial installation from the
-1857 Haughwout Building make passenger elevators viable, directly enabling
-skyscraper construction that scales through the 1880s.
+1857 Haughwout Building — hoisted by steam power (ENG-009), as freight
+and early passenger elevators typically were before electric motors
+later took over the role — make passenger elevators viable, directly
+enabling skyscraper construction that scales through the 1880s.
 
 ## Mechanism
 
@@ -55,7 +57,9 @@ height ceiling on buildings that human stair-climbing endurance had
 otherwise imposed — a building's maximum practical height stops being a
 function of how many flights of stairs occupants will tolerate climbing and
 becomes a function of structural engineering and elevator capacity instead,
-the specific precondition for the skyscraper as a building form.
+one of the two preconditions (alongside ENG-026's steel-frame construction)
+the skyscraper as a building form actually requires, neither alone
+sufficient without the other.
 
 ## Regional specifics
 
@@ -72,5 +76,7 @@ brake innovation.
 A self-triggering mechanical safety brake removes the passenger elevator's
 fall risk entirely, converting a building's maximum practical height from
 a function of stair-climbing endurance into a function of structural
-engineering and elevator capacity — the specific, narrow innovation that
-makes the skyscraper possible as a building form at all.
+engineering and elevator capacity — a joint-necessity gate alongside
+ENG-026's steel-frame construction, since a load-bearing masonry
+building physically cannot cross this domain's practical height ceiling
+regardless of how safe its elevators are.

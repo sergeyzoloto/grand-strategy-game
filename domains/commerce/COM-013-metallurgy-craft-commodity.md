@@ -21,7 +21,7 @@ region_variants:
 absence:
   - region: europe
     note: European steel production stays craft-scale and comparatively expensive relative to iron throughout this entry's window, only reaching cheap bulk commodity status with the much later Bessemer process (ENG-022, 1856) — the smelting chemistry and military consequence of the earlier bronze-to-iron transition are covered elsewhere in this record (WAR-002); this entry's own window ends well before steel's eventual commodification event.
-prereqs: [COM-027]
+prereqs: [COM-027, ENG-023]
 enables: [COM-020, COM-024, COM-025, COM-030, ENG-022, WAR-002, AGR-009]
 see_also: []
 contested: false

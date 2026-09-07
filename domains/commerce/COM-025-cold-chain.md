@@ -20,7 +20,7 @@ absence:
     note: Cold-chain infrastructure investment across much of South Asia lags well behind the Americas and Europe through most of this era, contributing to substantial post-harvest spoilage losses for perishable agricultural output that a comparable cold-chain buildout elsewhere had already largely eliminated — an infrastructure gap with a direct, ongoing food-security cost rather than a merely historical curiosity.
 prereqs: [COM-013]
 enables: []
-see_also: [AGR-021]
+see_also: [AGR-021, ENG-030]
 contested: false
 contested_note: ""
 stats_touched: []

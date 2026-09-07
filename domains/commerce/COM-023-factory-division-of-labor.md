@@ -15,12 +15,15 @@ region_variants:
   - region: east-asia
     date_start: 1872
     note: Japan's Meiji-era state-sponsored model factories (the Tomioka silk mill among the first) deliberately import the factory-and-division-of-labor package wholesale from Western practice as part of the same rapid institutional-modernization strategy already seen in Meiji military reform, compressing a process that took Britain generations into a few decades.
+  - region: americas
+    date_start: 1913
+    note: Henry Ford's moving assembly line — a continuously moving conveyor bringing work to stationary assembly workers, rather than workers moving between fixed stations — cuts automobile assembly time from over twelve hours to roughly ninety minutes within a year of implementation, a further intensification of this entry's own machine-paced time discipline rather than a separate mechanism, tightening externally-set work rhythm one additional notch by automating the movement between stations too.
 absence:
   - region: south-asia
     note: Large-scale mechanized factory production develops later in colonial India than in Britain, constrained partly by colonial trade and tariff policy actively favoring imports of British-manufactured goods (COM-018, COM-021) over the development of competing Indian industrial capacity — a case where the factory model's slow local emergence reflects imposed trade policy as much as any technological or capital gap.
 prereqs: [COM-020, ENG-009]
 enables: [COM-033]
-see_also: []
+see_also: [ENG-020]
 contested: false
 contested_note: ""
 stats_touched: [time discipline]
@@ -72,7 +75,11 @@ cases. Colonial India's slower factory development, shaped directly by
 tariff and trade policy favoring British manufactured imports over Indian
 industrial capacity, shows the factory model's spread depends on trade
 policy access as much as on capital or technical knowledge being available
-locally.
+locally. Ford's moving assembly line shows the same machine-paced
+discipline can be tightened further still: a worker can no longer even
+briefly work ahead or fall behind their own pace once the product itself,
+not just the machine each worker individually tends, moves past them at
+a fixed, line-set speed.
 
 ## Hook
 
@@ -80,4 +87,7 @@ Mechanized power imposed on top of divided labor (COM-020) converts work
 pace from worker-controlled to externally machine-set, requiring a new
 `time discipline` habitus factory owners must actively instill in a
 workforce — and the model's international spread depends as much on trade
-and tariff access (COM-018) as on capital or technical knowledge alone.
+and tariff access (COM-018) as on capital or technical knowledge alone,
+with Ford's moving assembly line showing the same underlying discipline
+can be intensified further by automating the movement between stations
+too, not only the stations' own machine pace.

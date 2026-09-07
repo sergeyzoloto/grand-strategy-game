@@ -19,8 +19,8 @@ absence:
   - region: east-asia
     note: Chinese glassmaking technique exists from antiquity but stays oriented toward small decorative and ritual objects rather than architectural window or structural glass at any real scale, reflecting the same wood-and-masonry structural tradition (ENG-004) that favored screens, lattices, and paper for light control over transparent glazing.
 prereqs: [ENG-004]
-enables: []
-see_also: [ENG-016]
+enables: [ENG-032]
+see_also: [ENG-016, ENG-026]
 contested: false
 contested_note: ""
 stats_touched: []

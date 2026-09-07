@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: middle-east
     note: Widespread mechanical adoption of movable-type printing for Arabic-script material lags for centuries, held back significantly by calligraphic and religious objections to mechanically reproducing sacred text (see HLT-013) rather than by any lack of access to the mechanical press technology itself, which was known and available.
-prereqs: []
+prereqs: [ENG-024]
 enables: [HLT-013, REL-016]
 see_also: []
 contested: false

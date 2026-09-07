@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: americas
     note: Pre-contact American agricultural expansion proceeds entirely without iron tools of any kind — stone, wood, and fire-clearing techniques substitute for iron axes and plowshares throughout, showing substantial temperate and even forested-frontier agricultural expansion is achievable without metal tools, at a correspondingly higher labor cost per unit of land cleared.
-prereqs: [AGR-001, COM-013]
+prereqs: [AGR-001, COM-013, ENG-023]
 enables: []
 see_also: [AGR-008]
 contested: false
