@@ -4,7 +4,7 @@ title: The Race for Narrow Sea Chokepoints
 legacy_ref:
 domain: commerce
 domains_touched: [war, diplomacy]
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: 1500

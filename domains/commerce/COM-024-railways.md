@@ -21,7 +21,7 @@ region_variants:
 absence:
   - region: africa
     note: Sub-Saharan African rail networks built under colonial administration are overwhelmingly designed as single extractive lines running from an interior resource or plantation zone directly to a coastal export port, rather than as an integrated internal network connecting population centers to each other — infrastructure shaped entirely by export logistics rather than domestic economic integration.
-prereqs: [COM-013]
+prereqs: [COM-013, ENG-009, ENG-022]
 enables: []
 see_also: [COM-017]
 contested: true

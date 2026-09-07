@@ -15,12 +15,15 @@ region_variants:
   - region: east-asia
     date_start: 1842
     note: Qing China's tariff autonomy is directly stripped by the unequal treaties following the Opium Wars (see COM-022), fixing import duties at a low rate China's own government could not unilaterally raise — a case where tariff policy itself, not just market access, becomes the object of external coercion.
+  - region: south-asia
+    date_start: 1930
+    note: Colonial-era evasion of the British salt tax monopoly in India becomes widespread enough that salt-tax evasion later serves as a deliberate symbolic target for organized civil disobedience (Gandhi's 1930 Salt March) — a state revenue and market-protection instrument whose evasion escalated, once a political movement deliberately mobilized around it, from ordinary gray-market behavior into an explicitly political act, a trajectory a purely commercial tariff or luxury-good excise rarely undergoes.
 absence:
   - region: middle-east
     note: The Ottoman Empire's capitulation-based low tariff regime, negotiated piecemeal with multiple European powers over centuries rather than imposed by a single unequal treaty, similarly constrains Ottoman tariff-setting autonomy well into the 20th century, showing tariff-sovereignty loss can arrive gradually through accumulated bilateral concession as well as through a single coercive treaty.
 prereqs: [COM-012, COM-022]
-enables: [COM-019]
-see_also: [DIP-012]
+enables: []
+see_also: [DIP-012, MAR-016]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -67,7 +70,13 @@ regardless of its own domestic industrial policy needs. The Ottoman Empire's
 comparable loss of tariff autonomy accumulates gradually through decades of
 bilateral capitulation agreements rather than one coercive settlement,
 showing the same sovereignty-over-tariffs erosion can arrive by either a
-single sharp shock or a slow accumulation of smaller concessions.
+single sharp shock or a slow accumulation of smaller concessions. Colonial
+India's salt tax shows a state-protected monopoly's evasion following the
+same enforcement-capacity-versus-price-gap logic ordinary smuggling runs
+on elsewhere (MAR-016), but escalating into organized civil disobedience
+once a movement deliberately mobilizes around it — evasion of a
+subsistence-good monopoly carries a politically mobilizable weight an
+ordinary luxury-good tariff rarely does.
 
 ## Hook
 
@@ -76,4 +85,5 @@ military force — losing control over it, whether abruptly (unequal treaty)
 or gradually (accumulated capitulations), removes a state's ability to use
 its own market access as either a shield or a bargaining chip, with
 retaliatory tariff wars compounding losses on all sides once the lever is
-pulled.
+pulled, and evasion of a monopoly or tariff on a subsistence good carrying
+political-mobilization potential a luxury-good tariff never does.

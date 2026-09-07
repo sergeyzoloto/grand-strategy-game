@@ -3,7 +3,7 @@ id: AGR-010
 title: Salinization and the Sumerian Yield Collapse
 legacy_ref:
 domain: agriculture
-domains_touched: []
+domains_touched: [commerce]
 tier: core
 status: drafted
 confidence: medium
@@ -17,7 +17,7 @@ absence:
     note: Egyptian Nile irrigation avoids comparable large-scale salinization because the annual flood cycle naturally flushes accumulated salts from the floodplain every year, rather than requiring the constant, active field drainage Mesopotamia's more static canal-irrigation system depends on to achieve the same result — the same underlying salt-accumulation risk, neutralized by a favorable natural hydrology rather than by comparable engineered drainage effort.
 prereqs: [AGR-005]
 enables: []
-see_also: []
+see_also: [COM-031]
 contested: true
 contested_note: "The classic thesis (most associated with Thorkild Jacobsen and Robert McC. Adams) that progressive soil salinization from centuries of irrigation without adequate drainage directly explains southern Mesopotamia's documented shift from wheat to more salt-tolerant barley cultivation and a broader yield decline is influential but has been challenged by scholars who point to political fragmentation, warfare, and canal-maintenance breakdown as at least equally plausible contributing causes for the same archaeological and textual signal, with salinization's precise quantitative contribution difficult to isolate from these other factors using the available evidence. Model salinization as a real, mechanistically well-understood risk of sustained irrigation without adequate drainage (per this entry's Mechanism), while treating its specific weighted contribution to the Sumerian yield decline, versus political and institutional causes, as genuinely contested."
 stats_touched: [soil fertility]

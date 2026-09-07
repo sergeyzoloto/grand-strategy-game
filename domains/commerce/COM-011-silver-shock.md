@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Japan mined its own silver in this window (Iwami Ginzan and other sites) and was a net exporter on comparable terms rather than a pure absorber of American supply — same commodity shock, opposite balance-of-payments exposure to the rest of East Asia.
-prereqs: []
+prereqs: [MAR-008]
 enables: []
 see_also: [COM-017]
 contested: true

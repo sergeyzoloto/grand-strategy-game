@@ -3,7 +3,7 @@ id: COM-014
 title: The Silk Road as a Logistics System
 legacy_ref:
 domain: commerce
-domains_touched: [migration, war, diplomacy]
+domains_touched: [migration, war, diplomacy, agriculture]
 tier: core
 status: drafted
 confidence: high
@@ -21,8 +21,8 @@ region_variants:
 absence:
   - region: europe
     note: Europe sits at the extreme receiving end of the network for nearly its entire operational history, participating as a consumer market rather than as a node any Silk Road caravan itself passed through — the popular framing of the Silk Road as fundamentally connecting East and West understates how peripheral direct European involvement in the actual logistics was until the maritime routes (MAR-008) bypass the overland system entirely.
-prereqs: [MIG-003]
-enables: []
+prereqs: [MIG-003, COM-028]
+enables: [COM-031]
 see_also: [MAR-001, MAR-008, COM-026]
 contested: true
 contested_note: "How much the Silk Road functioned as a single continuous logistics system with goods and people traveling its full length, versus a chain of shorter regional relay trades where goods changed hands (and merchants) many times without any single trader crossing the whole distance, is debated among historians of the route. Model it as a relay-based network by default (goods and price information propagating hop by hop through many intermediary merchant communities), with only specific well-documented periods and route segments (the Mongol Pax Mongolica era especially) supporting genuinely long-distance individual through-travel."

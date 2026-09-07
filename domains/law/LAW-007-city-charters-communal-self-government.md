@@ -20,7 +20,7 @@ absence:
     note: Not every European city that sought a charter received comparable self-governing rights — the specific privileges granted (self-taxation, own courts, market regulation, militia) varied enormously by what a given lord or king was willing to concede and what leverage the petitioning townspeople actually had, meaning "chartered" covered a wide range of real autonomy rather than one standard package.
 prereqs: [LAW-001]
 enables: []
-see_also: [COM-015]
+see_also: [COM-015, COM-029]
 contested: false
 contested_note: ""
 stats_touched: [contract enforcement]

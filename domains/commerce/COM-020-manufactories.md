@@ -23,7 +23,7 @@ absence:
     note: South Asian textile production in this era, despite enormous export volume and quality (Bengali muslin, various regional cotton and silk goods) reaching world markets, stays organized predominantly through decentralized household and small-workshop production rather than concentrating into large centralized manufactories — proving mass export volume doesn't require the manufactory organizational form specifically.
 prereqs: [COM-013]
 enables: [COM-021, COM-023]
-see_also: []
+see_also: [COM-032]
 contested: false
 contested_note: ""
 stats_touched: []

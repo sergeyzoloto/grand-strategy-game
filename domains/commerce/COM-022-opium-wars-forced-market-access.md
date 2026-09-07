@@ -15,7 +15,7 @@ region_variants: []
 absence:
   - region: south-asia
     note: Opium sold into China in this period is grown and processed under British monopoly in India specifically, making South Asia the production base for the very commodity whose forced sale into China this entry covers — India's role here is as supplier within the same coercive trade system, not a comparable case of its own market being forced open by an equivalent war.
-prereqs: []
+prereqs: [COM-016]
 enables: [COM-018]
 see_also: [DIP-007]
 contested: true
