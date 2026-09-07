@@ -3,7 +3,7 @@ id: HLT-002
 title: Crowd Disease and the Urban Graveyard
 legacy_ref:
 domain: health
-domains_touched: [commerce]
+domains_touched: [commerce, agriculture]
 tier: core
 status: drafted
 confidence: high
@@ -20,7 +20,7 @@ absence:
     note: Pre-contact Mesoamerican and Andean cities reached comparable or greater density (Tenochtitlan, Cusco) without the Old World's crowd-disease roster, for lack of the animal-dense zoonotic reservoir (see HLT-001) rather than for lack of density itself — the graveyard effect here is a post-contact import, not an endogenous development.
 prereqs: [HLT-001]
 enables: [HLT-006, HLT-010, HLT-012]
-see_also: [HLT-003]
+see_also: [HLT-003, AGR-003]
 contested: true
 contested_note: "The date at which any given city's population became self-sustaining without constant rural in-migration ('urban graveyard' closing) is disputed and varies by scholar and by city, since it depends on reconstructed vital rates that are themselves uncertain. Model as a per-city threshold function of density and water/waste infrastructure quality rather than a fixed calendar date."
 stats_touched: [immunological capital]

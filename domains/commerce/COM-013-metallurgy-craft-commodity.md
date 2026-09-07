@@ -3,7 +3,7 @@ id: COM-013
 title: Metallurgy as Craft and Commodity — Bronze to Steel
 legacy_ref:
 domain: commerce
-domains_touched: [engineering, war]
+domains_touched: [engineering, war, agriculture]
 tier: core
 status: drafted
 confidence: medium
@@ -23,7 +23,7 @@ absence:
     note: European steel production stays craft-scale and comparatively expensive relative to iron through most of this era, only reaching cheap bulk commodity status with the Bessemer process (1856) — the smelting chemistry and military consequence of the earlier bronze-to-iron transition are covered elsewhere in this record (WAR-002); this entry's steel-commercialization endpoint is a distinct, much later commercial event.
 prereqs: [WAR-002]
 enables: [COM-020, COM-024, COM-025]
-see_also: []
+see_also: [AGR-009]
 contested: false
 contested_note: ""
 stats_touched: []

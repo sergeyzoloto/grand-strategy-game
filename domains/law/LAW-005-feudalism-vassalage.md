@@ -3,7 +3,7 @@ id: LAW-005
 title: Feudalism and Vassalage
 legacy_ref:
 domain: law
-domains_touched: [war]
+domains_touched: [war, agriculture]
 tier: core
 status: drafted
 confidence: high
@@ -23,7 +23,7 @@ absence:
     note: Contemporary and neighboring China explicitly rejects a hereditary land-for-service feudal structure in favor of the centralized examination-based bureaucracy (LAW-004) covered elsewhere in this domain — the same broad era and region producing two structurally opposite answers to the same underlying problem of binding local administration and military service to central authority.
 prereqs: [LAW-001]
 enables: []
-see_also: [LAW-004]
+see_also: [LAW-004, AGR-012, AGR-015, AGR-020]
 contested: false
 contested_note: ""
 stats_touched: []

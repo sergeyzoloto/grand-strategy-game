@@ -3,7 +3,7 @@ id: LAW-002
 title: Citizenship and Voting Rights
 legacy_ref:
 domain: law
-domains_touched: [diplomacy]
+domains_touched: [diplomacy, agriculture]
 tier: core
 status: drafted
 confidence: high
@@ -20,7 +20,7 @@ absence:
     note: Islamic dhimmi status grants protected non-Muslim subjects secure legal standing, property rights, and religious autonomy under a specific tax obligation (jizya), without extending full political participation rights — a durable, well-defined intermediate legal category between citizen and foreigner that neither the Athenian nor Roman models have a direct equivalent for.
 prereqs: [LAW-001]
 enables: [LAW-009, LAW-014, DIP-010]
-see_also: [PHI-005, PHI-019]
+see_also: [PHI-005, PHI-019, AGR-007]
 contested: false
 contested_note: ""
 stats_touched: []

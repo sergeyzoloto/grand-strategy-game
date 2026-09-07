@@ -20,7 +20,7 @@ absence:
     note: Sub-Saharan African synthetic fertilizer adoption lags well behind Asian and Latin American Green Revolution uptake rates, constrained by distribution infrastructure, cost relative to farmer income, and soil and climate conditions that don't always match the input packages developed and tested primarily for Asian growing conditions — a case where a technology's availability doesn't guarantee comparable adoption or benefit everywhere it's introduced.
 prereqs: []
 enables: []
-see_also: [ENG-001]
+see_also: [ENG-001, AGR-016, AGR-022]
 contested: true
 contested_note: "The Green Revolution's net historical verdict is disputed: it unambiguously raised yields and prevented predicted famines in several regions, but critics point to increased farmer dependency on purchased inputs (fertilizer, seed, sometimes on credit), reduced crop and seed-variety diversity, and environmental costs (water use, soil and waterway nutrient pollution) as significant, sometimes underweighted, costs of the same package. Model synthetic fertilizer's yield effect as real and large while treating input-dependency, biodiversity, and environmental costs as separate, independently-tracked downstream effects rather than netting them against the yield gain into one combined score."
 stats_touched: [toxic burden]

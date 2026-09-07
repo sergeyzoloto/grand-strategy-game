@@ -25,7 +25,7 @@ absence:
     note: No dairying at all pre-contact — no domesticated milk animal existed in the Americas, so the entire lactase-persistence question is moot until European contact introduces both the animals and the allele simultaneously.
 prereqs: [HLT-001]
 enables: [HLT-017]
-see_also: []
+see_also: [AGR-002]
 contested: false
 contested_note: ""
 stats_touched: []

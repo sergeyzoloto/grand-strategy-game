@@ -3,7 +3,7 @@ id: ENG-011
 title: Water Supply and Sanitation Engineering
 legacy_ref:
 domain: engineering
-domains_touched: [health]
+domains_touched: [health, agriculture]
 tier: core
 status: drafted
 confidence: high
@@ -20,7 +20,7 @@ absence:
     note: Roman aqueduct engineering achieves great scale and precise long-distance gradient control using open or covered channels and impressive arch-supported crossings, but relies on the region's relatively reliable surface water sources rather than the qanat's specific solution to arid-region groundwater access — two different hydraulic engineering traditions addressing two different underlying water-availability problems.
 prereqs: [ENG-001]
 enables: [HLT-006, ENG-017]
-see_also: []
+see_also: [AGR-013]
 contested: false
 contested_note: ""
 stats_touched: []
