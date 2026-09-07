@@ -38,3 +38,5 @@ One line per invented variable, in the order encountered.
 | skill differential       | MIG-019  | gap in institutional/career opportunity driving skilled-labor migration.   |
 | naval prestige           | MAR-018  | a state's naval standing as measured by internationally-comparable capital-ship metrics, resettable to near-zero by a single capital-ship design leap. |
 | religious authority      | REL-001  | trust/legitimacy a religious institution commands, usable as a resource for banking-like trust, tithe/court authority, and canon-enforcement — distinct from medical or state legitimacy. |
+| intellectual authority   | PHI-001  | prestige/trust a school of thought or reasoning tradition commands, tracking sustained patronage and disciple-training capacity rather than a founder's original argument alone. |
+| habitus formation        | PHI-004  | degree to which repeated ritual/practice reliably reshapes a performer's internalized disposition — a stat implementation of design principle 2, reused across ritual, ascetic, and meditative practice traditions. |

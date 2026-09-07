@@ -20,7 +20,7 @@ absence:
     note: Post-independence African states overwhelmingly retain colonial-era borders rather than redrawing them along ethnic or national lines despite those borders having been set entirely by European colonizers with no reference to indigenous nationhood at all — the Organisation of African Unity's explicit 1963 commitment to colonial-border inviolability prioritizes continental stability over applying the self-determination principle to redraw borders that most European nationalist movements' own logic would seem to call into question.
 prereqs: [LAW-002]
 enables: []
-see_also: [REL-003]
+see_also: [REL-003, PHI-021]
 contested: true
 contested_note: "Whether nationalism as a diplomatic recognition principle is best understood as the discovery of pre-existing natural nations finally gaining deserved political expression, or as itself constructing the national identities it claims only to recognize (drawing a border first creates the shared identity of everyone now living on one side of it, at least as much as a pre-existing identity ever justified drawing the border there), is a foundational and unresolved dispute in nationalism studies. Model national identity and territorial claim as mutually reinforcing rather than assuming either one is simply prior to and causally independent of the other."
 stats_touched: []

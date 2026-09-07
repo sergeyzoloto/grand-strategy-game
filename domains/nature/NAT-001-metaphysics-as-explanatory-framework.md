@@ -22,8 +22,8 @@ absence:
   - region: middle-east
     note: Islamic falsafa explicitly works to reconcile Aristotelian metaphysics with revealed monotheistic theology (Avicenna and Averroes prominent among many), producing a synthesis project neither the original Greek framework nor the Quranic tradition alone would have generated — metaphysics here develops specifically as an integration exercise rather than as an independent system-building effort.
 prereqs: []
-enables: [NAT-007]
-see_also: []
+enables: [NAT-007, PHI-003]
+see_also: [PHI-002]
 contested: false
 contested_note: ""
 stats_touched: []
