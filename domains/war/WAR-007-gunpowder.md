@@ -22,7 +22,7 @@ absence:
   - region: south-asia
     note: Mughal gunpowder adoption is rapid and militarily decisive (matchlock infantry and siege artillery central to Mughal conquest campaigns) but stays more concentrated in state arsenals and less diffused into broad-based standing infantry doctrine than the Ottoman case, reflecting a different balance between centralized artillery/siege capability and dispersed infantry firearms investment.
 prereqs: [WAR-001, WAR-002, ENG-008]
-enables: [WAR-008]
+enables: [WAR-008, WAR-030]
 see_also: []
 contested: false
 contested_note: ""

@@ -20,7 +20,7 @@ absence:
     note: Cavalry doctrine stays comparatively marginal across most of sub-Saharan Africa relative to the Eurasian steppe and Middle East, reflecting the tsetse-belt constraint on horse survivability noted in MIG-001 and MIG-005 — a disease-ecology limit on the underlying animal resource, not a doctrinal or organizational choice.
 prereqs: [WAR-001]
 enables: []
-see_also: [AGR-014]
+see_also: [AGR-014, MIG-001, MIG-005, WAR-032]
 contested: false
 contested_note: ""
 stats_touched: []

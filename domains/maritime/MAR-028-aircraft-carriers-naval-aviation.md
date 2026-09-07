@@ -20,7 +20,7 @@ absence:
     note: Britain, despite pioneering early naval aviation and operating the first carrier conversions, does not sustain the same institutional investment in carrier doctrine and purpose-built fleet carrier design through the interwar period that Japan and the United States do, entering World War Two with a smaller and less doctrinally central carrier force relative to its overall naval strength than either Pacific power — an early lead not converted into sustained institutional priority.
 prereqs: [MAR-025]
 enables: []
-see_also: []
+see_also: [WAR-016]
 contested: false
 contested_note: ""
 stats_touched: [naval prestige]

@@ -20,7 +20,7 @@ absence:
     note: Mass national conscription on the French or Japanese model is largely absent from precolonial African state military systems in this era, which instead typically draw on age-grade, lineage, or client-based mobilization structures — a different, often equally large-scale mobilization mechanism built on existing social structure rather than on individual citizen-state legal obligation.
 prereqs: [WAR-001]
 enables: [WAR-020]
-see_also: []
+see_also: [WAR-027, WAR-029]
 contested: false
 contested_note: ""
 stats_touched: []

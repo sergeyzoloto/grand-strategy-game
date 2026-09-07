@@ -21,7 +21,7 @@ region_variants:
 absence:
   - region: south-asia
     note: South Asian ironworking of this era, including the famous high-quality wootz steel tradition, stays oriented toward producing a smaller volume of exceptional-quality blades rather than toward the bulk, standardized mass-equipping output the Mediterranean and Chinese cases pursue — a quality-over-volume metallurgical choice, not a lesser capability.
-prereqs: [WAR-001, COM-013, ENG-023]
+prereqs: [WAR-023, COM-013, ENG-023]
 enables: [WAR-003, WAR-007]
 see_also: []
 contested: true

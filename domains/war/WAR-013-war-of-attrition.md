@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: mediterranean
     note: Pericles' original attritional strategy in the Peloponnesian War (avoiding decisive land battle with Sparta, relying on Athenian naval and financial endurance) is an early explicit articulation of deliberately choosing attrition over decisive engagement as a strategy, rather than attrition simply being what an indecisive war becomes.
-prereqs: [WAR-001]
+prereqs: [WAR-001, WAR-025]
 enables: [WAR-018]
 see_also: []
 contested: true

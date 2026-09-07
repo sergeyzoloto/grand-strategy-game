@@ -20,7 +20,7 @@ absence:
     note: Mauryan-era battle doctrine relies more heavily on combined chariot, elephant, cavalry, and infantry arms in a single battle line than on a single dominant close-order infantry formation type, achieving mass-battle effectiveness through arm diversity rather than through phalanx- or legion-style infantry standardization.
 prereqs: [WAR-002]
 enables: []
-see_also: []
+see_also: [WAR-032]
 contested: true
 contested_note: "How much of the Roman legion's tactical superiority over the Greek phalanx traces to formation flexibility (maniples able to reposition mid-battle, unlike a rigid phalanx line) versus other factors (Roman manpower reserves, political system, logistics) is long debated among military historians, since Rome's eventual dominance had many simultaneous causes beyond any single tactical formation advantage. Model formation flexibility as a real, independently-weighted tactical advantage rather than the sole explanation for Roman success over Hellenistic phalanx armies."
 stats_touched: []
