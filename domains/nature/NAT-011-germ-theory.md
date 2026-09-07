@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Chinese medical theory develops its own extensive framework for epidemic disease (wenbing, "warm disease," theory) addressing transmission and treatment empirically without converging on a germ-based causal mechanism, an independent and effective-in-its-own-terms clinical tradition that solves practical epidemic management without the specific microorganism-identification breakthrough this entry tracks.
-prereqs: [NAT-007]
+prereqs: [NAT-007, NAT-016]
 enables: [HLT-021]
 see_also: []
 contested: false
@@ -51,6 +51,10 @@ postulates: the organism must be present in every case, isolatable in pure
 culture, capable of reproducing the disease when introduced, and
 recoverable from the resulting case) — proving the general principle and
 proving specific instances of it are distinct scientific achievements.
+Both steps depend on being able to actually see the microorganism in
+question, which requires the microscope — a working instrument only
+available because of the optical theory (NAT-016) explaining how a
+constructed lens can resolve something the unaided eye cannot.
 
 ## Social consequence
 
@@ -81,7 +85,10 @@ name as the reason its treatments work.
 
 Germ theory's scientific establishment (disproving spontaneous generation,
 then rigorously linking specific organisms to specific diseases) is the
-precondition HLT-021's antisepsis story builds directly on — and the
-correct underlying intuition, per Ibn al-Khatib's case, can precede the
-experimental proof by centuries without a tradition having the method
-needed to establish it scientifically.
+precondition HLT-021's antisepsis story builds directly on, and depends
+on the microscope's resolving power — itself downstream of the optical
+theory (NAT-016) that explains how a constructed lens extends the
+unaided eye. The correct underlying intuition, per Ibn al-Khatib's case,
+can precede the experimental proof by centuries without a tradition
+having either the method or the instrument needed to establish it
+scientifically.

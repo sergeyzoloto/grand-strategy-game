@@ -22,7 +22,7 @@ absence:
   - region: middle-east
     note: Islamic logicians substantially preserve, translate, and extend Aristotelian syllogistic logic (via the translation movement, NAT-005) rather than developing an independent formal system from scratch, becoming the critical transmission link that carries and refines Greek logical method into the medieval Latin world.
 prereqs: []
-enables: [NAT-005, NAT-007, NAT-015, PHI-015]
+enables: [NAT-005, NAT-007, NAT-015, NAT-024, PHI-015]
 see_also: [NAT-001, PHI-009, PHI-014, PHI-027]
 contested: false
 contested_note: ""

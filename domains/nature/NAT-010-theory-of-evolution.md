@@ -15,9 +15,9 @@ region_variants: []
 absence:
   - region: middle-east
     note: Ninth-century scholar al-Jahiz's Book of Animals describes food chains, environmental influence on animal characteristics, and a struggle for survival among species in terms sometimes read as a partial conceptual anticipation of natural selection, though the work stops well short of proposing a mechanism for heritable change over generations or common descent — a genuine precedent for pieces of the idea, not the theory itself.
-prereqs: [NAT-007]
+prereqs: [NAT-007, NAT-017]
 enables: []
-see_also: []
+see_also: [NAT-021]
 contested: true
 contested_note: "The theory of evolution by natural selection is scientifically uncontested within biology, but its reception has been and remains genuinely contested on religious and cultural grounds in various societies, producing real, ongoing conflict between the scientific consensus and literalist religious interpretation in education policy and public acceptance. Model scientific validity and social/institutional acceptance as fully separate variables — a theory can be essentially unanimous among specialists while remaining a live domestic political and educational battleground in specific societies, with the gap between the two being itself a modelable social phenomenon rather than a sign of genuine ongoing scientific dispute."
 stats_touched: [immunological capital]
@@ -46,7 +46,11 @@ on that variation, and enough generations for the effect to accumulate —
 producing adaptation and new species over time without requiring any
 guiding intention, a genuinely novel explanatory mechanism distinct from
 either divine design or the earlier, less rigorously mechanistic
-transformist ideas some prior naturalists had gestured toward.
+transformist ideas some prior naturalists had gestured toward. The
+mechanism only becomes plausible given a timescale of millions of years
+for small effects to accumulate, which is what geology's deep time
+(NAT-017) supplies and which Darwin credited directly, carrying Lyell's
+Principles of Geology throughout the Beagle voyage.
 
 ## Social consequence
 
@@ -87,4 +91,8 @@ record's own `immunological capital` and disease-resistance mechanics —
 and the theory's scientific completeness and its social acceptance are
 independent variables, with the gap between near-universal specialist
 consensus and persistent contested public reception (comparable to
-heliocentrism's, NAT-006) itself worth modeling explicitly.
+heliocentrism's, NAT-006) itself worth modeling explicitly. The mechanism
+depends directly on geology's deep time (NAT-017) for a plausible
+timescale, and on systematic classification (NAT-021) for the comparable,
+cumulative record of species similarity and variation the theory then
+explains causally.

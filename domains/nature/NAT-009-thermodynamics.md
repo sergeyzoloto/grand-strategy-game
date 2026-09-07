@@ -15,8 +15,8 @@ region_variants: []
 absence:
   - region: americas
     note: American engineering practice in this era adopts and applies thermodynamic theory largely as an import from European science rather than contributing to its original theoretical development, consistent with the broader pattern in this record of American industrial strength concentrating in applied engineering and manufacturing scale (ENG-005, COM-023's assembly line) rather than in foundational theoretical physics during this specific period.
-prereqs: [NAT-004]
-enables: []
+prereqs: [NAT-004, NAT-018]
+enables: [NAT-014]
 see_also: [ENG-009]
 contested: false
 contested_note: ""
@@ -76,3 +76,7 @@ Thermodynamic theory follows and explains an already-working technology
 science-then-engineering sequence — and the resulting known efficiency
 ceiling redirects engineering effort toward approaching a provable limit
 rather than searching indefinitely for an improvement that can't exist.
+Clausius's later statistical reading of entropy rests directly on
+probability theory (NAT-018), and the same blackbody-radiation puzzle
+this entry's framework leaves unresolved is what launches quantum theory
+(NAT-014).

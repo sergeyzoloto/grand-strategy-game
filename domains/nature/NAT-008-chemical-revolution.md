@@ -4,7 +4,7 @@ title: The Chemical Revolution
 legacy_ref:
 domain: nature
 domains_touched: [engineering]
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: 1661
@@ -16,7 +16,7 @@ absence:
   - region: middle-east
     note: Islamic and earlier Chinese alchemical traditions accumulate substantial practical chemical knowledge — the saltpeter purification and mixture refinement underlying gunpowder's manufacturing lineage (ENG-008) chief among it — without ever formally abandoning transmutation-oriented alchemical theory for a systematic elemental framework, a case where extensive working knowledge precedes and outlasts theoretical reformulation by centuries.
 prereqs: [NAT-007]
-enables: []
+enables: [NAT-022]
 see_also: [ENG-008]
 contested: false
 contested_note: ""

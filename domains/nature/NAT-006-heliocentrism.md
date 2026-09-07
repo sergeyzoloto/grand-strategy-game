@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: south-asia
     note: Indian astronomer Aryabhata proposes Earth's rotation on its axis (explaining apparent celestial motion without requiring the heavens themselves to rotate) as early as 499, a genuine partial anticipation of heliocentric-adjacent reasoning that doesn't extend to full heliocentrism itself and doesn't transmit into or influence the later Maragha-to-Copernicus lineage.
-prereqs: [NAT-002, NAT-004]
+prereqs: [NAT-002, NAT-004, NAT-016]
 enables: []
 see_also: []
 contested: true
@@ -36,10 +36,11 @@ than the mathematics alone would suggest.
 
 The Maragha observatory school's key mathematical innovations date from
 1259 through the following two centuries; Copernicus publishes his
-heliocentric model in 1543; the model gains further support through Kepler
-and Galileo before Newton's 1687 mechanical synthesis (NAT-004) makes it
-the mathematically compelling default rather than merely one competing
-model among several.
+heliocentric model in 1543; Galileo's telescopic observations (from 1609,
+enabled by the optical theory of NAT-016) and Kepler's refinements supply
+the decisive observational support before Newton's 1687 mechanical
+synthesis (NAT-004) makes it the mathematically compelling default rather
+than merely one competing model among several.
 
 ## Mechanism
 
@@ -50,7 +51,11 @@ stroke by placing the sun at the center instead, but the specific
 mathematical devices needed to make the geometry work cleanly (the "Tusi
 couple" among them) had already been worked out by the Maragha school
 generations before Copernicus applied them within a genuinely
-heliocentric rather than Earth-centered framework.
+heliocentric rather than Earth-centered framework. The model's decisive
+empirical confirmation comes later still, once Galileo's telescope
+(NAT-016) reveals Jupiter's moons and the phases of Venus — evidence a
+purely mathematical comparison of the two models' relative elegance could
+never have supplied on its own.
 
 ## Social consequence
 
@@ -88,7 +93,9 @@ settled in either direction.
 
 Heliocentrism's mathematical core was substantially worked out by the
 Maragha school two centuries before Copernicus applied it within a fully
-sun-centered model — and the resulting religious and cultural resistance to
-the finished model, once it displaced Earth's cosmic centrality, follows a
-logic largely independent of and disproportionate to its actual
-mathematical merit.
+sun-centered model, and its decisive empirical confirmation required the
+telescopic observation NAT-016's optical theory makes possible — evidence
+mathematical elegance alone could never supply. The resulting religious
+and cultural resistance to the finished model, once it displaced Earth's
+cosmic centrality, follows a logic largely independent of and
+disproportionate to its actual mathematical merit.

@@ -8,37 +8,38 @@ tier: core
 status: drafted
 confidence: high
 date_start: 820
-date_end: 1948
+date_end: 1936
 date_precision: era
 regions: [middle-east, europe]
 region_variants:
   - region: middle-east
     date_start: 820
-    note: Al-Khwarizmi's systematic treatise on step-by-step problem-solving procedures gives the field its very name (algorithm, a Latinization of his own name) — the concept of a rigorously defined, mechanically-executable procedure is the direct conceptual ancestor of everything this entry covers, nine centuries before an actual machine exists to execute one automatically.
+    note: Al-Khwarizmi's systematic treatise on step-by-step problem-solving procedures gives the field its very name (algorithm, a Latinization of his own name) — the concept of a rigorously defined, mechanically-executable procedure is the direct conceptual ancestor of everything this entry covers, over a millennium before an actual machine exists to execute one automatically.
 absence:
   - region: east-asia
     note: The abacus and comparable East Asian calculating-device traditions achieve highly effective mechanical arithmetic without developing an accompanying formal theory of computation or algorithmic procedure as a subject of study in its own right — effective calculating technology without a parallel theoretical discipline built around the concept of computation itself.
 prereqs: [NAT-003]
 enables: []
-see_also: [ENG-021]
+see_also: [ENG-021, NAT-024]
 contested: false
 contested_note: ""
 stats_touched: []
-tags: [algorithm, turing-machine, computability, information-theory]
+tags: [algorithm, turing-machine, computability]
 ---
 
 This entry owns computation as a theoretical and scientific object —
-algorithms, computability, and information — kept distinct from the
-physical hardware (ENG-021's semiconductors) that eventually executes it.
+algorithms and computability — kept distinct from the physical hardware
+(ENG-021's semiconductors) that eventually executes it, and from the
+separate mathematical question of quantifying information itself
+(NAT-024).
 
 ## Timing
 
 Al-Khwarizmi's algorithmic treatise dates to around 820; the theoretical
 foundation for what a computer can and cannot compute in principle is
-established by Turing's 1936 work on computability; Shannon's 1948
-information theory provides the mathematical framework for quantifying and
-transmitting information itself, completing the theoretical toolkit
-practical computing builds on.
+established by Turing's 1936 work on computability, completing the
+conceptual lineage from a rigorously defined procedure to a precise
+statement of that procedure's own limits.
 
 ## Mechanism
 
@@ -78,9 +79,12 @@ anyone formalizing what it means for a procedure to be "computable" at all.
 
 ## Hook
 
-The theory of computation — algorithms, computability, information — exists
-and develops as its own coherent discipline independent of any particular
+The theory of computation — algorithms and computability — exists and
+develops as its own coherent discipline independent of any particular
 physical hardware, tracing back to a formal step-by-step-procedure concept
-nine centuries before an executing machine exists, and remaining the
+over a millennium before an executing machine exists, and remaining the
 theoretical foundation ENG-021's semiconductor hardware eventually
-executes rather than something that hardware itself generates.
+executes rather than something that hardware itself generates. NAT-024
+splits off the separate mathematical question of quantifying information
+itself, a distinct achievement resting on probability rather than on
+computability.

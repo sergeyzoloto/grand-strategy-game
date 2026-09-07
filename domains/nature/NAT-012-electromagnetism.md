@@ -16,7 +16,7 @@ absence:
   - region: americas
     note: American contributions to electromagnetism in this era run substantially toward independent practical invention (Henry's electromagnet work informing telegraph and motor development) built on the European theoretical foundation, rather than toward the unifying mathematical theory itself, consistent with the broader theory-versus-application regional split already noted for thermodynamics (NAT-009).
 prereqs: [NAT-004]
-enables: [ENG-018, ENG-019]
+enables: [ENG-018, ENG-019, NAT-013]
 see_also: []
 contested: false
 contested_note: ""
@@ -75,4 +75,6 @@ major applications (ENG-018's telegraph, ENG-019's electrification) rather
 than following and explaining an already-existing technology the way
 thermodynamics does — a rarer theory-before-practice sequence in this
 domain's own record, worth noting precisely because it's the exception
-rather than the rule.
+rather than the rule. Maxwell's equations also generate the specific
+theoretical tension with Newtonian mechanics that relativity (NAT-013)
+later resolves.

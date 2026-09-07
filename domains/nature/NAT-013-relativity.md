@@ -4,7 +4,7 @@ title: Relativity
 legacy_ref:
 domain: nature
 domains_touched: []
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: 1905
@@ -15,8 +15,8 @@ region_variants: []
 absence:
   - region: americas
     note: American physics in this era plays essentially no role in relativity's original theoretical development, only becoming central to the field later once European physicists (including Einstein himself, from 1933) relocate to American institutions amid the political upheaval of the following decades — a case where scientific leadership migrates institutionally rather than developing independently in a new location.
-prereqs: [NAT-004]
-enables: [NAT-014]
+prereqs: [NAT-004, NAT-012]
+enables: []
 see_also: []
 contested: false
 contested_note: ""
@@ -27,8 +27,9 @@ tags: [relativity, einstein, spacetime, general-relativity]
 Special and general relativity replace Newtonian mechanics' assumption of
 absolute space and time with a framework where measurements of space,
 time, and gravity depend on the observer's own motion and the surrounding
-mass-energy distribution — a revision of NAT-004's foundational mechanics
-rather than a separate theory alongside it.
+mass-energy distribution — a revision of NAT-004's foundational mechanics,
+motivated directly by a specific tension between that mechanics and
+NAT-012's electromagnetism, rather than a separate theory alongside either.
 
 ## Timing
 
@@ -41,14 +42,19 @@ to wide public and scientific attention.
 
 ## Mechanism
 
-Newtonian mechanics (NAT-004) assumes space and time are a fixed,
-universal backdrop the same for every observer; relativity shows this
-assumption breaks down at speeds approaching light or in strong
-gravitational fields, where different observers genuinely measure
-different elapsed times and distances for the same events — not because
-of measurement error, but because space and time themselves are relative
-to the observer's own reference frame, a conceptual revision rather than a
-mere refinement of Newton's framework.
+Special relativity's actual starting point is a specific technical
+tension: Newtonian mechanics (NAT-004) predicts that the measured speed
+of a light wave should depend on the observer's own motion relative to
+its source, exactly like any other velocity, while Maxwell's
+electromagnetic theory (NAT-012) predicts a fixed speed of light
+independent of the observer entirely — the two frameworks cannot both be
+right as stated. Einstein resolves the tension by taking Maxwell's
+constant light speed as the more fundamental fact and revising Newtonian
+mechanics' assumption of a fixed, universal backdrop of space and time
+instead, showing different observers genuinely measure different elapsed
+times and distances for the same events — not because of measurement
+error, but because space and time themselves are relative to the
+observer's own reference frame.
 
 ## Social consequence
 
@@ -73,7 +79,9 @@ through separate local development.
 ## Hook
 
 Relativity revises NAT-004's foundational assumption that space and time
-are a fixed backdrop the same for every observer — a genuine conceptual
-overturn of a two-century-old, thoroughly-validated framework, and a
-demonstration that even the most established scientific consensus remains
-open to being shown fundamentally incomplete under new pressure.
+are a fixed backdrop the same for every observer, resolving a specific
+contradiction between Newtonian mechanics and NAT-012's electromagnetism
+— a genuine conceptual overturn of a two-century-old, thoroughly-validated
+framework, and a demonstration that even the most established scientific
+consensus remains open to being shown fundamentally incomplete under new
+pressure.

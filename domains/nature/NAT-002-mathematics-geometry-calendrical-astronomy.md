@@ -3,7 +3,7 @@ id: NAT-002
 title: Mathematics, Geometry, and Calendrical Astronomy
 legacy_ref:
 domain: nature
-domains_touched: []
+domains_touched: [agriculture]
 tier: core
 status: drafted
 confidence: high
@@ -21,8 +21,8 @@ region_variants:
 absence:
   - region: east-asia
     note: Chinese mathematics (systematized in texts like the Nine Chapters) develops sophisticated algorithmic and computational methods for solving practical problems (area, volume, systems of equations) without pursuing the axiomatic-proof structure Greek geometry emphasizes — a results-and-procedure-oriented tradition rather than a demonstrably lesser one.
-prereqs: []
-enables: [NAT-004, NAT-006]
+prereqs: [AGR-006]
+enables: [NAT-004, NAT-006, NAT-018]
 see_also: []
 contested: false
 contested_note: ""
@@ -33,12 +33,17 @@ tags: [mathematics, zero, calendrical-astronomy, maya-long-count]
 The foundational quantitative and observational toolkit every later
 scientific advance in this domain depends on — counting, measuring,
 tracking celestial cycles, and eventually proving general claims about
-abstract relationships rather than only solving specific practical problems.
+abstract relationships rather than only solving specific practical
+problems, building directly on the practical token-and-tally accounting
+technology (AGR-006) that precedes formal mathematical notation by
+millennia.
 
 ## Timing
 
-Babylonian mathematics and astronomy (sexagesimal place-value notation,
-systematic celestial observation) is attested from roughly -1800; Maya
+The clay-token accounting technology (AGR-006) that precedes and
+motivates formal notation is attested from roughly -8000. Babylonian
+mathematics and astronomy (sexagesimal place-value notation, systematic
+celestial observation) is attested from roughly -1800; Maya
 calendrical astronomy develops independently from around -300; Indian
 decimal place-value notation and the numeral zero mature by around 500,
 transmitting through the Islamic world into Europe over the following
@@ -85,4 +90,7 @@ Notational and calendrical innovation directly gates what later
 calculation and observation becomes practical — a positional zero-based
 system unlocks arithmetic and algebra other notations make needlessly
 hard, and which specific tradition happens to develop that notation shapes
-which later scientific advances everywhere eventually build on it.
+which later scientific advances everywhere eventually build on it. The
+whole toolkit rests on the practical accounting technology (AGR-006)
+that solved the same underlying problem of recording quantity precisely,
+millennia before formal mathematical notation existed to generalize it.

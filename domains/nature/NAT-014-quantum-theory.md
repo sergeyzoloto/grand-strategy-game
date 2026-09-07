@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: east-asia
     note: East Asian contributions to quantum theory's foundational development in this era are minimal, with the region's major independent contributions to 20th-century physics concentrating instead in the subsequent generation once postwar institution-building (including Japan's own postwar physics community) had time to mature — a case of a later rather than absent contribution.
-prereqs: [NAT-013]
+prereqs: [NAT-009, NAT-018]
 enables: [ENG-021]
 see_also: []
 contested: true
@@ -28,30 +28,37 @@ tags: [quantum-theory, bose-einstein-statistics, copenhagen-interpretation]
 ---
 
 The theory governing matter and energy at the smallest scales, where
-classical mechanics (NAT-004) and even relativity (NAT-013) break down —
-and, decades later, the direct theoretical foundation semiconductor
-physics (ENG-021) depends on.
+classical mechanics (NAT-004) breaks down — and, decades later, the
+direct theoretical foundation semiconductor physics (ENG-021) depends on.
 
 ## Timing
 
 Planck's 1900 proposal that energy is emitted in discrete quanta rather
-than continuously opens the field; the theory matures rapidly through the
-1920s (Bohr's atomic model, Bose's 1924 statistical contribution,
-Heisenberg's and Schrodinger's full mathematical formulations, and the
-uncertainty principle), reaching a broadly stable framework by the
-mid-1930s.
+than continuously opens the field, arising directly out of a
+thermodynamics problem (NAT-009): explaining the specific shape of the
+radiation a heated object emits, which classical thermodynamics could not
+account for without assuming energy comes in discrete packets. The theory
+matures rapidly through the 1920s (Bohr's atomic model, Bose's 1924
+statistical contribution, Heisenberg's and Schrodinger's full mathematical
+formulations, and the uncertainty principle), reaching a broadly stable
+framework by the mid-1930s.
 
 ## Mechanism
 
-Quantum theory replaces classical mechanics' assumption that a particle
-has a definite position and momentum at every moment with a framework
-where physical quantities are fundamentally probabilistic below a certain
-scale — Bose's specific contribution, a new way of counting
-indistinguishable particles that resolves a puzzle in blackbody radiation,
-turns out to describe an entire class of particles (bosons) correctly,
-showing the theory's mathematical structure was substantially built through
-contributions from multiple simultaneous directions rather than unfolding
-from one single lineage.
+Planck's original problem is squarely thermodynamic: classical physics
+predicts a heated object should radiate infinite energy at short
+wavelengths, a prediction flatly contradicted by observation, and the fix
+— assuming energy is emitted only in discrete packets rather than
+continuously — resolves it. Quantum theory then generalizes far beyond
+that specific fix, replacing classical mechanics' assumption that a
+particle has a definite position and momentum at every moment with a
+framework where physical quantities are fundamentally probabilistic
+(NAT-018) below a certain scale — Bose's specific contribution, a new way
+of counting indistinguishable particles that resolves a further puzzle in
+blackbody radiation, turns out to describe an entire class of particles
+(bosons) correctly, showing the theory's mathematical structure was
+substantially built through contributions from multiple simultaneous
+directions rather than unfolding from one single lineage.
 
 ## Social consequence
 
@@ -89,5 +96,8 @@ treating the interpretive question as a separate, still-live uncertainty.
 Quantum theory's mathematical structure was built through simultaneous
 contributions from multiple independent directions — Bose's statistical
 counting method among the foundational pieces, not a later application of
-someone else's theory — and directly underlies the semiconductor physics
-(ENG-021) that a much later era of engineering builds on.
+someone else's theory — grows directly out of a thermodynamics problem
+(NAT-009) rather than out of relativity, rests on probability theory
+(NAT-018) as its mathematical core, and directly underlies the
+semiconductor physics (ENG-021) that a much later era of engineering
+builds on.
