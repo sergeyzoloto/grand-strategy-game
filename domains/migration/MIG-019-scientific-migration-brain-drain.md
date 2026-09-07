@@ -20,7 +20,7 @@ absence:
     note: African skilled emigration in the same era faces a structurally different constraint than the Indian case — a comparatively smaller domestic higher-education output to begin with means the same proportional 'drain' represents a much larger relative loss of a scarcer trained population, compounding the effect rather than merely scaling it down.
 prereqs: [MIG-017]
 enables: []
-see_also: []
+see_also: [MIG-027]
 contested: true
 contested_note: "Whether skilled emigration is better modeled as a pure loss ('brain drain') to the sending country or as a more complex exchange that also generates returning knowledge, remittances, and diaspora investment networks ('brain circulation') is disputed in development economics, with evidence for both patterns depending heavily on the sending country's own absorption capacity and diaspora-engagement policy. Model the emigration event itself as a straightforward loss of trained capacity at time of departure, with a separate, conditional 'circulation' return flow (remittances, diaspora scientific/investment networks) that only activates where the sending country maintains institutional capacity to receive it — not an automatic offset."
 stats_touched: [migration cost, skill differential]

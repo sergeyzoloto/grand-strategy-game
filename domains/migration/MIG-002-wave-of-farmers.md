@@ -21,7 +21,7 @@ region_variants:
 absence:
   - region: south-asia
     note: South Asia's agricultural spread shows a much larger role for local hunter-gatherer adoption of farming (cultural diffusion) alongside demic movement, rather than the near-total demographic replacement the Anatolian-into-Europe wave produced in some regions — a different mix of the same two mechanisms.
-prereqs: []
+prereqs: [MIG-023]
 enables: []
 see_also: [AGR-008]
 contested: true

@@ -19,7 +19,7 @@ absence:
   - region: africa
     note: Sub-Saharan Africa is overwhelmingly a source of forced rather than commercial-passenger cross-ocean movement in the era this entry covers (see MIG-013), with regular commercial passenger-line service to and from the continent developing much later and on a much smaller scale than the Atlantic emigrant-line or Indian indentured-line systems — the same steamship technology, an entirely different migration channel serving it.
 prereqs: []
-enables: [MIG-017]
+enables: [MIG-017, MIG-026, MIG-027, MIG-029]
 see_also: [MIG-012, MIG-016]
 contested: false
 contested_note: ""

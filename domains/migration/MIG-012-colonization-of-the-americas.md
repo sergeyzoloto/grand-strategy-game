@@ -3,7 +3,7 @@ id: MIG-012
 title: Colonization of the Americas (Settler Migration Waves)
 legacy_ref:
 domain: migration
-domains_touched: [agriculture, commerce, war, religion, law]
+domains_touched: [agriculture, commerce, war, religion, law, health]
 tier: core
 status: drafted
 confidence: high
@@ -20,7 +20,7 @@ absence:
     note: French colonization of the Americas (New France) stays comparatively thin in settler numbers throughout this period relative to British or Spanish colonization, remaining oriented more around fur-trade trading-post relationships with indigenous nations (closer to the maritime/trading-post pattern of MIG-004) than around large-scale agricultural settlement — the same colonizing state pursuing a visibly different migration strategy in a different part of the same continent.
 prereqs: [MIG-004, MIG-005]
 enables: [DIP-007]
-see_also: [MIG-013]
+see_also: [MIG-013, HLT-017]
 contested: false
 contested_note: ""
 stats_touched: [settler footprint]

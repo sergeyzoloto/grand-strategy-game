@@ -21,7 +21,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Overseas Chinese merchant networks in this era are comparatively modest in geographic reach relative to the Indian Ocean and Sahelian cases, restricted more by state emigration policy (periodic bans on private overseas trade and settlement) than by any lack of the same underlying kin-trust mechanism, which becomes far more visible in the much larger post-1500 Chinese diaspora.
-prereqs: []
+prereqs: [MIG-025]
 enables: [MIG-010, REL-014]
 see_also: [COM-027]
 contested: false

@@ -20,7 +20,7 @@ absence:
     note: Indigenous American populations had essentially zero prior exposure to the major Old World crowd diseases (smallpox, measles, influenza, plague) carried by the animal-dense Eurasian domestication package (see HLT-001, HLT-005) that the Americas never developed — the mortality asymmetry runs almost entirely one direction because the disease pools themselves were asymmetric, not because of any difference in general vulnerability or care.
 prereqs: [HLT-001, HLT-005]
 enables: []
-see_also: [AGR-018]
+see_also: [AGR-018, MIG-012, MIG-013]
 contested: true
 contested_note: "Whether syphilis was a genuine Columbian import to the Old World or was already present in Europe under-recognized or misdiagnosed as another disease is a long-running, unresolved historical and paleopathological dispute, with skeletal evidence cited on both sides. Model syphilis's specific origin as a coin-flip/branching event separate from the much more confidently one-directional Old-World-to-Americas crowd-disease transfer, which is not seriously disputed in its overall direction or scale."
 stats_touched: [immunological capital]
