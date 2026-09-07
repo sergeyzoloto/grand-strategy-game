@@ -4,7 +4,7 @@ title: Chronometer and Coordinates
 legacy_ref:
 domain: maritime
 domains_touched: [nature, engineering]
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: 1714
@@ -15,7 +15,7 @@ region_variants: []
 absence:
   - region: middle-east
     note: Earlier Islamic and Chinese astronomical traditions achieve highly accurate latitude determination and star-position catalogs (feeding directly into MAR-003's instrument lineage) without producing a comparable solution to the specific longitude-at-sea problem, which requires precision timekeeping rather than better astronomical observation alone — a case where a closely related but distinct technical problem stayed unsolved elsewhere despite strong adjacent capability.
-prereqs: [MAR-003]
+prereqs: [MAR-003, ENG-029]
 enables: []
 see_also: []
 contested: false

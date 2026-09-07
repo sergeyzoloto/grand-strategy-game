@@ -19,7 +19,7 @@ absence:
   - region: east-asia
     note: Imperial Japan's WWII Pacific strategy prioritizes decisive fleet battle and territorial conquest over systematic commerce protection for its own merchant marine, leaving Japan's import-dependent war economy critically exposed to Allied submarine sea-lane interdiction (MAR-024) later in the war — a doctrinal blind spot rather than a resource constraint, since Japan had the naval architecture tradition to build escort vessels had it prioritized the mission.
 prereqs: [MAR-001]
-enables: []
+enables: [MAR-037]
 see_also: []
 contested: false
 contested_note: ""

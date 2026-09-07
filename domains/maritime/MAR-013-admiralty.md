@@ -20,7 +20,7 @@ absence:
     note: Ming and Qing China administer naval affairs through the general imperial bureaucracy rather than a dedicated, specialized maritime administrative-judicial institution comparable to a European admiralty, consistent with the broader absence of sustained naval institution-building noted in MAR-005 — administrative capacity existed, but not concentrated into a maritime-specific institution.
 prereqs: [MAR-005]
 enables: []
-see_also: []
+see_also: [MAR-012]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

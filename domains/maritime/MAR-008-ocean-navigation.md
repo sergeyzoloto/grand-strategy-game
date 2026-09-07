@@ -19,7 +19,7 @@ absence:
   - region: africa
     note: Despite centuries of Indian Ocean coastal and monsoon trade participation (MAR-001), no African maritime power undertakes a comparable deliberate long-range ocean-crossing project in this era — plausibly reflecting that the existing monsoon coastal network already reached every market worth reaching from African ports, leaving little of the specific incentive (an unreached, valuable, distant market) that drove both the Chinese and Iberian voyages.
 prereqs: [MAR-003, MAR-007]
-enables: [COM-011, AGR-018]
+enables: [COM-011, AGR-018, MAR-032, MAR-036]
 see_also: []
 contested: false
 contested_note: ""

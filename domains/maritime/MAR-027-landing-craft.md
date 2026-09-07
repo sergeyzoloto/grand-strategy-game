@@ -19,7 +19,7 @@ absence:
   - region: africa
     note: Amphibious landing operations conducted in Africa in this era (North African Allied landings, 1942) are executed entirely by external powers using their own landing craft and logistics doctrine, with no African polity developing or operating independent amphibious capability of its own — the theatre is African, the capability entirely imported.
 prereqs: [MAR-017]
-enables: [MAR-028]
+enables: []
 see_also: []
 contested: false
 contested_note: ""

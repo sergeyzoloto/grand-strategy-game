@@ -22,7 +22,7 @@ absence:
   - region: east-asia
     note: Ming China's early-1400s treasure fleet (see MAR-008), despite its enormous scale, is deliberately dismantled and not maintained as a standing institution once its sponsoring faction loses court influence — a case where the technical and fiscal capacity for a powerful regular navy clearly existed but the institutional commitment to sustain it as a permanent, rather than one-off imperial, project did not.
 prereqs: [MAR-002]
-enables: [MAR-013]
+enables: [MAR-013, MAR-034]
 see_also: []
 contested: false
 contested_note: ""

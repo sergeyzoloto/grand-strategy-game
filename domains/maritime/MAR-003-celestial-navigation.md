@@ -21,7 +21,7 @@ region_variants:
 absence:
   - region: americas
     note: No comparable instrumented or systematized celestial navigation tradition develops in the pre-contact Americas at a scale supporting long-range open-ocean voyaging, consistent with MAR-001's absence case — coastal geography and trade motive existed, but the navigation technique enabling a break from coastal cabotage did not.
-prereqs: []
+prereqs: [NAT-002]
 enables: [MAR-008, MAR-009]
 see_also: []
 contested: false
