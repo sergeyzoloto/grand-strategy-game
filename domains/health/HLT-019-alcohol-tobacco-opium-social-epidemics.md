@@ -23,7 +23,7 @@ absence:
     note: Islamic legal traditions maintain a strong formal prohibition on alcohol across most of this period and region, producing a genuinely different regional consumption baseline rather than a universal human default temporarily suppressed — coffee and tobacco/qat fill much of the mild-stimulant social-institution role alcohol occupies elsewhere.
 prereqs: [HLT-018]
 enables: []
-see_also: [HLT-036]
+see_also: [HLT-036, COM-022]
 contested: false
 contested_note: ""
 stats_touched: [toxic burden]

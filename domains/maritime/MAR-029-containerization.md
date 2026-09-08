@@ -20,7 +20,7 @@ absence:
     note: Container port infrastructure investment across much of Africa lags well behind Asian, American, and European ports through this period, a specific bottleneck that constrains export-oriented manufacturing development options for economies without deep-water container terminal access in a way that mirrors, on modern container-scale infrastructure terms, the tidal-dock investment gap noted in MAR-014.
 prereqs: [MAR-014]
 enables: []
-see_also: []
+see_also: [COM-024]
 contested: false
 contested_note: ""
 stats_touched: []

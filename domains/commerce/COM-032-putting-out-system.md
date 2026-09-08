@@ -20,7 +20,7 @@ absence:
     note: Chinese household silk and textile production in this era stays organized predominantly around households owning their own raw material and selling finished goods directly into local markets, rather than around a merchant-capitalist advancing material and credit against a share of the finished output — a genuine organizational difference from putting-out, not simply a smaller-scale version of it.
 prereqs: []
 enables: []
-see_also: [COM-020, COM-021]
+see_also: [COM-020, COM-021, COM-023]
 contested: false
 contested_note: ""
 stats_touched: []

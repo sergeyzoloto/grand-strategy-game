@@ -23,7 +23,7 @@ absence:
     note: Pre-contact American coastal trade (notable cases include Pacific Northwest and Andean coastal networks) stays regionally bounded rather than developing into the kind of long-range, multi-society-connecting network seen in the Mediterranean or Indian Ocean, plausibly reflecting the absence of a comparable large-scale bulk cargo vessel and sail technology (see MAR-007) rather than any lack of coastal geography or trading impulse.
 prereqs: [MAR-030]
 enables: [MAR-004, MAR-006, MAR-011, MAR-014, MAR-015, MAR-016, MAR-022, AGR-012]
-see_also: [ENG-003]
+see_also: [ENG-003, COM-025]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]

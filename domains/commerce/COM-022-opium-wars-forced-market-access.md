@@ -17,7 +17,7 @@ absence:
     note: Opium sold into China in this period is grown and processed under British monopoly in India specifically, making South Asia the production base for the very commodity whose forced sale into China this entry covers — India's role here is as supplier within the same coercive trade system, not a comparable case of its own market being forced open by an equivalent war.
 prereqs: [COM-016]
 enables: [COM-018]
-see_also: [DIP-020, DIP-019]
+see_also: [DIP-020, DIP-019, HLT-019]
 contested: true
 contested_note: "How much the Opium Wars should be read primarily as a trade-liberalization conflict (Britain forcing open a market Qing policy had restricted) versus primarily as a drug-trafficking war (Britain fighting to preserve profits from a substance the target government was trying to ban on public-health grounds) is a live framing dispute, since both descriptions are simultaneously true of the same events and different historiographical traditions weight them very differently. Model the war's trigger as a genuine dual mechanic — market-access coercion AND protection of an addictive-substance trade (HLT-019) — rather than resolving the tension by picking one framing as the 'real' cause."
 stats_touched: []

@@ -23,7 +23,7 @@ absence:
     note: Aboriginal Australian long-distance exchange (the pituri and ochre trade networks foremost among them) moves goods across enormous distances through kinship-based ceremonial gathering rather than through any fixed, neutral marketplace institution a genuine stranger could walk up to and use — a different, equally sophisticated solution to long-distance exchange that never generates a market-as-place mechanism at all.
 prereqs: []
 enables: [COM-012, COM-013, COM-034]
-see_also: [MIG-009, COM-033]
+see_also: [MIG-009, COM-033, COM-028, COM-029]
 contested: true
 contested_note: "Whether impersonal market exchange gradually differentiated out of prior kin- and community-embedded gift-reciprocity economies (the Polanyi 'embeddedness' thesis, market exchange as a late, specialized development) or coexisted alongside kin exchange as a separate 'stranger-trade' sphere from very early on (documented 'silent trade' arrangements, where parties never meet directly and simply leave and adjust goods until both sides accept, suggest the latter) is a live, unresolved debate in economic anthropology. Model both as available, region-dependent starting configurations for how a given society first solves the stranger-trust problem, rather than assuming one universal developmental sequence every market economy passes through."
 stats_touched: [market trust radius]

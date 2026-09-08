@@ -20,7 +20,7 @@ absence:
     note: Most West African long-distance trade of this era runs through periodic markets and organized caravan trade (COM-028) rather than through permanent fixed urban shops serving daily local walk-in retail, reflecting lower sustained urban population density outside a small number of major trade termini rather than any lesser commercial sophistication.
 prereqs: [COM-027]
 enables: []
-see_also: [COM-029]
+see_also: [COM-029, COM-020, COM-023, COM-028]
 contested: false
 contested_note: ""
 stats_touched: []

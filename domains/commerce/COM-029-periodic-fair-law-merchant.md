@@ -23,7 +23,7 @@ absence:
     note: South Asian long-distance maritime trade in this era organizes substantially through continuously-operating port-city markets and resident multi-national merchant communities (the Malabar coast prominently) rather than through temporary periodic fairs — wholesale price discovery and dispute resolution happen through standing resident institutions rather than a scheduled, temporary gathering.
 prereqs: [COM-012]
 enables: []
-see_also: [COM-015, LAW-007, COM-034, LAW-017]
+see_also: [COM-015, LAW-007, COM-034, LAW-017, COM-027]
 contested: false
 contested_note: ""
 stats_touched: [contract enforcement]
