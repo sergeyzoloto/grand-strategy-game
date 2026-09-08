@@ -23,7 +23,7 @@ absence:
     note: Qing Chinese law embeds property, contract, and inheritance provisions within a single unified penal-and-civil code rather than treating private law as a separate legal category from criminal law the way the Roman and later European civil-law tradition does, achieving comparable practical coverage of the same transactions through a structurally different code architecture.
 prereqs: [LAW-001]
 enables: []
-see_also: []
+see_also: [COM-015, COM-012, COM-029, FIN-021, FIN-005]
 contested: false
 contested_note: ""
 stats_touched: []
