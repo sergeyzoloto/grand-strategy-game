@@ -22,9 +22,9 @@ But this domain also has the messiest prereq graph found in this audit series: *
 
 Three concrete absences:
 
-- **Indulgences and the economy of salvation.** Confirmed by grep: zero hits anywhere in the wiki for `indulgence|purgatory|95 theses`. This is a genuinely striking gap given `REL-016` already covers the Reformation's print-technology dimension in detail — but the actual proximate trigger for Luther's 1517 protest (the sale of indulgences, resting on a developed doctrine of purgatory and merit transfer) is nowhere covered. `REL-016` tells the story of *how* the Reformation's fragmentation spread; nothing tells the story of what actually lit the fuse.
+- **Indulgences and the economy of salvation.** Confirmed by grep: zero hits anywhere in the wiki for `indulgence|purgatory|95 theses`. This is a genuinely striking gap given `REL-016` already covers the Reformation's print-technology dimension in detail — but the actual proximate trigger for Luther's 1517 protest (the sale of indulgences, resting on a developed doctrine of purgatory and merit transfer) is nowhere covered. `REL-016` tells the story of _how_ the Reformation's fragmentation spread; nothing tells the story of what actually lit the fuse.
 - **Religious education.** Confirmed by grep: zero hits for `madrasa|yeshiva|seminary|cathedral school` outside one unrelated hit in `PHI-015` (European university scholasticism, not religious training specifically). `REL-009`'s monasticism and `NAT-005`'s translation movements both silently assume a religious-education pipeline exists somewhere; nothing owns it.
-- **The liturgical calendar.** Confirmed by grep: zero hits for `liturgical calendar|sabbath|feast day`. No entry covers how a religious tradition converts ordinary time itself into a resource-structuring device — mandated rest days, fasting periods, festival cycles — despite `REL-015`'s tithe entry already treating religious institutions as extracting a standardized share of a household's *economic* output; nothing extracts a standardized share of its *time*.
+- **The liturgical calendar.** Confirmed by grep: zero hits for `liturgical calendar|sabbath|feast day`. No entry covers how a religious tradition converts ordinary time itself into a resource-structuring device — mandated rest days, fasting periods, festival cycles — despite `REL-015`'s tithe entry already treating religious institutions as extracting a standardized share of a household's _economic_ output; nothing extracts a standardized share of its _time_.
 
 ### 3. SCALE GAP — **PASS, with a minor gap**
 
@@ -32,7 +32,7 @@ Sorting the 17: world-system (`REL-003`, `REL-014`, `REL-017`), state (`REL-006`
 
 ### 4. REVERSE-DIRECTION GAP — **FAIL**
 
-This domain spends a dozen entries building religious institutional wealth and authority — temple reserves (`REL-001`), monastic land (`REL-009`), tithe revenue (`REL-015`), cathedral capital (`REL-004`) — and never once covers a state seizing and dissolving it. Confirmed by grep: zero hits anywhere for `dissolution of the monaster|henry viii.*monaster|secularization of church`. Henry VIII's 1536-1541 Dissolution of the Monasteries, which transferred roughly a quarter of England's landed wealth out of religious institutional hands in five years, is the paradigm case and it's entirely absent — alongside comparable confiscations during the French Revolution and under 20th-century state-socialist regimes (`FIN-014`'s own command-economy entry gestures at this pattern without ever naming the religious-property angle specifically). `REL-007`'s heresy suppression is the closest existing reversal content, but it's about suppressing *belief*, not confiscating accumulated *institutional wealth* — a genuinely different mechanic.
+This domain spends a dozen entries building religious institutional wealth and authority — temple reserves (`REL-001`), monastic land (`REL-009`), tithe revenue (`REL-015`), cathedral capital (`REL-004`) — and never once covers a state seizing and dissolving it. Confirmed by grep: zero hits anywhere for `dissolution of the monaster|henry viii.*monaster|secularization of church`. Henry VIII's 1536-1541 Dissolution of the Monasteries, which transferred roughly a quarter of England's landed wealth out of religious institutional hands in five years, is the paradigm case and it's entirely absent — alongside comparable confiscations during the French Revolution and under 20th-century state-socialist regimes (`FIN-014`'s own command-economy entry gestures at this pattern without ever naming the religious-property angle specifically). `REL-007`'s heresy suppression is the closest existing reversal content, but it's about suppressing _belief_, not confiscating accumulated _institutional wealth_ — a genuinely different mechanic.
 
 ### 5. PREREQ ORPHANS — **FAIL**, three concrete bugs — the most found in any domain audited this cycle
 
@@ -61,6 +61,7 @@ The best-documented boundary discipline of any domain checked this cycle: `REL-0
 ### LOAD-BEARING (4)
 
 **1. Pre-Institutional Religion: Ancestor Cults, Shamanic Practice, and Sacred Sites**
+
 - Regions: middle-east, europe, east-asia, americas — era, roughly -20000 to -3000
 - Answers: Probe 1 (Emergence) directly
 - Mechanism: religious practice — ancestor veneration, shamanic mediation with the unseen, monumental ritual construction (Göbekli Tepe, roughly -9600, predating settled agriculture itself) — exists as a real, socially organizing force for tens of thousands of years before any institution resembling `REL-001`'s temple accumulates reserves or claims administrative trust; a distinguishable priestly or shamanic role, resting on personal spiritual reputation rather than institutional office, is the actual starting condition every later entry in this domain builds on top of.
@@ -70,6 +71,7 @@ The best-documented boundary discipline of any domain checked this cycle: `REL-0
 - Confidence: medium.
 
 **2. The Dissolution of Religious Institutions**
+
 - Regions: europe — century, roughly 1536 to 1794
 - Answers: Probe 4 (Reverse-direction) directly, and finally gives `religious authority` a genuine depleting-pool framing
 - Mechanism: a state with sufficient administrative and military capacity can seize and redistribute a religious institution's accumulated land, reserves, and authority in a single deliberate act — Henry VIII's 1536-1541 Dissolution of the Monasteries (transferring roughly a quarter of England's landed wealth out of monastic hands) is the paradigm case, with the French Revolution's civil confiscation of church property (from 1789) as a second, differently-motivated instance — converting centuries of accumulated institutional wealth (`REL-001`, `REL-009`) into secular state or private assets essentially overnight.
@@ -79,6 +81,7 @@ The best-documented boundary discipline of any domain checked this cycle: `REL-0
 - Confidence: high.
 
 **3. Indulgences, Purgatory, and the Economy of Salvation**
+
 - Regions: europe — era, roughly 1200 to 1567
 - Answers: Probe 2 (Substrate) directly — the actual trigger `REL-016` never names
 - Mechanism: a developed doctrine of purgatory (a temporary post-death purification a living person's actions, including purchased indulgences, could shorten) converts spiritual merit into a good the church can sell directly, generating a durable revenue stream and an increasingly commercialized relationship between the institution and lay salvation anxiety — the specific practice (the 1517 indulgence campaign funding St. Peter's Basilica) that provokes Luther's protest, which `REL-016` then tracks the print-driven spread of.
@@ -88,6 +91,7 @@ The best-documented boundary discipline of any domain checked this cycle: `REL-0
 - Confidence: high.
 
 **4. Religious Education: Madrasas, Yeshivas, and Cathedral Schools**
+
 - Regions: middle-east, europe, south-asia — era, roughly 700 to 1500
 - Answers: Probe 2 (Substrate) directly
 - Mechanism: a dedicated institution for training clergy, jurists, and scholars in religious learning — the madrasa, the yeshiva, the cathedral school — converts religious knowledge transmission from informal apprenticeship into a systematic, credentialing pipeline, the same underlying mechanism `LAW-004`'s examination bureaucracy later applies to secular administration and `NAT-005`'s translation movements silently assume already exists to train the scholars doing the translating.
@@ -99,7 +103,7 @@ The best-documented boundary discipline of any domain checked this cycle: `REL-0
 ### VALUABLE (3)
 
 **5. The Liturgical Calendar and Sacred Time**
-Regions: middle-east, europe, south-asia. Era, roughly -600 to 1600. Answers Probe 2 with a mechanism distinct from `REL-015`'s revenue extraction: a religious tradition converts ordinary time itself into a structured resource — mandated rest days, fasting periods (Ramadan), festival cycles — extracting a standardized share of a household's *time* the way `REL-015` extracts a share of its *income*. Hook: a modifier that structures economic and social rhythm independent of any state labor policy, distinct from and prior to the work-discipline mechanics covered elsewhere in this record. Prereqs: none. Contested: false. Confidence: high.
+Regions: middle-east, europe, south-asia. Era, roughly -600 to 1600. Answers Probe 2 with a mechanism distinct from `REL-015`'s revenue extraction: a religious tradition converts ordinary time itself into a structured resource — mandated rest days, fasting periods (Ramadan), festival cycles — extracting a standardized share of a household's _time_ the way `REL-015` extracts a share of its _income_. Hook: a modifier that structures economic and social rhythm independent of any state labor policy, distinct from and prior to the work-discipline mechanics covered elsewhere in this record. Prereqs: none. Contested: false. Confidence: high.
 
 **6. Relic Veneration and the Cult of Saints**
 Regions: europe, middle-east. Era, roughly 300 to 1500. Answers Probe 6 with a mechanism distinct from `REL-005`'s traffic-justifies-infrastructure logic: a relic (a saint's body part, a sacred object) functions as a scarce, non-fungible prestige good institutions compete to acquire, display, and defend the authenticity of — driving inter-institutional rivalry and outright relic theft or forgery in a way ordinary pilgrimage traffic alone doesn't generate. Hook: a modifier — a scarce sacred-object economy distinct from the traffic-volume logic `REL-005` already owns. Prereqs: `REL-005`. Contested: false. Confidence: high.
@@ -130,7 +134,7 @@ None found. `REL-007` bundles iconoclasm, heresy prosecution, and holy war under
 ### RE-DOMAIN
 
 - **`REL-002`**: remove `NAT-005` from `prereqs` (Part A, Probe 5) — no salvageable relationship identified.
-- **`REL-003`** and **`REL-002`**: the dependency direction is backward. `REL-003`'s own Social-consequence section already argues universalism *drives* canon-fixation elaboration ("directly driving canon-fixation... specifically in traditions that make this move"), and `REL-003` (`date_start: -500`) chronologically precedes `REL-002` (`date_start: -250`). Recommend swapping: `REL-003.enables` should include `REL-002`, not the reverse.
+- **`REL-003`** and **`REL-002`**: the dependency direction is backward. `REL-003`'s own Social-consequence section already argues universalism _drives_ canon-fixation elaboration ("directly driving canon-fixation... specifically in traditions that make this move"), and `REL-003` (`date_start: -500`) chronologically precedes `REL-002` (`date_start: -250`). Recommend swapping: `REL-003.enables` should include `REL-002`, not the reverse.
 - **`REL-013`**: remove `LAW-011` from `prereqs` — no salvageable relationship identified.
 - **`REL-017`**: move `REL-013` from `prereqs` to `see_also` — a mirror/contrast relationship, not a chronological dependency.
 - **`REL-010`**: adjust `date_start` (and its americas region_variant) to align with its `MIG-013` prereq rather than precede it by 16-26 years.
@@ -140,7 +144,7 @@ None found. `REL-007` bundles iconoclasm, heresy prosecution, and holy war under
 
 ### RETIER
 
-**`REL-008` (Investiture Controversy): core → standard.** Single-region (`europe` only, with the Byzantine case handled entirely as an absence contrast rather than a second real region), `enables: []`, and a narrow eleven-year window (1075-1122) — structurally identical to `MAR-009` and `FIN-009`, both retiered earlier this cycle for the same shape: a real, well-documented, single-lineage institutional episode without the comparative breadth most of this domain's other `core` entries carry.
+**REL-008 (Investiture Controversy): core → standard.** Single-region (`europe` only, with the Byzantine case handled entirely as an absence contrast rather than a second real region), `enables: []`, and a narrow eleven-year window (1075-1122) — structurally identical to `MAR-009` and `FIN-009`, both retiered earlier this cycle for the same shape: a real, well-documented, single-lineage institutional episode without the comparative breadth most of this domain's other `core` entries carry.
 
 Not touching the other 16: even the domain's other narrow entries (`REL-010`, `REL-015`) carry genuine multi-region comparative texture `REL-008` lacks.
 

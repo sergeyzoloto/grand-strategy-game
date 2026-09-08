@@ -120,9 +120,9 @@ Regions: global. Decade, from 2009. A currency with no state backing and no cent
 
 ### SPLIT
 
-**`FIN-011` (Paper Money and International Monetary Regimes) — recommended.** The entry's own Mechanism section explicitly flags the seam: "once multiple states issue their own paper currencies, an _additional_ coordination problem emerges," and its own Hook calls the international-regime piece "a genuinely separate, additional mechanic layered on top." That's the split test naming itself. Recommend:
+**FIN-011 (Paper Money and International Monetary Regimes) — recommended.** The entry's own Mechanism section explicitly flags the seam: "once multiple states issue their own paper currencies, an _additional_ coordination problem emerges," and its own Hook calls the international-regime piece "a genuinely separate, additional mechanic layered on top." That's the split test naming itself. Recommend:
 
-- **`FIN-011` retained**: Paper Money and Fiat Currency — state-issued currency backed by trust and legal mandate rather than commodity value (806 onward), ending around the point Bretton Woods formalizes international coordination.
+- **FIN-011 retained**: Paper Money and Fiat Currency — state-issued currency backed by trust and legal mandate rather than commodity value (806 onward), ending around the point Bretton Woods formalizes international coordination.
 - **New entry**: International Monetary Coordination (Bretton Woods and Successors) — the specific institutional framework for pegging and coordinating multiple sovereign paper currencies against each other and against gold, 1944 onward, prereqing the retained `FIN-011` and enabling `FIN-018` directly rather than through it.
 
 ### MERGE
@@ -138,7 +138,7 @@ Regions: global. Decade, from 2009. A currency with no state backing and no cent
 
 ### RETIER
 
-**`FIN-009` (Limited Liability): core → standard.** The entry's own evidentiary base is narrow by this domain's standards — two regions carry real content (Europe, the Americas), the third (`south-asia`) is a pure colonial-import absence note, and `enables` extends only to `FIN-013`. This is structurally the same shape as `MAR-009` (Chronometer), retiered in an earlier audit this cycle for the identical reason: a real, well-documented, single-lineage Western legal innovation without the comparative breadth most of this domain's other `core` entries carry.
+**FIN-009 (Limited Liability): core → standard.** The entry's own evidentiary base is narrow by this domain's standards — two regions carry real content (Europe, the Americas), the third (`south-asia`) is a pure colonial-import absence note, and `enables` extends only to `FIN-013`. This is structurally the same shape as `MAR-009` (Chronometer), retiered in an earlier audit this cycle for the identical reason: a real, well-documented, single-lineage Western legal innovation without the comparative breadth most of this domain's other `core` entries carry.
 
 Not touching the other 18: even the domain's other `enables: []` entries (`FIN-003`, `FIN-013`, `FIN-014`, `FIN-015`, `FIN-017`, `FIN-019`) each supply a mechanism nothing else in the domain provides and carry genuine multi-region comparative texture, the same standard applied throughout this audit cycle.
 
