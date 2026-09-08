@@ -20,7 +20,7 @@ absence:
     note: Delphi's temple treasury, while wealthy and politically influential across the Greek world, operates at a much smaller and more narrowly ritual-focused economic scale than the Mesopotamian or South Indian cases — a temple that accumulates and safeguards wealth (functioning as a pan-Hellenic bank of sorts) without becoming a major direct agricultural landholder and employer the way its Near Eastern and Indian counterparts do.
 prereqs: [FIN-001, REL-018]
 enables: [REL-009, REL-020]
-see_also: [REL-019, REL-025]
+see_also: [REL-019, REL-025, FIN-008]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

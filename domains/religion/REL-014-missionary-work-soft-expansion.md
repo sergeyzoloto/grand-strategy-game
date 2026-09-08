@@ -20,7 +20,7 @@ absence:
     note: Jesuit missionaries in Ming and Qing China (Matteo Ricci prominent among them) pursue a deliberate top-down accommodation strategy — mastering Confucian classical learning and court etiquette to gain access to and influence the imperial court and scholar-official elite specifically — achieving real but ultimately limited and precarious conversion reach, contained by an ongoing Rites Controversy over how much Chinese ritual practice a convert could retain, before the mission's influence collapses following papal rejection of that same accommodation.
 prereqs: [REL-002, REL-003]
 enables: []
-see_also: [MIG-009]
+see_also: [MIG-009, REL-021]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

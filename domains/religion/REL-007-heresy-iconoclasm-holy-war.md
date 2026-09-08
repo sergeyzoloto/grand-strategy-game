@@ -20,7 +20,7 @@ absence:
     note: Tang-era China's periodic large-scale suppressions of Buddhism (most severely in 845) are driven substantially by state fiscal interest in reclaiming tax-exempt monastic land and metal temple property rather than by doctrinal heresy-prosecution in the Christian or Islamic sectarian sense — persecution here serves state revenue extraction more than internal orthodoxy enforcement.
 prereqs: [REL-002, REL-006]
 enables: []
-see_also: []
+see_also: [REL-016, REL-025]
 contested: true
 contested_note: "Whether campaigns against heresy, iconoclasm, and religiously-framed warfare are best understood as driven primarily by genuine theological conviction, or substantially by political and economic interest (land confiscation, elite power consolidation, state revenue) using religious framing as justification, is disputed case by case among historians, with the Chinese Buddhist suppressions and several European cases both showing real evidence for economic motivation running alongside stated doctrinal concern. Model each case as combining both a genuine-conviction component and a material-interest component in a case-specific ratio, rather than assuming pure doctrinal zeal or pure cynical pretext applies uniformly."
 stats_touched: [religious authority]

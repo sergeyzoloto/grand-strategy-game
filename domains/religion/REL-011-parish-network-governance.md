@@ -20,7 +20,7 @@ absence:
     note: Not every European territory achieved comparably complete parish-based registration by the same date — coverage, record quality, and how consistently the parish network was actually used for civil administration varied significantly between wealthier, more centralized states and poorer or more fragmented ones well into the early modern period.
 prereqs: [REL-004]
 enables: []
-see_also: []
+see_also: [REL-024, REL-026]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

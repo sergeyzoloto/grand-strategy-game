@@ -20,7 +20,7 @@ absence:
     note: Sustained Ottoman resistance to movable-type printing of Arabic-script religious material (already covered for its mechanical side in ENG-006) means the mass-vernacular-scripture-access condition this entry's mechanism depends on simply doesn't arise here in this era at all — not a case of print access failing to produce fragmentation, but of the enabling condition itself remaining absent.
 prereqs: [HLT-013, ENG-006, REL-020]
 enables: []
-see_also: []
+see_also: [REL-002, REL-006, REL-007, REL-008]
 contested: true
 contested_note: "How much the Protestant Reformation's institutional fragmentation should be attributed causally to vernacular print access itself (letting ordinary believers read and interpret scripture without clerical mediation) versus to pre-existing political, economic, and theological pressures that print merely accelerated or amplified is disputed among historians of the Reformation. Model print access as a necessary enabling condition for the specific form and speed the fragmentation took, without treating it as a sufficient or sole cause of a schism whose underlying pressures substantially predate the printing press itself."
 stats_touched: [religious authority]

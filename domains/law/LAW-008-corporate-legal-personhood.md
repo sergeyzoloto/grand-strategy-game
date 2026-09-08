@@ -20,7 +20,7 @@ absence:
     note: Chinese legal tradition in this era has no direct equivalent to the artificial-legal-person concept applied this broadly — temples, guilds, and lineage organizations hold and manage collective property through custom, trust relationships, and family/clan structures rather than through a formal legal category treating the organization itself as a rights-and-obligations-bearing entity distinct from its members.
 prereqs: [LAW-001, LAW-020]
 enables: [FIN-006]
-see_also: [COM-016]
+see_also: [COM-016, REL-009]
 contested: false
 contested_note: ""
 stats_touched: []

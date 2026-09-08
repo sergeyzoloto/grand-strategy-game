@@ -20,7 +20,7 @@ absence:
     note: Mughal administrative recruitment relies substantially more on personal patronage networks, hereditary service families (particularly among the Rajput and other allied elites), and direct imperial appointment than on standardized competitive examination, achieving administrative capacity through a structurally different recruitment logic than the Chinese model.
 prereqs: [LAW-001]
 enables: []
-see_also: [PHI-016, LAW-005, LAW-006, LAW-017]
+see_also: [PHI-016, LAW-005, LAW-006, LAW-017, REL-021]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

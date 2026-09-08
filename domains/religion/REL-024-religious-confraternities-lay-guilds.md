@@ -20,7 +20,7 @@ absence:
     note: Comparable formally-organized lay devotional associations are less institutionally prominent in this era's East Asian religious practice relative to Europe and the Middle East, with lay charitable and mutual-aid function instead running substantially through kinship and lineage-based organization (clan associations, ancestral halls) rather than through a voluntary religious confraternity structured around shared devotional practice specifically.
 prereqs: [REL-009]
 enables: []
-see_also: []
+see_also: [REL-011]
 contested: false
 contested_note: ""
 stats_touched: []

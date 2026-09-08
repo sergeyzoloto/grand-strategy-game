@@ -17,7 +17,7 @@ absence:
     note: Byzantine caesaropapism resolves the equivalent underlying question — who ultimately controls church appointment and doctrine, religious or secular authority — in the opposite direction from the eventual Latin compromise, with the emperor holding real, sustained authority over patriarchal appointment and church governance rather than the two authorities existing as separate, rival power centers contesting the same jurisdiction.
 prereqs: [REL-004]
 enables: []
-see_also: []
+see_also: [REL-016]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

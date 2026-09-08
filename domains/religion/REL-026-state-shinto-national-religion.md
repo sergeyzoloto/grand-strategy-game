@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [REL-013]
 enables: []
-see_also: [PHI-025]
+see_also: [PHI-025, REL-011]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

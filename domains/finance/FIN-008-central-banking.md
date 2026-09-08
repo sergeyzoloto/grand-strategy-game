@@ -20,7 +20,7 @@ absence:
     note: The Ottoman Bank, founded in 1856 with substantial British and French capital and management, functions more as a foreign-controlled state-finance and currency-issuing instrument serving external creditors' interests than as an independent domestic monetary authority — a nominally central-bank-like institution whose actual function and loyalties diverge sharply from the domestically-controlled model this entry otherwise describes.
 prereqs: [FIN-001]
 enables: [FIN-010, FIN-023]
-see_also: [FIN-021]
+see_also: [FIN-021, REL-001]
 contested: false
 contested_note: ""
 stats_touched: [sovereign credit capacity]

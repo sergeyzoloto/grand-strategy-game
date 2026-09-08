@@ -20,7 +20,7 @@ absence:
     note: Islamic zakat, already covered in this record's law domain as a welfare-parallel institution (LAW-015), operates on a fixed calculated percentage of qualifying wealth directed substantially toward specified categories of need rather than general church operating revenue — the same basic mandatory-religious-levy mechanism this entry covers, but purposed primarily toward redistribution rather than institutional maintenance.
 prereqs: [FIN-001]
 enables: []
-see_also: [LAW-015, REL-022]
+see_also: [LAW-015, REL-022, REL-020]
 contested: false
 contested_note: ""
 stats_touched: []

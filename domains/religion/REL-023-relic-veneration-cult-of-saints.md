@@ -20,7 +20,7 @@ absence:
     note: Buddhist relic veneration (the Buddha's own cremated remains, distributed and enshrined across multiple stupas from a very early date) develops a comparable sacred-object economy, but East Asian Buddhist institutions generally show less of the documented outright relic forgery and competitive theft dynamic than medieval European Christendom's more institutionally fragmented and competitively organized shrine network.
 prereqs: []
 enables: []
-see_also: [REL-005]
+see_also: [REL-005, REL-016]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

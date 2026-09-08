@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [REL-009]
 enables: []
-see_also: [REL-001, REL-019]
+see_also: [REL-001, REL-019, REL-007]
 contested: false
 contested_note: ""
 stats_touched: []

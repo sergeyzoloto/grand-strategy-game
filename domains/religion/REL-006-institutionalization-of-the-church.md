@@ -20,7 +20,7 @@ absence:
     note: Many African traditional religions organize around individual shrines, diviners, and lineage-specific ancestor cults with priestly authority resting on personal spiritual capacity and community recognition rather than institutional office — decentralization here isn't a failure to centralize but the durable normal state, persisting alongside, rather than preceding, later centralized Christian and Islamic institutions introduced from outside.
 prereqs: [REL-002]
 enables: [REL-007, REL-013]
-see_also: []
+see_also: [REL-016]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

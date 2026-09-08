@@ -17,7 +17,7 @@ absence:
     note: Islamic theology has no equivalent doctrine of a temporary, purgeable post-death intermediate state whose duration a living person's purchased actions can directly shorten — intercessory prayer and charitable giving carry spiritual merit, but not through a comparable formalized, calculable, and directly saleable mechanism tied to a specific afterlife stage.
 prereqs: [REL-001]
 enables: [REL-016]
-see_also: []
+see_also: [REL-015]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]
