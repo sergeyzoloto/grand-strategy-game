@@ -23,7 +23,7 @@ absence:
     note: Andean terracing and canal irrigation (developed independently, reaching sophisticated scale under the Inca and predecessor cultures) achieves comparable agricultural water-management function without wheeled-vehicle transport or draft-animal-scale earth-moving equipment, relying instead on organized mass labor mobilization — a materially different engineering toolkit reaching a functionally similar outcome.
 prereqs: [ENG-028]
 enables: [ENG-011, AGR-005]
-see_also: [ENG-012, ENG-031]
+see_also: [ENG-012, ENG-031, AGR-028]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -20,7 +20,7 @@ absence:
     note: Northern Chinese wheat-and-millet dry farming never converts to wet-rice paddy cultivation at any point in this record — the two agricultural systems remain geographically and technologically distinct within China itself, with the Champa-rice-driven intensification described here confined specifically to the wet-rice-suitable Yangzi valley and points south.
 prereqs: [AGR-001]
 enables: []
-see_also: [AGR-005]
+see_also: [AGR-005, FIN-001]
 contested: false
 contested_note: ""
 stats_touched: [yield ceiling]

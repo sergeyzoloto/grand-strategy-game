@@ -17,7 +17,7 @@ absence:
     note: Mediterranean and Middle Eastern dry farming continues relying on the lighter ard (AGR-007) rather than adopting the heavy mouldboard plow, since the region's thinner, lighter, often drought-stressed soils don't reward the heavier plow's soil-inverting action the way northern Europe's heavier, wetter clay soils do — a case where a technology's absence reflects poor local fit rather than any lag in adoption.
 prereqs: [AGR-007]
 enables: [AGR-016, AGR-020]
-see_also: [ENG-011]
+see_also: [ENG-011, AGR-008, AGR-009, AGR-019]
 contested: true
 contested_note: "Historian Lynn White Jr.'s influential thesis bundling the heavy mouldboard plow, the padded horse collar, and three-field crop rotation into one coherent 'medieval agricultural revolution' package that directly causes northern Europe's post-9th-century population growth and economic takeoff has been substantially revised by later medievalists, who argue the three technologies diffused on more independent regional timelines than White's package implies and that population growth's causes were more multiply-determined (climate amelioration, reduced Viking-era disruption, expanding cultivated area) than a clean single technological package explains. Model the three technologies as mutually reinforcing where they do co-occur, while treating their tight bundling into one unified causal package, and that package's sufficiency to explain the population and yield growth on its own, as contested rather than settled."
 stats_touched: [yield ceiling]

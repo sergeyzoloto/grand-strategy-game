@@ -20,7 +20,7 @@ absence:
     note: Chinese and Japanese silk-weaving technique reaches high sophistication using drawloom and other pattern-weaving mechanisms considerably earlier than European mechanized power looms, but stays within a hand- or foot-powered mechanical paradigm rather than developing the water- or steam-powered mechanization this entry's core timeline covers — mechanical ingenuity without the power-source leap.
 prereqs: []
 enables: []
-see_also: [COM-021, COM-023, ENG-002]
+see_also: [COM-021, COM-023, ENG-002, AGR-016]
 contested: false
 contested_note: ""
 stats_touched: []

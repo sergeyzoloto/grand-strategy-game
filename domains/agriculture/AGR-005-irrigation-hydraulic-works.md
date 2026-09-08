@@ -20,7 +20,7 @@ absence:
     note: Egyptian Nile agriculture relies on the river's predictable annual flood cycle for natural irrigation rather than requiring the same scale of constructed canal and reservoir infrastructure Mesopotamia, South Asia, or China invest in — comparable irrigated-agriculture yield achieved through a favorable natural hydrology substituting for constructed hydraulic capital, not a less-developed version of the same system.
 prereqs: [ENG-001]
 enables: [AGR-010, AGR-012, AGR-022, COM-031]
-see_also: [AGR-011, ENG-031]
+see_also: [AGR-011, ENG-031, FIN-001, REL-001, AGR-019, AGR-026, AGR-028]
 contested: true
 contested_note: "Karl Wittfogel's 'hydraulic despotism' thesis — that large-scale irrigation dependency causally produces centralized, despotic state control, since whoever administers the water administers survival itself — is influential but disputed among historians and archaeologists, with counter-cases (irrigation systems managed by decentralized communal or village-level institutions rather than centralized state bureaucracy) documented in multiple regions. Model irrigation-driven water-rights concentration as a real, tracked lever of control, but let whether that control centralizes at state or communal/local level be a separate variable set by prior institutional context, not an automatic consequence of irrigation scale alone."
 stats_touched: [yield ceiling]

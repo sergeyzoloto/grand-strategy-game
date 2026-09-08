@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: americas
     note: Indigenous American populations had essentially zero prior exposure to the major Old World crowd diseases (smallpox, measles, influenza, plague) carried by the animal-dense Eurasian domestication package (see HLT-001, HLT-005) that the Americas never developed — the mortality asymmetry runs almost entirely one direction because the disease pools themselves were asymmetric, not because of any difference in general vulnerability or care.
-prereqs: [HLT-001, HLT-005]
+prereqs: [HLT-001, HLT-005, AGR-003]
 enables: []
 see_also: [AGR-018, MIG-012, MIG-013, HLT-034]
 contested: true

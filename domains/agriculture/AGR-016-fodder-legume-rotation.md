@@ -17,7 +17,7 @@ absence:
     note: Chinese agriculture had sustained intensive crop rotation and organic-fertilization (manure, night-soil, green manure, AGR-023) practice for centuries before this era's British innovations, at a level of labor-intensive sophistication Western agronomists of the period themselves frequently noted and admired — the "British Agricultural Revolution" framing understates that comparably intensive nutrient-cycling agriculture was already long-established practice elsewhere, arrived at through a different institutional and demographic path (much higher labor availability per unit of land).
 prereqs: [AGR-013, AGR-023]
 enables: []
-see_also: [ENG-012, AGR-027]
+see_also: [ENG-012, AGR-027, COM-023, ENG-007, AGR-020, AGR-024, AGR-026]
 contested: true
 contested_note: "Whether the traditionally-cited 'British Agricultural Revolution' improvement (Turnip Townshend's fodder-crop and legume rotation specifically) represents a genuinely sharp, datable productivity break from earlier practice, or is better understood as a slower, more continuous intensification with earlier roots that later agricultural historians retrospectively packaged into one revolutionary moment for narrative convenience, is disputed among agricultural historians, with revisionist work pointing to earlier, less celebrated instances of comparable rotation practice. Model the yield gain as real and datable to this broad era, while treating the 'sharp revolutionary break versus gradual continuous improvement' framing question as open rather than settled."
 stats_touched: [soil fertility]

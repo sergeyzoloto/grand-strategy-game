@@ -20,7 +20,7 @@ absence:
     note: Sub-Saharan Africa's tsetse-constrained domesticate roster (AGR-002) limits both the containment infrastructure (AGR-024) and the accumulated breeding-population scale that programmatic selective breeding of the Bakewell type depends on, capping this entry's mechanism at the same ecological ceiling that already constrains livestock domestication and secondary-products intensity across much of the continent.
 prereqs: [AGR-024]
 enables: []
-see_also: [AGR-002, AGR-016]
+see_also: [AGR-002, AGR-016, AGR-001]
 contested: true
 contested_note: "Robert Bakewell's own specific claimed breeding achievements and methods were substantially mythologized by contemporaries and later agricultural writers — modern historical reassessment finds his documented results less dramatic and less methodologically systematic than the popular 'father of scientific breeding' narrative credits him with, though the underlying shift toward deliberate, records-based livestock selection in this era is genuine and not itself in serious dispute. Model the underlying practice (deliberate, repeatable selection for specific traits) as real and datable to this era, while treating Bakewell's own personal centrality and the scale of his specific documented results as a separately contested, likely overstated claim."
 stats_touched: []

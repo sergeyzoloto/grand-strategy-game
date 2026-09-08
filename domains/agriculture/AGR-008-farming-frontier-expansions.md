@@ -20,7 +20,7 @@ absence:
     note: Bantu-speaking farming populations expanding across sub-Saharan Africa (MIG-002) combine swidden cultivation with ironworking and gradual disease-ecology adaptation moving through highly varied terrain and rainfall regimes — a slower-advancing, more technologically bundled frontier process than the Fertile-Crescent-to-Europe demic wave, reflecting the additional adaptation the swidden-and-iron package itself required at each new ecological zone crossed.
 prereqs: [AGR-001]
 enables: [AGR-009]
-see_also: [MIG-002, MIG-005, AGR-009, AGR-026]
+see_also: [MIG-002, MIG-005, AGR-009, AGR-026, AGR-013, AGR-020]
 contested: true
 contested_note: "Whether swidden/shifting cultivation should be modeled primarily as a soil-fertility-management technique appropriate to specific forest ecologies, or as inherently a frontier-expansion-driving practice that exhausts land and forces continual outward movement, is disputed — the same technique reads as sustainable steady-state farming at a long enough fallow cycle and low enough population density, and as a frontier-consuming practice at a short fallow cycle under population pressure. Model swidden cultivation's soil-fertility consequence as fallow-cycle-length-dependent rather than assuming the practice is inherently either sustainable or frontier-driving."
 stats_touched: [soil fertility]

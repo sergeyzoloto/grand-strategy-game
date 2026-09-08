@@ -20,7 +20,7 @@ absence:
     note: Communal and lineage-based land-tenure systems across much of precolonial sub-Saharan Africa don't generate an equivalent enclosure movement, since land rights vested in a kin-group or community rather than in an individual titleholder can't be individually fenced off and privatized the same way an English commoner's traditional-use rights over shared land could be legally extinguished — a structurally different starting tenure regime that closes off the specific enclosure mechanism entirely, not merely delays it.
 prereqs: [AGR-013]
 enables: []
-see_also: [LAW-005, AGR-015, AGR-025, AGR-024]
+see_also: [LAW-005, AGR-015, AGR-025, AGR-024, AGR-008, AGR-016, MIG-005, AGR-021]
 contested: true
 contested_note: "Whether enclosure's net effect on the dispossessed rural population was primarily positive (freeing labor for the more productive commercial agriculture and, later, urban industrial employment that a growing population needed, per the classic economic-efficiency reading) or primarily negative (breaking a customary subsistence safety net and communal-use rights with inadequate compensation, per the social-history 'world we have lost' reading, associated with E.P. Thompson among others) is a long-running historiographical dispute. Model enclosure as raising land's commercial `yield ceiling` while separately, and with a genuinely contested net welfare sign, displacing customary-use rights the dispossessed population had no formal legal title to but had long depended on."
 stats_touched: [yield ceiling]

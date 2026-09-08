@@ -20,7 +20,7 @@ absence:
     note: Hoe-based, human-labor cultivation (rather than animal-traction plow farming) remains the dominant pattern across most of sub-Saharan Africa through this era, shaped substantially by the tsetse-belt constraint on draft-animal viability (AGR-002) — the region's characteristic agricultural gender division of labor (women's central role in hoe cultivation, well documented across many African farming societies) developing on a structurally different technological base than the plow-adjacent pattern described below, not a delayed version of it.
 prereqs: [AGR-002]
 enables: [AGR-013, AGR-021]
-see_also: [LAW-002]
+see_also: [LAW-002, AGR-019, AGR-028]
 contested: true
 contested_note: "Ester Boserup's influential thesis — that the shift from hoe-based to plow/ard-based cultivation systematically shifts field labor toward men (plowing requires more upper-body strength and is harder to combine with simultaneous childcare than hoeing) and durably restructures the sexual division of agricultural labor in plow-adopting societies — is supported by cross-cultural correlational evidence but disputed on causal mechanism and on how much later social and legal structure actually traces back to this specific technological shift versus other contributing factors. Model plow adoption as correlated with, and a plausible contributing cause of, a shift toward more male-concentrated field labor, while treating the strength of that causal link, versus other contributing social factors, as itself contested rather than established."
 stats_touched: []

@@ -19,8 +19,8 @@ absence:
   - region: americas
     note: The Andean and Mesoamerican domesticate rosters (llama, alpaca, guinea pig, turkey, dog) are both smaller and composed of species with comparatively low zoonotic-reservoir potential relative to Old World cattle, pigs, and fowl, which is a substantial part — alongside the Old World's older, larger, more continuously-interconnected human population — of why the pre-contact Americas never generate a crowd-disease reservoir remotely comparable in scale to Eurasia's (HLT-017's asymmetry traces back directly to this domesticate-roster difference).
 prereqs: [AGR-002]
-enables: []
-see_also: [HLT-001, HLT-002]
+enables: [HLT-017]
+see_also: [HLT-001, HLT-002, AGR-023]
 contested: true
 contested_note: "The popular thesis that Eurasia's specific mix of domesticable large mammals mechanically explains its comparatively disease-reservoir-rich crowd-disease profile (most prominently associated with Jared Diamond's Guns, Germs, and Steel) is challenged by historians and epidemiologists who argue it understates the independent roles of population density, settlement duration, and inter-regional contact frequency in generating a disease reservoir, and that several proposed livestock-to-human disease jumps are less well-documented than the popular version suggests. Model domesticate-species roster as one real, contributing input to zoonotic reservoir risk (per HLT-001's general mechanism) rather than as the single sufficient explanation for regional crowd-disease asymmetry."
 stats_touched: []

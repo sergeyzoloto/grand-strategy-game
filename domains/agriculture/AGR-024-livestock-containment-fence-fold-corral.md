@@ -23,7 +23,7 @@ absence:
     note: Open-range, transhumant herding without fixed containment infrastructure remains dominant across much of pastoralist Africa through this era, consistent with the mobility-centered pastoral strategies AGR-014 already describes — a structural continuity with the region's characteristic land-use pattern rather than a missed opportunity, since fixed containment offers little advantage to herds whose whole strategy depends on following seasonal pasture rather than staying put.
 prereqs: [AGR-002]
 enables: [AGR-027]
-see_also: [AGR-014, AGR-020]
+see_also: [AGR-014, AGR-020, AGR-016]
 contested: false
 contested_note: ""
 stats_touched: [soil fertility]

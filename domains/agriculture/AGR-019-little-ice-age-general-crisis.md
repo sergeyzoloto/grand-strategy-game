@@ -23,7 +23,7 @@ absence:
     note: The Little Ice Age's cooling signal and associated agrarian stress is far less consistently documented across sub-Saharan Africa than across contemporary Eurasia, plausibly reflecting a genuine climatic asymmetry (temperate-zone cooling mattering less to tropical and subtropical agricultural systems) as much as a thinner surviving documentary and paleoclimatic record for the region in this specific period.
 prereqs: []
 enables: []
-see_also: [AGR-018]
+see_also: [AGR-018, AGR-005, AGR-007, AGR-013, AGR-016]
 contested: true
 contested_note: "The 'General Crisis of the seventeenth century' thesis — that a roughly synchronized cluster of wars, revolts, and state breakdowns across mid-17th-century Eurasia (the Thirty Years' War, the English Civil War, the Ming-Qing transition, Ottoman provincial unrest) shares a common underlying climatic and agrarian cause in Little Ice Age cooling and harvest failure — is influential but disputed among historians, who differ on how much explanatory weight to give a shared climatic trigger versus region-specific political, fiscal, and dynastic causes that would very plausibly have produced crises even absent the climate stress. Model harvest-failure frequency as genuinely elevated by Little Ice Age cooling across the affected regions (a real, trackable agricultural input), while treating the climate trigger's sufficiency to explain each specific regional political crisis, versus locally-specific contributing causes, as contested."
 stats_touched: [yield ceiling]
