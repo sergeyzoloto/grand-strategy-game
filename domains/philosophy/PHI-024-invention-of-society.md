@@ -18,7 +18,7 @@ region_variants:
 absence: []
 prereqs: [PHI-019]
 enables: []
-see_also: [PHI-005, HLT-024]
+see_also: [PHI-005, HLT-024, DIP-006, PHI-025]
 contested: true
 contested_note: "Whether Ubuntu represents a continuous ancient Southern African philosophical tradition retrospectively articulated in the 20th century, or is substantially a modern (particularly post-apartheid, reconciliation-era) political-philosophical construction projected onto older, less systematized communal ethical practices, is genuinely debated among Africanist philosophers, with serious scholars (e.g. Bernard Matolino) pushing back on stronger continuity claims. Model Ubuntu as a real, philosophically serious relational-personhood framework with a specific, datable 20th-century systematization, while treating claims about its precise depth of unbroken historical continuity as a separate, contested question — the same handling this project gives the Westphalian-sovereignty and kokutai 'invented tradition' cases."
 stats_touched: []

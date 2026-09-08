@@ -17,7 +17,7 @@ absence:
     note: Aristotelian virtue ethics reaches a comparable conclusion — that good character is built through habituated practice rather than abstract rule-following or a single act of rational insight — but arrives there through analysis of rational deliberation and habituation toward a mean, not through li's specific vocabulary of ritual propriety performed within concrete social roles (parent-child, ruler-subject, elder-younger).
 prereqs: [PHI-001]
 enables: [PHI-016]
-see_also: [PHI-007, PHI-008, PHI-009, PHI-032]
+see_also: [PHI-007, PHI-008, PHI-009, PHI-032, PHI-029, PHI-035]
 contested: true
 contested_note: "Whether li is best understood as externally-imposed ritual conformity functioning mainly as social control, or as a practice whose repeated performance genuinely cultivates and internalizes the virtue (ren, humaneness) it expresses — the two readings imply very different accounts of how Confucian ethical formation actually works, and this reading dispute runs through the whole history of Confucian scholarship and its interpreters. Model li as functioning as social control only when disconnected from any internalized ren, and as genuine habitus-formation when the practice and the cultivated disposition remain linked — a conditional the two readings each treat as the only case."
 stats_touched: [habitus formation]

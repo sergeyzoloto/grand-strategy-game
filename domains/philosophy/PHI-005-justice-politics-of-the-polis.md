@@ -18,7 +18,7 @@ region_variants:
 absence: []
 prereqs: [PHI-003]
 enables: [PHI-010, PHI-013]
-see_also: [LAW-002, PHI-024, PHI-032]
+see_also: [LAW-002, PHI-024, PHI-032, PHI-008]
 contested: true
 contested_note: "Whether Aristotle's naturalization of hierarchy — his argument that some people are 'natural slaves' and that women are naturally suited to rule by a husband — is a peripheral, historically-conditioned blemish separable from his core political theory, or is actually load-bearing within the theory's own logic (the polis's self-sufficiency and the citizen's leisure for political life both depend on an excluded, laboring substrate), is a genuine and unresolved dispute among Aristotle scholars. Model the polis's flourishing-through-citizenship mechanic as resting on an excluded, non-citizen labor base whose size and treatment is a real design parameter, rather than treating exclusion as incidental to the theory being modeled."
 stats_touched: []

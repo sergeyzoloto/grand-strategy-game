@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-013]
 enables: [PHI-020, PHI-022, PHI-024, PHI-026, PHI-034, PHI-037, PHI-038]
-see_also: [PHI-018, LAW-002, LAW-009]
+see_also: [PHI-018, LAW-002, LAW-009, NAT-007, PHI-021, PHI-041]
 contested: true
 contested_note: "Locke's natural-rights philosophy sits in documented, uncomfortable tension with his own direct entanglement in slavery and colonialism — he held investments in the Royal African Company and helped draft the Fundamental Constitutions of Carolina, which explicitly entrenched slavery, at the same time he was formulating a philosophy of natural rights to life, liberty, and property. Whether this represents a straightforward personal hypocrisy separable from the philosophy's own logic, or exposes a real limitation or exclusion built into the theory's original scope (whose 'natural rights' it was actually meant to cover), is disputed among historians of political thought. Model Lockean natural rights as a framework whose universal textual claim and its author's own applied scope diverged in documented, specific ways, rather than assuming the theory's stated universality straightforwardly describes its original intended reach."
 stats_touched: []

@@ -20,7 +20,7 @@ absence:
     note: Ottoman and later Turkish reform movements (the Tanzimat era onward) restructure religion's relationship to state administration on a different logic than European secularization's gradual differentiation thesis — reform here is substantially state-driven modernization imposed relatively abruptly on existing religious-legal institutions (millet courts, religious endowments) rather than the slower spontaneous differentiation Weber's account describes for Europe.
 prereqs: [PHI-019]
 enables: []
-see_also: [REL-017, DIP-006]
+see_also: [REL-017, DIP-006, PHI-013, REL-013]
 contested: true
 contested_note: "The 'secularization thesis' — that modernization necessarily and more or less universally produces institutional differentiation of religious from political authority and a general decline in religion's social significance — is one of the most heavily contested theses in the sociology of religion. Sociologist Peter Berger, an early prominent proponent, later publicly reversed his own position, arguing the empirical record (persistently high American religiosity, substantial religious growth across the Global South) contradicts the thesis at a global level. Model secularization as a real, specific institutional process (differentiation of religious and political authority in particular domains, per REL-017 and DIP-006) rather than as a general law of modernization predicting religion's overall social decline."
 stats_touched: []

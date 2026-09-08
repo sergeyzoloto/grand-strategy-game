@@ -20,7 +20,7 @@ absence:
     note: No comparably documented single-decree state closure of a major philosophical lineage's institutional base occurs in South Asia across this record's timeframe — the darsana system's competing schools (PHI-001) decline and revive through shifting royal patronage and doctrinal competition over centuries rather than through one dated act of suppression, a gradual-erosion pattern distinct from either case this entry covers.
 prereqs: [PHI-001, PHI-008]
 enables: []
-see_also: [PHI-036]
+see_also: [PHI-036, PHI-004]
 contested: false
 contested_note: ""
 stats_touched: [intellectual authority]

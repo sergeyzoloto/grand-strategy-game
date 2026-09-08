@@ -21,7 +21,7 @@ region_variants:
 absence: []
 prereqs: [PHI-005]
 enables: [PHI-013]
-see_also: [PHI-007, PHI-042]
+see_also: [PHI-007, PHI-042, PHI-029]
 contested: true
 contested_note: "Whether Hellenistic ethics' turn toward personal tranquility and self-sufficiency independent of political circumstance is best explained causally by the polis's loss of political autonomy under Macedonian and then Roman rule, or whether this is an overly tidy textbook narrative that understates real continuities with pre-Hellenistic ethical thought and non-political causes, is disputed among historians of philosophy. Model the political-collapse explanation as a contributing rather than sufficient cause — each school's specific doctrine (Stoic virtue-sufficiency, Epicurean hedonic calculus, Skeptic suspension of judgment) has independent argumentative content that doesn't reduce entirely to a reaction against lost civic autonomy."
 stats_touched: [habitus formation]

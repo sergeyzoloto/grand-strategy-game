@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-018]
 enables: []
-see_also: [DIP-010]
+see_also: [DIP-010, PHI-019]
 contested: false
 contested_note: ""
 stats_touched: []

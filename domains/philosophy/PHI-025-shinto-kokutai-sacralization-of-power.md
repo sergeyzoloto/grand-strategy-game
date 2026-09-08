@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: []
 enables: []
-see_also: [DIP-001, REL-013, REL-026]
+see_also: [DIP-001, REL-013, REL-026, PHI-024, PHI-029]
 contested: true
 contested_note: "Whether kokutai ideology represents systematization of a genuinely continuous ancient Shinto-imperial tradition, or is substantially a 19th-century Meiji-era invented tradition constructed for nation-building purposes (drawing on the 'invented tradition' framework historians have applied specifically to State Shinto), is a well-established academic debate. Model kokutai as a specific, datable 18th-19th-century ideological construction that draws on genuinely ancient textual material (the Kojiki) while reorganizing it toward a modern nation-state legitimation purpose the original texts weren't composed for."
 stats_touched: [religious authority]

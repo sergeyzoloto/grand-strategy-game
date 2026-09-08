@@ -20,7 +20,7 @@ absence:
     note: Chinese natural inquiry produces extensive careful observation and technical documentation (astronomical records, pharmacological compendia, and more) without developing an equivalent explicit methodological argument for controlled experimentation as the privileged path to reliable knowledge — systematic empirical documentation without an accompanying formal experimental philosophy.
 prereqs: [NAT-001, NAT-003]
 enables: [NAT-008, NAT-010, NAT-011, NAT-016, NAT-019]
-see_also: [PHI-027]
+see_also: [PHI-027, PHI-019]
 contested: false
 contested_note: ""
 stats_touched: []

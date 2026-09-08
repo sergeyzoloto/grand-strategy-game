@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-018, PHI-019]
 enables: [PHI-028]
-see_also: []
+see_also: [PHI-013, PHI-022, PHI-037]
 contested: true
 contested_note: "Whether Nietzschean genealogy is self-undermining is a standard, unresolved objection: if all moral claims reduce to an underlying power interest, does the genealogical claim itself escape that same reduction, or does it saw off the branch it sits on? Model genealogy as a tool with real explanatory reach against other entries' normative claims, whose own foundational status remains separately and genuinely contested, rather than as a neutral analytic method standing above the critique it applies to everything else."
 stats_touched: []

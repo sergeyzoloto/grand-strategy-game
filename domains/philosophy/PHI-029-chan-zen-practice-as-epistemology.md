@@ -18,7 +18,7 @@ region_variants:
 absence: []
 prereqs: [PHI-012]
 enables: []
-see_also: [PHI-016]
+see_also: [PHI-016, PHI-001, PHI-004, PHI-010, PHI-025]
 contested: true
 contested_note: "Chan's own traditional lineage narrative — an unbroken chain of patriarchs transmitting a 'special transmission outside the scriptures' back to Bodhidharma and ultimately the Buddha himself — is substantially a retrospective construction: Dunhuang manuscript discoveries reveal early Chan history was considerably more contested and multi-branched than the later standardized lineage account admits, with Bodhidharma's own historicity genuinely uncertain. Model Chan's foundational lineage claim as a legitimating narrative constructed well after the fact (a pattern comparable to this project's other 'invented tradition' cases, PHI-025) rather than as reliable history of the tradition's actual early transmission."
 stats_touched: [habitus formation]

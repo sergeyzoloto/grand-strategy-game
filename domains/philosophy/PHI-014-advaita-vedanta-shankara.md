@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-002]
 enables: []
-see_also: [PHI-012, NAT-003]
+see_also: [PHI-012, NAT-003, PHI-001]
 contested: true
 contested_note: "Shankara's rival dualist and qualified-dualist commentators (Ramanuja's Vishishtadvaita, Madhva's Dvaita, both developing in the following centuries) accused Advaita of being 'crypto-Buddhism' — of covertly reproducing Madhyamaka Buddhist arguments about the ultimate unreality of ordinary phenomenal experience while officially claiming Vedic/Upanishadic orthodoxy and rejecting Buddhism explicitly. Whether this charge identifies a genuine, substantial argumentative debt or is primarily rival-school polemic exaggerating surface similarity is disputed among scholars of Indian philosophy. Model Advaita as making a genuinely distinct metaphysical claim (Brahman as sole positively-existing reality, not Madhyamaka's emptiness of inherent existence) while treating the historical question of argumentative influence from Buddhist dialectic as separately, genuinely open."
 stats_touched: []

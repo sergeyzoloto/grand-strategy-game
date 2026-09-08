@@ -17,7 +17,7 @@ absence:
     note: The Vedic sacrificial tradition Jainism, alongside Buddhism (PHI-012), reacts against treats ritual animal sacrifice as religiously efficacious and largely unproblematic — the shramana movements' shared reframing of causing harm as a metaphysically consequential act binding the soul is a genuine break from, not an elaboration of, the tradition they emerge alongside.
 prereqs: [PHI-001]
 enables: []
-see_also: [PHI-002, PHI-012]
+see_also: [PHI-002, PHI-012, PHI-003, PHI-007, PHI-032]
 contested: true
 contested_note: "Jain tradition holds Mahavira as the twenty-fourth and final tirthankara in a lineage stretching back to the mythical distant past, with Parshvanatha (traditionally placed roughly two and a half centuries before Mahavira) as the twenty-third and the first for whom independent historical evidence beyond scripture is sometimes argued to exist — but Parshvanatha's own historicity, and how much of what's attributed to Mahavira actually originates with or was reformed from an earlier Parshvanatha tradition, remains genuinely uncertain to historians working from the available evidence. Model Jain doctrine's key claims (ahimsa, karma as literal particulate matter) as datable to Mahavira's era with reasonable confidence while treating the deeper lineage claims as tradition rather than established history."
 stats_touched: []

@@ -17,7 +17,7 @@ absence:
     note: The Upanishadic tradition (PHI-002) the Buddha teaches against holds that liberation comes through realizing the self's identity with an ultimate reality (Brahman) — Buddhism's anatta (no-self) doctrine instead denies there is any fixed, essential self to be identified with anything at all, a direct doctrinal rejection rather than a variant of the tradition it emerges alongside.
 prereqs: [PHI-001]
 enables: [PHI-029]
-see_also: [PHI-002, PHI-011, PHI-014, PHI-016, PHI-039, REL-009]
+see_also: [PHI-002, PHI-011, PHI-014, PHI-016, PHI-039, REL-009, PHI-003]
 contested: true
 contested_note: "The Buddha's traditional dates (Theravada chronology places his death around 544 BCE) are substantially earlier than the 'corrected' chronology most historians now favor (death around 400 BCE, with birth correspondingly later than traditional accounts), a roughly century-and-a-half discrepancy with real consequences for dating Buddhism's relationship to other South Asian developments. Model the Buddha's dates using the historians' corrected chronology (era precision) while noting traditional Buddhist chronology differs substantially and is not simply an error to be corrected away within Buddhist historiography itself."
 stats_touched: []

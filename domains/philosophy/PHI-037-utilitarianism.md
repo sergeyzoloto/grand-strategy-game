@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-019]
 enables: []
-see_also: [PHI-009, PHI-022]
+see_also: [PHI-009, PHI-022, PHI-038]
 contested: true
 contested_note: "The aggregation-versus-rights-side-constraint tension between act- and rule-utilitarianism — does maximizing aggregate welfare ever license instrumentalizing or sacrificing an individual for the greater sum — is a live, unresolved internal dispute within utilitarian theory itself, not a problem Mill's harm principle and higher/lower pleasure distinction cleanly settles. Model act-utilitarian and rule-utilitarian resolutions as a genuine branch with different practical consequences in edge cases, rather than treating Mill's revisions as a completed patch on Bentham's original calculus."
 stats_touched: []

@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: []
 enables: []
-see_also: [PHI-004, PHI-005, PHI-013]
+see_also: [PHI-004, PHI-005, PHI-013, PHI-001, PHI-003, PHI-011]
 contested: true
 contested_note: "How much of the prophetic corpus reflects the stated pre-exilic dating (Amos and Hosea traditionally placed in the 8th century, Jeremiah spanning the late 7th into the early 6th) versus later post-exilic redaction and retrospective systematization is a live text-critical dispute in biblical scholarship, not a settled matter of tradition versus modern skepticism only. Model the ethical content — covenant-binding obligation applying to ruler and community alike, and the licensed public indictment of power that violates it — as reliably datable to the broad era while treating precise authorship, composition, and editing dates for any specific passage as uncertain, the same handling PHI-007 already gives the Daodejing's compositional history."
 stats_touched: []

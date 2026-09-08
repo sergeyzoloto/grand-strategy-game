@@ -17,7 +17,7 @@ absence:
     note: Greek Cynicism (PHI-010) reaches a partially comparable rejection of convention and artificial social striving through Diogenes's deliberate flouting of custom, but pursues it as confrontational public performance aimed at exposing others' hypocrisy rather than as wu wei's quieter alignment with an impersonal cosmic process — a superficially similar anti-conventionalism arrived at through a very different underlying logic.
 prereqs: [PHI-001]
 enables: []
-see_also: [PHI-004, PHI-008, PHI-010, PHI-042]
+see_also: [PHI-004, PHI-008, PHI-010, PHI-042, PHI-003, PHI-011, PHI-016]
 contested: true
 contested_note: "Whether the Daodejing was composed by a single historical author (the traditionally posited 'Laozi') or is a composite text assembled and edited across generations, and how it relates chronologically to the more clearly single-authored Zhuangzi, is genuinely unresolved textual-critical scholarship, not a settled matter of tradition versus modern skepticism only. Model 'Daoism' in this era as a textual tradition with real authorial and compositional uncertainty rather than as originating from one identifiable founder-philosopher the way PHI-003's Socrates or PHI-011's Mahavira more plausibly do."
 stats_touched: []
