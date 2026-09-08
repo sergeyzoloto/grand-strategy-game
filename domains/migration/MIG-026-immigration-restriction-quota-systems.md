@@ -20,7 +20,7 @@ absence:
     note: European states largely do not adopt comparable numerical immigration caps in this era, since they remain net emigration sources rather than destinations for the mass-migration volumes MIG-015 describes — the restriction mechanic this entry covers is specifically a destination-state response, and most of Europe isn't yet in that position.
 prereqs: [MIG-015]
 enables: []
-see_also: []
+see_also: [MIG-017]
 contested: false
 contested_note: ""
 stats_touched: [border friction]

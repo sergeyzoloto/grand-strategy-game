@@ -20,7 +20,7 @@ absence:
     note: Chinese migrants participate heavily as labor in essentially every major gold-rush destination covered here (California, Australia) while being simultaneously and increasingly legally excluded from independent claim ownership and, eventually, from further immigration itself (exclusion acts in multiple destinations by the 1880s) — the same resource-rush pull operating on this migrant population under a systematically different, more restricted legal track than the majority settler population.
 prereqs: []
 enables: []
-see_also: [MIG-005]
+see_also: [MIG-005, MIG-016]
 contested: false
 contested_note: ""
 stats_touched: [migration trigger intensity]

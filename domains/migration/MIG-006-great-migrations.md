@@ -20,7 +20,7 @@ absence:
     note: South Asia does not experience a comparable multi-population cascading migration/collapse event in this era at this scale, despite steppe contact via the northwest — the Gupta-era political structure absorbs external pressure differently, without the same chain-reaction displacement pattern.
 prereqs: [MIG-001]
 enables: []
-see_also: [MIG-011]
+see_also: [MIG-011, MIG-025]
 contested: true
 contested_note: "Whether the European 'Migration Period' (Völkerwanderung) is best explained as a chain-reaction of population displacement pushed by climate and steppe pressure (Huns pushing Goths, etc.), as a more gradual, negotiated process of frontier peoples being absorbed into a weakening Roman military and political system, or as some blend of both, is a long-running historiographical dispute with real stakes for how 'invasion' versus 'migration' gets framed. Model as a chain-reaction displacement mechanic with a variable coercion/negotiation ratio per group and per contact point, rather than a uniform invasion or a uniform gradual-absorption narrative."
 stats_touched: [migration range, displacement pressure]

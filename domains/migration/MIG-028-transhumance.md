@@ -20,7 +20,7 @@ absence:
     note: Comparable large-scale seasonal transhumance between fixed lowland and highland pastures is less prominent in East Asian pastoral practice than in the Mediterranean or Middle Eastern cases, with steppe pastoralism there running closer to the fuller, base-camp-relocating nomadism MIG-003 covers than to transhumance's narrower fixed-route, seasonal-only movement.
 prereqs: []
 enables: []
-see_also: [MIG-003]
+see_also: [MIG-003, AGR-014, MIG-001, MIG-002]
 contested: false
 contested_note: ""
 stats_touched: []

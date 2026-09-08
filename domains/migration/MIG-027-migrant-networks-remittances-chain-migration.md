@@ -20,7 +20,7 @@ absence:
     note: Sub-Saharan African labor migration in this era, running predominantly intra-continentally rather than toward wealthy overseas destinations (per MIG-022's own regional note), generates comparatively smaller formal remittance volumes than the South Asian or Latin American cases, less because the underlying network mechanic doesn't apply than because the wage differential and destination-country banking infrastructure needed to move money back efficiently are both weaker on the dominant intra-African routes.
 prereqs: [MIG-015]
 enables: []
-see_also: [MIG-019]
+see_also: [MIG-019, MIG-016, MIG-022, MIG-029]
 contested: false
 contested_note: ""
 stats_touched: [remittance flow]

@@ -21,9 +21,9 @@ region_variants:
 absence:
   - region: east-asia
     note: China's long-run response to essentially the same steppe-wave mechanic differs structurally from Europe or the Middle East — dynastic-cycle absorption (steppe-origin dynasties, Yuan and later Qing, ruling as a settled Chinese dynasty within a generation or two) rather than either fragmentation (as in much of the post-Mongol Middle East) or a small conquering wave achieving full permanent sedentarization (as with the Magyars) — the same wave mechanic, three structurally different long-run resolutions.
-prereqs: [MIG-007]
+prereqs: [MIG-007, MIG-001, MIG-003]
 enables: []
-see_also: []
+see_also: [MIG-025]
 contested: false
 contested_note: ""
 stats_touched: [confederation cohesion, migration range]

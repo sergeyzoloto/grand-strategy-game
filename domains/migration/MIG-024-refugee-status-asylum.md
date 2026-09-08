@@ -23,7 +23,7 @@ absence:
     note: The United States maintains a comparatively narrow, Cold-War-inflected refugee/asylum framework through most of this window (formal codification of a broad asylum standard doesn't arrive until the 1980 Refugee Act), admitting large numbers of refugees from specific communist states as a matter of foreign-policy alignment rather than under the same general humanitarian legal standard developing internationally — a case where domestic asylum law and international refugee-institution development run on separate, only loosely-connected tracks.
 prereqs: [MIG-017]
 enables: []
-see_also: []
+see_also: [MIG-018]
 contested: true
 contested_note: "Where the line falls between a 'genuine' persecution-based refugee and an economic migrant using an asylum claim strategically is a live, politically contested question in every era this entry covers, not only the present, and the practical answer has always depended heavily on the destination state's own foreign-policy alignment and institutional capacity rather than a fixed, consistently-applied legal test. Model recognition outcomes as branching on host-state institutional capacity and political climate at the time of the claim, rather than scripting a uniform, purely legal-merits-based outcome."
 stats_touched: [border friction]

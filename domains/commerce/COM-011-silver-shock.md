@@ -20,7 +20,7 @@ absence:
     note: Japan mined its own silver in this window (Iwami Ginzan and other sites) and was a net exporter on comparable terms rather than a pure absorber of American supply — same commodity shock, opposite balance-of-payments exposure to the rest of East Asia.
 prereqs: [MAR-008]
 enables: []
-see_also: [COM-017, COM-030]
+see_also: [COM-017, COM-030, MIG-012]
 contested: true
 contested_note: "Hamilton's quantity-theory account (bullion inflow drives the price rise) competes with population growth outrunning food/land supply, and repeated crown-driven coinage debasement, as independent contributing causes of the same 16th-century price rise. Model as three weighted, independently-triggerable causes rather than one scripted mechanism — see Contested below."
 stats_touched: [bullion stock, price level, sovereign credit capacity]

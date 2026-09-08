@@ -17,7 +17,7 @@ absence:
     note: Indian indentured-labor migration under MIG-015's regularized shipping lines runs on a fixed-contract-term model with an included return passage built into the indenture agreement itself, a legally-structured version of return migration distinct from this entry's voluntary, self-timed savings-target pattern among free European emigrants.
 prereqs: [MIG-015]
 enables: []
-see_also: []
+see_also: [MIG-005, MIG-018, MIG-027]
 contested: false
 contested_note: ""
 stats_touched: [migration cost]

@@ -23,7 +23,7 @@ absence:
     note: Remote Oceania (the wider Pacific beyond New Guinea and its immediate approaches) isn't settled during this window at all — it requires deliberate open-ocean voyaging technology, a much later maritime capability, rather than the on-foot and short-water-crossing dispersal this entry covers, arriving millennia after every landmass covered here already has a resident population.
 prereqs: []
 enables: [MIG-002]
-see_also: []
+see_also: [MIG-005]
 contested: true
 contested_note: "Beringia's exact crossing date, whether the founding population moved via an interior ice-free corridor or a coastal ('kelp highway') route, and whether there were one or several distinct migration pulses are all actively revised by ancient-DNA and archaeological evidence, with pre-Clovis sites (dated earlier than the traditional 'Clovis First' consensus) complicating any single settled timeline. Model the peopling of the Americas as arriving through an uncertain date range and an unresolved route choice rather than a single settled crossing event, while treating the overall fact and rough timing window of arrival as solid."
 stats_touched: [migration range]
