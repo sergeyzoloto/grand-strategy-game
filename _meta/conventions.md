@@ -105,3 +105,18 @@ a publication; full citations are overhead it doesn't need.
 mechanic on a specific number (a date, a percentage, a population figure), gets a
 fuller pointer — enough to relocate the actual claim later (author, work, and
 roughly where in it) if the number gets challenged.
+
+## Citation-gap check
+
+Any entry naming another ID in its own body prose must carry that ID in a link
+field — `prereqs`, `enables`, or `see_also`, whichever the relationship actually
+is. A citation that exists only in prose and never gets promoted into a link
+field is a bug, not a stylistic choice: it was the single most repeated finding
+across every domain audit run against this corpus (independently named in eight
+of thirteen domains, one domain five times over), because the natural way to
+write an entry is to cite narratively first and back-fill the structured fields
+second — and the back-fill reliably loses a fraction of the citations. Run a
+mechanical check for this before promoting an entry past `drafted`: grep the
+entry's own body for `\b[A-Z]{2,4}-\d{3}\b` and diff the result against its own
+`prereqs` + `enables` + `see_also`. See
+`_meta/audits/00-cross-domain-2026-09-08.md` §6 for the original finding.
