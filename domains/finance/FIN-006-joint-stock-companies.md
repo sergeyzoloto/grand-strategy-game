@@ -16,7 +16,7 @@ absence:
   - region: middle-east
     note: Islamic mudaraba and musharaka partnership structures (FIN-004) pool capital and share risk across multiple investors without developing a permanent, freely-tradable share instrument comparable to joint-stock equity — partnerships typically dissolve and re-form per venture rather than persisting as an ongoing entity with continuously tradable ownership stakes, achieving capital-pooling without achieving the specific liquidity innovation this entry covers.
 prereqs: [FIN-005, LAW-008]
-enables: [FIN-007, FIN-009, FIN-013]
+enables: [FIN-007, FIN-009, FIN-013, FIN-024]
 see_also: [COM-016]
 contested: false
 contested_note: ""

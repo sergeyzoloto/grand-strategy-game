@@ -4,7 +4,7 @@ title: Limited Liability
 legacy_ref:
 domain: finance
 domains_touched: [law]
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: 1811

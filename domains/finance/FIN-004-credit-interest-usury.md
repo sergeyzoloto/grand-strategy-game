@@ -21,8 +21,8 @@ region_variants:
 absence:
   - region: europe
     note: Medieval Christian doctrine treats usury (any interest, not merely excessive interest) as a sin on Aristotelian and scriptural grounds, pushing moneylending into a narrow, socially marginalized niche later occupied disproportionately by Jewish communities excluded from most other trades — directly the same mechanism MIG-010 describes for the Jewish diaspora's forced occupational concentration.
-prereqs: [FIN-001]
-enables: [FIN-017]
+prereqs: [FIN-001, FIN-020]
+enables: [FIN-017, FIN-021]
 see_also: [MIG-010]
 contested: false
 contested_note: ""

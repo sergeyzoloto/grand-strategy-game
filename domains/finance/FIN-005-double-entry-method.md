@@ -18,8 +18,8 @@ region_variants:
 absence:
   - region: middle-east
     note: Surviving medieval Islamic merchant account books show sophisticated running-balance and partnership-profit record-keeping (feeding the mudaraba/musharaka structures in FIN-004) without clear evidence of the specific self-balancing dual-entry mechanism itself, leaving open whether an equivalent existed and wasn't preserved, or whether the tradition's accounting rigor took a genuinely different form.
-prereqs: [FIN-001]
-enables: [FIN-006, FIN-015]
+prereqs: [FIN-001, FIN-021]
+enables: [FIN-006, FIN-015, FIN-022]
 see_also: []
 contested: true
 contested_note: "Whether Luca Pacioli's 1494 published description of Venetian double-entry method represents an independent Italian development, or was influenced by prior contact with more advanced accounting traditions further east, is debated among accounting historians given how much earlier the Chinese four-column method achieves comparable self-checking function. Model these as independently-arising solutions to the same underlying record-keeping problem by default, since direct transmission evidence is thin, while flagging the timeline gap (China centuries earlier) as a genuine open question rather than asserting either independent invention or transmission as settled."

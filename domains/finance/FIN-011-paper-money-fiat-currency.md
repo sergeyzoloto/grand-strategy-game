@@ -1,14 +1,14 @@
 ---
 id: FIN-011
-title: Paper Money and International Monetary Regimes
+title: Paper Money and Fiat Currency
 legacy_ref:
 domain: finance
-domains_touched: [diplomacy]
+domains_touched: []
 tier: core
 status: drafted
 confidence: medium
 date_start: 806
-date_end: 1946
+date_end: 1930
 date_precision: era
 regions: [east-asia, europe, americas]
 region_variants:
@@ -19,27 +19,28 @@ absence:
   - region: europe
     note: European paper currency stays limited and often crisis-prone (notably John Law's failed 1720 Mississippi Company note scheme in France) for centuries after China's mature paper-money experience, only becoming a stable, trusted everyday medium of exchange considerably later — the "primitive to advanced" framing popular accounts sometimes apply runs backward here.
 prereqs: [FIN-001]
-enables: [FIN-018]
+enables: [FIN-027, FIN-025]
 see_also: [FIN-002]
 contested: false
 contested_note: ""
 stats_touched: [price level]
-tags: [paper-money, fiat-currency, bretton-woods, jiaozi]
+tags: [paper-money, fiat-currency, jiaozi]
 ---
 
 Currency backed by state trust and legal mandate rather than by the
-commodity value of the material it's printed on — and, once multiple such
-currencies need to interact, the further problem of how independently-
-issued national paper monies get valued against each other at all.
+commodity value of the material it's printed on — a trust problem in its
+own right, distinct from and prior to what happens once multiple states
+each issuing their own paper currency need some way to value them against
+each other (FIN-027's territory).
 
 ## Timing
 
 Chinese paper currency issuance dates to 806, maturing into large-scale
 circulation under the Song and Yuan dynasties; European paper currency
-experiments follow much later and less steadily, with a genuinely stable
-international framework for managing multiple paper currencies against each
-other only formalizing with the Bretton Woods system in 1944, operational
-from 1946.
+experiments follow much later and less steadily, reaching a genuinely
+stable, trusted everyday medium of exchange only by the early 20th century,
+shortly before the international coordination problem multiple such
+currencies create (FIN-027) becomes its own separate, formalized concern.
 
 ## Mechanism
 
@@ -50,10 +51,7 @@ problem but reintroduces the trust problem in a different form: a paper
 currency's value now depends entirely on confidence in the issuing state's
 restraint and credibility, with nothing physical backing it if that
 confidence collapses (feeding directly into FIN-003's inflationary-spiral
-mechanic). Once multiple states issue their own paper currencies, an
-additional coordination problem emerges: without some agreed anchor or
-exchange mechanism, there's no natural way to value one state's currency
-against another's for trade and lending purposes.
+mechanic).
 
 ## Social consequence
 
@@ -83,6 +81,6 @@ merely a design detail Europe skipped past quickly.
 Paper money trades the gold standard's (FIN-002) physical rigidity for a
 trust-dependent flexibility that can smooth a crisis or spiral into
 `price level` collapse (FIN-003) depending entirely on issuer restraint —
-and once multiple states each issue their own, the resulting international
-coordination problem (eventually addressed by frameworks like Bretton
-Woods) becomes a genuinely separate, additional mechanic layered on top.
+a domestic trust problem complete in itself, with the further question of
+how multiple states' independently-issued currencies get valued against
+each other left to FIN-027's separate international coordination mechanic.

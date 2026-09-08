@@ -20,7 +20,7 @@ absence:
     note: Japan's earlier and more aggressive departure from the gold standard (1931, ahead of Britain and well ahead of the United States) combined with fiscal stimulus lets it recover from the downturn's worst effects notably faster than economies that stayed on gold longer, providing an early real-world data point for the gold-standard-versus-recovery-speed relationship debated in FIN-002.
 prereqs: [FIN-007, FIN-010]
 enables: []
-see_also: [FIN-002, LAW-015]
+see_also: [FIN-002, LAW-015, COM-017, COM-018]
 contested: true
 contested_note: "The relative weight of different causal factors behind the Great Depression's severity and duration — the 1929 stock market crash and banking panics (FIN-007, FIN-010), gold-standard-driven monetary contraction (FIN-002), or contractionary policy responses (premature tightening, protectionist tariff retaliation, COM-018) — remains debated among economic historians, with different schools weighting each factor differently. Model the Depression's depth and duration as a function of several compounding factors rather than one dominant cause, with a state's specific policy choices (gold-standard adherence timing, fiscal response, tariff policy) materially affecting how severely and how long that state specifically suffers relative to others facing the same initial shock."
 stats_touched: []
