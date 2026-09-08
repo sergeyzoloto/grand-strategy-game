@@ -20,7 +20,7 @@ absence:
     note: Chinese native-place and lineage associations (huiguan) provide broadly comparable mutual-aid functions — covering illness, burial, and hardship for migrant or lineage-linked members away from their home community — organized around shared origin or kinship rather than shared craft, a structurally different membership logic reaching a similar risk-pooling outcome.
 prereqs: []
 enables: []
-see_also: [HLT-014, HLT-033]
+see_also: [HLT-014, FIN-022]
 contested: false
 contested_note: ""
 stats_touched: [medical access]

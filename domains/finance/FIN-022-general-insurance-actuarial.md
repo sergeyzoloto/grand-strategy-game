@@ -3,7 +3,7 @@ id: FIN-022
 title: General Insurance and Actuarial Risk-Pooling
 legacy_ref:
 domain: finance
-domains_touched: [maritime]
+domains_touched: [maritime, health]
 tier: core
 status: drafted
 confidence: high
@@ -20,11 +20,11 @@ absence:
     note: Conventional fixed-premium insurance contracts raise the same gharar (excessive uncertainty) concerns under Islamic finance principles that constrain conventional derivatives (FIN-015), with takaful — a cooperative, mutual-risk-sharing structure where participants contribute to a shared fund and share both the risk and any surplus — developing as the principle-compliant alternative achieving comparable protection.
 prereqs: [FIN-005]
 enables: []
-see_also: [MAR-011]
+see_also: [MAR-011, HLT-002, HLT-029, HLT-032]
 contested: false
 contested_note: ""
 stats_touched: []
-tags: [insurance, fire-insurance, life-insurance, actuarial-science, takaful]
+tags: [insurance, fire-insurance, life-insurance, actuarial-science, takaful, halley, mortality-table]
 ---
 
 Distinct from MAR-011's maritime-specific carve-out, general insurance pools a large number of independent small risks so that a rare catastrophic loss for any one policyholder becomes a small, predictable, budgetable premium for everyone — the same risk-pooling logic MAR-011 already uses, generalized far beyond ships and cargo to property and human life.
@@ -43,7 +43,11 @@ Widely available fire and life insurance lets households and businesses take on 
 
 ## Regional specifics
 
-Meiji Japan's rapid development of both mutual-aid and Western-modeled commercial insurance institutions fits the broader pattern of deliberate wholesale financial-institution import already seen across this record's other Japanese modernization cases. Islamic takaful achieves comparable collective risk protection through a cooperative, participant-owned mutual fund structure specifically because conventional fixed-premium insurance raises the same gharar concerns that constrain conventional derivatives (FIN-015) — the same underlying protection need, met through a principle-compliant institutional alternative rather than the standard fixed-premium contract.
+This entry's development is concentrated in England and the Netherlands,
+where a combination of available mortality data, a maturing commercial
+insurance market, and receptive capital markets let actuarial pricing
+scale into a major financial institution faster than in regions with any
+one of those three preconditions missing. Meiji Japan's rapid development of both mutual-aid and Western-modeled commercial insurance institutions fits the broader pattern of deliberate wholesale financial-institution import already seen across this record's other Japanese modernization cases. Islamic takaful achieves comparable collective risk protection through a cooperative, participant-owned mutual fund structure specifically because conventional fixed-premium insurance raises the same gharar concerns that constrain conventional derivatives (FIN-015) — the same underlying protection need, met through a principle-compliant institutional alternative rather than the standard fixed-premium contract.
 
 ## Hook
 

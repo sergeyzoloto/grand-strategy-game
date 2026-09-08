@@ -14,8 +14,8 @@ regions: [europe]
 region_variants: []
 absence: []
 prereqs: []
-enables: [HLT-033]
-see_also: [HLT-002, HLT-006]
+enables: []
+see_also: [HLT-002, HLT-006, FIN-022]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
