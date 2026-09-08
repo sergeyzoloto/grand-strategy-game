@@ -10,11 +10,14 @@ confidence: high
 date_start: 250
 date_end: 1400
 date_precision: era
-regions: [europe, east-asia, africa, mediterranean]
+regions: [europe, east-asia, africa, mediterranean, middle-east]
 region_variants:
   - region: east-asia
     date_start: 1185
     note: Japanese feudalism under successive shogunates formalizes a comparably rigorous lord-vassal legal bond (the samurai's obligation to their daimyo) with its own body of customary and later codified law governing land tenure, military service, and inheritance — a structurally similar system to European feudalism developed with no direct contact between the two traditions.
+  - region: middle-east
+    date_start: 1000
+    note: The Islamic iqta system grants a soldier or official the right to collect tax revenue from a specified territory in lieu of a state salary, a related but distinct land-for-service logic (revenue assignment rather than direct land ownership) that achieves a comparable fiscal-substitution function to European feudal tenure.
   - region: africa
     date_start: 1270
     note: The Ethiopian gult system grants land and the right to collect tribute from its cultivators to nobles and religious institutions in exchange for military and administrative service to the crown, a land-for-service legal bond reaching comparable institutional maturity to European and Japanese feudalism through fully independent development.
@@ -30,7 +33,7 @@ see_also: [LAW-004, AGR-015, AGR-020, WAR-001]
 contested: false
 contested_note: ""
 stats_touched: []
-tags: [feudalism, vassalage, land-tenure, samurai]
+tags: [feudalism, vassalage, land-tenure, samurai, knight-service, iqta]
 ---
 
 A personal legal bond exchanging land tenure for military service and
@@ -70,7 +73,14 @@ rather than on either birth into a fixed caste (LAW-001's Manusmriti case)
 or examination-based credentialing (LAW-004) — status here is a function
 of a specific personal legal relationship to a specific lord and a specific
 grant of land, which is why feudal loyalty is characteristically personal
-and particular rather than owed to an abstract office or state.
+and particular rather than owed to an abstract office or state. Because
+military service and land tenure are directly linked, the resulting
+warrior class (European knighthood, the Japanese samurai) develops its own
+hereditary status, honor code, and social identity independent of any
+central state's administrative reach — a class whose military obligation
+is inseparable from its social rank, unlike WAR-001's later salaried
+professional or WAR-012's later conscripted citizen, for whom military
+service and social status are at least formally separable.
 
 ## Regional specifics
 
@@ -89,7 +99,10 @@ culturally specific European invention. The Ethiopian gult system reaches
 a third independent instance of the same basic bond, tribute-collection
 rights substituting for direct land grant as the specific mechanism but
 serving the identical function of trading local authority for military and
-administrative service. Neighboring China's contemporary
+administrative service. The Islamic iqta system's revenue-assignment
+variant achieves a comparable fiscal-substitution function through a
+related but distinct mechanism — collecting tax revenue from an assigned
+territory rather than holding the land outright. Neighboring China's contemporary
 and explicit rejection of feudal land-for-service structure in favor of
 LAW-004's examination bureaucracy shows the same broad problem (binding
 distant administration and defense to the center) can be solved through

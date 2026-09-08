@@ -17,7 +17,7 @@ region_variants:
     note: Italian condottieri companies contract their military services to whichever city-state offers payment, with successful condottieri captains sometimes converting military reputation directly into political power over the very cities that hired them (as with the Sforza dynasty in Milan) — a case where the mercenary-market logic this entry describes can end in the contractor capturing the contracting state itself.
 absence:
   - region: east-asia
-    note: Comparable large-scale, freely-contracting mercenary companies are less prominent in this era's East Asian military systems relative to Europe, with military labor there running more consistently through either direct state levy/professionalization (WAR-001) or hereditary land-tenure obligation (WAR-024) than through an open, cross-polity market for military contract labor.
+    note: Comparable large-scale, freely-contracting mercenary companies are less prominent in this era's East Asian military systems relative to Europe, with military labor there running more consistently through either direct state levy/professionalization (WAR-001) or hereditary land-tenure obligation (LAW-005) than through an open, cross-polity market for military contract labor.
 prereqs: []
 enables: []
 see_also: [WAR-001, WAR-012]
