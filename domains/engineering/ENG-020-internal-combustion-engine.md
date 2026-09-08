@@ -19,8 +19,8 @@ absence:
   - region: east-asia
     note: Japanese automotive and internal-combustion manufacturing capability develops only from the 1920s-1930s, later than European and American capability, through a combination of licensed foreign technology and domestic development — arriving after the technology's initial maturation elsewhere rather than as an early independent adopter, a slower uptake than several other industrial technologies covered in this record.
 prereqs: [ENG-010]
-enables: [AGR-021, MAR-024]
-see_also: [COM-023]
+enables: [AGR-021, MAR-024, WAR-019]
+see_also: [COM-023, ENG-026]
 contested: false
 contested_note: ""
 stats_touched: []

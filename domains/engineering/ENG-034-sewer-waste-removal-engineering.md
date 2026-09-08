@@ -23,7 +23,7 @@ absence:
     note: Several historical Islamic cities rely substantially on cesspit collection and night-soil removal by labor (a waste-management logic closer to `AGR-023`'s manure-and-night-soil nutrient cycling than to constructed sewer-channel infrastructure) rather than on Roman-scale engineered sewer networks — a labor-intensive rather than infrastructure-intensive solution to the same underlying waste-removal problem.
 prereqs: [ENG-011]
 enables: [HLT-006]
-see_also: []
+see_also: [AGR-023]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -23,7 +23,7 @@ absence:
     note: No wheel-and-gearing-based milling technology of any kind develops in the pre-contact Americas, consistent with the broader absence of draft-animal and constructed-water-power traditions already documented elsewhere in this record — grain and seed processing there stays purely hand-labor-gated (see `AGR-028`) throughout the pre-contact period.
 prereqs: []
 enables: []
-see_also: [AGR-028, ENG-001]
+see_also: [AGR-028, ENG-001, AGR-005, ENG-028]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -23,7 +23,7 @@ absence:
     note: The Gangetic plain's dense network of year-round navigable rivers substitutes barge and boat transport for organized pack-caravan crossing across much of the region, reducing reliance on the caravan's specific risk-pooling mechanism relative to the arid-crossing regions where it's load-bearing — a case where an alternative transport medium removes the need for the institution rather than the institution simply arriving late.
 prereqs: [MIG-001]
 enables: [COM-014]
-see_also: []
+see_also: [ENG-024]
 contested: false
 contested_note: ""
 stats_touched: [caravan viability threshold]

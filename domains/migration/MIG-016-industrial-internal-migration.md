@@ -20,7 +20,7 @@ absence:
     note: Sub-Saharan Africa's industrial-era rural-to-urban migration is substantially decoupled from the manufacturing-employment pull that drove the classic European/American/Chinese pattern, running instead more on push factors (rural land pressure, conflict, limited agricultural opportunity) into cities without a comparably large formal industrial-employment base waiting there — urbanization without industrialization, a structurally different version of the same movement.
 prereqs: []
 enables: []
-see_also: [MIG-015, HLT-002, HLT-006]
+see_also: [MIG-015, HLT-002, HLT-006, ENG-017]
 contested: false
 contested_note: ""
 stats_touched: [migration cost, urban absorption capacity]

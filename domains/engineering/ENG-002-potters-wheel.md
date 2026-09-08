@@ -20,7 +20,7 @@ absence:
     note: The potter's wheel is absent from the pre-contact Americas despite sophisticated hand-built and mold-formed ceramic traditions reaching high artistic and functional quality across multiple civilizations — the wheel's absence here tracks the broader absence of wheeled-vehicle technology and suitable draft animals in the region (see MIG-001, MIG-003) rather than any lack of ceramic skill or ambition.
 prereqs: []
 enables: []
-see_also: [HLT-004, ENG-007]
+see_also: [HLT-004, ENG-007, COM-020]
 contested: false
 contested_note: ""
 stats_touched: []

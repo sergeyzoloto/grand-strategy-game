@@ -23,7 +23,7 @@ absence:
     note: Sub-Saharan African rail networks built under colonial administration are overwhelmingly designed as single extractive lines running from an interior resource or plantation zone directly to a coastal export port, rather than as an integrated internal network connecting population centers to each other — infrastructure shaped entirely by export logistics rather than domestic economic integration.
 prereqs: [COM-013, ENG-009, ENG-022]
 enables: []
-see_also: [COM-017]
+see_also: [COM-017, ENG-014]
 contested: true
 contested_note: "Whether colonial-era railway construction (India and Africa especially) net-benefited the colonized economy through infrastructure and market integration, or net-extracted value by prioritizing export logistics and guaranteed-return financing structures that shifted risk onto local taxpayers, is disputed in economic history, with the answer plausibly varying by specific network design and financing terms rather than having one universal answer. Model railway infrastructure's domestic-integration value and its extractive-logistics value as separate, independently-scored effects per network, determined by the line's actual route design (interior-to-port versus interconnected) and financing structure (guaranteed-return versus market-risk) rather than assuming one general colonial-railway verdict applies everywhere."
 stats_touched: [route knowledge]

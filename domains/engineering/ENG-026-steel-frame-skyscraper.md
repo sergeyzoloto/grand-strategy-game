@@ -17,7 +17,7 @@ absence:
     note: East Asian building traditions continue wood, masonry, and mid-rise construction through this era without independently adopting steel-frame technique, arriving only through direct 20th-century technology transfer — consistent with the broader Western-origin pattern already documented for `ENG-009` and `ENG-010` specifically.
 prereqs: [ENG-022]
 enables: []
-see_also: [ENG-016, ENG-013, ENG-032, ENG-033]
+see_also: [ENG-016, ENG-013, ENG-032, ENG-033, ENG-020]
 contested: true
 contested_note: "Whether Chicago's 1885 Home Insurance Building genuinely holds priority as the first true skeletal steel-frame building — where the frame, not the exterior walls, carries the entire structural load — versus earlier partial iron-frame precedents in Britain (commercial buildings using iron columns and beams internally while exterior walls still carried real structural load) is a real, still-debated architectural-history attribution question, turning partly on how strictly 'fully load-bearing frame' is defined. Model the transition from partial iron-frame reinforcement to fully load-bearing steel skeleton as a spectrum crossed gradually by several buildings in the 1880s-90s, rather than crediting one building as a clean, uncontested first."
 stats_touched: []

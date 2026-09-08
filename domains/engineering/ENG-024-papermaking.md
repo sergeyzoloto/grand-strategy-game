@@ -23,7 +23,7 @@ absence:
     note: No independent sub-Saharan African papermaking tradition develops; Ethiopian scribal culture instead sustains an extensive parchment-based manuscript tradition, and West African Islamic scholarly centers like Timbuktu rely on paper imported via the trans-Saharan trade routes (see the caravan trade, `COM-028`) rather than on local production — a real absence of the manufacturing technique specifically, not of a written scholarly culture to use it.
 prereqs: []
 enables: [ENG-006]
-see_also: []
+see_also: [COM-028]
 contested: true
 contested_note: "The popular 'Battle of Talas' transmission story — that Chinese papermakers captured by Abbasid forces in 751 CE personally taught the technique to their captors, single-handedly starting Islamic-world papermaking — is a widely-repeated simplification; historians of technology increasingly read the actual transmission as more gradual and multi-channel, with the technique likely already diffusing along Silk Road contact before and independent of that one battle. Model papermaking's westward spread as a diffusion process with a genuinely uncertain specific mechanism, rather than crediting one dramatic transfer event as the documented cause."
 stats_touched: []

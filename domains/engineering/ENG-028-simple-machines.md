@@ -23,7 +23,7 @@ absence:
     note: Andean and Mesoamerican monumental construction achieves comparable results — moving and precisely fitting multi-ton stone blocks — through organized mass human labor (ramps, log rollers, coordinated hauling) rather than through block-and-tackle or lever-based mechanical-advantage devices, a genuinely different solution reaching a functionally similar outcome without this entry's specific toolkit, consistent with the broader materially-different-but-comparable pattern already documented for Andean engineering elsewhere in this record.
 prereqs: []
 enables: [ENG-001, ENG-003, ENG-004]
-see_also: []
+see_also: [ENG-031]
 contested: false
 contested_note: ""
 stats_touched: []
