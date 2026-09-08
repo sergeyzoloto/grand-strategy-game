@@ -20,7 +20,7 @@ absence:
     note: Colonial-era psychiatry in French North Africa (notably the institutional context Frantz Fanon worked and wrote in) applied and simultaneously critiqued psychoanalytic and psychiatric frameworks as instruments entangled with colonial control rather than neutral therapeutic tools — a reception history of contested imposition, not straightforward adoption or absence.
 prereqs: [HLT-030]
 enables: [HLT-024]
-see_also: [HLT-011, HLT-013, PHI-023, PHI-028]
+see_also: [HLT-011, HLT-013, PHI-023, PHI-028, HLT-036]
 contested: true
 contested_note: "Psychoanalysis's actual clinical efficacy as a treatment has been persistently disputed since at least the mid-20th century (Eysenck's outcome critiques onward), in tension with its enormous cultural and intellectual influence as a framework for talking about the self, largely independent of the efficacy question. Model authority/cultural-influence and clinical efficacy as separate stats (design principle 3) exactly as with premodern codified medicine — high legitimacy and cultural reach, contested-to-low measured clinical efficacy relative to its own claims."
 stats_touched: [medical legitimacy, medical efficacy]

@@ -20,7 +20,7 @@ absence:
     note: Before Bethlem's 1247 founding and its gradual specialization toward confining the mentally ill specifically, madness in most of medieval Europe is managed within the family or, where it was read as spiritual affliction, through religious rather than medical institutions — the dedicated secular confinement institution is a specific, datable innovation, not a continuous practice reaching back indefinitely.
 prereqs: [HLT-011]
 enables: [HLT-022]
-see_also: [HLT-014, LAW-023]
+see_also: [HLT-014, LAW-023, HLT-021]
 contested: true
 contested_note: "How much genuine therapeutic improvement 'moral treatment' (the York Retreat model, from 1796) and its 19th-century successors actually delivered, versus how much asylum institutions functioned primarily as social confinement for inconvenient or unwanted populations regardless of the era's stated therapeutic philosophy, is a live historiographical dispute associated especially with Foucault's account of the asylum's disciplinary function. Model custodial-control function and genuine therapeutic function as two separately-tracked variables rather than assuming either fully explains asylum-building in any given era — a specific institution or period can score high on one, low on the other, or both at once."
 stats_touched: [medical efficacy]

@@ -26,7 +26,7 @@ absence:
     note: South Asia is a comparatively late adopter of both tea and coffee as mass-consumption stimulants relative to its neighbors (large-scale tea cultivation there is a 19th-century colonial development), despite geographic proximity to both East Asian tea culture and Middle Eastern coffee culture — a case where diffusion did not track proximity.
 prereqs: [HLT-004]
 enables: [HLT-019]
-see_also: []
+see_also: [HLT-035]
 contested: false
 contested_note: ""
 stats_touched: [information speed]

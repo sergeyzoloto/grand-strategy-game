@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [HLT-011]
 enables: []
-see_also: [HLT-019]
+see_also: [HLT-019, HLT-022]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -17,7 +17,7 @@ absence:
     note: Pre-germ-theory antimicrobial practice existed piecemeal elsewhere for millennia (honey and moldy-bread wound dressings in ancient Egyptian and Mesopotamian texts, among others) with real but unexplained and unsystematized antimicrobial effect — precedent without theory, which is precisely what antisepsis supplies that these older practices never could.
 prereqs: [HLT-011, NAT-011]
 enables: [HLT-023]
-see_also: [HLT-016]
+see_also: [HLT-016, HLT-030]
 contested: false
 contested_note: ""
 stats_touched: [medical efficacy]
