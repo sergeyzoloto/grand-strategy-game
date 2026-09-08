@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: middle-east
     note: Sustained Ottoman resistance to movable-type printing of Arabic-script religious material (already covered for its mechanical side in ENG-006) means the mass-vernacular-scripture-access condition this entry's mechanism depends on simply doesn't arise here in this era at all — not a case of print access failing to produce fragmentation, but of the enabling condition itself remaining absent.
-prereqs: [HLT-013, ENG-006]
+prereqs: [HLT-013, ENG-006, REL-020]
 enables: []
 see_also: []
 contested: true

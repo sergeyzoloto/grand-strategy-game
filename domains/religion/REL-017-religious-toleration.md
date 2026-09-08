@@ -18,9 +18,9 @@ region_variants:
 absence:
   - region: middle-east
     note: The Ottoman millet system grants substantial communal legal and religious autonomy to recognized non-Muslim religious communities (notably Orthodox Christian and Jewish millets) under a framework of managed difference and communal self-governance rather than either full legal equality or the specifically territorial cuius-regio approach the later European Westphalian settlement takes.
-prereqs: [REL-013]
+prereqs: []
 enables: []
-see_also: [PHI-020]
+see_also: [PHI-020, REL-013]
 contested: true
 contested_note: "Whether historical instances of religious toleration reflect genuine principled commitment to religious pluralism as a value, or primarily pragmatic governance calculation (reduced administrative friction, revenue from a stable minority population, avoiding costly persecution enforcement) with tolerance as an instrumental byproduct rather than a goal in itself, is disputed case by case, with real evidence for pragmatic motivation present even in cases (Ashoka's edicts, Cyrus's policies) sometimes cited as principled exemplars. Model toleration's durability as conditional on whether the practical governance interest it originally served remains intact — a tolerance adopted for pragmatic reasons can persist exactly as long as, and not longer than, those reasons continue to hold."
 stats_touched: [religious authority]

@@ -20,7 +20,7 @@ absence:
     note: Buddhist pilgrimage networks (to sites in India tied to the Buddha's life, and to regional sacred mountains in China and Japan) develop real supporting infrastructure but never consolidate into a single obligatory mass pilgrimage on the scale or with the universal individual obligation the Hajj carries — pilgrimage here stays a valued devotional practice rather than a mandated pillar of religious obligation.
 prereqs: [ENG-003]
 enables: []
-see_also: []
+see_also: [REL-023]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]

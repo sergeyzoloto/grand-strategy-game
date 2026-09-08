@@ -18,9 +18,9 @@ region_variants:
 absence:
   - region: europe
     note: Canon law courts and secular royal or feudal courts operate as genuinely separate, often jurisdictionally competing systems throughout the medieval period — a cleric could frequently claim trial in a church court under more lenient sentencing than a secular court would apply, a jurisdictional overlap and forum-shopping dynamic without a clean equivalent in traditions where religious and secular legal authority are more thoroughly fused.
-prereqs: [LAW-001]
+prereqs: [LAW-001, REL-021]
 enables: []
-see_also: []
+see_also: [LAW-018]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

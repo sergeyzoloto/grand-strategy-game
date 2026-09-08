@@ -7,7 +7,7 @@ domains_touched: [war, law]
 tier: core
 status: drafted
 confidence: high
-date_start: 726
+date_start: 632
 date_end: 1300
 date_precision: era
 regions: [europe, middle-east, east-asia]

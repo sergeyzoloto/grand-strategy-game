@@ -18,8 +18,8 @@ region_variants:
 absence:
   - region: east-asia
     note: Chinese Buddhism never fully closes its canon the way the Pali Canon or the Christian and Islamic scriptural canons eventually do, continuing to incorporate newly translated and newly composed texts (including entirely new indigenous scriptures) over many centuries — an open, expanding canon as a stable, durable institutional choice rather than a stage on the way to eventual closure.
-prereqs: [NAT-005]
-enables: [REL-003, REL-006, REL-007, REL-014]
+prereqs: [REL-003]
+enables: [REL-006, REL-007, REL-014]
 see_also: []
 contested: false
 contested_note: ""

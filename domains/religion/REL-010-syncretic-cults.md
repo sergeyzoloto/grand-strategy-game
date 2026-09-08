@@ -7,13 +7,13 @@ domains_touched: [migration]
 tier: core
 status: drafted
 confidence: medium
-date_start: 1500
+date_start: 1526
 date_end: 1850
 date_precision: century
 regions: [africa, americas]
 region_variants:
   - region: americas
-    date_start: 1510
+    date_start: 1526
     note: Haitian Vodou, Cuban Santeria, and Brazilian Candomble each independently blend West and Central African deity systems (Yoruba orisha, Fon vodun, and related traditions) with Catholic saint veneration, using the saints' iconography as a permitted outward form for continued worship of African deities under conditions of forced conversion and suppression — syncretism here functioning as much as concealment and cultural survival strategy as spontaneous religious blending.
 absence:
   - region: africa
@@ -35,7 +35,7 @@ or safer outward form.
 
 ## Timing
 
-Enslaved Africans transported to the Americas from 1510 onward (directly
+Enslaved Africans transported to the Americas from 1526 onward (directly
 continuing MIG-013's forced-migration mechanic) begin developing syncretic
 traditions almost immediately upon arrival, with the resulting practices
 (Vodou, Santeria, Candomble among many named traditions) continuing to

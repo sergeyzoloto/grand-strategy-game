@@ -19,7 +19,7 @@ absence:
   - region: africa
     note: Ethiopian Orthodox monasticism, tracing its own tradition to very early contact with Egyptian desert monasticism, develops into one of the most sustained and socially central monastic traditions anywhere, with monasteries functioning as major regional centers of literacy, land management, and political influence for over a millennium — a case where the usual origin-versus-periphery framing in monastic history undersells a tradition that became genuinely central to its own society's institutional life.
 prereqs: [REL-001]
-enables: [HLT-014]
+enables: [HLT-014, REL-019, REL-021, REL-024, REL-025]
 see_also: [PHI-012]
 contested: false
 contested_note: ""

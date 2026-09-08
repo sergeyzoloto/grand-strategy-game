@@ -18,8 +18,8 @@ region_variants:
 absence:
   - region: east-asia
     note: Confucianism, despite its ethical sophistication and enormous institutional influence across East Asia, stays oriented toward this-worldly social and familial obligation within a defined civilizational sphere rather than making an explicit universalist claim to transcend ethnic or civilizational boundary the way contemporaneous Buddhist and later Christian and Islamic universalism do — comparable ethical seriousness without the specific institution-restructuring universalist move.
-prereqs: [REL-002]
-enables: [REL-014]
+prereqs: []
+enables: [REL-002, REL-014]
 see_also: [DIP-010, PHI-006]
 contested: false
 contested_note: ""

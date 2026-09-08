@@ -23,7 +23,7 @@ absence:
     note: Chinese imperial magistrates combine investigative, prosecutorial, and judicial functions in a single official rather than separating them between an independent judge and a separate investigating or prosecuting authority, an inquisitorial model organized around a unified local administrative office rather than a specialized judicial branch distinct from general bureaucratic administration.
 prereqs: [LAW-001]
 enables: [LAW-021]
-see_also: []
+see_also: [REL-012]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -4,7 +4,7 @@ title: Investiture and the Papacy-Empire Conflict
 legacy_ref:
 domain: religion
 domains_touched: [law, diplomacy]
-tier: core
+tier: standard
 status: drafted
 confidence: high
 date_start: 1075
