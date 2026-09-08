@@ -20,7 +20,7 @@ absence:
     note: Islamic finance's traditional stance treats many conventional derivative structures as involving excessive uncertainty (gharar) incompatible with riba-avoidance principles (FIN-004), constraining the direct adoption of standard futures and options structures and instead channeling comparable risk-management need toward alternative, contract-specific hedging arrangements compliant with those principles.
 prereqs: [FIN-005]
 enables: []
-see_also: [FIN-004]
+see_also: [FIN-004, FIN-022, FIN-018, FIN-026]
 contested: false
 contested_note: ""
 stats_touched: []

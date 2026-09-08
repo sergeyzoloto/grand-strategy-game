@@ -20,7 +20,7 @@ absence:
     note: The German historical school of economics (Friedrich List prominent among them) explicitly argues against laissez-faire for developing industrial economies, advocating protective tariffs (COM-018) and state-directed industrial policy instead — a substantial internal European counter-current to classical liberalism, not a view held only outside Europe.
 prereqs: [FIN-001]
 enables: [FIN-014]
-see_also: [COM-018]
+see_also: [COM-018, FIN-016]
 contested: true
 contested_note: "Whether laissez-faire policy in its 19th-century heyday genuinely maximized aggregate growth and welfare, or primarily benefited already-advanced economies (Britain especially) while disadvantaging later-developing economies that needed protective policy to build competitive industry, is a live and unresolved debate in economic history, with the German historical school and later development economists on one side and classical/neoclassical economists on the other. Model laissez-faire's growth effect as conditional on an economy's existing competitive position — plausibly positive for an already-leading industrial economy, plausibly negative for a catching-up one facing established competitors — rather than as a policy with one universal effect regardless of starting position."
 stats_touched: []

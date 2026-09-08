@@ -20,7 +20,7 @@ absence:
     note: Japan and later several other East Asian economies graduate from being aid and development-loan recipients to major donor and creditor nations within a few decades, an unusually fast reversal of position within the same institutional system relative to the multi-generational recipient status several other regions experience.
 prereqs: [FIN-011]
 enables: []
-see_also: []
+see_also: [FIN-023]
 contested: true
 contested_note: "Whether IMF and World Bank loan conditionality genuinely stabilizes struggling economies by imposing needed fiscal and structural discipline, or imposes counterproductive austerity that deepens and prolongs the crises it's meant to resolve, is a live and unresolved debate in development economics, with real cases supporting both readings depending on the specific conditions attached and the borrowing country's own institutional capacity. Model conditionality's effect as dependent on the specific terms attached and the borrower's institutional capacity to absorb them, rather than as a fixed-sign outcome true across every case."
 stats_touched: []

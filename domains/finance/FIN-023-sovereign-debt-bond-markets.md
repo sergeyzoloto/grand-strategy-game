@@ -20,7 +20,7 @@ absence:
     note: Qing China finances state expenditure predominantly through direct taxation and, in fiscal emergencies, sale of offices or informal levies rather than through a developed tradable government bond market, leaving it without the same capacity to mobilize large-scale, up-front capital against future revenue that European sovereign-debt markets provide their own governments.
 prereqs: [FIN-001, FIN-008]
 enables: [FIN-026]
-see_also: []
+see_also: [FIN-025]
 contested: false
 contested_note: ""
 stats_touched: [sovereign credit capacity]

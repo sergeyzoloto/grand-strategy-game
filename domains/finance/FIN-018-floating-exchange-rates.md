@@ -18,9 +18,9 @@ region_variants:
 absence:
   - region: east-asia
     note: Several East Asian economies maintain managed or heavily-intervened exchange rates well after the major floating-rate shift elsewhere, a policy choice directly implicated in setting up the currency-peg vulnerabilities that the 1997 Asian Financial Crisis (FIN-010) later exposes once capital markets test those pegs under stress.
-prereqs: [FIN-027]
+prereqs: [FIN-027, FIN-011]
 enables: []
-see_also: [FIN-002, FIN-010]
+see_also: [FIN-002, FIN-010, FIN-015]
 contested: false
 contested_note: ""
 stats_touched: []

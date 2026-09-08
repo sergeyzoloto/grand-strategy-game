@@ -20,7 +20,7 @@ absence:
     note: Rotating savings and credit associations (known variously as susu in West Africa, and comparable forms elsewhere) provide broad informal consumer-credit access without any formal lending institution at all — members contribute regularly to a shared pool and take turns receiving the full amount, achieving credit access through social trust and reciprocal obligation rather than through interest-bearing lending or collateral.
 prereqs: [FIN-004]
 enables: []
-see_also: []
+see_also: [FIN-024]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Post-WWII Japan experiences significant but comparatively controlled inflation during its reconstruction period rather than a runaway spiral, aided by coordinated fiscal and monetary policy and, crucially, sustained external demand and aid rather than the isolated fiscal collapse driving the Weimar and Zimbabwe cases — showing high inflation risk doesn't automatically cascade into a self-reinforcing spiral given sufficient policy coordination and external support.
-prereqs: [FIN-002]
+prereqs: [FIN-002, FIN-011]
 enables: []
 see_also: []
 contested: false

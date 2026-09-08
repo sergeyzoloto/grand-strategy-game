@@ -20,7 +20,7 @@ absence:
     note: Chinese long-distance merchant settlement in this era relies more heavily on established merchant-guild trust networks and, later, dedicated remittance institutions (piaohao, maturing after this entry's window) than on a bill-of-exchange instrument circulating independently of a specific issuing house's own network — a comparable settlement function achieved through a different institutional structure.
 prereqs: [FIN-004]
 enables: [FIN-005]
-see_also: [LAW-017]
+see_also: [LAW-017, FIN-008, FIN-011]
 contested: false
 contested_note: ""
 stats_touched: [contract enforcement]

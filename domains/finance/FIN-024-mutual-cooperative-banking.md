@@ -20,7 +20,7 @@ absence:
     note: Comparable member-owned mutual savings institutions develop later and less extensively in the United States relative to Europe in this era, with American consumer credit access instead developing predominantly through the commercial-lender and, eventually, installment-plan channels FIN-017 already covers, rather than through a widespread mutual-ownership banking sector of comparable scale.
 prereqs: [FIN-006]
 enables: []
-see_also: []
+see_also: [FIN-017]
 contested: false
 contested_note: ""
 stats_touched: []

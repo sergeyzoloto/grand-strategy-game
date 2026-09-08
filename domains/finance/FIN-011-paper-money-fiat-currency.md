@@ -19,8 +19,8 @@ absence:
   - region: europe
     note: European paper currency stays limited and often crisis-prone (notably John Law's failed 1720 Mississippi Company note scheme in France) for centuries after China's mature paper-money experience, only becoming a stable, trusted everyday medium of exchange considerably later — the "primitive to advanced" framing popular accounts sometimes apply runs backward here.
 prereqs: [FIN-001]
-enables: [FIN-027, FIN-025]
-see_also: [FIN-002]
+enables: [FIN-027, FIN-025, FIN-003, FIN-018]
+see_also: [FIN-002, FIN-021]
 contested: false
 contested_note: ""
 stats_touched: [price level]

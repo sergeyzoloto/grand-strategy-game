@@ -20,7 +20,7 @@ absence:
     note: Colonial African currencies in this era are typically pegged directly to the colonizing power's own currency and gold backing through currency-board arrangements, rather than participating in the gold standard as independent monetary sovereigns — monetary policy is set entirely by the colonial metropole, with the colony holding no independent gold-standard membership of its own.
 prereqs: [COM-011]
 enables: [FIN-003]
-see_also: []
+see_also: [FIN-016, FIN-018]
 contested: true
 contested_note: "Whether the classical gold standard (roughly 1870s-1914) genuinely stabilized international trade and investment by providing credible, predictable exchange rates, or primarily transmitted deflationary shocks and constrained governments' ability to respond to domestic downturns (a major line of argument for why it worsened the Great Depression, see FIN-016), is debated among monetary historians. Model the gold standard as delivering real exchange-rate predictability benefits to international trade and capital flows while simultaneously removing a state's ability to use monetary policy countercyclically — both effects real and simultaneous, with the net verdict depending on which one matters more in a given crisis rather than one effect canceling the other out."
 stats_touched: [bullion stock, price level]
