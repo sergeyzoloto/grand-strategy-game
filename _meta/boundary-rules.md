@@ -101,6 +101,26 @@ corpse-handling disease-management function is HLT. Aqueduct and sewer
 construction technique is ENG; the resulting settlement mortality rate,
 and its decay when maintenance lapses, is HLT.
 
+## LAW / WAR
+
+- **LAW (law)** owns the land-tenure and inheritance bond itself — who
+  holds land under what obligation, how that obligation is legally
+  codified and passed down, and how it compares across jurisdictions as an
+  institutional form.
+- **WAR (war)** owns the resulting military capability and doctrine —
+  how an army raised this way fights, how its social culture (honor
+  codes, hereditary warrior class identity) differs from a salaried
+  force, and how that capability compares to alternative manpower
+  models.
+
+A feudal land grant in exchange for service is LAW. The knight or samurai
+class's own battlefield doctrine and honor-bound military culture built
+on top of that grant is WAR. Where an entry's own comparative material
+(which regions, which specific institutions, which historical dates) is
+identical to another entry's under this split, that's a sign the two
+should be one entry with two `domains_touched`, not two independently-
+written entries that happen to agree.
+
 ## LAW / DIP
 
 - **LAW (law)** owns internal enforceable obligation — contracts, property,
