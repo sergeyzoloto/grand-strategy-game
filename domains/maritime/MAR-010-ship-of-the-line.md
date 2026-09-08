@@ -15,9 +15,9 @@ region_variants: []
 absence:
   - region: east-asia
     note: No comparable line-of-battle doctrine or dedicated heavy-gunned capital ship class develops in East Asian naval traditions in this era, since the region's dominant naval engagements (Wokou suppression, Imjin War-era Korean and Japanese fleets) favor different vessel types and tactics (boarding actions, fire ships, the Korean turtle ship's ramming and close-defense role) suited to their own coastal and strait-dominated theatres rather than open-ocean fleet gunnery duels.
-prereqs: [MAR-002, MAR-031]
+prereqs: [MAR-002, MAR-031, MAR-005]
 enables: [MAR-018]
-see_also: []
+see_also: [MAR-019, MAR-037]
 contested: false
 contested_note: ""
 stats_touched: []

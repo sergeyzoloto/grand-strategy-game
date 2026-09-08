@@ -17,7 +17,7 @@ absence:
     note: Indian Ocean monsoon-trade shipping (MAR-001) rarely undertakes voyages of the uninterrupted multi-month duration that triggers scurvy at scale, since the monsoon-timed trade calendar and shorter coastal-to-coastal legs allow more frequent fresh provisioning than a transoceanic Atlantic or Pacific crossing does — a difference in voyage structure rather than in any dietary knowledge gap.
 prereqs: [MAR-008]
 enables: []
-see_also: []
+see_also: [MAR-001]
 contested: false
 contested_note: ""
 stats_touched: []

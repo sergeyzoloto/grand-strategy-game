@@ -17,7 +17,7 @@ absence:
     note: Meiji Japan explicitly studies and rejects the Jeune École's cheap-flotilla logic in favor of building a conventional battleship-centered fleet (culminating in the decisive fleet action at Tsushima, 1905), betting correctly for its own strategic situation that a great-power-scale decisive battle fleet, not commerce-raiding and coastal-defense flotillas, was what a rising naval power actually needed.
 prereqs: [MAR-023]
 enables: []
-see_also: [MAR-024]
+see_also: [MAR-024, MAR-010, MAR-021]
 contested: true
 contested_note: "Whether the Jeune École represented a genuinely sound strategic insight (that expensive capital ships were becoming vulnerable to cheap torpedo craft) that was simply ahead of the technology's maturity, or was a doctrinally confused overreaction that correctly identified a real vulnerability but drew the wrong institutional conclusion from it, is debated among naval historians. Model it as a real, partially-correct strategic bet whose payoff depends on torpedo/submarine technology maturity (MAR-023, MAR-024) at the time it's adopted — a bet that pays off handsomely once that technology matures enough (as WWI submarine warfare later validates the underlying commerce-raiding logic) but fails as an immediate battle-fleet substitute given 1880s torpedo range and reliability."
 stats_touched: []

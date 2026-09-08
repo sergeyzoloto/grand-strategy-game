@@ -18,7 +18,7 @@ region_variants:
 absence: []
 prereqs: []
 enables: []
-see_also: [MAR-014]
+see_also: [MAR-014, MAR-003, MAR-009]
 contested: false
 contested_note: ""
 stats_touched: []

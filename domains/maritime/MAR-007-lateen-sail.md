@@ -20,7 +20,7 @@ absence:
     note: Chinese and Korean shipbuilding traditions instead develop the balanced lug and batten sail (used on junks), achieving comparable or superior windward sailing ability through an entirely independent rig design — a case of convergent function through divergent technique rather than one region lacking the capability the other had.
 prereqs: []
 enables: [MAR-008]
-see_also: []
+see_also: [MAR-001]
 contested: true
 contested_note: "The lateen rig's exact origin point (Mediterranean, versus an Indian Ocean/Arab origin later diffusing into the Mediterranean) is disputed, complicated by sparse and ambiguous early textual and iconographic evidence. Model the rig as arising from a shared or closely-connected Mediterranean/Middle Eastern innovation zone rather than committing to a single origin point, since the evidence doesn't cleanly support one over the other."
 stats_touched: []

@@ -20,7 +20,7 @@ absence:
     note: No African state participates in the dreadnought arms race in any capacity, the naval-status competition MAR-025 and this entry both describe remaining structurally closed to every polity on the continent for the same industrial-base reasons noted there.
 prereqs: [MAR-025]
 enables: []
-see_also: []
+see_also: [MAR-023, MAR-028]
 contested: true
 contested_note: "Whether HMS Dreadnought's 1906 launch was a strategically necessary response to genuine technological trends already underway elsewhere (other navies were independently converging on all-big-gun designs) or a self-inflicted British strategic error that needlessly reset a naval arms race Britain was already comfortably winning under the old pre-dreadnought standard, is debated among naval historians. Model the all-big-gun design as a technology that was going to be adopted by some major power regardless of British action, but let the specific decision to build and publicize Dreadnought as dramatically as Britain did be a modelable choice with its own diplomatic/arms-race-acceleration consequence, separable from the underlying technology's own inevitability."
 stats_touched: [naval prestige]

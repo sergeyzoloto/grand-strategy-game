@@ -18,9 +18,9 @@ region_variants:
 absence:
   - region: east-asia
     note: Chinese maritime trade in this era relies more heavily on cargo-splitting across multiple vessels and diversified partnership investment to manage voyage risk than on a dedicated premium-based insurance instrument comparable to the Mediterranean model, achieving comparable risk mitigation through portfolio diversification rather than a transferable risk contract.
-prereqs: [MAR-001]
+prereqs: [MAR-001, MAR-004]
 enables: []
-see_also: [FIN-022]
+see_also: [FIN-022, MAR-009]
 contested: false
 contested_note: ""
 stats_touched: [contract enforcement]

@@ -20,7 +20,7 @@ absence:
     note: No comparable monitor-type coastal-defense vessel class develops independently in East Asian navies of this era, which instead modernize primarily by purchasing conventional ironclad and later pre-dreadnought designs from European and American builders (see MAR-018's Ottoman-parallel absence case) rather than by developing a specialized low-freeboard coastal type of their own.
 prereqs: [MAR-018]
 enables: []
-see_also: []
+see_also: [MAR-019, MAR-025, MAR-004]
 contested: false
 contested_note: ""
 stats_touched: []

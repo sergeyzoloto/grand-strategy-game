@@ -23,7 +23,7 @@ absence:
     note: Sub-Saharan African polities largely do not develop dedicated purpose-built warship traditions comparable to the Mediterranean, East Asian, or South Asian cases in this era, reflecting the Swahili coast's trade-network orientation (MAR-001) over naval force projection, and limited direct exposure to blue-water naval rivalry rather than any lack of maritime capability generally.
 prereqs: [MAR-030]
 enables: [MAR-005, MAR-010, MAR-017]
-see_also: []
+see_also: [MAR-001, MAR-008, MAR-018, MAR-031]
 contested: false
 contested_note: ""
 stats_touched: []

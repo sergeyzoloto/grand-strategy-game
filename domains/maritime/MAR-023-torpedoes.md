@@ -20,7 +20,7 @@ absence:
     note: The United States lags European and Japanese torpedo development and doctrine through this period, adopting effective self-propelled torpedo technology and doctrine substantially through licensing and observation of European (chiefly British Whitehead-derived) designs rather than through independent domestic innovation.
 prereqs: []
 enables: [MAR-019, MAR-021, MAR-024]
-see_also: []
+see_also: [MAR-018, MAR-025, MAR-026]
 contested: false
 contested_note: ""
 stats_touched: []

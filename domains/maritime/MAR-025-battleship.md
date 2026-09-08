@@ -20,7 +20,7 @@ absence:
     note: No African state builds or operates battleships in this era, naval great-power status of the kind the battleship signifies remaining entirely outside the reach of every African polity through the period this entry covers, a capability and industrial-base gap far more absolute than the purchase-versus-build gap seen elsewhere in this domain.
 prereqs: [MAR-018]
 enables: [MAR-026, MAR-028]
-see_also: []
+see_also: [MAR-020, MAR-023]
 contested: false
 contested_note: ""
 stats_touched: [naval prestige]

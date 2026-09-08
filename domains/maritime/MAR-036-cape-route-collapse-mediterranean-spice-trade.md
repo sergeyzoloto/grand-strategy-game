@@ -17,7 +17,7 @@ absence:
     note: The Mamluk and later Ottoman-administered Red Sea and overland relay route, which had carried the bulk of the Indian Ocean spice trade to Mediterranean markets for centuries, is not physically destroyed or blockaded by the Cape route's opening — it simply becomes commercially uncompetitive against an all-water alternative with fewer transshipment stages, showing a route can be rendered obsolete without ever being directly contested.
 prereqs: [MAR-008]
 enables: []
-see_also: []
+see_also: [MAR-005]
 contested: false
 contested_note: ""
 stats_touched: []

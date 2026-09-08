@@ -23,7 +23,7 @@ absence:
     note: Pre-contact American watercraft (dugout canoes, bark canoes, reed boats, and lashed rafts) achieve real regional sophistication without developing a plank-built hull tradition capable of the cargo volumes or open-ocean durability the Old World traditions reach, consistent with MAR-001's own absence case for why American coastal trade stayed regionally bounded.
 prereqs: []
 enables: [MAR-001, MAR-002, MAR-033]
-see_also: []
+see_also: [MAR-005, MAR-006]
 contested: false
 contested_note: ""
 stats_touched: []

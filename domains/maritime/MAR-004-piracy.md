@@ -22,8 +22,8 @@ absence:
   - region: south-asia
     note: The Indian Ocean's monsoon-trade system (MAR-001) supports comparatively less endemic piracy relative to its trade volume than the Mediterranean or Caribbean in most periods, plausibly because dispersed, cooperating port polities had more to gain from protecting the predictable monsoon trade calendar their own revenue depended on than from raiding it — a structural incentive difference, not an absence of capable raiders in the region.
 prereqs: [MAR-001]
-enables: [MAR-012]
-see_also: [MAR-016]
+enables: [MAR-012, MAR-011]
+see_also: [MAR-016, MAR-020]
 contested: false
 contested_note: ""
 stats_touched: [protection rent]

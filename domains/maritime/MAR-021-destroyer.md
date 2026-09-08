@@ -20,7 +20,7 @@ absence:
     note: No African naval power develops or operates destroyer-type vessels in this era, naval capability across the continent in this period being confined to a small number of colonial-administered coastal patrol craft rather than any independent blue-water force with a comparable role to fill.
 prereqs: [MAR-023]
 enables: []
-see_also: []
+see_also: [MAR-019, MAR-037]
 contested: false
 contested_note: ""
 stats_touched: []

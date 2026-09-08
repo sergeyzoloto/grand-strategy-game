@@ -20,7 +20,7 @@ absence:
     note: The Ganges-Brahmaputra system, despite comparable river scale to the Volga network, is integrated into this era's trade primarily as a regional agricultural and internal-trade artery rather than as a long-distance connector to a genuinely separate maritime trade zone the way the Volga route links Baltic and Caspian/Black Sea systems — a difference in network function, not in river navigability.
 prereqs: [MAR-001]
 enables: []
-see_also: [ENG-003]
+see_also: [ENG-003, MAR-030]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]

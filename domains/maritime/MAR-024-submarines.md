@@ -20,7 +20,7 @@ absence:
     note: Imperial Japan develops significant submarine technology but, consistent with its broader doctrinal choice noted in MAR-022, employs it substantially against enemy warships in fleet-support roles rather than committing to systematic commerce raiding against Allied merchant shipping the way German doctrine did in the Atlantic, leaving a major capability underused relative to its own strategic vulnerability to the same tactic.
 prereqs: [MAR-023, ENG-020]
 enables: [MAR-037]
-see_also: [MAR-019, WAR-020]
+see_also: [MAR-019, WAR-020, MAR-022]
 contested: false
 contested_note: ""
 stats_touched: []

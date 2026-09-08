@@ -23,7 +23,7 @@ absence:
     note: Ottoman naval modernization in this era proceeds mainly through purchasing European-built ironclads rather than developing independent domestic armored-warship design and construction capacity, illustrating a technology-adoption pattern (buying the capability rather than building the industrial base to produce it) that recurs across several non-European navies entering the ironclad era.
 prereqs: [MAR-010, MAR-031]
 enables: [MAR-020, MAR-025]
-see_also: []
+see_also: [MAR-002, MAR-005, MAR-028]
 contested: false
 contested_note: ""
 stats_touched: [naval prestige]

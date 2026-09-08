@@ -20,7 +20,7 @@ absence:
     note: Chinese and Japanese naval forces of this era field shipboard cannon but do not develop the broadside-and-rate doctrine (MAR-010) that turns gun count into a formal fleet-strength metric elsewhere, consistent with the absence of comparable line-of-battle tactics already noted there — the weapon existed without the specific doctrinal accounting built around it in Europe.
 prereqs: []
 enables: [MAR-010, MAR-018]
-see_also: []
+see_also: [MAR-002]
 contested: false
 contested_note: ""
 stats_touched: []
