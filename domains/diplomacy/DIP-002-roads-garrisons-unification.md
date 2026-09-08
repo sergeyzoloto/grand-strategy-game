@@ -4,10 +4,10 @@ title: Roads, Garrisons, and Imperial Unification
 legacy_ref:
 domain: diplomacy
 domains_touched: [engineering, war]
-tier: core
+tier: standard
 status: drafted
 confidence: high
-date_start: -520
+date_start: -500
 date_end: 1533
 date_precision: era
 regions: [middle-east, americas, mediterranean]
@@ -20,7 +20,7 @@ absence:
     note: Roman road and garrison infrastructure achieves comparable administrative reach but through a more explicitly military-first logic (roads built substantially for legion movement, with civil administrative and commercial use following) than the Persian and Inca cases, where road networks appear designed from the outset with integrated administrative messaging as a co-equal purpose alongside military logistics.
 prereqs: [ENG-003]
 enables: []
-see_also: []
+see_also: [DIP-001]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -36,7 +36,7 @@ and abstract.
 ## Timing
 
 The Persian Royal Road's administrative and messenger function (already
-noted for its engineering in ENG-003) matures alongside its -520
+noted for its engineering in ENG-003) matures alongside its -500
 construction; the Inca road network's parallel chasqui relay and garrison-
 provisioning system develops from around 1450 through the empire's 1533
 collapse.

@@ -17,7 +17,7 @@ absence:
     note: No comparable formal, self-governing multi-city merchant league with its own collective bargaining power, trade privileges, and (rarely) military action against sovereign states develops in East Asian commercial history of this era — Chinese and Japanese merchant activity organizes instead through guild and lineage-based networks operating within, rather than as a confederated bloc alongside, existing state authority.
 prereqs: [MAR-006]
 enables: [COM-016]
-see_also: [MIG-009, LAW-007, COM-029]
+see_also: [MIG-009, LAW-007, COM-029, DIP-015]
 contested: false
 contested_note: ""
 stats_touched: [contract enforcement]

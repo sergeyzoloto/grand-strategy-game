@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: americas
     note: Haudenosaunee treaty diplomacy (already covered in this record's law domain for its confederational council structure, LAW-003) records binding inter-nation agreements through wampum belts — woven shell-bead patterns serving as both mnemonic device and physical, exchangeable token of the agreement itself — a durable non-written treaty-recording technology functioning without literacy at all.
-prereqs: [DIP-001]
+prereqs: [DIP-013]
 enables: [DIP-005]
 see_also: [LAW-003]
 contested: false

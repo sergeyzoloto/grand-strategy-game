@@ -19,8 +19,8 @@ absence:
   - region: middle-east
     note: The Ottoman Constitution of 1876 formally establishes a parliament and constitutional limits on the sultan's authority, but the sultan retains and exercises the power to suspend the constitution and parliament entirely (used within two years), showing a written constitutional text alone doesn't durably constrain executive power without institutions strong enough to prevent its own suspension.
 prereqs: [LAW-006, LAW-010]
-enables: [DIP-008, LAW-022]
-see_also: []
+enables: [LAW-022]
+see_also: [DIP-008]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -10,17 +10,17 @@ confidence: high
 date_start: 1494
 date_end: 1885
 date_precision: era
-regions: [europe, africa, east-asia]
+regions: [europe, africa]
 region_variants:
   - region: africa
     date_start: 1885
     note: The Berlin Conference formalizes rules for European powers to recognize each other's African territorial claims (the "effective occupation" principle) entirely among the colonizing powers themselves, with no African polity present or consulted in a negotiation that directly determined their own territories' fate.
 absence:
   - region: east-asia
-    note: China and Japan's unequal treaties (see COM-022 for the Opium Wars case specifically) create treaty ports and extraterritorial privilege for foreign powers without full colonial annexation — a distinct diplomatic-legal category from both outright colony and full sovereign equality, imposed through coercive negotiation with the affected polity's own (heavily constrained) government still nominally party to the agreement, unlike the African case where no such consultation occurred at all.
-prereqs: [MIG-004, MIG-012]
+    note: China and Japan's unequal treaties (DIP-020) create treaty ports and extraterritorial privilege for foreign powers through direct coerced bilateral negotiation with the affected polity's own (heavily constrained) government still nominally party to the agreement — a structurally different diplomatic category from this entry's multilateral inter-colonizer coordination, where the colonized party is never present at all.
+prereqs: [MIG-004, DIP-014, DIP-015]
 enables: []
-see_also: [COM-016, COM-022, DIP-009]
+see_also: [COM-016, DIP-009, DIP-020, DIP-019, MIG-012]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -56,13 +56,12 @@ coordination problem.
 
 ## Social consequence
 
-The specific diplomatic-legal category imposed — outright colony, formal
+The specific diplomatic-legal category imposed — outright colony, or formal
 protectorate (nominal continued local sovereignty under an imposed foreign
-"protecting" power), or unequal treaty port — determines how much
-formal legal fiction of continued local authority persists even as real
-control transfers to the foreign power, with real consequences for how
-that transfer gets historically remembered and legally contested long
-afterward.
+"protecting" power) — determines how much formal legal fiction of
+continued local authority persists even as real control transfers to the
+foreign power, with real consequences for how that transfer gets
+historically remembered and legally contested long afterward.
 
 ## Regional specifics
 
@@ -70,19 +69,18 @@ The Berlin Conference's negotiation entirely among European powers, with
 no African polity present, is one of the starkest cases in this record of
 a purely inter-colonizer diplomatic settlement directly determining a
 colonized population's fate without any of their own participation in the
-process at all. East Asian unequal treaties instead retain the affected
-government as a nominal treaty party, even under severe coercion and
-constraint — a formally different diplomatic category (coerced bilateral
-treaty versus multilateral third-party partition) with real, if limited,
-consequences for how sovereignty claims there could later be
-diplomatically contested and eventually reversed.
+process at all. East Asian unequal treaties (DIP-020) instead retain the
+affected government as a nominal treaty party even under severe coercion —
+a formally different diplomatic category (coerced bilateral treaty versus
+multilateral third-party partition, with the colonized party absent
+throughout) this entry's own multilateral-coordination mechanism doesn't
+cover.
 
 ## Hook
 
 Imperial oceanic diplomacy solves colonizing powers' own coordination
-problem among themselves — whose claim takes precedence — largely
+problem among themselves — whose claim takes precedence — entirely
 independent of any relationship with the colonized territory, and the
-resulting legal-diplomatic category (outright colony, protectorate, or
-coerced unequal treaty with the local government still nominally party)
+resulting legal-diplomatic category (outright colony or protectorate)
 directly shapes how much formal legal standing survives for that claim to
 ever be diplomatically contested and reversed later.

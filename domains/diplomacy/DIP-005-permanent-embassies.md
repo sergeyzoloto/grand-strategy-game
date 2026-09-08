@@ -18,8 +18,8 @@ absence:
   - region: east-asia
     date_start: 1400
     note: China's Ming-era Honglu Si (Court of State Ceremonial) manages the reception and ritual treatment of foreign envoys arriving under the tributary system (DIP-001) with real sophistication and permanence, but as a one-directional receiving institution rather than as a practice of China itself stationing resident ambassadors abroad on a reciprocal basis.
-prereqs: [DIP-003]
-enables: []
+prereqs: [DIP-003, DIP-013, DIP-014]
+enables: [DIP-018, DIP-006]
 see_also: [DIP-001]
 contested: false
 contested_note: ""

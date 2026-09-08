@@ -18,9 +18,9 @@ region_variants:
 absence:
   - region: americas
     note: Haiti's 1804 independence, achieved through the only successful large-scale enslaved-people's revolution in this record, faces sustained diplomatic non-recognition by major powers for decades afterward — France extracts a crushing 1825 indemnity as the actual price of recognition, and the United States withholds recognition until 1862 — showing a legitimacy claim's internal validity and its actual diplomatic recognition can diverge for generations when the claim itself (a former colony of enslaved people governing itself) threatens other powers' own domestic political and economic order.
-prereqs: [DIP-006, LAW-011]
+prereqs: [DIP-006]
 enables: []
-see_also: []
+see_also: [LAW-011, DIP-017]
 contested: false
 contested_note: ""
 stats_touched: []

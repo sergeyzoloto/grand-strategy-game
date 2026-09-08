@@ -21,9 +21,9 @@ region_variants:
 absence:
   - region: mediterranean
     note: Roman client-kingdom relationships extend a middle option between full annexation and full independence — a client king retains local rule and internal legitimacy while ceding foreign policy and military support obligations to Rome, a diplomatic status distinct from both the Chinese tributary model's ritual hierarchy and the Aztec model's threat-based extraction.
-prereqs: [WAR-001]
+prereqs: [WAR-001, DIP-013, DIP-014]
 enables: [DIP-004]
-see_also: [DIP-005, PHI-025]
+see_also: [DIP-005, PHI-025, DIP-002]
 contested: false
 contested_note: ""
 stats_touched: [protection rent]

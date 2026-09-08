@@ -18,8 +18,8 @@ absence:
   - region: middle-east
     date_start: 632
     note: The Islamic ummah concept frames the ideal political order as one community of believers rather than a system of permanently separate, mutually sovereign, religiously-indifferent territorial states — a normative vision in real tension with Westphalian sovereignty's assumption that religious and political boundaries need not coincide at all.
-prereqs: [REL-013]
-enables: [DIP-008, DIP-009, DIP-011]
+prereqs: [REL-013, DIP-005]
+enables: [DIP-008, DIP-009, DIP-011, DIP-017, DIP-019, DIP-020]
 see_also: [PHI-020]
 contested: true
 contested_note: "Whether the 1648 Peace of Westphalia actually established anything like 'sovereign equality' and 'non-interference' in practice, or whether the entire 'Westphalian system' narrative is substantially a 19th- and 20th-century international-relations-theory retrojection onto a much messier settlement that left the Holy Roman Empire's nested, overlapping authority structures largely intact, is a serious and influential revisionist argument in diplomatic history (associated especially with Andreas Osiander), not a fringe view. Model the Westphalian package as the retrospectively-codified template that later diplomatic practice and IR theory treated as foundational and built upon, while leaving open whether 1648 itself was really the clean origin point of that template or a later theoretical construction projected backward onto it."
@@ -52,7 +52,10 @@ making religious choice a matter of internal sovereign discretion rather
 than legitimate grounds for external intervention) — a package that
 trades away hierarchical, religiously-unified international order for a
 horizontal system of mutually recognizing, formally equal territorial
-units.
+units, one that presupposes the standing professional-embassy
+infrastructure and reciprocal immunity (DIP-005) already in place to let
+formally equal sovereigns actually maintain continuous relations with each
+other at all.
 
 ## Social consequence
 

@@ -19,8 +19,8 @@ absence:
   - region: americas
     note: French colonization of the Americas (New France) stays comparatively thin in settler numbers throughout this period relative to British or Spanish colonization, remaining oriented more around fur-trade trading-post relationships with indigenous nations (closer to the maritime/trading-post pattern of MIG-004) than around large-scale agricultural settlement — the same colonizing state pursuing a visibly different migration strategy in a different part of the same continent.
 prereqs: [MIG-004, MIG-005]
-enables: [DIP-007]
-see_also: [MIG-013, HLT-017]
+enables: []
+see_also: [MIG-013, HLT-017, DIP-007]
 contested: false
 contested_note: ""
 stats_touched: [settler footprint]
