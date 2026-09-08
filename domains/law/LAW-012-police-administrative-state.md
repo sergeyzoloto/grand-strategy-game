@@ -20,7 +20,7 @@ absence:
     note: Pre-1829 European urban order relies substantially on a patchwork of night watchmen, parish constables, and military intervention for serious disorder rather than a dedicated, professional, continuously-patrolling civilian police force — a genuine institutional gap that Peel's Metropolitan Police is specifically designed to close, not merely an improvement on an existing comparable institution.
 prereqs: [LAW-001]
 enables: []
-see_also: [MIG-018, WAR-001]
+see_also: [MIG-018, WAR-001, LAW-018, LAW-023]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

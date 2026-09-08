@@ -20,7 +20,7 @@ absence:
     note: Contemporary Chinese and Japanese fiscal administration extracts revenue through the centralized bureaucratic and feudal-obligation channels already covered in this domain (LAW-004, LAW-005) rather than through a negotiated consent-for-taxation bargain with organized estates — revenue extraction here runs through existing administrative or personal-obligation hierarchy rather than requiring a separate representative body's assent at all.
 prereqs: [LAW-001, FIN-001]
 enables: [LAW-010, LAW-011]
-see_also: []
+see_also: [LAW-004, LAW-005]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

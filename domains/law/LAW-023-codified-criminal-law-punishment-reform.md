@@ -20,7 +20,7 @@ absence:
     note: Qing Chinese criminal law in this era continues to rely on a graduated system of corporal and capital punishment codified in explicit statute (the Great Qing Code) rather than adopting a comparable proportionality-and-reform theoretical shift or the penitentiary as an institutional response, achieving a systematically codified punishment schedule without the same Enlightenment-driven theoretical break from spectacle and retribution.
 prereqs: [LAW-001]
 enables: []
-see_also: [HLT-030]
+see_also: [HLT-030, LAW-012]
 contested: false
 contested_note: ""
 stats_touched: []

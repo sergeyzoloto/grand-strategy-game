@@ -20,7 +20,7 @@ absence:
     note: Lebanese delegate and philosopher Charles Malik and Chinese delegate and playwright P.C. Chang are both central figures on the drafting committee itself — Chang specifically pushing for language and concepts (including from Confucian ethical tradition) intended to secure the document's claim to genuine cross-cultural rather than purely Western philosophical grounding — complicating any framing of the UDHR as a solely Western-authored document later applied universally.
 prereqs: [LAW-002]
 enables: []
-see_also: [DIP-011, PHI-013, PHI-019]
+see_also: [DIP-011, PHI-013, PHI-019, LAW-017]
 contested: true
 contested_note: "Whether human rights as codified in the UDHR and subsequent covenants represent genuinely universal cross-cultural values or primarily encode a specifically Western liberal-individualist philosophical framework presented as universal is a long-running and unresolved debate, sometimes termed the universalism-versus-cultural-relativism dispute, with real states and scholars on multiple sides. Model international human rights law's actual enforcement and domestic uptake as conditional on a state's own institutional alignment with the framework, rather than assuming uniform acceptance or uniform rejection — letting the underlying philosophical dispute stay genuinely open while still tracking which specific provisions a given state's domestic law actually incorporates."
 stats_touched: []
