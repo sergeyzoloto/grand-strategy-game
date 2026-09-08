@@ -20,7 +20,7 @@ absence:
     note: Chinese medical theory develops its own extensive framework for epidemic disease (wenbing, "warm disease," theory) addressing transmission and treatment empirically without converging on a germ-based causal mechanism, an independent and effective-in-its-own-terms clinical tradition that solves practical epidemic management without the specific microorganism-identification breakthrough this entry tracks.
 prereqs: [NAT-007, NAT-016]
 enables: [HLT-021]
-see_also: []
+see_also: [HLT-015]
 contested: false
 contested_note: ""
 stats_touched: [medical efficacy]

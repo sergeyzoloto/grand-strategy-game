@@ -20,7 +20,7 @@ absence:
     note: Chinese natural philosophy does not develop a comparably systematic mathematical theory of motion and force in this era, engineering achievement in mechanisms and machinery (documented extensively in works like the Song-era Xin Yixiang Fayao) proceeding via empirical craft refinement rather than through an explicit general mechanical theory being derived and then applied.
 prereqs: [NAT-002]
 enables: [ENG-009, NAT-006, NAT-009, NAT-012, NAT-013]
-see_also: []
+see_also: [NAT-014, NAT-018]
 contested: false
 contested_note: ""
 stats_touched: []

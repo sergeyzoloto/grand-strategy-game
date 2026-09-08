@@ -18,7 +18,7 @@ region_variants:
 absence: []
 prereqs: [NAT-002]
 enables: [NAT-009, NAT-014, NAT-024]
-see_also: []
+see_also: [NAT-004]
 contested: false
 contested_note: ""
 stats_touched: []

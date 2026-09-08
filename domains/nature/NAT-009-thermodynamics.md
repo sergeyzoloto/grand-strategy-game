@@ -17,7 +17,7 @@ absence:
     note: American engineering practice in this era adopts and applies thermodynamic theory largely as an import from European science rather than contributing to its original theoretical development, consistent with the broader pattern in this record of American industrial strength concentrating in applied engineering and manufacturing scale (ENG-005, COM-023's assembly line) rather than in foundational theoretical physics during this specific period.
 prereqs: [NAT-004, NAT-018]
 enables: [NAT-014]
-see_also: [ENG-009]
+see_also: [ENG-009, COM-023, ENG-005, NAT-012, NAT-024]
 contested: false
 contested_note: ""
 stats_touched: []

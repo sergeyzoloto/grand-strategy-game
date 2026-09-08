@@ -20,7 +20,7 @@ absence:
     note: Indian astronomer Aryabhata proposes Earth's rotation on its axis (explaining apparent celestial motion without requiring the heavens themselves to rotate) as early as 499, a genuine partial anticipation of heliocentric-adjacent reasoning that doesn't extend to full heliocentrism itself and doesn't transmit into or influence the later Maragha-to-Copernicus lineage.
 prereqs: [NAT-002, NAT-004, NAT-016]
 enables: []
-see_also: []
+see_also: [NAT-010, NAT-023]
 contested: true
 contested_note: "Whether Copernicus directly encountered Maragha-school astronomical texts or diagrams (no definitive documentary proof survives, though the mathematical devices he uses are functionally identical to Ibn al-Shatir's) or arrived at the same solution independently is a genuine, unresolved question in the history of astronomy. Model the Maragha work as, at minimum, a documented prior solution to the same technical problem Copernicus solves, with the transmission question itself left open and probabilistic rather than resolved either way."
 stats_touched: []

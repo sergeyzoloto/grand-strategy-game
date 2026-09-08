@@ -20,7 +20,7 @@ absence:
     note: China's 14th-century plague mortality (entangled with Yuan-Ming political collapse) does not produce the same well-documented labor-price rupture and peasant-bargaining-power shift credited to the European case, though whether that reflects a genuinely different social outcome or a thinner surviving documentary record for teasing the two apart is unresolved.
 prereqs: [HLT-012]
 enables: [AGR-015]
-see_also: []
+see_also: [NAT-011]
 contested: true
 contested_note: "How much of the well-documented post-plague European shift (rising real wages, weakened serfdom, sumptuary-law backlash against lower-class spending) was actually caused by the mortality shock itself, versus longer-running agrarian and institutional trends the plague only accelerated or coincided with, is a live historiographical dispute. Model the labor-scarcity wage/status effect as real and mortality-scaled, but let its long-run institutional consequence (does serfdom actually weaken, or snap back) branch on the prior strength of lordly coercive institutions, not resolve automatically from the mortality number alone."
 stats_touched: []

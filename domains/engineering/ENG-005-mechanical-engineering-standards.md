@@ -20,7 +20,7 @@ absence:
     note: Comparable precision interchangeable-parts manufacturing develops in East Asia only through later Meiji-era Japanese industrial adoption, consistent with the broader pattern of Japan importing this specific Western industrial capability as a deliberate modernization component rather than developing an equivalent system independently on its own prior timeline.
 prereqs: [ENG-010]
 enables: []
-see_also: [COM-023]
+see_also: [COM-023, NAT-009]
 contested: false
 contested_note: ""
 stats_touched: []
