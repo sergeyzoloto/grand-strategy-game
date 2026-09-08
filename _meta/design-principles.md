@@ -38,3 +38,9 @@ The project's design grammar. Every entry's Hook should be checkable against the
    afterthought: the region that *didn't* get silver, *didn't* urbanize, *didn't*
    develop double-entry bookkeeping is telling you something that should show up
    in the mechanic, not just in the prose.
+
+8. **Human scale is not optional.** Five domains independently diagnosed the same
+   missing rung — the corpus jumps from institution to institution with little at
+   household, workshop, crew, or squad scale. Every domain must carry entries at the
+   level where a person experiences the domain's activity, not only the level at which
+   a state organises it.
