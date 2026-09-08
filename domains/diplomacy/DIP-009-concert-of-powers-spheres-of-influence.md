@@ -20,7 +20,7 @@ absence:
     note: The Chinese tributary hierarchy (DIP-001) manages multi-power regional order through graduated subordination to one acknowledged center rather than through negotiated coordination among nominally equal great powers — a genuine alternative model for preventing multi-power conflict, achieving comparable stability through hierarchy rather than through the Concert's periodic negotiated consensus among formal equals.
 prereqs: [DIP-006]
 enables: [DIP-016]
-see_also: [DIP-007]
+see_also: [DIP-007, DIP-003, DIP-011]
 contested: false
 contested_note: ""
 stats_touched: []

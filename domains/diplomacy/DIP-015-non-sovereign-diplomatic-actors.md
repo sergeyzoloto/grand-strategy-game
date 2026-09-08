@@ -17,7 +17,7 @@ absence:
     note: No comparable non-sovereign institution — neither a religious authority nor a merchant confederation — functions as an independent diplomatic party or arbiter between sovereign East Asian states in this era; Chinese and Japanese merchant activity organizes through guild and lineage networks operating within existing state authority (per COM-015's own absence note) rather than as a bloc negotiating alongside or against it, and no comparable claim to inter-monarch religious arbitration authority exists outside the specifically Catholic context.
 prereqs: []
 enables: [DIP-007]
-see_also: [COM-015]
+see_also: [COM-015, DIP-006]
 contested: true
 contested_note: "How much genuine independent arbitrating authority the Papacy's territorial rulings (the 1493 bulls, formalized as the Treaty of Tordesillas) actually carried, versus how much they functioned as after-the-fact religious cover for a division Spain and Portugal had already substantially negotiated and agreed to bilaterally, is disputed among historians of the Iberian expansion. Model papal arbitration's binding force as tracking the arbitrating monarchs' own continued interest in a neutral-seeming settlement rather than as an independent authority those monarchs had no power to simply disregard — the arrangement held only as long as both crowns found it more useful than costly."
 stats_touched: []

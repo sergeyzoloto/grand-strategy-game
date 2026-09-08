@@ -20,7 +20,7 @@ absence:
     note: China and Japan's unequal treaties (DIP-020) create treaty ports and extraterritorial privilege for foreign powers through direct coerced bilateral negotiation with the affected polity's own (heavily constrained) government still nominally party to the agreement — a structurally different diplomatic category from this entry's multilateral inter-colonizer coordination, where the colonized party is never present at all.
 prereqs: [MIG-004, DIP-014, DIP-015]
 enables: []
-see_also: [COM-016, DIP-009, DIP-020, DIP-019, MIG-012]
+see_also: [COM-016, DIP-009, DIP-020, DIP-019, MIG-012, DIP-011]
 contested: false
 contested_note: ""
 stats_touched: []

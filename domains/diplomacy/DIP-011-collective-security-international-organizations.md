@@ -20,7 +20,7 @@ absence:
     note: The League of Nations mandate system applies collective-security-adjacent international oversight to former Ottoman territories in the Middle East without extending League membership or full sovereign standing to those territories themselves — a supervised, subordinate status distinct from full participation in the collective-security system being simultaneously constructed for its actual member states.
 prereqs: [DIP-006, DIP-016]
 enables: [DIP-012]
-see_also: [LAW-009]
+see_also: [LAW-009, DIP-007, DIP-009, DIP-017]
 contested: false
 contested_note: ""
 stats_touched: []
