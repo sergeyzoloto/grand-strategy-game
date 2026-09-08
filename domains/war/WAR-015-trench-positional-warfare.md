@@ -20,7 +20,7 @@ absence:
     note: Despite the Port Arthur precedent being directly observed by European military attaches, most European armies enter 1914 still doctrinally committed to offensive maneuver warfare, having not meaningfully revised prewar doctrine to account for the defensive firepower dominance the Manchurian siege had already demonstrated — a documented case of an available lesson going substantially unlearned.
 prereqs: [WAR-008]
 enables: []
-see_also: []
+see_also: [WAR-007, WAR-010, WAR-013, WAR-018, WAR-021, WAR-016]
 contested: false
 contested_note: ""
 stats_touched: []

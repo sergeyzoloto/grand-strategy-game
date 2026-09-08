@@ -17,7 +17,7 @@ absence:
     note: Meiji Japan's military modernization explicitly imports the Prussian general staff model wholesale (via Meckel's advisory mission) rather than developing an indigenous equivalent, showing the institution could be adopted as a complete package once its value was demonstrated, rather than requiring the same century-long organic development Prussia itself needed.
 prereqs: [WAR-001, WAR-025]
 enables: []
-see_also: []
+see_also: [WAR-010, WAR-011, WAR-012, WAR-017]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

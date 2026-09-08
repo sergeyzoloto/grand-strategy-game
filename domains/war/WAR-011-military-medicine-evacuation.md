@@ -20,7 +20,7 @@ absence:
     note: Comparable systematic battlefield triage-and-evacuation doctrine develops later and less uniformly across East Asian militaries of the 1800s, with modernization efforts (Meiji Japan especially) importing Western evacuation-chain models directly rather than developing an equivalent system independently on their own timeline.
 prereqs: [WAR-001]
 enables: []
-see_also: []
+see_also: [HLT-011, HLT-021, WAR-009]
 contested: false
 contested_note: ""
 stats_touched: []

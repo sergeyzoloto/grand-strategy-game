@@ -23,7 +23,7 @@ absence:
     note: South Asian ironworking of this era, including the famous high-quality wootz steel tradition, stays oriented toward producing a smaller volume of exceptional-quality blades rather than toward the bulk, standardized mass-equipping output the Mediterranean and Chinese cases pursue — a quality-over-volume metallurgical choice, not a lesser capability.
 prereqs: [WAR-023, COM-013, ENG-023]
 enables: [WAR-003, WAR-007]
-see_also: []
+see_also: [MIG-002, WAR-032]
 contested: true
 contested_note: "How much of the Bronze Age collapse (~-1200) is attributable to the spread of ironworking displacing bronze-dependent elite warrior castes, versus other simultaneous factors (climate stress, the 'Sea Peoples' migrations, systems-collapse cascading trade failure), is long disputed among historians of the period, with iron's role ranging from primary cause to incidental coincidence in different accounts. Model mass iron availability as one of several independently-weighted contributing pressures on elite-warrior-monopoly collapse, rather than scripting it as the single cause."
 stats_touched: []

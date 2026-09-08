@@ -20,7 +20,7 @@ absence:
     note: War elephants see comparatively little use in East Asian warfare of this era relative to South Asia and the Hellenistic Mediterranean, with Chinese military doctrine instead developing along the mass-infantry and cavalry lines WAR-002 and WAR-006 already cover — a regional doctrinal choice rather than any lack of access to the animal itself in adjoining Southeast Asian territory.
 prereqs: []
 enables: []
-see_also: [WAR-003, WAR-006]
+see_also: [WAR-003, WAR-006, WAR-002]
 contested: false
 contested_note: ""
 stats_touched: []

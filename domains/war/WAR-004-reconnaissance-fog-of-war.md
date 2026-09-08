@@ -20,7 +20,7 @@ absence:
     note: Pre-modern European commanders frequently campaigned with far less systematic scouting doctrine than steppe or, later, well-organized standing-army traditions maintained, relying instead on local guides, foraging parties' incidental reports, and often outdated or wrong assumptions about enemy position — a genuine, costly gap rather than reconnaissance being a universal baseline competence.
 prereqs: []
 enables: [WAR-019]
-see_also: []
+see_also: [MIG-001]
 contested: false
 contested_note: ""
 stats_touched: [information speed]

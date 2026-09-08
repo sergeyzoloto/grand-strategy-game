@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [WAR-014, WAR-019]
 enables: []
-see_also: []
+see_also: [WAR-022]
 contested: false
 contested_note: ""
 stats_touched: []

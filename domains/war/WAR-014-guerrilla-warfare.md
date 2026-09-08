@@ -20,7 +20,7 @@ absence:
     note: Anti-colonial guerrilla movements across mid-20th-century Africa (Algeria, Kenya, Mozambique among others) adapt the broader guerrilla template to campaigns explicitly aimed at colonial withdrawal and sovereignty rather than at displacing a domestic rival regime, tying the strategy's political objective directly to decolonization diplomacy (DIP's territory) rather than to a civil conflict's internal power struggle.
 prereqs: [WAR-001]
 enables: [WAR-022, WAR-033]
-see_also: []
+see_also: [WAR-013]
 contested: false
 contested_note: ""
 stats_touched: []

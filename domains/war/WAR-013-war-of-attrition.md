@@ -20,7 +20,7 @@ absence:
     note: Pericles' original attritional strategy in the Peloponnesian War (avoiding decisive land battle with Sparta, relying on Athenian naval and financial endurance) is an early explicit articulation of deliberately choosing attrition over decisive engagement as a strategy, rather than attrition simply being what an indecisive war becomes.
 prereqs: [WAR-001, WAR-025]
 enables: [WAR-018]
-see_also: []
+see_also: [WAR-014, WAR-015]
 contested: true
 contested_note: "Whether a war of attrition is best understood as a deliberate strategic choice (as with Pericles' Athenian strategy) or as the default outcome once neither side can achieve a decisive engagement, with 'attrition' as a retrospective label applied after the fact, is a live question in how different historical cases get classified. Model attrition as a real, deliberately selectable strategy conditional on a state correctly assessing its own relative endurance capacity (population, fiscal reserves, alliance support) against its opponent's — with the strategy's success or failure branching directly on whether that assessment was actually correct, as the Sino-Japanese War case shows it can badly not be."
 stats_touched: []

@@ -20,7 +20,7 @@ absence:
     note: Imperial Japanese wartime propaganda emphasizes different core themes (Pan-Asianism, resistance to Western imperialism) than European or American campaigns of the same era, targeted at a different mix of domestic and occupied-territory audiences — the same underlying mechanic (shaping morale and belief for strategic effect) built around locally resonant narrative content rather than an imported template.
 prereqs: [WAR-010, WAR-013]
 enables: []
-see_also: []
+see_also: [WAR-015, WAR-021]
 contested: false
 contested_note: ""
 stats_touched: [information speed]

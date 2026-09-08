@@ -20,7 +20,7 @@ absence:
     note: Comparable systematic casualty and logistics record-keeping is less consistently documented across East Asian conflicts of the same era, complicating direct statistical comparison — very likely reflecting gaps in surviving documentation and later compilation effort more than any difference in the conflicts' actual administrative practice at the time.
 prereqs: [WAR-001]
 enables: [WAR-018]
-see_also: []
+see_also: [WAR-009]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

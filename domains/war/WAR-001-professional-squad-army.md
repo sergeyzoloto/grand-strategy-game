@@ -22,8 +22,8 @@ absence:
   - region: south-asia
     note: Mauryan-era armies retain a much larger standing professional core (described by Greek observers like Megasthenes as salaried year-round troops) than most contemporary Mediterranean city-states could sustain, funded by a correspondingly larger and more centralized state fiscal apparatus — an early case of professionalization scaling directly with state fiscal capacity rather than with any particular military doctrine.
 prereqs: []
-enables: [WAR-005, WAR-006, WAR-007, WAR-009, WAR-010, WAR-011, WAR-012, WAR-013, WAR-014, WAR-017, WAR-028]
-see_also: [WAR-027, LAW-005, LAW-012]
+enables: [WAR-005, WAR-006, WAR-007, WAR-009, WAR-010, WAR-011, WAR-012, WAR-013, WAR-014, WAR-017, WAR-028, WAR-003]
+see_also: [WAR-027, LAW-005, LAW-012, WAR-025, WAR-030]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

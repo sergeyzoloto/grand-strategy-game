@@ -20,7 +20,7 @@ absence:
     note: Direct great-power military confrontation within Europe itself stays absent throughout the nuclear deterrence era (WAR-021) covered here, with European proxy and hybrid conflict activity instead exported to other regions or conducted through non-military means (economic pressure, disinformation) rather than through armed proxy forces on European soil — deterrence holding specifically for the direct-confrontation scenario it was built to prevent.
 prereqs: [WAR-021, WAR-014]
 enables: []
-see_also: []
+see_also: [WAR-033]
 contested: false
 contested_note: ""
 stats_touched: []

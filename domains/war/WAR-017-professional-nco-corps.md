@@ -20,7 +20,7 @@ absence:
     note: Mughal and other early modern South Asian armies rely more heavily on personal retinue and noble-patronage command structures than on a standing, career-track intermediate NCO-equivalent rank, achieving unit cohesion and small-unit leadership through a different social mechanism (personal loyalty ties) rather than through institutionalized professional rank progression.
 prereqs: [WAR-001]
 enables: []
-see_also: [WAR-029]
+see_also: [WAR-029, WAR-009, WAR-012, WAR-016]
 contested: false
 contested_note: ""
 stats_touched: []

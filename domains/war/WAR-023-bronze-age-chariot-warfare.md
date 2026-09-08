@@ -20,7 +20,7 @@ absence:
     note: Comparable Bronze Age chariot-elite warfare in South Asia is attested later and less centrally than in the Near East, with the region's own elite-warfare traditions developing more continuously into the combined chariot-elephant-cavalry doctrine WAR-003 already notes for the later Mauryan period, rather than passing through as sharp a chariot-to-mass-infantry transition as the Mediterranean case.
 prereqs: []
 enables: [WAR-002]
-see_also: []
+see_also: [WAR-001, WAR-003, WAR-012]
 contested: true
 contested_note: "How much of chariot warfare's actual battlefield role was direct shock or skirmish combat, versus a mobile command-and-prestige platform for an already-established warrior elite, is debated given how thin direct tactical accounts from the period are — Egyptian and Near Eastern reliefs depict chariots prominently in battle scenes, but the depictions may overstate combat function relative to display and command value. Model chariot warfare's battlefield contribution as a mix of both functions whose exact ratio is uncertain, rather than committing to either a pure-weapon or pure-status reading."
 stats_touched: []

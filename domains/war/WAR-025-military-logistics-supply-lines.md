@@ -20,7 +20,7 @@ absence:
     note: Steppe cavalry armies largely bypass the fixed-supply-train logistics problem this entry describes, since mounted forces can forage and subsist their herds across open pasture at a pace and range no supply-train-dependent settled army can match — a structurally different logistics model built on mobile self-sufficiency rather than a maintained supply chain.
 prereqs: []
 enables: [WAR-005, WAR-009, WAR-013]
-see_also: []
+see_also: [WAR-001]
 contested: false
 contested_note: ""
 stats_touched: []
