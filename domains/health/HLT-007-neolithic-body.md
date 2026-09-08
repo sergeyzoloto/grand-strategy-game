@@ -4,7 +4,7 @@ title: The Neolithic Body
 legacy_ref:
 domain: health
 domains_touched: [agriculture]
-tier: standard
+tier: core
 status: drafted
 confidence: high
 date_start: -10000
@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: africa
     note: Populations that stayed foraging or mixed-mobile longer show the inverse skeletal signature (comparatively robust stature, lower dental caries, different joint-stress pattern) persisting alongside, not before, farming neighbors — a live contrast rather than a historical baseline.
-prereqs: [HLT-001]
+prereqs: [HLT-001, HLT-027]
 enables: [HLT-025]
 see_also: []
 contested: false

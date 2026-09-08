@@ -23,7 +23,7 @@ absence:
     note: Comparatively little codified religious dietary law by contrast; food-based boundary-marking runs instead through etiquette, seasonality, and medical (humoral/qi-balance) frameworks rather than through sacred permitted/forbidden categories — a different institutional solution to a similar boundary-marking need.
 prereqs: []
 enables: []
-see_also: [HLT-008]
+see_also: [HLT-008, HLT-035]
 contested: true
 contested_note: "Functionalist readings (pork prohibition as pre-scientific trichinosis avoidance, kosher slaughter as a hygiene practice) compete with readings that treat purity codes as boundary-marking and identity technology with no meaningful disease-avoidance payoff, coincidental at best. Model as a weighted dual-purpose mechanic: purity codes deliver a real but modest disease-avoidance effect AND a full-strength social-boundary/commensality effect simultaneously, rather than requiring the model to pick which one is the 'true' explanation."
 stats_touched: [commensality]

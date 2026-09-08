@@ -18,7 +18,7 @@ region_variants:
 absence:
   - region: africa
     note: Colonial-era psychiatry in French North Africa (notably the institutional context Frantz Fanon worked and wrote in) applied and simultaneously critiqued psychoanalytic and psychiatric frameworks as instruments entangled with colonial control rather than neutral therapeutic tools — a reception history of contested imposition, not straightforward adoption or absence.
-prereqs: []
+prereqs: [HLT-030]
 enables: [HLT-024]
 see_also: [HLT-011, HLT-013, PHI-023, PHI-028]
 contested: true

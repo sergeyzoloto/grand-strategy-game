@@ -23,7 +23,7 @@ absence:
     note: Indigenous American midwifery traditions (herbal, positional, and manipulative techniques attested from multiple pre- and post-contact sources) operated with no exposure to Old World obstetric texts or forceps technology at all, an independent tradition rather than a deficient version of the Old World one.
 prereqs: []
 enables: []
-see_also: [HLT-021]
+see_also: [HLT-021, HLT-028]
 contested: false
 contested_note: ""
 stats_touched: []

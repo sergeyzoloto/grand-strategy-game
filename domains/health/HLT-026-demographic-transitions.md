@@ -21,9 +21,9 @@ region_variants:
 absence:
   - region: africa
     note: Large parts of sub-Saharan Africa remain in an earlier transition stage (mortality decline substantially outpacing fertility decline) well into the 21st century, driving the bulk of remaining global population growth projections — not evidence the transition model doesn't apply, but a reminder that the model's timeline, not its direction, is what varies most by region.
-prereqs: [HLT-025]
+prereqs: []
 enables: []
-see_also: []
+see_also: [HLT-025]
 contested: true
 contested_note: "Whether the second demographic transition (sub-replacement fertility, delayed marriage/childbearing, rising non-marital cohabitation) is best explained by economic factors (cost of children, women's labor-force participation) or by a values/ideational shift (individualism, secularization) independent of economics is a live and unresolved debate in demography. Model fertility decline as jointly driven by both an economic-cost function and an independent secular/individualist-values function, letting regions where one runs ahead of the other (rapid economic development without matching values shift, or the reverse) produce visibly different fertility trajectories rather than one uniform curve."
 stats_touched: []

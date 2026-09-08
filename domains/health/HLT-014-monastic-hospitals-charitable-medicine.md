@@ -21,9 +21,9 @@ region_variants:
 absence:
   - region: east-asia
     note: Buddhist charitable dispensaries and famine/plague relief exist and matter, but China's dominant charitable-medicine channel through most of this period runs more through state and lineage/clan welfare institutions than through a dedicated hospital-as-building model comparable to bimaristans or European hospitals — a different institutional container for a similar charitable impulse.
-prereqs: [HLT-011, REL-009]
+prereqs: [HLT-011, REL-009, HLT-028]
 enables: []
-see_also: []
+see_also: [HLT-029, HLT-030]
 contested: false
 contested_note: ""
 stats_touched: []

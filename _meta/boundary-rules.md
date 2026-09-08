@@ -72,6 +72,35 @@ on that knowledge is ENG.
 Monasticism as a landholding, labor-organizing institution is REL. Scholastic
 argument about universals is PHI.
 
+## HLT / (AGR, ENG, REL, PHI)
+
+**HLT (health)** owns the body, disease, and their institutional and habitual
+management as its own read — not the underlying activity that produces a
+health effect as a side consequence:
+
+- Production and diet content are AGR's; the body's and population's health
+  consequence of that diet is HLT's. A crop's yield is AGR; the stature and
+  dental penalty a cereal-dependent diet writes into a population's skeleton
+  is HLT.
+- The physical engineering of infrastructure is ENG's; what that
+  infrastructure does to a settlement's disease dynamics, and what its
+  absence or collapse does, is HLT's.
+- A practice's institution, endowment, and theological rationale are REL's;
+  its disease-vector or body-management function — who may touch a corpse
+  and how fast, what may be eaten and by whom — is HLT's, cross-referencing
+  REL for the fuller institutional and doctrinal account rather than
+  duplicating it.
+- A systematic theory of the body, mind, or disease causation is canonically
+  HLT when the entry's own claim is about the theory's institutional
+  authority and its (in)dependence from actual efficacy; PHI is the closer
+  fit only where the entry's own claim is about the argument's structure
+  independent of any institutional or clinical carrier at all.
+
+Ritual burial's institution and theology are REL; the same practice's
+corpse-handling disease-management function is HLT. Aqueduct and sewer
+construction technique is ENG; the resulting settlement mortality rate,
+and its decay when maintenance lapses, is HLT.
+
 ## LAW / DIP
 
 - **LAW (law)** owns internal enforceable obligation — contracts, property,

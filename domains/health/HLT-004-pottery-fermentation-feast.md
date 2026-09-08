@@ -26,7 +26,7 @@ absence:
     note: Early South Asian fermentation is dominated by dairy (see HLT-005) rather than grain-alcohol traditions at comparable antiquity, a different solution to the same preservation/pre-digestion problem.
 prereqs: []
 enables: [HLT-018]
-see_also: []
+see_also: [HLT-025, HLT-035]
 contested: false
 contested_note: ""
 stats_touched: [commensality]

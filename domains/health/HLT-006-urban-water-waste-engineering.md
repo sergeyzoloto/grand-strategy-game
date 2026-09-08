@@ -23,7 +23,7 @@ absence:
     note: Post-Roman European cities largely lose and do not replace integrated sewer/water infrastructure for roughly a millennium, relying on wells, rivers, and cesspits until early-modern and then 19th-century sanitary reform rebuilds the capability from a much later starting technology base.
 prereqs: [HLT-001, HLT-002, ENG-011, ENG-034]
 enables: []
-see_also: [MIG-016]
+see_also: [MIG-016, HLT-032]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

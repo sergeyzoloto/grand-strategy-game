@@ -21,8 +21,8 @@ region_variants:
 absence:
   - region: africa
     note: Large Sahelian and sub-Saharan populations kept mobile mixed foraging/herding well past the Old World Neolithic threshold — not a delay but a different equilibrium, shaped by tsetse-belt constraints on livestock density and flood-recession farming that needs little fixed storage.
-prereqs: []
-enables: [HLT-002, HLT-006, HLT-017]
+prereqs: [HLT-027]
+enables: [HLT-002, HLT-006, HLT-017, HLT-005, HLT-007]
 see_also: [AGR-003, AGR-004]
 contested: true
 contested_note: "The 'Neolithic health decline' thesis (skeletal stature loss, dental disease, rising infection load with sedentism) is contested against readings where population and social-complexity gains dominate any per-capita health cost. Model as two separable effects rather than one verdict: sedentism unconditionally raises toxic burden and pathogen exposure (measurable, not in dispute), while whether that nets negative for the population depends on food-security and stratification variables layered on top."

@@ -22,8 +22,8 @@ absence:
   - region: africa
     note: Large parts of the continent experience a 'double burden' pattern rather than a clean transition — undernutrition and diet-linked chronic disease (obesity, diabetes) coexisting in the same populations or even the same households, rather than one replacing the other in the sequential pattern the classic transition model assumes.
 prereqs: [HLT-007]
-enables: [HLT-026]
-see_also: []
+enables: []
+see_also: [HLT-026, HLT-004, HLT-031]
 contested: false
 contested_note: ""
 stats_touched: [toxic burden]
