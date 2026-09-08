@@ -3,7 +3,7 @@ id: REL-026
 title: State Shinto and the Modern Invention of a National Religion
 legacy_ref:
 domain: religion
-domains_touched: []
+domains_touched: [philosophy]
 tier: stub
 status: drafted
 confidence: high
@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: [REL-013]
 enables: []
-see_also: []
+see_also: [PHI-025]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

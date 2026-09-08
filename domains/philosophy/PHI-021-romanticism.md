@@ -4,7 +4,7 @@ title: Romanticism
 legacy_ref:
 domain: philosophy
 domains_touched: [diplomacy]
-tier: core
+tier: standard
 status: drafted
 confidence: medium
 date_start: 1770

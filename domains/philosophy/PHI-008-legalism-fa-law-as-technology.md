@@ -16,7 +16,7 @@ absence:
   - region: mediterranean
     note: No comparably systematic Mediterranean political theory argues for law as a value-neutral instrument of rulership stripped of any grounding in justice, virtue, or divine sanction in this era — Greek political philosophy (PHI-005) treats law as properly answerable to a substantive account of justice, making Legalism's explicit amorality a genuinely distinct theoretical position rather than a variant available across traditions.
 prereqs: [PHI-001]
-enables: []
+enables: [PHI-035]
 see_also: [PHI-004, PHI-007, LAW-001]
 contested: true
 contested_note: "Whether Legalism is inherently self-destructive as a governing philosophy — the Qin dynasty's implementation collapsed within about fifteen years of unification — or whether that collapse reflects a specific succession crisis and administrative overreach rather than a flaw in the theory itself (subsequent dynasties retained substantial Legalist administrative technique beneath official Confucian rhetoric) is disputed among historians of early China. Model Legalist administrative technique and Legalism-as-sole-governing-ideology as separable: the technique persists and gets absorbed by later, officially anti-Legalist states, while unmixed ideological Legalism's specific collapse case is real but may not generalize."

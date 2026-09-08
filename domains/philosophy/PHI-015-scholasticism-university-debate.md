@@ -15,7 +15,7 @@ region_variants: []
 absence:
   - region: middle-east
     note: The Islamic madrasa system develops as a comparable institutionalized higher-education network centuries before and running parallel to the European university, but organized around individual teaching licenses (ijaza) granted by a specific scholar rather than a corporate, self-governing guild of masters and students collectively chartered to grant degrees — a structurally different institutional logic for organizing advanced learning, not a delayed or lesser version of the university model.
-prereqs: [NAT-005, NAT-003]
+prereqs: [NAT-005, NAT-003, PHI-033]
 enables: [PHI-017, PHI-018]
 see_also: [PHI-013]
 contested: false
@@ -28,8 +28,10 @@ The medieval European university organizes itself as a self-governing
 corporate guild of masters and students, and develops the disputatio (a
 formally structured, rule-governed debate) as its central method for
 resolving philosophical and theological questions — converting the
-recovered and translated Aristotelian corpus (NAT-005, NAT-003) into the
-raw material for centuries of rigorous, cumulative dialectical argument.
+recovered and translated Aristotelian corpus (NAT-005, NAT-003), reaching
+the Latin West substantially by way of Averroes's own commentaries
+(PHI-033), into the raw material for centuries of rigorous, cumulative
+dialectical argument.
 
 ## Timing
 
@@ -72,7 +74,11 @@ parallel, but organized around a scholar's individual teaching license
 chartered to grant degrees — a structurally different, not a delayed or
 lesser, solution to institutionalizing advanced learning, complicating any
 account crediting the corporate-university model as the only serious
-medieval approach to organizing higher education.
+medieval approach to organizing higher education. The relationship runs
+deeper than parallel comparison, though: Averroes's own commentaries
+(PHI-033), composed within this Islamic institutional world, are
+substantially how the university's Aristotelian raw material reaches Latin
+Europe at all.
 
 ## Hook
 

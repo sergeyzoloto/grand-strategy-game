@@ -16,7 +16,7 @@ region_variants:
     date_start: 1952
     note: Frantz Fanon's Black Skin, White Masks (1952) explicitly draws on and transforms existentialist categories — Sartrean bad faith, being-for-others — to analyze colonial racial consciousness, developing colonized subjects' experience of being reduced to an object under the colonizer's gaze as a distinct, substantive philosophical contribution in its own right, not merely an application of European existentialism to a new case study.
 absence: []
-prereqs: [PHI-023]
+prereqs: [PHI-023, PHI-038, PHI-040]
 enables: []
 see_also: [PHI-027, HLT-022]
 contested: true

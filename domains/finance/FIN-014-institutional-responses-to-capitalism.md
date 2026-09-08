@@ -20,7 +20,7 @@ absence:
     note: Several post-independence African states adopt varying degrees of state-socialist economic policy explicitly framed as anti-colonial as much as anti-capitalist (Nkrumah's Ghana and Nyerere's Tanzania among prominent cases), tying critique-driven institutional change to decolonization politics in a way the European and East Asian cases don't carry in the same combined form.
 prereqs: [FIN-012]
 enables: []
-see_also: [LAW-013]
+see_also: [LAW-013, PHI-034]
 contested: true
 contested_note: "Whether 20th-century state-socialist and command-economy experiments represent a genuine, viable alternative economic model that was undermined mainly by external pressure and specific implementation failures, or whether central planning carries inherent, unavoidable information and incentive problems that doom it regardless of implementation, is a foundational and unresolved dispute in comparative economic systems. Model command-economy performance as depending heavily on specific institutional design choices (degree of market-mechanism retention, information systems, incentive structures) rather than treating either 'central planning always fails' or 'central planning would work if implemented correctly' as a settled premise."
 stats_touched: []
@@ -28,10 +28,10 @@ tags: [socialism, command-economy, labor-movement, welfare-state]
 ---
 
 The systematic theoretical argument against capitalism (Marx and the
-broader tradition building on or contesting his work) is PHI's territory;
-this entry owns what happened when states actually tried to build
-institutions on top of that critique — labor law, welfare provision, and
-full command economies alike.
+broader tradition building on or contesting his work, PHI-034) is PHI's
+territory; this entry owns what happened when states actually tried to
+build institutions on top of that critique — labor law, welfare provision,
+and full command economies alike.
 
 ## Timing
 

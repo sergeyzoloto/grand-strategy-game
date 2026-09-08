@@ -20,7 +20,7 @@ absence:
     note: Chinese correlative cosmology (see NAT-001) organizes reality through relational, cyclical categories (yin-yang, five phases) rather than positing one unifying underlying substance whose apparent multiplicity is illusory — a structurally different move from Vedantic monism, not a cruder or partial version of it.
 prereqs: [PHI-001]
 enables: [PHI-014]
-see_also: [NAT-001, PHI-011, PHI-012]
+see_also: [NAT-001, PHI-011, PHI-012, PHI-039, PHI-031]
 contested: true
 contested_note: "Whether the Upanishads articulate one coherent monist doctrine (individual self, atman, is ultimately identical to the cosmic ground, Brahman) or a genuinely polyphonic collection accommodating dualist and non-dualist readings alike is disputed — later rival Vedanta schools (Shankara's non-dualist Advaita, PHI-014, versus Ramanuja's qualified-dualist Vishishtadvaita and Madhva's fully dualist Dvaita) all claim direct Upanishadic textual support for incompatible metaphysical conclusions. Model the Upanishads as an underdetermined textual corpus that later systematic schools resolve in different, mutually exclusive directions, rather than as already committing to any one school's later reading."
 stats_touched: []

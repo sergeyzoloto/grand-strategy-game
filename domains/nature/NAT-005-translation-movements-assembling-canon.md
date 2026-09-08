@@ -19,7 +19,7 @@ absence:
   - region: east-asia
     note: China's Buddhist translation movement (Sanskrit into Chinese, most famously via Xuanzang's 7th-century journey to India and subsequent decades of systematic translation work) runs on an entirely separate track from the Greek-Arabic-Latin chain, assembling a religious and philosophical rather than natural-scientific canon — a structurally similar institutional process serving a different knowledge domain.
 prereqs: [NAT-003]
-enables: [PHI-015, NAT-020]
+enables: [PHI-015, NAT-020, PHI-033]
 see_also: [PHI-017]
 contested: false
 contested_note: ""

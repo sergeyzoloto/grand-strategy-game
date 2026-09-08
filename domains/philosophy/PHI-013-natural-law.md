@@ -20,7 +20,7 @@ absence:
     note: Andean normative thought, as reconstructed by scholars of Andean philosophy, grounds right conduct in ayni — reciprocal obligation binding person, community, and the natural world (Pachamama) together — rather than in a rational order discoverable in a fixed, universal human nature; obligation here is relational and reciprocal rather than a property individuals possess by virtue of a shared rational nature, a structurally different foundation for normative order than natural law's.
 prereqs: [PHI-005, PHI-010]
 enables: [PHI-019]
-see_also: [LAW-009, PHI-015, PHI-022]
+see_also: [LAW-009, PHI-015, PHI-022, PHI-032, PHI-033]
 contested: true
 contested_note: "Natural law theory's core move — deriving normative conclusions ('this is how one ought to act') from claims about nature or reason as they descriptively are — runs directly into what's often called Hume's guillotine, the is-ought problem: the objection that no purely descriptive premises can validly entail a normative conclusion without smuggling in an unstated normative premise. This is a foundational, unresolved dispute in metaethics, not a solved problem natural-law theory has simply moved past. Model natural-law-derived claims (in PHI-019, LAW-009) as resting on a contested philosophical foundation whose is-ought gap is itself a modelable source of ongoing dispute, not settled ground."
 stats_touched: []

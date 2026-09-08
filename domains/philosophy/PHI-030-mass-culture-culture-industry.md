@@ -16,7 +16,7 @@ region_variants:
     date_start: 1941
     note: The Frankfurt School's key theorists (Adorno and Horkheimer prominent among them) develop and publish the culture-industry critique substantially in American exile after fleeing Nazi Germany, meaning the argument's most influential formulation is produced through direct, disenchanted firsthand observation of American commercial mass media specifically, not as detached European theorizing about a phenomenon observed from a distance.
 absence: []
-prereqs: []
+prereqs: [PHI-034]
 enables: []
 see_also: [HLT-024]
 contested: true
@@ -30,7 +30,7 @@ commodities — film, radio, popular music, manufactured under industrial
 capitalism's own logic — function as a standardizing "culture industry"
 that manufactures manufactured, passive consumption and forecloses
 genuine critical imagination, extending Marx's critique of commodification
-directly into the realm of culture and consciousness itself.
+(PHI-034) directly into the realm of culture and consciousness itself.
 
 ## Timing
 

@@ -3,7 +3,7 @@ id: REL-021
 title: "Religious Education: Madrasas, Yeshivas, and Cathedral Schools"
 legacy_ref:
 domain: religion
-domains_touched: [nature]
+domains_touched: [nature, philosophy]
 tier: core
 status: drafted
 confidence: high
@@ -20,7 +20,7 @@ absence:
     note: Chinese Buddhist and Daoist monastic education trains clergy through temple-based apprenticeship and internal ordination examination rather than a comparably standardized, cross-institutional credentialing network — religious education here stays organized around individual monastery lineages rather than a broader shared institutional system analogous to the madrasa network or European cathedral schools.
 prereqs: [REL-009]
 enables: [REL-012]
-see_also: []
+see_also: [PHI-033]
 contested: false
 contested_note: ""
 stats_touched: []

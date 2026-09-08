@@ -15,7 +15,7 @@ region_variants: []
 absence: []
 prereqs: []
 enables: []
-see_also: [DIP-001, REL-013]
+see_also: [DIP-001, REL-013, REL-026]
 contested: true
 contested_note: "Whether kokutai ideology represents systematization of a genuinely continuous ancient Shinto-imperial tradition, or is substantially a 19th-century Meiji-era invented tradition constructed for nation-building purposes (drawing on the 'invented tradition' framework historians have applied specifically to State Shinto), is a well-established academic debate. Model kokutai as a specific, datable 18th-19th-century ideological construction that draws on genuinely ancient textual material (the Kojiki) while reorganizing it toward a modern nation-state legitimation purpose the original texts weren't composed for."
 stats_touched: [religious authority]
@@ -27,8 +27,8 @@ argument — the doctrine that Japan's emperor is a direct divine
 descendant and the nation itself a sacred, family-like religious
 community, making loyalty to the state a religious rather than merely
 political duty; Shinto's institutional and ritual practice (shrines,
-priesthood, the imperial ritual calendar) is REL's fuller territory, not
-yet written.
+priesthood, the imperial ritual calendar, and the state's administrative
+reorganization of shrine practice) is REL-026's territory.
 
 ## Timing
 

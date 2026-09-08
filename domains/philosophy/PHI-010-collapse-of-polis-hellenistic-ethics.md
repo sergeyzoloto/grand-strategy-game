@@ -21,33 +21,33 @@ region_variants:
 absence: []
 prereqs: [PHI-005]
 enables: [PHI-013]
-see_also: [PHI-007]
+see_also: [PHI-007, PHI-042]
 contested: true
-contested_note: "Whether Hellenistic ethics' turn toward personal tranquility and self-sufficiency independent of political circumstance is best explained causally by the polis's loss of political autonomy under Macedonian and then Roman rule, or whether this is an overly tidy textbook narrative that understates real continuities with pre-Hellenistic ethical thought and non-political causes, is disputed among historians of philosophy. Model the political-collapse explanation as a contributing rather than sufficient cause — each school's specific doctrine (Stoic virtue-sufficiency, Epicurean hedonic calculus, Skeptic suspension of judgment, Cynic rejection of convention) has independent argumentative content that doesn't reduce entirely to a reaction against lost civic autonomy."
+contested_note: "Whether Hellenistic ethics' turn toward personal tranquility and self-sufficiency independent of political circumstance is best explained causally by the polis's loss of political autonomy under Macedonian and then Roman rule, or whether this is an overly tidy textbook narrative that understates real continuities with pre-Hellenistic ethical thought and non-political causes, is disputed among historians of philosophy. Model the political-collapse explanation as a contributing rather than sufficient cause — each school's specific doctrine (Stoic virtue-sufficiency, Epicurean hedonic calculus, Skeptic suspension of judgment) has independent argumentative content that doesn't reduce entirely to a reaction against lost civic autonomy."
 stats_touched: [habitus formation]
-tags: [stoicism, epicureanism, skepticism, cynicism, hellenistic-philosophy]
+tags: [stoicism, epicureanism, skepticism, hellenistic-philosophy]
 ---
 
 With Alexander's conquests and the Macedonian, then Roman, domination of
 the Greek world that follows, the polis (PHI-005) loses the political
 autonomy Plato's and Aristotle's ethics assumed as the necessary setting
-for human flourishing — and philosophy responds with four rival schools
+for human flourishing — and philosophy responds with three rival schools
 relocating the good life somewhere political circumstance can't reach.
+(Cynicism, sometimes grouped alongside these three, predates the polis's
+collapse by decades and isn't a response to it — see PHI-042.)
 
 ## Timing
 
 Following Alexander's death in -323 and the polis system's subsequent
 loss of independent political agency, Stoicism (Zeno of Citium),
 Epicureanism (Epicurus), and Pyrrhonist Skepticism all found their schools
-within a few decades of each other from around -300; Cynicism, associated
-earliest with Diogenes, predates this window but is absorbed into the
-same broader Hellenistic ethical landscape; the era runs through Rome's
-final absorption of the last major Hellenistic kingdom, Ptolemaic Egypt,
-in -30.
+within a few decades of each other from around -300; the era runs through
+Rome's final absorption of the last major Hellenistic kingdom, Ptolemaic
+Egypt, in -30.
 
 ## Mechanism
 
-All four schools relocate the good life from something requiring
+All three schools relocate the good life from something requiring
 favorable external political circumstance (Aristotle's flourishing
 citizen, PHI-005) to something achievable through the individual's own
 internal disposition regardless of circumstance: Stoicism argues virtue
@@ -56,9 +56,7 @@ ethical askesis, a habitus-forming discipline) to want only what's within
 their own control; Epicureanism pursues tranquility (ataraxia) through a
 calculated minimization of desire and fear rather than maximal pleasure-
 seeking; Skepticism argues suspending judgment entirely on unresolvable
-questions is itself what produces tranquility; Cynicism pursues the same
-independence from circumstance through radical, deliberately provocative
-rejection of social convention altogether.
+questions is itself what produces tranquility.
 
 ## Social consequence
 
@@ -98,8 +96,7 @@ lost civic autonomy.
 
 Each Hellenistic school trains a specific `habitus formation` discipline
 (Stoic askesis, Epicurean desire-calibration, Skeptic suspension of
-judgment, Cynic convention-rejection) aimed at making the good life
-independent of political circumstance — a portable, circumstance-proof
-ethical technology exportable across radically different social
-positions in a way the polis-bound civic flourishing it replaces (PHI-005)
-never was.
+judgment) aimed at making the good life independent of political
+circumstance — a portable, circumstance-proof ethical technology
+exportable across radically different social positions in a way the
+polis-bound civic flourishing it replaces (PHI-005) never was.

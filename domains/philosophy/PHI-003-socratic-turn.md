@@ -17,7 +17,7 @@ absence:
     note: A broadly comparable pivot from cosmological to ethical questioning occurs independently in roughly the same era via Buddhism (PHI-012) and Jainism (PHI-011), but through renunciate soteriology rather than through a single urban dialectician's public cross-examination of fellow citizens — a different social mechanism producing a similar redirection of philosophy's central questions.
 prereqs: [NAT-001]
 enables: [PHI-005, PHI-010]
-see_also: [PHI-006]
+see_also: []
 contested: true
 contested_note: "The 'Socratic problem' — that Socrates himself wrote nothing, and the surviving portraits (Plato's, Xenophon's, Aristophanes's) diverge substantially and often serve their authors' own philosophical or dramatic purposes — means it is genuinely uncertain how much of the historical Socrates' actual teaching, as opposed to Plato's own developing philosophy voiced through a literary character, this entry (and PHI-005) can be said to describe. Model 'the Socratic turn' as a real and datable shift in what questions Athenian philosophy treats as central, while treating any specific doctrine attributed to Socrates personally as carrying real uncertainty about its actual source."
 stats_touched: []
