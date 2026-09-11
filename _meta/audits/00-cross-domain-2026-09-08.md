@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Cross-Domain Synthesis — 2026-09-08
 
 Read: all 13 files in `_meta/audits/` (agriculture, commerce, diplomacy,
@@ -63,7 +65,7 @@ but its own `see_also` note hedges explicitly: _"for the contemporaneous
 'Sea Peoples' disruptions, if/when a WAR entry covers them."_ War's own
 audit, also written independently, never mentions the Sea Peoples, the
 Bronze Age collapse, or anything in that era's military history at all —
-War's earliest entry is `WAR-040` (formerly -750, corrected to -900), a
+War's earliest entry is `WAR-060` (formerly -750, corrected to -900), a
 full two and a half centuries after the collapse COM-020's successor
 already covers commercially. This is smaller than the optics gap (COM's own
 entry substantially covers the causally interesting part — network

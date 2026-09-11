@@ -24,7 +24,7 @@ absence:
     note: South Asia's agricultural spread shows a much larger role for local hunter-gatherer adoption of farming (cultural diffusion) alongside demic movement, rather than the near-total demographic replacement the Anatolian-into-Europe wave produced in some regions — a different mix of the same two mechanisms.
 prereqs: [MIG-010]
 enables: []
-see_also: [AGR-080, MIG-170, MIG-030, AGR-020, WAR-020]
+see_also: [AGR-080, MIG-170, MIG-030, AGR-020, WAR-040]
 contested: true
 contested_note: "Whether farming spread mainly by demic diffusion (farmers physically migrating and outbreeding or replacing existing foragers) or mainly by cultural diffusion (existing foragers adopting farming practices with comparatively little population replacement) is a long-running, region-by-region dispute, increasingly informed but not fully settled by ancient-DNA evidence. Model migration-driven spread and idea-driven adoption as two independent, blendable mechanisms with a real per-region mixing ratio, rather than one mechanism the model must pick as the true explanation."
 stats_touched: [migration range]

@@ -18,7 +18,7 @@ absence:
     note: No comparable independent agricultural origin is attested anywhere during the preceding Pleistocene, despite anatomically modern humans having occupied most inhabitable continents for tens of thousands of years before the Holocene began — the near-simultaneous, independent emergence of agriculture across multiple unconnected regions within a few thousand years of the Pleistocene's end is itself the pattern this entry treats as needing a climate-level, not a purely cultural, explanation.
 prereqs: []
 enables: [AGR-020, AGR-090]
-see_also: [HLT-030]
+see_also: [HLT-030, WAR-010]
 contested: true
 contested_note: "How much explanatory weight the Holocene's climate stability itself carries, versus regionally-specific population-pressure, resource-circumscription, or social-competition explanations for why agriculture emerges when and where it does, is disputed among archaeologists — climate stability is close to a necessary condition (no known agricultural origin predates the Holocene) but plausibly not a sufficient one, since long stretches of stable Holocene climate in many regions never produce independent domestication at all. Model Holocene climate stability as removing a hard prior constraint (Pleistocene-scale climate volatility) rather than as a positive trigger, leaving the region-specific question of why some Holocene populations respond to that removed constraint with domestication and others don't as a separate, unresolved variable."
 stats_touched: []

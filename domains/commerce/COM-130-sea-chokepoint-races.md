@@ -24,7 +24,7 @@ absence:
     note: The Cape of Good Hope route around Africa, the original alternative to Middle Eastern overland or Red Sea routes to Asia, loses most of its strategic chokepoint value once the Suez Canal offers a dramatically shorter path — a reminder that a chokepoint's value is relative to available alternatives and can be sharply devalued by infrastructure built somewhere else entirely, without anything changing at the Cape itself.
 prereqs: [MAR-160, ENG-280]
 enables: []
-see_also: [MAR-220, COM-080]
+see_also: [MAR-220, COM-080, WAR-020]
 contested: false
 contested_note: ""
 stats_touched: [protection rent]

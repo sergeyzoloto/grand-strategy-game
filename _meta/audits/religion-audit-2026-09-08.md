@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Religion Domain Audit
 
 **Date:** 2026-09-08
@@ -46,7 +48,7 @@ Every `prereqs` ID resolves to a real entry, but the chronology is badly broken 
 
 A fourth, smaller case: `REL-240`'s own region_variant (`date_start: 1510`) and top-level `date_start` (1500) both precede its prereq `MIG-160` (`date_start: 1526`) by 16-26 years — real but minor, and easily resolved by aligning `REL-240`'s own date rather than treating it as a modeling error.
 
-A fifth, structural (not prereq) issue in the same family found elsewhere this cycle: `REL-150`'s top-level `date_start` (726) is later than its own cited middle-east region_variant (632, the Sunni-Shia succession dispute) — the same "own date doesn't match own earliest case" bug found and fixed in `WAR-040` earlier this audit series.
+A fifth, structural (not prereq) issue in the same family found elsewhere this cycle: `REL-150`'s top-level `date_start` (726) is later than its own cited middle-east region_variant (632, the Sunni-Shia succession dispute) — the same "own date doesn't match own earliest case" bug found and fixed in `WAR-060` earlier this audit series.
 
 ### 6. MECHANISM DIVERSITY — **PASS, unusually strong on branches**
 

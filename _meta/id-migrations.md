@@ -446,3 +446,450 @@ Append-only log of every chronological renumbering run. This file is the canonic
 | MAR-028 | MAR-350 | Aircraft Carriers and Naval Aviation |
 | MAR-027 | MAR-360 | Landing Craft and Over-the-Beach Logistics |
 | MAR-029 | MAR-370 | Containerization |
+
+## Run 2 — 2026-09-11 — chronological renumber
+
+
+### AGR
+
+| old ID | new ID | title |
+|---|---|---|
+| AGR-010 | AGR-010 | The Holocene Bargain |
+| AGR-020 | AGR-020 | Founder Crop Domestication |
+| AGR-030 | AGR-030 | Livestock Domestication and the Secondary Products Revolution |
+| AGR-040 | AGR-040 | Zoonotic Disease Emergence |
+| AGR-050 | AGR-050 | Storage, Sealing, and Agrarian Accounting |
+| AGR-060 | AGR-060 | Grain Processing and the Mill |
+| AGR-070 | AGR-070 | "Livestock Containment: Fence, Fold, and Corral" |
+| AGR-080 | AGR-080 | The Farming Frontier Expansions |
+| AGR-090 | AGR-090 | Population Pressure and Agricultural Intensification |
+| AGR-100 | AGR-100 | Irrigation and Hydraulic Works |
+| AGR-110 | AGR-110 | Manure and Night-Soil Nutrient Cycling |
+| AGR-120 | AGR-120 | Wet-Rice Intensification (Champa Rice) |
+| AGR-130 | AGR-130 | The Ard, Animal Traction, and the Gendered Field |
+| AGR-140 | AGR-140 | The Pastoralist–Cultivator Conflict Cycle |
+| AGR-150 | AGR-150 | Salinization and the Sumerian Yield Collapse |
+| AGR-160 | AGR-160 | Iron Farm Tools and the Forest Frontier |
+| AGR-170 | AGR-170 | The Roman Grain Order |
+| AGR-180 | AGR-180 | The North European Package |
+| AGR-190 | AGR-190 | The Fourteenth-Century Shock and the Great Divergence of Serfdom |
+| AGR-200 | AGR-200 | Enclosure and Land Tenure Regimes |
+| AGR-210 | AGR-210 | The Plantation Complex |
+| AGR-220 | AGR-220 | The Columbian Exchange and Collapse |
+| AGR-230 | AGR-230 | The Little Ice Age and the General Crisis |
+| AGR-240 | AGR-240 | Fodder Crops and Legume Rotation |
+| AGR-250 | AGR-250 | Selective Livestock Breeding |
+| AGR-260 | AGR-260 | Mechanisation and the Cold Chain |
+| AGR-270 | AGR-270 | Monoculture Dependency and Famine |
+| AGR-280 | AGR-280 | The Green Revolution |
+
+### HLT
+
+| old ID | new ID | title |
+|---|---|---|
+| HLT-010 | HLT-010 | "The Forager Baseline: Health and the Body Before Sedentism" |
+| HLT-020 | HLT-020 | Dress, Adornment, and the Marked Body |
+| HLT-030 | HLT-030 | Sedentism, Storage, and the New Disease Environment |
+| HLT-040 | HLT-040 | The Neolithic Body |
+| HLT-050 | HLT-050 | Pottery Cooking, Fermentation, and the Feast |
+| HLT-060 | HLT-060 | Dairying and Lactase Persistence |
+| HLT-070 | HLT-070 | Crowd Disease and the Urban Graveyard |
+| HLT-080 | HLT-080 | Household and Folk Medicine |
+| HLT-090 | HLT-090 | Urban Water and Waste Engineering |
+| HLT-100 | HLT-100 | Obstetrics |
+| HLT-110 | HLT-110 | Famine and Starvation as a Distinct Mortality Mechanic |
+| HLT-120 | HLT-120 | Ritual Burial as Disease-Vector Management |
+| HLT-130 | HLT-130 | Purity Codes, Dietary Law, and Commensality |
+| HLT-140 | HLT-140 | Spa and Bathing Culture |
+| HLT-150 | HLT-150 | Codified Medical Systems |
+| HLT-160 | HLT-160 | Monastic Hospitals and Charitable Medicine |
+| HLT-170 | HLT-170 | The Connectivity Plagues |
+| HLT-180 | HLT-180 | The Stimulant Complex |
+| HLT-190 | HLT-190 | Print, Silent Reading, and the Interior Self |
+| HLT-200 | HLT-200 | The Asylum and the Invention of Madness as a Medical Category |
+| HLT-210 | HLT-210 | Mutual Aid and Guild Sick-Funds |
+| HLT-220 | HLT-220 | The Black Death as Habitus Rupture |
+| HLT-230 | HLT-230 | Quarantine and Cordons Sanitaires |
+| HLT-240 | HLT-240 | Virgin Soil, Syphilis, and the Columbian Exchange |
+| HLT-250 | HLT-250 | Variolation and Vaccination |
+| HLT-260 | HLT-260 | Alcohol, Tobacco, and Opium as Social Epidemics |
+| HLT-270 | HLT-270 | Public Health Statistics and Vital Registration |
+| HLT-280 | HLT-280 | Colonial and Tropical Medicine |
+| HLT-290 | HLT-290 | Patent Medicine and the Quack Remedy Market |
+| HLT-300 | HLT-300 | The Demographic Transitions (First and Second) |
+| HLT-310 | HLT-310 | Antisepsis |
+| HLT-320 | HLT-320 | Psychoanalysis |
+| HLT-330 | HLT-330 | Antibiotics |
+| HLT-340 | HLT-340 | The Therapeutic Turn |
+| HLT-350 | HLT-350 | The Nutrition Transition |
+
+### COM
+
+| old ID | new ID | title |
+|---|---|---|
+| COM-010 | COM-010 | The Marketplace and the Stranger |
+| COM-020 | COM-020 | Metallurgy as Craft and Commodity — Bronze to Wrought Iron |
+| COM-030 | COM-030 | Weights and Measures Standardization |
+| COM-040 | COM-040 | The Late Bronze Age Trade Collapse |
+| COM-050 | COM-050 | The Caravan as a Risk-Pooling Institution |
+| COM-060 | COM-060 | Retail Trade and the Urban Shop |
+| COM-070 | COM-070 | Route Infrastructure Decay and Maintenance |
+| COM-080 | COM-080 | The Silk Road as a Logistics System |
+| COM-090 | COM-090 | The Periodic Fair and the Law Merchant |
+| COM-100 | COM-100 | Manufactories |
+| COM-110 | COM-110 | The Hanseatic League |
+| COM-120 | COM-120 | The Putting-Out System |
+| COM-130 | COM-130 | The Race for Narrow Sea Chokepoints |
+| COM-140 | COM-140 | Silver Shock — American Silver and the Price Revolution |
+| COM-150 | COM-150 | The Chartered Trading Company |
+| COM-160 | COM-160 | Colonial Commodity Traps |
+| COM-170 | COM-170 | The Factory and Division of Labor |
+| COM-180 | COM-180 | Technological Displacement of Craft |
+| COM-190 | COM-190 | Protectionism and Tariff Wars |
+| COM-200 | COM-200 | Railways |
+| COM-210 | COM-210 | The Opium Wars as Forced Market Access |
+| COM-220 | COM-220 | "Trademark, Brand, and Trust at a Distance" |
+| COM-230 | COM-230 | The Cold Chain |
+
+### LAW
+
+| old ID | new ID | title |
+|---|---|---|
+| LAW-010 | LAW-010 | Customary Law and Pre-Written Dispute Resolution |
+| LAW-020 | LAW-020 | Written Law and the Codification of Inequality |
+| LAW-030 | LAW-030 | "Courts, Judges, and Trial Procedure" |
+| LAW-040 | LAW-040 | "Marriage, Inheritance, and Personal Status Law" |
+| LAW-050 | LAW-050 | Citizenship and Voting Rights |
+| LAW-060 | LAW-060 | Senate and Elite Council as a Coalition Mechanism |
+| LAW-070 | LAW-070 | "Civil Law: Property, Contract, and Inheritance" |
+| LAW-080 | LAW-080 | Feudalism and Vassalage |
+| LAW-090 | LAW-090 | The Reception of Roman Law |
+| LAW-100 | LAW-100 | Meritocracy and State Bureaucracy — Examinations and Career |
+| LAW-110 | LAW-110 | Police and the Administrative State |
+| LAW-120 | LAW-120 | City Charters and Communal Self-Government |
+| LAW-130 | LAW-130 | Corporate Forms — The University, City, Church, and Company as Legal Persons |
+| LAW-140 | LAW-140 | Estate Tax Treaties — Cortes, Estates, and Parliaments |
+| LAW-150 | LAW-150 | Witch Trials and Legal Panic |
+| LAW-160 | LAW-160 | Representation and Political Parties |
+| LAW-170 | LAW-170 | Codified Criminal Law and Punishment Reform |
+| LAW-180 | LAW-180 | Constitution and Separation of Powers |
+| LAW-190 | LAW-190 | Judicial Review and Constitutional Courts |
+| LAW-200 | LAW-200 | The Labor Movement and Legal Recognition of Trade Unions |
+| LAW-210 | LAW-210 | The Welfare State |
+| LAW-220 | LAW-220 | Universal Suffrage |
+| LAW-230 | LAW-230 | Human Rights Protection |
+
+### REL
+
+| old ID | new ID | title |
+|---|---|---|
+| REL-010 | REL-010 | "Pre-Institutional Religion: Ancestor Cults, Shamanic Practice, and Sacred Sites" |
+| REL-020 | REL-020 | Temple Economy — Priesthood as Custodian of Reserves and Ritual |
+| REL-030 | REL-030 | The Liturgical Calendar and Sacred Time |
+| REL-040 | REL-040 | Religious Toleration |
+| REL-050 | REL-050 | Universalism — The Institutional Consequence of an Ethical Claim |
+| REL-060 | REL-060 | Monasticism and Ascetic Institutions |
+| REL-070 | REL-070 | Canon — The Institutional Fixation of Doctrine |
+| REL-080 | REL-080 | Missionary Work as Soft Expansion |
+| REL-090 | REL-090 | "Religious Education: Madrasas, Yeshivas, and Cathedral Schools" |
+| REL-100 | REL-100 | Relic Veneration and the Cult of Saints |
+| REL-110 | REL-110 | Dogmatic Governance and the Cathedral as Administrative Seat |
+| REL-120 | REL-120 | Institutionalization of the Church — and Where It Does Not Form |
+| REL-130 | REL-130 | Tithes |
+| REL-140 | REL-140 | Sacred Law and Religious Courts |
+| REL-150 | REL-150 | The Fight Against Heresy — Iconoclasm and Holy War |
+| REL-160 | REL-160 | Pilgrimage as Infrastructure |
+| REL-170 | REL-170 | Investiture and the Papacy-Empire Conflict |
+| REL-180 | REL-180 | "The Knights Templar: Rise and Suppression" |
+| REL-190 | REL-190 | "Indulgences, Purgatory, and the Economy of Salvation" |
+| REL-200 | REL-200 | Religious Confraternities and Lay Guilds |
+| REL-210 | REL-210 | The Parish Network as a Governance Network |
+| REL-220 | REL-220 | The Confessional State |
+| REL-230 | REL-230 | Printed Religion and the Fragmentation of Institutional Authority |
+| REL-240 | REL-240 | Syncretic Cults |
+| REL-250 | REL-250 | The Dissolution of Religious Institutions |
+| REL-260 | REL-260 | State Shinto and the Modern Invention of a National Religion |
+
+### WAR
+
+| old ID | new ID | title |
+|---|---|---|
+| WAR-001 | WAR-010 | Raiding as Subsistence |
+| WAR-002 | WAR-020 | From Raid to Protection Rent |
+| WAR-010 | WAR-030 | Bronze Age Warfare and the Elite Chariot Monopoly |
+| WAR-020 | WAR-040 | Mass Iron and the End of the Elite Warrior Monopoly |
+| WAR-030 | WAR-050 | War Elephants |
+| WAR-040 | WAR-060 | Professional Squad and Standing Army |
+| WAR-050 | WAR-070 | Siege Warfare and Investment Doctrine |
+| WAR-060 | WAR-080 | Cavalry Doctrine |
+| WAR-070 | WAR-090 | Military Logistics and Supply Lines |
+| WAR-080 | WAR-100 | Battle Formation — Phalanx and Legion |
+| WAR-090 | WAR-110 | Reconnaissance and Fog of War |
+| WAR-100 | WAR-120 | War of Attrition |
+| WAR-110 | WAR-130 | Gunpowder Infantry Doctrine |
+| WAR-120 | WAR-140 | Mercenary Companies and the Market for Violence |
+| WAR-130 | WAR-150 | Artillery Doctrine |
+| WAR-140 | WAR-160 | Fortification Response and the Artillery-Siege Arms Race |
+| WAR-150 | WAR-170 | Close-Order Drill as a Training Technology |
+| WAR-160 | WAR-180 | Military Institutional Decay from Within |
+| WAR-170 | WAR-190 | Professional NCO Corps |
+| WAR-180 | WAR-200 | Conscription and Mass Armies |
+| WAR-190 | WAR-210 | Military Medicine — Triage and Evacuation |
+| WAR-200 | WAR-220 | Combat Motivation and Small-Unit Cohesion |
+| WAR-210 | WAR-230 | Staff and Operational Art |
+| WAR-220 | WAR-240 | Guerrilla Warfare |
+| WAR-230 | WAR-250 | Military Statistics and Casualty Accounting |
+| WAR-240 | WAR-260 | Trench and Positional Warfare Doctrine |
+| WAR-250 | WAR-270 | Military Aviation Doctrine |
+| WAR-260 | WAR-280 | Psychological Operations and Propaganda |
+| WAR-270 | WAR-290 | Total Mobilization |
+| WAR-280 | WAR-300 | Chemical Warfare and International Weapons Taboos |
+| WAR-290 | WAR-310 | Mechanization and Combined Arms |
+| WAR-300 | WAR-320 | Special Forces and Commando Raiding |
+| WAR-310 | WAR-330 | Nuclear Deterrence |
+| WAR-320 | WAR-340 | Hybrid and Proxy Wars |
+
+### FIN
+
+| old ID | new ID | title |
+|---|---|---|
+| FIN-010 | FIN-010 | Coinage and the Invention of Money |
+| FIN-020 | FIN-020 | Cadastre, Tax, and Census |
+| FIN-030 | FIN-030 | Credit, Interest, and Usury |
+| FIN-040 | FIN-040 | Bills of Exchange and Negotiable Instruments |
+| FIN-050 | FIN-050 | Paper Money and Fiat Currency |
+| FIN-060 | FIN-060 | The Double-Entry Method |
+| FIN-070 | FIN-070 | Joint-Stock Companies |
+| FIN-080 | FIN-080 | Asset Bubbles |
+| FIN-090 | FIN-090 | General Insurance and Actuarial Risk-Pooling |
+| FIN-100 | FIN-100 | Central Banking |
+| FIN-110 | FIN-110 | Sovereign Debt and Government Bond Markets |
+| FIN-120 | FIN-120 | Gold Standard |
+| FIN-130 | FIN-130 | Derivative Finance |
+| FIN-140 | FIN-140 | Laissez-Faire as Economic Policy |
+| FIN-150 | FIN-150 | Consumer Lending |
+| FIN-160 | FIN-160 | Mutual and Cooperative Banking |
+| FIN-170 | FIN-170 | Limited Liability |
+| FIN-180 | FIN-180 | Financing Industrialization |
+| FIN-190 | FIN-190 | Banking Panics |
+| FIN-200 | FIN-200 | Institutional Responses to Critiques of Capitalism |
+| FIN-210 | FIN-210 | Credit Rating Agencies |
+| FIN-220 | FIN-220 | Inflationary Spirals |
+| FIN-230 | FIN-230 | The Great Depression |
+| FIN-240 | FIN-240 | Tax Havens and Offshore Finance |
+| FIN-250 | FIN-250 | International Monetary Coordination (Bretton Woods and Successors) |
+| FIN-260 | FIN-260 | Development Finance and International Lending Institutions |
+| FIN-270 | FIN-270 | Floating Exchange Rates |
+
+### ENG
+
+| old ID | new ID | title |
+|---|---|---|
+| ENG-010 | ENG-010 | Metalworking and the Smelting Furnace |
+| ENG-020 | ENG-020 | Irrigation and Dams |
+| ENG-030 | ENG-030 | The Potter's Wheel |
+| ENG-040 | ENG-040 | Fired Brick and Masonry Units |
+| ENG-050 | ENG-050 | Construction Glass |
+| ENG-060 | ENG-060 | "Simple Machines: Lever, Pulley, Screw, and Wedge" |
+| ENG-070 | ENG-070 | Sewer and Waste Removal Engineering |
+| ENG-080 | ENG-080 | Water Supply Engineering |
+| ENG-090 | ENG-090 | Roads and Bridges |
+| ENG-100 | ENG-100 | Papermaking |
+| ENG-110 | ENG-110 | Concrete, Vault, and Dome |
+| ENG-120 | ENG-120 | Windmill and Watermill Construction |
+| ENG-130 | ENG-130 | Roman Concrete's Lost Recipe |
+| ENG-140 | ENG-140 | Gunpowder Engineering and Explosives |
+| ENG-150 | ENG-150 | The Printing Press |
+| ENG-160 | ENG-160 | Mechanical Clockwork and the Escapement |
+| ENG-170 | ENG-170 | The Steam Engine |
+| ENG-180 | ENG-180 | Weaving Looms and Textile Mechanization |
+| ENG-190 | ENG-190 | Machine Tools |
+| ENG-200 | ENG-200 | Cast Iron and the Iron Bridge |
+| ENG-210 | ENG-210 | Mechanical Engineering — Transmission, Precision, and Component Standards |
+| ENG-220 | ENG-220 | Refrigeration and Mechanical Cooling |
+| ENG-230 | ENG-230 | The Telegraph |
+| ENG-240 | ENG-240 | The Crystal Palace and Prefabricated Construction |
+| ENG-250 | ENG-250 | The Elevator and Safety Brake |
+| ENG-260 | ENG-260 | The Bessemer Process and Steel Commodification |
+| ENG-270 | ENG-270 | The Subway |
+| ENG-280 | ENG-280 | Dynamite and Industrial Blasting |
+| ENG-290 | ENG-290 | The Internal Combustion Engine |
+| ENG-300 | ENG-300 | Electrification |
+| ENG-310 | ENG-310 | Steel-Frame Construction and the Skyscraper |
+| ENG-320 | ENG-320 | Agrochemicals and Synthetic Fertilizers |
+| ENG-330 | ENG-330 | Semiconductors |
+
+### NAT
+
+| old ID | new ID | title |
+|---|---|---|
+| NAT-010 | NAT-010 | Mathematics, Geometry, and Calendrical Astronomy |
+| NAT-020 | NAT-020 | Metaphysics as an Explanatory Framework |
+| NAT-030 | NAT-030 | Formal Logic |
+| NAT-040 | NAT-040 | Mechanics |
+| NAT-050 | NAT-050 | Translation Movements and the Assembling of the Canon |
+| NAT-060 | NAT-060 | Computer Science and Computation Theory |
+| NAT-070 | NAT-070 | Probability and Statistical Reasoning |
+| NAT-080 | NAT-080 | Optical Theory, Refraction, and Lenses |
+| NAT-090 | NAT-090 | Empiricism and Experiment |
+| NAT-100 | NAT-100 | Geology and Deep Time |
+| NAT-110 | NAT-110 | The Sack of Baghdad and the Loss of the House of Wisdom |
+| NAT-120 | NAT-120 | Heliocentrism |
+| NAT-130 | NAT-130 | Germ Theory |
+| NAT-140 | NAT-140 | Taxonomy and Systematic Classification |
+| NAT-150 | NAT-150 | The Scientific Society and Peer Review |
+| NAT-160 | NAT-160 | The Chemical Revolution |
+| NAT-170 | NAT-170 | Electromagnetism |
+| NAT-180 | NAT-180 | Thermodynamics |
+| NAT-190 | NAT-190 | The Theory of Evolution |
+| NAT-200 | NAT-200 | The Periodic Table and Predictive Classification |
+| NAT-210 | NAT-210 | Quantum Theory |
+| NAT-220 | NAT-220 | Relativity |
+| NAT-230 | NAT-230 | Plate Tectonics and the Delayed Vindication of Continental Drift |
+| NAT-240 | NAT-240 | Information Theory |
+
+### PHI
+
+| old ID | new ID | title |
+|---|---|---|
+| PHI-010 | PHI-010 | Pre-Axial Wisdom Literature |
+| PHI-020 | PHI-020 | Zoroastrian Moral Dualism |
+| PHI-030 | PHI-030 | The Emergence of Schools of Thought |
+| PHI-040 | PHI-040 | Atman/Brahman — Vedanta and the Upanishads |
+| PHI-050 | PHI-050 | "Hebrew Prophetic Ethics: Covenant, Critique of Power, and Social Justice" |
+| PHI-060 | PHI-060 | "Daoism: Non-Action and Naturalness" |
+| PHI-070 | PHI-070 | Non-Violence (Jainism) |
+| PHI-080 | PHI-080 | Confucian Universal Ethics and Ritual (Li) |
+| PHI-090 | PHI-090 | Nirvana and the Four Noble Truths (Buddhism) |
+| PHI-100 | PHI-100 | The Socratic Turn |
+| PHI-110 | PHI-110 | "Mohism: Universal Concern and Early Consequentialism" |
+| PHI-120 | PHI-120 | Cynicism and the Rejection of Convention |
+| PHI-130 | PHI-130 | "Legalism (Fa): Law as a Technology of the State" |
+| PHI-140 | PHI-140 | Justice and the Politics of the Polis |
+| PHI-150 | PHI-150 | The Collapse of the Polis and Hellenistic Ethics |
+| PHI-160 | PHI-160 | Natural Law |
+| PHI-170 | PHI-170 | Suppression and Closure of Philosophical Institutions |
+| PHI-180 | PHI-180 | "Chan/Zen: Practice as Epistemology" |
+| PHI-190 | PHI-190 | Advaita Vedanta (Shankara) |
+| PHI-200 | PHI-200 | "Falsafa: Islamic Peripatetic Philosophy and the Reason-Revelation Synthesis" |
+| PHI-210 | PHI-210 | Neo-Confucianism |
+| PHI-220 | PHI-220 | Scholasticism and the University Debate |
+| PHI-230 | PHI-230 | Renaissance Humanism |
+| PHI-240 | PHI-240 | "Ibn Khaldun's Muqaddimah: Cyclical Theory of Civilizational Rise and Decline" |
+| PHI-250 | PHI-250 | Rationalism and "Method" |
+| PHI-260 | PHI-260 | "Enlightenment Sociability: Salons, Coffeehouses, and the Public Sphere" |
+| PHI-270 | PHI-270 | Empiricism and Early Modern Political Philosophy |
+| PHI-280 | PHI-280 | Secularization |
+| PHI-290 | PHI-290 | Shinto and Kokutai — the Sacralization of Sovereign Power |
+| PHI-300 | PHI-300 | The Invention of Society |
+| PHI-310 | PHI-310 | Romanticism |
+| PHI-320 | PHI-320 | Idealism and the Autonomy of Morality (Kant) |
+| PHI-330 | PHI-330 | Utilitarianism (Bentham and Mill) |
+| PHI-340 | PHI-340 | Kierkegaard and the Leap of Faith |
+| PHI-350 | PHI-350 | Historical Materialism |
+| PHI-360 | PHI-360 | Nietzschean Genealogy and the Critique of Morality as Power |
+| PHI-370 | PHI-370 | Pragmatism |
+| PHI-380 | PHI-380 | Science of the Soul — Psychoanalysis as Philosophy of Mind |
+| PHI-390 | PHI-390 | Logical Positivism and the Linguistic Turn |
+| PHI-400 | PHI-400 | Existentialism and Structuralism |
+| PHI-410 | PHI-410 | Mass Culture and the Culture Industry |
+
+### DIP
+
+| old ID | new ID | title |
+|---|---|---|
+| DIP-010 | DIP-010 | Envoy Immunity and the Sanctity of the Messenger |
+| DIP-020 | DIP-020 | Treaty and Oath |
+| DIP-030 | DIP-030 | Interpreters and Linguistic Mediation in Diplomacy |
+| DIP-040 | DIP-040 | Empire, Tribute, and Legitimacy Diplomacy |
+| DIP-050 | DIP-050 | Roads, Garrisons, and Imperial Unification |
+| DIP-060 | DIP-060 | Gifts, Hostages, and Marriages |
+| DIP-070 | DIP-070 | "Non-Sovereign Diplomatic Actors: Papal Arbitration and Merchant-League Negotiation" |
+| DIP-080 | DIP-080 | Permanent Embassies and the Professional Diplomat |
+| DIP-090 | DIP-090 | Imperial Oceanic Diplomacy — Colonies, Protectorates, and Recognition |
+| DIP-100 | DIP-100 | Sovereignty — The Westphalian Package |
+| DIP-110 | DIP-110 | Espionage, Diplomatic Cover, and Persona Non Grata |
+| DIP-120 | DIP-120 | Revolution and the Diplomacy of Reinvented Legitimacy |
+| DIP-130 | DIP-130 | Concert of Powers and Spheres of Influence |
+| DIP-140 | DIP-140 | Unequal Treaties and Coerced Bilateral Diplomacy |
+| DIP-150 | DIP-150 | Extraterritoriality and Consular Jurisdiction |
+| DIP-160 | DIP-160 | Nationalism as a Diplomatic Recognition Principle |
+| DIP-170 | DIP-170 | "Alliance Cascade: The Collapse of a Diplomatic System into General War" |
+| DIP-180 | DIP-180 | Collective Security and International Organizations |
+| DIP-190 | DIP-190 | Sanctions |
+| DIP-200 | DIP-200 | Diplomatic Derecognition and the Rupture of Relations |
+
+### MIG
+
+| old ID | new ID | title |
+|---|---|---|
+| MIG-010 | MIG-010 | Peopling of the Continents (Pleistocene Human Dispersal) |
+| MIG-020 | MIG-020 | Wave of Farmers |
+| MIG-030 | MIG-030 | Transhumance (Seasonal Pastoral Migration) |
+| MIG-040 | MIG-040 | Wheel and Wagon |
+| MIG-050 | MIG-050 | Horse Husbandry and the Mobility Threshold |
+| MIG-060 | MIG-060 | Maritime Colonization (City-States and Trading Posts) |
+| MIG-070 | MIG-070 | Diasporas as Trade Networks |
+| MIG-080 | MIG-080 | Camel Caravan Mobility and Desert Crossing |
+| MIG-090 | MIG-090 | Frontier Colonization (Land for Risk) |
+| MIG-100 | MIG-100 | Jewish Diaspora and the "Jewish Question" |
+| MIG-110 | MIG-110 | Steppe Confederations |
+| MIG-120 | MIG-120 | Great Migrations |
+| MIG-130 | MIG-130 | Steppe Waves (Mongol, Hungarian, Seljuk) |
+| MIG-140 | MIG-140 | Norman Conquest as Elite-Replacement Migration |
+| MIG-150 | MIG-150 | Colonization of the Americas (Settler Migration Waves) |
+| MIG-160 | MIG-160 | Atlantic Slavery as Forced Migration |
+| MIG-170 | MIG-170 | Industrial Internal Migration |
+| MIG-180 | MIG-180 | Passenger Service (Regular Lines) |
+| MIG-190 | MIG-190 | Gold Rushes and Resource Frontiers |
+| MIG-200 | MIG-200 | "Migrant Networks: Remittances and Chain Migration" |
+| MIG-210 | MIG-210 | Circular and Return Migration |
+| MIG-220 | MIG-220 | Immigration Restriction and Quota Systems |
+| MIG-230 | MIG-230 | Passports, Visas, and Borders as an Institution |
+| MIG-240 | MIG-240 | Refugee Status and Asylum as a Legal Category |
+| MIG-250 | MIG-250 | State-Driven Forced Population Movement |
+| MIG-260 | MIG-260 | Scientific Migration and Brain Drain |
+| MIG-270 | MIG-270 | Postcolonial and Labor Migration |
+| MIG-280 | MIG-280 | Migration Unions (Free-Movement Agreements) |
+
+### MAR
+
+| old ID | new ID | title |
+|---|---|---|
+| MAR-010 | MAR-010 | Shipbuilding and Hull Construction |
+| MAR-020 | MAR-020 | Coastal Trade |
+| MAR-030 | MAR-030 | Piracy |
+| MAR-040 | MAR-040 | Warships |
+| MAR-050 | MAR-050 | Celestial Navigation |
+| MAR-060 | MAR-060 | Regular Navy |
+| MAR-070 | MAR-070 | Lighthouses and Aids to Navigation |
+| MAR-080 | MAR-080 | Lateen Sail |
+| MAR-090 | MAR-090 | Northern River Navigation |
+| MAR-100 | MAR-100 | Fishing and Whaling |
+| MAR-110 | MAR-110 | Privateering |
+| MAR-120 | MAR-120 | Marine Insurance |
+| MAR-130 | MAR-130 | Naval Gunnery and Ship Artillery |
+| MAR-140 | MAR-140 | Admiralty |
+| MAR-150 | MAR-150 | Smuggling |
+| MAR-160 | MAR-160 | Ocean Navigation |
+| MAR-170 | MAR-170 | Naval Provisioning and Scurvy |
+| MAR-180 | MAR-180 | The Cape Route and the Collapse of the Mediterranean Spice Trade |
+| MAR-190 | MAR-190 | Marines |
+| MAR-200 | MAR-200 | Ironclads |
+| MAR-210 | MAR-210 | Ship of the Line |
+| MAR-220 | MAR-220 | Sea Lane Strategies |
+| MAR-230 | MAR-230 | Naval Impressment and the Maritime Labor Force |
+| MAR-240 | MAR-240 | Docks |
+| MAR-250 | MAR-250 | Chronometer and Coordinates |
+| MAR-260 | MAR-260 | Clippers |
+| MAR-270 | MAR-270 | Monitor |
+| MAR-280 | MAR-280 | Torpedoes |
+| MAR-290 | MAR-290 | Jeune École |
+| MAR-300 | MAR-300 | Battleship |
+| MAR-310 | MAR-310 | Destroyer |
+| MAR-320 | MAR-320 | Submarines |
+| MAR-330 | MAR-330 | Dreadnought |
+| MAR-340 | MAR-340 | Convoy Escort |
+| MAR-350 | MAR-350 | Aircraft Carriers and Naval Aviation |
+| MAR-360 | MAR-360 | Landing Craft and Over-the-Beach Logistics |
+| MAR-370 | MAR-370 | Containerization |

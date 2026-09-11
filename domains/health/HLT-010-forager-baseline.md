@@ -21,7 +21,7 @@ absence:
     note: By the time the earliest Fertile Crescent storage pits appear (HLT-030, ~-10000), the region's own forager populations had already been living the pattern this entry describes for tens of thousands of years — the "absence" here is only that the baseline itself leaves its clearest skeletal and behavioral evidence in Africa's much longer occupation history, not that the pattern didn't hold equally in the Middle East right up until sedentism displaced it.
 prereqs: []
 enables: [HLT-030, HLT-070, HLT-040]
-see_also: []
+see_also: [WAR-010]
 contested: true
 contested_note: "How much of the 'Neolithic decline' reading (HLT-030, HLT-040) depends on an idealized, insufficiently regionally-specific forager baseline is itself disputed among bioarchaeologists — savanna foraging, coastal foraging, and circumpolar foraging carried genuinely different injury, nutrition, and mortality risk profiles, and some individual forager populations plausibly fared worse than some early farming populations on specific measures. Model the baseline's favorable overall profile (broad diet diversity, low crowd-disease exposure, varied physical load) as real and general, while treating any specific numeric comparison to a specific farming population as a separate, regionally-contingent claim rather than a fixed universal gap."
 stats_touched: [toxic burden, immunological capital]

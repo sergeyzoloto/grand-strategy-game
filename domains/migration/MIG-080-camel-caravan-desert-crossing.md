@@ -21,7 +21,7 @@ absence:
     note: South Asia's own long-distance overland trade, into Central Asia and toward the Middle East, relies more on a mixed pack-animal tradition (bullock, mule, and camel in its western and northwestern approaches) than on a dedicated deep-desert camel-caravan corridor of the trans-Saharan or Arabian type, since the subcontinent's own geography offers fewer comparably extreme, multi-week waterless crossings to solve for.
 prereqs: []
 enables: [MIG-070]
-see_also: [MIG-050, MIG-040, MIG-120, MIG-110, MIG-130]
+see_also: [MIG-050, MIG-040, MIG-120, MIG-110, MIG-130, WAR-010]
 contested: false
 contested_note: ""
 stats_touched: [migration range]

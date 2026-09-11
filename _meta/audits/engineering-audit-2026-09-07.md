@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Engineering Domain Audit
 
 **Date:** 2026-09-07
@@ -22,7 +24,7 @@ The earliest entries, ENG-020 (Irrigation and Dams, -6000) and ENG-030 (The Pott
 
 Four concrete absences, each checked against the full wiki:
 
-- **Smelting/metalworking technique** — see above. Grepped `smelting`: hits only in `COM-020`, `AGR-160`, `WAR-020` — all _consumers_ of a chemistry ENG is supposed to own and doesn't.
+- **Smelting/metalworking technique** — see above. Grepped `smelting`: hits only in `COM-020`, `AGR-160`, `WAR-040` — all _consumers_ of a chemistry ENG is supposed to own and doesn't.
 - **Papermaking** — grepped the whole wiki for `papermaking`/`paper mill`: zero hits anywhere. `ENG-150` (The Printing Press) has `prereqs: []` despite a press being useless at scale without a cheap printable surface — Gutenberg's own breakthrough was only economically viable because paper, not parchment, had become affordable by the 1450s.
 - **Fired brick** — grepped `brick`: zero hits anywhere in the entire project. The single most ubiquitous premodern building material, load-bearing for the Indus Valley cities `COM-030` already credits for standardization, Mesopotamian ziggurats, and most of world construction history, has no entry.
 - **Mechanical clockwork** — grepped `clockwork|escapement|mechanical clock`: the only hits are `NAT-040` (Mechanics, the physics _theory_, not the device) and `MAR-250` (the marine chronometer specifically, correctly MAR's territory). `NAT-040`'s own absence note name-drops the Song-era Chinese astronomical clock tower (Su Song's _Xin Yixiang Fayao_) as a real engineering achievement with nowhere in the wiki to actually live.
@@ -49,7 +51,7 @@ Real diversity is present: gates (`ENG-170`, `ENG-250`, `ENG-230` — the last e
 
 ### 7. BOUNDARY INTEGRITY — **PASS on discipline, FAIL on delivery**
 
-Every WAR/ENG and NAT/ENG split in this domain is handled correctly and explicitly — `ENG-140` versus `WAR-110`, `ENG-170`/`ENG-230`/`ENG-300`/`ENG-330` all correctly prereq the relevant `NAT` knowledge entry (`NAT-040`, `NAT-170`, `NAT-210`) rather than re-deriving the underlying science, and `ENG-290` correctly defers military aviation doctrine to `WAR-250` while keeping the engine itself. This is real discipline, better than any other domain audited so far. The actual failure runs the other direction: this domain doesn't wrongly claim territory, it **fails to occupy territory explicitly assigned to it** — see Probes 1 and 2. The one soft case worth naming: `ENG-320` (Agrochemicals) carries substantially more agronomic/economic consequence content in its own Social consequence section than the domain's usual technique-only discipline allows, closer to AGR's territory than ENG's — a precedent already partially addressed by AGR-280 being made to prereq it directly, not recommending further change here.
+Every WAR/ENG and NAT/ENG split in this domain is handled correctly and explicitly — `ENG-140` versus `WAR-130`, `ENG-170`/`ENG-230`/`ENG-300`/`ENG-330` all correctly prereq the relevant `NAT` knowledge entry (`NAT-040`, `NAT-170`, `NAT-210`) rather than re-deriving the underlying science, and `ENG-290` correctly defers military aviation doctrine to `WAR-270` while keeping the engine itself. This is real discipline, better than any other domain audited so far. The actual failure runs the other direction: this domain doesn't wrongly claim territory, it **fails to occupy territory explicitly assigned to it** — see Probes 1 and 2. The one soft case worth naming: `ENG-320` (Agrochemicals) carries substantially more agronomic/economic consequence content in its own Social consequence section than the domain's usual technique-only discipline allows, closer to AGR's territory than ENG's — a precedent already partially addressed by AGR-280 being made to prereq it directly, not recommending further change here.
 
 ---
 
@@ -62,8 +64,8 @@ Every WAR/ENG and NAT/ENG split in this domain is handled correctly and explicit
 - Regions: middle-east, east-asia, africa — era, roughly -6000 to -1200
 - Answers: Probe 1 (emergence) and 7 (boundary — cashes `COM-020`'s explicit IOU)
 - Mechanism: converts raw ore into usable metal through controlled high-temperature reduction (charcoal fuel, bellows-driven draft to reach and sustain smelting temperature) — the actual chemistry and furnace technique `COM-020` names as ENG's own and never receives.
-- Hook (seed): a gate — metal-as-material doesn't exist as a tradeable commodity (`COM-020`) or a military lever (`WAR-020`) until this technique exists first; both entries currently float without their own stated foundation.
-- Prereqs: none (foundational). Enables: `COM-020`, `WAR-020`, `AGR-160` (all three currently missing this as a formal prereq).
+- Hook (seed): a gate — metal-as-material doesn't exist as a tradeable commodity (`COM-020`) or a military lever (`WAR-040`) until this technique exists first; both entries currently float without their own stated foundation.
+- Prereqs: none (foundational). Enables: `COM-020`, `WAR-040`, `AGR-160` (all three currently missing this as a formal prereq).
 - Contested: true — whether bronze metallurgy diffused from a single Near Eastern origin or arose independently at multiple centers (Southeast Asian sites like Ban Chiang carry their own independent-origin claims) is a live archaeological dispute. Model regional smelting traditions as independently-triggerable rather than assuming one-directional diffusion.
 - Confidence: medium-high.
 

@@ -21,7 +21,7 @@ absence:
     note: Comparable large-scale frontier land-settlement colonization is rare in precolonial sub-Saharan Africa relative to Europe/Americas/China, plausibly reflecting different land-tenure norms (communal/lineage land rights harder to convert into individually-claimable frontier plots) and disease ecology (tsetse-belt constraints on the livestock-based frontier-settlement package) rather than any lack of population pressure or mobility.
 prereqs: []
 enables: [MIG-150]
-see_also: [MIG-060, MIG-190, AGR-080, WAR-060, MIG-140, MIG-010, MIG-210, AGR-200]
+see_also: [MIG-060, MIG-190, AGR-080, WAR-080, MIG-140, MIG-010, MIG-210, AGR-200]
 contested: false
 contested_note: ""
 stats_touched: [settler footprint]

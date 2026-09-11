@@ -18,7 +18,7 @@ One line per invented variable, in the order encountered.
 | medical efficacy         | —        | actual health outcome improvement a medical practice produces.              |
 | antibiotic pool          | —        | depleting stock of effective antimicrobial treatment, drawn down by use and resistance. |
 | information speed        | —        | rate at which news/knowledge propagates across distance.                    |
-| protection rent          | —        | value extracted by an actor in exchange for (real or imposed) protection.   |
+| protection rent          | WAR-020  | value extracted by an actor in exchange for (real or imposed) protection — episodic predation converted into standing extraction once the predator's time horizon lengthens and it holds something close to a monopoly on the threat it charges against, which is what makes the payer prefer it to the unpredictable destruction it replaces. |
 | route knowledge          | —        | accumulated, learnable knowledge of a trade or travel route.                |
 | time discipline          | —        | internalized scheduling of labor/life to clock or calendar rather than task.|
 | privacy                  | —        | degree to which household/individual activity is shielded from communal observation. |
@@ -54,3 +54,4 @@ One line per invented variable, in the order encountered.
 | asabiyyah | PHI-240 | a depleting pool (design principle 4) of group solidarity/cohesion that lets a tribal or dynastic coalition seize and hold power, peaking at conquest and predictably eroding across roughly three to four generations of settled, urbanized success. |
 | alliance cohesion | DIP-170 | a depleting pool (design principle 4) of accumulated inter-power trust and coordination capacity within a standing alliance or concert system, built up gradually over decades but catastrophically destructible in a single triggering crisis via the same commitment architecture meant to prevent that outcome. |
 | medical access | HLT-210 | population-level coverage by any organized channel of medical or burial-cost support (mutual-aid fund, charitable endowment, insurance), tracked separately from the underlying medical efficacy that coverage actually buys. |
+| raiding prestige | WAR-010 | standing and bridewealth won by participating in a raid — a route to adult status for young men with no inheritance to wait for, which persists as a raiding driver independent of whether any particular raid's material haul repays it. |

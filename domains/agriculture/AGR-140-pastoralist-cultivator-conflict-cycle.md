@@ -21,7 +21,7 @@ absence:
     note: The Chinese agrarian core, protected behind an early and sustained state investment in frontier fortification (culminating in the Great Wall system) specifically aimed at separating steppe pastoralist territory from settled farmland, shows the pastoralist-cultivator conflict cycle can be substantially suppressed, though never eliminated, through sustained state-level infrastructure investment rather than only through the local land-use negotiation the cycle otherwise runs on.
 prereqs: [AGR-030]
 enables: []
-see_also: [WAR-060, MIG-110, AGR-070, MIG-030]
+see_also: [WAR-080, MIG-110, AGR-070, MIG-030, WAR-010]
 contested: false
 contested_note: ""
 stats_touched: [soil fertility]
@@ -30,7 +30,7 @@ tags: [pastoralist-cultivator-conflict, transhumance, grazing-corridor, land-use
 
 This entry owns the recurring, structural land-use competition between
 mobile pastoralism and fixed-field cultivation as two agricultural modes
-with genuinely incompatible spatial needs — WAR-060 owns cavalry as a
+with genuinely incompatible spatial needs — WAR-080 owns cavalry as a
 battlefield doctrine and MIG-110 owns steppe political-military
 confederation; this entry owns the everyday, non-military land-use
 conflict the two modes generate wherever they share an ecological zone,
@@ -91,5 +91,5 @@ fertility`) and open conflict tracking available land relative to
 population pressure on either side — a cycle state-level frontier
 infrastructure investment (the Chinese case) can suppress but not
 eliminate, and which recurs independent of whether either side's
-political organization ever escalates to the military scale WAR-060 and
+political organization ever escalates to the military scale WAR-080 and
 MIG-110 describe.

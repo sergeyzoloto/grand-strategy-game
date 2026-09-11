@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Health (HLT) Domain Audit — 2026-09-08
 
 Hostile adversarial review. All 26 entries read in full (HLT-030 through

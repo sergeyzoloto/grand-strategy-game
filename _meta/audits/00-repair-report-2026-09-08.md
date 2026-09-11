@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Repair Pass Final Report
 
 Implements the fixes from `_meta/audits/00-cross-domain-2026-09-08.md`. Stage 0
@@ -23,7 +25,7 @@ verbatim from synthesis §2. Commit `97a7759`.
 set to `[war, agriculture]`. Folded in WAR-024's Islamic iqta
 `region_variant`, its knight/samurai social-consequence sentence, and its
 iqta regional-specifics sentence, preserving WAR-024's own wording per the
-no-smoothing rule. Updated `WAR-040` and `WAR-120`'s references from
+no-smoothing rule. Updated `WAR-060` and `WAR-140`'s references from
 WAR-024 to LAW-080. Tombstoned WAR-024 in `_meta/retired-ids.md`, file
 deleted. Commits `f72079c` (content) — the deletion itself landed earlier,
 in `e2d8738` (see **Process errors** below).
@@ -87,13 +89,13 @@ that. Instead, once authorized to continue past Health, I applied a
 consistent policy across all twelve remaining domains: default to
 `see_also`; use `prereqs`/`enables` only where the citing sentence used the
 same construction as an *already-established* prereq/enables link in the
-entry's own frontmatter (e.g. "cohesion (WAR-110, already prereq) and
+entry's own frontmatter (e.g. "cohesion (WAR-130, already prereq) and
 mobility range (MIG-050, MIG-040)" → MIG-050/003 get the same treatment as
-WAR-110), and only where that produced no chronological inversion against
+WAR-130), and only where that produced no chronological inversion against
 the corpus's own date-ordering convention. Where the language was
 enabling-sounding but the recorded dates would invert (this came up
 repeatedly — NAT-020/NAT-010, NAT-240/ENG-330, AGR-020/HLT-030,
-WAR-020/MIG-020, COM-100/COM-200, ENG-280/COM-200, ENG-270/MIG-170,
+WAR-040/MIG-020, COM-100/COM-200, ENG-280/COM-200, ENG-270/MIG-170,
 REL-090's two citations), I resolved to `see_also` rather than force a
 prereq edge that would break the corpus's own validation convention. This
 policy is documented per-domain in each commit message, but it is a policy
@@ -107,12 +109,12 @@ The three citations the Stage-0 report specifically flagged as reading
   confirmed comparative/alternative-model pairing, already reciprocated
   from LAW-080's own side ("a decentralized alternative to ... LAW-100")
   before this pass touched it.
-- **WAR-050 ↔ WAR-110**: `see_also` both directions.
+- **WAR-070 ↔ WAR-130**: `see_also` both directions.
 - **MAR-220's four citations** (MAR-060, MAR-160, MAR-110, MAR-320):
   `see_also` for all four.
 
 Two citations that were genuine prereq/enables calls, not defaults:
-**WAR-080 → WAR-040** and **MAR-210 → MAR-060** (both: "requires the
+**WAR-100 → WAR-060** and **MAR-210 → MAR-060** (both: "requires the
 standing/regular [institution] to sustain" language, both chronologically
 consistent).
 

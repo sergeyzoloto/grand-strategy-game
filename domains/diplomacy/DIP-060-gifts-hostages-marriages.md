@@ -21,7 +21,7 @@ absence:
     note: European royal marriage diplomacy (the Habsburg dynasty's marriage-driven territorial acquisition being the paradigm case) aims cumulatively at inheritance and territorial union between the marrying houses themselves rather than at buying peace with a militarily superior or otherwise unconquerable rival power — a structurally different strategic logic behind an outwardly similar practice of marrying rulers to secure diplomatic advantage.
 prereqs: [DIP-040, DIP-010]
 enables: []
-see_also: [MIG-110]
+see_also: [MIG-110, WAR-020]
 contested: false
 contested_note: ""
 stats_touched: []

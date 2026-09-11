@@ -23,7 +23,7 @@ absence:
   - region: americas
     note: Andean and Mesoamerican metallurgy develops real sophistication in gold, silver, and copper working for ornamental, ritual, and status objects, but never develops iron smelting or bronze-for-tools production at anything like Old World functional scale — a metallurgical tradition oriented toward display and ritual value rather than toward tools and weapons, not a lesser achievement but a differently-directed one.
 prereqs: []
-enables: [COM-020, WAR-020, AGR-160]
+enables: [COM-020, WAR-040, AGR-160]
 see_also: []
 contested: true
 contested_note: "Whether bronze metallurgy originated at a single Near Eastern point and diffused outward, or arose independently at multiple centers, is a live archaeological dispute — Southeast Asian sites (Ban Chiang in Thailand prominently) carry their own independent-origin claims that some archaeometallurgists accept and others read as diffusion with strong local adaptation. Model regional smelting traditions as independently-triggerable given the right ore access and fuel supply, rather than requiring a single-origin diffusion chain to explain every regional case."
@@ -34,7 +34,7 @@ tags: [smelting, metallurgy, bronze-age, piece-mold-casting, bloomery]
 Converting raw ore into usable metal through controlled high-temperature
 reduction — the actual furnace technique and chemistry that every later
 entry treating metal as an already-available material (`COM-020`'s craft-
-commodity trade, `WAR-020`'s mass-iron weapons, `AGR-160`'s farm tools)
+commodity trade, `WAR-040`'s mass-iron weapons, `AGR-160`'s farm tools)
 depends on and, until now, has had no entry of its own to point to.
 
 ## Timing
@@ -97,7 +97,7 @@ case.
 
 Metal doesn't exist as a tradeable commodity, a weapon, or a farm tool
 until this technique exists first — a gate every later entry treating
-metal as already available (`COM-020`, `WAR-020`, `AGR-160`) has been
+metal as already available (`COM-020`, `WAR-040`, `AGR-160`) has been
 quietly assuming, with the specific furnace temperature a region's fuel
 and ore access can sustain setting a hard, regionally-variable ceiling
 on which metal (copper, bronze, or iron) is actually reachable at all.

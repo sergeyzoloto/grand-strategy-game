@@ -27,7 +27,7 @@ absence:
     note: Extensive herbal and diagnostic knowledge existed across the continent but rarely codified into the kind of fixed, widely-copied canonical text the Eurasian systems produced — an oral/apprenticeship transmission model rather than a textual one, which affects durability and cross-regional spread of specific knowledge but is not evidence of less knowledge existing.
 prereqs: [HLT-080]
 enables: [HLT-160, HLT-250, HLT-310, HLT-200, HLT-280, HLT-290]
-see_also: [HLT-320, HLT-270, WAR-190]
+see_also: [HLT-320, HLT-270, WAR-210]
 contested: true
 contested_note: "How much genuine therapeutic efficacy any premodern codified system actually had, beyond its social authority, is disputed — some specific interventions (certain herbal remedies, wound cleaning, dietary advice) plausibly worked, while flagship theory-driven interventions (bloodletting, purging) plausibly did net harm, and it's difficult to disentangle which parts of a coherent theoretical system were doing real work. Model medical authority and medical efficacy as fully separate stats (design principle 3) rather than assuming one tracks the other, and let specific interventions within a system roll independently for a small efficacy value rather than inheriting the system's overall prestige."
 stats_touched: [medical legitimacy, medical efficacy]

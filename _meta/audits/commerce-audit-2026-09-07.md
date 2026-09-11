@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Commerce Domain Audit
 
 **Date:** 2026-09-07
@@ -35,7 +37,7 @@ Only one entry has contraction as its actual mechanic: COM-180 (Technological Di
 Four concrete cases, verified against actual IDs and dates in the repo:
 
 - **COM-140** (Silver Shock, starts 1545) has `prereqs: []` despite its entire mechanism depending on the trans-Pacific Manila Galleon route — i.e., on `MAR-160` (Ocean Navigation, 1405–1522, which predates COM-140 and has open `enables: []`). Currently unlinked.
-- **COM-020** (Metallurgy, starts **-3300**) lists `prereqs: [WAR-020]` — but WAR-020 (Mass Iron and the End of the Elite Warrior Monopoly) runs **-1200 to -500**, a full 2,100 years _after_ COM-020's own start date. This is a genuine chronological inversion, not a stylistic quibble: COM-020's Bronze Age craft-guild formation cannot depend on an Iron Age event that hasn't happened yet. The dependency almost certainly runs the other way — WAR-020's iron-democratizes-the-battlefield thesis presupposes iron-as-commodity already existing, which is COM-020's own content.
+- **COM-020** (Metallurgy, starts **-3300**) lists `prereqs: [WAR-040]` — but WAR-040 (Mass Iron and the End of the Elite Warrior Monopoly) runs **-1200 to -500**, a full 2,100 years _after_ COM-020's own start date. This is a genuine chronological inversion, not a stylistic quibble: COM-020's Bronze Age craft-guild formation cannot depend on an Iron Age event that hasn't happened yet. The dependency almost certainly runs the other way — WAR-040's iron-democratizes-the-battlefield thesis presupposes iron-as-commodity already existing, which is COM-020's own content.
 - **COM-210** (Opium Wars) has `prereqs: []` despite its own Regional-specifics section stating the war was fought to preserve a trade "the Bengal opium monopoly directly funded and supplied" — i.e., depending on `COM-150` (Chartered Trading Company, which explicitly covers the East India Company). No naval/military capability entry is linked either, despite the war being decided by naval bombardment.
 - **COM-200** (Railways) lists `prereqs: [COM-020]` only, despite being explicitly about _steam_ railways and never citing `ENG-170` (The Steam Engine, 1712–1830, which predates COM-200's 1825 start and already lists `COM-170` in its own `enables`, but not COM-200).
 
@@ -140,7 +142,7 @@ Flavor entry on employer-issued currency and company-store monopoly in industria
 **COM-020 (Metallurgy as Craft and Commodity — Bronze to Steel)** spans -3300 to 1870 and its single Mechanism section does two genuinely unrelated jobs stitched together with "the Bessemer process breaks this pattern": (a) a slow, ancient, social-status-conferring craft-guild-formation story, and (b) a single 1856 industrial process innovation collapsing a specific metal's price by an order of magnitude overnight. These are different mechanism _types_ (a gradual social-organizational claim vs. a sudden price-collapse event) as well as different eras. Split into:
 
 - **COM-020 retained**: craft-guild metalworking as commodity trade, -3300 to roughly 1500 — keep prereqs/social-consequence content, drop the Bessemer material.
-- **A new ENG entry** (outside this audit's numbering authority, flagged for the engineering domain, not proposed here as a COM ID): the Bessemer process itself as _technique_ — decarburization mechanization, the actual engineering innovation — which COM-020's commercial consequence (bulk steel commodification) would then cite as a prereq rather than narrate directly. This also resolves the WAR-020 chronology problem below, since a trimmed COM-020 ending around 1500 no longer needs WAR-020 (-1200 to -500) as a forward-pointing prereq at all — if anything, the relationship should run COM-020 → WAR-020 (iron-as-commodity existing enables the elite-monopoly-breaking consequence), not the reverse currently on file.
+- **A new ENG entry** (outside this audit's numbering authority, flagged for the engineering domain, not proposed here as a COM ID): the Bessemer process itself as _technique_ — decarburization mechanization, the actual engineering innovation — which COM-020's commercial consequence (bulk steel commodification) would then cite as a prereq rather than narrate directly. This also resolves the WAR-040 chronology problem below, since a trimmed COM-020 ending around 1500 no longer needs WAR-040 (-1200 to -500) as a forward-pointing prereq at all — if anything, the relationship should run COM-020 → WAR-040 (iron-as-commodity existing enables the elite-monopoly-breaking consequence), not the reverse currently on file.
 
 ### MERGE
 
@@ -152,7 +154,7 @@ No entry's canonical `domain` needs to change. What needs fixing is entry-level 
 
 - **COM-150 ↔ FIN-070** (Joint-Stock Companies): FIN-070 already lists `see_also: [COM-150]`; COM-150 does not reciprocate. Add FIN-070 to COM-150's `see_also`.
 - **COM-140**: add `MAR-160` to `prereqs`.
-- **COM-020**: remove `WAR-020` from `prereqs` (chronologically backwards — see SPLIT); consider adding COM-020 to WAR-020's own `prereqs` instead once the split lands.
+- **COM-020**: remove `WAR-040` from `prereqs` (chronologically backwards — see SPLIT); consider adding COM-020 to WAR-040's own `prereqs` instead once the split lands.
 - **COM-210**: add `COM-150` to `prereqs` (the Bengal opium monopoly this war defends is COM-150's East India Company).
 - **COM-200**: add `ENG-170` (Steam Engine) to `prereqs`, and add COM-200 to ENG-170's `enables` reciprocally.
 

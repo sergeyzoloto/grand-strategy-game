@@ -21,7 +21,7 @@ absence:
     note: Pre-1829 European urban order relies substantially on a patchwork of night watchmen, parish constables, and military intervention for serious disorder rather than a dedicated, professional, continuously-patrolling civilian police force — a genuine institutional gap that Peel's Metropolitan Police is specifically designed to close, not merely an improvement on an existing comparable institution.
 prereqs: [LAW-020]
 enables: []
-see_also: [MIG-250, WAR-040, LAW-030, LAW-170]
+see_also: [MIG-250, WAR-060, LAW-030, LAW-170]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -30,7 +30,7 @@ tags: [police, baojia, metropolitan-police, public-order]
 
 A dedicated, continuously-active civil institution for maintaining
 internal order and enforcing law day to day — distinct from the military
-(WAR-040), which is organized for external or large-scale internal
+(WAR-060), which is organized for external or large-scale internal
 conflict rather than routine street-level order maintenance.
 
 ## Timing

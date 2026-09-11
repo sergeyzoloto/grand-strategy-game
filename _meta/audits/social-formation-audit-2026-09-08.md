@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Social-Formation Audit — 2026-09-08 [REJECTED]
 
 **Scope:** the composition of human groups — kinship, descent, household form, tribal
@@ -57,7 +59,7 @@ coverage; the noise was checked, not skipped, and confirmed to be noise in every
 | `HLT-010` The Forager Baseline                                                        | band (one clause)                                     | Own Mechanism (health)      | Yes, but not about group size                    | Diet/disease/activity baseline before sedentism. "Social units disperse and recombine" appears in one clause of the Social Consequence section; the entry never engages the coordination-cost or leadership-threshold question at all.                                                                                                      |
 | `DIP-060` Gifts, Hostages, and Marriages                                              | marriage(s)                                           | Own Mechanism               | Yes, but elite-scoped                            | Royal/dynastic marriage as diplomatic collateral (heqin, Habsburg). Never reaches ordinary village- or lineage-level marriage-as-alliance.                                                                                                                                                                                                  |
 | `AGR-140` The Pastoralist–Cultivator Conflict Cycle                                   | (land-use, not a term-list hit but directly relevant) | Own Mechanism               | Yes                                              | Land-use competition between two _already-formed_ social categories. Neither category's own internal composition is this entry's subject.                                                                                                                                                                                                   |
-| `PHI-110`, `PHI-400`, `COM-010`, `FIN-010`, `WAR-010`, `LAW-110`, `HLT-230`           | kinship, prestige goods, chiefdom, baojia             | Purely incidental           | No                                               | Kinship as an ethical-philosophy comparison point (Mohism) or a structuralist-method example (Lévi-Strauss cited for _method_, not for alliance theory); "chiefdom" and "prestige goods" each used once as scale-descriptors; baojia covered twice, both times as a _policing/registration_ mechanism, never as village self-governance.    |
+| `PHI-110`, `PHI-400`, `COM-010`, `FIN-010`, `WAR-030`, `LAW-110`, `HLT-230`           | kinship, prestige goods, chiefdom, baojia             | Purely incidental           | No                                               | Kinship as an ethical-philosophy comparison point (Mohism) or a structuralist-method example (Lévi-Strauss cited for _method_, not for alliance theory); "chiefdom" and "prestige goods" each used once as scale-descriptors; baojia covered twice, both times as a _policing/registration_ mechanism, never as village self-governance.    |
 
 Zero hits, checked directly against the full corpus, for: `tribe` (the word itself
 never appears anywhere), `exogamy`, `endogamy`, `brideprice`, `age set`,
@@ -136,7 +138,7 @@ loyalty to a leader are all absent — zero hits for every specific term.
 ### 7. Chiefdom and Cycling — **ABSENT**
 
 "Chiefdom" appears exactly once in the entire corpus, as a scale-descriptor in
-`WAR-010` ("a state or chiefdom"); "prestige goods" appears exactly once, describing
+`WAR-030` ("a state or chiefdom"); "prestige goods" appears exactly once, describing
 cacao-as-currency in `FIN-010`. Big man vs. ascribed chief, redistributive centers,
 simple vs. complex chiefdoms, and chiefdom cycling (Earle, Anderson) have no coverage
 anywhere.

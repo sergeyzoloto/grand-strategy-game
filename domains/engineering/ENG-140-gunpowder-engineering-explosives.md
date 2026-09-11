@@ -20,7 +20,7 @@ absence:
   - region: europe
     note: European gunpowder chemistry and manufacture in this window is substantially derivative — refining and improving the corning process (grinding powder into uniform grains for more reliable, controllable combustion) rather than originating the core chemistry, which arrives via the Middle Eastern transmission route from its Chinese origin point.
 prereqs: []
-enables: [WAR-110, ENG-280]
+enables: [WAR-130, ENG-280]
 see_also: []
 contested: false
 contested_note: ""
@@ -29,7 +29,7 @@ tags: [gunpowder, saltpeter, corning-process, explosives]
 ---
 
 The infantry doctrine and standing-army financing gunpowder enables is
-WAR-110's; this entry owns the chemistry and manufacturing technique
+WAR-130's; this entry owns the chemistry and manufacturing technique
 itself — refining saltpeter, formulating the charcoal-sulfur-saltpeter
 mixture, and processing it into a usable, storable, reliably-combusting
 product.
@@ -61,7 +61,7 @@ Gunpowder manufacture — saltpeter refining and mixture preparation
 especially — requires specialized technical knowledge and, historically,
 dedicated production facilities and supply chains distinct from ordinary
 craft production, tying reliable gunpowder supply to the same standing
-state fiscal and administrative capacity WAR-110 describes gunpowder
+state fiscal and administrative capacity WAR-130 describes gunpowder
 infantry itself requiring, one step further back in the supply chain.
 
 ## Regional specifics
@@ -82,5 +82,5 @@ Gunpowder's usability depends as much on manufacturing refinement (saltpeter
 purification, then corning into uniform grains) as on the underlying
 chemical formula — refinements that transmit and improve along a
 China-to-Middle-East-to-Europe chain rather than originating independently
-at each stop, directly gating the infantry doctrine WAR-110 covers on
+at each stop, directly gating the infantry doctrine WAR-130 covers on
 whichever stage of this manufacturing chain a given region has reached.

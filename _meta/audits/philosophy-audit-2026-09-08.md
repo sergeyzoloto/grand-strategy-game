@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Philosophy (PHI) Domain Audit — 2026-09-08
 
 Hostile adversarial review. 30 entries read in full (PHI-030 through PHI-410), plus

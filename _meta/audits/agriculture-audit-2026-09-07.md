@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Agriculture Domain Audit
 
 **Date:** 2026-09-07
@@ -50,7 +52,7 @@ This is the domain's strongest probe result. Genuine pools: AGR-150 (soil fertil
 
 ### 7. BOUNDARY INTEGRITY — **MOSTLY PASS, ONE REAL VIOLATION**
 
-Most entries carry the same explicit, well-reasoned disclaimer sentences seen in Commerce's best cases — AGR-100 versus ENG-020, AGR-160 versus COM-020, AGR-140 versus WAR-060/MIG-110, AGR-210 versus MIG-160/COM-160 all correctly name what they don't own and point at what does. The one real violation: **AGR-260 (Mechanisation) never disclaims ENG's artifact territory at all** — unlike AGR-100, which explicitly separates "irrigation's agronomic and social consequence" (AGR's) from "the construction technique itself" (ENG-020's), AGR-260 just narrates the tractor and combine harvester directly as if they were AGR's own artifacts, with no ENG entry cited anywhere in the file. This is the same underlying gap as the AGR-260/ENG-290 prereq orphan above, but it's also a boundary-discipline lapse, not just a missing link. Separately, AGR-260's own _title_ — "Mechanisation and the Cold Chain" — still promises content (the cold chain) the entry's own opening paragraph explicitly disclaims to COM-230 in full. The title is a leftover from the original bundled topic list and now actively misleads a reader browsing titles alone.
+Most entries carry the same explicit, well-reasoned disclaimer sentences seen in Commerce's best cases — AGR-100 versus ENG-020, AGR-160 versus COM-020, AGR-140 versus WAR-080/MIG-110, AGR-210 versus MIG-160/COM-160 all correctly name what they don't own and point at what does. The one real violation: **AGR-260 (Mechanisation) never disclaims ENG's artifact territory at all** — unlike AGR-100, which explicitly separates "irrigation's agronomic and social consequence" (AGR's) from "the construction technique itself" (ENG-020's), AGR-260 just narrates the tractor and combine harvester directly as if they were AGR's own artifacts, with no ENG entry cited anywhere in the file. This is the same underlying gap as the AGR-260/ENG-290 prereq orphan above, but it's also a boundary-discipline lapse, not just a missing link. Separately, AGR-260's own _title_ — "Mechanisation and the Cold Chain" — still promises content (the cold chain) the entry's own opening paragraph explicitly disclaims to COM-230 in full. The title is a leftover from the original bundled topic list and now actively misleads a reader browsing titles alone.
 
 ---
 

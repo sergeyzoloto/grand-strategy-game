@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Finance Domain Audit
 
 **Date:** 2026-09-07
@@ -10,7 +12,7 @@ IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
 Finance is, on several measures, the best-constructed domain audited this cycle. Region balance is excellent (26.6% Europe+Mediterranean, on par with Migration's series-best 26.7%). Reverse-direction coverage is the strongest of any domain checked — inflationary spirals, asset bubbles, banking panics, capital flight, and the Great Depression are not afterthoughts here, they're a third of the domain, and `FIN-230` in particular models something no other entry in this wiki attempts: a **compounding event**, where three separately-covered mechanics (`FIN-080`'s bubble collapse, `FIN-190`'s banking panic, `FIN-120`'s gold-standard rigidity) interact to produce an outcome worse than any one alone. Self-documentation of its COM and PHI boundaries is consistent and, in `FIN-180`/`FIN-200`'s case, coordinates cleanly with the other domain's own account of the same split (`LAW-200`'s explicit deferral to `FIN-200` matches `FIN-200`'s own claim to that territory exactly).
 
-But it shares this cycle's now-near-universal tier problem in its most extreme form: **all 19 entries are `core`.** And it has a genuine, specific emergence gap the domain's own foundational entry all but names: `FIN-020` (Cadastre, Tax, and Census, -3000) opens by calling itself "the foundational fiscal infrastructure this entire domain sits on top of" — but a cadastre can only assess and tax _value_, and nothing anywhere in this wiki covers where the concept of a portable, verifiable unit of value — money itself, commodity money before it, stamped coinage after — actually comes from. Layered on that: `FIN-020` lists `WAR-040` as a prereq despite starting 2,100 years before `WAR-040`'s own corrected start date, and despite the causal arrow plausibly running backward (fiscal capacity enabling a standing army, which is exactly what `WAR-040`'s own Hook already says).
+But it shares this cycle's now-near-universal tier problem in its most extreme form: **all 19 entries are `core`.** And it has a genuine, specific emergence gap the domain's own foundational entry all but names: `FIN-020` (Cadastre, Tax, and Census, -3000) opens by calling itself "the foundational fiscal infrastructure this entire domain sits on top of" — but a cadastre can only assess and tax _value_, and nothing anywhere in this wiki covers where the concept of a portable, verifiable unit of value — money itself, commodity money before it, stamped coinage after — actually comes from. Layered on that: `FIN-020` lists `WAR-060` as a prereq despite starting 2,100 years before `WAR-060`'s own corrected start date, and despite the causal arrow plausibly running backward (fiscal capacity enabling a standing army, which is exactly what `WAR-060`'s own Hook already says).
 
 ---
 
@@ -39,7 +41,7 @@ Sorting the 19: world-system (`FIN-120`, `FIN-050`, `FIN-230`, `FIN-270`), state
 
 ### 5. PREREQ ORPHANS — **FAIL**, one concrete bug
 
-Every `prereqs` ID resolves to a real entry, and the domain's internal chronology is otherwise clean — but `FIN-020` (`date_start: -3000`) lists `WAR-040` (`date_start: -900`, following an earlier correction) as a prereq: a **2,100-year inversion**, the most severe found in any domain audited this cycle. Worse, the dependency direction is backward on its own terms — `WAR-040`'s own Hook already states a standing army "converts sustained tax legibility directly into year-round military capability," meaning `WAR-040` depends on `FIN-020`-style fiscal capacity, not the reverse. This relationship surfaced as flagged, pre-existing, out-of-scope debt in both the War and Law domain audits' validation passes, because neither of those audits owned `FIN-020` itself. It's squarely in scope now.
+Every `prereqs` ID resolves to a real entry, and the domain's internal chronology is otherwise clean — but `FIN-020` (`date_start: -3000`) lists `WAR-060` (`date_start: -900`, following an earlier correction) as a prereq: a **2,100-year inversion**, the most severe found in any domain audited this cycle. Worse, the dependency direction is backward on its own terms — `WAR-060`'s own Hook already states a standing army "converts sustained tax legibility directly into year-round military capability," meaning `WAR-060` depends on `FIN-020`-style fiscal capacity, not the reverse. This relationship surfaced as flagged, pre-existing, out-of-scope debt in both the War and Law domain audits' validation passes, because neither of those audits owned `FIN-020` itself. It's squarely in scope now.
 
 Separately, the recurring prose-to-frontmatter bug shows up twice, both times aimed at the same sibling ID: `FIN-140` cites `COM-190` (Protectionism and Tariff Wars) by name twice in its own body ("removes tariff protection (COM-190)," repeated in its Hook) with `domains_touched` already listing `commerce` but `COM-190` never promoted to `see_also`. `FIN-230` does the same with both `COM-160` and `COM-190` in its own regional and contested text.
 
@@ -63,7 +65,7 @@ Consistent, correct self-documentation: `FIN-070` narrates its own COM split aga
 - Answers: Probe 1 (Emergence) directly
 - Mechanism: before a state can tax or a lender can charge interest, a population needs a shared, portable, divisible, verifiable unit everyone accepts as representing value — commodity money (cattle, grain, cowrie shells) solves this crudely; stamped metal coinage (Lydia, ~-600) solves it far better by fixing weight and purity in a government-guaranteed, instantly verifiable form, converting value from something weighed and assayed case by case into something simply counted.
 - Hook (seed): an origin gate — establishes the portable, verifiable unit of value `FIN-020`'s tax assessments and `FIN-030`'s interest-bearing loans both silently assume already exists.
-- Prereqs: none. Enables: `FIN-020`, `FIN-030` (replacing the removed `WAR-040` dependency at `FIN-020`).
+- Prereqs: none. Enables: `FIN-020`, `FIN-030` (replacing the removed `WAR-060` dependency at `FIN-020`).
 - Contested: true — whether coinage was independently invented in Lydia, India, and China within a few centuries of each other, or diffused from a single origin point, is genuinely disputed.
 - Confidence: high.
 
@@ -129,13 +131,13 @@ Regions: global. Decade, from 2009. A currency with no state backing and no cent
 
 ### MERGE
 
-**Considered and rejected: `FIN-120` (Gold Standard) and `FIN-270` (Floating Exchange Rates).** Both are exchange-rate regime choices trading policy independence against credibility in opposite directions, and their Hooks explicitly mirror each other. Kept separate because this is a deliberate mirror pair by design, the same pattern used correctly elsewhere in this wiki (`MAR-300`/`MAR-330`'s naval-status resets, `WAR-020`'s successive chariot-to-iron-to-gunpowder chain) — the two entries model opposite policy choices available in different eras to different actors, not one mechanism told twice.
+**Considered and rejected: `FIN-120` (Gold Standard) and `FIN-270` (Floating Exchange Rates).** Both are exchange-rate regime choices trading policy independence against credibility in opposite directions, and their Hooks explicitly mirror each other. Kept separate because this is a deliberate mirror pair by design, the same pattern used correctly elsewhere in this wiki (`MAR-300`/`MAR-330`'s naval-status resets, `WAR-040`'s successive chariot-to-iron-to-gunpowder chain) — the two entries model opposite policy choices available in different eras to different actors, not one mechanism told twice.
 
 ### RE-DOMAIN
 
 - **`FIN-140`** cites `COM-190` by name twice in its own prose (`domains_touched` already lists `commerce`) without ever promoting it to `see_also`. Fix: add it, reciprocally.
 - **`FIN-230`** cites both `COM-160` and `COM-190` by name in its own prose with the identical gap. Fix: add both, reciprocally.
-- **`FIN-020`**'s `WAR-040` prereq (Part A, Probe 5) should be removed and replaced with the proposed Coinage entry (#1) — the chronological inversion is severe and the causal direction is backward regardless of date.
+- **`FIN-020`**'s `WAR-060` prereq (Part A, Probe 5) should be removed and replaced with the proposed Coinage entry (#1) — the chronological inversion is severe and the causal direction is backward regardless of date.
 - No entry's canonical domain needs to change.
 
 ### RETIER

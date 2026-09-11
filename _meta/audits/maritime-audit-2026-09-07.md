@@ -1,5 +1,7 @@
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Maritime Domain Audit
 
 **Date:** 2026-09-07
@@ -25,7 +27,7 @@ The earliest entry, `MAR-020` (Coastal Trade, -3000), opens by stating coastal t
 Several unglamorous layers every other entry silently assumes:
 
 - **Hull construction itself.** No entry anywhere covers shipwrightry — plank-on-frame versus shell-first construction, Northern European clinker-building, South Asian sewn-plank dhow hulls, East Asian bulkhead-and-junk construction. `MAR-080` covers rigging; nothing covers the hull the rigging is attached to.
-- **Naval gunnery, the weapon.** `MAR-210`'s entire "rate" mechanic and `MAR-200`'s ironclad-obsolescence mechanic both depend on shipboard artillery existing and improving, and neither explains it. `WAR-130` (Artillery Doctrine) is confirmed land-siege-and-field-only — it never mentions naval guns. The weapon technology every warship-type entry from `MAR-210` onward assumes is uncovered anywhere in the wiki.
+- **Naval gunnery, the weapon.** `MAR-210`'s entire "rate" mechanic and `MAR-200`'s ironclad-obsolescence mechanic both depend on shipboard artillery existing and improving, and neither explains it. `WAR-150` (Artillery Doctrine) is confirmed land-siege-and-field-only — it never mentions naval guns. The weapon technology every warship-type entry from `MAR-210` onward assumes is uncovered anywhere in the wiki.
 - **Provisioning and scurvy.** `MAR-160`'s own Mechanism section names "large enough vessels to carry the food and water reserves a multi-week or multi-month passage requires" as one of exactly three necessary components of ocean navigation — and the domain never once models the actual limiting factor (vitamin-C deficiency) that capped safe voyage duration independent of a ship's cargo range, or the fix that removed the cap.
 - **Fishing and whaling.** Confirmed zero hits anywhere in the wiki (`grep -rliE "whaling|fishery|fisheries"`). An entire major maritime economic activity — extraction from the sea rather than transport across it — is absent, despite being economically central to multiple regions in the wiki's own timeframe (Basque and Yankee whaling, North Sea and Grand Banks fisheries, Japanese coastal fishing).
 - **Lighthouses and aids to navigation.** Zero hits anywhere. `MAR-050` and `MAR-250` cover a ship's own onboard technique for finding its way; nothing covers the fixed, shared, state-or-guild-maintained infrastructure that reduces wreck risk for every vessel regardless of its own crew's skill.

@@ -21,7 +21,7 @@ absence:
     note: Imperial Japan's WWII Pacific strategy prioritizes decisive fleet battle and territorial conquest over systematic commerce protection for its own merchant marine, leaving Japan's import-dependent war economy critically exposed to Allied submarine sea-lane interdiction (MAR-320) later in the war — a doctrinal blind spot rather than a resource constraint, since Japan had the naval architecture tradition to build escort vessels had it prioritized the mission.
 prereqs: [MAR-020]
 enables: [MAR-340]
-see_also: [WAR-270, MAR-060, MAR-160, MAR-110, MAR-320]
+see_also: [WAR-290, MAR-060, MAR-160, MAR-110, MAR-320]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]

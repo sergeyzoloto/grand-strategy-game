@@ -30,7 +30,7 @@ absence:
     note: Contemporary and neighboring China explicitly rejects a hereditary land-for-service feudal structure in favor of the centralized examination-based bureaucracy (LAW-100) covered elsewhere in this domain — the same broad era and region producing two structurally opposite answers to the same underlying problem of binding local administration and military service to central authority.
 prereqs: [LAW-020, AGR-170]
 enables: []
-see_also: [LAW-100, AGR-190, AGR-200, WAR-040, LAW-140, LAW-120]
+see_also: [LAW-100, AGR-190, AGR-200, WAR-060, LAW-140, LAW-120]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -39,7 +39,7 @@ tags: [feudalism, vassalage, land-tenure, samurai, knight-service, iqta]
 
 A personal legal bond exchanging land tenure for military service and
 loyalty — a decentralized alternative to the salaried standing-army and
-examination-bureaucracy models (WAR-040, LAW-100) for binding local
+examination-bureaucracy models (WAR-060, LAW-100) for binding local
 administration and defense to a central authority that can't yet fund
 either directly.
 
@@ -58,7 +58,7 @@ Japan's case, considerably later.
 ## Mechanism
 
 Where a central authority lacks the fiscal capacity to maintain a paid
-standing military (WAR-040) or bureaucracy (LAW-100) directly, granting
+standing military (WAR-060) or bureaucracy (LAW-100) directly, granting
 land in exchange for a legally binding oath of military service and
 loyalty distributes both the cost and the administrative burden onto
 local landholders instead — the vassal gets secure tenure and local
@@ -79,8 +79,8 @@ military service and land tenure are directly linked, the resulting
 warrior class (European knighthood, the Japanese samurai) develops its own
 hereditary status, honor code, and social identity independent of any
 central state's administrative reach — a class whose military obligation
-is inseparable from its social rank, unlike WAR-040's later salaried
-professional or WAR-180's later conscripted citizen, for whom military
+is inseparable from its social rank, unlike WAR-060's later salaried
+professional or WAR-200's later conscripted citizen, for whom military
 service and social status are at least formally separable.
 
 ## Regional specifics

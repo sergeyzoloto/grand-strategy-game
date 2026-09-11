@@ -21,7 +21,7 @@ absence:
     note: The Sahelian and East African savanna-pastoralist zones support large mobile herding populations without producing a comparable pattern of large, rapidly-assembled multi-tribal military confederations capable of contesting a settled empire at range — plausibly reflecting a different local balance of pasture geography, horse availability, and settled-state proximity/wealth worth raiding, rather than any lesser capacity for large-scale political organization among pastoralist populations generally.
 prereqs: [MIG-050, MIG-040]
 enables: [MIG-130]
-see_also: [DIP-060, AGR-140, MIG-080]
+see_also: [DIP-060, AGR-140, MIG-080, WAR-010, WAR-020]
 contested: false
 contested_note: ""
 stats_touched: [confederation cohesion]

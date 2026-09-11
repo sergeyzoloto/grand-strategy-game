@@ -21,9 +21,9 @@ region_variants:
     note: West African ironworking centers organize smelting and smithing as specialized hereditary craft guilds with real social standing and ritual significance attached to the trade, comparable in social organization to Old World craft-guild structures despite independent development.
 absence:
   - region: europe
-    note: European steel production stays craft-scale and comparatively expensive relative to iron throughout this entry's window, only reaching cheap bulk commodity status with the much later Bessemer process (ENG-260, 1856) — the smelting chemistry and military consequence of the earlier bronze-to-iron transition are covered elsewhere in this record (WAR-020); this entry's own window ends well before steel's eventual commodification event.
+    note: European steel production stays craft-scale and comparatively expensive relative to iron throughout this entry's window, only reaching cheap bulk commodity status with the much later Bessemer process (ENG-260, 1856) — the smelting chemistry and military consequence of the earlier bronze-to-iron transition are covered elsewhere in this record (WAR-040); this entry's own window ends well before steel's eventual commodification event.
 prereqs: [COM-010, ENG-010]
-enables: [COM-100, COM-200, COM-230, COM-040, ENG-260, WAR-020, AGR-160]
+enables: [COM-100, COM-200, COM-230, COM-040, ENG-260, WAR-040, AGR-160]
 see_also: []
 contested: false
 contested_note: ""
@@ -32,7 +32,7 @@ tags: [metallurgy, craft-guild, wootz-steel, bronze-age, wrought-iron]
 ---
 
 The smelting chemistry itself is ENG's territory, and the bronze-to-iron
-shift's military and social consequence is WAR-020's; this entry owns
+shift's military and social consequence is WAR-040's; this entry owns
 metalworking as an organized craft trade and its output as a tradeable
 commodity, from the earliest Bronze Age guilds through the long era in
 which iron and steel both remain comparatively scarce, skilled, craft-

@@ -20,7 +20,7 @@ absence:
   - region: east-asia
     note: Japanese automotive and internal-combustion manufacturing capability develops only from the 1920s-1930s, later than European and American capability, through a combination of licensed foreign technology and domestic development — arriving after the technology's initial maturation elsewhere rather than as an early independent adopter, a slower uptake than several other industrial technologies covered in this record.
 prereqs: [ENG-190]
-enables: [AGR-260, MAR-320, WAR-250]
+enables: [AGR-260, MAR-320, WAR-270]
 see_also: [COM-170, ENG-310]
 contested: false
 contested_note: ""
@@ -32,7 +32,7 @@ A compact, self-contained engine burning fuel directly inside its own
 cylinders rather than using external combustion to heat a separate working
 fluid (as a steam engine does) — lighter and more power-dense per unit
 weight, which is what makes practical automobiles, and later aircraft
-(WAR-250), possible.
+(WAR-270), possible.
 
 ## Timing
 
@@ -75,7 +75,7 @@ intent to adopt them.
 ## Hook
 
 Internal combustion's power-to-weight advantage over steam is what makes
-personal road vehicles and eventually powered flight (WAR-250) practical —
+personal road vehicles and eventually powered flight (WAR-270) practical —
 but the mass-market automobile specifically required pairing this engine
 with assembly-line production (COM-170) simultaneously, neither the engine
 nor the production method alone being sufficient for the transformation

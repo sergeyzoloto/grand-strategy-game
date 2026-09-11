@@ -21,7 +21,7 @@ absence:
     note: The Barbary regencies' corsairing (see MAR-030) sits ambiguously across the piracy/privateering line for most of its history — nominally state-licensed under Ottoman suzerainty, but operating with enough independence and consistency that contemporary European states treated it as functionally indistinguishable from piracy for treaty and tribute purposes despite its formal state sanction.
 prereqs: [MAR-030]
 enables: []
-see_also: [MAR-140, MAR-060, MAR-220]
+see_also: [MAR-140, MAR-060, MAR-220, WAR-020]
 contested: false
 contested_note: ""
 stats_touched: [protection rent]
