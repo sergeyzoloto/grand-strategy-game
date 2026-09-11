@@ -24,7 +24,7 @@ absence:
     note: Early Roman law (the Twelve Tables, -450) is unusual among these cases for being extracted through sustained plebeian political pressure specifically to make previously secret, patrician-controlled legal knowledge public and fixed — codification here as a check on elite legal monopoly rather than purely an instrument of elite-authored hierarchy.
 prereqs: [FIN-020, LAW-010]
 enables: [LAW-050, LAW-060, LAW-100, LAW-080, LAW-140, LAW-120, LAW-130, LAW-110, LAW-200, REL-140, LAW-070, LAW-030, LAW-040, LAW-090, LAW-170]
-see_also: [PHI-130]
+see_also: [PHI-130, WAR-035]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

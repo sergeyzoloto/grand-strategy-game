@@ -21,7 +21,7 @@ absence:
     note: Syncretism within Africa itself runs in the opposite institutional direction from the diasporic Americas case — African communities more often selectively incorporate Christian or Islamic elements into a still-recognizably-African cosmological and ritual framework, rather than using an imposed foreign religion's outward form to conceal continued African practice underneath, since practitioners in Africa were not typically operating under the same direct coercive suppression forced on the enslaved diaspora.
 prereqs: [MIG-160]
 enables: []
-see_also: []
+see_also: [WAR-035]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

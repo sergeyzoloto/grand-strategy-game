@@ -24,7 +24,7 @@ absence:
     note: Post-Reformation European states increasingly move marriage and family law under unified state civil jurisdiction rather than leaving it to competing ecclesiastical courts, a slow secularization of personal-status law running in the opposite direction from the Ottoman millet system's formalized religious pluralism over the same broad era.
 prereqs: [LAW-020]
 enables: []
-see_also: [LAW-050, LAW-220, LAW-070]
+see_also: [LAW-050, LAW-220, LAW-070, WAR-035]
 contested: false
 contested_note: ""
 stats_touched: []

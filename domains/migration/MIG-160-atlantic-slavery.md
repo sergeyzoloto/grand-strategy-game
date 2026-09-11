@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: africa
     note: The scale and destination pattern of forced removal varies enormously by African region and era depending on which coastal and interior polities and networks participated as suppliers versus which stayed largely outside the Atlantic system, a highly uneven geography of involvement rather than a uniform continent-wide phenomenon — the demographic and social impact was not remotely equivalent everywhere captives were drawn from.
-prereqs: []
+prereqs: [WAR-035]
 enables: [REL-240, AGR-210]
 see_also: [MIG-150, HLT-240, WAR-010]
 contested: true

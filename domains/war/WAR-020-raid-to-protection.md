@@ -45,8 +45,7 @@ absence:
     note: The flower war partners are the counter-case inside the same polity's own practice — Tlaxcala faced the Aztec state for generations of patterned, repeated contact and was never converted into a tribute province, because the object of that particular violence (captives for sacrifice) has no payment that substitutes for it. Where what the predator wants cannot be delivered in goods, the conversion this entry describes has nothing to convert into, and the relationship stays at WAR-010's raiding equilibrium indefinitely.
 prereqs: [WAR-010]
 enables: [WAR-060]
-see_also:
-  [DIP-040, DIP-060, MIG-110, MAR-030, MAR-110, COM-050, COM-130, COM-160]
+see_also: [DIP-040, DIP-060, MIG-110, MAR-030, MAR-110, COM-050, COM-130, COM-160, WAR-035]
 contested: true
 contested_note: "Tilly's argument that war-making and state-making are organised crime — that the difference between a state and a protection racket is legitimacy and scale rather than kind — is influential and disputed, principally on how far it generalises past the early modern European fiscal-military states it was built from, where competitive war-making pressure was unusually intense and unusually sustained. Model the raid-to-rent conversion itself as a real recurring mechanism available wherever the time-horizon and monopoly conditions hold, and treat the stronger claim — that this pathway explains state formation generally — as conditional on whether the polity in question had other state-formation routes available at all, since a state built on irrigation management, sacred authority, or bureaucratic recruitment reaches comparable capacity without passing through this mechanism, and those cases are what the generalisation actually has to answer for."
 stats_touched: [protection rent]

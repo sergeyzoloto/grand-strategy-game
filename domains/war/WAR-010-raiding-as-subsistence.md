@@ -37,7 +37,7 @@ absence:
   - region: southeast-asia
     note: Upland swidden cultivators across mainland and island Southeast Asia hold no concentrated storable surplus worth raiding either, being dispersed by the fallow cycle AGR-080 describes — so raiding in these uplands targets people instead, captives for labour and for sale downhill, showing the mechanism does not simply switch off when storage is absent but changes what it comes for.
 prereqs: [AGR-050, AGR-030]
-enables: [WAR-020]
+enables: [WAR-020, WAR-035]
 see_also: [HLT-010, HLT-030, AGR-010, AGR-080, AGR-140, MIG-050, MIG-080, MIG-110, MIG-160, WAR-070, WAR-160, COM-040]
 contested: true
 contested_note: "Whether raiding is adequately explained as a rational response to a material configuration, or whether that reading understates drivers that run independent of any haul — status competition among young men, revenge obligations with their own momentum, and ritual capture-taking where the object cannot be converted to goods at all (the Aztec flower war) — is genuinely disputed across the anthropology and archaeology of small-scale violence. Model the material configuration as the condition that makes raiding *viable*, and the status and ritual drivers as independently-triggerable reasons it *persists* where the material return is marginal or absent — so a society can be raiding at a net material loss and still be behaving consistently, rather than the model having to score one explanation as correct."

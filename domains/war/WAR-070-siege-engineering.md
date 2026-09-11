@@ -21,7 +21,7 @@ absence:
     note: Chinese siege doctrine of this era places comparatively heavier emphasis on starvation blockade and negotiated surrender over prolonged direct-assault investment relative to some contemporary Middle Eastern and Mediterranean practice, reflecting a different cost calculus around the manpower and time investment a direct assault requires against a well-fortified city.
 prereqs: [WAR-060, WAR-090]
 enables: [WAR-150, WAR-160]
-see_also: [WAR-130, WAR-010]
+see_also: [WAR-130, WAR-010, WAR-035]
 contested: false
 contested_note: ""
 stats_touched: []

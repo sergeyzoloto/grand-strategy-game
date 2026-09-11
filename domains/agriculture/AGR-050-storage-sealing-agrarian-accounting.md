@@ -17,7 +17,7 @@ absence:
   - region: east-asia
     note: Early Chinese record-keeping develops directly as inscribed writing (oracle-bone divination texts) rather than through a multi-millennium token-and-sealing intermediate stage comparable to Mesopotamia's — a different route to administrative record-keeping that doesn't pass through the same token-accounting precursor technology.
 prereqs: [AGR-020, HLT-030]
-enables: [FIN-020, NAT-010, REL-020, WAR-010]
+enables: [FIN-020, NAT-010, REL-020, WAR-010, WAR-035]
 see_also: []
 contested: true
 contested_note: "The specific thesis that clay tokens representing fixed quantities of grain or livestock (attested from roughly -8000) directly and traceably evolve into cuneiform writing via clay envelopes (bullae) whose contents were eventually impressed on the envelope's exterior rather than sealed inside (associated especially with archaeologist Denise Schmandt-Besserat) is influential but not universally accepted among specialists in the origins of writing, with some arguing the token-to-script link is looser and more indirect than the strong version of the thesis claims. Model agrarian surplus accounting as a genuine, well-attested precursor pressure motivating record-keeping technology, while treating the specific unbroken token-to-cuneiform lineage as a contested rather than settled claim."
