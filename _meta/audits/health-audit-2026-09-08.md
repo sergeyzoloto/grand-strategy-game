@@ -1,7 +1,9 @@
+IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
+
 # Health (HLT) Domain Audit — 2026-09-08
 
-Hostile adversarial review. All 26 entries read in full (HLT-001 through
-HLT-026), plus `_meta/schema.md`, `_meta/conventions.md`,
+Hostile adversarial review. All 26 entries read in full (HLT-030 through
+HLT-300), plus `_meta/schema.md`, `_meta/conventions.md`,
 `_meta/design-principles.md`, `_meta/boundary-rules.md`, and cross-checks
 against AGR, REL, ENG, PHI, LAW, COM, WAR, NAT, MIG for prereq validity and
 boundary violations.
@@ -11,10 +13,10 @@ sophisticated domain audited this cycle. It is the only domain that cites
 specific design principles by number, repeatedly, inside its own Hooks
 (principles 1, 2, 3, and 4 are each invoked by name at least once) — and it
 earns the citations: the authority/efficacy split (principle 3) is a
-genuine, disciplined through-line running from HLT-011 through HLT-014,
-HLT-016, HLT-020, HLT-021, and HLT-022, and HLT-006 and HLT-023 are the
+genuine, disciplined through-line running from HLT-150 through HLT-160,
+HLT-100, HLT-250, HLT-310, and HLT-320, and HLT-090 and HLT-330 are the
 two best-executed depleting-pool mechanics (principle 4) found in any
-domain audited this session — HLT-006 explicitly decays on neglect, HLT-023
+domain audited this session — HLT-090 explicitly decays on neglect, HLT-330
 explicitly trades present efficacy for future resistance. Boundary
 discipline is excellent in practice (zero violations found) despite HLT
 being one of the two or three most cross-referenced domains in the wiki.
@@ -29,43 +31,43 @@ record actually got care.
 
 ## 1. EMERGENCE GAP — FAIL
 
-The domain's chronologically earliest entry is actually HLT-008 (Dress and
-Adornment, -75000), not HLT-001 — but neither one models the thing every
+The domain's chronologically earliest entry is actually HLT-020 (Dress and
+Adornment, -75000), not HLT-030 — but neither one models the thing every
 later entry needs as its zero-point: the pre-sedentism forager health and
-body baseline. HLT-001's own opening line contrasts sedentism against "the
+body baseline. HLT-030's own opening line contrasts sedentism against "the
 mobile-forager lifestyle [that] didn't carry [disease] in the same form,"
-HLT-002 leans on "the (healthier, lower-density) countryside" as an
-implicit comparison population, and HLT-007 cites African foraging
+HLT-070 leans on "the (healthier, lower-density) countryside" as an
+implicit comparison population, and HLT-040 cites African foraging
 populations' "inverse skeletal signature" as a "live contrast" — three
 separate entries treating the same baseline as a given, and none of them
-is the entry that actually establishes it. HLT-008 is adjacent (symbolic
+is the entry that actually establishes it. HLT-020 is adjacent (symbolic
 marking behavior at the same rough date) but covers status signaling, not
 the body/injury/mortality profile the domain's whole Neolithic-decline
-argument (HLT-001, HLT-007) needs a starting point for.
+argument (HLT-030, HLT-040) needs a starting point for.
 
 ## 2. SUBSTRATE GAP — FAIL
 
 The unglamorous layer every institutional entry here assumes: **who treats
 ordinary illness when there is no hospital, no credentialed physician, and
-no codified system involved at all.** HLT-011 owns the theory, HLT-014
-owns the endowed hospital, HLT-016 owns childbirth specifically and even
+no codified system involved at all.** HLT-150 owns the theory, HLT-160
+owns the endowed hospital, HLT-100 owns childbirth specifically and even
 says so explicitly ("a mostly separate historical track from the codified
 medical systems that get written down") — but nothing owns the family
 member, neighbor, or local herbalist who actually treated the overwhelming
-majority of illness episodes in this record's entire span, the way HLT-016
+majority of illness episodes in this record's entire span, the way HLT-100
 treats birth. This is the single largest gap in the domain: an entire,
 near-universal channel of care delivery with no entry of its own,
-sitting directly beneath HLT-011's and HLT-014's institutional accounts.
+sitting directly beneath HLT-150's and HLT-160's institutional accounts.
 
 ## 3. SCALE GAP — FAIL at one level
 
-Household (HLT-001, HLT-004), community/institutional (HLT-003, HLT-009,
-HLT-011, HLT-014), city (HLT-002, HLT-006, HLT-010), and
-state/civilizational/world-system (HLT-012, HLT-015, HLT-017, HLT-025,
-HLT-026) are all genuinely well covered — better scale coverage than most
+Household (HLT-030, HLT-050), community/institutional (HLT-120, HLT-130,
+HLT-150, HLT-160), city (HLT-070, HLT-090, HLT-230), and
+state/civilizational/world-system (HLT-170, HLT-220, HLT-240, HLT-350,
+HLT-300) are all genuinely well covered — better scale coverage than most
 domains audited this cycle. Missing: the **peer-funded mutual-aid
-institution** — a scale between HLT-016/the substrate gap's household
-self-care and HLT-014's state- or religiously-endowed charity. Guild
+institution** — a scale between HLT-100/the substrate gap's household
+self-care and HLT-160's state- or religiously-endowed charity. Guild
 sick-funds, confraternal burial and illness societies, and friendly
 societies pooling members' own contributions to cover each other's medical
 and burial costs are a real, historically major, and mechanically distinct
@@ -75,53 +77,53 @@ no entry for at all.
 ## 4. REVERSE-DIRECTION GAP — PASS, with one narrow remaining gap
 
 This domain does more reverse-direction work than any other audited this
-cycle: HLT-006 models outright infrastructural capability loss
-(post-Roman Europe's millennium-long sanitation collapse), HLT-015 and
-HLT-017 are both severe mortality-shock entries, and HLT-023 is a
+cycle: HLT-090 models outright infrastructural capability loss
+(post-Roman Europe's millennium-long sanitation collapse), HLT-220 and
+HLT-240 are both severe mortality-shock entries, and HLT-330 is a
 genuine, explicit depleting pool. The one narrow gap: `medical legitimacy`
 is the domain's other major stat (alongside `medical efficacy`), and it is
 modeled everywhere as durable and slow-moving — no entry shows a medical
 tradition's *authority itself* collapsing suddenly (as opposed to
-Semmelweis's individual career, which HLT-021 does cover). Minor,
+Semmelweis's individual career, which HLT-310 does cover). Minor,
 not load-bearing on its own.
 
 ## 5. PREREQ ORPHANS — clean except for one severe inversion
 
-Zero dead links. But **HLT-026 (The Demographic Transitions, start 1800)
-prereqs HLT-025 (The Nutrition Transition, start 1950) — a 150-year
+Zero dead links. But **HLT-300 (The Demographic Transitions, start 1800)
+prereqs HLT-350 (The Nutrition Transition, start 1950) — a 150-year
 inversion**, the worst chronological bug found in this domain and one of
 the more severe ones found this cycle. It also isn't a borderline
-judgment call: HLT-026's own Mechanism section explains the first
+judgment call: HLT-300's own Mechanism section explains the first
 demographic transition entirely through "mortality-reducing interventions
 (sanitation, vaccination, antibiotics)" and never mentions nutrition or
-HLT-025 at all — the prereq link appears to have been assigned by
+HLT-350 at all — the prereq link appears to have been assigned by
 topical adjacency (both are population-health entries) rather than actual
 dependency, and the entry's own prose doesn't support it. Beyond that one
 case, the domain is close to spotless: a wider sweep for "mentions an ID
 in prose without registering the link" turns up exactly one instance
-(HLT-025 mentions HLT-004 unlinked) versus a dozen-plus in every other
+(HLT-350 mentions HLT-050 unlinked) versus a dozen-plus in every other
 domain audited this session, and only two small `enables` reciprocity gaps
-(HLT-005 and HLT-007 both prereq HLT-001, which doesn't list either back).
+(HLT-060 and HLT-040 both prereq HLT-030, which doesn't list either back).
 
 ## 6. MECHANISM DIVERSITY — the strongest mix found this cycle
 
 Rough Hook classification: modifier is still the largest single bucket
 (~17 of 26), but the remainder is genuinely diverse and well-executed —
-real pools (HLT-001's silent toxic-burden accumulation, HLT-002's
-"immigration tax," and especially HLT-006 and HLT-023, both textbook
-depleting-pool designs), real events (HLT-010's quarantine trade, HLT-015's
-mortality shock, HLT-017's contact epidemic), and real branches (HLT-008,
-HLT-011, HLT-015, HLT-017, HLT-020, HLT-026), several explicitly tied back
+real pools (HLT-030's silent toxic-burden accumulation, HLT-070's
+"immigration tax," and especially HLT-090 and HLT-330, both textbook
+depleting-pool designs), real events (HLT-230's quarantine trade, HLT-220's
+mortality shock, HLT-240's contact epidemic), and real branches (HLT-020,
+HLT-150, HLT-220, HLT-240, HLT-250, HLT-300), several explicitly tied back
 to a numbered design principle in their own Hook text. The one category
-with no clean example is a genuine **civic** mechanic — HLT-006's
-`legibility` and HLT-010's quarantine capability are civic-*adjacent* but
+with no clean example is a genuine **civic** mechanic — HLT-090's
+`legibility` and HLT-230's quarantine capability are civic-*adjacent* but
 both cash out as gates or pools rather than a governance-building mechanic
 in their own right. A minor gap, not a structural one.
 
 ## 7. BOUNDARY INTEGRITY — PASS on practice, FAIL on documentation
 
-Zero violations found in the entries themselves — HLT-003, HLT-006,
-HLT-009, and HLT-011 all explicitly and correctly hand off adjacent
+Zero violations found in the entries themselves — HLT-120, HLT-090,
+HLT-130, and HLT-150 all explicitly and correctly hand off adjacent
 content (burial-as-institution to REL, pipe engineering to ENG, dietary
 law's theology to REL, medical theory's philosophical register implicitly
 to PHI) rather than duplicating it. But `boundary-rules.md` itself has no
@@ -132,7 +134,7 @@ WAR, NAT, and MIG entries all cross-reference it), yet the rule that would
 keep future entries as disciplined as the current ones has never been
 written down. The domain's own practice has substituted for the missing
 rule so far; that's a lucky run, not a substitute for the documentation.
-One genuinely soft call worth naming: HLT-013 (Print, Silent Reading, and
+One genuinely soft call worth naming: HLT-190 (Print, Silent Reading, and
 the Interior Self) is canonically HLT for its habitus/`privacy` stat, but
 its own subject matter (the "interior self," vernacular reading's
 religious consequences) sits close enough to PHI and REL that it's the one
@@ -151,13 +153,13 @@ not a violation, but the closest thing to one.
   contact, and irregular but broad-spectrum physical activity produce a
   health, injury, and pathogen-exposure profile structurally different
   from — not simply a better version of — the settled populations that
-  follow, establishing the actual zero-point HLT-001, HLT-002, and HLT-007
+  follow, establishing the actual zero-point HLT-030, HLT-070, and HLT-040
   each independently assume without ever modeling directly.
 - Hook: A gate: establishes the pre-sedentism body and disease-exposure
   baseline as this domain's real starting condition, the explicit contrast
-  point HLT-001's toxic-burden accumulation and HLT-007's stature/dental
+  point HLT-030's toxic-burden accumulation and HLT-040's stature/dental
   penalty are both measured against.
-- Prereqs: none. Enables: HLT-001, HLT-002, HLT-007.
+- Prereqs: none. Enables: HLT-030, HLT-070, HLT-040.
 - Contested: true — how much of the "Neolithic decline" reading depends on
   an idealized, insufficiently regionally-specific forager baseline is
   itself disputed among bioarchaeologists; model the baseline's own
@@ -174,8 +176,8 @@ not a violation, but the closest thing to one.
   transmitted, experientially-accumulated knowledge treats the large
   majority of illness episodes in any population at any point in this
   record, entirely outside the codified, credentialed, or
-  institutionally-endowed channels (HLT-011, HLT-014) this domain
-  otherwise concentrates on — the same authority/efficacy split HLT-011
+  institutionally-endowed channels (HLT-150, HLT-160) this domain
+  otherwise concentrates on — the same authority/efficacy split HLT-150
   formalizes for elite medicine, running here with the polarity often
   reversed: low institutional standing, real and sometimes superior
   hands-on outcomes for straightforward cases.
@@ -184,13 +186,13 @@ not a violation, but the closest thing to one.
   system's own prestige, since folk care is what most people actually
   receive regardless of what medical authority exists in their society at
   all.
-- Prereqs: none. Enables: HLT-011, HLT-014.
+- Prereqs: none. Enables: HLT-150, HLT-160.
 - Contested: true — how much systematic overlap existed between folk
   remedies and genuinely effective compounds versus how much was inert or
   actively harmful is disputed and highly remedy-specific; model
   individual folk techniques as rolling their own independent, mostly
   uncorrelated efficacy value, on the same design-principle-3 logic
-  HLT-011 already applies to elite medicine.
+  HLT-150 already applies to elite medicine.
 - Confidence: high.
 
 **3. Mutual Aid and Guild Sick-Funds**
@@ -199,23 +201,23 @@ not a violation, but the closest thing to one.
 - Mechanism: A confraternity, guild, or friendly society pools regular
   member contributions specifically to cover fellow members' illness,
   injury, and burial costs — a peer-funded risk pool structurally distinct
-  from both HLT-002's household folk care (no pooling at all) and
-  HLT-014's charitable endowment (donor-funded, not member-funded),
+  from both HLT-070's household folk care (no pooling at all) and
+  HLT-160's charitable endowment (donor-funded, not member-funded),
   requiring no religious or state sponsorship to function.
 - Hook: A modifier/pool: converts individually catastrophic illness or
   burial cost into a shared, budgeted, recurring member contribution,
   extending coverage to exactly the artisan and laboring households too
   poor to self-insure and not poor enough to qualify for religious charity.
-- Prereqs: none. Enables: none. See_also: HLT-014.
+- Prereqs: none. Enables: none. See_also: HLT-160.
 - Contested: false.
 - Confidence: high.
 
 **4. The Asylum and the Invention of Madness as a Medical Category**
 - Dates: 1247 to 1890, `century`. Regions: europe, middle-east.
 - Answers: no single probe cleanly, but this is a real, currently-missing
-  link between HLT-011's premodern medical systems and HLT-022's 1895
+  link between HLT-150's premodern medical systems and HLT-320's 1895
   psychoanalysis — the domain has no entry at all for the intervening
-  asylum era, despite HLT-014 itself name-checking bimaristan "mental-
+  asylum era, despite HLT-160 itself name-checking bimaristan "mental-
   health wards" in passing.
 - Mechanism: A dedicated institution (Bethlem in London from 1247;
   the York Retreat's 1796 "moral treatment" reform; the 19th-century
@@ -229,9 +231,9 @@ not a violation, but the closest thing to one.
   madness at a `medical efficacy` level that stays low and highly
   era-dependent — sometimes actively harmful confinement, sometimes
   genuine moral-treatment-era improvement — the same authority/efficacy
-  decoupling HLT-011 established, applied to a population whose confinement
+  decoupling HLT-150 established, applied to a population whose confinement
   is itself frequently the actual social function being purchased.
-- Prereqs: HLT-011. Enables: HLT-022.
+- Prereqs: HLT-150. Enables: HLT-320.
 - Contested: true — how much genuine therapeutic improvement "moral
   treatment" and its successors actually delivered, versus how much
   asylum institutions functioned primarily as social confinement for
@@ -255,7 +257,7 @@ not a violation, but the closest thing to one.
   suppression of immune function cascading into ordinary infectious
   disease (dysentery, typhus, measles) becoming lethal in a population it
   wouldn't otherwise kill — a compounding mechanism structurally parallel
-  to, but causally distinct from, HLT-012's connectivity plagues: here the
+  to, but causally distinct from, HLT-170's connectivity plagues: here the
   vulnerability is manufactured by food-supply collapse rather than by a
   novel pathogen's arrival.
 - Hook: An event: a food-supply collapse converts a population's ordinary,
@@ -263,7 +265,7 @@ not a violation, but the closest thing to one.
   suppressing immunological resistance rather than introducing anything
   new — the same population, the same pathogens, a radically different
   outcome once caloric intake crosses a threshold.
-- Prereqs: none. Enables: none. See_also: HLT-025.
+- Prereqs: none. Enables: none. See_also: HLT-350.
 - Contested: true — the exact split between direct starvation mortality
   and starvation-amplified infectious mortality is disputed and varies
   enormously by famine; model total mortality as the sum of both channels
@@ -278,7 +280,7 @@ not a violation, but the closest thing to one.
 - Dates: 1662 to 1900, `century`. Regions: europe.
 - Answers: Probe 6 (a distinct mechanism — the state's own capacity to
   measure mortality and disease at all, a knowledge-infrastructure
-  precondition for epidemiology distinct from HLT-006's physical
+  precondition for epidemiology distinct from HLT-090's physical
   sanitation infrastructure).
 - Mechanism: Systematic mortality recording (John Graunt's 1662 Bills of
   Mortality analysis; later civil registration systems) and, later,
@@ -286,13 +288,13 @@ not a violation, but the closest thing to one.
   from a locally-observed, anecdotally-understood phenomenon into a
   population-level, quantified, comparable one — the specific
   knowledge-infrastructure precondition that lets a society even notice
-  the patterns HLT-002's and HLT-006's mechanics describe, let alone
+  the patterns HLT-070's and HLT-090's mechanics describe, let alone
   intervene on them deliberately.
 - Hook: A gate: converts disease from a locally-anecdotal experience into
   a measurable population-level pattern, unlocking deliberate,
-  evidence-targeted public health intervention (HLT-006's later sanitary
+  evidence-targeted public health intervention (HLT-090's later sanitary
   reforms) as opposed to intervention guided by theory or authority alone.
-- Prereqs: none. Enables: HLT-006.
+- Prereqs: none. Enables: HLT-090.
 - Contested: false.
 - Confidence: high.
 
@@ -311,7 +313,7 @@ not a violation, but the closest thing to one.
   directly into a tradeable financial instrument, extending risk-transfer
   to anyone who can afford a premium rather than only to members of a
   qualifying community.
-- Prereqs: none. See_also: HLT-002. Enables: none.
+- Prereqs: none. See_also: HLT-070. Enables: none.
 - Contested: false.
 - Confidence: high.
 
@@ -320,7 +322,7 @@ not a violation, but the closest thing to one.
   southeast-asia.
 - Answers: Probe 6 (a distinct institutional mechanism — medicine
   deployed specifically as colonial-administrative infrastructure,
-  mechanically unlike HLT-012's/HLT-017's disease-transfer entries).
+  mechanically unlike HLT-170's/HLT-240's disease-transfer entries).
 - Mechanism: European colonial administrations develop a dedicated
   medical apparatus (quinine prophylaxis against malaria, segregated
   colonial hospitals, tropical-disease research institutes) whose primary
@@ -333,7 +335,7 @@ not a violation, but the closest thing to one.
   foremost) converts a specific disease environment from a hard limit on
   sustained foreign presence into a manageable operating cost, functioning
   as colonial infrastructure first and general public health second.
-- Prereqs: HLT-011. Enables: none.
+- Prereqs: HLT-150. Enables: none.
 - Contested: true — how much colonial medical institutions genuinely
   improved local population health versus functioned almost entirely to
   protect colonizing personnel and enable extraction is disputed; model
@@ -346,8 +348,8 @@ not a violation, but the closest thing to one.
 
 **9. Spa and Bathing Culture**
 - Dates: -600 to 1900, `era`. Regions: europe, middle-east.
-- Answers: nothing not already covered — this mostly restates HLT-004's
-  commensality/status mechanic and HLT-009's boundary-marking logic
+- Answers: nothing not already covered — this mostly restates HLT-050's
+  commensality/status mechanic and HLT-130's boundary-marking logic
   applied to bathing rather than eating. Good, vivid history (Roman
   baths, Ottoman hammams, the European spa-town circuit), thin distinct
   mechanic.
@@ -359,19 +361,19 @@ not a violation, but the closest thing to one.
 **10. Patent Medicine and the Quack Remedy Market**
 - Dates: 1800 to 1906, `century`. Regions: europe, americas.
 - Answers: nothing not already covered — a commercially-mass-marketed
-  instance of the authority-without-efficacy mechanic HLT-011, HLT-019,
-  and HLT-022 already establish, not a new mechanism.
+  instance of the authority-without-efficacy mechanic HLT-150, HLT-260,
+  and HLT-320 already establish, not a new mechanism.
 - Hook: A modifier, mostly flavor: mass advertising extends the
   authority/efficacy gap into a direct consumer market, with no lever
   this domain's other entries don't already pull.
-- Prereqs: HLT-011. Enables: none.
+- Prereqs: HLT-150. Enables: none.
 - Contested: false. Confidence: medium.
 
 ═══ PART C — PROPOSED MODIFICATIONS ═══
 
 ## SPLIT
 
-None proposed. The closest real candidate is HLT-011 (Codified Medical
+None proposed. The closest real candidate is HLT-150 (Codified Medical
 Systems), which bundles four substantial, independently-developed
 traditions (Greek/Galenic, Ayurvedic, Chinese, Islamic) under one entry —
 enough material that any one of the four could sustain its own entry. But
@@ -381,11 +383,11 @@ independent of efficacy) recurring across all four independently, which
 is precisely what four separate entries would obscure by forcing the
 comparison into `see_also` cross-references instead of one shared
 Mechanism section. Not splitting this is the same judgment call this
-project has made before for MIG-009's four-region diaspora entry.
+project has made before for MIG-070's four-region diaspora entry.
 
 ## MERGE
 
-None found. HLT-021/HLT-023 (antisepsis, antibiotics) and HLT-022/HLT-024
+None found. HLT-310/HLT-330 (antisepsis, antibiotics) and HLT-320/HLT-340
 (psychoanalysis, the therapeutic turn) both look like sequential
 elaborations of one idea at a glance and turn out, on close reading, to be
 mechanically distinct: antisepsis interrupts transmission, antibiotics
@@ -401,19 +403,19 @@ No canonical-domain violations found (see Probe 7). The actionable finding
 here is process-level, not entry-level: `boundary-rules.md` should get an
 HLT section given how frequently this domain is touched by others — worth
 doing at the next `_meta` maintenance pass, though it isn't a domain-entry
-fix this audit can itself execute. HLT-013's canonical placement is the
+fix this audit can itself execute. HLT-190's canonical placement is the
 one soft judgment call in the domain (see Probe 7); I'm not proposing to
 move it, just flagging it as the closest thing to a boundary question
 found.
 
 ## RETIER
 
-**HLT-007 (The Neolithic Body): standard → core.** This is an upgrade, not
+**HLT-040 (The Neolithic Body): standard → core.** This is an upgrade, not
 a downgrade — unusual for this kind of audit, but the entry earns it: it
-enables a major core entry (HLT-025) as a direct prereq, covers a broad,
+enables a major core entry (HLT-350) as a direct prereq, covers a broad,
 well-evidenced multi-millennia phenomenon independently attested across
 two unrelated crop bases (Fertile Crescent and Yellow River), and carries
-real explanatory weight comparable to HLT-001, which sits at core. Nothing
+real explanatory weight comparable to HLT-030, which sits at core. Nothing
 about its content reads as thinner than its core-tier neighbors; it looks
 under-tiered relative to its own load-bearing role, not over-tiered.
 
@@ -422,8 +424,8 @@ under-tiered relative to its own load-bearing role, not over-tiered.
 None found. I read all 26 entries specifically hunting for a hollow Hook
 or a duplicated mechanic and didn't find one — this is the third domain in
 a row this cycle (after Diplomacy and Migration) where that search came up
-empty. Every entry, including the thinnest ones (HLT-003's one-time
-burial cost, HLT-008's marking spectrum), converts a real, specific cost,
+empty. Every entry, including the thinnest ones (HLT-120's one-time
+burial cost, HLT-020's marking spectrum), converts a real, specific cost,
 constraint, or capability rather than restating another entry's mechanic
 under a different name.
 
@@ -431,7 +433,7 @@ under a different name.
 
 **Worst structural problem:** despite being the most mechanically
 sophisticated domain audited this cycle, it has no entry for the deep-time
-forager baseline that HLT-001, HLT-002, and HLT-007 all independently
+forager baseline that HLT-030, HLT-070, and HLT-040 all independently
 treat as an assumed, unmodeled contrast point — the domain's elaborate
 authority/efficacy and depleting-pool machinery all sits on top of a
 starting condition that was never actually built.

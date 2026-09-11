@@ -16,12 +16,12 @@ per `boundary-rules.md`'s definition of what belongs here instead of in a
 domain folder. PHI-006 is permanently retired per `conventions.md` — not
 reassigned or reused.
 
-- [[PHI-001]] — The Emergence of Schools of Thought (the institutional
+- [[PHI-030]] — The Emergence of Schools of Thought (the institutional
   precondition all of the below assume)
-- [[PHI-003]] — The Socratic Turn
-- [[PHI-004]] — Confucian Universal Ethics and Ritual (Li)
-- [[PHI-009]] — Mohism: Universal Concern and Early Consequentialism
-- [[PHI-011]] — Non-Violence (Jainism)
-- [[PHI-012]] — Nirvana and the Four Noble Truths (Buddhism)
-- [[PHI-032]] — Hebrew Prophetic Ethics: Covenant, Critique of Power, and
+- [[PHI-100]] — The Socratic Turn
+- [[PHI-080]] — Confucian Universal Ethics and Ritual (Li)
+- [[PHI-110]] — Mohism: Universal Concern and Early Consequentialism
+- [[PHI-070]] — Non-Violence (Jainism)
+- [[PHI-090]] — Nirvana and the Four Noble Truths (Buddhism)
+- [[PHI-050]] — Hebrew Prophetic Ethics: Covenant, Critique of Power, and
   Social Justice

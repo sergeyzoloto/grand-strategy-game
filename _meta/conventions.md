@@ -2,10 +2,29 @@
 
 ## IDs
 
-`DOM-###` — domain code, hyphen, zero-padded sequential number in creation order.
+`DOM-###` — domain code, hyphen, zero-padded number.
 
-IDs are **frozen once assigned**. Never reassign, never renumber, never reuse a
-number after deleting an entry. If an entry is cut, its number stays retired.
+IDs are **chronologically ordered within domain**, assigned in increments of 10
+(010, 020, 030, ...) by `date_start` (then `date_end`, then current ID as a stability
+tiebreak — see `_meta/scripts/renumber.py`). A new entry takes the free slot at
+its correct chronological position; renumbering the whole domain is only for
+when a slot range between two neighbors is exhausted (e.g. nothing free between
+`AGR-010` and `AGR-020`).
+
+IDs are **not permanent** — this deliberately supersedes the old "frozen once
+assigned" rule. A renumbering run is a normal, repeatable maintenance operation
+(`_meta/scripts/renumber.py --dry-run`, then `--execute` on review), not an
+exception. Never reuse a number after an entry is cut — a retired ID stays
+retired (`_meta/retired-ids.md`) even though live entries around it may later
+get renumbered.
+
+Every renumbering run is recorded in `_meta/id-migrations.md`, which is
+**append-only** and is the canonical resolver for any stale ID reference — from
+a prior conversation, an old audit, or an external note — including one that's
+been renumbered more than once. Each renumbered entry also carries its own
+history locally in its `former_ids` frontmatter field (see schema.md), distinct
+from and unrelated to `legacy_ref` below, which remains the original chat-list
+label.
 
 ### Domain codes
 

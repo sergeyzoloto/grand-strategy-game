@@ -12,6 +12,7 @@ eventually chosen.
 id: COM-011
 title:
 legacy_ref:            # optional, e.g. "C11"
+former_ids: []         # optional, IDs this entry held before a prior renumbering run
 domain: commerce       # exactly one — canonical, decides folder and ID prefix, permanent
 domains_touched: []    # other domains this entry matters to, without owning it
 tier: core
@@ -42,6 +43,11 @@ tags: []
 - **id** — see [conventions.md](conventions.md). Frozen forever.
 - **title** — human-readable name of the entry.
 - **legacy_ref** — optional bridge to the original chat-list label. See conventions.md.
+- **former_ids** — optional array of IDs this entry held before a prior chronological
+  renumbering run. Appended to, never overwritten, each time the entry is renumbered
+  again. A different namespace from `legacy_ref`: this tracks the entry's own history
+  under this ID scheme, not its pre-scheme chat-list label. See conventions.md and
+  `_meta/id-migrations.md`, the canonical resolver for any of these former IDs.
 - **domain** — exactly one of the 13 domain names (lowercase, matches the folder and
   the ID prefix). Canonical and permanent — see [boundary-rules.md](boundary-rules.md)
   for how to pick it when an entry has a foot in two domains.

@@ -1,0 +1,121 @@
+---
+id: LAW-080
+former_ids: [LAW-005]
+title: Feudalism and Vassalage
+legacy_ref:
+domain: law
+domains_touched: [war, agriculture]
+tier: core
+status: drafted
+confidence: high
+date_start: 250
+date_end: 1400
+date_precision: era
+regions: [europe, east-asia, africa, mediterranean, middle-east]
+region_variants:
+  - region: east-asia
+    date_start: 1185
+    note: Japanese feudalism under successive shogunates formalizes a comparably rigorous lord-vassal legal bond (the samurai's obligation to their daimyo) with its own body of customary and later codified law governing land tenure, military service, and inheritance — a structurally similar system to European feudalism developed with no direct contact between the two traditions.
+  - region: middle-east
+    date_start: 1000
+    note: The Islamic iqta system grants a soldier or official the right to collect tax revenue from a specified territory in lieu of a state salary, a related but distinct land-for-service logic (revenue assignment rather than direct land ownership) that achieves a comparable fiscal-substitution function to European feudal tenure.
+  - region: africa
+    date_start: 1270
+    note: The Ethiopian gult system grants land and the right to collect tribute from its cultivators to nobles and religious institutions in exchange for military and administrative service to the crown, a land-for-service legal bond reaching comparable institutional maturity to European and Japanese feudalism through fully independent development.
+  - region: mediterranean
+    date_start: 250
+    note: The late Roman colonate, developing from the 3rd century and reaching full legal codification by the early 4th, legally binds tenant farmers (coloni) to the land they work in order to guarantee continued cultivation and tax and grain-quota fulfillment (AGR-170) under mounting fiscal and labor pressure — a hereditary land-bound status well before the term "feudalism" or its medieval institutions exist, and a documented precursor relationship to this entry's later land-for-service bond rather than an unrelated coincidence of similar-looking arrangements, though built around guaranteeing labor and tax obligation specifically rather than military service.
+absence:
+  - region: east-asia
+    note: Contemporary and neighboring China explicitly rejects a hereditary land-for-service feudal structure in favor of the centralized examination-based bureaucracy (LAW-100) covered elsewhere in this domain — the same broad era and region producing two structurally opposite answers to the same underlying problem of binding local administration and military service to central authority.
+prereqs: [LAW-020, AGR-170]
+enables: []
+see_also: [LAW-100, AGR-190, AGR-200, WAR-040, LAW-140, LAW-120]
+contested: false
+contested_note: ""
+stats_touched: []
+tags: [feudalism, vassalage, land-tenure, samurai, knight-service, iqta]
+---
+
+A personal legal bond exchanging land tenure for military service and
+loyalty — a decentralized alternative to the salaried standing-army and
+examination-bureaucracy models (WAR-040, LAW-100) for binding local
+administration and defense to a central authority that can't yet fund
+either directly.
+
+## Timing
+
+The Roman colonate's hereditary tenant-land-binding, this entry's
+earliest and most distant case, develops from the 3rd century and
+reaches full legal codification by the early 4th; European feudal
+relationships proper formalize substantially later, from around 800
+(intensifying after the Carolingian Empire's fragmentation), reaching
+mature legal codification through the following centuries; Japanese
+feudalism under shogunate rule develops on a separate timeline from 1185,
+both systems persisting in different forms through roughly 1400 and, in
+Japan's case, considerably later.
+
+## Mechanism
+
+Where a central authority lacks the fiscal capacity to maintain a paid
+standing military (WAR-040) or bureaucracy (LAW-100) directly, granting
+land in exchange for a legally binding oath of military service and
+loyalty distributes both the cost and the administrative burden onto
+local landholders instead — the vassal gets secure tenure and local
+authority, the lord gets military service without having to fund it from
+central treasury, at the cost of the central authority's direct control
+over how that local territory is actually governed day to day.
+
+## Social consequence
+
+Feudal obligation creates a hereditary warrior-landholding class whose
+social status and livelihood depend on the land-for-service bond itself
+rather than on either birth into a fixed caste (LAW-020's Manusmriti case)
+or examination-based credentialing (LAW-100) — status here is a function
+of a specific personal legal relationship to a specific lord and a specific
+grant of land, which is why feudal loyalty is characteristically personal
+and particular rather than owed to an abstract office or state. Because
+military service and land tenure are directly linked, the resulting
+warrior class (European knighthood, the Japanese samurai) develops its own
+hereditary status, honor code, and social identity independent of any
+central state's administrative reach — a class whose military obligation
+is inseparable from its social rank, unlike WAR-040's later salaried
+professional or WAR-180's later conscripted citizen, for whom military
+service and social status are at least formally separable.
+
+## Regional specifics
+
+The Roman colonate binds coloni to their land hereditarily under
+provisioning and fiscal pressure (AGR-170) rather than through a
+military-service oath — a land-bound status converting what began as
+ordinary tenancy into something structurally much closer to serfdom
+well before the term or the medieval institution exists, guaranteeing
+continued cultivation and tax and grain-quota fulfillment specifically
+rather than trading land for a lord's armed service. Japanese feudalism reaches comparable legal and institutional
+sophistication to European feudalism — codified obligations, formalized
+land tenure, inheritance rules — through entirely independent development,
+showing the land-for-service bond is a recurring institutional answer to a
+common underlying central-authority fiscal constraint rather than a
+culturally specific European invention. The Ethiopian gult system reaches
+a third independent instance of the same basic bond, tribute-collection
+rights substituting for direct land grant as the specific mechanism but
+serving the identical function of trading local authority for military and
+administrative service. The Islamic iqta system's revenue-assignment
+variant achieves a comparable fiscal-substitution function through a
+related but distinct mechanism — collecting tax revenue from an assigned
+territory rather than holding the land outright. Neighboring China's contemporary
+and explicit rejection of feudal land-for-service structure in favor of
+LAW-100's examination bureaucracy shows the same broad problem (binding
+distant administration and defense to the center) can be solved through
+two structurally opposite institutional answers within the same era and
+region.
+
+## Hook
+
+Feudal land-for-service obligation lets a fiscally-constrained central
+authority distribute military and administrative cost onto local
+landholders without direct funding — a decentralized alternative to
+LAW-100's centralized examination bureaucracy solving the identical
+underlying problem, with the specific choice between them shaping
+everything about a society's subsequent elite-formation and central-
+control trajectory.
