@@ -1,3 +1,5 @@
+> **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
+
 # Computation Chain — Gaps Flagged
 
 **Date:** 2026-09-12
@@ -120,7 +122,7 @@ philosophy, not the mathematical crisis.
   reusable and rely on `id-migrations.md` to resolve, or reserve them and
   accept that dense early domains will need renumbering to absorb insertions.
 - The `absence`-field misuse (holding presence or difference rather than
-  absence) now stands at **five confirmed instances**: `ENG-230`, `ENG-290`,
+  absence) now stands at **five confirmed instances**: `MED-100`, `ENG-290`,
   `WAR-200`, the energy-audit case, and `NAT-060` here — whose claim that East
   Asia lacked a formal theory of algorithmic procedure was not merely
   misplaced but **false, and contradicted inside the corpus** by `NAT-010`'s

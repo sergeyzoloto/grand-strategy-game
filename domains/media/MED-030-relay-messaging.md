@@ -1,8 +1,9 @@
 ---
-id: ENG-085
+id: MED-030
 title: Relay Messaging and the Purchase of Speed
+former_ids: [ENG-085]
 legacy_ref:
-domain: engineering
+domain: media
 domains_touched: [diplomacy, war, commerce, finance]
 tier: core
 status: drafted
@@ -39,8 +40,8 @@ absence:
   - region: oceania
     note: No polity spans a distance over which a chain of fixed relay stations would repay its standing cost, and the intervening surface is water that cannot be posted at intervals in any case. Long-range information moves by voyaging — fast for its era but episodic, tied to a vessel's own journey rather than purchasable on demand, which is precisely the distinction this entry turns on.
 prereqs: [ENG-090, MIG-050]
-enables: [ENG-230]
-see_also: [DIP-010, DIP-030, DIP-080, WAR-090, WAR-110, COM-080, ENG-150, ENG-315, ENG-325, WAR-315, ENG-295, ENG-340]
+enables: [MED-100]
+see_also: [DIP-010, DIP-030, DIP-080, WAR-090, WAR-110, COM-080, MED-080, MED-120, MED-130, WAR-315, MED-110, ENG-340]
 contested: false
 contested_note: ""
 stats_touched: [information speed, legibility]
@@ -58,7 +59,7 @@ laid along it and the standing expenditure that keeps the chain alive.
 From the Achaemenid angarium (roughly -550) through the Roman cursus
 publicus, the Chinese post-station system, the Mongol yam, the Mughal dak
 and the Inca chasqui, to Chappe's optical telegraph of 1794 — the last and
-fastest pre-electric form, superseded within two generations by ENG-230.
+fastest pre-electric form, superseded within two generations by MED-100.
 
 ## Mechanism
 
@@ -136,7 +137,7 @@ surface under it, is the load-bearing investment.
 The European branch splits in a way the others do not, and the split
 matters for what follows. The commercial newsletter networks make speed
 purchasable by someone other than a ruler for the first time, creating the
-merchant information premium that ENG-230 will later destroy; Chappe's
+merchant information premium that MED-100 will later destroy; Chappe's
 optical telegraph, by contrast, is a pure state instrument, faster than any
 horse relay and hostage to fog.
 

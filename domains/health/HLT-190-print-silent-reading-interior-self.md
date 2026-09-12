@@ -22,7 +22,7 @@ region_variants:
 absence:
   - region: middle-east
     note: Widespread suppression or slow adoption of movable-type printing in Ottoman lands for Arabic-script material persists into the 18th century (religious and calligraphic-guild objections to mechanically reproducing sacred script), meaning the silent-private-reading habitus this entry tracks develops on a substantially delayed timeline here relative to both Europe and East Asia, for institutional rather than technological reasons.
-prereqs: [ENG-150]
+prereqs: [MED-080]
 enables: [REL-230]
 see_also: [HLT-320]
 contested: true

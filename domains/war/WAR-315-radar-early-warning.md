@@ -29,9 +29,9 @@ absence:
     note: Desert campaigns fought over ground with no fixed installations, no power grid, and no telephone reporting net to carry plots rearward could not run the architecture even where sets existed, so early warning in this theatre reverted to standing patrols and visual observation. What is missing is not the sensor but the reporting infrastructure a sensor needs to become a system — which is the entry's mechanism, stated as a negative.
   - region: south-asia
     note: A theatre with low air-threat density relative to its enormous area could not justify the fixed cost, because the value of early warning scales with how concentrated and time-critical the incoming threat is. Where an attack might arrive anywhere across a subcontinent and rarely does, the arithmetic that makes an integrated system worth building never closes, and area defence by dispersed standing forces remains the cheaper answer.
-prereqs: [ENG-315, NAT-170]
+prereqs: [MED-120, NAT-170]
 enables: [WAR-330]
-see_also: [MAR-340, WAR-270, WAR-110, ENG-325, MAR-350, ENG-330, ENG-085, MAR-335, ENG-340]
+see_also: [MAR-340, WAR-270, WAR-110, MED-130, MAR-350, ENG-330, MED-030, MAR-335, ENG-340]
 contested: false
 contested_note: ""
 stats_touched: [information speed, interception capability]
@@ -108,7 +108,7 @@ proximity to the fighting.
 It also pushes a large, permanent, technically-trained organisation into
 peacetime establishment. Chain Home had to be staffed continuously whether
 or not anything was flying, which makes early warning the same
-standing-readiness cost structure ENG-085's relay stations and ENG-315's
+standing-readiness cost structure MED-030's relay stations and MED-120's
 listening watch both have — a capability that is entirely absent the moment
 nobody is watching, rather than merely slower.
 

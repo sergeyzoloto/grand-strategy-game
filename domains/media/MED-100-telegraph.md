@@ -1,9 +1,9 @@
 ---
-id: ENG-230
-former_ids: [ENG-018]
+id: MED-100
+former_ids: [ENG-018, ENG-230]
 title: The Telegraph
 legacy_ref:
-domain: engineering
+domain: media
 domains_touched: [war, commerce, diplomacy, finance, maritime]
 tier: core
 status: drafted
@@ -29,9 +29,9 @@ absence:
     note: The Indo-European line reaches India by threading territory a state could police, and everything off that thread stays unwired. Open steppe offers no right-of-way anyone maintains, and a wire is only as strong as its least-guarded mile — one cut severs the entire segment behind it, so the economics of wiring mobile or contested ground fail well before the engineering does. Mounted relay remains the faster real option across much of this ground for the whole period.
   - region: oceania
     note: Island scatter defeats a wire network almost completely. Trans-Pacific cable does not close until 1902, and then only along a handful of deliberately chosen landfalls, leaving most Pacific islands with no connection of any kind at the point this entry ends. This is the structural limit in its clearest form — between two landfalls there is simply no ground to lay cable on, and no amount of capital changes that.
-prereqs: [NAT-170, ENG-085]
-enables: [DIP-170, WAR-290, FIN-210, ENG-315, ENG-295]
-see_also: [ENG-300, COM-200, COM-220, DIP-080, DIP-130, WAR-110, WAR-280, MAR-260, ENG-325, LAW-225, NAT-240, ENG-327, MAR-335]
+prereqs: [NAT-170, MED-030]
+enables: [DIP-170, WAR-290, FIN-210, MED-120, MED-110]
+see_also: [ENG-300, COM-200, COM-220, DIP-080, DIP-130, WAR-110, WAR-280, MAR-260, MED-130, LAW-225, NAT-240, MED-140, MAR-335]
 contested: false
 contested_note: ""
 stats_touched: [information speed, arbitrage rent]

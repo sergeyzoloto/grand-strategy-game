@@ -1,3 +1,5 @@
+> **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
+
 # Literacy and Written Communication — Coverage Check
 
 **Date:** 2026-09-12
@@ -29,8 +31,8 @@ Unlike the telecommunications and energy audits, this one found a real chain.
 | `FIN-020` Cadastre, Tax, and Census | -3000..-100 | **Own.** Holds `legibility`, and its americas variant already covers the Inca quipu with the line "state legibility doesn't require a script, only a sufficiently structured record." |
 | `LAW-010` Customary Law and Pre-Written Dispute Resolution | -10000..-1754 | **Own**, and it is the corpus's explicit pre-literate baseline: "A functioning legal system requires no literacy at all." |
 | `LAW-020` Written Law and the Codification of Inequality | -1754..-450 | **Own.** What writing does to law; holds `legibility`. |
-| `ENG-100` Papermaking | -200..1200 | **Own.** `enables: [ENG-150]`. |
-| `ENG-150` The Printing Press | 1040..1450 | **Own.** Carries the alphabet-versus-logograph typesetting cost comparison incidentally. |
+| `MED-050` Papermaking | -200..1200 | **Own.** `enables: [MED-080]`. |
+| `MED-080` The Printing Press | 1040..1450 | **Own.** Carries the alphabet-versus-logograph typesetting cost comparison incidentally. |
 | `REL-070` Canon — The Institutional Fixation of Doctrine | -250..1382 | **Own** (doctrinal fixation). See item 4. |
 | `REL-090` Religious Education: Madrasas, Yeshivas | 220..1500 | **Own.** |
 | `HLT-190` Print, Silent Reading, and the Interior Self | 1040..1650 | **Own** (reading as habitus); holds `privacy`. |
@@ -38,7 +40,7 @@ Unlike the telecommunications and energy audits, this one found a real chain.
 | `LAW-100` Meritocracy and State Bureaucracy — Examination | 605..1854 | **Own.** **The imperial examination system exists**, from Sui 605. |
 | `PHI-010` Pre-Axial Wisdom Literature | -2400..-900 | **Own**, and the best existing scribal-class material — "a scribe learns Shuruppak's instructions the same way he learns cuneiform, as professional formation." |
 | `WAR-200` Conscription and Mass Armies | 1793..1918 | **Own**, and now holds `literacy` after the conscription fix. |
-| `ENG-325` Broadcast Radio | 1920..1994 | **Own**, holds `intermediary dependence` and `information sovereignty`. |
+| `MED-130` Broadcast Radio | 1920..1994 | **Own**, holds `intermediary dependence` and `information sovereignty`. |
 | `PHI-260` Enlightenment Sociability | 1650..1800 | **Incidental** — names "the periodical" in a list of venues and nothing more. |
 | `DIP-030` Interpreters and Linguistic Mediation | -700..1800 | **Own**, but see the Amarna flag below. |
 | `NAT-014` The Algorithm as Delegable Procedure | -1800..1800 | **Own**; holds `literacy`, and its absences already turn on notation. |
@@ -47,22 +49,22 @@ Unlike the telecommunications and energy audits, this one found a real chain.
 
 **Zero hits** for: hieroglyph, scriptorium, Literary Chinese, journalism,
 internet, web, khipu (as such), oracle bone. `newspaper` returns one hit, in
-`ENG-325`, describing editors as an intermediary class radio displaced — a
+`MED-130`, describing editors as an intermediary class radio displaced — a
 class no entry documents.
 
 The chain reads: *accounting (AGR-050) → written law (LAW-020) → [gap] →
-paper (ENG-100) → press (ENG-150) → reading habitus (HLT-190) → print
-religion (REL-230) → [gap] → broadcast (ENG-325)*.
+paper (MED-050) → press (MED-080) → reading habitus (HLT-190) → print
+religion (REL-230) → [gap] → broadcast (MED-130)*.
 
 **The four breaks:**
 
 1. **No entry on writing itself.** Writing is everywhere as an assumption and
    nowhere as a mechanism. `AGR-050` gets closest and is about storage.
 2. **No entry on script systems.** No alphabet, no logographic writing, no
-   treatment of sign count as a cost variable — despite `ENG-150` relying on
+   treatment of sign count as a cost variable — despite `MED-080` relying on
    exactly that comparison to explain why European movable type scaled faster.
 3. **No entry between print and broadcast.** Three centuries of periodical
-   journalism missing entirely, which leaves `ENG-325`'s central claim —
+   journalism missing entirely, which leaves `MED-130`'s central claim —
    that broadcast collapsed an intermediary layer of editors and notables —
    resting on an intermediary class the corpus never establishes.
 4. **No entry on networked text.** `ENG-330` semiconductors (1947) and
@@ -79,8 +81,8 @@ required; `renumber.py` not run.
 ### 1. The Emergence of Writing — ABSENT. Propose `ENG-052`.
 
 **Placement: ENG**, and it is arguable. ENG already owns the entire
-recording-and-transmission chain — `ENG-085` relay messaging, `ENG-100` paper,
-`ENG-150` press, `ENG-230` telegraph, `ENG-325` broadcast — and writing is the
+recording-and-transmission chain — `MED-030` relay messaging, `MED-050` paper,
+`MED-080` press, `MED-100` telegraph, `MED-130` broadcast — and writing is the
 foundational member of exactly that series. The counter is real and should be
 recorded: `AGR-050` already owns the token-and-sealing accounting practice and
 `FIN-020` owns state enumeration, so a new entry must be disciplined about
@@ -271,12 +273,12 @@ and any two of the three produce nothing.
 
 ### 6. Newspapers and Periodical Journalism — ABSENT. Propose `ENG-167`.
 
-**Placement: ENG**, on the `ENG-325` precedent — broadcast radio is an
+**Placement: ENG**, on the `MED-130` precedent — broadcast radio is an
 institution built on a transmission technology and sits in ENG, carrying its own
 funding-model and censorship material. A newspaper entry is the same shape and
 should sit beside it rather than in COM. `domains_touched: [commerce, law,
-diplomacy, philosophy]`. **1605..1900, `decade`.** Prereq `ENG-150`;
-`see_also` `ENG-230` and `ENG-325`.
+diplomacy, philosophy]`. **1605..1900, `decade`.** Prereq `MED-080`;
+`see_also` `MED-100` and `MED-130`.
 
 **Mechanism: periodicity, which is distinct from print as an artifact.** A book
 is read whenever; **a newspaper arrives on a schedule**, and that synchronises a
@@ -286,10 +288,10 @@ nation-formation mechanism, operating through simultaneity rather than content.
 
 Also carries: **the funding model determining the institution** (subscription,
 advertising, party subsidy, state ownership), which is the same insight
-`ENG-325` uses for the Volksempfänger-versus-BBC contrast and should be
+`MED-130` uses for the Volksempfänger-versus-BBC contrast and should be
 cross-linked rather than re-derived; censorship and licensing regimes; **wire
 services after the telegraph**, standardising both content and the "objective"
-style, which links directly to `ENG-230`'s arbitrage-rent argument since the
+style, which links directly to `MED-100`'s arbitrage-rent argument since the
 same cable that killed the merchant's information premium created the news
 agency; and the penny press and mass circulation.
 
@@ -343,19 +345,19 @@ campaign as mass adult literacy by state mobilisation.
 ### 8. The Global Network — ABSENT. Propose `ENG-335`.
 
 **Placement: ENG. 1969..2010, `decade`.** Prereq `ENG-330`; `see_also`
-`ENG-325`, `LAW-225`, `ENG-230`.
+`MED-130`, `LAW-225`, `MED-100`.
 
 **Mechanism: many-to-many at near-zero production and distribution cost.** The
 series is exact and should be built as one. Print is one-to-many with high
 production cost. Broadcast is one-to-many with near-zero *distribution* cost and
-a high production cost — which is `ENG-327`'s production-cost floor. This is the
+a high production cost — which is `MED-140`'s production-cost floor. This is the
 first medium in which **the marginal cost of becoming a publisher is also near
 zero**, which dissolves the publisher as a gatekeeping institution.
 
 **The inversion is the entry's best content.** The intermediary returns as the
 platform. Ranking, recommendation and moderation reconstitute an editorial
 function that nobody elected and that operates at a scale no editor ever did.
-Read against `ENG-325`'s intermediary-collapse mechanism this is **the same stat
+Read against `MED-130`'s intermediary-collapse mechanism this is **the same stat
 moving the other way** — `intermediary dependence` falls to near zero as
 publishing is democratised and then climbs again as discovery is centralised,
 and the second intermediary is less accountable than the first because it
@@ -405,10 +407,10 @@ stages are the proposals above. The thread should be written after items 1, 2,
   codex consumes the skins of a small flock, which is why palimpsests exist at
   all. Papyrus is regionally bounded by where the plant grows and by Egyptian
   export control. Paper changes the economics of everything downstream.
-  **`ENG-100` does link forward to `ENG-150`**, correctly, but the cost
-  mechanism is stated nowhere in the corpus: `ENG-100` has `stats_touched: []`
+  **`MED-050` does link forward to `MED-080`**, correctly, but the cost
+  mechanism is stated nowhere in the corpus: `MED-050` has `stats_touched: []`
   and describes technique and diffusion rather than price per page. The cheapest
-  fix is to add the cost argument to `ENG-100` rather than write a new entry.
+  fix is to add the cost argument to `MED-050` rather than write a new entry.
 - **Libraries and archives** as institutions of accumulated written knowledge.
   `NAT-110` (Sack of Baghdad) already models their *destruction* and
   `accumulated scientific corpus` exists as a stat, so the corpus can destroy a
@@ -422,7 +424,7 @@ stages are the proposals above. The thread should be written after items 1, 2,
 - **The famine-and-free-press argument** has no home (above).
 - **`REL-070`'s `absence` field holds an alternative institutional choice** —
   Chinese Buddhism's deliberately open canon — rather than an absence. This is
-  the **sixth** confirmed instance of the defect (after `ENG-230`, `ENG-290`,
+  the **sixth** confirmed instance of the defect (after `MED-100`, `ENG-290`,
   `WAR-200`, the energy case, and `NAT-060`). The corpus-wide sweep is overdue.
 
 ---
@@ -460,8 +462,8 @@ All free, and all clean of burned `former_ids`. No renumbering.
 | # | Proposal | Domain | ID | Sorts between |
 | --- | --- | --- | --- | --- |
 | 1 | The Emergence of Writing | ENG | `ENG-052` | ENG-050 (-3500..1851) / ENG-055 (-3300..1800) |
-| 2 | The Alphabet | ENG | `ENG-082` | ENG-080 (-2500) / ENG-085 (-550) |
-| 3 | Logographic Script and Written Unity | ENG | `ENG-105` | ENG-100 (-200..1200) / ENG-110 (-100) |
+| 2 | The Alphabet | ENG | `ENG-082` | ENG-080 (-2500) / MED-030 (-550) |
+| 3 | Logographic Script and Written Unity | ENG | `ENG-105` | MED-050 (-200..1200) / ENG-110 (-100) |
 | 4 | Canon as a Language of Knowledge | PHI | `PHI-165` | PHI-160 / PHI-170 |
 | 5 | Vernacular Translation | REL | `REL-085` | REL-080 / REL-090 |
 | 6 | Newspapers and Periodical Journalism | ENG | `ENG-167` | ENG-165 (1550..1900) / ENG-170 (1712) |
@@ -471,7 +473,7 @@ All free, and all clean of burned `former_ids`. No renumbering.
 Neighbours verified, and two are thematically apt as well as chronologically
 correct: `REL-085` lands between `REL-080` Missionary Work and `REL-090`
 Religious Education, making missionary expansion → translation → clerical
-training a coherent run; `ENG-082` lands immediately before `ENG-085` Relay
+training a coherent run; `ENG-082` lands immediately before `MED-030` Relay
 Messaging, so writing → alphabet → organised relay reads as one chain.
 
 **One fragility to record.** `LAW-165` depends on a one-year margin —
@@ -492,7 +494,7 @@ a contrast, and the thread cannot be assembled until items 1, 2, 4 and 7 exist.
 1. **`ENG-052` writing** — the chain has no foundation; `legibility` is used by
    29 entries and nothing establishes where a record comes from.
 2. **`ENG-167` newspapers** — closes the print-to-broadcast gap and supplies the
-   intermediary class `ENG-325` already assumes.
+   intermediary class `MED-130` already assumes.
 3. **`LAW-165` compulsory education** — `WAR-200` was written pointing at it.
 4. **`PHI-165` canon language** — highest-value non-obvious mechanism.
 5. **`ENG-082` alphabet** and **`ENG-105` logographic** — a matched pair;

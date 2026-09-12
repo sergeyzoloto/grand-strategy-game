@@ -1,3 +1,5 @@
+> **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
+
 # Energy and Fuel Supply — Coverage Check
 
 **Date:** 2026-09-12
@@ -37,7 +39,7 @@ at any stage.
 | `whale` / `whaling` | MAR-100 | **Own Mechanism** — the only genuine hit in the inventory. See Part 2(c). |
 | `gasoline` | AGR-260 | **Incidental.** The gasoline tractor as a displacer of draft animals; the fuel is a modifier on a farm-mechanisation entry. |
 | `diesel` | ENG-290 | **Incidental.** A tag and one clause naming Rudolf Diesel. |
-| `refining` | ENG-100, ENG-140, NAT-040, NAT-160 | **False positives, all four.** Paper refining, saltpetre refining, "refining what has worked before." Zero petroleum refining anywhere. |
+| `refining` | MED-050, ENG-140, NAT-040, NAT-160 | **False positives, all four.** Paper refining, saltpetre refining, "refining what has worked before." Zero petroleum refining anywhere. |
 | `fossil` | NAT-100, NAT-230 | **False positives.** Palaeontological fossils in geology and plate tectonics. No fossil fuel. |
 | `energy` | ENG-170, ENG-120, ENG-080, ENG-300, ENG-320, NAT-210, NAT-220, WAR-330 | **Incidental.** Used in the physics sense or as a synonym for effort. No entry treats an energy budget as a constraint. |
 | `timber` | MAR-010, ENG-200 | **Incidental.** Shipbuilding material and a bridge material. Never a fuel, never a scarce resource. |

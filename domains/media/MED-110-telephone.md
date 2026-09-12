@@ -1,8 +1,9 @@
 ---
-id: ENG-295
+id: MED-110
 title: The Telephone
+former_ids: [ENG-295]
 legacy_ref:
-domain: engineering
+domain: media
 domains_touched: [commerce, finance, law, war]
 tier: core
 status: drafted
@@ -32,16 +33,16 @@ absence:
     note: Telephony requires a dense local wire plant — a pair of wires to every subscriber, not a trunk between two offices — so its economics turn on subscriber density rather than on distance. Colonial African networks built for administrative trunk traffic had no such density anywhere outside a handful of port and capital districts, and the missing element is the local loop rather than the long line, which is why the telegraph reached far more of the continent than the telephone ever did.
   - region: central-asia-steppe
     note: For the same reason, more starkly. The technology's cost scales with the number of premises to be individually wired within a small radius, and a dispersed pastoral population presents the worst possible case for that cost structure — there is no radius within which enough premises exist. This is a genuinely different failure from the telegraph's here, which failed on guarding a long line rather than on local density.
-prereqs: [ENG-230, NAT-170]
+prereqs: [MED-100, NAT-170]
 enables: []
-see_also: [ENG-085, ENG-300, ENG-315, COM-220, FIN-210, MIG-170, ENG-310]
+see_also: [MED-030, ENG-300, MED-120, COM-220, FIN-210, MIG-170, ENG-310]
 contested: false
 contested_note: ""
 stats_touched: [information speed, contract enforcement, legibility]
 tags: [telephone, switchboard, local-loop, bell, interconnection]
 ---
 
-Distinct from ENG-230 on the axis that matters mechanically rather than
+Distinct from MED-100 on the axis that matters mechanically rather than
 technically. The telegraph is a trained-operator relay; the telephone is
 direct, and removing the operator removes far more than a wage.
 
@@ -59,7 +60,7 @@ decoded by a second specialist, and delivered. Every message passes through
 at least two people who are neither sender nor recipient, and the network's
 throughput is bounded by the supply of trained operators rather than by the
 wire. The telephone removes the intermediary and the training requirement
-together, and four consequences follow that do not follow from ENG-230.
+together, and four consequences follow that do not follow from MED-100.
 
 **Conversation replaces dispatch.** A telegram is a one-way notification;
 a call is interrogative, so a question can be asked and answered inside one
@@ -142,7 +143,7 @@ Removes the trained-operator relay, and with it the message's documentary
 record — so a state or firm gains negotiation at distance but loses the
 copied file, the intercept, and the archive, which should read as a real
 loss of `legibility` rather than a pure gain. Its cost structure inverts
-ENG-230's: the expense is the local loop to each premises rather than the
+MED-100's: the expense is the local loop to each premises rather than the
 long line between places, so it scales on subscriber density and fails in
 dispersed populations that the telegraph served adequately. Value rises with
 the number of other subscribers, producing strong pressure toward a single

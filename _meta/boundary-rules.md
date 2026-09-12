@@ -131,6 +131,55 @@ written entries that happen to agree.
 A treaty is always DIP, even though it's technically a legal instrument — the
 inter-polity axis wins.
 
+## MED / (ENG, REL, PHI, LAW, COM, HLT, NAT)
+
+**MED (media)** owns recording and transmission media end to end — the
+notation system, the material substrate, the reproduction technology, the
+transmission channel, the network, and **the access gate that determines who
+can use it**. Carved out of ENG on the same reasoning as MAR: the instances
+are numerous and coherent enough to deserve one home rather than being
+scattered, and the intermediary-dependence arc runs continuously from the
+scribal class to the platform, so a domain stopping at print would not own its
+own arc.
+
+The governing split: **MED owns the medium. Other domains own what rides on
+the medium, and what the medium does to people and institutions.**
+
+- **MED / ENG.** ENG keeps technique that is not itself a medium —
+  fabrication, construction, power, extraction. Semiconductor fabrication is
+  ENG; the network built on it is MED. Satellite positioning is ENG, because
+  a position fix is not a message. Electrification is ENG; the broadcast that
+  needs household power is MED.
+- **MED / REL.** MED owns the canon's *language* as the medium of learning and
+  the translation of a canon as an act on a medium. REL owns canon-fixation as
+  a doctrinal and institutional act (`REL-070`), and owns the schism that
+  cheap vernacular print produced (`REL-230`) — the press is MED's, the
+  fragmentation of interpretation is REL's.
+- **MED / PHI.** MED owns the written language a scholarly community shares
+  and the gate it imposes. PHI owns the arguments conducted in it.
+- **MED / LAW.** MED owns the channel; LAW owns legal objects and obligations
+  built around it. Spectrum as excludable property is LAW (`LAW-225`) even
+  though the transmitter is MED's, because the entry's claim is about a
+  manufactured right. Compulsory schooling is LAW (`LAW-165`), because a legal
+  obligation reaching every household with a register and an evasion penalty
+  is the same instrument as conscription, whatever it teaches.
+- **MED / COM.** A medium's own commercial form — a newspaper's funding model,
+  a publisher's economics — travels with the medium and stays MED. COM keeps
+  goods in motion and the institutions that move them.
+- **MED / HLT.** MED owns the artefact and the channel; HLT owns what using it
+  does to a body or a habitus. Print is MED; silent reading as an acquired
+  disposition and the interior self it produces is HLT (`HLT-190`).
+- **MED / NAT.** NAT owns the knowledge and the formal result; MED owns the
+  medium that carries it. Electromagnetic theory is NAT, the telegraph is MED.
+  The algorithm as a delegable procedure is NAT (`NAT-014`) because its claim
+  is about what a procedure *is*, not about the surface it is written on.
+
+Writing itself is MED rather than AGR, FIN or LAW, even though its earliest
+surviving use is accounting: AGR owns the storage and sealing practice
+(`AGR-050`), FIN owns the census and cadastre built on records (`FIN-020`), and
+LAW owns what happens to law once it is written down (`LAW-020`). MED owns the
+notation system that all three presuppose.
+
 ## MIG / all
 
 **MIG (migration)** owns movement as a process with its own mechanics: what

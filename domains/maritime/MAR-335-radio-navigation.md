@@ -29,9 +29,9 @@ absence:
     note: Coverage followed the strategic interests of the states that built the chains, and African coastal waters outside the approaches to a handful of major ports were largely outside any hyperbolic system through the whole period. Shipping there continued on celestial and dead-reckoning practice, which is not a failure of adoption but of provision — the capability could not be bought locally at any price, because it is supplied by transmitters ashore that someone else has to build and keep running.
   - region: south-asia
     note: The same provision problem, with the additional feature that a regional power could not unilaterally acquire the capability even with the money to do so, since a hyperbolic fix requires a synchronised chain of stations spanning a wide baseline and therefore requires the cooperation of whoever holds the coastline at the other end. Navigation accuracy becomes a diplomatic question rather than a procurement one.
-prereqs: [ENG-315, NAT-170]
+prereqs: [MED-120, NAT-170]
 enables: [ENG-340]
-see_also: [MAR-340, MAR-350, ENG-325, LAW-225, WAR-315, ENG-230]
+see_also: [MAR-340, MAR-350, MED-130, LAW-225, WAR-315, MED-100]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge, information speed]

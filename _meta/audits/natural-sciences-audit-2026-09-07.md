@@ -1,3 +1,5 @@
+> **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
+
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
@@ -50,7 +52,7 @@ This is genuinely rich: a civic institutional mechanic (`NAT-050`'s patronage-fu
 
 ### 7. BOUNDARY INTEGRITY — **PASS**
 
-The NAT/ENG split is immaculate throughout — every theory entry that has a matching later technology (`NAT-040`/`ENG-170`, `NAT-160`/`ENG-140`, `NAT-180`/`ENG-170`, `NAT-170`/`ENG-230`-`019`, `NAT-220`-`014`/`ENG-330`, `NAT-060`/`ENG-330`) states the split explicitly and never re-derives the artifact side. More than the rules require: `NAT-020` and `NAT-030` both impose a self-directed NAT/PHI discipline (boundary-rules.md doesn't even list this pair) with the same explicit hand-off language used everywhere else. The one soft case worth naming without recommending a change: `NAT-050`'s content (caliphal- and royal-patronage-funded institutional translation work) sits close enough to REL's "institution... endowment" territory that a stricter reading could argue for it, the same way `COM-140` sits close enough to FIN's territory to be worth periodically re-examining — not a violation, just a boundary worth remembering exists.
+The NAT/ENG split is immaculate throughout — every theory entry that has a matching later technology (`NAT-040`/`ENG-170`, `NAT-160`/`ENG-140`, `NAT-180`/`ENG-170`, `NAT-170`/`MED-100`-`019`, `NAT-220`-`014`/`ENG-330`, `NAT-060`/`ENG-330`) states the split explicitly and never re-derives the artifact side. More than the rules require: `NAT-020` and `NAT-030` both impose a self-directed NAT/PHI discipline (boundary-rules.md doesn't even list this pair) with the same explicit hand-off language used everywhere else. The one soft case worth naming without recommending a change: `NAT-050`'s content (caliphal- and royal-patronage-funded institutional translation work) sits close enough to REL's "institution... endowment" territory that a stricter reading could argue for it, the same way `COM-140` sits close enough to FIN's territory to be worth periodically re-examining — not a violation, just a boundary worth remembering exists.
 
 ---
 

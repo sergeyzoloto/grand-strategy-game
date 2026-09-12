@@ -17,7 +17,7 @@ absence:
   - region: americas
     note: American contributions to electromagnetism in this era run substantially toward independent practical invention (Henry's electromagnet work informing telegraph and motor development) built on the European theoretical foundation, rather than toward the unifying mathematical theory itself, consistent with the broader theory-versus-application regional split already noted for thermodynamics (NAT-180).
 prereqs: [NAT-040]
-enables: [ENG-230, ENG-300, NAT-220, ENG-315, WAR-315, ENG-295, MAR-335]
+enables: [MED-100, ENG-300, NAT-220, MED-120, WAR-315, MED-110, MAR-335]
 see_also: [NAT-180]
 contested: false
 contested_note: ""
@@ -26,7 +26,7 @@ tags: [electromagnetism, maxwell, faraday, hertz, telegraph-theory]
 ---
 
 The theory explaining electricity and magnetism as a single unified
-phenomenon — the scientific foundation the telegraph (ENG-230) and
+phenomenon — the scientific foundation the telegraph (MED-100) and
 electrification (ENG-300) both build on, largely worked out before either
 technology existed at practical scale.
 
@@ -55,13 +55,13 @@ laboratory and detecting them at the other, converting the wire-free
 transmission of information from a mathematical consequence into a
 demonstrated physical fact — and it is worth noting that Hertz regarded the
 result as having no practical use whatever, which is how a decade passes
-between the demonstration and ENG-315's commercial exploitation of it.
+between the demonstration and MED-120's commercial exploitation of it.
 
 ## Social consequence
 
 Unlike thermodynamics (NAT-180), which was worked out largely to explain
 an already-existing technology, a substantial portion of electromagnetic
-theory here precedes its major applications — the telegraph (ENG-230) and
+theory here precedes its major applications — the telegraph (MED-100) and
 electrification (ENG-300) both draw directly on Faraday's induction
 principle, meaning theoretical physics in this case sets the stage for
 world-changing infrastructure rather than merely explaining infrastructure
@@ -80,7 +80,7 @@ recurring pattern in this era rather than a one-off case.
 ## Hook
 
 Electromagnetic theory substantially precedes and directly enables its own
-major applications (ENG-230's telegraph, ENG-300's electrification) rather
+major applications (MED-100's telegraph, ENG-300's electrification) rather
 than following and explaining an already-existing technology the way
 thermodynamics does — a rarer theory-before-practice sequence in this
 domain's own record, worth noting precisely because it's the exception

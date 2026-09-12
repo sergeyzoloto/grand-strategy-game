@@ -43,6 +43,7 @@ label.
 | DIP  | diplomacy   |
 | MIG  | migration   |
 | MAR  | maritime    |
+| MED  | media       |
 
 ## Filenames
 

@@ -17,9 +17,9 @@ region_variants:
     date_start: 1941
     note: The Frankfurt School's key theorists (Adorno and Horkheimer prominent among them) develop and publish the culture-industry critique substantially in American exile after fleeing Nazi Germany, meaning the argument's most influential formulation is produced through direct, disenchanted firsthand observation of American commercial mass media specifically, not as detached European theorizing about a phenomenon observed from a distance.
 absence: []
-prereqs: [PHI-350, ENG-325]
+prereqs: [PHI-350, MED-130]
 enables: []
-see_also: [HLT-340, ENG-327]
+see_also: [HLT-340, MED-140]
 contested: true
 contested_note: "Walter Benjamin, closely associated with the same Frankfurt School milieu, takes a substantially more ambivalent and at points hopeful position in 'The Work of Art in the Age of Mechanical Reproduction': stripping art of its traditional ritual 'aura' through mass reproduction could, he argues, be democratizing and politically emancipatory rather than simply pacifying, a position in real, documented tension with Adorno's and Horkheimer's more thoroughly pessimistic culture-industry thesis. Model mass-produced culture's effect as genuinely contested between standardizing/pacifying and democratizing/access-expanding readings, rather than resolving the internal Frankfurt-School-adjacent disagreement in either direction."
 stats_touched: []

@@ -893,3 +893,33 @@ Append-only log of every chronological renumbering run. This file is the canonic
 | MAR-350 | MAR-350 | Aircraft Carriers and Naval Aviation |
 | MAR-360 | MAR-360 | Landing Craft and Over-the-Beach Logistics |
 | MAR-370 | MAR-370 | Containerization |
+
+## Run 3 — 2026-09-12 — domain carve-out to MED
+
+Not a chronological renumbering run. Eight entries were moved out of ENG into
+a new domain, `MED` (media), which owns recording and transmission media end
+to end — see `boundary-rules.md`. IDs were assigned fresh and gap-numbered
+within MED by `date_start`; the vacated ENG numbers are burned and are not
+reused, so ENG now carries permanent gaps at 085, 100, 150, 230, 295, 315,
+325 and 327. These entries **moved and did not retire**, so they do not appear
+in `retired-ids.md`; each carries its old ID in `former_ids`.
+
+The MED slots left free here — 010, 020, 040, 060, 070, 090, 150 — are
+reserved for entries proposed in
+`_meta/audits/literacy-chain-check-2026-09-12.md` and written immediately
+after this run, so that the finished domain is cleanly numbered in tens and
+chronologically ordered.
+
+### ENG -> MED
+
+| old ID | new ID | title |
+|---|---|---|
+| ENG-085 | MED-030 | Relay Messaging and the Purchase of Speed |
+| ENG-100 | MED-050 | Papermaking |
+| ENG-150 | MED-080 | The Printing Press |
+| ENG-230 | MED-100 | The Telegraph |
+| ENG-295 | MED-110 | The Telephone |
+| ENG-315 | MED-120 | Wireless Telegraphy |
+| ENG-325 | MED-130 | Broadcast Radio |
+| ENG-327 | MED-140 | Television |
+

@@ -15,11 +15,11 @@ regions: [europe, east-asia, middle-east]
 region_variants:
   - region: east-asia
     date_start: 1373
-    note: Buddhist and Confucian printed text circulation in Korea and China (predating Luther's vernacular Bible by well over a century, per the Jikji already covered in ENG-150) spreads scripture and commentary widely without producing a comparable schismatic institutional fragmentation — a different relationship between text access and institutional authority than the Reformation case, where existing institutional unity was already more contested going in.
+    note: Buddhist and Confucian printed text circulation in Korea and China (predating Luther's vernacular Bible by well over a century, per the Jikji already covered in MED-080) spreads scripture and commentary widely without producing a comparable schismatic institutional fragmentation — a different relationship between text access and institutional authority than the Reformation case, where existing institutional unity was already more contested going in.
 absence:
   - region: middle-east
-    note: Sustained Ottoman resistance to movable-type printing of Arabic-script religious material (already covered for its mechanical side in ENG-150) means the mass-vernacular-scripture-access condition this entry's mechanism depends on simply doesn't arise here in this era at all — not a case of print access failing to produce fragmentation, but of the enabling condition itself remaining absent.
-prereqs: [HLT-190, ENG-150, REL-190]
+    note: Sustained Ottoman resistance to movable-type printing of Arabic-script religious material (already covered for its mechanical side in MED-080) means the mass-vernacular-scripture-access condition this entry's mechanism depends on simply doesn't arise here in this era at all — not a case of print access failing to produce fragmentation, but of the enabling condition itself remaining absent.
+prereqs: [HLT-190, MED-080, REL-190]
 enables: []
 see_also: [REL-070, REL-120, REL-150, REL-170, WAR-200]
 contested: true
@@ -28,7 +28,7 @@ stats_touched: [religious authority]
 tags: [reformation, vernacular-bible, sola-scriptura, print-schism]
 ---
 
-The mechanical printing technique is ENG-150's territory and the cognitive
+The mechanical printing technique is MED-080's territory and the cognitive
 reading-habit shift is HLT-190's; this entry owns what mass vernacular
 scripture access does specifically to institutional religious authority —
 breaking a hierarchy's practical monopoly on scriptural interpretation.

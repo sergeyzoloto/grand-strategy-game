@@ -1,8 +1,9 @@
 ---
-id: ENG-315
+id: MED-120
 title: Wireless Telegraphy
+former_ids: [ENG-315]
 legacy_ref:
-domain: engineering
+domain: media
 domains_touched: [maritime, law, diplomacy, war, commerce]
 tier: core
 status: drafted
@@ -29,9 +30,9 @@ absence:
     note: Early wireless was a coastal and maritime technology before it was a continental one, because the sets were heavy, power-hungry, and worth their cost chiefly where no wire alternative existed at all. A steppe interior had no wire either, but it also had no ships, no admiralty budget, and no concentration of high-value cargo to justify the apparatus, so the interior stayed unserved through this entry's window and waits for broadcast-era equipment.
   - region: south-asia
     note: British India had one of the world's densest telegraph networks already, which is precisely why wireless arrives late and thinly. Where the wire is in place and working, the marginal value of a wireless link is small — the technology gets adopted first by the places the cable never reached, so the strength of a region's existing telegraph infrastructure predicts slow rather than fast wireless adoption, an inversion worth modelling directly.
-prereqs: [NAT-170, ENG-230]
-enables: [ENG-325, WAR-315, LAW-225, MAR-335]
-see_also: [ENG-085, MAR-330, MAR-320, MAR-340, ENG-300, DIP-180, ENG-295]
+prereqs: [NAT-170, MED-100]
+enables: [MED-130, WAR-315, LAW-225, MAR-335]
+see_also: [MED-030, MAR-330, MAR-320, MAR-340, ENG-300, DIP-180, MED-110]
 contested: false
 contested_note: ""
 stats_touched: [information speed, maritime safety floor]
@@ -39,7 +40,7 @@ tags: [wireless, marconi, ship-to-shore, titanic, solas, spark-gap]
 ---
 
 The first communication over distance with no physical connection between
-the parties. ENG-230 owns the wire and the constraint it imposes; this
+the parties. MED-100 owns the wire and the constraint it imposes; this
 entry owns the removal of that constraint, and the fact that it happens
 first at sea — the one surface where wire was never an option.
 
@@ -81,7 +82,7 @@ also had wireless and did not hear the distress call, because her single
 operator had gone off duty and switched the set off. **A receiver that
 nobody is listening to is not a slow link but no link**, which makes the
 binding constraint the continuous human watch rather than the apparatus —
-the same standing-readiness cost structure ENG-085 establishes for relay
+the same standing-readiness cost structure MED-030 establishes for relay
 stations, reappearing in a technology that otherwise has nothing in common
 with it. SOLAS 1914 encodes exactly this: the requirement is not that ships
 carry wireless but that someone is always listening.
@@ -129,7 +130,7 @@ a pattern that recurs through the whole wireless chain.
 
 ## Hook
 
-Removes ENG-230's wire constraint, but unevenly and in a specific order —
+Removes MED-100's wire constraint, but unevenly and in a specific order —
 adoption runs inversely to existing telegraph density, so the regions with
 the best cable networks take it up last and the regions the cable never
 reached take it up first, which makes prior infrastructure a brake rather

@@ -1,8 +1,9 @@
 ---
-id: ENG-325
+id: MED-130
 title: Broadcast Radio
+former_ids: [ENG-325]
 legacy_ref:
-domain: engineering
+domain: media
 domains_touched: [war, diplomacy, philosophy, law, religion]
 tier: core
 status: drafted
@@ -32,19 +33,19 @@ region_variants:
     note: Commercial advertising-funded broadcasting from KDKA in 1920 is the third funding structure, and the interference it generated produced the Radio Act of 1927 and the FCC in 1934. Roosevelt's fireside chats run the direct-channel mechanism in a democratic register, Peron's use of radio in Argentina in a populist one, and American radio evangelism from Aimee Semple McPherson onward establishes the listener-donation funding model that later carries religious broadcasting into regions whose state media excluded it.
 absence:
   - region: central-asia-steppe
-    note: Transmitter footprints cover this ground easily, so the binding constraint is not reach but receivers — a broadcast with no sets inside the footprint is inaudible, and dispersed pastoral households with no electrification and no cash for apparatus hold almost none. This is the structural inversion of ENG-230's absence and the reason it matters. Wire failed because the state could not afford to lay and guard the line; radio fails because the population cannot afford to listen, which makes receiver distribution rather than transmitter siting the thing a state must buy.
+    note: Transmitter footprints cover this ground easily, so the binding constraint is not reach but receivers — a broadcast with no sets inside the footprint is inaudible, and dispersed pastoral households with no electrification and no cash for apparatus hold almost none. This is the structural inversion of MED-100's absence and the reason it matters. Wire failed because the state could not afford to lay and guard the line; radio fails because the population cannot afford to listen, which makes receiver distribution rather than transmitter siting the thing a state must buy.
   - region: oceania
-    note: The reverse case, and the sharpest single contrast with ENG-230 in the corpus. The region submarine cable could never justify serving is the region one transmitter serves best, because a signal crossing open water costs nothing extra while every kilometre of cable did. Coverage arrives essentially free where it had been structurally impossible — but arrives as externally-originated signal from colonial capitals rather than as local broadcasting, so the population is reachable long before it is addressable.
-prereqs: [ENG-315, ENG-300]
-enables: [WAR-280, PHI-410, WAR-310, ENG-327]
-see_also: [ENG-230, ENG-085, MAR-340, REL-110, DIP-180, WAR-315, LAW-225, MAR-335]
+    note: The reverse case, and the sharpest single contrast with MED-100 in the corpus. The region submarine cable could never justify serving is the region one transmitter serves best, because a signal crossing open water costs nothing extra while every kilometre of cable did. Coverage arrives essentially free where it had been structurally impossible — but arrives as externally-originated signal from colonial capitals rather than as local broadcasting, so the population is reachable long before it is addressable.
+prereqs: [MED-120, ENG-300]
+enables: [WAR-280, PHI-410, WAR-310, MED-140]
+see_also: [MED-100, MED-030, MAR-340, REL-110, DIP-180, WAR-315, LAW-225, MAR-335]
 contested: true
 contested_note: "Radio's causal weight in mass mobilisation is disputed and the dispute is worth modelling rather than settling. The maximalist reading treats broadcast as a direct cause of compliance; the sceptical reading, better supported by the media-effects literature, holds that broadcast is powerful at coordination and weak at persuasion — it tells an already-disposed population what to do, when, and in whose company, rather than converting the undisposed. Yanagizawa-Drott's work on RTLM reception geography is the strongest quantitative evidence available and finds real, localised effects on participation, but it identifies a coordination-and-permission channel rather than a conversion one. Model broadcast as a multiplier on existing disposition and as a coordination device that resolves what everyone is about to do, not as a slider that moves belief directly — which also keeps it consistent with design principle 2, since a medium that reshaped disposition on command would be exactly the population slider that principle forbids."
 stats_touched: [broadcast reach, information sovereignty, intermediary dependence]
 tags: [radio, broadcast, propaganda, jamming, volksempfanger, rtlm, sawt-al-arab]
 ---
 
-Not a variant of the telegraph and not a faster ENG-315. Telegraph and
+Not a variant of the telegraph and not a faster MED-120. Telegraph and
 telephone are point-to-point, addressed, and private; broadcast is
 one-to-many, unaddressed, and public, and the economics invert with the
 topology.
@@ -61,7 +62,7 @@ than ending at it.
 ## Mechanism
 
 **The wire constraint is removed, and with it the territorial one.**
-ENG-230's binding cost was never distance but holding an unbroken line
+MED-100's binding cost was never distance but holding an unbroken line
 through ground the builder did not continuously control. Radio deletes that
 term entirely — reach becomes a function of transmitter power and terrain,
 and crucially does not require owning or crossing the intervening ground.
@@ -69,7 +70,7 @@ One transmitter covers its whole footprint whether or not the operator holds
 a single metre between. Wiring a territory is an imperial-scale capital
 project; a transmitter is a purchase, which makes radio the first
 communications technology that is cheap for the peripheral rather than the
-central. ENG-230's signature property — network geography recording who
+central. MED-100's signature property — network geography recording who
 built it and why — does not survive the transition.
 
 **One-to-many, no literacy requirement, simultaneous arrival.** Print needs
@@ -111,7 +112,7 @@ the leverage that dependence gave them. Provincial notables, established
 clergy, and newspaper editors had all held a bargaining position that
 consisted simply of being unavoidable, and broadcast removes it — which
 strengthens centres against peripheries and incumbents against local
-rivals, in the same direction ENG-230's Ottoman case describes for
+rivals, in the same direction MED-100's Ottoman case describes for
 administration but applied to the population rather than the bureaucracy.
 
 Religious broadcasting is where this cuts in an unexpected direction. Radio
@@ -189,7 +190,7 @@ failed external broadcasting campaigns shows.
 Reach decouples from territory. `broadcast reach` is a function of
 transmitter power, terrain, and receiver density inside the footprint, and
 explicitly not of ground controlled — so a weak or peripheral actor can buy
-reach that ENG-230 would have priced as an imperial capital project, and a
+reach that MED-100 would have priced as an imperial capital project, and a
 state can be reached by a rival it cannot reach back. `intermediary
 dependence` falls, stripping bargaining power from notables, clergy, and
 editors and shifting it to whoever holds the transmitter. `information

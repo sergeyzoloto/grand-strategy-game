@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [NAT-030, NAT-070]
 enables: []
-see_also: [ENG-330, NAT-180, NAT-220, NAT-210, ENG-230, NAT-014, NAT-215]
+see_also: [ENG-330, NAT-180, NAT-220, NAT-210, MED-100, NAT-014, NAT-215]
 contested: false
 contested_note: ""
 stats_touched: []

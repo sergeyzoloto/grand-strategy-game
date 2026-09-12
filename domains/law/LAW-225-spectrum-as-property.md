@@ -29,9 +29,9 @@ absence:
     note: Colonial territories were allocated spectrum by the metropolitan power as part of the imperial administrative settlement, so no domestic legal object was created and no domestic claimants existed to contest one. The consequence outlives the colonial period — post-independence states inherit allocations decided elsewhere, on the basis of arrangements they were never party to, which makes spectrum one of the concrete instances where a sovereignty granted in 1960 arrived pre-encumbered.
   - region: south-asia
     note: Under the same arrangement, and for the same reason, with the additional feature that the existing state telegraph monopoly absorbed wireless administratively without ever raising the question of what kind of right was being granted. Where transmission is simply an extension of an existing state monopoly the property question never gets asked, which is why this legal object appears where private claimants existed and nowhere else.
-prereqs: [ENG-315, LAW-020]
+prereqs: [MED-120, LAW-020]
 enables: []
-see_also: [ENG-325, DIP-180, LAW-230, COM-220, ENG-230, ENG-327, MAR-335, ENG-340, LAW-215]
+see_also: [MED-130, DIP-180, LAW-230, COM-220, MED-100, MED-140, MAR-335, ENG-340, LAW-215]
 contested: false
 contested_note: ""
 stats_touched: [legibility, information sovereignty]

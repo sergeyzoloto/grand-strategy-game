@@ -1,3 +1,5 @@
+> **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
+
 # Telecommunications Chain — Coverage Check
 
 **Date:** 2026-09-12
@@ -14,7 +16,7 @@ telephone, wireless, broadcast, radar, spectrum law, and radio navigation.
 
 The chain is two entries long and then stops.
 
-`NAT-170` (Electromagnetism) and `ENG-230` (The Telegraph) exist. **Nothing
+`NAT-170` (Electromagnetism) and `MED-100` (The Telegraph) exist. **Nothing
 between the telegraph and `ENG-330` Semiconductors (1947) covers any part of
 electrical communication.** Every item on the check list below is absent —
 telephone, wireless telegraphy, broadcast radio, radar, spectrum regulation,
@@ -46,7 +48,7 @@ to carry** — four entries rest on a prerequisite that does not exist.
 
 `NAT-240` (Information Theory, 1948) compounds it from the other end. Shannon's
 channel-capacity theorem came out of telegraph and telephone transmission
-engineering at Bell Labs, and `NAT-240` carries no link to `ENG-230` or to
+engineering at Bell Labs, and `NAT-240` carries no link to `MED-100` or to
 anything else in the chain it abstracts. Its `see_also` reaches sideways to
 `NAT-060`, `NAT-180`, `NAT-210`, `NAT-220` and `ENG-330` — every direction
 except the one it actually came from.
@@ -58,7 +60,7 @@ except the one it actually came from.
 ### 1. Electromagnetic theory (NAT) — EXISTS, with one gap
 
 `NAT-170` Electromagnetism, 1820-1873, `prereqs: [NAT-040]`,
-`enables: [ENG-230, ENG-300, NAT-220]`. Confirmed contents: Oersted's 1820
+`enables: [MED-100, ENG-300, NAT-220]`. Confirmed contents: Oersted's 1820
 current-and-compass discovery, Faraday's 1830s induction work, Maxwell's
 equations 1861-1865 published in final form 1873. It explicitly states the
 wave prediction — "implying that electromagnetic waves could carry information
@@ -89,7 +91,7 @@ encoded, transmitted, decoded by a second specialist, and delivered — which
 means every telegram passes through at least two people who are not the sender
 or the recipient, and the network's capacity is bounded by the supply of
 trained operators. The telephone removes the intermediary and the training
-requirement together. Consequences that do not follow from `ENG-230`:
+requirement together. Consequences that do not follow from `MED-100`:
 conversation rather than dispatch (negotiation and interrogative
 back-and-forth, not one-way notification); no written record by default, which
 matters for both commercial contracting and for what a state can later
@@ -98,7 +100,7 @@ large-scale feminised clerical workforces; and the shift of the network's
 terminal point from the telegraph office to the premises, which is what makes
 the firm rather than the city the unit of connection.
 
-**Proposed ID: `ENG-295`** (1876-1915). Sorts after `ENG-290` Internal
+**Proposed ID: `MED-110`** (1876-1915). Sorts after `ENG-290` Internal
 Combustion Engine (1876..1913) on the `date_end` tiebreak and before `ENG-300`
 Electrification (1882). Slots `ENG-291`-`ENG-299` are free.
 
@@ -118,7 +120,7 @@ matters that it is first broken at sea, because the sea is the one surface
 where wire was never an option and where the marginal value of the first
 wireless link is therefore infinite rather than incremental.
 
-**Proposed ID: `ENG-315`** (1895-1914). Between `ENG-310` Steel-Frame
+**Proposed ID: `MED-120`** (1895-1914). Between `ENG-310` Steel-Frame
 Construction (1885) and `ENG-320` Agrochemicals (1909). Free.
 
 **Boundary call — ENG, not MAR, but it is genuinely close.** `boundary-rules.md`
@@ -217,7 +219,7 @@ Two entries, not one, because the mechanisms differ:
 
 ## Broadcast radio — full proposal
 
-**Proposed ID: `ENG-325`** (1920-1970). Between `ENG-320` Agrochemicals (1909)
+**Proposed ID: `MED-130`** (1920-1970). Between `ENG-320` Agrochemicals (1909)
 and `ENG-330` Semiconductors (1947). Free.
 **`domains_touched: [war, diplomacy, philosophy, law, religion]`**
 
@@ -234,7 +236,7 @@ both mechanisms and would fail the one-entry-one-Mechanism rule outright.
 
 ### Mechanism 1 — the wire constraint is removed
 
-`ENG-230`'s corrected `absence` field now establishes the constraint precisely:
+`MED-100`'s corrected `absence` field now establishes the constraint precisely:
 a network built from continuous physical line cannot reach anything it cannot
 be strung across, and the cost that binds is not distance but holding an
 unbroken line through ground the builder does not continuously control. Radio
@@ -247,7 +249,7 @@ of the ground between.
 This is what makes radio the first communications technology that is cheap for
 the poor and the peripheral rather than the rich and the central. Wiring a
 territory is an imperial-scale capital project; a transmitter is a purchase.
-The asymmetry that `ENG-230` encodes — network geography recording who built it
+The asymmetry that `MED-100` encodes — network geography recording who built it
 and why — does not survive the transition.
 
 ### Mechanism 2 — direct channel, no literacy, simultaneous arrival
@@ -264,7 +266,7 @@ The mechanic is the collapse of an intermediary layer that every prior mass
 medium *created*. A state that could previously reach its population only
 through notables who could bargain over the message now reaches past them —
 which strengthens the centre against provincial elites in exactly the way
-`ENG-230`'s Ottoman variant describes for administration, but applied to the
+`MED-100`'s Ottoman variant describes for administration, but applied to the
 population rather than the bureaucracy.
 
 **State-subsidised receivers with deliberately limited range are the clearest
@@ -289,7 +291,7 @@ principle 4) — the expenditure that merely holds position.
 
 ### Mechanism 4 — spectrum as a new legal object
 
-Covered by the `LAW-225` proposal above; `ENG-325` should `enables` it and
+Covered by the `LAW-225` proposal above; `MED-130` should `enables` it and
 carry `law` in `domains_touched` rather than duplicating the argument.
 
 ### Regional coverage
@@ -349,13 +351,13 @@ Algeria — are both non-European.
 ### Absence
 
 At least: **central-asia-steppe and interior regions generally** — the mirror
-of `ENG-230`'s corrected absence, and the load-bearing half. Radio reaches
+of `MED-100`'s corrected absence, and the load-bearing half. Radio reaches
 places wire never did, so the absence here is not about coverage but about
 **receivers**: a broadcast with no sets in the footprint is inaudible, which
 makes receiver distribution rather than transmitter siting the binding
 constraint, and makes radio the first medium where the state must put hardware
 in households rather than merely build infrastructure. **Oceania** is the
-sharpest contrast with `ENG-230` — the region wire could not reach at all is
+sharpest contrast with `MED-100` — the region wire could not reach at all is
 the region radio serves best, one transmitter covering what no cable ever
 justified.
 
@@ -363,19 +365,19 @@ justified.
 
 | stat | definition sketch |
 | --- | --- |
-| `broadcast reach` | population within receivable range, a function of transmitter power, terrain, and receiver density in the footprint — explicitly **not** a function of territory controlled, which is what separates it from `ENG-230`'s wire network. |
+| `broadcast reach` | population within receivable range, a function of transmitter power, terrain, and receiver density in the footprint — explicitly **not** a function of territory controlled, which is what separates it from `MED-100`'s wire network. |
 | `information sovereignty` | degree to which a state controls what its own population hears, newly contestable from outside the border and defensible only by continuous expenditure (jamming, receiver range-limiting, set licensing) that produces no output of its own. |
 | `intermediary dependence` | a ruler's reliance on editors, notables, and clergy to reach the population, which print raised and broadcast collapses — the mechanism behind radio's centralising effect. |
 
 ### Links
 
-`prereqs: [ENG-315, NAT-170]` (wireless telegraphy, electromagnetism).
+`prereqs: [MED-120, NAT-170]` (wireless telegraphy, electromagnetism).
 `enables: [LAW-225, WAR-280, PHI-410]`.
-`see_also: [ENG-230, WAR-310, MAR-340, ENG-300]` — electrification because
+`see_also: [MED-100, WAR-310, MAR-340, ENG-300]` — electrification because
 household receivers need household power, a real gating dependency that
 explains part of the regional adoption pattern.
 
-**Writing `ENG-325` retires three of the four dangling dependencies in the
+**Writing `MED-130` retires three of the four dangling dependencies in the
 headline table.** `MAR-340`'s radar dependency needs `WAR-315`.
 
 ---
@@ -387,9 +389,9 @@ No renumbering required. Every proposed slot is free. `renumber.py` not run.
 | Proposal | Domain | ID | Between | Status |
 | --- | --- | --- | --- | --- |
 | Hertz confirmation | NAT | *extend `NAT-170`* | — | preferred over a new entry; `NAT-205` free if split |
-| Telephone | ENG | `ENG-295` | ENG-290 (1876..1913) / ENG-300 (1882) | free |
-| Wireless telegraphy | ENG | `ENG-315` | ENG-310 (1885) / ENG-320 (1909) | free |
-| Broadcast radio | ENG | `ENG-325` | ENG-320 (1909) / ENG-330 (1947) | free |
+| Telephone | ENG | `MED-110` | ENG-290 (1876..1913) / ENG-300 (1882) | free |
+| Wireless telegraphy | ENG | `MED-120` | ENG-310 (1885) / ENG-320 (1909) | free |
+| Broadcast radio | ENG | `MED-130` | ENG-320 (1909) / ENG-330 (1947) | free |
 | Radar (doctrine) | WAR | `WAR-315` | WAR-310 (1917) / WAR-320 (1940) | free |
 | Spectrum as property | LAW | `LAW-225` | LAW-220 (1893) / LAW-230 (1948) | free |
 | Radio navigation | MAR | `MAR-335` | MAR-330 (1906) / MAR-340 (1917) | free |
@@ -404,16 +406,16 @@ claim; a SOLAS split would take `MAR-337`.
 
 ## Priority
 
-1. **`ENG-325` broadcast radio** — clears three dangling dependencies, carries
+1. **`MED-130` broadcast radio** — clears three dangling dependencies, carries
    the most distinct mechanisms, and is the entry the corpus is most visibly
    missing.
-2. **`ENG-315` wireless telegraphy** — `ENG-325`'s prereq; the chain does not
+2. **`MED-120` wireless telegraphy** — `MED-130`'s prereq; the chain does not
    connect without it.
 3. **`WAR-315` radar** — clears `MAR-340`; strong design-principle-1 instance.
 4. **`LAW-225` spectrum** — a genuinely novel legal object, not an extension.
 5. **`NAT-170` extension for Hertz** — cheapest item on the list, a `date_end`
    change and two sentences.
-6. **`ENG-295` telephone** — real and distinct, but nothing currently depends
+6. **`MED-110` telephone** — real and distinct, but nothing currently depends
    on it.
 7. **`MAR-335` / `ENG-340` navigation and GPS** — furthest from the existing
    corpus and the least load-bearing.
@@ -422,30 +424,30 @@ claim; a SOLAS split would take `MAR-337`.
 
 - **Television** — absent apart from one passing mention in `HLT-340`. Needs a
   decision on whether it is a distinct mechanism from broadcast radio or a
-  `region_variants`-and-`date_end` extension of `ENG-325`. Leaning: extension,
+  `region_variants`-and-`date_end` extension of `MED-130`. Leaning: extension,
   since mechanisms 1-4 all apply unchanged, with the literacy-independence
   point if anything stronger.
 - **`NAT-240` Information Theory is orphaned from its own origins.** Shannon's
   channel-capacity work came out of telegraph and telephone transmission
-  engineering; `NAT-240` links to neither. At minimum add `ENG-230` to its
-  `see_also`; a `prereqs` link becomes defensible once `ENG-295` exists.
+  engineering; `NAT-240` links to neither. At minimum add `MED-100` to its
+  `see_also`; a `prereqs` link becomes defensible once `MED-110` exists.
 - **No COM information-speed entry.** Flagged in full below.
 
 ## Flagged for TASK 1(b), not written
 
-`ENG-230`'s Mechanism now carries the information-asymmetry argument and the
+`MED-100`'s Mechanism now carries the information-asymmetry argument and the
 convergence-by-price rather than convergence-by-goods shift. It was to be
 cross-linked to a COM entry on information speed. **No such entry exists.** All
 23 COM titles were enumerated; the nearest are `COM-220` (Trademark, Brand, and
 Trust at a Distance, 1860) and `COM-200` (Railways) — neither covers market
 integration through information. The `information speed` stat is used by six
-entries (`WAR-110`, `WAR-280`, `DIP-030`, `DIP-080`, `HLT-180`, `ENG-230`) and
+entries (`WAR-110`, `WAR-280`, `DIP-030`, `DIP-080`, `HLT-180`, `MED-100`) and
 `stats-observed.md` records its source as `—`, meaning no entry has ever
 defined it.
 
 **Gap flagged, not filled**, per instruction. Two candidate resolutions: a COM
 entry on price convergence and market integration as an information
-phenomenon, or promotion of `ENG-230` to the defining source for `information
+phenomenon, or promotion of `MED-100` to the defining source for `information
 speed` in `stats-observed.md`. The second is a one-line change and probably
 correct regardless of whether the first is written.
 
@@ -454,7 +456,7 @@ signalling or traffic-control material at all.** Its Mechanism covers route
 design, financing structure, and labour; block signalling — the reason
 telegraph and railway networks were built along the same rights of way, and
 what actually governs the "track capacity" term `COM-200` names — is absent.
-This is why `ENG-230` links to `COM-200` by `see_also` rather than `enables`:
+This is why `MED-100` links to `COM-200` by `see_also` rather than `enables`:
 the dependency is real in history but the target entry does not carry it.
 Either `COM-200` gains a signalling paragraph and the link becomes directional,
 or signalling earns its own ENG entry.

@@ -1,3 +1,5 @@
+> **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
+
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
@@ -310,9 +312,9 @@ it, not a novel proposal.)
 
 4. **Print, vernacular access, and institutional authority.** `HLT-190`
    (Print, Silent Reading, and the Interior Self), `REL-230` (Printed
-   Religion), `ENG-150` (Printing Press), and PHI's own Reformation-
+   Religion), `MED-080` (Printing Press), and PHI's own Reformation-
    adjacent entries (Renaissance Humanism prereqs PHI-220 which prereqs
-   ENG-150 and NAT-050 already). Four domains, four-plus entries, and a
+   MED-080 and NAT-050 already). Four domains, four-plus entries, and a
    case where three different domains each independently built a "what
    cheap print did to X's authority structure" entry without a map tying
    them together.

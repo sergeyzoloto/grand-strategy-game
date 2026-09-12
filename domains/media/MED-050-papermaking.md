@@ -1,9 +1,9 @@
 ---
-id: ENG-100
-former_ids: [ENG-024]
+id: MED-050
+former_ids: [ENG-024, ENG-100]
 title: Papermaking
 legacy_ref:
-domain: engineering
+domain: media
 domains_touched: [commerce]
 tier: core
 status: drafted
@@ -23,7 +23,7 @@ absence:
   - region: africa
     note: No independent sub-Saharan African papermaking tradition develops; Ethiopian scribal culture instead sustains an extensive parchment-based manuscript tradition, and West African Islamic scholarly centers like Timbuktu rely on paper imported via the trans-Saharan trade routes (see the caravan trade, `COM-050`) rather than on local production — a real absence of the manufacturing technique specifically, not of a written scholarly culture to use it.
 prereqs: []
-enables: [ENG-150]
+enables: [MED-080]
 see_also: [COM-050]
 contested: true
 contested_note: "The popular 'Battle of Talas' transmission story — that Chinese papermakers captured by Abbasid forces in 751 CE personally taught the technique to their captors, single-handedly starting Islamic-world papermaking — is a widely-repeated simplification; historians of technology increasingly read the actual transmission as more gradual and multi-channel, with the technique likely already diffusing along Silk Road contact before and independent of that one battle. Model papermaking's westward spread as a diffusion process with a genuinely uncertain specific mechanism, rather than crediting one dramatic transfer event as the documented cause."
@@ -62,7 +62,7 @@ labor-and-fiber-intensive instead.
 Cheap paper makes sustained record-keeping, correspondence, and
 eventually mass copying economically viable for institutions and
 individuals who could never have afforded parchment at comparable
-volume, directly setting up the economics `ENG-150`'s later printing
+volume, directly setting up the economics `MED-080`'s later printing
 press depends on — a press with nothing affordable to print onto
 doesn't scale into mass production regardless of how good the
 mechanical printing technique itself is.
@@ -94,6 +94,6 @@ specific mechanism, rather than crediting one dramatic transfer event.
 ## Hook
 
 Cheap paper removes the cost ceiling both parchment and papyrus impose
-on written material — a gate `ENG-150`'s printing press depends on to
+on written material — a gate `MED-080`'s printing press depends on to
 scale into genuine mass production, since a press mechanism alone has
 nothing affordable to print onto without it.

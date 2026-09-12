@@ -1,3 +1,5 @@
+> **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
+
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
@@ -25,7 +27,7 @@ The earliest entries, ENG-020 (Irrigation and Dams, -6000) and ENG-030 (The Pott
 Four concrete absences, each checked against the full wiki:
 
 - **Smelting/metalworking technique** — see above. Grepped `smelting`: hits only in `COM-020`, `AGR-160`, `WAR-040` — all _consumers_ of a chemistry ENG is supposed to own and doesn't.
-- **Papermaking** — grepped the whole wiki for `papermaking`/`paper mill`: zero hits anywhere. `ENG-150` (The Printing Press) has `prereqs: []` despite a press being useless at scale without a cheap printable surface — Gutenberg's own breakthrough was only economically viable because paper, not parchment, had become affordable by the 1450s.
+- **Papermaking** — grepped the whole wiki for `papermaking`/`paper mill`: zero hits anywhere. `MED-080` (The Printing Press) has `prereqs: []` despite a press being useless at scale without a cheap printable surface — Gutenberg's own breakthrough was only economically viable because paper, not parchment, had become affordable by the 1450s.
 - **Fired brick** — grepped `brick`: zero hits anywhere in the entire project. The single most ubiquitous premodern building material, load-bearing for the Indus Valley cities `COM-030` already credits for standardization, Mesopotamian ziggurats, and most of world construction history, has no entry.
 - **Mechanical clockwork** — grepped `clockwork|escapement|mechanical clock`: the only hits are `NAT-040` (Mechanics, the physics _theory_, not the device) and `MAR-250` (the marine chronometer specifically, correctly MAR's territory). `NAT-040`'s own absence note name-drops the Song-era Chinese astronomical clock tower (Su Song's _Xin Yixiang Fayao_) as a real engineering achievement with nowhere in the wiki to actually live.
 
@@ -41,17 +43,17 @@ Zero entries have capability loss, technique regression, or engineering failure 
 
 ### 5. PREREQ ORPHANS — **FAIL**
 
-- **ENG-150** (Printing Press, `prereqs: []`) — depends on cheap paper existing at scale to matter at all; no papermaking entry exists to prereq (see Probe 2).
+- **MED-080** (Printing Press, `prereqs: []`) — depends on cheap paper existing at scale to matter at all; no papermaking entry exists to prereq (see Probe 2).
 - **ENG-250** (Elevator and Safety Brake, `prereqs: []`) — the entry addresses the safety-brake mechanism exclusively and never states what actually powers the car's vertical motion. The historical 1857 Haughwout Building installation was steam-hoisted; `ENG-170` (Steam Engine) is absent from both `prereqs` and the body text entirely.
 - **ENG-250's own Hook overclaims.** It states the safety brake is "the specific, narrow innovation that makes the skyscraper possible as a building form at all." It isn't, alone — a load-bearing masonry building physically cannot exceed roughly 10–20 stories regardless of elevator access, because wall thickness at the base must scale with height (Chicago's Monadnock Building, 1891, sits close to that practical ceiling). Steel-frame structural engineering, which lets exterior walls stop bearing load entirely, is the other necessary precondition, and it has no entry anywhere in this domain despite `ENG-260` (cheap Bessemer steel) and `ENG-050` (architectural glass) both existing as its natural neighbors.
 
 ### 6. MECHANISM DIVERSITY — **PASS, with one clear gap**
 
-Real diversity is present: gates (`ENG-170`, `ENG-250`, `ENG-230` — the last explicitly self-described as "a discrete jump rather than a gradual improvement"), a genuine cascading-bottleneck mechanic (`ENG-180`, each invention just relocating the constraint to the next stage), a real one-time price-collapse event (`ENG-260`), and a distinctive recursive-compounding mechanic shared identically between `ENG-190` and `ENG-330` ("each generation of more precise... capability is used to build the next" — machine tools and semiconductor fabrication both explicitly run on it). This is comfortably not a flat modifier list. But **zero entries carry a genuine depleting-pool mechanic** (design principle 4) — the same gap Commerce had before this session's fixes — despite `ENG-080`'s own prose gesturing directly at one ("expertise... once lost... takes generations to reconstruct") and never formalizing it. This is the same missing category, unclaimed a second time.
+Real diversity is present: gates (`ENG-170`, `ENG-250`, `MED-100` — the last explicitly self-described as "a discrete jump rather than a gradual improvement"), a genuine cascading-bottleneck mechanic (`ENG-180`, each invention just relocating the constraint to the next stage), a real one-time price-collapse event (`ENG-260`), and a distinctive recursive-compounding mechanic shared identically between `ENG-190` and `ENG-330` ("each generation of more precise... capability is used to build the next" — machine tools and semiconductor fabrication both explicitly run on it). This is comfortably not a flat modifier list. But **zero entries carry a genuine depleting-pool mechanic** (design principle 4) — the same gap Commerce had before this session's fixes — despite `ENG-080`'s own prose gesturing directly at one ("expertise... once lost... takes generations to reconstruct") and never formalizing it. This is the same missing category, unclaimed a second time.
 
 ### 7. BOUNDARY INTEGRITY — **PASS on discipline, FAIL on delivery**
 
-Every WAR/ENG and NAT/ENG split in this domain is handled correctly and explicitly — `ENG-140` versus `WAR-130`, `ENG-170`/`ENG-230`/`ENG-300`/`ENG-330` all correctly prereq the relevant `NAT` knowledge entry (`NAT-040`, `NAT-170`, `NAT-210`) rather than re-deriving the underlying science, and `ENG-290` correctly defers military aviation doctrine to `WAR-270` while keeping the engine itself. This is real discipline, better than any other domain audited so far. The actual failure runs the other direction: this domain doesn't wrongly claim territory, it **fails to occupy territory explicitly assigned to it** — see Probes 1 and 2. The one soft case worth naming: `ENG-320` (Agrochemicals) carries substantially more agronomic/economic consequence content in its own Social consequence section than the domain's usual technique-only discipline allows, closer to AGR's territory than ENG's — a precedent already partially addressed by AGR-280 being made to prereq it directly, not recommending further change here.
+Every WAR/ENG and NAT/ENG split in this domain is handled correctly and explicitly — `ENG-140` versus `WAR-130`, `ENG-170`/`MED-100`/`ENG-300`/`ENG-330` all correctly prereq the relevant `NAT` knowledge entry (`NAT-040`, `NAT-170`, `NAT-210`) rather than re-deriving the underlying science, and `ENG-290` correctly defers military aviation doctrine to `WAR-270` while keeping the engine itself. This is real discipline, better than any other domain audited so far. The actual failure runs the other direction: this domain doesn't wrongly claim territory, it **fails to occupy territory explicitly assigned to it** — see Probes 1 and 2. The one soft case worth naming: `ENG-320` (Agrochemicals) carries substantially more agronomic/economic consequence content in its own Social consequence section than the domain's usual technique-only discipline allows, closer to AGR's territory than ENG's — a precedent already partially addressed by AGR-280 being made to prereq it directly, not recommending further change here.
 
 ---
 
@@ -72,10 +74,10 @@ Every WAR/ENG and NAT/ENG split in this domain is handled correctly and explicit
 **2. Papermaking**
 
 - Regions: east-asia, middle-east, europe — era, roughly 100 to 1200
-- Answers: Probe 2 (substrate) and 5 (prereq orphan — closes `ENG-150`'s missing dependency)
+- Answers: Probe 2 (substrate) and 5 (prereq orphan — closes `MED-080`'s missing dependency)
 - Mechanism: converts pulped plant fiber into a cheap, foldable, mass-producible writing surface, removing the cost ceiling parchment (an entire animal hide per few pages) and papyrus (geographically restricted to reed-growing regions) both impose on written material at any scale.
-- Hook (seed): a gate — cheap paper is what actually lets `ENG-150`'s press-based printing scale into mass production; without it, a press has nothing affordable to print onto.
-- Prereqs: none. Enables: `ENG-150` (currently missing this).
+- Hook (seed): a gate — cheap paper is what actually lets `MED-080`'s press-based printing scale into mass production; without it, a press has nothing affordable to print onto.
+- Prereqs: none. Enables: `MED-080` (currently missing this).
 - Contested: true — the popular "Battle of Talas" transmission legend (Chinese papermakers captured in 751 CE personally teaching the Abbasids) is a widely-repeated simplification of what was more plausibly a gradual, multi-channel transmission; model the technology's westward spread as a diffusion process with an uncertain, disputed specific mechanism rather than one dramatic transfer event.
 - Confidence: high on the technology, medium on the transmission story.
 
@@ -161,7 +163,7 @@ No entry's canonical `domain` needs to change — this domain's WAR/ENG and NAT/
 
 ### RETIER
 
-Not proposing changes here. Unlike Commerce's original all-`core` problem, this domain already shows real tier discipline — 5 of 22 entries (`ENG-030`, `ENG-050`, `ENG-015`, `ENG-250`, `ENG-270`) are correctly `standard`, and the `core` entries with `enables: []` (`ENG-230`, `ENG-300`) earn the weight on conceptual grounds (each is the entry other domains' own stats — `information speed` — trace back to) even without a formal downstream prereq yet. I looked for a stub-carrying-too-much-weight or core-that's-really-flavour case and didn't find one worth forcing.
+Not proposing changes here. Unlike Commerce's original all-`core` problem, this domain already shows real tier discipline — 5 of 22 entries (`ENG-030`, `ENG-050`, `ENG-015`, `ENG-250`, `ENG-270`) are correctly `standard`, and the `core` entries with `enables: []` (`MED-100`, `ENG-300`) earn the weight on conceptual grounds (each is the entry other domains' own stats — `information speed` — trace back to) even without a formal downstream prereq yet. I looked for a stub-carrying-too-much-weight or core-that's-really-flavour case and didn't find one worth forcing.
 
 ### CUT
 
