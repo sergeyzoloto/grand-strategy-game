@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-080]
 enables: []
-see_also: [PHI-090, LAW-100, PHI-180, PHI-060]
+see_also: [PHI-090, LAW-100, PHI-180, PHI-060, MED-060]
 contested: false
 contested_note: ""
 stats_touched: []
