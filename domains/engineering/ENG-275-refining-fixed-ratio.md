@@ -34,7 +34,7 @@ absence:
     note: Refining capacity was built to the scale of local lamp-oil demand rather than to the region's own crude or its later fuel needs, since the colonial arrangement treated the subcontinent as a market for refined product rather than a site of processing. A region can be a large consumer of a refined good and hold none of the capacity to make it.
 prereqs: [ENG-265, NAT-160]
 enables: [ENG-290, WAR-275]
-see_also: [ENG-290, ENG-265, ENG-165, WAR-270, MAR-320, NAT-200, LAW-215]
+see_also: [ENG-165, WAR-270, MAR-320, NAT-200, LAW-215]
 contested: false
 contested_note: ""
 stats_touched: [refining flexibility, stranded capital, energy budget]
