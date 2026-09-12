@@ -26,7 +26,7 @@ absence:
   - region: oceania
     note: Aboriginal Australian societies never independently domesticate a founder-crop package despite tens of thousands of years of prior occupation, instead developing sophisticated fire-stick landscape management and, in some documented cases, eel aquaculture — land-productivity intensification without the seed-selection and sedentary-field investment that defines domestication elsewhere, a genuinely different trajectory rather than an unfinished one.
 prereqs: [AGR-010]
-enables: [AGR-030, AGR-050, AGR-080, AGR-160, AGR-120, AGR-220, AGR-110, AGR-060]
+enables: [AGR-030, AGR-050, AGR-080, AGR-160, AGR-120, AGR-220, AGR-110, AGR-060, ENG-055]
 see_also: [AGR-090, HLT-030, MIG-020]
 contested: true
 contested_note: "Whether domestication in each independent center was a rapid, deliberate process or a slow, largely unintentional byproduct of repeated harvesting pressure on wild stands (the 'domestication syndrome' traits — non-shattering seed heads, larger seed size — accumulating over centuries before anyone was selecting for them on purpose) is disputed among archaeobotanists, with genetic and archaeological dating evidence increasingly favoring longer, more gradual timelines than earlier 'Neolithic Revolution' framings assumed. Model domestication as a multi-century-to-multi-millennium accumulation process with no single triggering decision, rather than a point event a population chooses to adopt."

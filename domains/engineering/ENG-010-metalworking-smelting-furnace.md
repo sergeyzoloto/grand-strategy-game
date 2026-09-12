@@ -23,7 +23,7 @@ absence:
   - region: americas
     note: Andean and Mesoamerican metallurgy develops real sophistication in gold, silver, and copper working for ornamental, ritual, and status objects, but never develops iron smelting or bronze-for-tools production at anything like Old World functional scale — a metallurgical tradition oriented toward display and ritual value rather than toward tools and weapons, not a lesser achievement but a differently-directed one.
 prereqs: []
-enables: [COM-020, WAR-040, AGR-160]
+enables: [COM-020, WAR-040, AGR-160, ENG-055]
 see_also: [COM-050, COM-080, MIG-040]
 contested: true
 contested_note: "Whether bronze metallurgy originated at a single Near Eastern point and diffused outward, or arose independently at multiple centers, is a live archaeological dispute — Southeast Asian sites (Ban Chiang in Thailand prominently) carry their own independent-origin claims that some archaeometallurgists accept and others read as diffusion with strong local adaptation. Model regional smelting traditions as independently-triggerable given the right ore access and fuel supply, rather than requiring a single-origin diffusion chain to explain every regional case."

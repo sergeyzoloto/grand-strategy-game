@@ -24,7 +24,7 @@ absence:
     note: Much of sub-Saharan Africa's swidden cultivation (AGR-080) persists as an extensive, land-abundant, comparatively low-labor-input-per-hectare system through most of this era rather than intensifying toward fixed-field, high-labor-input agriculture — consistent with lower population density relative to available land, this entry's own thesis predicts exactly this outcome rather than treating it as an unexplained lag.
 prereqs: [AGR-010]
 enables: []
-see_also: [AGR-080, AGR-020, AGR-100, AGR-180, AGR-240, AGR-110, WAR-035]
+see_also: [AGR-080, AGR-020, AGR-100, AGR-180, AGR-240, AGR-110, WAR-035, ENG-055]
 contested: true
 contested_note: "Whether population growth is better modeled as following from agricultural intensification (the Malthusian reading: yield ceiling caps sustainable population, and population grows only after a yield-raising innovation permits it) or as the cause forcing intensification in the first place (Ester Boserup's inversion: population pressure itself drives a society to adopt more labor-intensive techniques — shorter fallow, denser planting, more thorough weeding and manuring — it would otherwise have no reason to bear the extra labor cost for) is a genuinely live, unresolved debate in agricultural economics and historical demography, not a settled question this entry can responsibly pick a side on. Model both causal directions as available and let the specific historical case (population growth already outpacing yield, or a yield innovation arriving before population pressure existed) determine which one actually fired, rather than assuming a single universal causal arrow."
 stats_touched: [yield ceiling]

@@ -24,7 +24,7 @@ absence:
     note: The pre-contact Americas' comparatively thin roster of manure-producing domesticated animals (AGR-030's Andean absence of large dense livestock outside the llama/alpaca pack, and their total absence elsewhere) sharply limits manure-based nutrient cycling as an available technique relative to Afro-Eurasia, a structural constraint tracing directly back to the same domesticate-roster ceiling documented in AGR-030 and AGR-040.
 prereqs: [AGR-020, AGR-030]
 enables: [AGR-240]
-see_also: [ENG-070, AGR-040, AGR-090]
+see_also: [ENG-070, AGR-040, AGR-090, ENG-055]
 contested: true
 contested_note: "How much of sustained high pre-industrial yield in labor-abundant East Asian agriculture specifically should be credited to manure/night-soil nutrient cycling alone versus other contributing factors (multi-cropping, irrigation intensity, crop selection) is debated among agricultural historians, given the difficulty of isolating one input's contribution from a tightly integrated intensive farming system using surviving records. Model labor-intensive nutrient cycling and land-intensive fallow/rotation (AGR-240) as two independently viable routes to comparable soil-fertility outcomes — echoing AGR-030's dairying/fermentation 'two independent unlock paths' pattern — rather than crediting either as the more fundamentally correct solution to agriculture's nitrogen-limitation problem."
 stats_touched: [soil fertility]

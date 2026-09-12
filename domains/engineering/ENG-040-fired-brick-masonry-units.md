@@ -24,7 +24,7 @@ absence:
     note: Mesoamerican and Andean monumental construction relies on dressed stone masonry and sun-dried adobe rather than kiln-fired brick at comparable scale — a real absence of the specific fired-clay technique, not of large-scale masonry ambition or skill, with stone substituting directly for the durability role fired brick plays in the Old World.
 prereqs: []
 enables: []
-see_also: [COM-030, ENG-110]
+see_also: [COM-030, ENG-110, ENG-055]
 contested: false
 contested_note: ""
 stats_touched: []
