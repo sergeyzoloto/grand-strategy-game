@@ -21,7 +21,7 @@ absence:
     note: The Ottoman Empire and other major Middle Eastern polities grant foreign merchants trade privileges through bilateral capitulation agreements with the sponsoring European state directly, rather than licensing a chartered company as an intermediary sovereign-adjacent actor — a structurally different way of managing the same underlying foreign-trade-access problem, negotiated state-to-state rather than delegated to a company.
 prereqs: [COM-110]
 enables: [COM-210]
-see_also: [DIP-090, FIN-070, LAW-130, COM-160]
+see_also: [DIP-090, FIN-070, LAW-130, COM-160, LAW-215]
 contested: false
 contested_note: ""
 stats_touched: []

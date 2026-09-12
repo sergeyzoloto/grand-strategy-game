@@ -24,7 +24,7 @@ absence:
     note: The Ottoman Empire's capitulation-based low tariff regime, negotiated piecemeal with multiple European powers over centuries rather than imposed by a single unequal treaty, similarly constrains Ottoman tariff-setting autonomy well into the 20th century, showing tariff-sovereignty loss can arrive gradually through accumulated bilateral concession as well as through a single coercive treaty.
 prereqs: [COM-030, COM-210]
 enables: []
-see_also: [DIP-190, MAR-150, FIN-140, FIN-230, COM-180, COM-170]
+see_also: [DIP-190, MAR-150, FIN-140, FIN-230, COM-180, COM-170, LAW-215]
 contested: false
 contested_note: ""
 stats_touched: []

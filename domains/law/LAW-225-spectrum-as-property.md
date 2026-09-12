@@ -31,7 +31,7 @@ absence:
     note: Under the same arrangement, and for the same reason, with the additional feature that the existing state telegraph monopoly absorbed wireless administratively without ever raising the question of what kind of right was being granted. Where transmission is simply an extension of an existing state monopoly the property question never gets asked, which is why this legal object appears where private claimants existed and nowhere else.
 prereqs: [ENG-315, LAW-020]
 enables: []
-see_also: [ENG-325, DIP-180, LAW-230, COM-220, ENG-230, ENG-327, MAR-335, ENG-340]
+see_also: [ENG-325, DIP-180, LAW-230, COM-220, ENG-230, ENG-327, MAR-335, ENG-340, LAW-215]
 contested: false
 contested_note: ""
 stats_touched: [legibility, information sovereignty]
