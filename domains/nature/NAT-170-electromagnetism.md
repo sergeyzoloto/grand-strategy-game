@@ -17,7 +17,7 @@ absence:
   - region: americas
     note: American contributions to electromagnetism in this era run substantially toward independent practical invention (Henry's electromagnet work informing telegraph and motor development) built on the European theoretical foundation, rather than toward the unifying mathematical theory itself, consistent with the broader theory-versus-application regional split already noted for thermodynamics (NAT-180).
 prereqs: [NAT-040]
-enables: [ENG-230, ENG-300, NAT-220, ENG-315, WAR-315]
+enables: [ENG-230, ENG-300, NAT-220, ENG-315, WAR-315, ENG-295]
 see_also: [NAT-180]
 contested: false
 contested_note: ""
