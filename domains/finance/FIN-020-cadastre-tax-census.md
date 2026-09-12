@@ -23,7 +23,7 @@ absence:
   - region: middle-east
     note: Early Mesopotamian cadastral and tax administration (clay-tablet land surveys and grain-tax records) predates comparable systematic Egyptian Nilometer-based assessment by centuries in some respects, but neither achieves the household-level individual registration granularity Han China reaches — a difference in fiscal resolution, not in the basic underlying administrative concept.
 prereqs: [FIN-010]
-enables: [FIN-030, FIN-060, FIN-100, FIN-050, FIN-140, FIN-240, REL-130, FIN-110, LAW-210]
+enables: [FIN-030, FIN-060, FIN-100, FIN-050, FIN-140, FIN-240, REL-130, FIN-110, LAW-210, WAR-200]
 see_also: [AGR-100, AGR-120]
 contested: false
 contested_note: ""
