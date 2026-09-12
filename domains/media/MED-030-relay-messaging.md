@@ -39,7 +39,7 @@ absence:
     note: Sub-Saharan states maintained messenger corps, but long-range information across the Sahara and the Sahel moved with commercial caravans — seasonal, merchant-timed, and merchant-controlled. What is missing is not messengers but the state's ability to buy speed independently of the traders, so information speed stays a merchant asset rather than becoming a lever of rule, and a ruler learns of a distant event when the caravan season allows rather than when the treasury decides.
   - region: oceania
     note: No polity spans a distance over which a chain of fixed relay stations would repay its standing cost, and the intervening surface is water that cannot be posted at intervals in any case. Long-range information moves by voyaging — fast for its era but episodic, tied to a vessel's own journey rather than purchasable on demand, which is precisely the distinction this entry turns on.
-prereqs: [ENG-090, MIG-050]
+prereqs: [ENG-090, MIG-050, MED-020]
 enables: [MED-100]
 see_also: [DIP-010, DIP-030, DIP-080, WAR-090, WAR-110, COM-080, MED-080, MED-120, MED-130, WAR-315, MED-110, ENG-340]
 contested: false
