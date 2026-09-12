@@ -38,11 +38,33 @@ absence:
     note: The Indian Army under British rule was deliberately non-conscript, recruited by volunteer enlistment from populations selected under martial-races doctrine, and the avoidance was a policy rather than an incapacity — the colonial state possessed census machinery of exceptional reach and declined to use it for this. Universal conscription would have armed and trained a population the administration did not trust to arm, and after 1857 that calculation was explicit. A state can hold every prerequisite for conscription and refuse the mechanism because the resulting army would be the wrong army.
 prereqs: [WAR-060, FIN-020, REL-210, LAW-110]
 enables: [WAR-290]
-see_also: [WAR-140, WAR-220, WAR-230, WAR-190, WAR-260, HLT-270, LAW-100, LAW-220, DIP-160, REL-230, MIG-180]
+see_also:
+  [
+    WAR-140,
+    WAR-220,
+    WAR-230,
+    WAR-190,
+    WAR-260,
+    HLT-270,
+    LAW-100,
+    LAW-220,
+    DIP-160,
+    REL-230,
+    MIG-180,
+  ]
 contested: false
 contested_note: ""
 stats_touched: [mobilisable manpower, legibility, literacy]
-tags: [conscription, levee-en-masse, mass-mobilization, citizen-soldier, civil-registration, army-literacy, nation-building]
+tags:
+  [
+    conscription,
+    levee-en-masse,
+    mass-mobilization,
+    citizen-soldier,
+    civil-registration,
+    army-literacy,
+    nation-building,
+  ]
 ---
 
 Legally mandated, near-universal military service obligation converts army
@@ -80,7 +102,7 @@ claims and pursue evasion, which is the expensive part, because every
 exemption category creates an incentive to qualify for it and every
 claim must be assessed against a record.
 
-This makes conscription a **downstream application of `legibility`**
+This makes conscription a **downstream application of** `legibility`
 rather than an independent capability, and the historical sequencing
 shows it plainly. France transfers civil registration from the parish
 (REL-210) to the commune in 1792, a year before the levee en masse;
@@ -184,7 +206,7 @@ manpower, and one with a thorough register can run it whether or not its
 population is large. The four prerequisites are a birth register, a stable
 name, a residence record, and an exemption bureaucracy, and the last is the
 expensive one because every exemption category creates an incentive to
-qualify for it. Deciding to conscript should therefore *build* enumeration
+qualify for it. Deciding to conscript should therefore _build_ enumeration
 machinery well beyond what fiscal need would justify, which then becomes
 available for everything else the state does. In the other direction, mass
 service should raise `literacy` at a rate no other institution matches,
