@@ -21,7 +21,7 @@ absence:
     note: Chinese Buddhist and Daoist monastic education trains clergy through temple-based apprenticeship and internal ordination examination rather than a comparably standardized, cross-institutional credentialing network — religious education here stays organized around individual monastery lineages rather than a broader shared institutional system analogous to the madrasa network or European cathedral schools.
 prereqs: [REL-060]
 enables: [REL-140, NAT-050]
-see_also: [PHI-200, LAW-100, REL-070, REL-080]
+see_also: [PHI-200, LAW-100, REL-070, REL-080, MED-040]
 contested: false
 contested_note: ""
 stats_touched: []

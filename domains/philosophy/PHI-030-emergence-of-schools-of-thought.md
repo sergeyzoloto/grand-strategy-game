@@ -24,7 +24,7 @@ absence:
     note: The Ifa divination corpus of the Yoruba tradition transmits an extensive body of systematized ethical and cosmological knowledge through a fixed oral corpus interpreted by trained diviners (babalawo) rather than through competing argumentative schools disputing first principles — a comparably rigorous knowledge-transmission institution built on interpretive authority over a stable corpus instead of school rivalry and doctrinal innovation.
 prereqs: [PHI-010]
 enables: [PHI-040, PHI-080, PHI-060, PHI-130, PHI-110, PHI-070, PHI-090, PHI-170, PHI-120]
-see_also: [REL-060, PHI-190, PHI-180, PHI-050]
+see_also: [REL-060, PHI-190, PHI-180, PHI-050, MED-040]
 contested: false
 contested_note: ""
 stats_touched: [intellectual authority]

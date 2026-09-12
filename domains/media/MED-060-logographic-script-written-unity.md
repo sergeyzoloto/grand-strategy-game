@@ -34,7 +34,7 @@ absence:
     note: Maya writing is substantially logographic and served a readership that already shared closely related Mayan languages, so the property this entry turns on — legibility across mutual unintelligibility — had no occasion to be exercised and no political structure demanding it. A technology can possess a capability that its circumstances never call on, and reading that as a shortfall would mistake the absence of the problem for the absence of the solution.
 prereqs: [MED-010]
 enables: []
-see_also: [MED-020, MED-080, DIP-030, LAW-100, PHI-210, REL-070]
+see_also: [MED-020, MED-080, DIP-030, LAW-100, PHI-210, REL-070, MED-040]
 contested: false
 contested_note: ""
 stats_touched: [literacy training cost, intermediary dependence]
