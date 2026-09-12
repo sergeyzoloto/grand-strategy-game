@@ -21,7 +21,7 @@ absence:
     note: Sanctions targeting specific state programs (Iran's nuclear program being the paradigm later case) are calibrated to pressure a narrow policy objective rather than broad regime change, showing sanctions can be designed as a precise diplomatic lever aimed at one specific behavior change rather than as comprehensive economic warfare against a whole society.
 prereqs: [DIP-180]
 enables: []
-see_also: [COM-190, DIP-110]
+see_also: [COM-190, DIP-110, WAR-275]
 contested: true
 contested_note: "Whether comprehensive economic sanctions reliably achieve their stated diplomatic objectives, or primarily impose severe humanitarian cost on a target country's general population while its actual leadership remains insulated and sometimes even politically strengthened by the resulting siege dynamic, is a long-running and unresolved dispute in sanctions scholarship, with mixed historical evidence supporting both readings across different cases. Model sanctions effectiveness as depending heavily on design (comprehensive versus narrowly targeted, per the apartheid and Iran cases respectively) and on multilateral versus unilateral application, rather than assuming sanctions of any kind reliably produce their intended political outcome."
 stats_touched: []

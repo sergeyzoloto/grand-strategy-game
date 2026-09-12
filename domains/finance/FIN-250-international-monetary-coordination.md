@@ -18,7 +18,7 @@ absence:
     note: Gulf oil-exporting states, not yet major independent actors in international monetary diplomacy at Bretton Woods's founding, become significant influences on the international monetary system only later, once oil-price shocks and dollar-pegging decisions (FIN-270) give their reserve holdings genuine systemic weight — a case of a region's monetary influence arriving well after the system's own founding architecture was already fixed by others.
 prereqs: [FIN-050]
 enables: [FIN-270]
-see_also: []
+see_also: [WAR-275]
 contested: false
 contested_note: ""
 stats_touched: [price level]

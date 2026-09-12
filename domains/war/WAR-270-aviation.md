@@ -21,7 +21,7 @@ absence:
     note: No African state fields an independent military aviation doctrine or air force in this era — air power over African theatres in both World Wars is entirely a colonial-power asset, deployed by and answering to external commands rather than to any African polity, consistent with the broader industrial-base absence already noted in MAR-300's battleship entry.
 prereqs: [WAR-110, WAR-150, ENG-290]
 enables: [WAR-320, ENG-290]
-see_also: [MAR-350, WAR-310, WAR-315, ENG-275]
+see_also: [MAR-350, WAR-310, WAR-315, ENG-275, WAR-275]
 contested: true
 contested_note: "Strategic bombing's actual effectiveness at achieving its stated aims (breaking enemy industrial capacity and civilian morale sufficiently to shorten the war) versus its enormous cost in aircraft, aircrew, and civilian casualties is long debated, with postwar bombing-survey assessments themselves offering more mixed conclusions than wartime planners' expectations. Model strategic bombing's material-destruction effect and its morale/political effect as two separate, independently-measurable outcomes rather than assuming success on one implies success on the other — postwar assessment suggests the two didn't track each other especially closely."
 stats_touched: []

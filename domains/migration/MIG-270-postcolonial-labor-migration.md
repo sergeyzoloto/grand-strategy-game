@@ -21,7 +21,7 @@ absence:
     note: Labor migration out of former African colonies to former metropoles is comparatively smaller in this specific era than South Asian or Caribbean flows into Britain, with larger African labor-migration volumes of this period instead running intra-continentally (for example, to South African mines and Gulf states later) rather than toward Europe — postcolonial ties didn't produce a uniform migration channel everywhere they existed.
 prereqs: [MIG-230]
 enables: []
-see_also: [MIG-170, MIG-260, MIG-200]
+see_also: [MIG-170, MIG-260, MIG-200, WAR-275]
 contested: false
 contested_note: ""
 stats_touched: [migration cost, border friction]

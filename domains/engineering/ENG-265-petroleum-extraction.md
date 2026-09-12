@@ -33,7 +33,7 @@ absence:
   - region: africa
     note: Sub-Saharan Africa has no commercial production in this window at all, with the significant finds arriving only from the 1950s. The continent is therefore absent from the formative period in which the industry's corporate structures, concession terms, and property rules were all settled — so when African oil does arrive it arrives into arrangements designed elsewhere by parties with no African interest, which is a more durable disadvantage than the delay itself.
 prereqs: [ENG-280, MAR-100]
-enables: [ENG-275]
+enables: [ENG-275, WAR-275]
 see_also: [ENG-165, ENG-055, COM-230, ENG-300, ENG-290]
 contested: false
 contested_note: ""

@@ -21,7 +21,7 @@ absence:
     note: Imperial Japanese Army mechanization and combined-arms doctrine lags its own navy's parallel technological sophistication (see MAR-350), remaining comparatively infantry- and light-tank-centered relative to German or later American practice, a resource-allocation and doctrinal choice rather than an industrial incapacity, since Japan's industrial base could and did produce advanced technology elsewhere.
 prereqs: [WAR-150, ENG-325]
 enables: []
-see_also: [MAR-350, WAR-260, WAR-190, WAR-270]
+see_also: [MAR-350, WAR-260, WAR-190, WAR-270, WAR-275]
 contested: true
 contested_note: "Whether German interwar success in developing combined-arms armor doctrine reflects genuinely superior institutional learning and doctrine-development process, or simply that France and Britain's post-WWI institutional caution and defensive posture (informed by WAR-260's trauma) led them to underinvest in doctrine despite having comparable hardware, is debated among military historians. Model doctrinal sophistication and hardware capability as separate, independently-triggerable variables — a state can hold a hardware advantage and still lose a doctrinal race if its institutions are oriented toward defensive caution rather than offensive doctrine innovation."
 stats_touched: []
