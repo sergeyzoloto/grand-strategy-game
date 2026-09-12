@@ -24,7 +24,7 @@ absence:
     note: No comparable long-duration Jewish diaspora community of significant size develops in East Asia in this era, leaving the specific dynamic this entry tracks — a diaspora minority's legal status recurringly renegotiated by, and periodically weaponized by, the surrounding state — entirely a Middle Eastern/European/North African phenomenon rather than a universal diaspora outcome.
 prereqs: [MIG-070]
 enables: []
-see_also: []
+see_also: [MED-070]
 contested: true
 contested_note: "The '19th-century Jewish Question' framing (whether and how a persistent, legally-distinct diaspora minority could or should be integrated into an emerging system of nation-states built around presumed ethnic/national homogeneity) is itself a contested historical construct — read by some historians as the natural, if painful, friction of two genuinely incompatible social organizing principles meeting, and by others as a retrospective label that obscures how much of the era's antisemitism was opportunistic scapegoating rather than a coherent 'question' with any real answer being sought in good faith. Model the tension as a structural mismatch between diaspora-network social organization (MIG-070) and nation-state homogeneity assumptions that produces recurring legal precarity, without scripting emancipation, expulsion, or genocide as the model's inevitable resolution — let host-state institutional strength and economic conditions determine which way a specific instance branches."
 stats_touched: [diaspora reach]

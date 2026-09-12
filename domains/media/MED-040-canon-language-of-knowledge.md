@@ -36,7 +36,7 @@ absence:
   - region: central-asia-steppe
     note: Steppe polities adopted canon languages wholesale from settled neighbours — Sanskrit and Literary Chinese with Buddhism, Arabic and Persian with Islam — rather than fixing one of their own, because the mechanism requires a canon to freeze and an institution durable enough to keep insisting on it across centuries. A polity whose political structures reform every few generations produces no text old enough to have a language stranded around it.
 prereqs: [REL-070, MED-010]
-enables: []
+enables: [MED-070]
 see_also: [MED-020, MED-060, MED-080, LAW-100, REL-090, PHI-030, NAT-050, DIP-030]
 contested: false
 contested_note: ""
