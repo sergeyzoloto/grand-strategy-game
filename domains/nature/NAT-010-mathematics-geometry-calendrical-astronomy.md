@@ -23,7 +23,7 @@ absence:
   - region: east-asia
     note: Chinese mathematics (systematized in texts like the Nine Chapters) develops sophisticated algorithmic and computational methods for solving practical problems (area, volume, systems of equations) without pursuing the axiomatic-proof structure Greek geometry emphasizes — a results-and-procedure-oriented tradition rather than a demonstrably lesser one.
 prereqs: [AGR-050]
-enables: [NAT-040, NAT-120, NAT-070, MAR-050]
+enables: [NAT-040, NAT-120, NAT-070, MAR-050, NAT-014]
 see_also: [NAT-020]
 contested: false
 contested_note: ""

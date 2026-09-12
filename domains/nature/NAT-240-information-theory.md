@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [NAT-030, NAT-070]
 enables: []
-see_also: [NAT-060, ENG-330, NAT-180, NAT-220, NAT-210, ENG-230]
+see_also: [ENG-330, NAT-180, NAT-220, NAT-210, ENG-230, NAT-014, NAT-215]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -26,7 +26,7 @@ tags: [information-theory, shannon, entropy, channel-capacity]
 Quantifying information itself — treating a message's uncertainty as a
 mathematically measurable quantity and a communication channel's capacity
 to carry it as a hard limit that holds regardless of engineering
-cleverness — split out from NAT-060's algorithm-and-computability lineage
+cleverness — split out from the algorithm-and-computability lineage (NAT-014, NAT-215)
 as a mathematically distinct achievement in its own right.
 
 ## Timing
@@ -71,6 +71,6 @@ European in origin.
 
 A gate on how much information any channel can carry regardless of
 engineering cleverness — structurally the same shape as NAT-180's
-thermodynamic ceiling, and split out from NAT-060's algorithm-and-
-computability lineage as a mathematically distinct achievement resting
+thermodynamic ceiling, and split out from the algorithm-and-
+computability lineage (NAT-014, NAT-215) as a mathematically distinct achievement resting
 directly on probability theory (NAT-070) rather than on computability.

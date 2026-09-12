@@ -21,7 +21,7 @@ absence:
     note: Ottoman guild-based craft production faces comparatively slower and later mechanized-import competition than South Asian textiles in this period, its craft structures persisting longer partly due to more gradual market integration with industrializing Europe relative to India's much more direct colonial administrative and trade integration.
 prereqs: [COM-100]
 enables: []
-see_also: [COM-120, COM-190, COM-170]
+see_also: [COM-120, COM-190, COM-170, NAT-014]
 contested: true
 contested_note: "The magnitude and primary cause of Bengal's textile-craft decline is genuinely disputed among economic historians: the classic 'deindustrialization' thesis (British machine imports plus discriminatory tariff policy gutting a thriving indigenous industry) has been challenged by revisionist accounts pointing to population growth, shifting domestic demand, and data limitations in the surviving output estimates. Model the outcome (large-scale hand-loom livelihood loss) as real and not seriously disputed, but treat the causal weighting between external trade-policy shock and internal structural factors as a variable ratio rather than scripting the classic thesis as settled fact."
 stats_touched: [time discipline]

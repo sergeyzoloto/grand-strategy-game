@@ -11,3 +11,4 @@ domain folder itself once the file is deleted.
 | PHI-006 | The Axial Age | 2026-09-08 | `_meta/threads/axial-age.md` | Thread-page conversion |
 | WAR-024 | Feudal Land-Tenure Military Service | 2026-09-08 | LAW-005 | Merge — duplicate mechanism, cross-domain synthesis §4 Finding 1 |
 | HLT-033 | Actuarial Life Insurance and the Pricing of Mortality Risk | 2026-09-08 | FIN-022 | Merge — duplicate mechanism, cross-domain synthesis §4 Finding 2 |
+| NAT-060 | Computer Science and Computation Theory | 2026-09-12 | NAT-014, NAT-215 | Split — two distinct mechanisms (delegable procedure; provable limits of procedure) spanning 820-1936, with a date_start that dated the concept to al-Khwarizmi's naming rather than its emergence |

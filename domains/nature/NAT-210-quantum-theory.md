@@ -21,7 +21,7 @@ absence:
     note: East Asian contributions to quantum theory's foundational development in this era are minimal, with the region's major independent contributions to 20th-century physics concentrating instead in the subsequent generation once postwar institution-building (including Japan's own postwar physics community) had time to mature — a case of a later rather than absent contribution.
 prereqs: [NAT-180, NAT-070]
 enables: [ENG-330]
-see_also: [NAT-040, NAT-230, NAT-240]
+see_also: [NAT-040, NAT-230, NAT-240, NAT-215]
 contested: true
 contested_note: "The 'Copenhagen interpretation' (Bohr and Heisenberg's reading of quantum mechanics as describing genuine indeterminacy rather than merely incomplete knowledge) is not the only interpretation consistent with the mathematics, and rival interpretations (many-worlds, pilot-wave theory, among others) remain live, unresolved questions in the philosophy and foundations of physics rather than settled matters. Model the mathematical predictions of quantum mechanics as extremely well-confirmed and not in dispute, while treating the deeper interpretive question of what the mathematics actually implies about the nature of reality as a genuinely open, unresolved question distinct from the theory's predictive success."
 stats_touched: []
