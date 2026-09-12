@@ -10,7 +10,7 @@ status: drafted
 confidence: high
 date_start: 1882
 date_end: 1935
-date_precision: century
+date_precision: decade
 regions: [americas, europe, east-asia, south-asia]
 region_variants:
   - region: east-asia
@@ -21,10 +21,10 @@ absence:
     note: Rural electrification across most of colonial and early postcolonial India lags urban electrification by many decades, with the resulting urban-rural electricity access gap directly shaping which regions could adopt electricity-dependent agricultural and industrial technology and which couldn't, well into the 20th century.
 prereqs: [ENG-170, NAT-170, ENG-165]
 enables: [ENG-325, ENG-327]
-see_also: [ENG-230, ENG-315, ENG-295, ENG-055]
+see_also: [ENG-230, ENG-315, ENG-295, ENG-055, ENG-120]
 contested: true
 contested_note: "Whether the American 'War of the Currents' outcome (alternating current's eventual dominance over Edison's direct current, driven substantially by AC's superior long-distance transmission efficiency and Westinghouse and Tesla's commercial strategy) was primarily a sound engineering verdict or was also shaped significantly by patent strategy, public-perception campaigns, and business rivalry independent of the underlying technical merits, is debated among historians of technology. Model AC's technical transmission-efficiency advantage as real and load-bearing for the long-distance-grid outcome, while treating the specific pace and manner of DC's displacement as also shaped by commercial and reputational factors particular to that rivalry, not purely by engineering merit."
-stats_touched: []
+stats_touched: [energy budget, toxic burden]
 tags: [electrification, power-grid, alternating-current, rural-electrification]
 ---
 
@@ -53,6 +53,22 @@ remains a substantial fixed capital investment, meaning access rolls out
 wherever population density and expected revenue justify that investment
 first, leaving lower-density areas electrified last regardless of overall
 national wealth.
+
+What the plant burns is the part this entry had been silent on, and it
+matters because electricity is a carrier rather than a source — it moves
+energy and stores none of it, so every unit delivered is generated
+somewhere at that moment from something else. In this period that
+something is overwhelmingly coal (ENG-165), burned in a boiler driving a
+steam engine or turbine (ENG-170), with hydro at favourable sites as the
+significant exception. Two consequences follow. The grid **relocates the
+combustion rather than eliminating it**, taking smoke out of the
+consumer's building and concentrating it at the plant, which is a real
+improvement in urban air at the point of use and a transfer of
+`toxic burden` rather than a reduction of it. And a national grid makes
+an entire economy's power supply contingent on a single fuel's delivery,
+so a coal strike or a rail interruption now darkens cities rather than
+merely raising the price of heat — a concentration of dependency that
+distributed local generation did not have.
 
 ## Social consequence
 

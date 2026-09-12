@@ -4,24 +4,36 @@ former_ids: [ENG-009]
 title: The Steam Engine
 legacy_ref:
 domain: engineering
-domains_touched: [nature, commerce]
+domains_touched: [nature, commerce, health]
 tier: core
 status: drafted
 confidence: high
 date_start: 1712
 date_end: 1830
-date_precision: century
-regions: [europe]
-region_variants: []
+date_precision: decade
+regions: [europe, americas, east-asia, south-asia]
+region_variants:
+  - region: europe
+    date_start: 1712
+    note: Origin and only site of independent invention. The narrowness is not an artefact of the record — it reflects that the engine answers a specific local problem, draining deep coal pits in a country whose coal was already being worked deep because it lay beside its market, and the conjunction of that problem with the fuel to solve it existed nowhere else at the time.
+  - region: americas
+    date_start: 1807
+    note: Adoption is fastest on the rivers rather than in the mines, because the Mississippi and Ohio systems offered a transport problem the engine solved better than anything else available — upstream travel against a strong current. A technology invented for drainage is adopted here for propulsion, which is why American engine practice diverged early toward high-pressure designs that British engineers considered reckless.
+  - region: south-asia
+    date_start: 1817
+    note: Arrives as imported capital equipment for colonial railways, river steamers, and mills rather than through domestic development, so the engine appears without the coal-drainage problem that produced it and without the machine-tool base that sustained it. A technology can be present and working while the industrial system that generated it is entirely absent, which is a different condition from adoption.
+  - region: east-asia
+    date_start: 1853
+    note: Japan moves from first exposure to domestic construction inside a generation as part of a deliberate state programme, the fastest genuine absorption of the technology outside its origin — and it did so while its own coal was modest and poor-quality, so the engine arrived ahead of a fuel supply adequate to it rather than behind one.
 absence:
   - region: east-asia
     note: Comparable steam-power development does not occur independently in East Asia despite otherwise sophisticated mechanical and metallurgical traditions in this era, and the technology arrives only through direct Western technical transfer during the following century's industrial-modernization efforts — a genuinely Europe-originated technology rather than one with an independent regional counterpart to compare against.
 prereqs: [NAT-040, ENG-165]
 enables: [COM-170, COM-200, ENG-190, ENG-250, ENG-300, ENG-220, MAR-260]
-see_also: [NAT-180, ENG-055]
+see_also: [NAT-180, ENG-055, ENG-120, ENG-210]
 contested: false
 contested_note: ""
-stats_touched: []
+stats_touched: [energy budget, extraction depth cost]
 tags: [steam-engine, watt-engine, newcomen-engine, mechanical-power]
 ---
 
@@ -40,7 +52,9 @@ factory and eventually transport application through the 1820s-1830s.
 
 ## Mechanism
 
-A steam engine converts the chemical energy in fuel (initially coal) into
+A steam engine converts the chemical energy in fuel — coal, and the
+relationship is not incidental but the reason the machine exists
+(ENG-165) — into
 mechanical motion via heat and pressure, providing continuous rotational or
 reciprocating power that doesn't depend on a specific geographic feature
 (a river's flow) the way a water wheel does — this location-independence is
