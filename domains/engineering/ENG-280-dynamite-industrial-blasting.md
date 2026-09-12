@@ -21,7 +21,7 @@ absence:
     note: Industrial blasting adoption in East Asian infrastructure projects of the same era arrives predominantly through direct purchase and licensed manufacture of Western dynamite technology rather than independent development, consistent with the broader chemical and industrial technology-adoption pattern already noted for gunpowder's later manufacturing refinements (ENG-140) and steam power (ENG-170).
 prereqs: [ENG-140]
 enables: [COM-130]
-see_also: [COM-200]
+see_also: [COM-200, ENG-165]
 contested: false
 contested_note: ""
 stats_touched: []
