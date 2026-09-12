@@ -17,7 +17,7 @@ absence:
   - region: middle-east
     note: Islamic and earlier Chinese alchemical traditions accumulate substantial practical chemical knowledge — the saltpeter purification and mixture refinement underlying gunpowder's manufacturing lineage (ENG-140) chief among it — without ever formally abandoning transmutation-oriented alchemical theory for a systematic elemental framework, a case where extensive working knowledge precedes and outlasts theoretical reformulation by centuries.
 prereqs: [NAT-090]
-enables: [NAT-200]
+enables: [NAT-200, ENG-275]
 see_also: [ENG-140]
 contested: false
 contested_note: ""
