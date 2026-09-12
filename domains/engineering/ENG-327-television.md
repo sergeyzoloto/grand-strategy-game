@@ -37,7 +37,7 @@ absence:
     note: The sharpest inversion in the chain. Oceania is the region radio served best, because a signal crossing open water costs nothing extra while cable cost everything. Television serves it worst, because the cost has moved from transmission to production and a population of a few tens of thousands cannot amortise an hour of programming at any price. The constraint has migrated from the medium to the content, and small dispersed populations lose under the new arrangement exactly as they had gained under the old.
 prereqs: [ENG-325, ENG-300]
 enables: []
-see_also: [ENG-230, PHI-410, HLT-340, COM-170, LAW-225, ENG-330, WAR-280]
+see_also: [ENG-230, PHI-410, HLT-340, COM-170, LAW-225, ENG-330, WAR-280, ENG-340]
 contested: true
 contested_note: "Television's effect on political selection is asserted far more confidently than the evidence supports. The standard claim that Kennedy-Nixon shows radio listeners favouring Nixon while television viewers favoured Kennedy rests on a single small survey with known sampling problems and has been repeatedly challenged, so it should be treated as an illustration of a mechanism rather than as evidence for it. The broader claim that television systematically favours a different kind of leader is plausible on the register argument and genuinely hard to test, since the medium's arrival coincides everywhere with other changes in political recruitment. Model the register shift as changing which existing attributes are legible to voters rather than as changing who wins, and keep the magnitude low and uncertain — the strong version is a just-so story that happens to be widely believed."
 stats_touched: [broadcast reach, information sovereignty, intermediary dependence, time discipline, production cost floor]

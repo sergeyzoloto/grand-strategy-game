@@ -20,7 +20,7 @@ absence:
   - region: europe
     note: European semiconductor manufacturing, despite strong early research contributions, does not develop comparable leading-edge fabrication capacity or global market share to the American origin point or the later East Asian manufacturing centers, becoming more reliant on imported chips for its electronics industry than either of the other two regions.
 prereqs: [ENG-190, NAT-210]
-enables: []
+enables: [ENG-340]
 see_also: [NAT-240, WAR-315, ENG-327]
 contested: false
 contested_note: ""

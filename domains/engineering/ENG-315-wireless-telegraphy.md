@@ -30,7 +30,7 @@ absence:
   - region: south-asia
     note: British India had one of the world's densest telegraph networks already, which is precisely why wireless arrives late and thinly. Where the wire is in place and working, the marginal value of a wireless link is small — the technology gets adopted first by the places the cable never reached, so the strength of a region's existing telegraph infrastructure predicts slow rather than fast wireless adoption, an inversion worth modelling directly.
 prereqs: [NAT-170, ENG-230]
-enables: [ENG-325, WAR-315, LAW-225]
+enables: [ENG-325, WAR-315, LAW-225, MAR-335]
 see_also: [ENG-085, MAR-330, MAR-320, MAR-340, ENG-300, DIP-180, ENG-295]
 contested: false
 contested_note: ""

@@ -17,7 +17,7 @@ absence:
   - region: americas
     note: American physics in this era plays essentially no role in relativity's original theoretical development, only becoming central to the field later once European physicists (including Einstein himself, from 1933) relocate to American institutions amid the political upheaval of the following decades — a case where scientific leadership migrates institutionally rather than developing independently in a new location.
 prereqs: [NAT-040, NAT-170]
-enables: []
+enables: [ENG-340]
 see_also: [NAT-230, NAT-240]
 contested: false
 contested_note: ""

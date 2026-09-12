@@ -24,7 +24,7 @@ absence:
     note: Indian Ocean coastal communities engage in fishing at a subsistence and local-market scale throughout this period without developing an export-oriented industrial fishery or whaling industry comparable to the Basque, Yankee, or Japanese cases, plausibly reflecting the monsoon trade system's (MAR-020) greater relative profitability for the same coastal labor and capital.
 prereqs: [MAR-010]
 enables: []
-see_also: [MAR-020, MAR-160]
+see_also: [MAR-020, MAR-160, ENG-340]
 contested: false
 contested_note: ""
 stats_touched: [fishery stock]
