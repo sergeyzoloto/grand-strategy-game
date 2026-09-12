@@ -21,7 +21,7 @@ absence:
     note: Buddhist and Daoist temple administration in China operates under sustained state oversight and licensing (monk registration, temple recognition) rather than through an independent ecclesiastical hierarchy issuing binding doctrine from its own administrative centers — religious governance here is a function delegated by and answerable to the state rather than an autonomous parallel authority structure.
 prereqs: [ENG-110]
 enables: [REL-170, REL-210]
-see_also: []
+see_also: [ENG-325]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]

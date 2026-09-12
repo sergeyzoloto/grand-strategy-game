@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Imperial Japanese Army mechanization and combined-arms doctrine lags its own navy's parallel technological sophistication (see MAR-350), remaining comparatively infantry- and light-tank-centered relative to German or later American practice, a resource-allocation and doctrinal choice rather than an industrial incapacity, since Japan's industrial base could and did produce advanced technology elsewhere.
-prereqs: [WAR-150]
+prereqs: [WAR-150, ENG-325]
 enables: []
 see_also: [MAR-350, WAR-260, WAR-190, WAR-270]
 contested: true

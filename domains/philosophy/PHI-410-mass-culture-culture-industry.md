@@ -17,7 +17,7 @@ region_variants:
     date_start: 1941
     note: The Frankfurt School's key theorists (Adorno and Horkheimer prominent among them) develop and publish the culture-industry critique substantially in American exile after fleeing Nazi Germany, meaning the argument's most influential formulation is produced through direct, disenchanted firsthand observation of American commercial mass media specifically, not as detached European theorizing about a phenomenon observed from a distance.
 absence: []
-prereqs: [PHI-350]
+prereqs: [PHI-350, ENG-325]
 enables: []
 see_also: [HLT-340]
 contested: true
