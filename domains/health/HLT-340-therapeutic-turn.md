@@ -21,7 +21,7 @@ absence:
     note: Mass therapeutic culture in the American/European sense (individual talk therapy as a default, widely-marketed response to everyday distress) remains far less institutionalized across most of the continent through this period, with community, religious, and family-based frameworks continuing to carry the load that therapy culture takes on elsewhere — not an absence of care for distress, but a different institutional channel for it.
 prereqs: [HLT-320]
 enables: []
-see_also: [PHI-300, PHI-410]
+see_also: [PHI-300, PHI-410, ENG-327]
 contested: false
 contested_note: ""
 stats_touched: [privacy]

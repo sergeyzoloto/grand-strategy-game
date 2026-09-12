@@ -24,7 +24,7 @@ absence:
     note: Large-scale mechanized factory production develops later in colonial India than in Britain, constrained partly by colonial trade and tariff policy actively favoring imports of British-manufactured goods (COM-190, COM-180) over the development of competing Indian industrial capacity — a case where the factory model's slow local emergence reflects imposed trade policy as much as any technological or capital gap.
 prereqs: [COM-100, ENG-170]
 enables: [COM-220]
-see_also: [ENG-290, NAT-180, COM-190, COM-180, COM-120, COM-060, AGR-240]
+see_also: [ENG-290, NAT-180, COM-190, COM-180, COM-120, COM-060, AGR-240, ENG-327]
 contested: false
 contested_note: ""
 stats_touched: [time discipline]

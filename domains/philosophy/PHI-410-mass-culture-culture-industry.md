@@ -19,7 +19,7 @@ region_variants:
 absence: []
 prereqs: [PHI-350, ENG-325]
 enables: []
-see_also: [HLT-340]
+see_also: [HLT-340, ENG-327]
 contested: true
 contested_note: "Walter Benjamin, closely associated with the same Frankfurt School milieu, takes a substantially more ambivalent and at points hopeful position in 'The Work of Art in the Age of Mechanical Reproduction': stripping art of its traditional ritual 'aura' through mass reproduction could, he argues, be democratizing and politically emancipatory rather than simply pacifying, a position in real, documented tension with Adorno's and Horkheimer's more thoroughly pessimistic culture-industry thesis. Model mass-produced culture's effect as genuinely contested between standardizing/pacifying and democratizing/access-expanding readings, rather than resolving the internal Frankfurt-School-adjacent disagreement in either direction."
 stats_touched: []
