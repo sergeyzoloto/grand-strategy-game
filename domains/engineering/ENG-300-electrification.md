@@ -21,7 +21,7 @@ absence:
     note: Rural electrification across most of colonial and early postcolonial India lags urban electrification by many decades, with the resulting urban-rural electricity access gap directly shaping which regions could adopt electricity-dependent agricultural and industrial technology and which couldn't, well into the 20th century.
 prereqs: [ENG-170, NAT-170, ENG-165]
 enables: [ENG-325, ENG-327]
-see_also: [ENG-230, ENG-315, ENG-295, ENG-055, ENG-120]
+see_also: [ENG-230, ENG-315, ENG-295, ENG-055, ENG-120, ENG-265]
 contested: true
 contested_note: "Whether the American 'War of the Currents' outcome (alternating current's eventual dominance over Edison's direct current, driven substantially by AC's superior long-distance transmission efficiency and Westinghouse and Tesla's commercial strategy) was primarily a sound engineering verdict or was also shaped significantly by patent strategy, public-perception campaigns, and business rivalry independent of the underlying technical merits, is debated among historians of technology. Model AC's technical transmission-efficiency advantage as real and load-bearing for the long-distance-grid outcome, while treating the specific pace and manner of DC's displacement as also shaped by commercial and reputational factors particular to that rivalry, not purely by engineering merit."
 stats_touched: [energy budget, toxic burden]
