@@ -41,7 +41,7 @@ absence:
     note: No polity spans a distance over which a chain of fixed relay stations would repay its standing cost, and the intervening surface is water that cannot be posted at intervals in any case. Long-range information moves by voyaging — fast for its era but episodic, tied to a vessel's own journey rather than purchasable on demand, which is precisely the distinction this entry turns on.
 prereqs: [ENG-090, MIG-050, MED-020]
 enables: [MED-100]
-see_also: [DIP-010, DIP-030, DIP-080, WAR-090, WAR-110, COM-080, MED-080, MED-120, MED-130, WAR-315, MED-110, ENG-340]
+see_also: [DIP-010, DIP-030, DIP-080, WAR-090, WAR-110, COM-080, MED-080, MED-120, MED-130, WAR-315, MED-110, ENG-340, MED-090]
 contested: false
 contested_note: ""
 stats_touched: [information speed, legibility]

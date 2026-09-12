@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-250]
 enables: []
-see_also: [PHI-270]
+see_also: [PHI-270, MED-090]
 contested: false
 contested_note: ""
 stats_touched: []

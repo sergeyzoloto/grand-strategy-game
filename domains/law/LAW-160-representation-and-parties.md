@@ -21,7 +21,7 @@ absence:
     note: The Ottoman Empire's short-lived First Constitutional Era (from 1876) introduces an elected parliament without a durable organized party system taking root before the parliament's suspension a few years later — a case of representative institutional form introduced without the sustained competitive-party practice needed to make it function as intended.
 prereqs: [LAW-140]
 enables: [LAW-180]
-see_also: []
+see_also: [MED-090]
 contested: false
 contested_note: ""
 stats_touched: []

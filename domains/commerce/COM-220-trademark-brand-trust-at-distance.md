@@ -24,7 +24,7 @@ absence:
     note: Indigenous producers under colonial administration in this era have markedly less effective access to trademark protection and brand-building capital than metropolitan producers selling into the same colonial markets, even where formally similar law exists on paper — an asymmetry in who can actually use the mechanism, not in whether the legal mechanism itself was available.
 prereqs: [COM-170]
 enables: []
-see_also: [COM-010, MED-100, LAW-225, MED-110, LAW-215]
+see_also: [COM-010, MED-100, LAW-225, MED-110, LAW-215, MED-090]
 contested: false
 contested_note: ""
 stats_touched: [market trust radius]
