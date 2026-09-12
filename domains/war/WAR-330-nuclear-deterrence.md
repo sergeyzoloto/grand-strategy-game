@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: africa
     note: South Africa developed and then voluntarily dismantled a small nuclear arsenal (disclosed in 1993) before the end of apartheid rule, the only case in this record of a state actually giving up an existing weapons capability entirely rather than either maintaining or never acquiring one — a reminder that this entry's core mechanic (mutual deterrence) requires an opponent worth deterring, which South Africa's post-apartheid transition context no longer clearly provided.
-prereqs: [WAR-150]
+prereqs: [WAR-150, WAR-315]
 enables: [WAR-340]
 see_also: [WAR-300, WAR-280]
 contested: true
