@@ -24,11 +24,11 @@ absence:
     note: Andean and Mesoamerican metallurgy develops real sophistication in gold, silver, and copper working for ornamental, ritual, and status objects, but never develops iron smelting or bronze-for-tools production at anything like Old World functional scale — a metallurgical tradition oriented toward display and ritual value rather than toward tools and weapons, not a lesser achievement but a differently-directed one.
 prereqs: []
 enables: [COM-020, WAR-040, AGR-160]
-see_also: []
+see_also: [COM-050, COM-080, MIG-040]
 contested: true
 contested_note: "Whether bronze metallurgy originated at a single Near Eastern point and diffused outward, or arose independently at multiple centers, is a live archaeological dispute — Southeast Asian sites (Ban Chiang in Thailand prominently) carry their own independent-origin claims that some archaeometallurgists accept and others read as diffusion with strong local adaptation. Model regional smelting traditions as independently-triggerable given the right ore access and fuel supply, rather than requiring a single-origin diffusion chain to explain every regional case."
-stats_touched: []
-tags: [smelting, metallurgy, bronze-age, piece-mold-casting, bloomery]
+stats_touched: [strategic input dependency]
+tags: [smelting, metallurgy, bronze-age, piece-mold-casting, bloomery, tin, cassiterite]
 ---
 
 Converting raw ore into usable metal through controlled high-temperature
@@ -58,6 +58,32 @@ than bronze-making requires, which is why iron smelting matures later
 than copper and bronze working almost everywhere it's independently
 developed, regardless of how early iron ore itself was available.
 
+Bronze carries a constraint iron does not, and it is geographic rather
+than technical. Copper ore is widespread and most regions working metal
+at all have some. **Tin is not** — workable cassiterite occurs in very
+few places, and the major Bronze Age sources (Cornwall, Iberia, the
+Erzgebirge, and Central Asian deposits around the Zeravshan) sit
+thousands of kilometres from the Near Eastern and Mediterranean centres
+that consumed the most bronze. The alloy therefore cannot be made from
+any single territory's own ground. **A bronze-using power cannot arm
+itself from its own resources**, and the tin must arrive over a long
+land or sea route through intermediaries who are frequently outside its
+control and often outside its knowledge — Near Eastern texts record the
+metal arriving without recording where it was dug.
+
+That is a different class of dependency from ordinary trade in
+desirable goods. Bronze is the weapon and tool metal, so the import is
+militarily essential rather than merely valuable, and an interruption
+degrades a polity's fighting capability on a timescale set by how fast
+its existing stock wears out. The arrangement makes long-distance
+exchange a strategic necessity for every major bronze-age power rather
+than a commercial option, which is why the metal trade and the
+diplomatic apparatus around it develop together. Iron relaxes the
+constraint sharply and this is a large part of its significance — iron
+ore is common almost everywhere, so the move to iron converts a
+militarily critical import into a domestic product and removes the
+dependency along with it.
+
 ## Social consequence
 
 Sustained smelting requires a fuel supply chain (charcoal production
@@ -77,7 +103,10 @@ lost-wax casting, producing elaborately-decorated ritual bronzes by an
 independent route. Sub-Saharan African ironworking's direct jump from
 stone tools to iron, skipping a Old-World-scale bronze age entirely, is
 driven by regional ore geography (poor local copper/tin access, richer
-iron ore access) rather than by any developmental lag. Andean and
+iron ore access) rather than by any developmental lag — and read against
+the tin constraint above, that sequence looks less like a skipped stage
+than like a region whose ore geography let it go straight to the metal
+that needed no imports. Andean and
 Mesoamerican metallurgy's sustained focus on precious-metal ornamental
 and ritual working, without comparable iron or tool-bronze production,
 shows metalworking skill and its application toward tools versus display

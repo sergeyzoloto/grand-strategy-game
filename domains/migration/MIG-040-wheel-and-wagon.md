@@ -21,7 +21,7 @@ absence:
     note: No draft animal suitable for wagon traction existed in the pre-contact Americas (see MIG-050's absence note on horses; llamas are pack animals, not practical draft-wagon animals at comparable scale), so wheeled-wagon migration logistics simply never becomes available there independent of any lack of wheel knowledge itself — the Americas did have the wheel, on toys, but never the draft-animal precondition to make it a transport technology.
 prereqs: []
 enables: [MIG-110]
-see_also: [MIG-030, COM-200, MIG-130]
+see_also: [MIG-030, COM-200, MIG-130, ENG-010]
 contested: false
 contested_note: ""
 stats_touched: [migration range]

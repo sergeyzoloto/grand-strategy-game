@@ -24,7 +24,7 @@ absence:
     note: Europe sits at the extreme receiving end of the network for nearly its entire operational history, participating as a consumer market rather than as a node any Silk Road caravan itself passed through — the popular framing of the Silk Road as fundamentally connecting East and West understates how peripheral direct European involvement in the actual logistics was until the maritime routes (MAR-160) bypass the overland system entirely.
 prereqs: [MIG-040, COM-050]
 enables: [COM-070]
-see_also: [MAR-020, MAR-160, COM-130, ENG-085]
+see_also: [MAR-020, MAR-160, COM-130, ENG-085, ENG-010]
 contested: true
 contested_note: "How much the Silk Road functioned as a single continuous logistics system with goods and people traveling its full length, versus a chain of shorter regional relay trades where goods changed hands (and merchants) many times without any single trader crossing the whole distance, is debated among historians of the route. Model it as a relay-based network by default (goods and price information propagating hop by hop through many intermediary merchant communities), with only specific well-documented periods and route segments (the Mongol Pax Mongolica era especially) supporting genuinely long-distance individual through-travel."
 stats_touched: [route knowledge]
