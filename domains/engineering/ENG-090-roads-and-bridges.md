@@ -23,7 +23,7 @@ absence:
   - region: east-asia
     note: Chinese imperial road networks exist and matter but receive comparatively less engineering and documentary emphasis than the contemporary and even earlier canal and river transport system (MAR-090), reflecting a transport strategy that prioritizes water-borne bulk movement over long-distance road construction wherever navigable waterways are available.
 prereqs: [ENG-060]
-enables: [REL-160, DIP-050]
+enables: [REL-160, DIP-050, ENG-085]
 see_also: [ENG-270, ENG-200, MAR-020, MAR-090]
 contested: false
 contested_note: ""

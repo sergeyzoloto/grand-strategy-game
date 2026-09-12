@@ -14,7 +14,7 @@ date_precision: year
 regions: [europe]
 region_variants: []
 absence: []
-prereqs: [DIP-130]
+prereqs: [DIP-130, ENG-230]
 enables: [DIP-180]
 see_also: []
 contested: false

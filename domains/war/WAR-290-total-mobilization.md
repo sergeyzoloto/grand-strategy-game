@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Japan's total mobilization effort, while extensive, operates from a substantially smaller industrial and raw-material base than the United States and increasingly cannot sustain the same conversion ratio as the war progresses and Allied sea-lane interdiction (MAR-220, MAR-320) cuts off critical imports — mobilization doctrine alone cannot manufacture resources a state's territory and trade access don't provide.
-prereqs: [WAR-200]
+prereqs: [WAR-200, ENG-230]
 enables: []
 see_also: [MAR-220, MAR-320]
 contested: false

@@ -24,7 +24,7 @@ absence:
     note: Comparable formalized, named envoy-inviolability norms are less clearly documented across pre-contact Mesoamerican and Andean inter-polity relations than in the Old World cases — a genuine evidentiary gap rather than a documented absence, since the underlying diplomatic contact these norms would need to protect (tribute negotiation, DIP-040) clearly occurred.
 prereqs: []
 enables: [DIP-040, DIP-020, DIP-060, DIP-080]
-see_also: []
+see_also: [ENG-085]
 contested: true
 contested_note: "How uniformly envoy immunity was actually honored versus violated in practice, across the many traditions that formally professed it, is a real historical question rather than a settled fact — the killing of an envoy recurs precisely because it is a recognized, deliberately provocative escalation whose shock value depends on the norm being real and widely shared, not because the norm was merely nominal. Model envoy immunity as a strong default norm whose violation is itself a modelable, escalatory act with real diplomatic and military consequence, rather than either an absolute rule with no exceptions or a norm too weak to carry any real weight."
 stats_touched: []

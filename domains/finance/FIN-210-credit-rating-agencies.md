@@ -16,7 +16,7 @@ region_variants: []
 absence:
   - region: east-asia
     note: Domestic Japanese and Chinese credit-rating institutions in this era carry less international market weight than the major American agencies, with cross-border bond issuance from the region frequently seeking a rating from an established Western agency specifically to access international investors who trust that agency's own established track record — a legibility gap not fully closed simply by a domestic rating institution existing.
-prereqs: [FIN-110]
+prereqs: [FIN-110, ENG-230]
 enables: []
 see_also: [FIN-130]
 contested: false

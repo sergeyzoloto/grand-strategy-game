@@ -21,7 +21,7 @@ absence:
     note: Clippers are rendered commercially obsolete within a few decades by steamships and, specifically, the Suez Canal (1869) — a canal route steamships can use reliably but which offers little advantage to a sailing ship dependent on open-ocean wind patterns the canal's approach doesn't favor — showing a narrow sailing-ship speed advantage can be erased by a single infrastructure change that reshapes the relevant route geometry rather than by any gradual technology catch-up.
 prereqs: [MAR-020, ENG-170]
 enables: []
-see_also: [MIG-190]
+see_also: [MIG-190, ENG-230]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -20,7 +20,7 @@ absence:
   - region: americas
     note: No horse existed in the Americas after Pleistocene extinction until European reintroduction in the 16th century — Plains Indigenous horse cultures are consequently a post-1500 phenomenon built almost overnight on an imported animal, not a slow indigenous domestication process, a genuinely different origin story from every Old World mounted-mobility case.
 prereqs: []
-enables: [MIG-120, MIG-110, COM-050, MIG-130]
+enables: [MIG-120, MIG-110, COM-050, MIG-130, ENG-085]
 see_also: [WAR-080, MIG-080, MIG-030, WAR-110, WAR-010]
 contested: true
 contested_note: "The date and location of initial horse domestication (Pontic-Caspian steppe, ~-3500) versus the later date at which horses were reliably rideable at scale for sustained travel and warfare (plausibly a thousand-plus years later, given bit-wear and tack evidence) is disputed, since domestication for meat/milk and domestication for riding are separable events that may not have happened together. Model these as two separate unlocks — horse domestication (a food/dairy tech, AGR-adjacent) and horse riding at range (a mobility tech, MIG-owned) — rather than one combined event, letting a region acquire one without immediately acquiring the other."

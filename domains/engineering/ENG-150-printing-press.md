@@ -21,7 +21,7 @@ absence:
     note: Widespread mechanical adoption of movable-type printing for Arabic-script material lags for centuries, held back significantly by calligraphic and religious objections to mechanically reproducing sacred text (see HLT-190) rather than by any lack of access to the mechanical press technology itself, which was known and available.
 prereqs: [ENG-100]
 enables: [HLT-190, REL-230]
-see_also: []
+see_also: [ENG-085]
 contested: false
 contested_note: ""
 stats_touched: []
