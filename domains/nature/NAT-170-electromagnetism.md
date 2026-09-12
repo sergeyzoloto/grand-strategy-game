@@ -9,7 +9,7 @@ tier: core
 status: drafted
 confidence: high
 date_start: 1820
-date_end: 1873
+date_end: 1888
 date_precision: century
 regions: [europe]
 region_variants: []
@@ -22,7 +22,7 @@ see_also: [NAT-180]
 contested: false
 contested_note: ""
 stats_touched: []
-tags: [electromagnetism, maxwell, faraday, telegraph-theory]
+tags: [electromagnetism, maxwell, faraday, hertz, telegraph-theory]
 ---
 
 The theory explaining electricity and magnetism as a single unified
@@ -36,7 +36,10 @@ Oersted's discovery that electric current produces a magnetic field (1820)
 opens the field; Faraday's experimental work on electromagnetic induction
 (1830s) provides the key practical mechanism; Maxwell's equations (1861-
 1865, published in final form by 1873) unify electricity, magnetism, and
-light into one mathematical theory.
+light into one mathematical theory. Hertz then generates and detects
+electromagnetic waves in the laboratory between 1886 and 1888, closing the
+theory by demonstrating the one prediction that had no prior observational
+support.
 
 ## Mechanism
 
@@ -46,8 +49,13 @@ are two aspects of one underlying electromagnetic field, and further
 predict that oscillating electromagnetic fields propagate as waves at the
 speed of light — identifying light itself as an electromagnetic phenomenon
 and, as a direct consequence, implying that electromagnetic waves could
-carry information or energy across distance without a physical wire, a
-prediction later confirmed and exploited by radio technology.
+carry information or energy across distance without a physical wire. Hertz's
+apparatus confirms exactly that in 1887 by producing waves at one end of a
+laboratory and detecting them at the other, converting the wire-free
+transmission of information from a mathematical consequence into a
+demonstrated physical fact — and it is worth noting that Hertz regarded the
+result as having no practical use whatever, which is how a decade passes
+between the demonstration and ENG-315's commercial exploitation of it.
 
 ## Social consequence
 
