@@ -24,7 +24,7 @@ absence:
     note: No comparably datable pre-Confucian wisdom-maxim corpus survives from this era in China at the scale of the Egyptian or Mesopotamian material — the earliest strata of what becomes the Chinese classical canon (portions of the Book of Documents, Book of Songs) are themselves closer in character to court record and ritual hymn than to a maxim-and-instruction genre, meaning PHI-030's Hundred Schools era has a comparatively thinner pre-competitive layer to displace than the Egyptian, Mesopotamian, or Vedic cases do.
 prereqs: []
 enables: [PHI-030]
-see_also: [PHI-040]
+see_also: [PHI-040, MED-010]
 contested: true
 contested_note: "How much genuine continuity exists between named wisdom-literature maxims and later systematized ethics — Egyptian Ma'at's concern with cosmic and social right-order, in particular, has sometimes been argued as a distant ancestor of later natural-law-adjacent reasoning (PHI-160) — is disputed, and the specific transmission pathway (if any) from Egyptian or Mesopotamian material into Greek or Levantine thought remains a live, unresolved question in ancient intellectual history rather than an established fact. Model any specific claimed influence line as a separate, weaker, contested sub-claim, not as an established transmission the corpus itself proves."
 stats_touched: []

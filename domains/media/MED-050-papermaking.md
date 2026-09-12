@@ -22,7 +22,7 @@ region_variants:
 absence:
   - region: africa
     note: No independent sub-Saharan African papermaking tradition develops; Ethiopian scribal culture instead sustains an extensive parchment-based manuscript tradition, and West African Islamic scholarly centers like Timbuktu rely on paper imported via the trans-Saharan trade routes (see the caravan trade, `COM-050`) rather than on local production — a real absence of the manufacturing technique specifically, not of a written scholarly culture to use it.
-prereqs: []
+prereqs: [MED-010]
 enables: [MED-080]
 see_also: [COM-050]
 contested: true

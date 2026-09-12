@@ -24,7 +24,7 @@ absence:
     note: The unusually early and rapid shift to written codification in Mesopotamia (Ur-Nammu's code by roughly -2100, predating Hammurabi by centuries) reflects the region's already-mature scribal and administrative infrastructure rather than a universal timeline every society follows at the same pace — writing was available to convert custom into text there centuries before comparable administrative infrastructure existed elsewhere.
 prereqs: []
 enables: [LAW-020]
-see_also: []
+see_also: [MED-010]
 contested: true
 contested_note: "How much continuity exists between specific customary practices attested only indirectly through later written sources (since custom itself typically leaves no direct record) and the actual content of the earliest written codes — whether codification mostly recorded pre-existing custom faithfully, or reshaped and invented tradition under the codifier's own political interest — is genuinely debated by legal historians given the evidentiary gap. Model early written codes as a mix of recorded custom and codifier-driven innovation in an uncertain, source-dependent ratio, rather than assuming either pure continuity or pure invention."
 stats_touched: []
