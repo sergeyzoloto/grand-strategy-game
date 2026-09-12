@@ -34,7 +34,7 @@ absence:
     note: Likewise fully covered and wholly dependent, with the additional exposure that the region's economies rest disproportionately on activities positioning has become load-bearing for — long-haul aviation, shipping, and fisheries enforcement across enormous exclusive economic zones that cannot be patrolled without it. Full signal availability coexists with maximal vulnerability to its withdrawal.
 prereqs: [MAR-335, ENG-330, NAT-220]
 enables: []
-see_also: [MAR-370, LAW-225, WAR-315, MED-140, MAR-100, MED-030]
+see_also: [MAR-370, LAW-225, WAR-315, MED-140, MAR-100, MED-030, MED-150]
 contested: true
 contested_note: "Two distinct disputes. The widely-repeated account that the United States denied or degraded precision positioning to India during the 1999 Kargil conflict, prompting NavIC, appears in Indian official and semi-official statements and is not independently corroborated; treat it as a motivating narrative whose truth is uncertain but whose effect on procurement is real, which is the useful modelling posture either way. Separately, estimates of the economic cost of a prolonged positioning outage vary by more than an order of magnitude between studies, because they disagree about how quickly substitutes and fallback practice could be restored in sectors whose prior competence has decayed. Model outage cost as a wide band that widens with the number of years since the dependency was established, rather than as a point estimate."
 stats_touched: [route knowledge, legibility, information speed]
