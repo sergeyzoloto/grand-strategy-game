@@ -31,7 +31,7 @@ absence:
   - region: africa
     note: Sub-Saharan traditions counted with real sophistication, including large vigesimal verbal systems, but developed no written positional notation before contact with Arabic numerals. Without a written notation a calculation exists only while someone is performing it, so it cannot be checked afterwards by a third party, stored, or handed on as a worked result. What that forecloses is calculation at administrative and calendrical scale, where results must outlast the person who produced them.
 prereqs: [AGR-050, MED-010]
-enables: [MTH-020, MTH-040, NAT-040, ENG-215, NAT-015, MTH-025]
+enables: [MTH-020, MTH-040, NAT-040, ENG-215, NAT-015, MTH-025, MTH-045]
 see_also: [NAT-020, MTH-070, MED-020]
 contested: true
 contested_note: "Two disputes. The Bakhshali manuscript's radiocarbon dating in 2017 placed some folios, which use a dot for zero, as early as the third or fourth century, and the result is disputed because the folios date to widely different periods and the manuscript may be a later copy on older material. Model the Indian zero as established by around 500 and treat earlier dates as possible rather than settled. Second, whether the Indian positional zero drew on Babylonian or Greek astronomical placeholders transmitted through astronomy is unresolved — the Greek astronomers used a zero-like sign in sexagesimal tables — so model it as one plausible route among independent development rather than as a documented lineage. The Maya zero is uncontested as independent."

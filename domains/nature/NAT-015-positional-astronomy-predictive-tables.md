@@ -37,7 +37,7 @@ absence:
     note: From roughly 500 to 1080 Latin Europe had no tabular positional astronomy. The one astronomical computation sustained was the computus for fixing Easter, and no institution kept systematic observational records or produced tables of planetary positions. Tabular astronomy returned only when Arabic tables, the Toledan tables foremost, were translated from the late eleventh century — an absence of the sustaining institution for more than five hundred years, not of astronomical interest.
 prereqs: [MED-010, MTH-015]
 enables: [MAR-050, REL-030, NAT-120]
-see_also: [NAT-090, NAT-110, NAT-040, MTH-025]
+see_also: [NAT-090, NAT-110, NAT-040, MTH-025, MTH-045]
 contested: true
 contested_note: "Two disputes about transmission, both bearing on NAT-120. How far Greek geometric astronomy depended on Babylonian parameters is documented in part — Hipparchus used Babylonian eclipse records and period relations — and its full extent is debated; model it as substantial borrowing of data and period relations rather than of method. Second, whether models developed at Maragha, including the Tusi couple, reached Copernicus is unresolved: the geometrical device appears in De revolutionibus with no documented route of transmission. Model a Maragha-to-Copernicus link as plausible rather than established. The characterisation of all these traditions as prediction without a theory of cause is itself an interpretation; Ptolemy's models are geometric rather than causal and the Babylonian schemes are arithmetic, which supports it, but the entry should present it as a claim about what the tables required rather than what their makers believed."
 stats_touched: [accumulated scientific corpus, intellectual authority]

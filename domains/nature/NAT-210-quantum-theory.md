@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: east-asia
     note: East Asian contributions to quantum theory's foundational development in this era are minimal, with the region's major independent contributions to 20th-century physics concentrating instead in the subsequent generation once postwar institution-building (including Japan's own postwar physics community) had time to mature — a case of a later rather than absent contribution.
-prereqs: [NAT-180, MTH-040]
+prereqs: [NAT-180, MTH-040, MTH-045]
 enables: [ENG-330]
 see_also: [NAT-040, NAT-230, MTH-090, MTH-080]
 contested: true
