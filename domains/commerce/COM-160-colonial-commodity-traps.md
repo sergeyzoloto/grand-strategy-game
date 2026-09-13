@@ -24,7 +24,7 @@ absence:
     note: Middle Eastern polities under this era's imperial and colonial pressure more often retain enough fiscal and administrative autonomy (the Ottoman core especially, despite capitulation-driven trade concessions, COM-150) to avoid the single-commodity export lock-in seen in directly colonized plantation economies elsewhere, showing formal colonization specifically, not just unequal trade relations generally, is what most reliably produces the commodity-trap outcome.
 prereqs: [MIG-150]
 enables: []
-see_also: [COM-140, AGR-210, FIN-230, COM-150, WAR-020, WAR-035]
+see_also: [COM-140, AGR-210, FIN-230, COM-150, WAR-020, WAR-035, HLT-265]
 contested: true
 contested_note: "Whether colonial commodity specialization was primarily imposed by colonizing powers against the interests of the colonized economy, or was in some cases a locally-adopted response to genuine comparative advantage that only became a 'trap' in retrospect once terms of trade shifted, is debated in economic history, with dependency theory and more market-oriented accounts drawing different conclusions from similar data. Model commodity concentration as having both an imposed-coercion component and a genuine-comparative-advantage component in varying mixture by case, rather than requiring every instance to be scored as pure imposition or pure rational specialization."
 stats_touched: [protection rent]
@@ -72,7 +72,11 @@ The Dutch Cultivation System in Java and various African colonial cash-crop
 mandates show the mechanism operating through direct administrative
 compulsion rather than emergent market response — colonial administrations
 frequently didn't wait for comparative advantage to produce specialization
-on its own, they mandated it. The Ottoman core's relative success at
+on its own, they mandated it. Java's cinchona plantations show the same
+administration creating the commodity itself by transplantation — breaking
+the Andean republics' monopoly on quinine bark and making Java the world's
+supplier (HLT-265) — which this entry's trap mechanic takes as given rather
+than modelling as a separate act of botanical transfer. The Ottoman core's relative success at
 avoiding comparable single-commodity lock-in, despite real trade
 concessions under the capitulation system (COM-150), suggests retained
 fiscal and administrative sovereignty — not merely unequal trade terms

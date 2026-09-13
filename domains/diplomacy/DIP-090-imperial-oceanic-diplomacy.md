@@ -21,7 +21,7 @@ absence:
     note: China and Japan's unequal treaties (DIP-140) create treaty ports and extraterritorial privilege for foreign powers through direct coerced bilateral negotiation with the affected polity's own (heavily constrained) government still nominally party to the agreement — a structurally different diplomatic category from this entry's multilateral inter-colonizer coordination, where the colonized party is never present at all.
 prereqs: [MIG-060, DIP-030, DIP-070]
 enables: []
-see_also: [COM-150, DIP-130, DIP-140, DIP-150, MIG-150, DIP-180]
+see_also: [COM-150, DIP-130, DIP-140, DIP-150, MIG-150, DIP-180, HLT-265]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -53,7 +53,10 @@ and later the Berlin Conference's "effective occupation" principle solve
 this by establishing a rule the colonizing powers agree to honor among
 themselves, with the colonized population's own consent or presence
 functioning as, at most, a secondary consideration to that inter-power
-coordination problem.
+coordination problem. "Effective occupation" was only a satisfiable
+standard in tropical Africa once malaria prophylaxis made inland garrisons
+survivable (HLT-265) — before it, the rule would have awarded the interior
+to nobody.
 
 ## Social consequence
 

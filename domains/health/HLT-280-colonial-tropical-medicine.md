@@ -15,17 +15,17 @@ regions: [africa, south-asia, southeast-asia]
 region_variants:
   - region: africa
     date_start: 1850
-    note: West Africa's reputation as "the white man's grave" — European mortality from malaria and yellow fever running high enough through the early 19th century to sharply limit sustained inland presence — shifts decisively once quinine prophylaxis scales into routine colonial administrative practice from mid-century onward, directly enabling the interior penetration the Scramble for Africa depends on.
+    note: West Africa's "white man's grave" is where the institutions this entry covers were most needed, because the mortality barrier was strongest there. The barrier itself, quinine prophylaxis, the cinchona supply chain, and the partition of Africa it gated are HLT-265's; this entry owns the medical services and research institutes built once the gate was open.
 absence:
   - region: south-asia
     note: British colonial medicine in India develops earlier and more institutionally elaborate infrastructure (dedicated medical services, research institutes) than the West African case, reflecting the different scale and duration of British administrative presence there — the same colonial-medicine mechanism, applied with more sustained institutional investment where the colonial project itself was larger and longer-running.
-prereqs: [HLT-150]
+prereqs: [HLT-150, HLT-265]
 enables: []
 see_also: [HLT-240]
 contested: true
 contested_note: "How much colonial medical institutions genuinely improved local population health, versus functioned almost entirely to protect colonizing personnel and enable resource extraction, is disputed among historians of colonial medicine, with real evidence for both a measurable local public-health effect in some specific interventions and a primarily extraction-enabling institutional purpose overall. Model local-population health outcomes and colonizer health outcomes as two separately tracked effects of the same institution rather than assuming genuine local benefit follows automatically from the institution's existence, or that its colonial function rules out any real local benefit at all."
 stats_touched: []
-tags: [tropical-medicine, quinine, colonial-medicine, malaria-prophylaxis]
+tags: [tropical-medicine, colonial-medicine, medical-services, research-institutes]
 ---
 
 European colonial administrations develop a dedicated medical apparatus
@@ -37,22 +37,23 @@ population-health good.
 
 ## Timing
 
-Quinine's antimalarial use is documented from the 17th century, but
-scales into routine, systematic colonial prophylactic practice from
-around 1750 and decisively from the mid-19th century; dedicated colonial
-medical services and tropical-disease research institutes formalize
-across British, French, and other colonial administrations through 1914.
+Colonial medical services and tropical-disease research institutes
+formalize across British, French, and other colonial administrations from
+the later 18th century through 1914, scaling up once quinine prophylaxis
+(HLT-265) had made sustained inland presence survivable at all.
 
 ## Mechanism
 
-Quinine prophylaxis and, later, a dedicated colonial medical
-infrastructure (segregated hospitals, research institutes studying
-specifically tropical disease) directly targets the disease-environment
-barrier (HLT-240's own "virgin soil" logic run in reverse: here the
-colonizing population is the one lacking acquired resistance) that had
-previously limited sustained European presence to coastal trading posts —
-converting a hard biological limit on inland colonial penetration into a
-manageable, if never eliminated, operating cost.
+The disease-environment barrier itself — malaria's mortality on
+non-immune outsiders, and the quinine prophylaxis that lifted it — is
+HLT-265's, and this entry takes it as given. What this entry owns is the
+dedicated colonial medical infrastructure built on top of that gate
+(segregated hospitals, military and civil medical services, research
+institutes studying specifically tropical disease), which converts a
+barrier already reduced to an operating cost into a managed, staffed,
+continuously funded part of colonial administration — HLT-240's "virgin
+soil" logic run in reverse, with the colonizing population as the one
+lacking acquired resistance and the institution existing to protect it.
 
 ## Social consequence
 
@@ -68,10 +69,10 @@ never actually requiring the local benefit to occur at all.
 
 ## Regional specifics
 
-Quinine prophylaxis's mid-19th-century scale-up directly enables the
-interior African penetration the later Scramble for Africa depends on,
-converting West Africa's earlier "white man's grave" reputation from a
-near-absolute limit into a manageable risk. British colonial medicine in
+West Africa is where colonial medical institutions were most needed,
+since the mortality barrier HLT-265 describes was strongest there; the
+quinine unlock and its role in the partition of Africa are carried in
+that entry rather than here. British colonial medicine in
 India develops earlier and more institutionally elaborate infrastructure
 than the West African case, reflecting the larger scale and longer
 duration of British administrative presence there rather than any
@@ -93,10 +94,9 @@ at all.
 
 ## Hook
 
-A gate: a targeted medical countermeasure (quinine prophylaxis foremost)
-converts a specific disease environment from a hard limit on sustained
-foreign presence into a manageable operating cost, functioning as colonial
-infrastructure enabling territorial penetration first and general public
-health second, with local-population benefit a real but separately-
-tracked and inconsistent side effect rather than the institution's own
-design purpose.
+Downstream of HLT-265's quinine gate: once prophylaxis has made foreign
+presence survivable, a colonial medical apparatus sustains it as a staffed,
+funded institution — colonial infrastructure protecting colonizing
+personnel first and general public health second, with local-population
+benefit a real but separately-tracked and inconsistent side effect rather
+than the institution's own design purpose.

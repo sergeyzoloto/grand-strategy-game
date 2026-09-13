@@ -21,7 +21,7 @@ absence:
     note: Comparable large-scale, well-documented premodern famine mortality events are less consistently recorded across much of sub-Saharan Africa in this era than in the Eurasian cases, plausibly reflecting a combination of more diversified, drought-resilient subsistence strategies in some regions and a thinner surviving administrative and documentary record in others, rather than a genuine absence of famine risk.
 prereqs: []
 enables: []
-see_also: [HLT-350]
+see_also: [HLT-350, HLT-265]
 contested: true
 contested_note: "The exact split between direct starvation mortality and starvation-amplified infectious mortality is disputed and varies enormously by famine, complicated further by how much a given famine's total mortality reflects the underlying harvest shortfall itself versus the receiving state's specific distribution and relief-policy failures. Model total famine mortality as the sum of a direct-starvation channel and a larger, more variable infectious-amplification channel, with the state-capacity/policy variable applied as a separate multiplier on top of both rather than folded into the harvest-shortfall number alone."
 stats_touched: [immunological capital]
@@ -54,7 +54,10 @@ immune function broadly, converting ordinary endemic infections
 routinely into a mass-mortality event in a starving one — the same
 pathogens, the same population, a radically different outcome once
 caloric intake crosses a threshold, making famine mortality a compounding
-rather than a single-cause mechanic.
+rather than a single-cause mechanic. Malaria is one of the endemic
+infections this amplification runs through, and colonial Punjab's
+epidemic years show hunger and malaria mortality rising together
+(HLT-265).
 
 ## Social consequence
 

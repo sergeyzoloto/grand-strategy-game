@@ -159,8 +159,9 @@ HLT-230,Quarantine and Cordons Sanitaires,health,law; diplomacy,core,drafted,hig
 HLT-240,"Virgin Soil, Syphilis, and the Columbian Exchange",health,migration; agriculture,core,drafted,high,1492,1650,decade,3,HLT-030; HLT-060; AGR-040,0,,TRUE,columbian-exchange; virgin-soil; syphilis; epidemic; contact
 HLT-250,Variolation and Vaccination,health,sciences,core,drafted,high,1500,1800,century,1,HLT-150,0,,FALSE,vaccination; variolation; smallpox; immunization
 HLT-260,"Alcohol, Tobacco, and Opium as Social Epidemics",health,commerce; law,core,drafted,high,1500,1900,century,1,HLT-180,0,,FALSE,alcohol; tobacco; opium; addiction; colonial-trade
+HLT-265,Malaria and the Tropical Mortality Barrier,health,war; commerce; agriculture; migration,core,drafted,medium,1500,1950,era,0,,1,HLT-280,TRUE,malaria; quinine; cinchona; white-mans-grave; sickle-cell; terai; roman-campagna; ddt; eradication
 HLT-270,Public Health Statistics and Vital Registration,health,nature,standard,drafted,high,1662,1900,century,0,,2,MTH-075; MTH-062,FALSE,vital-statistics; john-snow; john-graunt; epidemiology; cholera-map
-HLT-280,Colonial and Tropical Medicine,health,war; commerce,standard,drafted,high,1750,1914,century,1,HLT-150,0,,TRUE,tropical-medicine; quinine; colonial-medicine; malaria-prophylaxis
+HLT-280,Colonial and Tropical Medicine,health,war; commerce,standard,drafted,high,1750,1914,century,2,HLT-150; HLT-265,0,,TRUE,tropical-medicine; colonial-medicine; medical-services; research-institutes
 HLT-290,Patent Medicine and the Quack Remedy Market,health,commerce; law,stub,drafted,medium,1800,1906,century,1,HLT-150,0,,FALSE,patent-medicine; quackery; advertising; pure-food-and-drug-act
 HLT-300,The Demographic Transitions (First and Second),health,agriculture; commerce,core,drafted,high,1800,2020,decade,0,,0,,TRUE,demographic-transition; fertility; mortality; population
 HLT-310,Antisepsis,health,sciences,core,drafted,high,1847,1900,year,2,HLT-150; NAT-130,1,HLT-330,FALSE,antisepsis; germ-theory; semmelweis; lister; surgery

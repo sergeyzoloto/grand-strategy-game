@@ -21,7 +21,7 @@ absence:
     note: Indigenous American populations had essentially zero prior exposure to the major Old World crowd diseases (smallpox, measles, influenza, plague) carried by the animal-dense Eurasian domestication package (see HLT-030, HLT-060) that the Americas never developed — the mortality asymmetry runs almost entirely one direction because the disease pools themselves were asymmetric, not because of any difference in general vulnerability or care.
 prereqs: [HLT-030, HLT-060, AGR-040]
 enables: []
-see_also: [AGR-220, MIG-150, MIG-160, HLT-280]
+see_also: [AGR-220, MIG-150, MIG-160, HLT-280, HLT-265]
 contested: true
 contested_note: "Whether syphilis was a genuine Columbian import to the Old World or was already present in Europe under-recognized or misdiagnosed as another disease is a long-running, unresolved historical and paleopathological dispute, with skeletal evidence cited on both sides. Model syphilis's specific origin as a coin-flip/branching event separate from the much more confidently one-directional Old-World-to-Americas crowd-disease transfer, which is not seriously disputed in its overall direction or scale."
 stats_touched: [immunological capital]
@@ -66,7 +66,10 @@ in its wake.
 
 The mortality asymmetry is close to total in direction: there is no
 comparably severe pre-contact American disease that devastates European
-populations on return crossing. Syphilis is the one candidate for a
+populations on return crossing. Malaria is the exchange's other large
+one-way transfer, carried into the Americas from Europe and Africa rather
+than out of them, and HLT-265 follows what it then did to the plantation
+lowlands. Syphilis is the one candidate for a
 disease moving the other way, and even that is disputed rather than
 confirmed. This one-sided severity is itself explained by the `immunological
 capital` mechanism rather than by any difference in the resilience or care
