@@ -27,7 +27,7 @@ absence:
     note: After the Han, formal logic does not persist as a discipline in imperial China. The Later Mohist canons survive only as corrupted fragments until Qing scholars recover them, and no institution sustained validity-checking as a subject, since the examination system (LAW-100) rewarded mastery of commentary on canonical texts rather than formal inference. The Mohist achievement existed; what was absent for nearly two millennia was any institution with a reason to keep it alive.
 prereqs: []
 enables: [NAT-050, NAT-090, MTH-090, PHI-220, MTH-080, MTH-070]
-see_also: [NAT-020, PHI-110, PHI-190, PHI-390, MTH-020, LAW-100]
+see_also: [NAT-020, PHI-110, PHI-190, PHI-390, MTH-020, LAW-100, MTH-025]
 contested: false
 contested_note: ""
 stats_touched: [intellectual authority]

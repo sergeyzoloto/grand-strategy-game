@@ -26,7 +26,7 @@ absence:
     note: Chinese thought produced paradoxes of the infinite as sharp as any — Hui Shi's stick of one foot, halved every day and never exhausted, and the School of Names' puzzles of identity and division — and none of them became a crisis. The mechanism requires a mathematics whose authority rests on derivation from a single axiomatic base, and Chinese mathematics grounded its authority in the correctness of procedures demonstrated case by case (MTH-015, MTH-020). A paradox about the infinite could be interesting there without threatening any result, because no result depended on a foundation the paradox could reach.
   - region: south-asia
     note: The Kerala school, from Madhava around 1400, worked with infinite series for the sine, cosine and arctangent and handled infinite processes with real sophistication and no foundational crisis. Justification in this tradition (yukti, upapatti) established each result by its own demonstration rather than by derivation from a shared axiomatic base, so there was no single foundation for a paradox to undermine. European calculus, working with comparable infinite processes, drew Berkeley's attack on its foundations in 1734 precisely because it did claim one.
-prereqs: [MTH-030]
+prereqs: [MTH-030, MTH-025]
 enables: [MTH-080]
 see_also: [PHI-390, NAT-220, NAT-150, MTH-020, MTH-015]
 contested: true
