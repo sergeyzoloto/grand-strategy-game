@@ -21,7 +21,7 @@ absence:
     note: Japan mined its own silver in this window (Iwami Ginzan and other sites) and was a net exporter on comparable terms rather than a pure absorber of American supply — same commodity shock, opposite balance-of-payments exposure to the rest of East Asia.
 prereqs: [MAR-160]
 enables: []
-see_also: [COM-160, COM-040, MIG-150]
+see_also: [COM-160, COM-040, MIG-150, HLT-085]
 contested: true
 contested_note: "Hamilton's quantity-theory account (bullion inflow drives the price rise) competes with population growth outrunning food/land supply, and repeated crown-driven coinage debasement, as independent contributing causes of the same 16th-century price rise. Model as three weighted, independently-triggerable causes rather than one scripted mechanism — see Contested below."
 stats_touched: [bullion stock, price level, sovereign credit capacity]
@@ -64,7 +64,10 @@ redistribution running well below the level of policy. In Ming China, fiscal
 centralization onto a silver standard makes state revenue hostage to a commodity
 the state does not mine and cannot print, wiring central fiscal health to
 Potosí's output on the other side of the world — a dependency nobody in Beijing
-chose or could see coming.
+chose or could see coming. At the other end of the chain, the patio process
+that made Potosí's silver cheap consumed mercury mined at Huancavelica by
+mita labour, so every peso of the inflow carried a mercury casualty toll and a
+contaminant legacy still legible in Andean lake sediments (HLT-085).
 
 ## Regional specifics
 

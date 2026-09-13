@@ -34,7 +34,7 @@ absence:
     note: Refining capacity was built to the scale of local lamp-oil demand rather than to the region's own crude or its later fuel needs, since the colonial arrangement treated the subcontinent as a market for refined product rather than a site of processing. A region can be a large consumer of a refined good and hold none of the capacity to make it.
 prereqs: [ENG-265, NAT-160]
 enables: [ENG-290, WAR-275]
-see_also: [ENG-165, WAR-270, MAR-320, NAT-200, LAW-215]
+see_also: [ENG-165, WAR-270, MAR-320, NAT-200, LAW-215, HLT-085]
 contested: false
 contested_note: ""
 stats_touched: [refining flexibility, stranded capital, energy budget]
@@ -94,6 +94,14 @@ or its engines — an upgrade delivered through the refinery rather than
 the factory, and one that a state without catalytic capacity simply
 cannot buy. It belongs in the corpus for that reason and connects
 directly to WAR-270.
+
+There was a cheaper route to octane, and it was taken first. Tetraethyl
+lead, adopted as an anti-knock additive from 1921, raised octane from an
+additive instead of from a better refinery — buying performance without
+the capital cost of cracking, at the price of distributing lead through
+every exhaust pipe for half a century. HLT-085 carries that cost; the
+point here is that the additive and catalytic cracking were substitutes,
+and the one that externalised its cost won the civilian market for decades.
 
 ## Social consequence
 

@@ -70,7 +70,7 @@ DIP-170,Alliance Cascade: The Collapse of a Diplomatic System into General War,d
 DIP-180,Collective Security and International Organizations,diplomacy,law; war,core,drafted,high,1920,1961,era,2,DIP-100; DIP-170,1,DIP-190,FALSE,league-of-nations; united-nations; non-aligned-movement; collective-security
 DIP-190,Sanctions,diplomacy,commerce; war,core,drafted,high,1935,1994,century,1,DIP-180,0,,TRUE,sanctions; economic-coercion; apartheid-boycott; embargo
 DIP-200,Diplomatic Derecognition and the Rupture of Relations,diplomacy,,standard,drafted,high,1949,1979,century,1,DIP-100,0,,FALSE,derecognition; taiwan-un-seat; one-china-policy; broken-relations
-ENG-010,Metalworking and the Smelting Furnace,engineering,commerce; war; agriculture,core,drafted,medium,-6000,-1200,era,0,,4,COM-020; WAR-040; AGR-160; ENG-055,TRUE,smelting; metallurgy; bronze-age; piece-mold-casting; bloomery; tin; cassiterite
+ENG-010,Metalworking and the Smelting Furnace,engineering,commerce; war; agriculture,core,drafted,medium,-6000,-1200,era,0,,5,COM-020; WAR-040; AGR-160; ENG-055; HLT-085,TRUE,smelting; metallurgy; bronze-age; piece-mold-casting; bloomery; tin; cassiterite
 ENG-020,Irrigation and Dams,engineering,agriculture,core,drafted,high,-6000,-250,era,1,ENG-060,2,ENG-080; AGR-100,FALSE,irrigation; dam; hydraulic-engineering; dujiangyan
 ENG-030,The Potter's Wheel,engineering,health; commerce,standard,drafted,medium,-4500,-1500,era,0,,0,,FALSE,potters-wheel; ceramics; standardization; mass-production
 ENG-040,Fired Brick and Masonry Units,engineering,,core,drafted,high,-3500,-1000,era,0,,0,,FALSE,brick; kiln; masonry; indus-valley; ziggurat
@@ -141,6 +141,7 @@ HLT-050,"Pottery Cooking, Fermentation, and the Feast",health,agriculture; comme
 HLT-060,Dairying and Lactase Persistence,health,agriculture,core,drafted,high,-7000,-2000,era,1,HLT-030,1,HLT-240,FALSE,dairy; lactase-persistence; pastoralism; nutrition
 HLT-070,Crowd Disease and the Urban Graveyard,health,commerce; agriculture,core,drafted,high,-3000,1850,era,2,HLT-030; HLT-010,3,HLT-090; HLT-230; HLT-170,TRUE,urbanization; crowd-disease; demography; mortality
 HLT-080,Household and Folk Medicine,health,,core,drafted,high,-3000,1900,era,0,,2,HLT-150; HLT-160,TRUE,folk-medicine; household-care; herbalism; cunning-folk
+HLT-085,Lead and the Toxic Burden of Crafts and Cities,health,engineering; commerce; nature,core,drafted,medium,-3000,1970,era,1,ENG-010,0,,TRUE,lead; cupellation; silver-mining; sapa; mercury; huancavelica; patio-process; occupational-medicine; ramazzini; tetraethyl-lead; patterson; elixir-poisoning
 HLT-090,Urban Water and Waste Engineering,health,engineering,core,drafted,high,-2500,1900,era,4,HLT-030; HLT-070; ENG-080; ENG-070,0,,FALSE,sanitation; water; sewers; engineering; urbanism
 HLT-100,Obstetrics,health,,core,drafted,medium,-1800,1900,century,0,,0,,FALSE,obstetrics; midwifery; childbirth; maternal-mortality
 HLT-110,Famine and Starvation as a Distinct Mortality Mechanic,health,agriculture,core,drafted,high,-1800,1943,era,0,,0,,TRUE,famine; starvation; mortality; food-supply-collapse
