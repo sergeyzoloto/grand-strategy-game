@@ -19,7 +19,7 @@ region_variants:
 absence: []
 prereqs: [MTH-010]
 enables: [NAT-180, NAT-210, MTH-090]
-see_also: [NAT-040]
+see_also: [NAT-040, MTH-060]
 contested: false
 contested_note: ""
 stats_touched: [legibility]

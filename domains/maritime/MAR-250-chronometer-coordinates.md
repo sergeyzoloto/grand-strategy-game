@@ -18,7 +18,7 @@ absence:
     note: Earlier Islamic and Chinese astronomical traditions achieve highly accurate latitude determination and star-position catalogs (feeding directly into MAR-050's instrument lineage) without producing a comparable solution to the specific longitude-at-sea problem, which requires precision timekeeping rather than better astronomical observation alone — a case where a closely related but distinct technical problem stayed unsolved elsewhere despite strong adjacent capability.
 prereqs: [MAR-050, ENG-160]
 enables: []
-see_also: [MAR-120, MAR-070]
+see_also: [MAR-120, MAR-070, MTH-060]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]

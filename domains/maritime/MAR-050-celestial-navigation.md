@@ -24,7 +24,7 @@ absence:
     note: No comparable instrumented or systematized celestial navigation tradition develops in the pre-contact Americas at a scale supporting long-range open-ocean voyaging, consistent with MAR-020's absence case — coastal geography and trade motive existed, but the navigation technique enabling a break from coastal cabotage did not.
 prereqs: [MTH-010]
 enables: [MAR-160, MAR-250]
-see_also: [MAR-020, MAR-070]
+see_also: [MAR-020, MAR-070, MTH-060]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]
