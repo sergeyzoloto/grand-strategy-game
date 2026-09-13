@@ -35,7 +35,7 @@ absence:
     note: Terrestrial network infrastructure requires fixed plant — cable, exchanges, base stations — and therefore the same settlement density that defeated the telegraph here (MED-100) and the telephone's local loop (MED-110). Satellite and mobile eventually close most of the gap, which makes this the one point in the domain where a genuine absence is in the process of ending rather than persisting; the entry should model coverage here as late, expensive, and arriving through a different physical channel than anywhere else rather than as permanently absent.
   - region: oceania
     note: The reverse of MED-130's finding, and the cleanest inversion available. Radio served scattered islands better than anything before it because a signal crossing water costs nothing extra. A packet network reinstates the cable — undersea fibre landing at a few points, with everything beyond a landfall on expensive satellite backhaul — so the region that broadcast served best is served worst again, for exactly the reason the telegraph failed here. The wire constraint MED-130 removed returns with the network that replaced it.
-prereqs: [ENG-330, MED-120]
+prereqs: [ENG-330, MED-120, MTH-087]
 enables: []
 see_also: [MED-130, MED-140, MED-100, MED-090, LAW-225, ENG-340, MTH-080, PHI-410, MED-080, MED-070, MED-020, MED-110]
 contested: true

@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [MTH-030, MTH-040]
 enables: []
-see_also: [ENG-330, NAT-180, NAT-220, NAT-210, MED-100, MTH-020, MTH-080]
+see_also: [ENG-330, NAT-180, NAT-220, NAT-210, MED-100, MTH-020, MTH-080, MTH-087]
 contested: false
 contested_note: ""
 stats_touched: [information speed]
