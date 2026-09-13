@@ -21,7 +21,7 @@ absence:
     note: The Sahelian and East African savanna-pastoralist zones support large mobile herding populations without producing a comparable pattern of large, rapidly-assembled multi-tribal military confederations capable of contesting a settled empire at range — plausibly reflecting a different local balance of pasture geography, horse availability, and settled-state proximity/wealth worth raiding, rather than any lesser capacity for large-scale political organization among pastoralist populations generally.
 prereqs: [MIG-050, MIG-040]
 enables: [MIG-130]
-see_also: [DIP-060, AGR-140, MIG-080, WAR-010, WAR-020]
+see_also: [DIP-060, AGR-140, MIG-080, WAR-010, WAR-020, WAR-037]
 contested: false
 contested_note: ""
 stats_touched: [confederation cohesion]
@@ -59,7 +59,10 @@ success-dependent political structures — cohesion holds together only as
 long as raiding or tribute income keeps flowing to subordinate chiefs, which
 is why they tend to fragment quickly on a leader's death or a run of failed
 campaigns, a structurally different stability profile from the settled
-empires they contest.
+empires they contest. It is also why a steppe polity has no demobilisation
+problem of the settled kind (WAR-037): the force is the herding population
+under arms and goes home with its herds, so the failure mode is the
+paymaster running dry rather than a released army with nowhere to go.
 
 ## Regional specifics
 

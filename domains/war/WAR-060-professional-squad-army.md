@@ -23,7 +23,7 @@ absence:
   - region: south-asia
     note: Mauryan-era armies retain a much larger standing professional core (described by Greek observers like Megasthenes as salaried year-round troops) than most contemporary Mediterranean city-states could sustain, funded by a correspondingly larger and more centralized state fiscal apparatus — an early case of professionalization scaling directly with state fiscal capacity rather than with any particular military doctrine.
 prereqs: [WAR-020]
-enables: [WAR-070, WAR-080, WAR-130, WAR-230, WAR-250, WAR-210, WAR-200, WAR-120, WAR-240, WAR-190, WAR-180, WAR-100]
+enables: [WAR-070, WAR-080, WAR-130, WAR-230, WAR-250, WAR-210, WAR-200, WAR-120, WAR-240, WAR-190, WAR-180, WAR-100, WAR-037]
 see_also: [WAR-140, LAW-080, LAW-110, WAR-090, WAR-170]
 contested: false
 contested_note: ""
@@ -58,6 +58,10 @@ obligation, replacing a warrior class defined by property ownership with one
 defined by state salary — a shift that relocates political leverage away
 from landholding elites (who no longer monopolize who shows up armed) and
 toward whichever institution controls the pay and provisioning apparatus.
+The same severance creates the problem WAR-037 carries: a soldier defined
+by salary rather than land has nothing to return to when the salary stops,
+so a standing army is also a standing obligation that falls due, in full, on
+the day it is released.
 
 ## Regional specifics
 

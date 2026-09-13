@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [WAR-060]
 enables: []
-see_also: []
+see_also: [WAR-037]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -35,7 +35,7 @@ A standing professional institution (WAR-060) that persists across many generati
 
 ## Social consequence
 
-Because the corps' resistance to reform is backed by genuine domestic political power rather than mere institutional inertia, the state's options narrow over time to either accepting continued military decline or risking violent confrontation with an armed, politically entrenched body — a dynamic with no gradual reform path available once the institution's veto power is strong enough, ending, as with the Janissaries, only in the institution's forcible destruction rather than its negotiated transformation.
+Because the corps' resistance to reform is backed by genuine domestic political power rather than mere institutional inertia, the state's options narrow over time to either accepting continued military decline or risking violent confrontation with an armed, politically entrenched body — a dynamic with no gradual reform path available once the institution's veto power is strong enough, ending, as with the Janissaries, only in the institution's forcible destruction rather than its negotiated transformation. The mirror case is WAR-037: a force the state releases unpaid, rather than retains, converts its dismissal instead of its permanence into leverage — the same armed body lost as an instrument by the opposite route.
 
 ## Regional specifics
 

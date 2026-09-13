@@ -21,7 +21,7 @@ absence:
     note: Japan's total mobilization effort, while extensive, operates from a substantially smaller industrial and raw-material base than the United States and increasingly cannot sustain the same conversion ratio as the war progresses and Allied sea-lane interdiction (MAR-220, MAR-320) cuts off critical imports — mobilization doctrine alone cannot manufacture resources a state's territory and trade access don't provide.
 prereqs: [WAR-200, MED-100]
 enables: []
-see_also: [MAR-220, MAR-320, WAR-275, MTH-084]
+see_also: [MAR-220, MAR-320, WAR-275, MTH-084, WAR-037]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -58,7 +58,11 @@ production roles (most visibly, large-scale female industrial labor
 mobilization in several combatant states), creating social and economic
 changes that frequently outlast the war itself and reshape postwar labor
 and gender relations in ways the mobilization effort never intended as a
-war aim.
+war aim. Reversing the conversion is a problem of the same size: a whole
+economy's worth of soldiers and war workers must be released into a peacetime
+economy at once, and whether that release produces unrest, organised veteran
+pressure, or orderly absorption is WAR-037's mechanism running at the largest
+scale this record reaches.
 
 ## Regional specifics
 

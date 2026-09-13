@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: africa
     note: Anti-colonial guerrilla movements across mid-20th-century Africa (Algeria, Kenya, Mozambique among others) adapt the broader guerrilla template to campaigns explicitly aimed at colonial withdrawal and sovereignty rather than at displacing a domestic rival regime, tying the strategy's political objective directly to decolonization diplomacy (DIP's territory) rather than to a civil conflict's internal power struggle.
-prereqs: [WAR-060]
+prereqs: [WAR-060, WAR-037]
 enables: [WAR-340, WAR-320]
 see_also: [WAR-120]
 contested: false
@@ -75,7 +75,12 @@ African anti-colonial guerrilla movements tie the strategy's ultimate
 objective directly to decolonization diplomacy and international
 recognition (DIP's territory) rather than to displacing a rival domestic
 regime, showing the same military technique can serve structurally different
-political end goals depending on context.
+political end goals depending on context. Those movements repeatedly draw
+their trained cadres from the colonial power's own demobilised soldiers
+(WAR-037) — men taught the empire's methods, released with a claim it did not
+honour — which is one reason anticolonial guerrilla forces could field
+organisation and weapons-handling well beyond what an untrained rural
+population supplies.
 
 ## Hook
 

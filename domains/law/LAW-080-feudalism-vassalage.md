@@ -30,7 +30,7 @@ absence:
     note: Contemporary and neighboring China explicitly rejects a hereditary land-for-service feudal structure in favor of the centralized examination-based bureaucracy (LAW-100) covered elsewhere in this domain — the same broad era and region producing two structurally opposite answers to the same underlying problem of binding local administration and military service to central authority.
 prereqs: [LAW-020, AGR-170]
 enables: []
-see_also: [LAW-100, AGR-190, AGR-200, WAR-060, LAW-140, LAW-120]
+see_also: [LAW-100, AGR-190, AGR-200, WAR-060, LAW-140, LAW-120, WAR-037]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -81,7 +81,12 @@ hereditary status, honor code, and social identity independent of any
 central state's administrative reach — a class whose military obligation
 is inseparable from its social rank, unlike WAR-060's later salaried
 professional or WAR-200's later conscripted citizen, for whom military
-service and social status are at least formally separable.
+service and social status are at least formally separable. The same fusion
+means a feudal host has no demobilisation problem of its own: the vassal
+returns to the fief he already holds, so there is no civilian life service
+has taken from him (WAR-037). The problem reappears as soon as paid routiers
+supplement the levy, which is the clearest sign that it belongs to released
+paid force rather than to warfare as such.
 
 ## Regional specifics
 

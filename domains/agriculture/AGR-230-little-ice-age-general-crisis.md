@@ -24,7 +24,7 @@ absence:
     note: The Little Ice Age's cooling signal and associated agrarian stress is far less consistently documented across sub-Saharan Africa than across contemporary Eurasia, plausibly reflecting a genuine climatic asymmetry (temperate-zone cooling mattering less to tropical and subtropical agricultural systems) as much as a thinner surviving documentary and paleoclimatic record for the region in this specific period.
 prereqs: []
 enables: []
-see_also: [AGR-220, AGR-100, AGR-130, AGR-180, AGR-240]
+see_also: [AGR-220, AGR-100, AGR-130, AGR-180, AGR-240, WAR-037]
 contested: true
 contested_note: "The 'General Crisis of the seventeenth century' thesis — that a roughly synchronized cluster of wars, revolts, and state breakdowns across mid-17th-century Eurasia (the Thirty Years' War, the English Civil War, the Ming-Qing transition, Ottoman provincial unrest) shares a common underlying climatic and agrarian cause in Little Ice Age cooling and harvest failure — is influential but disputed among historians, who differ on how much explanatory weight to give a shared climatic trigger versus region-specific political, fiscal, and dynastic causes that would very plausibly have produced crises even absent the climate stress. Model harvest-failure frequency as genuinely elevated by Little Ice Age cooling across the affected regions (a real, trackable agricultural input), while treating the climate trigger's sufficiency to explain each specific regional political crisis, versus locally-specific contributing causes, as contested."
 stats_touched: [yield ceiling]
@@ -75,7 +75,12 @@ collapse, a case of the same climate-linked stress pattern operating
 independently on the opposite side of Eurasia from Europe's
 contemporaneous crises. Ottoman Celali revolts intensify through the
 same early-1600s window alongside documented harvest instability and
-fiscal strain, part of the same broadly synchronized pattern. Sub-
+fiscal strain, part of the same broadly synchronized pattern. The
+Celali revolts also have a second, compounding cause on the military
+side: sekban musketeers raised for the Habsburg war and released unpaid
+between campaigns supplied their fighting core (WAR-037), so harvest
+failure pushed peasants toward irregular service and released irregulars
+turned harvest failure into revolt. Sub-
 Saharan Africa's far less consistently documented cooling signal in
 this period plausibly reflects genuine climatic asymmetry (tropical
 agriculture is less exposed to temperate-zone cooling) as much as a

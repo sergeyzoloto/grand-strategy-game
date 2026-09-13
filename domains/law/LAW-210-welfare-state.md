@@ -21,7 +21,7 @@ absence:
     note: Formal state-administered welfare systems on the European model remain limited across most of colonial and early postcolonial Africa in this era, with social protection continuing to run substantially through extended family, lineage, and community obligation networks rather than through state-administered entitlement programs — informal but real social insurance existing alongside, not preceding, formal state welfare systems elsewhere.
 prereqs: [FIN-020]
 enables: []
-see_also: [REL-130, FIN-230, LAW-165]
+see_also: [REL-130, FIN-230, LAW-165, WAR-037]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -74,7 +74,13 @@ colonial and early postcolonial Africa's continued reliance on extended
 family and community obligation networks rather than formal state welfare
 systems shows social protection can be provided reliably through informal
 kin-based institutions running in parallel to, not merely preceding, the
-formal state systems that develop elsewhere.
+formal state systems that develop elsewhere. Military pensions are an older
+and often overlooked root of state entitlement: states paid released soldiers
+from standing treasuries long before they insured workers, and in the United
+States Union veterans' pensions became the first large entitlement programme
+(Skocpol, _Protecting Soldiers and Mothers_, 1992) — the absorbing
+institution of WAR-037's demobilisation mechanism, converting a returning
+army's claim into a stake in the paying state.
 
 ## Hook
 

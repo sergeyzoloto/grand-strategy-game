@@ -383,9 +383,10 @@ WAR-010,Raiding as Subsistence,war,agriculture; migration; commerce,core,drafted
 WAR-020,From Raid to Protection Rent,war,diplomacy; commerce; maritime; migration,core,drafted,medium,-3500,1830,era,1,WAR-010,1,WAR-060,TRUE,protection-rent; danegeld; chauth; khuwwa; roving-bandit; stationary-bandit; tilly; olson; barfield
 WAR-030,Bronze Age Warfare and the Elite Chariot Monopoly,war,engineering; commerce,core,drafted,medium,-3000,-1200,era,0,,1,WAR-040,TRUE,chariot; bronze-age; elite-warfare; tin-trade
 WAR-035,Enslavement as Captive Disposal,war,law; commerce; agriculture; migration; religion,core,drafted,medium,-3000,1888,era,3,WAR-010; AGR-010; AGR-050,2,MIG-160; AGR-210,TRUE,slavery; captives; coerced-labour; social-death; nieboer-domar; manumission
+WAR-037,Demobilisation and the Returning Army,war,finance; law; migration,core,drafted,medium,-1550,2020,era,1,WAR-060,1,WAR-240,TRUE,demobilisation; veterans; veteran-settlement; marian-reforms; aerarium-militare; fubing; jiedushi; sekban; celali-revolts; new-model-army; freikorps; bonus-army; gi-bill; coup; banditry
 WAR-040,Mass Iron and the End of the Elite Warrior Monopoly,war,engineering; commerce,core,drafted,high,-1200,-500,era,3,WAR-030; COM-020; ENG-010,2,WAR-100; WAR-130,TRUE,ironworking; metallurgy; bronze-age-collapse; mass-equipping
 WAR-050,War Elephants,war,agriculture,stub,drafted,high,-1000,200,era,0,,0,,FALSE,war-elephants; mauryan-warfare; hannibal; hellenistic-warfare
-WAR-060,Professional Squad and Standing Army,war,finance,core,drafted,high,-900,-100,era,1,WAR-020,12,WAR-070; WAR-080; WAR-130; WAR-230; WAR-250; WAR-210; WAR-200; WAR-120; WAR-240; WAR-190; WAR-180; WAR-100,FALSE,standing-army; professionalization; hoplite; legion
+WAR-060,Professional Squad and Standing Army,war,finance,core,drafted,high,-900,-100,era,1,WAR-020,13,WAR-070; WAR-080; WAR-130; WAR-230; WAR-250; WAR-210; WAR-200; WAR-120; WAR-240; WAR-190; WAR-180; WAR-100; WAR-037,FALSE,standing-army; professionalization; hoplite; legion
 WAR-070,Siege Warfare and Investment Doctrine,war,engineering,core,drafted,high,-900,1500,era,2,WAR-060; WAR-090,2,WAR-150; WAR-160,FALSE,siege; fortification; investment; campaign-doctrine
 WAR-080,Cavalry Doctrine,war,migration; agriculture,core,drafted,high,-900,1600,era,1,WAR-060,0,,FALSE,cavalry; horse-archery; shock-cavalry; mobility
 WAR-090,Military Logistics and Supply Lines,war,commerce; agriculture,core,drafted,high,-900,1800,era,0,,3,WAR-070; WAR-230; WAR-120,FALSE,logistics; supply-lines; foraging; campaign-doctrine
@@ -403,7 +404,7 @@ WAR-200,Conscription and Mass Armies,war,law; migration; diplomacy; religion,cor
 WAR-210,Military Medicine — Triage and Evacuation,war,health,core,drafted,high,1793,1950,century,1,WAR-060,0,,FALSE,triage; ambulance; battlefield-medicine; evacuation-chain
 WAR-220,Combat Motivation and Small-Unit Cohesion,war,,standard,drafted,medium,1800,1950,century,0,,0,,TRUE,combat-motivation; primary-group-cohesion; morale; small-unit-psychology
 WAR-230,Staff and Operational Art,war,,core,drafted,high,1806,1900,century,2,WAR-060; WAR-090,0,,FALSE,general-staff; operational-art; prussian-military-reform
-WAR-240,Guerrilla Warfare,war,diplomacy; migration,core,drafted,high,1808,1975,century,1,WAR-060,2,WAR-340; WAR-320,FALSE,guerrilla-warfare; insurgency; protracted-war; decolonization
+WAR-240,Guerrilla Warfare,war,diplomacy; migration,core,drafted,high,1808,1975,century,2,WAR-060; WAR-037,2,WAR-340; WAR-320,FALSE,guerrilla-warfare; insurgency; protracted-war; decolonization
 WAR-250,Military Statistics and Casualty Accounting,war,nature,standard,drafted,medium,1850,1918,century,1,WAR-060,1,WAR-280,FALSE,statistics; casualty-accounting; military-administration
 WAR-260,Trench and Positional Warfare Doctrine,war,engineering,core,drafted,high,1904,1918,decade,1,WAR-150,0,,FALSE,trench-warfare; positional-warfare; defensive-doctrine; western-front
 WAR-270,Military Aviation Doctrine,war,engineering,core,drafted,high,1911,1945,decade,3,WAR-110; WAR-150; ENG-290,2,WAR-320; ENG-290,TRUE,aviation; strategic-bombing; air-superiority; close-air-support

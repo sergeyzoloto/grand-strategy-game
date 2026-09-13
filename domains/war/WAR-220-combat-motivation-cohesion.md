@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: []
 enables: []
-see_also: [WAR-200, WAR-190]
+see_also: [WAR-200, WAR-190, WAR-037]
 contested: true
 contested_note: "S.L.A. Marshall's widely-cited claim, based on postwar interviews, that only 15-25% of American WWII infantrymen actually fired their weapons at the enemy in a given engagement has been seriously challenged on methodological grounds (his interview methods and record-keeping have not survived scrutiny well), and the specific figure is no longer generally accepted at face value by military historians. Model the underlying primary-group cohesion effect — that small-unit bonds drive combat performance more than legal obligation or larger ideological commitment — as well-supported by a broader base of evidence, while treating Marshall's specific ratio-of-fire statistic as a discredited or at least unverifiable data point rather than a reliable baseline number."
 stats_touched: []
@@ -35,7 +35,7 @@ A soldier's willingness to actually engage in combat, rather than merely be pres
 
 ## Social consequence
 
-Because primary-group cohesion forms through shared risk and time together rather than through legal or institutional design, it makes unit rotation policy, replacement practices, and casualty-driven turnover a direct lever on combat effectiveness independent of training quality — an army that rotates individual replacements into existing units disrupts this cohesion in a way that rotating whole units together doesn't, a personnel-policy choice with combat consequences no amount of individual soldier training can fully offset.
+Because primary-group cohesion forms through shared risk and time together rather than through legal or institutional design, it makes unit rotation policy, replacement practices, and casualty-driven turnover a direct lever on combat effectiveness independent of training quality — an army that rotates individual replacements into existing units disrupts this cohesion in a way that rotating whole units together doesn't, a personnel-policy choice with combat consequences no amount of individual soldier training can fully offset. The bond also outlasts the war: units released together keep it, and it becomes the veterans' association, the Freikorps unit, or the regiment that elects its own representatives — the cohesive branch of WAR-037's demobilisation mechanism, where a primary group built for combat becomes a political actor.
 
 ## Regional specifics
 

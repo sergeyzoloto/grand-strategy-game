@@ -21,7 +21,7 @@ absence:
     note: Qing China finances state expenditure predominantly through direct taxation and, in fiscal emergencies, sale of offices or informal levies rather than through a developed tradable government bond market, leaving it without the same capacity to mobilize large-scale, up-front capital against future revenue that European sovereign-debt markets provide their own governments.
 prereqs: [FIN-020, FIN-100]
 enables: [FIN-210]
-see_also: [FIN-260]
+see_also: [FIN-260, WAR-037]
 contested: false
 contested_note: ""
 stats_touched: [sovereign credit capacity]
@@ -40,7 +40,7 @@ Rather than raising an entire war's cost through immediate taxation (politically
 
 ## Social consequence
 
-A liquid, tradable sovereign debt market gives bondholders a direct financial stake in their government's continued fiscal stability and survival — a state that might otherwise face default or revolution instead finds a constituency of its own creditors with a strong personal interest in seeing it succeed, converting what could be a purely extractive lender-borrower relationship into one where the lenders become invested political stakeholders in the borrower's own continuity.
+A liquid, tradable sovereign debt market gives bondholders a direct financial stake in their government's continued fiscal stability and survival — a state that might otherwise face default or revolution instead finds a constituency of its own creditors with a strong personal interest in seeing it succeed, converting what could be a purely extractive lender-borrower relationship into one where the lenders become invested political stakeholders in the borrower's own continuity. At a war's end that constituency has an armed rival: the returning army is owed its arrears and discharge from the same exhausted revenue the bondholders are, and WAR-037 treats that collision — the obligation to soldiers falling due exactly when borrowing has been used up — as the trap deciding whether demobilisation stays quiet.
 
 ## Regional specifics
 

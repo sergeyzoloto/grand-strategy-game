@@ -21,7 +21,7 @@ absence:
     note: Comparable large-scale, freely-contracting mercenary companies are less prominent in this era's East Asian military systems relative to Europe, with military labor there running more consistently through either direct state levy/professionalization (WAR-060) or hereditary land-tenure obligation (LAW-080) than through an open, cross-polity market for military contract labor.
 prereqs: []
 enables: []
-see_also: [WAR-060, WAR-200]
+see_also: [WAR-060, WAR-200, WAR-037]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -40,7 +40,7 @@ A mercenary company converts military labor supply into a market transaction: a 
 
 ## Social consequence
 
-Mercenary captains who accumulate enough successful contracts and reputation can convert that military standing directly into independent political power, sometimes over the very polities that hired them — a route to power available to a skilled military entrepreneur that neither WAR-060's salaried career officer nor WAR-200's conscripted citizen-soldier has, since a mercenary captain's personal command over a loyal, self-contained force is itself a political asset independent of any state office.
+Mercenary captains who accumulate enough successful contracts and reputation can convert that military standing directly into independent political power, sometimes over the very polities that hired them — a route to power available to a skilled military entrepreneur that neither WAR-060's salaried career officer nor WAR-200's conscripted citizen-soldier has, since a mercenary captain's personal command over a loyal, self-contained force is itself a political asset independent of any state office. Between contracts the same men are the unemployed side of this market — Landsknechte garting through the countryside, the Free Companies after 1360 — which is the dispersed branch of WAR-037's demobilisation mechanism, and a state releasing its own soldiers unpaid resupplies this market whether it intends to or not.
 
 ## Regional specifics
 
