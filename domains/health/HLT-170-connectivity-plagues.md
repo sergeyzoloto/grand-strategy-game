@@ -24,7 +24,7 @@ absence:
     note: Structurally excluded from all pre-1500 connectivity plagues for lack of any connecting route to the Eurasian network at all — the Americas' epidemiological isolation ends abruptly and catastrophically with 1492 rather than gradually (see the virgin-soil entry), making the Americas a control case for what integration itself costs.
 prereqs: [HLT-070]
 enables: [HLT-220]
-see_also: []
+see_also: [HLT-325]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]
@@ -69,7 +69,10 @@ trade integration had been deepest. The Third Plague Pandemic reproduces the
 same logic three centuries later at steamship speed, reaching the Americas,
 Africa, and Oceania within a couple of decades of its Yunnan origin — a
 connectivity-driven reach the Black Death, bounded by Eurasia and caravan
-speed, never achieved. The pre-Columbian Americas' total exclusion from every
+speed, never achieved. The 1918 influenza pandemic runs the same logic on
+wartime troopships and railways, reaching Bombay, Freetown and Apia within
+months (HLT-325) — but its lasting significance is institutional rather
+than connective, which is why it is carried there rather than here. The pre-Columbian Americas' total exclusion from every
 one of these events until 1492 is the cleanest natural experiment available
 for what network integration itself costs in disease exposure.
 

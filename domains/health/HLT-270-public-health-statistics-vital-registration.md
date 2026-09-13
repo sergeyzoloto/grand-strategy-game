@@ -15,7 +15,7 @@ regions: [europe]
 region_variants: []
 absence: []
 prereqs: []
-enables: [MTH-075, MTH-062]
+enables: [MTH-075, MTH-062, HLT-325]
 see_also: [HLT-070, HLT-090, FIN-090, HLT-150, WAR-200, LAW-165]
 contested: false
 contested_note: ""
@@ -58,7 +58,11 @@ statistical driver rather than proceed on inherited theory or authority
 alone, as HLT-150's codified systems mostly did — Snow's pump-handle
 removal is the paradigm case of an intervention justified by pattern
 recognition succeeding well before, and independent of, any accepted
-causal theory explaining why it worked.
+causal theory explaining why it worked. The 1918 influenza pandemic is what
+converts this record-keeping into a standing surveillance system (HLT-325):
+central health ministries, compulsory notifiable-disease reporting and
+internationally standardised cause-of-death statistics — a conversion only
+states that already had working registration could make.
 
 ## Regional specifics
 

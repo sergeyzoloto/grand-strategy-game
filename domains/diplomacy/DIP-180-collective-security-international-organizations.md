@@ -21,7 +21,7 @@ absence:
     note: The League of Nations mandate system applies collective-security-adjacent international oversight to former Ottoman territories in the Middle East without extending League membership or full sovereign standing to those territories themselves — a supervised, subordinate status distinct from full participation in the collective-security system being simultaneously constructed for its actual member states.
 prereqs: [DIP-100, DIP-170]
 enables: [DIP-190]
-see_also: [LAW-230, DIP-090, DIP-130, DIP-200, MED-120, MED-130, LAW-225]
+see_also: [LAW-230, DIP-090, DIP-130, DIP-200, MED-120, MED-130, LAW-225, HLT-325]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -52,7 +52,11 @@ aggression more reliably than a system where each potential aggressor must
 separately guess how other powers might react — but the mechanism only
 functions as well as member states' actual willingness to honor that
 advance commitment when a real crisis tests it, which is exactly where
-the League's practical failures concentrated.
+the League's practical failures concentrated. The League's technical bodies
+fared better than its security guarantee: its Health Organisation, founded
+in the wake of the 1918 pandemic, ran a continuous epidemiological
+intelligence service that outlived the League itself into the World Health
+Organization (HLT-325).
 
 ## Social consequence
 

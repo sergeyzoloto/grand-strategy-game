@@ -29,7 +29,7 @@ absence:
     note: A random sample must be drawn from a sampling frame — a list or map of the units being studied — and across much of colonial and early post-independence Africa no adequate frame existed, because enumeration had so often estimated households or taxpayers rather than listing individuals (MTH-075). Without a frame there is nothing to draw a random sample from, so the method's promise of learning about a whole population from a known part could not be kept. What is absent is the frame, which is a precise and separate precondition from the statistical theory.
 prereqs: [MTH-040, HLT-270]
 enables: [MTH-084]
-see_also: [MTH-075, FIN-020, FIN-090, LAW-110]
+see_also: [MTH-075, FIN-020, FIN-090, LAW-110, HLT-325]
 contested: true
 contested_note: "Two disputes. First, the founders of modern statistics — Galton, Pearson and Fisher — were committed eugenicists, and much of the apparatus of correlation, regression and inference was developed in and for that programme. Historians disagree about how far the methods carry that origin and how far they are separable from it; the entry treats the entanglement as the field's founding context rather than a footnote, and models the methods as usable for any purpose while their early institutional sponsors were eugenic. Second, the complete-enumeration objection to sampling was not simply wrong: a sample is only as good as its frame and its design, and famous failures such as the 1936 Literary Digest poll show large biased samples misleading worse than small sound ones. Model sampling's reliability as conditional on frame quality and random design rather than on sample size."
 stats_touched: [legibility, information sovereignty]
@@ -69,6 +69,13 @@ so expensive that a census happens once a decade. A sample survey can run every
 year or every month, so a state learns what is happening now rather than what
 was true years ago. That is why India could measure a vast rural economy
 continuously, and why sampling feeds directly into planning models (MTH-084).
+Epidemiology is where continuous knowledge became indispensable: after the
+1918 influenza pandemic, states built notifiable-disease reporting and
+excess-mortality estimation against a seasonal baseline, and the pandemic's
+own global toll is still being re-estimated by inference where the colonial
+record never counted (HLT-325). The belligerents' wartime censorship of that
+pandemic is the same conflict the 1937 census shows below, with a state
+blinding itself to protect what its population may know.
 
 ## Social consequence
 

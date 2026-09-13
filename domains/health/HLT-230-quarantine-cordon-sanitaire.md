@@ -23,7 +23,7 @@ absence:
   - region: africa
     note: Comparatively sparse premodern documentary evidence for formalized quarantine institutions in most of sub-Saharan Africa, plausibly reflecting lower urban density and different disease ecology (endemic rather than epidemic patterns for many major diseases) reducing the payoff to fixed-duration isolation infrastructure specifically, rather than an absence of disease response generally.
 prereqs: [HLT-070]
-enables: []
+enables: [HLT-325]
 see_also: []
 contested: false
 contested_note: ""
@@ -51,7 +51,10 @@ statistically and is invisible when it succeeds (no outbreak occurs, which
 looks identical to no outbreak having been likely anyway). It requires a state
 capable of actually enforcing isolation at a chokepoint, which is why it first
 appears in city-states with concentrated port control rather than in more
-diffuse polities.
+diffuse polities. The 1918 pandemic marks both the instrument's limit and
+its vindication (HLT-325): it crossed every chokepoint on the continents in
+months, forcing public health up from the port and the city to the nation,
+while American Samoa's closed harbour kept it out entirely.
 
 ## Social consequence
 

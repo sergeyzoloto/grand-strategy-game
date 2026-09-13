@@ -21,7 +21,7 @@ absence:
     note: Comparable systematic casualty and logistics record-keeping is less consistently documented across East Asian conflicts of the same era, complicating direct statistical comparison — very likely reflecting gaps in surviving documentation and later compilation effort more than any difference in the conflicts' actual administrative practice at the time.
 prereqs: [WAR-060]
 enables: [WAR-280]
-see_also: [WAR-230]
+see_also: [WAR-230, HLT-325]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -59,7 +59,11 @@ published or leaked, to the broader public — a state that tracks and must
 eventually report its own casualty figures faces a different domestic
 political pressure than one that can keep losses vague or unstated, tying
 this administrative capability directly to the propaganda and morale
-concerns of WAR-280.
+concerns of WAR-280. The same apparatus recorded the 1918 influenza
+pandemic in armies and troop transports more closely than most civilian
+systems recorded it at home, and the pandemic's own institutional legacy —
+national health statistics built to a military standard of comparability —
+is HLT-325's.
 
 ## Regional specifics
 

@@ -155,17 +155,18 @@ HLT-190,"Print, Silent Reading, and the Interior Self",health,engineering; philo
 HLT-200,The Asylum and the Invention of Madness as a Medical Category,health,law,core,drafted,high,1247,1890,century,1,HLT-150,1,HLT-320,TRUE,asylum; bethlem; moral-treatment; madness; psychiatry
 HLT-210,Mutual Aid and Guild Sick-Funds,health,law; commerce,core,drafted,high,1250,1900,century,0,,0,,FALSE,mutual-aid; guild; friendly-society; confraternity; sick-fund
 HLT-220,The Black Death as Habitus Rupture,health,religion; commerce; agriculture,core,drafted,high,1331,1353,year,1,HLT-170,1,AGR-190,TRUE,black-death; plague; habitus; labor-scarcity; mortality-shock
-HLT-230,Quarantine and Cordons Sanitaires,health,law; diplomacy,core,drafted,high,1377,1900,decade,1,HLT-070,0,,FALSE,quarantine; plague; public-health; state-capacity
+HLT-230,Quarantine and Cordons Sanitaires,health,law; diplomacy,core,drafted,high,1377,1900,decade,1,HLT-070,1,HLT-325,FALSE,quarantine; plague; public-health; state-capacity
 HLT-240,"Virgin Soil, Syphilis, and the Columbian Exchange",health,migration; agriculture,core,drafted,high,1492,1650,decade,3,HLT-030; HLT-060; AGR-040,0,,TRUE,columbian-exchange; virgin-soil; syphilis; epidemic; contact
 HLT-250,Variolation and Vaccination,health,sciences,core,drafted,high,1500,1800,century,1,HLT-150,0,,FALSE,vaccination; variolation; smallpox; immunization
 HLT-260,"Alcohol, Tobacco, and Opium as Social Epidemics",health,commerce; law,core,drafted,high,1500,1900,century,1,HLT-180,0,,FALSE,alcohol; tobacco; opium; addiction; colonial-trade
 HLT-265,Malaria and the Tropical Mortality Barrier,health,war; commerce; agriculture; migration,core,drafted,medium,1500,1950,era,0,,1,HLT-280,TRUE,malaria; quinine; cinchona; white-mans-grave; sickle-cell; terai; roman-campagna; ddt; eradication
-HLT-270,Public Health Statistics and Vital Registration,health,nature,standard,drafted,high,1662,1900,century,0,,2,MTH-075; MTH-062,FALSE,vital-statistics; john-snow; john-graunt; epidemiology; cholera-map
+HLT-270,Public Health Statistics and Vital Registration,health,nature,standard,drafted,high,1662,1900,century,0,,3,MTH-075; MTH-062; HLT-325,FALSE,vital-statistics; john-snow; john-graunt; epidemiology; cholera-map
 HLT-280,Colonial and Tropical Medicine,health,war; commerce,standard,drafted,high,1750,1914,century,2,HLT-150; HLT-265,0,,TRUE,tropical-medicine; colonial-medicine; medical-services; research-institutes
 HLT-290,Patent Medicine and the Quack Remedy Market,health,commerce; law,stub,drafted,medium,1800,1906,century,1,HLT-150,0,,FALSE,patent-medicine; quackery; advertising; pure-food-and-drug-act
 HLT-300,The Demographic Transitions (First and Second),health,agriculture; commerce,core,drafted,high,1800,2020,decade,0,,0,,TRUE,demographic-transition; fertility; mortality; population
 HLT-310,Antisepsis,health,sciences,core,drafted,high,1847,1900,year,2,HLT-150; NAT-130,1,HLT-330,FALSE,antisepsis; germ-theory; semmelweis; lister; surgery
 HLT-320,Psychoanalysis,health,philosophy,standard,drafted,medium,1895,1950,decade,1,HLT-200,1,HLT-340,TRUE,psychoanalysis; freud; psychiatry; interior-self
+HLT-325,1918 and the Machinery of Mass Epidemiology,health,war; diplomacy; mathematics; law,core,drafted,medium,1918,1950,decade,2,HLT-270; HLT-230,0,,TRUE,influenza; 1918-pandemic; spanish-flu; ministry-of-health; notifiable-disease; league-health-organisation; samoa; censorship
 HLT-330,Antibiotics,health,sciences; war,core,drafted,high,1928,1945,year,1,HLT-310,0,,FALSE,antibiotics; penicillin; resistance; medicine
 HLT-340,The Therapeutic Turn,health,philosophy,standard,drafted,medium,1950,2000,decade,1,HLT-320,0,,FALSE,therapy; self-help; individualism; mental-health
 HLT-350,The Nutrition Transition,health,agriculture; commerce,core,drafted,high,1950,2020,decade,1,HLT-040,0,,FALSE,nutrition; obesity; food-systems; globalization; chronic-disease
