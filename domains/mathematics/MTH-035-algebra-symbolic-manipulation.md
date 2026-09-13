@@ -31,7 +31,7 @@ absence:
   - region: europe
     note: Latin Europe before the twelfth century had no algebra. Alcuin's Problems to Sharpen the Young around 800, the era's mathematical collection, solves each puzzle separately by its own trick, with no method that transfers from one problem to the next — the mechanism's negative stated exactly. General methods arrived only with the translation of al-Khwarizmi by Robert of Chester in 1145, which is why the word itself is Arabic.
 prereqs: [MTH-015, MTH-020]
-enables: [MTH-045]
+enables: [MTH-045, MTH-084]
 see_also: [MTH-025, LAW-070, MTH-040]
 contested: true
 contested_note: "Two disputes. First, whether Greek geometric treatments of quadratic problems in Euclid constitute a geometric algebra was the subject of a sharp historiographical controversy after Unguru's 1975 critique, which argued that reading them as algebra imposes a later concept; model Greek geometry as solving problems algebra later generalised, without calling it algebra. Second, how much al-Khwarizmi drew on Babylonian procedural quadratics, on Indian algebra, or on Greek geometry is unresolved; his geometric proofs resemble Greek methods and his problem types resemble Babylonian ones. Model the Islamic synthesis as drawing on several traditions rather than descending from one. Throughout, symbolic notation is modelled as one route to generality among three, and the most economical rather than the first or the only true one."

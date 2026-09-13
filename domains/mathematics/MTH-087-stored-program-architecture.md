@@ -35,7 +35,7 @@ absence:
     note: No stored-program computer was built on the continent in this window. Every early machine elsewhere was paid for by an urgent sponsor — nuclear weapons calculation, cryptanalysis, ballistics, weather, or in Japan's case industrial optics — and built by an existing electronics base able to supply thousands of valves and a maintenance staff. Neither condition was present, and the first computers to arrive in the following decade were imported, so the architecture came to the region as a finished product rather than as something built to meet a local demand.
 prereqs: [MTH-065, MTH-080]
 enables: [MED-150]
-see_also: [MTH-060, ENG-330, WAR-330, MTH-090, MTH-020]
+see_also: [MTH-060, ENG-330, WAR-330, MTH-090, MTH-020, MTH-084]
 contested: true
 contested_note: "Two disputes. Attribution of the architecture is contested: the 1945 EDVAC report bears von Neumann's name alone and draws on Eckert and Mauchly's work with the ENIAC team, and the naming of the design after von Neumann has been criticised as erasing their contribution, while Turing's contemporaneous ACE design and Zuse's work complicate it further. Model the architecture as emerging from a small, interconnected group and several independent sites rather than from a single author. Second, claims to be the first stored-program computer depend on definition — first to run a stored program (Manchester, 1948), first to offer a regular service (EDSAC, 1949), first built to the EDVAC design, first in continental Europe (MESM) — and should be treated as definitional rather than factual disputes."
 stats_touched: [execution delegability, capital specificity]

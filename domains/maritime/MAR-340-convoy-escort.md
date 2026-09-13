@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [MAR-220, MAR-320]
 enables: []
-see_also: [MAR-060, MAR-210, MAR-310, MED-120, MED-130, WAR-315, MAR-335, MTH-072]
+see_also: [MAR-060, MAR-210, MAR-310, MED-120, MED-130, WAR-315, MAR-335, MTH-072, MTH-084]
 contested: false
 contested_note: ""
 stats_touched: []
