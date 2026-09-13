@@ -24,7 +24,7 @@ absence:
     note: No comparable precision mechanical timekeeping tradition develops in the pre-contact Americas, consistent with the broader absence of gear-train and wheeled-mechanism traditions already documented elsewhere in this record for the region.
 prereqs: []
 enables: [MAR-250]
-see_also: [ENG-190]
+see_also: [ENG-190, ENG-215]
 contested: true
 contested_note: "Whether European mechanical clockwork developed in genuine isolation or carries any transmitted influence from Su Song's Chinese astronomical clock tower, which predates the first European mechanical clocks by roughly two centuries, is a genuinely unresolved history-of-technology question — no documented transmission chain has been established, but the possibility of indirect influence via intermediate contact hasn't been ruled out either. Model the two traditions as independently-developed by default, while treating a transmission link as a live, unconfirmed possibility rather than a settled non-connection."
 stats_touched: []

@@ -31,7 +31,7 @@ absence:
     note: No standing demand for printed tables existed — no almanac, no insurance market, no cadastre, no artillery bureaucracy — so there was nothing for organised calculation to produce. The institution is demand-led entirely, and without a buyer for tables of results the labour is never assembled.
 prereqs: [MTH-020]
 enables: []
-see_also: [COM-180, MAR-250, MAR-050, FIN-090, MTH-040, WAR-150, WAR-035, MTH-050, COM-170]
+see_also: [COM-180, MAR-250, MAR-050, FIN-090, MTH-040, WAR-150, WAR-035, MTH-050, COM-170, ENG-215]
 contested: true
 contested_note: "Three disputes. The hairdressers in Prony's bottom tier are reported by his contemporaries and repeated by Babbage, and should be carried as the account the period gave of itself rather than as a verified workforce composition. Second, whether cheap skilled computing labour delayed mechanisation is plausible and not established; model it as a conditional on relative wage and machine cost, the same shape as `labour-saving incentive` takes for coerced labour, rather than as a fact. Third, and most important for the gendering, the direction of causation is disputed — whether computation was feminised because it had already been classified as deskilled execution, or classified as deskilled because it was being done by women. The evidence supports both, and the reclassification of programming from clerical to engineering as it gained status suggests the relation runs in both directions. Model classification and composition as mutually reinforcing rather than picking an order."
 stats_touched: [execution delegability, stranded capital, labour-saving incentive]

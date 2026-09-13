@@ -192,7 +192,8 @@ notation system that all three presuppose.
    forbids, or costs. **Test: could the entry's central claim be refuted by an
    observation? If not, it is MTH.**
 2. **Computation** — the delegation and execution of a procedure, whether by
-   organised people or by dedicated calculating machinery. The arc from the
+   organised people or by machinery that holds the procedure outside a human
+   head. The arc from the
    procedural tablet through the computing office, the tabulator and the
    stored-program machine is kept in one domain deliberately, on the same
    reasoning that kept MED's arc whole: splitting it by executor would break
@@ -202,12 +203,14 @@ notation system that all three presuppose.
   institutions producing it; the refutation test decides. Probability theory
   is MTH (`MTH-040`); statistical mechanics is NAT (`NAT-180`). Experimental
   method (`NAT-090`) is NAT even though it is a procedure, because its results
-  come from observation — which is why "procedure" alone is not the test.
-- **MTH / ENG.** ENG owns component fabrication and machinery whose purpose is
-  not computation. A calculating machine, a tabulator or a stored-program
-  architecture is MTH, because its claim is about what gets computed, by what,
-  at what cost. The transistor and integrated-circuit fabrication it is built
-  from is ENG (`ENG-330`), as are machine tools and power.
+  come from observation — which is why "procedu- **MTH / ENG.** ENG owns component fabrication, machinery whose purpose is
+  not computation, and **instruments that perform a single operation inside a
+  procedure a human still conducts**. The test is whether the procedure is held
+  outside a human head. A calculating machine that adds with carry is an
+  instrument like the abacus and is ENG (`ENG-215`). A unit-record tabulator,
+  a programmable machine, or a stored-program architecture holds the procedure
+  itself and is MTH. The transistor and integrated-circuit fabrication any of
+  them is built from is ENG (`ENG-330`), as are machine tools and power.re machine tools and power.
 - **MTH / COM.** COM owns the division of labour as a general institution
   (`COM-170`). Labour organised specifically to perform computation is MTH,
   because the mechanism being organised is procedural delegation.
