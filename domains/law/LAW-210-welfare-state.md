@@ -21,7 +21,7 @@ absence:
     note: Formal state-administered welfare systems on the European model remain limited across most of colonial and early postcolonial Africa in this era, with social protection continuing to run substantially through extended family, lineage, and community obligation networks rather than through state-administered entitlement programs — informal but real social insurance existing alongside, not preceding, formal state welfare systems elsewhere.
 prereqs: [FIN-020]
 enables: []
-see_also: [REL-130, FIN-230, LAW-165, WAR-037]
+see_also: [REL-130, FIN-230, LAW-165, WAR-037, REL-255]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -62,6 +62,11 @@ consequences for family structure and communal bonds as the state
 increasingly substitutes for functions those relationships previously
 carried — a transformation continuous with the individualizing habitus
 shifts (privacy, urbanization) already covered elsewhere in this record.
+The same substitution displaces religious institutions from charity and
+relief, which REL-255 treats as one of the transfers that strip religious
+authority of its practical base — and, through removing the risks religion
+addressed, as the input to the existential-security explanation of where
+religious participation fell.
 
 ## Regional specifics
 

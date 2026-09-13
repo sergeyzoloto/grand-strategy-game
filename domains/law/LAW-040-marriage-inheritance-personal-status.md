@@ -24,7 +24,7 @@ absence:
     note: Post-Reformation European states increasingly move marriage and family law under unified state civil jurisdiction rather than leaving it to competing ecclesiastical courts, a slow secularization of personal-status law running in the opposite direction from the Ottoman millet system's formalized religious pluralism over the same broad era.
 prereqs: [LAW-020]
 enables: []
-see_also: [LAW-050, LAW-220, LAW-070, WAR-035, REL-252]
+see_also: [LAW-050, LAW-220, LAW-070, WAR-035, REL-252, REL-255]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -47,7 +47,7 @@ Personal-status law reaches into a household's most intimate legal relationships
 
 ## Regional specifics
 
-The Ottoman millet system treats religious legal pluralism in personal-status matters as the empire's normal governing structure, not an exception. British colonial codification in India instead converts an actually fluid, locally-variable set of customary practices into two rigid, administratively convenient categories ("Hindu law," "Muslim law") that didn't previously exist in that fixed form — a case of colonial administrative convenience actively inventing the very legal tradition it claimed only to be recording, with consequences persisting well past independence. European secularization of marriage jurisdiction runs in the opposite institutional direction from the Ottoman case over the same broad era, consolidating personal-status law under unified state civil authority rather than formalizing religious plurality. Both directions are varieties of REL-252's secular settlement — the European one privatising confession, the Ottoman and colonial one partitioning jurisdiction — and that entry carries the constitutional choice between them while this one carries the personal-status machinery either choice runs on.
+The Ottoman millet system treats religious legal pluralism in personal-status matters as the empire's normal governing structure, not an exception. British colonial codification in India instead converts an actually fluid, locally-variable set of customary practices into two rigid, administratively convenient categories ("Hindu law," "Muslim law") that didn't previously exist in that fixed form — a case of colonial administrative convenience actively inventing the very legal tradition it claimed only to be recording, with consequences persisting well past independence. European secularization of marriage jurisdiction runs in the opposite institutional direction from the Ottoman case over the same broad era, consolidating personal-status law under unified state civil authority rather than formalizing religious plurality. Both directions are varieties of REL-252's secular settlement — the European one privatising confession, the Ottoman and colonial one partitioning jurisdiction — and that entry carries the constitutional choice between them while this one carries the personal-status machinery either choice runs on. Moving marriage and probate out of church courts is also one of the dated functional transfers REL-255 uses to explain where religious authority declined — England's 1857 Matrimonial Causes and Court of Probate Acts, Germany's obligatory civil marriage of 1875.
 
 ## Hook
 

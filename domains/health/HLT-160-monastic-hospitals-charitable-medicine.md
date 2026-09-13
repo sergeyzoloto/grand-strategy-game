@@ -24,7 +24,7 @@ absence:
     note: Buddhist charitable dispensaries and famine/plague relief exist and matter, but China's dominant charitable-medicine channel through most of this period runs more through state and lineage/clan welfare institutions than through a dedicated hospital-as-building model comparable to bimaristans or European hospitals — a different institutional container for a similar charitable impulse.
 prereqs: [HLT-150, REL-060, HLT-080]
 enables: []
-see_also: [HLT-210, HLT-200]
+see_also: [HLT-210, HLT-200, REL-255]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -62,7 +62,11 @@ prestige — for the religious order, the ruler, or the endowing merchant — as
 it is a health-delivery mechanism, which is part of why
 investment in hospital buildings and endowments doesn't track particularly
 closely with investment in the medical knowledge that would make them more
-effective.
+effective. The religious hospital's long afterlife ends when states take the
+function over — Quebec's hospital insurance in 1961, Britain's NHS in 1948 —
+and REL-255 counts that transfer among the institutional changes that remove
+a religious body's practical authority, independent of anything happening to
+belief.
 
 ## Regional specifics
 

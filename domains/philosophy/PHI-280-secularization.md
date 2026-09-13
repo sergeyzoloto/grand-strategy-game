@@ -21,7 +21,7 @@ absence:
     note: Ottoman and later Turkish reform movements (the Tanzimat era onward) restructure religion's relationship to state administration on a different logic than European secularization's gradual differentiation thesis — reform here is substantially state-driven modernization imposed relatively abruptly on existing religious-legal institutions (millet courts, religious endowments) rather than the slower spontaneous differentiation Weber's account describes for Europe.
 prereqs: [PHI-270]
 enables: []
-see_also: [REL-040, DIP-100, PHI-160, REL-220, REL-252]
+see_also: [REL-040, DIP-100, PHI-160, REL-220, REL-252, REL-255]
 contested: true
 contested_note: "The 'secularization thesis' — that modernization necessarily and more or less universally produces institutional differentiation of religious from political authority and a general decline in religion's social significance — is one of the most heavily contested theses in the sociology of religion. Sociologist Peter Berger, an early prominent proponent, later publicly reversed his own position, arguing the empirical record (persistently high American religiosity, substantial religious growth across the Global South) contradicts the thesis at a global level. Model secularization as a real, specific institutional process (differentiation of religious and political authority in particular domains, per REL-040 and DIP-100) rather than as a general law of modernization predicting religion's overall social decline."
 stats_touched: []
@@ -94,6 +94,16 @@ institutional process (differentiation of religious and political
 authority in particular domains, per REL-040 and DIP-100) rather than as
 a general law of modernization predicting religion's overall social
 decline.
+
+The boundary with REL is deliberate. This entry owns secularisation as a
+philosophical claim — disenchantment, the autonomy of secular reason, and the
+argument that political legitimacy can rest on grounds other than religious
+sanction. REL-255 owns the institutional process: where religious
+participation and authority actually fell, where they did not, and the
+competing institutional explanations for the difference. REL-252 owns the
+legal settlements. A claim about what modernity does to belief belongs here;
+a claim about which state absorbed which church function, and what followed,
+belongs there.
 
 ## Hook
 

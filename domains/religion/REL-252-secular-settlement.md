@@ -17,7 +17,7 @@ region_variants:
     note: Westphalia fixes 1624 as the normative year for each territory's confession but protects private worship for minorities who held it then — the first step off the confessional state, since a subject of the wrong confession is now tolerated inside the polity rather than expelled or converted. It detaches residence from confession without yet detaching citizenship from it.
   - region: americas
     date_start: 1791
-    note: Disestablishment. The First Amendment bars a federal church, the Virginia Statute for Religious Freedom (1786) supplies the model, and the last state establishment, Massachusetts, ends in 1833. With no church funded or privileged, religious organisations compete for members — and adherence rises across the following two centuries rather than falling, which is the fact that makes European religious decline a regional outcome rather than a universal one.
+    note: Disestablishment. The First Amendment bars a federal church, the Virginia Statute for Religious Freedom (1786) supplies the model, and the last state establishment, Massachusetts, ends in 1833. With no church funded or privileged, religious organisations compete for members — and adherence rises across the following two centuries rather than falling, which is the fact that makes European religious decline a regional outcome rather than a universal one (REL-255).
   - region: europe
     date_start: 1828
     note: Established but tolerant. England keeps a state church while stripping the civil disabilities attached to dissent — sacramental tests for office repealed in 1828, Catholic emancipation in 1829, civil marriage and registration from 1836-37, nonconformist burial in parish churchyards in 1880. The church keeps its bishops in the legislature and its coronation role; what it loses is the power to make confession a condition of office, marriage, or burial.
@@ -45,7 +45,7 @@ absence:
   - region: east-asia
     note: Qing China had no confessional loyalty to detach. The imperial state legitimated itself through ritual and classical orthodoxy rather than membership of a church, registered and regulated Buddhist and Daoist clergy, and treated heterodox sects as problems of public order rather than of confession. Citizenship was never conditional on confession, so there was nothing for a secular settlement to renegotiate — the state instead confronts religion as organised disorder, as in the Taiping war.
 prereqs: [REL-220, REL-040]
-enables: []
+enables: [REL-255]
 see_also: [DIP-100, LAW-040, DIP-160, PHI-310, PHI-280, REL-260, REL-250, REL-210]
 contested: true
 contested_note: "The settlement's founding story is disputed. The standard account holds that the wars of religion demonstrated the danger of confessional politics and the secular state arose to end them. Cavanaugh (The Myth of Religious Violence, 2009, chs. 3-4) argues the 'wars of religion' were substantially state-building wars, and that the narrative of religious violence tamed by the neutral state is the secular state's own legitimating myth — which matters because it predicts the settlement transfers violence to national conflict rather than reducing it. Model the settlement as reliably lowering confessional conflict between groups inside the polity, and make whether total political violence falls or is displaced into national and ideological conflict conditional on whether a substitute legitimation (nationalism, civil religion) forms, and on how exclusive it is."
@@ -143,8 +143,9 @@ the confessional state knew who was born, married, and dead (REL-210). Every
 secular settlement except the partition model builds a civil registry and civil
 marriage to replace them, so the settlement also transfers a record-keeping
 capability from church to state — France in 1792, England in 1836-37, Mexico in
-1859 — and that transfer is the first of several dateable functional losses
-religious institutions sustain after the settlement.
+1859 — and that transfer is the first of the dateable functional losses
+REL-255 tracks when it explains why religion declined in some places and not
+others.
 
 ## Social consequence
 

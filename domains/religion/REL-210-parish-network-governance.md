@@ -21,7 +21,7 @@ absence:
     note: Not every European territory achieved comparably complete parish-based registration by the same date — coverage, record quality, and how consistently the parish network was actually used for civil administration varied significantly between wealthier, more centralized states and poorer or more fragmented ones well into the early modern period.
 prereqs: [REL-110]
 enables: [WAR-200]
-see_also: [REL-200, REL-260, LAW-165, REL-252]
+see_also: [REL-200, REL-260, LAW-165, REL-252, REL-255]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -63,7 +63,9 @@ conviction, a quiet but pervasive form of religious institutional leverage
 over purely civil matters. That leverage is what the secular settlement
 (REL-252) removes, by building civil registration and civil marriage to
 replace the parish record — France in 1792, England in 1836-37, Mexico in
-1859.
+1859. REL-255 treats each of those as a dated transfer of function from
+church to state, one of several that decide where religious authority
+declined.
 
 ## Regional specifics
 

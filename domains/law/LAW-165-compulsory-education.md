@@ -34,7 +34,7 @@ absence:
     note: The instrument requires knowing where a child is on a given morning, which mobile pastoral households defeat in exactly the way they defeat conscription — no fixed residence to register, no daily attendance to check against. Where schooling was eventually imposed it required settling the population first, so the sequence runs sedentarisation then schooling rather than the reverse, and the educational measure is downstream of a much larger coercive one.
 prereqs: [WAR-200, LAW-100, FIN-020]
 enables: []
-see_also: [MED-020, MED-090, MED-070, LAW-220, LAW-210, COM-170, REL-090, DIP-160, HLT-270, REL-210, MTH-075]
+see_also: [MED-020, MED-090, MED-070, LAW-220, LAW-210, COM-170, REL-090, DIP-160, HLT-270, REL-210, MTH-075, REL-255]
 contested: true
 contested_note: "What compulsory schooling was for is genuinely disputed and the dispute should be modelled rather than resolved. The civic reading treats it as the extension of citizenship — a literate electorate, equality of opportunity, and the state discharging an obligation to children. The control reading, associated with Foucault and with revisionist historians of education, treats it as the disciplinary production of governable subjects, noting that the curriculum's most reliable outputs are punctuality, obedience to a timetable, and a standardised national identity rather than any particular knowledge. The evidence supports both because states pursued both, frequently in the same legislation. Model the mechanism as producing `literacy`, `time discipline` and national identification together as a bundle that cannot be separated at the point of adoption, so a state cannot buy the literacy without the discipline or the nationalisation — which is a better representation of the historical record than allowing a player to select an outcome, and is consistent with design principle 2's refusal of direct levers on population disposition."
 stats_touched: [literacy, time discipline, legibility, literacy training cost]
@@ -107,7 +107,12 @@ asserts a direct relationship with the child that the parent cannot
 override, which is the same assertion conscription makes about an adult son
 and is resisted for the same reason. Where the state and the household
 disagree about what a child should learn — language, religion, history —
-the school is where that disagreement is settled, by the state.
+the school is where that disagreement is settled, by the state. Taking over
+schooling is also one of the specific, dateable transfers through which a
+state removes a church's functional base, and in REL-255 it is one of the
+inputs deciding whether religious decline follows — which is why its effect
+is large where the state could absorb the function and small where missions
+kept running the schools.
 
 That power is also available for other purposes, and the entry should carry
 the worst case rather than only the civic one. The custody the mechanism
