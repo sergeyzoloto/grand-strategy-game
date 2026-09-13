@@ -952,3 +952,16 @@ mathematics.
 | NAT-215 | MTH-080 | Computability and the Limits of Formal Systems |
 | NAT-240 | MTH-090 | Information Theory |
 
+## Disambiguation — 2026-09-13 — NAT-015 reused
+
+Not a renumbering run. A burned `former_id` has been reused under the rule
+added to `conventions.md` on this date. A stale reference to this ID must be
+checked against both rows below.
+
+| reused ID | historical resolution | status of historical holder | new holder |
+|---|---|---|---|
+| NAT-015 | Run 1: NAT-015 → NAT-060 | NAT-060 retired 2026-09-12, superseded by NAT-014 and NAT-215 — themselves moved by Run 4 to MTH-020 and MTH-080 | NAT-015 Positional Astronomy and Predictive Tables, from 2026-09-13 |
+
+A reference to NAT-015 written **before 2026-09-13** means the old computer
+science entry and resolves to MTH-020 / MTH-080. A reference written **on or
+after 2026-09-13** means positional astronomy.

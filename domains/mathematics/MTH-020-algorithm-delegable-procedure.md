@@ -21,7 +21,7 @@ region_variants:
     note: Euclid supplies the contrast that defines the entry. The GCD procedure is an algorithm with a proof that it terminates and returns the right answer, which is procedure plus justification and therefore a different and later achievement than the Babylonian recipe. Greek mathematics treats deduction as the point and computation as a means; the procedural traditions treat computation as the point. Both are mathematics, and a model that scores one as more advanced has mistaken a choice of aim for a level of attainment.
   - region: south-asia
     date_start: 500
-    note: Indian arithmetic supplies the notation without which a written procedure is barely tractable — decimal place-value with a true zero, mature by roughly 500 (MTH-010) — and then general rules over it, with Brahmagupta in 628 giving the rules for zero and for negative quantities as operations anyone can apply without reasoning about what a negative quantity is. That is the mechanism in its purest form, since the rule is correct in the hands of someone who finds the object it operates on unintelligible.
+    note: Indian arithmetic supplies the notation without which a written procedure is barely tractable — decimal place-value with a true zero, mature by roughly 500 (MTH-015) — and then general rules over it, with Brahmagupta in 628 giving the rules for zero and for negative quantities as operations anyone can apply without reasoning about what a negative quantity is. That is the mechanism in its purest form, since the rule is correct in the hands of someone who finds the object it operates on unintelligible.
   - region: east-asia
     date_start: 100
     note: The Nine Chapters on the Mathematical Art organises mathematics as 246 problems each resolved by a stated general procedure, which is algorithmic mathematics as a formal subject of study rather than as a collection of tricks — with Liu Hui's commentary of 263 supplying justifications alongside the procedures. Qin Jiushao's work of 1247 gives the general procedure for simultaneous congruences now called the Chinese remainder theorem. This tradition is as developed as any in the entry and is corrected here from a prior claim that it lacked a formal theory of procedure.
@@ -33,7 +33,7 @@ absence:
     note: Polynesian wayfinding is computation of a high order — integrating heading, swell, star bearings, and elapsed time over weeks of open ocean — carried out with no notation of any kind. Because nothing is written, the procedure cannot be separated from the person performing it. Transmission runs through years of apprenticeship in which the navigator learns to perceive as well as to calculate, so the skill is inseparable from understanding and cannot be handed to an executor who lacks it. This is the entry's mechanism failing for want of a recording medium rather than for want of computational sophistication, and it shows notation rather than mathematics is the binding constraint.
   - region: africa
     note: West African Ifa divination runs a genuinely formal combinatorial system over 256 figures, each keyed to a memorised body of verses, and it is transmitted as an oral corpus held in the diviner's memory rather than as written instructions. The result is a formal procedure whose transmission cost is initiation rather than instruction — years of memorisation gated by a lineage of teachers, not a text a stranger can pick up. What is absent is the written recipe, and with it the possibility of delegating execution to someone outside the tradition; the formalism itself is fully present.
-prereqs: [MTH-010]
+prereqs: [MTH-015]
 enables: [MTH-080, MTH-060, MTH-065]
 see_also: [MTH-030, NAT-050, MTH-090, ENG-330, COM-170, COM-180, AGR-050, MED-010, MTH-070, MTH-075]
 contested: true
@@ -78,7 +78,7 @@ accuracy and patience.
 Two conditions gate this and both are about recording rather than
 mathematics. The procedure must be **written in a notation compact enough
 to be followed**, which is why positional decimal notation with a zero
-matters so much (MTH-010) — the same computation in a non-positional
+matters so much (MTH-015) — the same computation in a non-positional
 system is a procedure in principle and unusable in practice. And the
 notation must be **transmissible to someone the author will never meet**,
 which is what separates a written recipe from an apprenticeship. Where

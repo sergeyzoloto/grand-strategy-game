@@ -17,7 +17,7 @@ region_variants:
     date_start: 850
     note: Al-Kindi's ninth-century treatise on cryptanalysis develops frequency analysis — inferring a hidden pattern from the known relative frequency of letters in a language — a genuine, specific instance of statistical reasoning about uncertain, aggregate outcomes, applied to cryptography rather than to natural science or games of chance.
 absence: []
-prereqs: [MTH-010]
+prereqs: [MTH-015]
 enables: [NAT-180, NAT-210, MTH-090]
 see_also: [NAT-040, MTH-060]
 contested: false

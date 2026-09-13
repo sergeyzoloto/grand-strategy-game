@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [NAT-050]
 enables: []
-see_also: []
+see_also: [NAT-015]
 contested: true
 contested_note: "The popular account of the House of Wisdom's destruction (books thrown into the Tigris in such volume the river ran black with ink) significantly postdates the 1258 conquest itself and likely exaggerates both the sheer quantity of material destroyed and how uniquely catastrophic the event was for Islamic scientific activity as a whole, given serious scholarship continued for centuries afterward in Cairo, Persia, and later Ottoman, Safavid, and Mughal courts — the field's actual center of gravity may already have been dispersing beyond Baghdad well before 1258. Model the violent institutional destruction of Baghdad's specific translation-and-research apparatus as certain and dated, while treating the total magnitude of resulting knowledge loss, versus how much scientific capacity had already relocated elsewhere, as a genuinely open historical question."
 stats_touched: [accumulated scientific corpus]

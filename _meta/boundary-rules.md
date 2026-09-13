@@ -227,9 +227,8 @@ notation system that all three presuppose.
   property, proof standards in evidence — which are not MTH merely because they
   involve computation or probability.
 
-Entries that bundle a method with its first application (`MTH-010` carries
-calendrical astronomy; `MTH-040` carries al-Kindi's cryptanalysis and
-Boltzmann) are placed by their central claim under the one-entry-one-mechanism
+Entries that bundle a method with its first application (`MTH-040` carries
+al-Kindi's cryptanalysis and Boltzmann) are placed by their central claim under the one-entry-one-mechanism
 rule, not by the presence of mathematics in them.
 
 ## MIG / all

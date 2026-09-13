@@ -27,7 +27,7 @@ region_variants:
 absence:
   - region: africa
     note: Across colonial Africa calculating machines stayed largely within the offices of European banks and trading houses, and administrative arithmetic remained clerical. The volume of routine calculation outside those offices never reached the level at which an imported precision instrument cheaper than a clerk's time could pay for itself, so the mechanism that decides adoption elsewhere — the relative cost of skilled human calculation against the machine — never tipped. The instrument was available and the arithmetic to justify it was not there.
-prereqs: [ENG-190, MTH-010]
+prereqs: [ENG-190, MTH-015]
 enables: [MTH-065]
 see_also: [MTH-060, ENG-330, COM-180, ENG-160, MTH-075]
 contested: true

@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: south-asia
     note: Indian astronomer Aryabhata proposes Earth's rotation on its axis (explaining apparent celestial motion without requiring the heavens themselves to rotate) as early as 499, a genuine partial anticipation of heliocentric-adjacent reasoning that doesn't extend to full heliocentrism itself and doesn't transmit into or influence the later Maragha-to-Copernicus lineage.
-prereqs: [MTH-010, NAT-040, NAT-080]
+prereqs: [NAT-015, NAT-040, NAT-080]
 enables: []
 see_also: [NAT-190, NAT-230]
 contested: true

@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Chinese ritual and festival timing traditionally follows a lunisolar calendar administered and periodically corrected by the imperial state itself — getting the calendar right was a marker of the emperor's own cosmological legitimacy — rather than by an independent religious institution setting sacred time apart from state authority the way the European liturgical calendar or the Islamic calendar do.
-prereqs: []
+prereqs: [NAT-015]
 enables: []
 see_also: [REL-130]
 contested: false
