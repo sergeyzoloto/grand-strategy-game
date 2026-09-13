@@ -21,7 +21,7 @@ absence:
     note: Field artillery integration into open-battle tactics (as opposed to siege use) develops more slowly and unevenly across South Asian armies of this era relative to the Ottoman and later European cases, with artillery remaining more centralized as a prestige and siege asset than as a mobile battlefield arm coordinated with infantry and cavalry.
 prereqs: [WAR-070, WAR-130]
 enables: [WAR-260, WAR-310, WAR-270, WAR-330, WAR-160]
-see_also: [MTH-060, MTH-050]
+see_also: [MTH-060, MTH-050, MTH-065]
 contested: false
 contested_note: ""
 stats_touched: []

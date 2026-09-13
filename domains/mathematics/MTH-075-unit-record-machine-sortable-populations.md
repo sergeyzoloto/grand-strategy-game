@@ -25,7 +25,7 @@ absence:
     note: Tabulating equipment was economic only on very large runs, leased at substantial cost and paying for itself by processing millions of records. No enumeration, commercial ledger or insurance book in the region approached that volume, so the technology that transformed large censuses offered small populations nothing their existing clerical methods did not already supply at lower cost.
 prereqs: [FIN-020, HLT-270]
 enables: [MIG-250]
-see_also: [WAR-200, LAW-165, MTH-060, COM-180, ENG-215, MTH-020]
+see_also: [WAR-200, LAW-165, MTH-060, COM-180, ENG-215, MTH-020, MTH-065]
 contested: true
 contested_note: "Two disputes. The census speed-up is real and routinely overstated as one year against eight: the 1890 headline count took weeks, full tabulation a few years, against most of a decade for 1880. Model the gain as an order of magnitude in turnaround for standard counts and a smaller gain for full cross-tabulation. Second, IBM's knowledge of and responsibility for Dehomag's work for the Nazi state is contested — Black's account is influential and disputed by business historians on the degree of direction from New York. What is not contested is the mechanism, that a population-record machine sorts by whatever categories the operator punches, and that should be modelled as a property of the technology rather than of any one case."
 stats_touched: [legibility, execution delegability]

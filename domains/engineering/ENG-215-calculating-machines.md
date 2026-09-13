@@ -28,7 +28,7 @@ absence:
   - region: africa
     note: Across colonial Africa calculating machines stayed largely within the offices of European banks and trading houses, and administrative arithmetic remained clerical. The volume of routine calculation outside those offices never reached the level at which an imported precision instrument cheaper than a clerk's time could pay for itself, so the mechanism that decides adoption elsewhere — the relative cost of skilled human calculation against the machine — never tipped. The instrument was available and the arithmetic to justify it was not there.
 prereqs: [ENG-190, MTH-010]
-enables: []
+enables: [MTH-065]
 see_also: [MTH-060, ENG-330, COM-180, ENG-160, MTH-075]
 contested: true
 contested_note: "Why Pascal's and Leibniz's machines failed as products while the arithmometer succeeded is disputed between two explanations that are better modelled together than chosen between. The precision account holds that carry mechanisms need tolerances that seventeenth-century workshops could not hold repeatably, and that the nineteenth-century machine-tool base (ENG-190) is what made reliable production possible. The demand account holds that seventeenth-century commerce had nowhere near the volume of routine arithmetic that nineteenth-century banks, insurers and railways generated, so even a reliable Pascaline would have found few buyers. Model commercial viability as requiring both — manufacturable precision and a volume of office arithmetic large enough to amortise the instrument — so neither alone produces adoption. Separately, the 1946 soroban contest is a single widely reported event and should illustrate the relative-cost mechanism rather than establish that the abacus was generally faster."
