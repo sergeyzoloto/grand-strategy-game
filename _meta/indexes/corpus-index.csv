@@ -1,0 +1,418 @@
+﻿id,title,domain,domains_touched,tier,status,confidence,date_start,date_end,date_precision,prereq_count,prereqs,enables_count,enables,contested,tags
+AGR-010,The Holocene Bargain,agriculture,health,core,drafted,medium,-11700,-8000,era,0,,3,AGR-020; AGR-090; WAR-035,TRUE,holocene; climate-stability; pleistocene; domestication-precondition
+AGR-020,Founder Crop Domestication,agriculture,migration; health,core,drafted,high,-9500,-3500,era,1,AGR-010,9,AGR-030; AGR-050; AGR-080; AGR-160; AGR-120; AGR-220; AGR-110; AGR-060; ENG-055,TRUE,domestication; founder-crops; neolithic; teosinte; fertile-crescent
+AGR-030,Livestock Domestication and the Secondary Products Revolution,agriculture,health,core,drafted,medium,-8500,-3500,era,1,AGR-020,6,AGR-040; AGR-130; AGR-140; AGR-110; AGR-070; WAR-010,FALSE,livestock; secondary-products-revolution; traction; wool
+AGR-040,Zoonotic Disease Emergence,agriculture,health,standard,drafted,medium,-8500,-2000,era,1,AGR-030,1,HLT-240,TRUE,zoonosis; disease-reservoir; livestock; influenza
+AGR-050,"Storage, Sealing, and Agrarian Accounting",agriculture,finance; nature,core,drafted,medium,-8000,-3100,era,2,AGR-020; HLT-030,6,FIN-020; MTH-015; REL-020; WAR-010; WAR-035; MED-010,TRUE,clay-tokens; bullae; proto-writing; agrarian-accounting
+AGR-060,Grain Processing and the Mill,agriculture,engineering,standard,drafted,medium,-8000,1200,era,1,AGR-020,0,,FALSE,mill; quern; watermill; grain-processing
+AGR-070,"Livestock Containment: Fence, Fold, and Corral",agriculture,,core,drafted,medium,-8000,1800,era,1,AGR-030,1,AGR-250,FALSE,fence; fold; corral; containment; controlled-mating
+AGR-080,The Farming Frontier Expansions,agriculture,migration,core,drafted,medium,-7000,1800,era,1,AGR-020,1,AGR-160,TRUE,swidden; shifting-cultivation; slash-and-burn; frontier; bantu-expansion
+AGR-090,Population Pressure and Agricultural Intensification,agriculture,,core,drafted,medium,-7000,1800,era,1,AGR-010,0,,TRUE,boserup-thesis; population-pressure; intensification; malthus
+AGR-100,Irrigation and Hydraulic Works,agriculture,engineering; commerce,core,drafted,high,-6000,-250,era,1,ENG-020,4,AGR-150; AGR-170; AGR-280; COM-070,TRUE,irrigation; water-rights; hydraulic-despotism; yield
+AGR-110,Manure and Night-Soil Nutrient Cycling,agriculture,health,core,drafted,high,-6000,1800,era,2,AGR-020; AGR-030,1,AGR-240,TRUE,manure; night-soil; nutrient-cycling; dung-fuel
+AGR-120,Wet-Rice Intensification (Champa Rice),agriculture,,standard,drafted,high,-5000,1100,era,1,AGR-020,0,,FALSE,champa-rice; wet-rice; double-cropping; yangzi
+AGR-130,"The Ard, Animal Traction, and the Gendered Field",agriculture,,core,drafted,medium,-4000,-1000,era,1,AGR-030,2,AGR-180; AGR-260,TRUE,ard; plow; animal-traction; boserup-thesis; gendered-labor
+AGR-140,The Pastoralist–Cultivator Conflict Cycle,agriculture,war; migration,core,drafted,medium,-3000,2000,era,1,AGR-030,0,,FALSE,pastoralist-cultivator-conflict; transhumance; grazing-corridor; land-use
+AGR-150,Salinization and the Sumerian Yield Collapse,agriculture,commerce,core,drafted,medium,-2400,-1700,era,1,AGR-100,0,,TRUE,salinization; sumer; irrigation-drainage; wheat-barley-shift
+AGR-160,Iron Farm Tools and the Forest Frontier,agriculture,engineering; migration,core,drafted,medium,-1200,1000,era,3,AGR-020; COM-020; ENG-010,0,,FALSE,iron-tools; forest-clearance; bantu-expansion; plowshare
+AGR-170,The Roman Grain Order,agriculture,law; maritime,standard,drafted,medium,-123,476,era,2,AGR-100; MAR-020,1,LAW-080,FALSE,annona; roman-grain-trade; egypt
+AGR-180,The North European Package,agriculture,engineering,core,drafted,medium,600,1200,era,1,AGR-130,2,AGR-240; AGR-200,TRUE,mouldboard-plow; horse-collar; three-field-rotation; lynn-white-thesis
+AGR-190,The Fourteenth-Century Shock and the Great Divergence of Serfdom,agriculture,health; law,core,drafted,medium,1350,1600,century,1,HLT-220,0,,TRUE,second-serfdom; brenner-debate; agrarian-divergence; grain-export
+AGR-200,Enclosure and Land Tenure Regimes,agriculture,law; migration,core,drafted,high,1450,1850,era,1,AGR-180,0,,TRUE,enclosure; common-land; land-tenure; dispossession
+AGR-210,The Plantation Complex,agriculture,commerce; migration,core,drafted,high,1450,1888,century,2,MIG-160; WAR-035,0,,FALSE,plantation; monoculture; gang-labor; sugar; soil-exhaustion
+AGR-220,The Columbian Exchange and Collapse,agriculture,migration; health; maritime,core,drafted,high,1492,1700,century,2,AGR-020; MAR-160,1,AGR-270,TRUE,columbian-exchange; maize; potato; cassava; land-abandonment
+AGR-230,The Little Ice Age and the General Crisis,agriculture,war; finance,standard,drafted,medium,1560,1720,century,0,,0,,TRUE,little-ice-age; general-crisis; harvest-failure; ming-collapse; celali-revolts
+AGR-240,Fodder Crops and Legume Rotation,agriculture,,core,drafted,high,1650,1800,century,2,AGR-180; AGR-110,0,,TRUE,turnip-townshend; norfolk-rotation; legume-rotation; fodder-crops
+AGR-250,Selective Livestock Breeding,agriculture,,core,drafted,medium,1760,1800,century,1,AGR-070,0,,TRUE,selective-breeding; bakewell; livestock-genetics; controlled-mating
+AGR-260,Mechanisation and the Cold Chain,agriculture,engineering; commerce; migration,core,drafted,high,1830,1960,century,2,AGR-130; ENG-290,0,,FALSE,tractor; farm-mechanization; combine-harvester; rural-exodus
+AGR-270,Monoculture Dependency and Famine,agriculture,migration; health,core,drafted,high,1845,1852,decade,1,AGR-220,0,,TRUE,irish-potato-famine; phytophthora-infestans; blight; genetic-uniformity
+AGR-280,The Green Revolution,agriculture,engineering,core,drafted,high,1943,1980,century,2,AGR-100; ENG-320,0,,TRUE,green-revolution; borlaug; high-yield-variety; semi-dwarf-wheat
+COM-010,The Marketplace and the Stranger,commerce,religion; law,core,drafted,medium,-3500,-1000,era,0,,3,COM-030; COM-020; COM-060,TRUE,marketplace; silent-trade; karum; tianguis; market-judge
+COM-020,Metallurgy as Craft and Commodity — Bronze to Wrought Iron,commerce,engineering; war; agriculture,core,drafted,medium,-3300,1500,era,2,COM-010; ENG-010,7,COM-100; COM-200; COM-230; COM-040; ENG-260; WAR-040; AGR-160,FALSE,metallurgy; craft-guild; wootz-steel; bronze-age; wrought-iron
+COM-030,Weights and Measures Standardization,commerce,law,core,drafted,high,-2600,1875,era,2,MAR-020; COM-010,2,COM-190; COM-090,FALSE,standardization; weights-and-measures; metric-system; indus-valley
+COM-040,The Late Bronze Age Trade Collapse,commerce,war,core,drafted,medium,-1200,-1150,decade,1,COM-020,0,,TRUE,bronze-age-collapse; ugarit; sea-peoples; systems-collapse
+COM-050,The Caravan as a Risk-Pooling Institution,commerce,migration; war,core,drafted,medium,-1000,1850,era,1,MIG-050,1,COM-080,FALSE,caravan; trans-saharan-trade; gold-salt-trade; risk-pooling; timbuktu
+COM-060,Retail Trade and the Urban Shop,commerce,,standard,drafted,medium,-700,1800,era,1,COM-010,0,,FALSE,retail; shop; suq; bazaar; kaifeng
+COM-070,Route Infrastructure Decay and Maintenance,commerce,agriculture; engineering,core,drafted,medium,-500,1500,era,2,COM-080; AGR-100,0,,FALSE,grand-canal; qanat; roman-roads; infrastructure-maintenance
+COM-080,The Silk Road as a Logistics System,commerce,migration; war; diplomacy; agriculture,core,drafted,high,-130,1450,era,2,MIG-040; COM-050,1,COM-070,TRUE,silk-road; overland-trade; pax-mongolica; caravan
+COM-090,The Periodic Fair and the Law Merchant,commerce,law,core,drafted,medium,1100,1600,century,1,COM-030,0,,FALSE,periodic-fair; champagne-fairs; law-merchant; piepowder-court
+COM-100,Manufactories,commerce,engineering; finance,core,drafted,medium,1104,1780,era,1,COM-020,2,COM-180; COM-170,FALSE,manufactory; jingdezhen; venice-arsenal; proto-industrial
+COM-110,The Hanseatic League,commerce,law; diplomacy,core,drafted,high,1358,1669,century,1,MAR-090,1,COM-150,FALSE,hanseatic-league; merchant-league; kontor; baltic-trade
+COM-120,The Putting-Out System,commerce,,standard,drafted,high,1400,1800,era,0,,0,,FALSE,putting-out; domestic-system; cottage-industry; merchant-capitalist
+COM-130,The Race for Narrow Sea Chokepoints,commerce,war; diplomacy,standard,drafted,high,1500,1979,era,2,MAR-160; ENG-280,0,,FALSE,chokepoint; suez-canal; panama-canal; strait-of-malacca
+COM-140,Silver Shock — American Silver and the Price Revolution,commerce,finance,core,drafted,high,1545,1650,decade,1,MAR-160,0,,TRUE,silver; price-revolution; potosi; manila-galleon; ming-china; sovereign-default
+COM-150,The Chartered Trading Company,commerce,finance; war; diplomacy,core,drafted,high,1600,1874,century,1,COM-110,1,COM-210,FALSE,chartered-company; east-india-company; joint-stock; colonialism
+COM-160,Colonial Commodity Traps,commerce,migration; finance; agriculture,core,drafted,high,1650,1975,century,1,MIG-150,0,,TRUE,monoculture; cash-crop; dependency; colonial-economy
+COM-170,The Factory and Division of Labor,commerce,engineering; migration,core,drafted,high,1771,1850,century,2,COM-100; ENG-170,1,COM-220,FALSE,factory-system; division-of-labor; industrial-revolution; mechanization
+COM-180,Technological Displacement of Craft,commerce,law; migration,core,drafted,medium,1811,1860,century,1,COM-100,0,,TRUE,luddites; deindustrialization; craft-displacement; hand-loom-weavers
+COM-190,Protectionism and Tariff Wars,commerce,law; diplomacy,core,drafted,high,1815,1930,century,2,COM-030; COM-210,0,,FALSE,tariff; protectionism; tariff-autonomy; trade-policy
+COM-200,Railways,commerce,engineering; finance; migration,core,drafted,high,1825,1916,century,3,COM-020; ENG-170; ENG-260,0,,TRUE,railways; rail-network; colonial-infrastructure; transcontinental
+COM-210,The Opium Wars as Forced Market Access,commerce,health; war; diplomacy; law,core,drafted,high,1839,1860,decade,1,COM-150,1,COM-190,TRUE,opium-wars; unequal-treaties; treaty-ports; forced-trade
+COM-220,"Trademark, Brand, and Trust at a Distance",commerce,law,standard,drafted,medium,1860,1920,century,1,COM-170,0,,FALSE,trademark; brand; bass-brewery; coca-cola; meiji-trademark-law
+COM-230,The Cold Chain,commerce,engineering; health; agriculture,standard,drafted,high,1876,1950,century,1,COM-020,0,,FALSE,refrigeration; cold-chain; meat-export; food-preservation
+DIP-010,Envoy Immunity and the Sanctity of the Messenger,diplomacy,,core,drafted,high,-2000,-500,era,0,,4,DIP-040; DIP-020; DIP-060; DIP-080,TRUE,envoy-immunity; herald; kerux; meng-covenant
+DIP-020,Treaty and Oath,diplomacy,religion,core,drafted,high,-1259,1142,era,1,DIP-010,1,DIP-080,FALSE,treaty; oath; meng-covenant; wampum
+DIP-030,Interpreters and Linguistic Mediation in Diplomacy,diplomacy,,core,drafted,high,-700,1800,era,0,,3,DIP-040; DIP-080; DIP-090,FALSE,interpreter; dragoman; malintzin; linguistic-mediation
+DIP-040,"Empire, Tribute, and Legitimacy Diplomacy",diplomacy,commerce; finance,core,drafted,medium,-550,1521,era,3,WAR-060; DIP-010; DIP-030,1,DIP-060,FALSE,tribute-system; empire; legitimacy; client-kingdom
+DIP-050,"Roads, Garrisons, and Imperial Unification",diplomacy,engineering; war,standard,drafted,high,-500,1533,era,1,ENG-090,0,,FALSE,imperial-roads; garrison; royal-road; chasqui
+DIP-060,"Gifts, Hostages, and Marriages",diplomacy,migration,core,drafted,high,-200,1800,era,2,DIP-040; DIP-010,0,,FALSE,heqin-marriage; royal-marriage; hostage-diplomacy; gift-exchange
+DIP-070,Non-Sovereign Diplomatic Actors: Papal Arbitration and Merchant-League Negotiation,diplomacy,religion; commerce,core,drafted,high,1358,1648,century,0,,1,DIP-090,TRUE,papal-arbitration; tordesillas; hanseatic-league; non-state-diplomacy
+DIP-080,Permanent Embassies and the Professional Diplomat,diplomacy,,core,drafted,high,1450,1648,era,3,DIP-020; DIP-010; DIP-030,2,DIP-110; DIP-100,FALSE,permanent-embassy; resident-ambassador; italian-city-states; diplomatic-immunity
+DIP-090,"Imperial Oceanic Diplomacy — Colonies, Protectorates, and Recognition",diplomacy,maritime; commerce; migration,core,drafted,high,1494,1885,era,3,MIG-060; DIP-030; DIP-070,0,,FALSE,protectorate; berlin-conference; unequal-treaty; colonial-recognition
+DIP-100,Sovereignty — The Westphalian Package,diplomacy,law; religion,core,drafted,medium,1648,1955,era,2,REL-220; DIP-080,6,DIP-120; DIP-130; DIP-180; DIP-200; DIP-150; DIP-140,TRUE,westphalian-sovereignty; non-interference; territorial-integrity
+DIP-110,"Espionage, Diplomatic Cover, and Persona Non Grata",diplomacy,war,standard,drafted,high,1650,1985,century,1,DIP-080,0,,FALSE,espionage; diplomatic-cover; persona-non-grata; expulsion
+DIP-120,Revolution and the Diplomacy of Reinvented Legitimacy,diplomacy,law,core,drafted,high,1776,1862,century,1,DIP-100,0,,FALSE,revolution; recognition; meiji-restoration; haitian-independence
+DIP-130,Concert of Powers and Spheres of Influence,diplomacy,war,core,drafted,high,1815,1914,century,1,DIP-100,1,DIP-170,FALSE,concert-of-europe; congress-of-vienna; spheres-of-influence; great-power-management
+DIP-140,Unequal Treaties and Coerced Bilateral Diplomacy,diplomacy,commerce,core,drafted,high,1842,1943,century,1,DIP-100,0,,FALSE,unequal-treaty; treaty-port; opium-wars; coerced-diplomacy
+DIP-150,Extraterritoriality and Consular Jurisdiction,diplomacy,law,standard,drafted,high,1843,1943,century,1,DIP-100,0,,FALSE,extraterritoriality; capitulations; consular-court; unequal-treaty
+DIP-160,Nationalism as a Diplomatic Recognition Principle,diplomacy,law; philosophy,core,drafted,high,1848,1971,era,1,LAW-050,0,,TRUE,nationalism; self-determination; partition; oau-border-principle
+DIP-170,Alliance Cascade: The Collapse of a Diplomatic System into General War,diplomacy,war,core,drafted,high,1914,1914,year,2,DIP-130; MED-100,1,DIP-180,FALSE,july-crisis; alliance-system; cascade-collapse; concert-of-europe
+DIP-180,Collective Security and International Organizations,diplomacy,law; war,core,drafted,high,1920,1961,era,2,DIP-100; DIP-170,1,DIP-190,FALSE,league-of-nations; united-nations; non-aligned-movement; collective-security
+DIP-190,Sanctions,diplomacy,commerce; war,core,drafted,high,1935,1994,century,1,DIP-180,0,,TRUE,sanctions; economic-coercion; apartheid-boycott; embargo
+DIP-200,Diplomatic Derecognition and the Rupture of Relations,diplomacy,,standard,drafted,high,1949,1979,century,1,DIP-100,0,,FALSE,derecognition; taiwan-un-seat; one-china-policy; broken-relations
+ENG-010,Metalworking and the Smelting Furnace,engineering,commerce; war; agriculture,core,drafted,medium,-6000,-1200,era,0,,4,COM-020; WAR-040; AGR-160; ENG-055,TRUE,smelting; metallurgy; bronze-age; piece-mold-casting; bloomery; tin; cassiterite
+ENG-020,Irrigation and Dams,engineering,agriculture,core,drafted,high,-6000,-250,era,1,ENG-060,2,ENG-080; AGR-100,FALSE,irrigation; dam; hydraulic-engineering; dujiangyan
+ENG-030,The Potter's Wheel,engineering,health; commerce,standard,drafted,medium,-4500,-1500,era,0,,0,,FALSE,potters-wheel; ceramics; standardization; mass-production
+ENG-040,Fired Brick and Masonry Units,engineering,,core,drafted,high,-3500,-1000,era,0,,0,,FALSE,brick; kiln; masonry; indus-valley; ziggurat
+ENG-050,Construction Glass,engineering,,standard,drafted,high,-3500,1851,era,1,ENG-110,1,ENG-240,FALSE,glass; glassblowing; crystal-palace; plate-glass
+ENG-055,The Organic Energy Economy and Its Ceiling,engineering,agriculture; commerce; nature; health,core,drafted,medium,-3300,1800,era,2,ENG-010; AGR-020,2,ENG-120; ENG-165,TRUE,organic-economy; charcoal; timber; wrigley; photosynthetic-ceiling; silviculture
+ENG-060,"Simple Machines: Lever, Pulley, Screw, and Wedge",engineering,,core,drafted,high,-3000,-250,era,0,,3,ENG-020; ENG-090; ENG-110,FALSE,simple-machines; lever; pulley; archimedes; mechanical-advantage
+ENG-070,Sewer and Waste Removal Engineering,engineering,health,core,drafted,high,-2600,1875,era,1,ENG-080,1,HLT-090,FALSE,sewer; cloaca-maxima; bazalgette; great-stink; waste-removal
+ENG-080,Water Supply Engineering,engineering,health; agriculture,core,drafted,high,-2500,1900,era,1,ENG-020,3,HLT-090; ENG-270; ENG-070,FALSE,aqueduct; qanat; hydraulic-engineering
+ENG-090,Roads and Bridges,engineering,war; commerce,core,drafted,high,-500,1533,era,1,ENG-060,3,REL-160; DIP-050; MED-030,FALSE,roads; bridges; inca-road-system; persian-royal-road
+ENG-110,"Concrete, Vault, and Dome",engineering,,core,drafted,medium,-100,1300,era,1,ENG-060,3,ENG-050; REL-110; ENG-130,FALSE,concrete; vault; dome; roman-concrete; muqarnas
+ENG-120,Windmill and Watermill Construction,engineering,agriculture,standard,drafted,medium,31,1200,era,1,ENG-055,0,,FALSE,windmill; watermill; gearing; panemone; power-transmission
+ENG-130,Roman Concrete's Lost Recipe,engineering,,core,drafted,medium,476,1824,era,1,ENG-110,0,,TRUE,roman-concrete; pozzolana; opus-caementicium; knowledge-loss
+ENG-140,Gunpowder Engineering and Explosives,engineering,,core,drafted,high,850,1450,century,0,,2,WAR-130; ENG-280,FALSE,gunpowder; saltpeter; corning-process; explosives
+ENG-160,Mechanical Clockwork and the Escapement,engineering,,standard,drafted,medium,1092,1400,era,0,,1,MAR-250,TRUE,clockwork; escapement; su-song; al-jazari; verge-and-foliot
+ENG-165,The Coal Economy,engineering,commerce; health; war; nature,core,drafted,high,1550,1900,decade,1,ENG-055,3,ENG-170; ENG-300; ENG-260,TRUE,coal; coalfield; drainage; pomeranz; great-divergence; anthracite
+ENG-170,The Steam Engine,engineering,nature; commerce; health,core,drafted,high,1712,1830,decade,2,NAT-040; ENG-165,7,COM-170; COM-200; ENG-190; ENG-250; ENG-300; ENG-220; MAR-260,FALSE,steam-engine; watt-engine; newcomen-engine; mechanical-power
+ENG-180,Weaving Looms and Textile Mechanization,engineering,commerce,core,drafted,high,1733,1830,century,0,,1,MTH-065,FALSE,loom; spinning-jenny; power-loom; textile-machinery
+ENG-190,Machine Tools,engineering,,core,drafted,high,1775,1840,century,1,ENG-170,4,ENG-210; ENG-290; ENG-330; ENG-215,FALSE,machine-tools; lathe; boring-machine; precision-manufacturing
+ENG-200,Cast Iron and the Iron Bridge,engineering,,stub,drafted,high,1779,1779,year,0,,0,,FALSE,cast-iron; ironbridge; coalbrookdale; structural-metal
+ENG-210,"Mechanical Engineering — Transmission, Precision, and Component Standards",engineering,commerce; war,core,drafted,medium,1800,1900,century,1,ENG-190,0,,FALSE,interchangeable-parts; precision-engineering; standardization; transmission
+ENG-215,Calculating Machines and the Embodied Arithmetic Operation,engineering,mathematics; commerce; finance,standard,drafted,medium,1820,1970,decade,2,ENG-190; MTH-015,1,MTH-065,TRUE,arithmometer; pascaline; stepped-reckoner; odhner; comptometer; tiger-calculator; soroban
+ENG-220,Refrigeration and Mechanical Cooling,engineering,commerce; agriculture,standard,drafted,high,1834,1876,century,1,ENG-170,0,,FALSE,refrigeration; vapor-compression; gorrie; ice-house
+ENG-240,The Crystal Palace and Prefabricated Construction,engineering,,stub,drafted,high,1851,1851,year,1,ENG-050,0,,FALSE,crystal-palace; prefabrication; joseph-paxton; modular-construction
+ENG-250,The Elevator and Safety Brake,engineering,,standard,drafted,high,1852,1885,century,1,ENG-170,0,,FALSE,elevator; safety-brake; skyscraper; otis
+ENG-260,The Bessemer Process and Steel Commodification,engineering,commerce,core,drafted,high,1856,1880,decade,2,COM-020; ENG-165,2,COM-200; ENG-310,FALSE,bessemer-process; steelmaking; decarburization; carnegie
+ENG-265,Petroleum Extraction,engineering,commerce; war; maritime; finance,core,drafted,high,1859,1911,decade,2,ENG-280; MAR-100,3,ENG-275; WAR-275; LAW-215,FALSE,petroleum; drake-well; baku; yenangyaung; spindletop; rule-of-capture; kerosene
+ENG-270,The Subway,engineering,commerce; migration,standard,drafted,high,1863,1927,century,1,ENG-080,0,,FALSE,subway; underground-railway; tunneling; urban-transit
+ENG-275,Refining and the Fixed-Ratio Problem,engineering,war; commerce; nature; maritime,core,drafted,high,1863,1937,decade,2,ENG-265; NAT-160,2,ENG-290; WAR-275,FALSE,refining; fractional-distillation; cracking; octane; fischer-tropsch; kerosene; gasoline
+ENG-280,Dynamite and Industrial Blasting,engineering,commerce; war,core,drafted,high,1866,1914,century,1,ENG-140,2,COM-130; ENG-265,FALSE,dynamite; blasting; nobel; tunneling
+ENG-290,The Internal Combustion Engine,engineering,war; commerce; agriculture,core,drafted,high,1876,1913,decade,2,ENG-190; ENG-275,3,AGR-260; MAR-320; WAR-270,FALSE,internal-combustion-engine; automobile; model-t; diesel-engine
+ENG-300,Electrification,engineering,commerce; nature,core,drafted,high,1882,1935,decade,3,ENG-170; NAT-170; ENG-165,2,MED-130; MED-140,TRUE,electrification; power-grid; alternating-current; rural-electrification
+ENG-310,Steel-Frame Construction and the Skyscraper,engineering,,core,drafted,medium,1885,1900,decade,1,ENG-260,0,,TRUE,steel-frame; skyscraper; home-insurance-building; curtain-wall
+ENG-320,Agrochemicals and Synthetic Fertilizers,engineering,agriculture; migration,core,drafted,high,1909,1950,century,0,,1,AGR-280,TRUE,haber-bosch; synthetic-fertilizer; green-revolution; nitrogen-fixation
+ENG-330,Semiconductors,engineering,nature; commerce,core,drafted,high,1947,1990,century,2,ENG-190; NAT-210,2,ENG-340; MED-150,FALSE,semiconductor; transistor; integrated-circuit; fabrication
+ENG-340,Satellite Positioning,engineering,maritime; war; commerce; diplomacy; nature,core,drafted,medium,1973,2000,decade,3,MAR-335; ENG-330; NAT-220,0,,TRUE,gps; navstar; galileo; beidou; navic; selective-availability; positioning
+FIN-010,Coinage and the Invention of Money,finance,commerce,core,drafted,high,-3000,-400,era,0,,2,FIN-020; FIN-030,TRUE,coinage; commodity-money; lydia; barter
+FIN-020,"Cadastre, Tax, and Census",finance,law,core,drafted,medium,-3000,-100,era,1,FIN-010,12,FIN-030; FIN-060; FIN-100; FIN-050; FIN-140; FIN-240; REL-130; FIN-110; LAW-210; WAR-200; LAW-165; MTH-075,FALSE,cadastre; census; taxation; state-capacity
+FIN-030,"Credit, Interest, and Usury",finance,religion; law,core,drafted,high,-1800,1600,era,2,FIN-020; FIN-010,2,FIN-150; FIN-040,FALSE,credit; interest; usury; riba; moneylending
+FIN-040,Bills of Exchange and Negotiable Instruments,finance,commerce,core,drafted,high,700,1400,era,1,FIN-030,1,FIN-060,FALSE,bill-of-exchange; suftaja; negotiable-instrument; merchant-banking
+FIN-050,Paper Money and Fiat Currency,finance,,core,drafted,medium,806,1930,era,1,FIN-020,4,FIN-250; FIN-260; FIN-220; FIN-270,FALSE,paper-money; fiat-currency; jiaozi
+FIN-060,The Double-Entry Method,finance,commerce,core,drafted,medium,1000,1494,century,2,FIN-020; FIN-040,3,FIN-070; FIN-130; FIN-090,TRUE,double-entry; bookkeeping; accounting; pacioli
+FIN-070,Joint-Stock Companies,finance,commerce,core,drafted,high,1602,1720,century,2,FIN-060; LAW-130,5,FIN-080; FIN-170; FIN-180; FIN-160; LAW-215,FALSE,joint-stock; shares; capital-pooling; voc
+FIN-080,Asset Bubbles,finance,commerce,core,drafted,high,1636,1990,era,1,FIN-070,1,FIN-230,TRUE,asset-bubble; tulip-mania; south-sea-bubble; japan-bubble
+FIN-090,General Insurance and Actuarial Risk-Pooling,finance,maritime; health,core,drafted,high,1666,1900,century,1,FIN-060,0,,FALSE,insurance; fire-insurance; life-insurance; actuarial-science; takaful; halley; mortality-table
+FIN-100,Central Banking,finance,,core,drafted,high,1668,1913,century,1,FIN-020,2,FIN-190; FIN-110,FALSE,central-bank; lender-of-last-resort; monetary-authority
+FIN-110,Sovereign Debt and Government Bond Markets,finance,war,core,drafted,high,1690,1900,era,2,FIN-020; FIN-100,1,FIN-210,FALSE,sovereign-debt; government-bonds; financial-revolution; war-finance
+FIN-120,Gold Standard,finance,diplomacy,core,drafted,high,1717,1971,century,1,COM-140,1,FIN-220,TRUE,gold-standard; monetary-regime; currency-board; silver-standard
+FIN-130,Derivative Finance,finance,commerce,core,drafted,high,1730,1995,era,1,FIN-060,0,,FALSE,derivatives; futures; options; dojima-rice-exchange
+FIN-140,Laissez-Faire as Economic Policy,finance,philosophy; commerce,core,drafted,high,1776,1930,century,1,FIN-020,1,FIN-200,TRUE,laissez-faire; classical-liberalism; economic-policy; free-trade
+FIN-150,Consumer Lending,finance,,core,drafted,high,1807,1958,century,1,FIN-030,0,,FALSE,consumer-credit; installment-lending; credit-card; rosca
+FIN-160,Mutual and Cooperative Banking,finance,,standard,drafted,high,1810,1900,century,1,FIN-070,0,,FALSE,mutual-bank; savings-bank; cooperative-credit; raiffeisen
+FIN-170,Limited Liability,finance,law,standard,drafted,high,1811,1862,century,1,FIN-070,1,FIN-180,FALSE,limited-liability; incorporation; corporate-law
+FIN-180,Financing Industrialization,finance,commerce; engineering,core,drafted,high,1830,1914,century,2,FIN-070; FIN-170,0,,FALSE,industrial-finance; capital-formation; zaibatsu; bank-financed-industry
+FIN-190,Banking Panics,finance,,core,drafted,high,1837,1998,era,1,FIN-100,1,FIN-230,FALSE,bank-run; financial-panic; asian-financial-crisis; contagion
+FIN-200,Institutional Responses to Critiques of Capitalism,finance,philosophy; law,core,drafted,high,1848,1991,era,1,FIN-140,0,,TRUE,socialism; command-economy; labor-movement; welfare-state
+FIN-210,Credit Rating Agencies,finance,,standard,drafted,high,1909,2010,era,2,FIN-110; MED-100,0,,FALSE,credit-rating; moodys; bond-market; conflict-of-interest
+FIN-220,Inflationary Spirals,finance,law,core,drafted,high,1920,1924,decade,2,FIN-120; FIN-050,0,,FALSE,hyperinflation; weimar-germany; zimbabwe; monetary-policy
+FIN-230,The Great Depression,finance,commerce; migration,core,drafted,high,1929,1939,decade,2,FIN-080; FIN-190,0,,TRUE,great-depression; 1929-crash; gold-standard-exit; global-crisis
+FIN-240,Tax Havens and Offshore Finance,finance,law; diplomacy,core,drafted,high,1934,2010,century,1,FIN-020,0,,FALSE,tax-haven; offshore-finance; capital-flight; bank-secrecy
+FIN-250,International Monetary Coordination (Bretton Woods and Successors),finance,diplomacy,core,drafted,high,1944,1971,decade,1,FIN-050,1,FIN-270,FALSE,bretton-woods; international-monetary-system; imf; dollar-gold-peg
+FIN-260,Development Finance and International Lending Institutions,finance,diplomacy,standard,drafted,high,1944,1980,decade,1,FIN-050,0,,TRUE,imf; world-bank; development-finance; conditionality
+FIN-270,Floating Exchange Rates,finance,diplomacy,core,drafted,high,1971,2001,decade,2,FIN-250; FIN-050,0,,FALSE,floating-exchange-rate; nixon-shock; bretton-woods-collapse; currency-peg
+HLT-010,The Forager Baseline: Health and the Body Before Sedentism,health,,core,drafted,medium,-300000,-10000,era,0,,3,HLT-030; HLT-070; HLT-040,TRUE,foraging; paleolithic; baseline; mobility; hunter-gatherer
+HLT-020,"Dress, Adornment, and the Marked Body",health,law,standard,drafted,medium,-75000,1900,era,0,,0,,FALSE,dress; adornment; status; body-modification; habitus
+HLT-030,"Sedentism, Storage, and the New Disease Environment",health,agriculture,core,drafted,high,-10000,-4000,era,1,HLT-010,6,HLT-070; HLT-090; HLT-240; HLT-060; HLT-040; AGR-050,TRUE,neolithic; sedentism; granary; storage; zoonosis
+HLT-040,The Neolithic Body,health,agriculture,core,drafted,high,-10000,-3000,era,2,HLT-030; HLT-010,1,HLT-350,FALSE,skeletal-evidence; stature; nutrition; biomechanics
+HLT-050,"Pottery Cooking, Fermentation, and the Feast",health,agriculture; commerce,core,drafted,high,-9000,-3000,era,0,,1,HLT-180,FALSE,pottery; fermentation; feast; nutrition; alcohol
+HLT-060,Dairying and Lactase Persistence,health,agriculture,core,drafted,high,-7000,-2000,era,1,HLT-030,1,HLT-240,FALSE,dairy; lactase-persistence; pastoralism; nutrition
+HLT-070,Crowd Disease and the Urban Graveyard,health,commerce; agriculture,core,drafted,high,-3000,1850,era,2,HLT-030; HLT-010,3,HLT-090; HLT-230; HLT-170,TRUE,urbanization; crowd-disease; demography; mortality
+HLT-080,Household and Folk Medicine,health,,core,drafted,high,-3000,1900,era,0,,2,HLT-150; HLT-160,TRUE,folk-medicine; household-care; herbalism; cunning-folk
+HLT-090,Urban Water and Waste Engineering,health,engineering,core,drafted,high,-2500,1900,era,4,HLT-030; HLT-070; ENG-080; ENG-070,0,,FALSE,sanitation; water; sewers; engineering; urbanism
+HLT-100,Obstetrics,health,,core,drafted,medium,-1800,1900,century,0,,0,,FALSE,obstetrics; midwifery; childbirth; maternal-mortality
+HLT-110,Famine and Starvation as a Distinct Mortality Mechanic,health,agriculture,core,drafted,high,-1800,1943,era,0,,0,,TRUE,famine; starvation; mortality; food-supply-collapse
+HLT-120,Ritual Burial as Disease-Vector Management,health,religion,standard,drafted,medium,-1500,1900,era,0,,0,,FALSE,death; burial; ritual; pathogen-avoidance
+HLT-130,"Purity Codes, Dietary Law, and Commensality",health,religion; law,core,drafted,medium,-1200,700,century,0,,0,,TRUE,purity; dietary-law; religion; caste; taboo
+HLT-140,Spa and Bathing Culture,health,,stub,drafted,medium,-600,1900,era,0,,0,,FALSE,spa; bathhouse; hammam; roman-baths
+HLT-150,Codified Medical Systems,health,philosophy,core,drafted,high,-400,1500,century,1,HLT-080,6,HLT-160; HLT-250; HLT-310; HLT-200; HLT-280; HLT-290,TRUE,medicine; galen; ayurveda; tcm; islamic-medicine; humoral-theory
+HLT-160,Monastic Hospitals and Charitable Medicine,health,religion,core,drafted,high,-250,1500,century,3,HLT-150; REL-060; HLT-080,0,,FALSE,hospital; charity; monastery; bimaristan; medicine
+HLT-170,The Connectivity Plagues,health,commerce; migration,core,drafted,high,541,1894,year,1,HLT-070,1,HLT-220,FALSE,plague; pandemic; trade-routes; black-death
+HLT-180,The Stimulant Complex,health,commerce,core,drafted,high,900,1700,century,1,HLT-050,1,HLT-260,FALSE,stimulants; coffee; tea; coca; productivity; sociability
+HLT-190,"Print, Silent Reading, and the Interior Self",health,engineering; philosophy; religion,standard,drafted,medium,1040,1650,century,1,MED-080,1,REL-230,TRUE,print; literacy; reading; interior-self; movable-type
+HLT-200,The Asylum and the Invention of Madness as a Medical Category,health,law,core,drafted,high,1247,1890,century,1,HLT-150,1,HLT-320,TRUE,asylum; bethlem; moral-treatment; madness; psychiatry
+HLT-210,Mutual Aid and Guild Sick-Funds,health,law; commerce,core,drafted,high,1250,1900,century,0,,0,,FALSE,mutual-aid; guild; friendly-society; confraternity; sick-fund
+HLT-220,The Black Death as Habitus Rupture,health,religion; commerce; agriculture,core,drafted,high,1331,1353,year,1,HLT-170,1,AGR-190,TRUE,black-death; plague; habitus; labor-scarcity; mortality-shock
+HLT-230,Quarantine and Cordons Sanitaires,health,law; diplomacy,core,drafted,high,1377,1900,decade,1,HLT-070,0,,FALSE,quarantine; plague; public-health; state-capacity
+HLT-240,"Virgin Soil, Syphilis, and the Columbian Exchange",health,migration; agriculture,core,drafted,high,1492,1650,decade,3,HLT-030; HLT-060; AGR-040,0,,TRUE,columbian-exchange; virgin-soil; syphilis; epidemic; contact
+HLT-250,Variolation and Vaccination,health,sciences,core,drafted,high,1500,1800,century,1,HLT-150,0,,FALSE,vaccination; variolation; smallpox; immunization
+HLT-260,"Alcohol, Tobacco, and Opium as Social Epidemics",health,commerce; law,core,drafted,high,1500,1900,century,1,HLT-180,0,,FALSE,alcohol; tobacco; opium; addiction; colonial-trade
+HLT-270,Public Health Statistics and Vital Registration,health,nature,standard,drafted,high,1662,1900,century,0,,2,MTH-075; MTH-062,FALSE,vital-statistics; john-snow; john-graunt; epidemiology; cholera-map
+HLT-280,Colonial and Tropical Medicine,health,war; commerce,standard,drafted,high,1750,1914,century,1,HLT-150,0,,TRUE,tropical-medicine; quinine; colonial-medicine; malaria-prophylaxis
+HLT-290,Patent Medicine and the Quack Remedy Market,health,commerce; law,stub,drafted,medium,1800,1906,century,1,HLT-150,0,,FALSE,patent-medicine; quackery; advertising; pure-food-and-drug-act
+HLT-300,The Demographic Transitions (First and Second),health,agriculture; commerce,core,drafted,high,1800,2020,decade,0,,0,,TRUE,demographic-transition; fertility; mortality; population
+HLT-310,Antisepsis,health,sciences,core,drafted,high,1847,1900,year,2,HLT-150; NAT-130,1,HLT-330,FALSE,antisepsis; germ-theory; semmelweis; lister; surgery
+HLT-320,Psychoanalysis,health,philosophy,standard,drafted,medium,1895,1950,decade,1,HLT-200,1,HLT-340,TRUE,psychoanalysis; freud; psychiatry; interior-self
+HLT-330,Antibiotics,health,sciences; war,core,drafted,high,1928,1945,year,1,HLT-310,0,,FALSE,antibiotics; penicillin; resistance; medicine
+HLT-340,The Therapeutic Turn,health,philosophy,standard,drafted,medium,1950,2000,decade,1,HLT-320,0,,FALSE,therapy; self-help; individualism; mental-health
+HLT-350,The Nutrition Transition,health,agriculture; commerce,core,drafted,high,1950,2020,decade,1,HLT-040,0,,FALSE,nutrition; obesity; food-systems; globalization; chronic-disease
+LAW-010,Customary Law and Pre-Written Dispute Resolution,law,religion,core,drafted,medium,-10000,-1754,era,0,,1,LAW-020,TRUE,customary-law; wergild; dispute-resolution; oral-law
+LAW-020,Written Law and the Codification of Inequality,law,,core,drafted,medium,-1754,-450,era,2,FIN-020; LAW-010,16,LAW-050; LAW-060; LAW-100; LAW-080; LAW-140; LAW-120; LAW-130; LAW-110; LAW-200; REL-140; LAW-070; LAW-030; LAW-040; LAW-090; LAW-170; LAW-225,FALSE,written-law; hammurabi; manusmriti; legalism
+LAW-030,"Courts, Judges, and Trial Procedure",law,religion,core,drafted,high,-1754,1800,era,1,LAW-020,1,LAW-150,FALSE,courts; trial-procedure; jury; qadi; adversarial-inquisitorial
+LAW-040,"Marriage, Inheritance, and Personal Status Law",law,religion; migration,core,drafted,high,-1754,1950,era,1,LAW-020,0,,FALSE,personal-status-law; marriage-law; inheritance; millet-system; colonial-codification
+LAW-050,Citizenship and Voting Rights,law,diplomacy; agriculture,core,drafted,high,-594,1000,era,1,LAW-020,3,LAW-230; LAW-220; DIP-160,FALSE,citizenship; voting-rights; athenian-democracy; dhimmi
+LAW-060,Senate and Elite Council as a Coalition Mechanism,law,diplomacy,core,drafted,medium,-509,1450,era,1,LAW-020,0,,FALSE,senate; council-of-elders; iroquois-confederacy; censorate
+LAW-070,"Civil Law: Property, Contract, and Inheritance",law,commerce; finance,core,drafted,high,-450,1900,era,1,LAW-020,0,,FALSE,civil-law; property-law; contract-law; napoleonic-code; inheritance
+LAW-080,Feudalism and Vassalage,law,war; agriculture,core,drafted,high,250,1400,era,2,LAW-020; AGR-170,0,,FALSE,feudalism; vassalage; land-tenure; samurai; knight-service; iqta
+LAW-090,The Reception of Roman Law,law,philosophy,core,drafted,high,500,1200,era,1,LAW-020,1,LAW-130,FALSE,roman-law; corpus-juris-civilis; bologna; glossators
+LAW-100,Meritocracy and State Bureaucracy — Examinations and Career,law,philosophy,core,drafted,high,605,1854,era,1,LAW-020,1,LAW-165,FALSE,examination-system; meritocracy; civil-service; keju
+LAW-110,Police and the Administrative State,law,war,core,drafted,high,1000,1829,era,1,LAW-020,1,WAR-200,FALSE,police; baojia; metropolitan-police; public-order
+LAW-120,City Charters and Communal Self-Government,law,commerce; religion,core,drafted,high,1080,1300,century,1,LAW-020,0,,FALSE,city-charter; commune; self-government; waqf
+LAW-130,"Corporate Forms — The University, City, Church, and Company as Legal Persons",law,finance; religion,core,drafted,high,1088,1600,era,2,LAW-020; LAW-090,1,FIN-070,FALSE,corporate-personhood; universitas; waqf; legal-entity
+LAW-140,"Estate Tax Treaties — Cortes, Estates, and Parliaments",law,finance,core,drafted,high,1188,1789,era,2,LAW-020; FIN-020,2,LAW-160; LAW-180,FALSE,cortes; estates-general; parliament; tax-consent
+LAW-150,Witch Trials and Legal Panic,law,religion,standard,drafted,high,1450,1750,century,1,LAW-030,0,,TRUE,witch-trials; moral-panic; spectral-evidence; salem
+LAW-160,Representation and Political Parties,law,,core,drafted,high,1679,1900,century,1,LAW-140,1,LAW-180,FALSE,political-parties; representation; whigs-tories; meiji-diet
+LAW-165,Compulsory Education,law,war; commerce; philosophy; health,core,drafted,high,1763,1950,decade,3,WAR-200; LAW-100; FIN-020,0,,TRUE,compulsory-schooling; prussia; likbez; truancy; household-examination; assimilation
+LAW-170,Codified Criminal Law and Punishment Reform,law,philosophy,standard,drafted,high,1764,1900,century,1,LAW-020,0,,FALSE,criminal-law; beccaria; penitentiary; punishment-reform
+LAW-180,Constitution and Separation of Powers,law,,core,drafted,high,1789,1889,century,2,LAW-140; LAW-160,1,LAW-190,FALSE,constitution; separation-of-powers; meiji-constitution; ottoman-constitution
+LAW-190,Judicial Review and Constitutional Courts,law,,standard,drafted,high,1803,1950,century,1,LAW-180,0,,FALSE,judicial-review; constitutional-court; marbury-v-madison; kelsen
+LAW-200,The Labor Movement and Legal Recognition of Trade Unions,law,finance; commerce,core,drafted,high,1824,1935,century,1,LAW-020,0,,FALSE,trade-union; collective-bargaining; right-to-strike; labor-law
+LAW-210,The Welfare State,law,finance; religion,core,drafted,high,1883,1948,century,1,FIN-020,0,,FALSE,welfare-state; social-insurance; zakat; beveridge-report
+LAW-215,Antitrust and the Limits of Combination,law,commerce; finance; engineering,core,drafted,high,1890,1911,decade,2,ENG-265; FIN-070,0,,TRUE,antitrust; sherman-act; standard-oil; rule-of-reason; vertical-integration; zaibatsu; cartel
+LAW-220,Universal Suffrage,law,,standard,drafted,high,1893,1965,era,1,LAW-050,0,,FALSE,suffrage; voting-rights-expansion; voting-rights-act; indian-constitution
+LAW-225,Spectrum as Regulated Property,law,diplomacy; engineering; commerce; war,core,drafted,high,1906,1934,decade,2,MED-120; LAW-020,0,,FALSE,spectrum; licensing; radio-act; fcc; itu; interference; property
+LAW-230,Human Rights Protection,law,diplomacy,core,drafted,high,1948,1976,decade,1,LAW-050,0,,TRUE,human-rights; udhr; universalism; cultural-relativism
+MAR-010,Shipbuilding and Hull Construction,maritime,engineering,core,drafted,high,-3000,1200,era,0,,3,MAR-020; MAR-040; MAR-100,FALSE,shipbuilding; hull-construction; clinker; junk; dhow
+MAR-020,Coastal Trade,maritime,commerce,core,drafted,high,-3000,1500,era,1,MAR-010,8,MAR-030; MAR-090; MAR-120; MAR-240; MAR-260; MAR-150; MAR-220; AGR-170,FALSE,coastal-trade; cabotage; indian-ocean; mediterranean
+MAR-030,Piracy,maritime,law; commerce,core,drafted,high,-1300,1830,era,1,MAR-020,2,MAR-110; MAR-120,FALSE,piracy; barbary-corsairs; wokou; caribbean
+MAR-040,Warships,maritime,war,core,drafted,high,-1200,1500,era,1,MAR-010,3,MAR-060; MAR-210; MAR-190,FALSE,warship; galley; naval-warfare; premodern
+MAR-050,Celestial Navigation,maritime,nature,core,drafted,high,-600,1500,era,1,NAT-015,2,MAR-160; MAR-250,FALSE,navigation; astronomy; wayfinding; polynesian
+MAR-060,Regular Navy,maritime,war; finance,core,drafted,high,-500,1700,era,1,MAR-040,3,MAR-140; MAR-230; MAR-210,FALSE,navy; standing-force; naval-administration; state-capacity
+MAR-070,Lighthouses and Aids to Navigation,maritime,engineering,standard,drafted,high,-280,1759,era,0,,0,,FALSE,lighthouse; aids-to-navigation; eddystone; pharos
+MAR-080,Lateen Sail,maritime,commerce; war,core,drafted,medium,100,1450,century,0,,1,MAR-160,TRUE,lateen-sail; rigging; sailing-technology; dhow
+MAR-090,Northern River Navigation,maritime,commerce; engineering,standard,drafted,medium,800,1600,century,1,MAR-020,0,,FALSE,river-trade; volga; portage; rus
+MAR-100,Fishing and Whaling,maritime,commerce,core,drafted,high,1000,1859,era,1,MAR-010,1,ENG-265,FALSE,fishing; whaling; nantucket; basque-whaling
+MAR-110,Privateering,maritime,war; law,core,drafted,high,1200,1856,century,1,MAR-030,0,,FALSE,privateering; letters-of-marque; naval-warfare
+MAR-120,Marine Insurance,maritime,finance; commerce,core,drafted,high,1300,1700,century,2,MAR-020; MAR-030,0,,FALSE,marine-insurance; risk; lloyds; underwriting
+MAR-130,Naval Gunnery and Ship Artillery,maritime,engineering; war,core,drafted,high,1350,1858,era,0,,2,MAR-210; MAR-200,FALSE,naval-gunnery; cannon; paixhans-gun; explosive-shell
+MAR-140,Admiralty,maritime,law; war,core,drafted,medium,1360,1900,century,1,MAR-060,0,,FALSE,admiralty; prize-court; naval-administration; maritime-law
+MAR-150,Smuggling,maritime,commerce; law,standard,drafted,high,1400,1900,century,1,MAR-020,0,,FALSE,smuggling; mercantilism; haijin; customs
+MAR-160,Ocean Navigation,maritime,commerce; migration,core,drafted,high,1405,1522,decade,2,MAR-050; MAR-080,4,COM-140; AGR-220; MAR-170; MAR-180,FALSE,zheng-he; age-of-exploration; ocean-crossing; treasure-fleet
+MAR-170,Naval Provisioning and Scurvy,maritime,health,core,drafted,high,1497,1795,era,1,MAR-160,0,,FALSE,scurvy; provisioning; james-lind; royal-navy
+MAR-180,The Cape Route and the Collapse of the Mediterranean Spice Trade,maritime,commerce,core,drafted,high,1498,1600,century,1,MAR-160,0,,FALSE,cape-route; spice-trade; venice; vasco-da-gama
+MAR-190,Marines,maritime,war,standard,drafted,high,1537,1900,century,1,MAR-040,1,MAR-360,FALSE,marines; naval-infantry; amphibious-warfare
+MAR-200,Ironclads,maritime,engineering; war,core,drafted,high,1592,1870,decade,2,MAR-210; MAR-130,2,MAR-270; MAR-300,FALSE,ironclad; turtle-ship; armor; naval-technology
+MAR-210,Ship of the Line,maritime,war,core,drafted,high,1650,1850,century,3,MAR-040; MAR-130; MAR-060,1,MAR-200,FALSE,ship-of-the-line; line-of-battle; sailing-navy; gunnery
+MAR-220,Sea Lane Strategies,maritime,war; commerce; diplomacy,core,drafted,high,1650,1945,century,1,MAR-020,1,MAR-340,FALSE,sea-lane; blockade; commerce-raiding; naval-strategy
+MAR-230,Naval Impressment and the Maritime Labor Force,maritime,law; diplomacy,core,drafted,high,1664,1815,century,1,MAR-060,0,,FALSE,impressment; press-gang; mutiny; naval-labor
+MAR-240,Docks,maritime,commerce; engineering,standard,drafted,high,1700,1900,century,1,MAR-020,1,MAR-370,FALSE,docks; port-infrastructure; wet-dock; colonial-trade
+MAR-250,Chronometer and Coordinates,maritime,nature; engineering,standard,drafted,high,1714,1773,decade,2,MAR-050; ENG-160,0,,FALSE,chronometer; longitude; harrison; navigation
+MAR-260,Clippers,maritime,commerce; engineering,standard,drafted,high,1840,1870,decade,2,MAR-020; ENG-170,0,,FALSE,clippers; tea-trade; sailing-ship; suez-canal
+MAR-270,Monitor,maritime,war; engineering,standard,drafted,high,1862,1900,decade,1,MAR-200,0,,FALSE,monitor; coastal-defense; hampton-roads; ironclad
+MAR-280,Torpedoes,maritime,engineering; war,core,drafted,high,1866,1905,decade,0,,3,MAR-290; MAR-310; MAR-320,FALSE,torpedo; whitehead-torpedo; naval-weapons
+MAR-290,Jeune École,maritime,war,standard,drafted,high,1870,1900,decade,1,MAR-280,0,,TRUE,jeune-ecole; naval-doctrine; torpedo-boats; commerce-raiding
+MAR-300,Battleship,maritime,war; engineering; finance,core,drafted,high,1870,1905,decade,1,MAR-200,2,MAR-330; MAR-350,FALSE,battleship; pre-dreadnought; great-power-status; naval-arms-race
+MAR-310,Destroyer,maritime,war; engineering,core,drafted,high,1893,1945,decade,1,MAR-280,0,,FALSE,destroyer; torpedo-boat-destroyer; screening; fleet-doctrine
+MAR-320,Submarines,maritime,engineering; war,core,drafted,high,1900,1945,decade,2,MAR-280; ENG-290,1,MAR-340,FALSE,submarine; unrestricted-warfare; u-boat; commerce-raiding
+MAR-330,Dreadnought,maritime,war; finance; diplomacy,core,drafted,high,1906,1914,year,1,MAR-300,0,,TRUE,dreadnought; arms-race; naval-treaty; all-big-gun
+MAR-335,Radio Navigation,maritime,engineering; war; commerce; diplomacy,standard,drafted,high,1910,1970,decade,2,MED-120; NAT-170,1,ENG-340,FALSE,radio-navigation; loran; decca; direction-finding; hyperbolic; position-fixing
+MAR-340,Convoy Escort,maritime,war,standard,drafted,high,1917,1943,decade,2,MAR-220; MAR-320,0,,FALSE,convoy; escort; battle-of-the-atlantic; u-boat
+MAR-350,Aircraft Carriers and Naval Aviation,maritime,war; engineering,core,drafted,high,1922,1945,decade,1,MAR-300,0,,FALSE,aircraft-carrier; naval-aviation; pearl-harbor; pacific-war
+MAR-360,Landing Craft and Over-the-Beach Logistics,maritime,war,core,drafted,high,1939,1945,year,1,MAR-190,0,,FALSE,amphibious-warfare; landing-craft; d-day; logistics
+MAR-370,Containerization,maritime,commerce; engineering,core,drafted,high,1956,1990,decade,1,MAR-240,0,,FALSE,containerization; shipping; global-trade; malcolm-mclean
+MTH-015,Numeral Systems and Positional Notation,mathematics,media; commerce; finance; agriculture,core,drafted,high,-2100,1500,era,2,AGR-050; MED-010,8,MTH-020; MTH-040; NAT-040; ENG-215; NAT-015; MTH-025; MTH-045; MTH-035,TRUE,positional-notation; zero; sexagesimal; maya-numerals; counting-rods; hindu-arabic-numerals; abacists
+MTH-020,The Algorithm as Delegable Procedure,mathematics,commerce; engineering; law,core,drafted,medium,-1800,1800,era,1,MTH-015,5,MTH-080; MTH-060; MTH-065; MTH-025; MTH-035,TRUE,algorithm; babylonian-tablets; euclid; nine-chapters; al-khwarizmi; brahmagupta; procedure
+MTH-025,Proof as an Institution,mathematics,philosophy; religion; nature,core,drafted,medium,-500,1900,era,2,MTH-015; MTH-020,4,MTH-070; NAT-040; MTH-045; MTH-072,TRUE,proof; euclid; elements; upapatti; liu-hui; rigour; demonstration
+MTH-030,Formal Logic,mathematics,philosophy,core,drafted,medium,-350,1000,era,0,,6,NAT-050; NAT-090; MTH-090; PHI-220; MTH-080; MTH-070,FALSE,logic; syllogism; nyaya; mohism
+MTH-035,Algebra as Symbolic Manipulation,mathematics,law; commerce; philosophy,core,drafted,medium,-100,1637,era,2,MTH-015; MTH-020,2,MTH-045; MTH-084,TRUE,algebra; al-jabr; fangcheng; tianyuan-shu; brahmagupta; diophantus; cardano; viete
+MTH-040,Probability and Statistical Reasoning,mathematics,,core,drafted,medium,850,1900,era,1,MTH-015,6,NAT-180; NAT-210; MTH-090; MTH-072; MTH-084; MTH-062,FALSE,probability; statistics; al-kindi; boltzmann; entropy
+MTH-045,The Calculus,mathematics,nature; engineering; war,core,drafted,medium,1400,1872,century,3,MTH-015; MTH-025; MTH-035,5,NAT-170; NAT-180; NAT-210; NAT-220; MTH-070,TRUE,calculus; kerala-school; madhava; wasan; seki-takakazu; newton; leibniz; priority-dispute
+MTH-060,Calculation as Organised Labour,mathematics,commerce; maritime; war; finance,core,drafted,high,1767,1970,century,1,MTH-020,0,,TRUE,human-computers; prony; nautical-almanac; harvard-computers; naca; survey-of-india; soroban
+MTH-062,Sampling and Statistical Inference,mathematics,finance; health; law; commerce,core,drafted,medium,1786,1950,decade,2,MTH-040; HLT-270,1,MTH-084,TRUE,sampling; statistical-inference; laplace; kiaer; neyman; fisher; mahalanobis; soviet-census-1937
+MTH-065,The Programmable Machine,mathematics,engineering; war; commerce,core,drafted,medium,1822,1946,decade,3,MTH-020; ENG-180; ENG-215,1,MTH-087,TRUE,babbage; lovelace; jacquard; analytical-engine; zuse; colossus; eniac; programmable
+MTH-070,The Foundational Crisis,mathematics,philosophy; nature,core,drafted,high,1874,1910,decade,3,MTH-030; MTH-025; MTH-045,1,MTH-080,TRUE,foundations; set-theory; russell-paradox; frege; cantor; parallel-postulate; incommensurability
+MTH-072,Cryptography and Security from Mathematical Structure,mathematics,media; war; diplomacy; commerce; law,core,drafted,medium,1883,2000,decade,2,MTH-040; MTH-025,1,MED-150,TRUE,cryptography; al-kindi; kerckhoffs; enigma; public-key; rsa; gchq; crypto-wars
+MTH-075,The Unit Record and Machine-Sortable Populations,mathematics,finance; law; war; health; migration,core,drafted,medium,1890,1970,decade,2,FIN-020; HLT-270,1,MIG-250,TRUE,hollerith; unit-record; punched-card; census; tabulator; ibm; dehomag
+MTH-080,Computability and the Limits of Formal Systems,mathematics,philosophy; engineering,core,drafted,high,1900,1936,decade,3,MTH-020; MTH-030; MTH-070,1,MTH-087,TRUE,computability; godel; turing; church; hilbert; entscheidungsproblem; incompleteness
+MTH-084,Mathematical Modelling as a Method,mathematics,war; finance; commerce; law; maritime,core,drafted,medium,1939,2000,decade,3,MTH-040; MTH-035; MTH-062,1,WAR-330,TRUE,operations-research; linear-programming; game-theory; monte-carlo; kantorovich; mahalanobis; rand
+MTH-087,The Stored-Program Architecture,mathematics,engineering; war; commerce; law,core,drafted,high,1945,1960,decade,2,MTH-065; MTH-080,1,MED-150,TRUE,stored-program; edvac; manchester-baby; edsac; mesm; csirac; von-neumann-architecture
+MTH-090,Information Theory,mathematics,engineering,standard,drafted,high,1948,1948,year,2,MTH-030; MTH-040,0,,FALSE,information-theory; shannon; entropy; channel-capacity
+MED-010,The Emergence of Writing,media,law; finance; agriculture; philosophy,core,drafted,medium,-3300,900,era,1,AGR-050,6,MED-050; MED-020; MED-060; MED-040; MTH-015; NAT-015,TRUE,writing; proto-cuneiform; hieroglyphs; oracle-bones; maya-script; khipu; uruk
+MED-020,The Alphabet,media,commerce; law; religion; philosophy,core,drafted,high,-1800,800,era,1,MED-010,1,MED-030,TRUE,alphabet; proto-sinaitic; phoenician; aramaic; brahmi; geez; hangul
+MED-030,Relay Messaging and the Purchase of Speed,media,diplomacy; war; commerce; finance,core,drafted,high,-550,1794,century,3,ENG-090; MIG-050; MED-020,1,MED-100,FALSE,relay; cursus-publicus; yam; angarium; chasqui; optical-telegraph; post-station
+MED-040,Canon as the Fixation of a Language of Knowledge,media,religion; philosophy; law; diplomacy,core,drafted,high,-250,1800,era,2,REL-070; MED-010,1,MED-070,FALSE,canon-language; diglossia; latin; sanskrit; classical-arabic; literary-chinese; geez
+MED-050,Papermaking,media,commerce,core,drafted,high,-200,1200,era,1,MED-010,1,MED-080,TRUE,paper; papermaking; cai-lun; amatl; paper-mill
+MED-060,Logographic Script and Written Unity,media,diplomacy; law; philosophy; religion,core,drafted,high,-200,1900,era,1,MED-010,0,,FALSE,logographic; literary-chinese; kanbun; brush-talk; chu-nom; amarna; written-unity
+MED-070,Vernacular Translation,media,religion; philosophy; law; migration,core,drafted,high,200,1650,era,1,MED-040,1,MED-080,TRUE,translation; kumarajiva; xuanzang; bhakti; ijaz; luther; tyndale; vernacular
+MED-080,The Printing Press,media,health,core,drafted,high,1040,1450,century,2,MED-050; MED-070,3,HLT-190; REL-230; MED-090,FALSE,printing-press; movable-type; gutenberg; type-casting
+MED-090,Newspapers and Periodical Journalism,media,commerce; law; diplomacy; philosophy,core,drafted,high,1605,1900,decade,2,MED-080; MED-100,0,,TRUE,newspaper; periodical; penny-press; wire-service; vernacular-press-act; nahda; shenbao
+MED-100,The Telegraph,media,war; commerce; diplomacy; finance; maritime,core,drafted,high,1837,1902,decade,2,NAT-170; MED-030,6,DIP-170; WAR-290; FIN-210; MED-120; MED-110; MED-090,FALSE,telegraph; submarine-cable; morse-code; instant-communication
+MED-110,The Telephone,media,commerce; finance; law; war,core,drafted,high,1876,1915,decade,2,MED-100; NAT-170,0,,FALSE,telephone; switchboard; local-loop; bell; interconnection
+MED-120,Wireless Telegraphy,media,maritime; law; diplomacy; war; commerce,core,drafted,high,1895,1914,decade,2,NAT-170; MED-100,5,MED-130; WAR-315; LAW-225; MAR-335; MED-150,FALSE,wireless; marconi; ship-to-shore; titanic; solas; spark-gap
+MED-130,Broadcast Radio,media,war; diplomacy; philosophy; law; religion,core,drafted,high,1920,1994,decade,2,MED-120; ENG-300,4,WAR-280; PHI-410; WAR-310; MED-140,TRUE,radio; broadcast; propaganda; jamming; volksempfanger; rtlm; sawt-al-arab
+MED-140,Television,media,philosophy; health; diplomacy; law; commerce,core,drafted,high,1936,1995,decade,2,MED-130; ENG-300,0,,TRUE,television; satellite; cable; telenovela; al-jazeera; doordarshan; register
+MED-150,The Global Network,media,law; commerce; diplomacy; philosophy; war,core,drafted,medium,1969,2010,decade,4,ENG-330; MED-120; MTH-087; MTH-072,0,,TRUE,internet; web; platform; packet-switching; re-intermediation; great-firewall; m-pesa
+MIG-010,Peopling of the Continents (Pleistocene Human Dispersal),migration,,core,drafted,medium,-70000,-12000,era,0,,1,MIG-020,TRUE,beringia; out-of-africa; pleistocene; human-dispersal
+MIG-020,Wave of Farmers,migration,agriculture,core,drafted,high,-9000,-3500,era,1,MIG-010,0,,TRUE,demic-diffusion; neolithic; wave-of-advance; farming-spread
+MIG-030,Transhumance (Seasonal Pastoral Migration),migration,agriculture,standard,drafted,high,-6000,1900,era,0,,0,,FALSE,transhumance; pastoralism; mesta; seasonal-migration
+MIG-040,Wheel and Wagon,migration,engineering,standard,drafted,medium,-4000,-2000,era,0,,1,MIG-110,FALSE,wagon; wheel; nomadism; transport; steppe
+MIG-050,Horse Husbandry and the Mobility Threshold,migration,agriculture; war; commerce,core,drafted,high,-3500,-1000,era,0,,5,MIG-120; MIG-110; COM-050; MIG-130; MED-030,TRUE,horse; domestication; mobility; steppe
+MIG-060,Maritime Colonization (City-States and Trading Posts),migration,commerce,core,drafted,high,-1200,1600,era,0,,2,MIG-150; DIP-090,FALSE,colonization; trading-post; city-state; maritime; phoenician; greek
+MIG-070,Diasporas as Trade Networks,migration,commerce,core,drafted,high,-1000,1500,era,1,MIG-080,2,MIG-100; REL-080,FALSE,diaspora; trade-network; trust; kin-network
+MIG-080,Camel Caravan Mobility and Desert Crossing,migration,agriculture; commerce,core,drafted,high,-1000,1500,era,0,,1,MIG-070,FALSE,camel; caravan; trans-saharan; desert-crossing; north-arabian-saddle
+MIG-090,Frontier Colonization (Land for Risk),migration,agriculture,core,drafted,high,-700,1900,era,0,,1,MIG-150,FALSE,colonization; frontier; settlement; land-tenure
+MIG-100,"Jewish Diaspora and the ""Jewish Question""",migration,religion; law; finance,core,drafted,high,-586,1948,era,1,MIG-070,0,,TRUE,jewish-diaspora; antisemitism; emancipation; exile
+MIG-110,Steppe Confederations,migration,war; diplomacy; agriculture,core,drafted,medium,-200,1200,century,2,MIG-050; MIG-040,1,MIG-130,FALSE,steppe; confederation; xiongnu; nomadic-empire; mobility
+MIG-120,Great Migrations,migration,war,core,drafted,medium,300,800,century,1,MIG-050,0,,TRUE,migration-period; volkerwanderung; roman-empire; steppe-pressure
+MIG-130,"Steppe Waves (Mongol, Hungarian, Seljuk)",migration,war; diplomacy,core,drafted,high,850,1300,century,3,MIG-110; MIG-050; MIG-040,0,,FALSE,mongol; seljuk; magyar; steppe-wave; conquest; sedentarization
+MIG-140,Norman Conquest as Elite-Replacement Migration,migration,war; law,standard,drafted,high,1066,1100,decade,0,,0,,FALSE,norman-conquest; elite-replacement; domesday; land-tenure
+MIG-150,Colonization of the Americas (Settler Migration Waves),migration,agriculture; commerce; war; religion; law; health,core,drafted,high,1500,1800,century,2,MIG-060; MIG-090,0,,FALSE,colonization; americas; settlement; indentured-servitude
+MIG-160,Atlantic Slavery as Forced Migration,migration,commerce; law; agriculture; health,core,drafted,high,1526,1867,decade,1,WAR-035,2,REL-240; AGR-210,TRUE,atlantic-slave-trade; forced-migration; middle-passage; chattel-slavery
+MIG-170,Industrial Internal Migration,migration,commerce; health,core,drafted,high,1750,1950,century,0,,0,,FALSE,industrialization; urbanization; rural-urban-migration; hukou
+MIG-180,Passenger Service (Regular Lines),migration,commerce; engineering,core,drafted,high,1840,1920,decade,0,,4,MIG-230; MIG-220; MIG-200; MIG-210,FALSE,steamship; emigration; passenger-line; mass-migration
+MIG-190,Gold Rushes and Resource Frontiers,migration,commerce,core,drafted,high,1848,1900,decade,0,,0,,FALSE,gold-rush; resource-frontier; mining; exclusion-laws
+MIG-200,Migrant Networks: Remittances and Chain Migration,migration,finance; commerce,core,drafted,high,1850,2000,era,1,MIG-180,0,,FALSE,remittances; chain-migration; diaspora-networks; migrant-networks
+MIG-210,Circular and Return Migration,migration,commerce,standard,drafted,high,1880,1920,decade,1,MIG-180,0,,FALSE,return-migration; circular-migration; birds-of-passage; remigration
+MIG-220,Immigration Restriction and Quota Systems,migration,law,core,drafted,high,1882,1924,decade,1,MIG-180,0,,FALSE,immigration-restriction; chinese-exclusion-act; national-origins-act; quota
+MIG-230,"Passports, Visas, and Borders as an Institution",migration,law; diplomacy,core,drafted,high,1914,1970,decade,1,MIG-180,5,MIG-250; MIG-260; MIG-280; MIG-270; MIG-240,FALSE,passport; visa; border; documentation; state-capacity
+MIG-240,Refugee Status and Asylum as a Legal Category,migration,law; diplomacy,core,drafted,high,1921,1980,century,1,MIG-230,0,,TRUE,refugee; asylum; unhcr; nansen-passport; non-refoulement
+MIG-250,State-Driven Forced Population Movement,migration,law; diplomacy,core,drafted,high,1923,1990,decade,2,MIG-230; MTH-075,0,,FALSE,deportation; population-exchange; partition; forced-migration; nation-state; repatriation; decolonization; settler-return
+MIG-260,Scientific Migration and Brain Drain,migration,nature,core,drafted,high,1933,2000,decade,1,MIG-230,0,,TRUE,brain-drain; scientific-migration; skilled-labor; higher-education
+MIG-270,Postcolonial and Labor Migration,migration,commerce; law,core,drafted,high,1948,1980,decade,1,MIG-230,0,,FALSE,postcolonial-migration; guest-worker; kafala; decolonization; labor-migration
+MIG-280,Migration Unions (Free-Movement Agreements),migration,diplomacy; law,standard,drafted,medium,1954,1995,decade,1,MIG-230,0,,FALSE,free-movement; nordic-passport-union; eu; ecowas; treaty
+NAT-015,Positional Astronomy and Predictive Tables,nature,mathematics; religion; maritime; agriculture,core,drafted,medium,-1650,1700,era,2,MED-010; MTH-015,3,MAR-050; REL-030; NAT-120,TRUE,astronomy; saros; almagest; zij; maragha; samarkand; dresden-codex; astronomical-bureau
+NAT-020,Metaphysics as an Explanatory Framework,nature,philosophy,core,drafted,medium,-600,1200,era,0,,2,NAT-090; PHI-100,FALSE,metaphysics; cosmology; nyaya; correlative-cosmology
+NAT-040,Mechanics,nature,engineering,core,drafted,high,-350,1687,era,2,MTH-015; MTH-025,5,ENG-170; NAT-120; NAT-180; NAT-170; NAT-220,FALSE,mechanics; impetus-theory; newton; motion
+NAT-050,Translation Movements and the Assembling of the Canon,nature,religion; diplomacy,core,drafted,high,750,1200,century,2,MTH-030; REL-090,3,PHI-220; NAT-110; PHI-200,FALSE,translation-movement; house-of-wisdom; toledo-school; canon-formation
+NAT-080,"Optical Theory, Refraction, and Lenses",nature,engineering,core,drafted,medium,984,1611,era,1,NAT-090,2,NAT-120; NAT-130,FALSE,optics; refraction; ibn-sahl; kepler; lenses
+NAT-090,Empiricism and Experiment,nature,,core,drafted,high,1021,1687,century,2,NAT-020; MTH-030,5,NAT-160; NAT-190; NAT-130; NAT-080; NAT-150,FALSE,empiricism; experiment; ibn-al-haytham; scientific-method
+NAT-100,Geology and Deep Time,nature,,core,drafted,high,1088,1830,era,0,,2,NAT-190; NAT-230,FALSE,geology; deep-time; uniformitarianism; shen-kuo; lyell
+NAT-110,The Sack of Baghdad and the Loss of the House of Wisdom,nature,religion,core,drafted,high,1258,1258,year,1,NAT-050,0,,TRUE,sack-of-baghdad; house-of-wisdom; mongol-conquest; knowledge-loss
+NAT-120,Heliocentrism,nature,religion,core,drafted,high,1259,1687,century,3,NAT-015; NAT-040; NAT-080,0,,TRUE,heliocentrism; copernicus; maragha-school; tusi-couple
+NAT-130,Germ Theory,nature,health,core,drafted,high,1348,1884,era,2,NAT-090; NAT-080,1,HLT-310,FALSE,germ-theory; pasteur; koch; contagion
+NAT-140,Taxonomy and Systematic Classification,nature,health,standard,drafted,high,1550,1758,century,0,,0,,FALSE,taxonomy; linnaeus; li-shizhen; classification
+NAT-150,The Scientific Society and Peer Review,nature,,core,drafted,high,1660,1900,century,1,NAT-090,0,,TRUE,royal-society; peer-review; scientific-institution; priority-dispute
+NAT-160,The Chemical Revolution,nature,engineering,standard,drafted,high,1661,1789,century,1,NAT-090,2,NAT-200; ENG-275,FALSE,chemistry; lavoisier; phlogiston; alchemy
+NAT-170,Electromagnetism,nature,engineering,core,drafted,high,1820,1888,century,2,NAT-040; MTH-045,7,MED-100; ENG-300; NAT-220; MED-120; WAR-315; MED-110; MAR-335,FALSE,electromagnetism; maxwell; faraday; hertz; telegraph-theory
+NAT-180,Thermodynamics,nature,engineering,core,drafted,high,1824,1865,century,3,NAT-040; MTH-040; MTH-045,1,NAT-210,FALSE,thermodynamics; carnot; entropy; heat-engine
+NAT-190,The Theory of Evolution,nature,health; religion,core,drafted,high,1859,1900,century,2,NAT-090; NAT-100,0,,TRUE,evolution; natural-selection; darwin; common-descent
+NAT-200,The Periodic Table and Predictive Classification,nature,,standard,drafted,high,1869,1869,decade,1,NAT-160,0,,FALSE,periodic-table; mendeleev; chemistry; predictive-classification
+NAT-210,Quantum Theory,nature,engineering,core,drafted,high,1900,1935,century,3,NAT-180; MTH-040; MTH-045,1,ENG-330,TRUE,quantum-theory; bose-einstein-statistics; copenhagen-interpretation
+NAT-220,Relativity,nature,,standard,drafted,high,1905,1919,decade,3,NAT-040; NAT-170; MTH-045,1,ENG-340,FALSE,relativity; einstein; spacetime; general-relativity
+NAT-230,Plate Tectonics and the Delayed Vindication of Continental Drift,nature,,core,drafted,high,1912,1965,century,1,NAT-100,0,,FALSE,plate-tectonics; continental-drift; wegener; seafloor-spreading
+PHI-010,Pre-Axial Wisdom Literature,philosophy,religion,core,drafted,medium,-2400,-900,era,0,,1,PHI-030,TRUE,wisdom-literature; ptahhotep; edubba; maat; pre-axial
+PHI-020,Zoroastrian Moral Dualism,philosophy,religion,standard,drafted,medium,-1200,-500,era,0,,0,,TRUE,zoroastrianism; gathas; ahura-mazda; dualism; eschatology
+PHI-030,The Emergence of Schools of Thought,philosophy,,core,drafted,medium,-800,-200,era,1,PHI-010,9,PHI-040; PHI-080; PHI-060; PHI-130; PHI-110; PHI-070; PHI-090; PHI-170; PHI-120,FALSE,schools-of-thought; hundred-schools; darsana; lineage-transmission
+PHI-040,Atman/Brahman — Vedanta and the Upanishads,philosophy,nature,core,drafted,medium,-800,-200,era,1,PHI-030,1,PHI-190,TRUE,vedanta; upanishads; atman; brahman; monism
+PHI-050,"Hebrew Prophetic Ethics: Covenant, Critique of Power, and Social Justice",philosophy,,core,drafted,medium,-750,-500,era,0,,0,,TRUE,hebrew-prophets; covenant; amos; isaiah; jeremiah; social-justice
+PHI-060,Daoism: Non-Action and Naturalness,philosophy,,core,drafted,medium,-600,-200,era,1,PHI-030,0,,TRUE,daoism; wu-wei; ziran; laozi; zhuangzi
+PHI-070,Non-Violence (Jainism),philosophy,,core,drafted,medium,-599,-527,era,1,PHI-030,0,,TRUE,jainism; mahavira; ahimsa; anekantavada
+PHI-080,Confucian Universal Ethics and Ritual (Li),philosophy,,core,drafted,medium,-551,-221,era,1,PHI-030,1,PHI-210,TRUE,confucianism; li; ren; virtue-ethics
+PHI-090,Nirvana and the Four Noble Truths (Buddhism),philosophy,religion,core,drafted,medium,-480,-400,era,1,PHI-030,1,PHI-180,TRUE,buddhism; four-noble-truths; nirvana; anatta
+PHI-100,The Socratic Turn,philosophy,,core,drafted,medium,-470,-399,year,1,NAT-020,2,PHI-140; PHI-150,TRUE,socrates; elenchus; dialectic; ethics
+PHI-110,Mohism: Universal Concern and Early Consequentialism,philosophy,war,core,drafted,medium,-470,-221,era,1,PHI-030,0,,TRUE,mohism; mozi; jian-ai; consequentialism
+PHI-120,Cynicism and the Rejection of Convention,philosophy,,standard,drafted,medium,-412,-323,era,1,PHI-030,0,,FALSE,cynicism; diogenes; anti-conventionalism
+PHI-130,Legalism (Fa): Law as a Technology of the State,philosophy,law,core,drafted,high,-400,-206,era,1,PHI-030,1,PHI-170,TRUE,legalism; han-feizi; shang-yang; fa; statecraft
+PHI-140,Justice and the Politics of the Polis,philosophy,law,core,drafted,medium,-380,-322,year,1,PHI-100,2,PHI-150; PHI-160,TRUE,plato; aristotle; polis; justice; arthashastra
+PHI-150,The Collapse of the Polis and Hellenistic Ethics,philosophy,,core,drafted,medium,-323,-30,era,1,PHI-140,1,PHI-160,TRUE,stoicism; epicureanism; skepticism; hellenistic-philosophy
+PHI-160,Natural Law,philosophy,law,core,drafted,medium,-300,1274,era,2,PHI-140; PHI-150,1,PHI-270,TRUE,natural-law; stoicism; aquinas; mutazila
+PHI-170,Suppression and Closure of Philosophical Institutions,philosophy,,core,drafted,high,-213,529,era,2,PHI-030; PHI-130,0,,FALSE,book-burning; qin-dynasty; academy-of-athens; justinian; suppression
+PHI-180,Chan/Zen: Practice as Epistemology,philosophy,,core,drafted,medium,500,1253,era,1,PHI-090,0,,TRUE,chan-buddhism; zen; koan; dogen; bodhidharma
+PHI-190,Advaita Vedanta (Shankara),philosophy,religion,core,drafted,medium,700,750,century,1,PHI-040,0,,TRUE,advaita-vedanta; shankara; non-dualism; maya
+PHI-200,Falsafa: Islamic Peripatetic Philosophy and the Reason-Revelation Synthesis,philosophy,nature; religion,core,drafted,high,850,1198,era,1,NAT-050,1,PHI-220,TRUE,falsafa; avicenna; averroes; al-ghazali; al-farabi; incoherence
+PHI-210,Neo-Confucianism,philosophy,law,core,drafted,medium,1000,1200,century,1,PHI-080,0,,FALSE,neo-confucianism; zhu-xi; li-principle; qi
+PHI-220,Scholasticism and the University Debate,philosophy,religion,core,drafted,high,1088,1350,century,3,NAT-050; MTH-030; PHI-200,2,PHI-230; PHI-250,FALSE,scholasticism; university; disputatio; universals; aquinas
+PHI-230,Renaissance Humanism,philosophy,,core,drafted,medium,1350,1550,century,1,PHI-220,0,,TRUE,renaissance-humanism; petrarch; pico-della-mirandola; studia-humanitatis
+PHI-240,Ibn Khaldun's Muqaddimah: Cyclical Theory of Civilizational Rise and Decline,philosophy,,core,drafted,medium,1377,1377,year,0,,0,,TRUE,ibn-khaldun; asabiyyah; muqaddimah; cyclical-history
+PHI-250,"Rationalism and ""Method""",philosophy,,core,drafted,high,1637,1716,century,1,PHI-220,5,PHI-310; PHI-320; PHI-370; PHI-360; PHI-260,TRUE,rationalism; descartes; spinoza; leibniz; zera-yacob
+PHI-260,"Enlightenment Sociability: Salons, Coffeehouses, and the Public Sphere",philosophy,,stub,drafted,medium,1650,1800,century,1,PHI-250,0,,FALSE,salon; coffeehouse; public-sphere; enlightenment-sociability
+PHI-270,Empiricism and Early Modern Political Philosophy,philosophy,law,core,drafted,high,1651,1689,century,1,PHI-160,7,PHI-280; PHI-320; PHI-300; PHI-370; PHI-350; PHI-330; PHI-360,TRUE,locke; hobbes; empiricism; social-contract; state-of-nature
+PHI-280,Secularization,philosophy,religion; diplomacy,core,drafted,low,1689,1905,era,1,PHI-270,0,,TRUE,secularization; weber-disenchantment; laicite; differentiation-thesis
+PHI-290,Shinto and Kokutai — the Sacralization of Sovereign Power,philosophy,religion; diplomacy,standard,drafted,medium,1730,1945,century,0,,0,,TRUE,shinto; kokutai; kokugaku; meiji-restoration
+PHI-300,The Invention of Society,philosophy,,core,drafted,medium,1748,1893,century,1,PHI-270,0,,TRUE,durkheim; montesquieu; social-facts; ubuntu
+PHI-310,Romanticism,philosophy,diplomacy,standard,drafted,medium,1770,1850,century,1,PHI-250,0,,FALSE,romanticism; herder; volksgeist; nationalism
+PHI-320,Idealism and the Autonomy of Morality (Kant),philosophy,,core,drafted,high,1781,1804,year,2,PHI-250; PHI-270,3,PHI-380; PHI-390; PHI-340,FALSE,kant; transcendental-idealism; categorical-imperative; autonomy
+PHI-330,Utilitarianism (Bentham and Mill),philosophy,,standard,drafted,high,1789,1863,century,1,PHI-270,0,,TRUE,utilitarianism; bentham; mill; felicific-calculus; harm-principle
+PHI-340,Kierkegaard and the Leap of Faith,philosophy,,stub,drafted,high,1841,1855,century,1,PHI-320,1,PHI-400,FALSE,kierkegaard; existentialism; leap-of-faith; subjectivity
+PHI-350,Historical Materialism,philosophy,finance,core,drafted,high,1845,1883,era,1,PHI-270,1,PHI-410,TRUE,marx; historical-materialism; base-superstructure; ideology-critique
+PHI-360,Nietzschean Genealogy and the Critique of Morality as Power,philosophy,,core,drafted,high,1878,1900,century,2,PHI-250; PHI-270,1,PHI-400,TRUE,nietzsche; genealogy; master-slave-morality; ressentiment; will-to-power
+PHI-370,Pragmatism,philosophy,,core,drafted,high,1878,1930,century,2,PHI-250; PHI-270,0,,TRUE,pragmatism; william-james; john-dewey; charles-peirce
+PHI-380,Science of the Soul — Psychoanalysis as Philosophy of Mind,philosophy,health,standard,drafted,medium,1900,1960,century,1,PHI-320,1,PHI-400,TRUE,psychoanalysis; unconscious; philosophy-of-mind; popper-falsifiability
+PHI-390,Logical Positivism and the Linguistic Turn,philosophy,nature,core,drafted,high,1921,1953,century,1,PHI-320,0,,FALSE,logical-positivism; wittgenstein; vienna-circle; verificationism; ordinary-language-philosophy
+PHI-400,Existentialism and Structuralism,philosophy,,core,drafted,medium,1927,1966,century,3,PHI-380; PHI-360; PHI-340,0,,TRUE,existentialism; sartre; structuralism; levi-strauss; fanon
+PHI-410,Mass Culture and the Culture Industry,philosophy,health,standard,drafted,medium,1930,1960,century,2,PHI-350; MED-130,0,,TRUE,frankfurt-school; adorno; horkheimer; culture-industry; benjamin
+REL-010,"Pre-Institutional Religion: Ancestor Cults, Shamanic Practice, and Sacred Sites",religion,,core,drafted,medium,-20000,-3000,era,0,,1,REL-020,TRUE,gobekli-tepe; shamanism; ancestor-veneration; pre-literate-religion
+REL-020,Temple Economy — Priesthood as Custodian of Reserves and Ritual,religion,finance,core,drafted,high,-3000,1800,era,3,FIN-020; REL-010; AGR-050,2,REL-060; REL-190,FALSE,temple-economy; priesthood; endowment; hindu-temple
+REL-030,The Liturgical Calendar and Sacred Time,religion,,standard,drafted,high,-600,1600,era,1,NAT-015,0,,FALSE,liturgical-calendar; sabbath; ramadan; sacred-time
+REL-040,Religious Toleration,religion,law; diplomacy,core,drafted,high,-539,1648,era,0,,0,,TRUE,toleration; ashoka-edicts; millet-system; peace-of-westphalia
+REL-050,Universalism — The Institutional Consequence of an Ethical Claim,religion,philosophy; migration,core,drafted,medium,-500,700,era,0,,3,REL-070; REL-080; REL-140,FALSE,universalism; axial-age; ummah; ethical-religion
+REL-060,Monasticism and Ascetic Institutions,religion,health,core,drafted,high,-250,900,era,1,REL-020,5,HLT-160; REL-250; REL-090; REL-200; REL-180,FALSE,monasticism; sangha; desert-fathers; ascetic-vows
+REL-070,Canon — The Institutional Fixation of Doctrine,religion,philosophy,core,drafted,high,-250,1382,era,1,REL-050,4,REL-120; REL-150; REL-080; MED-040,FALSE,canon; council-of-nicaea; pali-canon; quran-codification
+REL-080,Missionary Work as Soft Expansion,religion,diplomacy; commerce,core,drafted,high,-250,1650,era,2,REL-070; REL-050,0,,FALSE,missionary-work; ashoka; jesuit-missions; da-wa
+REL-090,"Religious Education: Madrasas, Yeshivas, and Cathedral Schools",religion,nature; philosophy,core,drafted,high,220,1500,era,1,REL-060,2,REL-140; NAT-050,FALSE,madrasa; yeshiva; cathedral-school; ijaza; religious-credentialing
+REL-100,Relic Veneration and the Cult of Saints,religion,,standard,drafted,high,300,1500,era,0,,0,,FALSE,relic; cult-of-saints; pilgrimage-economy; relic-theft
+REL-110,Dogmatic Governance and the Cathedral as Administrative Seat,religion,engineering,core,drafted,high,313,1350,era,1,ENG-110,2,REL-170; REL-210,FALSE,cathedral; diocese; bishop; kulliye
+REL-120,Institutionalization of the Church — and Where It Does Not Form,religion,,core,drafted,high,325,1500,era,1,REL-070,2,REL-150; REL-220,FALSE,church-hierarchy; diocese; decentralized-religion; priestly-rivalry
+REL-130,Tithes,religion,finance; law,core,drafted,high,567,1200,era,1,FIN-020,0,,FALSE,tithe; church-revenue; dana; ecclesiastical-tax
+REL-140,Sacred Law and Religious Courts,religion,law,core,drafted,high,622,1200,era,3,LAW-020; REL-090; REL-050,0,,FALSE,sharia; canon-law; beth-din; dharmashastra-courts
+REL-150,The Fight Against Heresy — Iconoclasm and Holy War,religion,war; law,core,drafted,high,632,1300,era,2,REL-070; REL-120,0,,TRUE,heresy; iconoclasm; holy-war; sunni-shia-split
+REL-160,Pilgrimage as Infrastructure,religion,engineering; commerce,core,drafted,high,632,1500,era,1,ENG-090,0,,FALSE,pilgrimage; hajj; kumbh-mela; sacred-geography
+REL-170,Investiture and the Papacy-Empire Conflict,religion,law; diplomacy,standard,drafted,high,1075,1122,decade,1,REL-110,0,,FALSE,investiture-controversy; papacy; holy-roman-empire; caesaropapism
+REL-180,The Knights Templar: Rise and Suppression,religion,,stub,drafted,high,1119,1312,century,1,REL-060,0,,FALSE,knights-templar; philip-iv; military-order; dissolution
+REL-190,"Indulgences, Purgatory, and the Economy of Salvation",religion,,core,drafted,high,1200,1567,era,1,REL-020,1,REL-230,FALSE,indulgence; purgatory; luther; saint-peters-basilica
+REL-200,Religious Confraternities and Lay Guilds,religion,,standard,drafted,high,1200,1600,era,1,REL-060,0,,FALSE,confraternity; lay-guild; tariqa; mutual-aid
+REL-210,The Parish Network as a Governance Network,religion,law,core,drafted,high,1215,1700,era,1,REL-110,1,WAR-200,FALSE,parish; danka-system; vital-records; local-administration
+REL-220,The Confessional State,religion,law; diplomacy,core,drafted,high,1501,1648,era,1,REL-120,3,REL-040; DIP-100; REL-260,FALSE,confessional-state; safavid-iran; peace-of-augsburg; state-religion
+REL-230,Printed Religion and the Fragmentation of Institutional Authority,religion,engineering; health,core,drafted,high,1522,1650,century,3,HLT-190; MED-080; REL-190,0,,TRUE,reformation; vernacular-bible; sola-scriptura; print-schism
+REL-240,Syncretic Cults,religion,migration,core,drafted,medium,1526,1850,century,1,MIG-160,0,,FALSE,syncretism; vodou; santeria; candomble
+REL-250,The Dissolution of Religious Institutions,religion,,core,drafted,high,1536,1794,century,1,REL-060,0,,FALSE,dissolution-of-the-monasteries; henry-viii; secularization; church-confiscation
+REL-260,State Shinto and the Modern Invention of a National Religion,religion,philosophy,stub,drafted,high,1868,1945,era,1,REL-220,0,,FALSE,state-shinto; meiji-japan; national-religion; imperial-cult
+WAR-010,Raiding as Subsistence,war,agriculture; migration; commerce,core,drafted,medium,-8000,1830,era,2,AGR-050; AGR-030,2,WAR-020; WAR-035,TRUE,raiding; cattle-raid; tain-bo-cuailnge; gavishti; flower-war; captive-taking; nucleated-settlement
+WAR-020,From Raid to Protection Rent,war,diplomacy; commerce; maritime; migration,core,drafted,medium,-3500,1830,era,1,WAR-010,1,WAR-060,TRUE,protection-rent; danegeld; chauth; khuwwa; roving-bandit; stationary-bandit; tilly; olson; barfield
+WAR-030,Bronze Age Warfare and the Elite Chariot Monopoly,war,engineering; commerce,core,drafted,medium,-3000,-1200,era,0,,1,WAR-040,TRUE,chariot; bronze-age; elite-warfare; tin-trade
+WAR-035,Enslavement as Captive Disposal,war,law; commerce; agriculture; migration; religion,core,drafted,medium,-3000,1888,era,3,WAR-010; AGR-010; AGR-050,2,MIG-160; AGR-210,TRUE,slavery; captives; coerced-labour; social-death; nieboer-domar; manumission
+WAR-040,Mass Iron and the End of the Elite Warrior Monopoly,war,engineering; commerce,core,drafted,high,-1200,-500,era,3,WAR-030; COM-020; ENG-010,2,WAR-100; WAR-130,TRUE,ironworking; metallurgy; bronze-age-collapse; mass-equipping
+WAR-050,War Elephants,war,agriculture,stub,drafted,high,-1000,200,era,0,,0,,FALSE,war-elephants; mauryan-warfare; hannibal; hellenistic-warfare
+WAR-060,Professional Squad and Standing Army,war,finance,core,drafted,high,-900,-100,era,1,WAR-020,12,WAR-070; WAR-080; WAR-130; WAR-230; WAR-250; WAR-210; WAR-200; WAR-120; WAR-240; WAR-190; WAR-180; WAR-100,FALSE,standing-army; professionalization; hoplite; legion
+WAR-070,Siege Warfare and Investment Doctrine,war,engineering,core,drafted,high,-900,1500,era,2,WAR-060; WAR-090,2,WAR-150; WAR-160,FALSE,siege; fortification; investment; campaign-doctrine
+WAR-080,Cavalry Doctrine,war,migration; agriculture,core,drafted,high,-900,1600,era,1,WAR-060,0,,FALSE,cavalry; horse-archery; shock-cavalry; mobility
+WAR-090,Military Logistics and Supply Lines,war,commerce; agriculture,core,drafted,high,-900,1800,era,0,,3,WAR-070; WAR-230; WAR-120,FALSE,logistics; supply-lines; foraging; campaign-doctrine
+WAR-100,Battle Formation — Phalanx and Legion,war,,core,drafted,high,-700,-100,era,2,WAR-040; WAR-060,0,,TRUE,phalanx; legion; formation; infantry-tactics
+WAR-110,Reconnaissance and Fog of War,war,,core,drafted,high,-500,1900,era,0,,1,WAR-270,FALSE,reconnaissance; scouting; intelligence; fog-of-war
+WAR-120,War of Attrition,war,commerce; finance,core,drafted,high,-430,1918,era,2,WAR-060; WAR-090,1,WAR-280,TRUE,attrition; endurance; total-war; sino-japanese-war
+WAR-130,Gunpowder Infantry Doctrine,war,engineering; finance,core,drafted,high,900,1600,century,3,WAR-060; WAR-040; ENG-140,2,WAR-150; WAR-170,FALSE,gunpowder; firearms; infantry-doctrine; standing-army-finance
+WAR-140,Mercenary Companies and the Market for Violence,war,finance,core,drafted,high,1300,1650,era,0,,0,,FALSE,mercenary; condottieri; landsknecht; swiss-pikemen; contract-soldiery
+WAR-150,Artillery Doctrine,war,engineering; finance,core,drafted,high,1370,1700,century,2,WAR-070; WAR-130,5,WAR-260; WAR-310; WAR-270; WAR-330; WAR-160,FALSE,artillery; gunfounding; siege-train; field-artillery
+WAR-160,Fortification Response and the Artillery-Siege Arms Race,war,engineering,core,drafted,high,1500,1700,century,2,WAR-070; WAR-150,0,,FALSE,trace-italienne; bastion-fortification; siege-artillery; fortification
+WAR-170,Close-Order Drill as a Training Technology,war,,standard,drafted,high,1590,1700,century,1,WAR-130,0,,FALSE,drill; maurice-of-nassau; musket-training; military-revolution
+WAR-180,Military Institutional Decay from Within,war,,standard,drafted,high,1600,1826,era,1,WAR-060,0,,FALSE,janissary; institutional-decay; military-reform; ottoman-empire
+WAR-190,Professional NCO Corps,war,,standard,drafted,medium,1700,1900,century,1,WAR-060,0,,FALSE,nco; small-unit-leadership; military-professionalization
+WAR-200,Conscription and Mass Armies,war,law; migration; diplomacy; religion,core,drafted,high,1793,1918,decade,4,WAR-060; FIN-020; REL-210; LAW-110,2,WAR-290; LAW-165,FALSE,conscription; levee-en-masse; mass-mobilization; citizen-soldier; civil-registration; army-literacy; nation-building
+WAR-210,Military Medicine — Triage and Evacuation,war,health,core,drafted,high,1793,1950,century,1,WAR-060,0,,FALSE,triage; ambulance; battlefield-medicine; evacuation-chain
+WAR-220,Combat Motivation and Small-Unit Cohesion,war,,standard,drafted,medium,1800,1950,century,0,,0,,TRUE,combat-motivation; primary-group-cohesion; morale; small-unit-psychology
+WAR-230,Staff and Operational Art,war,,core,drafted,high,1806,1900,century,2,WAR-060; WAR-090,0,,FALSE,general-staff; operational-art; prussian-military-reform
+WAR-240,Guerrilla Warfare,war,diplomacy; migration,core,drafted,high,1808,1975,century,1,WAR-060,2,WAR-340; WAR-320,FALSE,guerrilla-warfare; insurgency; protracted-war; decolonization
+WAR-250,Military Statistics and Casualty Accounting,war,nature,standard,drafted,medium,1850,1918,century,1,WAR-060,1,WAR-280,FALSE,statistics; casualty-accounting; military-administration
+WAR-260,Trench and Positional Warfare Doctrine,war,engineering,core,drafted,high,1904,1918,decade,1,WAR-150,0,,FALSE,trench-warfare; positional-warfare; defensive-doctrine; western-front
+WAR-270,Military Aviation Doctrine,war,engineering,core,drafted,high,1911,1945,decade,3,WAR-110; WAR-150; ENG-290,2,WAR-320; ENG-290,TRUE,aviation; strategic-bombing; air-superiority; close-air-support
+WAR-275,Oil as Strategic Dependency,war,diplomacy; maritime; commerce; finance,core,drafted,high,1911,1973,decade,2,ENG-265; ENG-275,0,,TRUE,oil; anglo-persian; ploiesti; baku; embargo; opec; fuel-security
+WAR-280,Psychological Operations and Propaganda,war,diplomacy,core,drafted,high,1914,1945,century,3,WAR-250; WAR-120; MED-130,0,,FALSE,propaganda; psychological-warfare; morale; mass-media
+WAR-290,Total Mobilization,war,commerce; finance; law; maritime,core,drafted,high,1914,1945,century,2,WAR-200; MED-100,0,,FALSE,total-war; war-economy; industrial-mobilization; home-front
+WAR-300,Chemical Warfare and International Weapons Taboos,war,diplomacy; engineering,standard,drafted,high,1915,1925,decade,0,,0,,FALSE,chemical-warfare; poison-gas; geneva-protocol; weapons-taboo
+WAR-310,Mechanization and Combined Arms,war,engineering; maritime,core,drafted,high,1917,1941,decade,2,WAR-150; MED-130,0,,TRUE,mechanization; combined-arms; blitzkrieg; armor-doctrine
+WAR-315,Radar and the Early-Warning System,war,engineering; maritime; nature; diplomacy,core,drafted,high,1935,1945,decade,2,MED-120; NAT-170,1,WAR-330,FALSE,radar; early-warning; dowding-system; air-defence; filter-room
+WAR-320,Special Forces and Commando Raiding,war,,stub,drafted,high,1940,1980,decade,2,WAR-240; WAR-270,0,,FALSE,special-forces; commando; sas; oss; sof
+WAR-330,Nuclear Deterrence,war,diplomacy; nature; engineering,core,drafted,high,1945,1991,decade,3,WAR-150; WAR-315; MTH-084,1,WAR-340,TRUE,nuclear-weapons; deterrence; mutually-assured-destruction; cold-war
+WAR-340,Hybrid and Proxy Wars,war,diplomacy; migration,core,drafted,medium,1945,2020,era,2,WAR-330; WAR-240,0,,FALSE,proxy-war; hybrid-warfare; cold-war; cyber-warfare
