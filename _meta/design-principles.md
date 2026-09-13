@@ -44,3 +44,10 @@ The project's design grammar. Every entry's Hook should be checkable against the
    household, workshop, crew, or squad scale. Every domain must carry entries at the
    level where a person experiences the domain's activity, not only the level at which
    a state organises it.
+
+9. **Some capabilities are produced long before any application exists.** A
+   derived result can sit unused for centuries and pay out only when a later domain
+   supplies a use. The producing society need not be the one that benefits, and
+   nothing about the result signals its eventual value. Model it as a stock that
+   neither decays nor pays until a trigger arrives from elsewhere — not as a slow
+   return on investment. See `latent capability`.

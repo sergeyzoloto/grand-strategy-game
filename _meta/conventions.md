@@ -18,6 +18,15 @@ exception. Never reuse a number after an entry is cut — a retired ID stays
 retired (`_meta/retired-ids.md`) even though live entries around it may later
 get renumbered.
 
+**Reusing a burned `former_id`.** A number that survives only as a `former_id`
+may be reused **if its last live holder has been retired**. The reuse must be
+logged in `_meta/id-migrations.md` as an explicit **disambiguation row** — not
+merely a renumber row — recording both that the old ID resolves, through its
+earlier runs, to a retired entry, and that a distinct new entry now holds the
+number. A reader resolving a stale reference then finds both facts in one place.
+IDs listed in `_meta/retired-ids.md` are a different case: a cut ID is
+permanently unavailable and is never reused under this rule.
+
 Every renumbering run is recorded in `_meta/id-migrations.md`, which is
 **append-only** and is the canonical resolver for any stale ID reference — from
 a prior conversation, an old audit, or an external note — including one that's
