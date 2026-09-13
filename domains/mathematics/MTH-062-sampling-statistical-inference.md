@@ -29,7 +29,7 @@ absence:
     note: A random sample must be drawn from a sampling frame — a list or map of the units being studied — and across much of colonial and early post-independence Africa no adequate frame existed, because enumeration had so often estimated households or taxpayers rather than listing individuals (MTH-075). Without a frame there is nothing to draw a random sample from, so the method's promise of learning about a whole population from a known part could not be kept. What is absent is the frame, which is a precise and separate precondition from the statistical theory.
 prereqs: [MTH-040, HLT-270]
 enables: [MTH-084]
-see_also: [MTH-075, FIN-020, FIN-090, LAW-110, HLT-325]
+see_also: [MTH-075, FIN-020, FIN-090, LAW-110, HLT-325, NAT-260]
 contested: true
 contested_note: "Two disputes. First, the founders of modern statistics — Galton, Pearson and Fisher — were committed eugenicists, and much of the apparatus of correlation, regression and inference was developed in and for that programme. Historians disagree about how far the methods carry that origin and how far they are separable from it; the entry treats the entanglement as the field's founding context rather than a footnote, and models the methods as usable for any purpose while their early institutional sponsors were eugenic. Second, the complete-enumeration objection to sampling was not simply wrong: a sample is only as good as its frame and its design, and famous failures such as the 1936 Literary Digest poll show large biased samples misleading worse than small sound ones. Model sampling's reliability as conditional on frame quality and random design rather than on sample size."
 stats_touched: [legibility, information sovereignty]
@@ -62,7 +62,11 @@ how many are employed, sick, or poor.
 misleads confidently; a small random one tells the truth with a known margin.
 The 1936 contest between the Literary Digest's two million ballots and Gallup's
 small designed sample demonstrated it in public. Randomisation is the working
-part of the method, not a technicality.
+part of the method, not a technicality. Late in the century the same inference
+moves inside scientific instruments: detectors and sky surveys produce more data
+than anyone can inspect, so statistical filtering is automated into pipelines
+whose choices about what counts as signal sit between the scientist and the
+evidence (NAT-260).
 
 **It makes `legibility` cheap enough to be continuous.** Complete enumeration is
 so expensive that a census happens once a decade. A sample survey can run every

@@ -21,7 +21,7 @@ absence:
     note: Chinese natural inquiry produces extensive careful observation and technical documentation (astronomical records, pharmacological compendia, and more) without developing an equivalent explicit methodological argument for controlled experimentation as the privileged path to reliable knowledge — systematic empirical documentation without an accompanying formal experimental philosophy.
 prereqs: [NAT-020, MTH-030]
 enables: [NAT-160, NAT-190, NAT-130, NAT-080, NAT-150]
-see_also: [PHI-390, PHI-270, NAT-015]
+see_also: [PHI-390, PHI-270, NAT-015, NAT-260]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -62,7 +62,10 @@ review and reproducibility expectations — claims about the natural world
 become subject to a shared, checkable community standard rather than
 resting on any one investigator's individual authority or reputation,
 converting knowledge validation from a personal to a collective and
-cumulative process.
+cumulative process. Simulation later breaks the link this relies on
+(NAT-260): a model rerun on the same inputs always reproduces its result,
+so repetition stops being evidence of correctness, and systems that cannot be
+experimented on at all have to be checked by other means.
 
 ## Regional specifics
 

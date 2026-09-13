@@ -40,7 +40,7 @@ absence:
   - region: africa
     note: Across sub-Saharan Africa outside South Africa, no state in this window built a particle accelerator, research reactor programme, launch capability or large telescope, and national budgets could not approach the threshold for any of them. Scientific capability in those fields was therefore zero at home regardless of the quality of the continent's scientists, who could work at the frontier only by leaving — so the capital threshold fed the emigration MIG-260 describes rather than the other way round. South Africa, with its SAFARI-1 reactor from 1965 and a weapons programme, is the exception that confirms the threshold was fiscal rather than human.
 prereqs: [NAT-150]
-enables: []
+enables: [NAT-260]
 see_also: [MIG-260, MTH-072, WAR-330, WAR-315]
 contested: true
 contested_note: "Whether Big Science is a good use of research funding is disputed and the dispute is the entry's best mechanic. Weinberg, who named the phenomenon ('Impact of Large-Scale Science on the United States', Science, 1961), and de Solla Price (Little Science, Big Science, 1963) worried it would bureaucratise and militarise research and crowd out small science; defenders point to discoveries only large facilities can make. The 1993 cancellation of the Superconducting Super Collider split physics itself, with condensed-matter physicists arguing the same money would produce more from many small laboratories. There is no general answer, because the two strategies have different return profiles: concentrated facility spending buys discoveries in the few fields above an instrument threshold and nothing elsewhere; distributed spending buys broad incremental progress and cannot reach those fields at all. Model the choice as a trade-off with neither dominating, conditional on which fields a state needs to reach, and treat claims that either strategy is simply more productive as contested."
@@ -130,6 +130,12 @@ completely different return profiles:
 
 Neither dominates. The right mix depends on which fields a state needs to reach,
 and the historical argument is still running.
+
+**The facilities also produce the next mode of inquiry.** Weapons laboratories
+needed calculation no experiment could replace, and detectors began producing more
+data than people could inspect. Both pushed research toward simulation and
+automated analysis, which NAT-260 carries as a third mode alongside theory and
+experiment.
 
 ## Social consequence
 

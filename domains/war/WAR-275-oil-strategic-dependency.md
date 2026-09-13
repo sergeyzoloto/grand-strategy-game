@@ -37,7 +37,7 @@ absence:
     note: A large population and a substantial military with essentially no domestic petroleum and no control over the concessions nearby, throughout a period when its foreign policy was made elsewhere. The absence is of agency as much as of resource — the dependency existed but the decisions it should have driven were taken in London, so the strategic logic this entry describes never ran and the vulnerability was simply inherited at independence.
 prereqs: [ENG-265, ENG-275]
 enables: []
-see_also: [ENG-010, MAR-320, MAR-350, WAR-270, WAR-310, WAR-290, DIP-190, ENG-165, FIN-250, FIN-270, MIG-200, MIG-270, HLT-350, LAW-215]
+see_also: [ENG-010, MAR-320, MAR-350, WAR-270, WAR-310, WAR-290, DIP-190, ENG-165, FIN-250, FIN-270, MIG-200, MIG-270, HLT-350, LAW-215, NAT-260]
 contested: true
 contested_note: "How far oil access explains operational and strategic outcomes is disputed, and the entry should carry the dispute rather than the strongest version. The maximalist reading treats fuel as the decisive variable in the 1941 Japanese decision and in the German failure in the east; the sceptical reading notes that both states made choices with other sufficient causes and that fuel is unusually easy to identify after the fact because its shortage is documented in quartermasters' records while doctrine and intent are not. Model fuel as a hard constraint on what operations are physically possible rather than as a determinant of what is decided — a state with no fuel cannot execute, which is a different and more defensible claim than that a state with no fuel must attack. The 1973 embargo's effects are separately contested, since the price shock and the embargo were distinct events with different causes and the embargo's direct physical effect on supply was smaller than the price response suggests."
 stats_touched: [strategic input dependency, fuel security, refining flexibility, energy budget]
@@ -78,7 +78,10 @@ bites in weeks rather than years; the dependency reaches every arm of a
 modern force at once rather than only its weapons; and the substitution
 options are worse. Presenting the mechanism as a twentieth-century
 novelty would miss that it is one of the oldest constraints in the
-record.
+record. Late-century computing capacity was restricted by export control on
+the same reasoning (NAT-260), but with the difference that makes this case
+harder: a denied supercomputer could be built at home, as India and China
+both did, while no investment calls oil out of ground that lacks it.
 
 **Conversion to oil is a decision that trades capability for
 dependency.** Churchill's 1911 choice is the template — oil-firing bought

@@ -34,7 +34,7 @@ absence:
   - region: africa
     note: No stored-program computer was built on the continent in this window. Every early machine elsewhere was paid for by an urgent sponsor — nuclear weapons calculation, cryptanalysis, ballistics, weather, or in Japan's case industrial optics — and built by an existing electronics base able to supply thousands of valves and a maintenance staff. Neither condition was present, and the first computers to arrive in the following decade were imported, so the architecture came to the region as a finished product rather than as something built to meet a local demand.
 prereqs: [MTH-065, MTH-080]
-enables: [MED-150]
+enables: [MED-150, NAT-260]
 see_also: [MTH-060, ENG-330, WAR-330, MTH-090, MTH-020, MTH-084]
 contested: true
 contested_note: "Two disputes. Attribution of the architecture is contested: the 1945 EDVAC report bears von Neumann's name alone and draws on Eckert and Mauchly's work with the ENIAC team, and the naming of the design after von Neumann has been criticised as erasing their contribution, while Turing's contemporaneous ACE design and Zuse's work complicate it further. Model the architecture as emerging from a small, interconnected group and several independent sites rather than from a single author. Second, claims to be the first stored-program computer depend on definition — first to run a stored program (Manchester, 1948), first to offer a regular service (EDSAC, 1949), first built to the EDVAC design, first in continental Europe (MESM) — and should be treated as definitional rather than factual disputes."
@@ -97,7 +97,11 @@ one step later.
 
 The architecture arrives inside state programmes and under Cold War demand —
 hydrogen-bomb calculation, cryptanalysis, weather prediction — so the first
-institutions of computing are military and scientific establishments. FUJIC is
+institutions of computing are military and scientific establishments. Those
+same demands turn the general-purpose machine into an instrument of science:
+simulation of weapons, weather and later climate becomes a way of knowing
+systems no experiment can reach, which NAT-260 carries as an epistemic change
+rather than a computing one. FUJIC is
 the exception worth marking: built for lens design at a photographic firm, it
 shows a civilian industrial demand sufficient on its own.
 

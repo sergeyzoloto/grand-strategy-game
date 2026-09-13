@@ -29,7 +29,7 @@ absence:
     note: A model substitutes for a system only if the system has been measured well enough to calibrate the model, and across much of post-independence Africa the inherited statistical base was thin — colonial enumeration had often counted households or taxpayers by estimate rather than individuals (MTH-075). Planning models were frequently supplied by external consultants and calibrated on data that did not exist at the needed resolution, so the method's central promise, deriving consequences reliably, could not be kept. What was absent is not modelling expertise but the measured system a model needs.
 prereqs: [MTH-040, MTH-035, MTH-062]
 enables: [WAR-330]
-see_also: [MAR-340, FIN-200, MTH-087, WAR-290, MTH-075]
+see_also: [MAR-340, FIN-200, MTH-087, WAR-290, MTH-075, NAT-260]
 contested: true
 contested_note: "Three disputes. First, whether a model can substitute for prices in allocating an economy is the socialist calculation debate — Mises and Hayek argued central planners could not obtain the information prices convey, and optimal-planning advocates argued models could compute it — and the Soviet experience, including the neglect of Kantorovich, is read both ways. Model modelling as improving allocation conditional on measurement quality and on whether the planner will accept results that contradict policy. Second, the effect of the Mahalanobis model on Indian growth is disputed between those who credit it with building an industrial base and those who blame it for decades of slow growth; model the outcome as contested rather than settled. Third, models used to manage war by metrics — body counts and kill ratios in Vietnam — show that a model substituting for a system can substitute badly when the measured quantity becomes the goal; model degradation when the modelled variable is also the target that officials are rewarded on."
 stats_touched: [legibility, intellectual authority]
@@ -58,7 +58,10 @@ derived from the representation. Linear programming finds the best allocation
 under constraints; game theory derives strategy against an adversary who is
 also optimising; Monte Carlo simulation estimates outcomes too complicated to
 calculate exactly. In each case the answer comes from the model before anyone
-acts in the world.
+acts in the world. This entry owns the method as an instrument of decision; its
+use to produce knowledge about natural systems that can be neither solved nor
+experimented on — climate, cosmic structure, weapons physics after test bans —
+and the validation problem that raises, is NAT-260's.
 
 **It extends `legibility` from counting a system to predicting it.** MTH-075
 let a state sort what it had recorded; a model lets it see what a decision
