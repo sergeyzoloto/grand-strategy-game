@@ -34,7 +34,7 @@ absence:
   - region: africa
     note: West African Ifa divination runs a genuinely formal combinatorial system over 256 figures, each keyed to a memorised body of verses, and it is transmitted as an oral corpus held in the diviner's memory rather than as written instructions. The result is a formal procedure whose transmission cost is initiation rather than instruction — years of memorisation gated by a lineage of teachers, not a text a stranger can pick up. What is absent is the written recipe, and with it the possibility of delegating execution to someone outside the tradition; the formalism itself is fully present.
 prereqs: [MTH-010]
-enables: [MTH-080, MTH-060]
+enables: [MTH-080, MTH-060, MTH-050]
 see_also: [MTH-030, NAT-050, MTH-090, ENG-330, COM-170, COM-180, AGR-050, MED-010, MTH-070]
 contested: true
 contested_note: "Whether Old Babylonian procedural texts should be called algorithms is genuinely disputed. Knuth argued in 1972 that they are algorithms in every functional sense; Hoyrup, Robson and others caution that reading them through a modern computational category imports assumptions the scribes did not hold, and that the texts are better understood as worked examples within a cut-and-paste geometric practice than as general procedures. The dispute matters here because it sets the entry's start date. Model the capability as arriving with written procedural instruction rather than with any particular formal definition of what a procedure is, and treat the date as a band from roughly -1800 to -300 rather than a point — the Babylonian end if delegable execution is the criterion, the Euclidean end if generality and proof of correctness are required. The mechanism this entry actually turns on is the first, which is why it is dated there."
