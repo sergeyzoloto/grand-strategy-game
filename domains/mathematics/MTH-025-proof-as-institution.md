@@ -32,7 +32,7 @@ absence:
     note: From roughly 500 to 1120 Latin Europe had Euclid only in fragments, chiefly through the geometry attributed to Boethius, which transmitted the statements of propositions without their demonstrations. The results survived and the proofs did not, so geometry was carried as a list of facts to be accepted rather than a chain to be checked. What was absent was not geometry but the standard of demonstration, restored only when the full Elements arrived from Arabic.
 prereqs: [MTH-015, MTH-020]
 enables: [MTH-070, NAT-040, MTH-045]
-see_also: [MTH-030, NAT-015, NAT-050, MTH-080]
+see_also: [MTH-030, NAT-015, NAT-050, MTH-080, MTH-035]
 contested: true
 contested_note: "Two disputes. First, whether proof is one category across traditions is contested: the older historiography treated Greek axiomatic deduction as proof proper and other traditions as lacking it, and work by Chemla on Chinese mathematical texts and by Srinivas and others on Indian upapatti argues that these are demonstrations with their own criteria rather than absences of proof. Model parallel standards of demonstration, each producing permanent results, differing in what they make portable and what they rest on — not a ranking with Greece at the top. Second, the permanence claim needs care. A proved result does not decay, but what counts as proof has changed — Cauchy's generation rejected arguments their predecessors accepted, and computer-assisted proofs since 1976 have been contested as proofs at all. Model results as permanent relative to a standard of demonstration, and standards themselves as slow-changing institutions, so that re-proof and rejection are possible without the underlying truths decaying."
 stats_touched: [intellectual authority, latent capability]

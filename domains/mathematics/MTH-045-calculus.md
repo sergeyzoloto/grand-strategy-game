@@ -24,7 +24,7 @@ region_variants:
 absence:
   - region: middle-east
     note: Sharaf al-Din al-Tusi around 1200 analysed cubic equations using a procedure that amounts to finding a maximum by what is in effect a derivative, and the line was not taken further into a general calculus. The absence is not of the insight but of a consumer. Islamic astronomy was organised around predictive tables (NAT-015) rather than a quantitative mechanics of continuous motion, so no problem pressed repeatedly for a general method of calculating change, and a technique without a demanding application remained a technique.
-prereqs: [MTH-015, MTH-025]
+prereqs: [MTH-015, MTH-025, MTH-035]
 enables: [NAT-170, NAT-180, NAT-210, NAT-220, MTH-070]
 see_also: [NAT-040, NAT-120, NAT-015]
 contested: true
