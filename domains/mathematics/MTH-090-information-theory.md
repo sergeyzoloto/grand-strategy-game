@@ -19,7 +19,7 @@ enables: []
 see_also: [ENG-330, NAT-180, NAT-220, NAT-210, MED-100, MTH-020, MTH-080]
 contested: false
 contested_note: ""
-stats_touched: []
+stats_touched: [information speed]
 tags: [information-theory, shannon, entropy, channel-capacity]
 ---
 

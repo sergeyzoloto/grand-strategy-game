@@ -22,7 +22,7 @@ enables: [NAT-180, NAT-210, MTH-090]
 see_also: [NAT-040]
 contested: false
 contested_note: ""
-stats_touched: []
+stats_touched: [legibility]
 tags: [probability, statistics, al-kindi, boltzmann, entropy]
 ---
 

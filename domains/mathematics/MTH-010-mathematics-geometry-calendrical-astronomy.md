@@ -19,15 +19,18 @@ region_variants:
   - region: americas
     date_start: -300
     note: Maya calendrical astronomy independently develops precise observational tracking of solar, lunar, and Venus cycles and a Long Count calendar system capable of dating events across vast timescales, achieved with no contact with Old World mathematical or astronomical traditions.
-absence:
   - region: east-asia
-    note: Chinese mathematics (systematized in texts like the Nine Chapters) develops sophisticated algorithmic and computational methods for solving practical problems (area, volume, systems of equations) without pursuing the axiomatic-proof structure Greek geometry emphasizes — a results-and-procedure-oriented tradition rather than a demonstrably lesser one.
+    date_start: -100
+    note: Chinese mathematics, systematised in the Nine Chapters, develops sophisticated algorithmic methods for area, volume and simultaneous linear equations, solved on the counting board with a positional rod notation, and pursues correctness of procedure rather than axiomatic proof. A results-and-procedure tradition developed as far as any in the entry, not a lesser version of the Greek one.
+absence:
+  - region: africa
+    note: Sub-Saharan traditions counted with real sophistication, including large vigesimal verbal systems, but developed no written positional notation before contact with Arabic numerals. Without a written notation a calculation exists only while someone is performing it, so it cannot be checked afterwards by a third party, stored, or handed on as a worked result. What that forecloses is calculation at administrative and calendrical scale, where results must outlast the person who produced them.
 prereqs: [AGR-050]
 enables: [NAT-040, NAT-120, MTH-040, MAR-050, MTH-020]
 see_also: [NAT-020, MED-010]
 contested: false
 contested_note: ""
-stats_touched: []
+stats_touched: [execution delegability, legibility]
 tags: [mathematics, zero, calendrical-astronomy, maya-long-count]
 ---
 
@@ -83,7 +86,10 @@ long timescales accurately. Chinese mathematics's procedural,
 results-oriented character rather than Greek-style axiomatic proof shows
 mathematical sophistication doesn't require one particular structural
 form — solving real problems reliably is a separate achievement from
-proving general theorems about why the solution works.
+proving general theorems about why the solution works. Where no written
+positional notation developed, as across sub-Saharan Africa before contact,
+counting could be highly developed and still never produce a result that
+outlived the calculation.
 
 ## Hook
 

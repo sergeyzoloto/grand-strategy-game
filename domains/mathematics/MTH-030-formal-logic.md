@@ -11,7 +11,7 @@ confidence: medium
 date_start: -350
 date_end: 1000
 date_precision: era
-regions: [mediterranean, south-asia, east-asia]
+regions: [mediterranean, south-asia, east-asia, middle-east]
 region_variants:
   - region: south-asia
     date_start: -300
@@ -19,15 +19,18 @@ region_variants:
   - region: east-asia
     date_start: -400
     note: Mohist logicians and the "School of Names" develop formal analysis of naming, definition, and valid inference in the same broad era as Aristotle, addressing paradoxes of identity and category comparable in sophistication to contemporary Greek work, though this tradition doesn't sustain the same continuous institutional transmission across the following centuries.
-absence:
   - region: middle-east
-    note: Islamic logicians substantially preserve, translate, and extend Aristotelian syllogistic logic (via the translation movement, NAT-050) rather than developing an independent formal system from scratch, becoming the critical transmission link that carries and refines Greek logical method into the medieval Latin world.
+    date_start: 1000
+    note: Arabic logic begins from translated Aristotle (NAT-050) and does not stop there. Ibn Sina develops a temporal and modal syllogistic that departs substantially from Aristotle's, and later logicians in the Islamic world treat his system rather than Aristotle's as the standard to be argued with. It is an independent formal development, and far more than a relay into Latin Europe.
+absence:
+  - region: east-asia
+    note: After the Han, formal logic does not persist as a discipline in imperial China. The Later Mohist canons survive only as corrupted fragments until Qing scholars recover them, and no institution sustained validity-checking as a subject, since the examination system (LAW-100) rewarded mastery of commentary on canonical texts rather than formal inference. The Mohist achievement existed; what was absent for nearly two millennia was any institution with a reason to keep it alive.
 prereqs: []
 enables: [NAT-050, NAT-090, MTH-090, PHI-220, MTH-080]
-see_also: [NAT-020, PHI-110, PHI-190, PHI-390, MTH-020]
+see_also: [NAT-020, PHI-110, PHI-190, PHI-390, MTH-020, LAW-100]
 contested: false
 contested_note: ""
-stats_touched: []
+stats_touched: [intellectual authority]
 tags: [logic, syllogism, nyaya, mohism]
 ---
 
