@@ -27,7 +27,7 @@ region_variants:
 absence:
   - region: africa
     note: A model substitutes for a system only if the system has been measured well enough to calibrate the model, and across much of post-independence Africa the inherited statistical base was thin — colonial enumeration had often counted households or taxpayers by estimate rather than individuals (MTH-075). Planning models were frequently supplied by external consultants and calibrated on data that did not exist at the needed resolution, so the method's central promise, deriving consequences reliably, could not be kept. What was absent is not modelling expertise but the measured system a model needs.
-prereqs: [MTH-040, MTH-035]
+prereqs: [MTH-040, MTH-035, MTH-062]
 enables: [WAR-330]
 see_also: [MAR-340, FIN-200, MTH-087, WAR-290, MTH-075]
 contested: true

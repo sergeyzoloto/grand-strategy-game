@@ -21,7 +21,7 @@ absence:
     note: Conventional fixed-premium insurance contracts raise the same gharar (excessive uncertainty) concerns under Islamic finance principles that constrain conventional derivatives (FIN-130), with takaful — a cooperative, mutual-risk-sharing structure where participants contribute to a shared fund and share both the risk and any surplus — developing as the principle-compliant alternative achieving comparable protection.
 prereqs: [FIN-060]
 enables: []
-see_also: [MAR-120, HLT-070, HLT-210, HLT-270, FIN-130, MTH-060]
+see_also: [MAR-120, HLT-070, HLT-210, HLT-270, FIN-130, MTH-060, MTH-062]
 contested: false
 contested_note: ""
 stats_touched: []
