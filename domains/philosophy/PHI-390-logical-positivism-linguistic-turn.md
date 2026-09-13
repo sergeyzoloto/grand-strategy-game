@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-320]
 enables: []
-see_also: [MTH-030, NAT-090, PHI-370, PHI-400, MTH-080]
+see_also: [MTH-030, NAT-090, PHI-370, PHI-400, MTH-080, MTH-070]
 contested: false
 contested_note: ""
 stats_touched: []

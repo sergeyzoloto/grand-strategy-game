@@ -24,7 +24,7 @@ absence:
     note: The constraint here is institutional and not one of mathematical capacity, and Ramanujan is the case that demonstrates it. A mathematician of the first rank working in isolation produced extraordinary results in analysis and number theory and had to travel to Cambridge to be read at all. A negative result about formal systems is not the kind of thing one person produces, because it requires a community that has agreed on a shared programme, formalised it precisely enough to be refuted, and cares about the refutation — so what is absent is the seminar, the journal, and the standing argument, not the talent.
   - region: east-asia
     note: Japanese mathematics was strong and institutionally well-established by this period, with research universities and journals of real standing, and it engaged very little with foundations because the programme that made foundations urgent was a local European argument about the security of mathematics after the set-theoretic paradoxes. A tradition can hold every institutional prerequisite and still not work on a question it has no reason to find pressing, which is a different kind of absence from lacking the means to work on it.
-prereqs: [MTH-020, MTH-030]
+prereqs: [MTH-020, MTH-030, MTH-070]
 enables: []
 see_also: [MTH-090, ENG-330, PHI-390, NAT-210, NAT-050, NAT-180, MED-150]
 contested: true

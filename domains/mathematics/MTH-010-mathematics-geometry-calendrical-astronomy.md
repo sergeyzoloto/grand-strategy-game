@@ -26,7 +26,7 @@ absence:
   - region: africa
     note: Sub-Saharan traditions counted with real sophistication, including large vigesimal verbal systems, but developed no written positional notation before contact with Arabic numerals. Without a written notation a calculation exists only while someone is performing it, so it cannot be checked afterwards by a third party, stored, or handed on as a worked result. What that forecloses is calculation at administrative and calendrical scale, where results must outlast the person who produced them.
 prereqs: [AGR-050]
-enables: [NAT-040, NAT-120, MTH-040, MAR-050, MTH-020]
+enables: [NAT-040, NAT-120, MTH-040, MAR-050, MTH-020, MTH-070]
 see_also: [NAT-020, MED-010]
 contested: false
 contested_note: ""

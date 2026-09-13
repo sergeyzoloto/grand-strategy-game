@@ -20,7 +20,7 @@ absence:
     note: Chinese imperial academies sustain long-running, state-supported scholarly communities without developing the specific combination of open publication, competitive priority-by-publication-date, and adversarial peer critique this entry tracks — state patronage and scholarly community can be sustained through a substantially different institutional logic.
 prereqs: [NAT-090]
 enables: []
-see_also: []
+see_also: [MTH-070]
 contested: true
 contested_note: "Institutional peer validation and actual scientific priority are not the same thing, and the two can diverge: the Newton-Leibniz calculus priority dispute (each independently developing the calculus, then disputing credit through their respective national scientific societies) shows an institution built to validate claims can itself become an arena for a nationally-inflected credit fight only loosely tracking who actually did what first. Model the society's validation function and its internal priority-and-credit disputes as two distinct, only loosely coupled processes rather than treating institutional credit as a reliable proxy for actual scientific priority."
 stats_touched: []
