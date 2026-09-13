@@ -24,7 +24,7 @@ absence:
     note: Islamic falsafa explicitly works to reconcile Aristotelian metaphysics with revealed monotheistic theology (Avicenna and Averroes prominent among many), producing a synthesis project neither the original Greek framework nor the Quranic tradition alone would have generated — metaphysics here develops specifically as an integration exercise rather than as an independent system-building effort.
 prereqs: []
 enables: [NAT-090, PHI-100]
-see_also: [PHI-040, NAT-010]
+see_also: [PHI-040, MTH-010]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -50,7 +50,7 @@ knowledge-generating activity follows it: it sets which questions are
 considered meaningful to ask (what counts as a "cause," whether the world
 is built from fixed unchanging substances or from relational, cyclical
 processes), which in turn shapes what kind of answer later empirical or
-mathematical inquiry (NAT-010, NAT-090) will even look for — a framework
+mathematical inquiry (MTH-010, NAT-090) will even look for — a framework
 that assumes fixed underlying substances motivates a different research
 program than one built around cyclical relational categories.
 
@@ -78,7 +78,7 @@ framework neither source tradition would have generated alone.
 ## Hook
 
 The specific metaphysical framework a tradition inherits sets which
-questions later empirical and mathematical inquiry (NAT-010, NAT-090) treats
+questions later empirical and mathematical inquiry (MTH-010, NAT-090) treats
 as meaningful to ask in the first place — an invisible precondition for
 knowledge-generation rather than a competing method, with real
 consequences for which discoveries a tradition's method can even reach.

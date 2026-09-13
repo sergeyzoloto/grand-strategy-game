@@ -1,10 +1,11 @@
+> **Migration note (2026-09-13):** IDs in this file were rewritten by `id-migrations.md` Run 4, the NAT→MTH domain carve-out. Prose is otherwise unaltered.
 > **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
 
 # Computation Chain — Gaps Flagged
 
 **Date:** 2026-09-12
-**Context:** recorded during the NAT-060 split into NAT-014 (The Algorithm as
-Delegable Procedure) and NAT-215 (Computability and the Limits of Formal
+**Context:** recorded during the NAT-060 split into MTH-020 (The Algorithm as
+Delegable Procedure) and MTH-080 (Computability and the Limits of Formal
 Systems).
 **No entries written.** Flags only.
 
@@ -12,8 +13,8 @@ Systems).
 
 ## 1. The missing middle: mechanical and electromechanical computation
 
-The corpus has the algorithm (`NAT-014`, from -1800), it has the theory of
-computability (`NAT-215`, 1900-1936), and it has semiconductors (`ENG-330`,
+The corpus has the algorithm (`MTH-020`, from -1800), it has the theory of
+computability (`MTH-080`, 1900-1936), and it has semiconductors (`ENG-330`,
 1947). **Between the abacus and the transistor there is nothing.** Roughly
 three centuries of mechanical and electromechanical computation are absent:
 
@@ -50,18 +51,18 @@ ENG on the boundary rules — these are artifacts and technique, where NAT owns
 the knowledge-generating side. `ENG-330`'s prereqs would then reach back into
 this chain rather than to `ENG-190` and `NAT-210` alone.
 
-### Consequence for NAT-215
+### Consequence for MTH-080
 
-`NAT-215` ships with `enables: []` **deliberately**. Computability theory did
+`MTH-080` ships with `enables: []` **deliberately**. Computability theory did
 not enable semiconductors, and Turing's machine was a proof device rather than
 a design — its influence on actual architecture is a separate ENG question.
-The honest position is that `NAT-215`'s descendants live in the missing middle
+The honest position is that `MTH-080`'s descendants live in the missing middle
 above, so the empty field is evidence for this gap rather than a defect in the
 entry. It should be populated when these entries exist, and not before.
 
 ## 2. Human computers as organised labour
 
-Between `NAT-014`'s delegable procedure and mechanical computation sits a
+Between `MTH-020`'s delegable procedure and mechanical computation sits a
 stage the corpus does not have: **computation organised as a division of
 labour among people.**
 
@@ -71,7 +72,7 @@ labour among people.**
   chose the formulae, a handful of competent calculators who organised the
   method, and a large body of workers performing only addition and
   subtraction. Many of the last group were reportedly unemployed hairdressers.
-  This is `NAT-014`'s `execution delegability` mechanic operating at
+  This is `MTH-020`'s `execution delegability` mechanic operating at
   industrial scale and it is the direct conceptual ancestor of Babbage, who
   cited it.
 - The Harvard Computers (1880s-1920s) — women employed to classify stellar
@@ -89,24 +90,24 @@ Smithian — this is a factory applied to arithmetic. **NAT** owns the
 knowledge-producing institution. The deciding question is whether the entry's
 claim is about *how the work was organised* (COM) or about *what kind of
 knowledge institution it constituted* (NAT). On the Prony evidence, COM looks
-right, with `NAT-014` as prereq and `nature` in `domains_touched`.
+right, with `MTH-020` as prereq and `nature` in `domains_touched`.
 
 It should also carry the gendered-labour material, since the composition of
 these workforces is not incidental — computation was routed to women
 precisely because it was classified as execution rather than expertise, which
-is the social consequence `NAT-014` describes, made concrete.
+is the social consequence `MTH-020` describes, made concrete.
 
 ## 3. No foundational-crisis entry
 
-`NAT-215` prereqs `NAT-030` (Formal Logic, -350..1000) because nothing closer
+`MTH-080` prereqs `MTH-030` (Formal Logic, -350..1000) because nothing closer
 exists. Corpus-wide grep returns **zero hits** for Frege, Russell, set theory,
 or the foundational crisis; the only Hilbert and Godel mentions are the ones
-just written into `NAT-215`. The gap is roughly 1874-1910: Cantor's set
+just written into `MTH-080`. The gap is roughly 1874-1910: Cantor's set
 theory, the paradoxes, Frege's Begriffsschrift and its collapse under
 Russell's letter, *Principia Mathematica*.
 
 This matters because it is the reason Hilbert's programme existed at all —
-`NAT-215` currently has to state its own motivation rather than inherit it
+`MTH-080` currently has to state its own motivation rather than inherit it
 from a prereq. `PHI-390` (Logical Positivism and the Linguistic Turn, 1921) is
 the nearest neighbour and is `see_also`-linked, but it is downstream
 philosophy, not the mathematical crisis.
@@ -114,7 +115,7 @@ philosophy, not the mathematical crisis.
 ## 4. Two corpus-hygiene findings
 
 - **`NAT-011` through `NAT-019` are all burned as `former_ids`** from
-  renumbering Run 1, which forced `NAT-014` to reuse one. `conventions.md`
+  renumbering Run 1, which forced `MTH-020` to reuse one. `conventions.md`
   prohibits reuse of *cut* IDs (recorded in `retired-ids.md`, which holds no
   NAT entries) and is silent on renumbered `former_ids`. `NAT-015` was avoided
   specifically because old NAT-015 became NAT-060, the entry retired in this
@@ -125,6 +126,6 @@ philosophy, not the mathematical crisis.
   absence) now stands at **five confirmed instances**: `MED-100`, `ENG-290`,
   `WAR-200`, the energy-audit case, and `NAT-060` here — whose claim that East
   Asia lacked a formal theory of algorithmic procedure was not merely
-  misplaced but **false, and contradicted inside the corpus** by `NAT-010`'s
+  misplaced but **false, and contradicted inside the corpus** by `MTH-010`'s
   own east-asia variant. A corpus-wide sweep for this defect is overdue, and
   would pair efficiently with a sweep for `stats_touched: []`.

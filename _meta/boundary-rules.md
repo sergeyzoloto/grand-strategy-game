@@ -169,16 +169,65 @@ the medium, and what the medium does to people and institutions.**
 - **MED / HLT.** MED owns the artefact and the channel; HLT owns what using it
   does to a body or a habitus. Print is MED; silent reading as an acquired
   disposition and the interior self it produces is HLT (`HLT-190`).
-- **MED / NAT.** NAT owns the knowledge and the formal result; MED owns the
-  medium that carries it. Electromagnetic theory is NAT, the telegraph is MED.
-  The algorithm as a delegable procedure is NAT (`NAT-014`) because its claim
-  is about what a procedure *is*, not about the surface it is written on.
+- **MED / NAT.** NAT owns the empirical knowledge; MED owns the medium that
+  carries it. Electromagnetic theory is NAT, the telegraph is MED.
+- **MED / MTH.** MTH owns what a notation makes derivable and the procedures
+  written in it; MED owns the notation's surface, channel and access gate.
+  Writing is MED; the algorithm as a delegable procedure is MTH (`MTH-020`),
+  because its claim is about what a procedure *is*, not about the surface it
+  is written on.
 
 Writing itself is MED rather than AGR, FIN or LAW, even though its earliest
 surviving use is accounting: AGR owns the storage and sealing practice
 (`AGR-050`), FIN owns the census and cadastre built on records (`FIN-020`), and
 LAW owns what happens to law once it is written down (`LAW-020`). MED owns the
 notation system that all three presuppose.
+
+## MTH / (NAT, ENG, MED, COM, FIN, PHI, LAW)
+
+**MTH (mathematics)** owns two things, and they form one arc.
+
+1. **Results obtained by derivation** — proof or computation — and the
+   properties of those methods: what a procedure or formal system permits,
+   forbids, or costs. **Test: could the entry's central claim be refuted by an
+   observation? If not, it is MTH.**
+2. **Computation** — the delegation and execution of a procedure, whether by
+   organised people or by dedicated calculating machinery. The arc from the
+   procedural tablet through the computing office, the tabulator and the
+   stored-program machine is kept in one domain deliberately, on the same
+   reasoning that kept MED's arc whole: splitting it by executor would break
+   the mechanism it runs on, which is `execution delegability`.
+
+- **MTH / NAT.** NAT owns knowledge obtained by observation and the
+  institutions producing it; the refutation test decides. Probability theory
+  is MTH (`MTH-040`); statistical mechanics is NAT (`NAT-180`). Experimental
+  method (`NAT-090`) is NAT even though it is a procedure, because its results
+  come from observation — which is why "procedure" alone is not the test.
+- **MTH / ENG.** ENG owns component fabrication and machinery whose purpose is
+  not computation. A calculating machine, a tabulator or a stored-program
+  architecture is MTH, because its claim is about what gets computed, by what,
+  at what cost. The transistor and integrated-circuit fabrication it is built
+  from is ENG (`ENG-330`), as are machine tools and power.
+- **MTH / COM.** COM owns the division of labour as a general institution
+  (`COM-170`). Labour organised specifically to perform computation is MTH,
+  because the mechanism being organised is procedural delegation.
+- **MTH / MED.** See the MED section: the notation's surface and channel are
+  MED, what it makes derivable is MTH.
+- **MTH / FIN, HLT, WAR.** Each owns its applications of formal method. The
+  mathematics of the life table is MTH; actuarial pooling is FIN. The census as
+  an institution is FIN (`FIN-020`); the machine that processes it is MTH.
+  Vital statistics is HLT; casualty accounting is WAR.
+- **MTH / PHI.** PHI owns argument as an inquiry into substantive questions.
+  MTH owns inference systems whose validity can be checked by form alone.
+  Formal logic is MTH (`MTH-030`); scholastic disputation is PHI.
+- **MTH / LAW.** LAW owns legal objects built on formal artefacts — software as
+  property, proof standards in evidence — which are not MTH merely because they
+  involve computation or probability.
+
+Entries that bundle a method with its first application (`MTH-010` carries
+calendrical astronomy; `MTH-040` carries al-Kindi's cryptanalysis and
+Boltzmann) are placed by their central claim under the one-entry-one-mechanism
+rule, not by the presence of mathematics in them.
 
 ## MIG / all
 

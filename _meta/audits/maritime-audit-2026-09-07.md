@@ -1,3 +1,5 @@
+> **Migration note (2026-09-13):** IDs in this file were rewritten by `id-migrations.md` Run 4, the NAT→MTH domain carve-out. Prose is otherwise unaltered.
+
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
@@ -44,7 +46,7 @@ The domain's one genuine capability-loss story — Ming China's treasure fleet b
 
 Zero internal dead links — every `prereqs`/`enables` ID inside this domain resolves to a real entry. But several entries' own prose declares a dependency their frontmatter never records:
 
-- **`MAR-050`** (Celestial Navigation) relies entirely on astronomical observation and instrument tradition, but doesn't prereq `NAT-010` (Mathematics, Geometry, and Calendrical Astronomy), which already exists and covers exactly this toolkit.
+- **`MAR-050`** (Celestial Navigation) relies entirely on astronomical observation and instrument tradition, but doesn't prereq `MTH-010` (Mathematics, Geometry, and Calendrical Astronomy), which already exists and covers exactly this toolkit.
 - **`MAR-250`** (Chronometer) explicitly frames its own solution as "a precision-engineering problem... rather than an astronomical or mathematical one," yet doesn't prereq `ENG-160` (Mechanical Clockwork and the Escapement), which already exists, predates it by three centuries with no chronological conflict, and is exactly the precision-mechanism lineage a marine chronometer is built from.
 - **`MAR-320`** (Submarines) never prereqs `ENG-290` (The Internal Combustion Engine), which already exists, is tagged `diesel-engine` explicitly, and is the actual propulsion technology every WWI/WWII diesel-electric submarine depends on for surface running.
 - **`MAR-140`** (Admiralty) states outright that its prize-court function "is a hidden precondition for privateering (`MAR-110`) to work as an incentive at all" — and neither entry cross-references the other anywhere in `prereqs`, `enables`, or `see_also`. This is the exact "prose states a real dependency, frontmatter never promotes it" bug found repeatedly in earlier domain audits.

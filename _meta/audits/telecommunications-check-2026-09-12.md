@@ -1,3 +1,4 @@
+> **Migration note (2026-09-13):** IDs in this file were rewritten by `id-migrations.md` Run 4, the NAT→MTH domain carve-out. Prose is otherwise unaltered.
 > **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
 
 # Telecommunications Chain — Coverage Check
@@ -46,9 +47,9 @@ This is the project's recurring failure mode (citation-gap, `conventions.md`
 without carrying it in a link field. Here the referenced mechanism **has no ID
 to carry** — four entries rest on a prerequisite that does not exist.
 
-`NAT-240` (Information Theory, 1948) compounds it from the other end. Shannon's
+`MTH-090` (Information Theory, 1948) compounds it from the other end. Shannon's
 channel-capacity theorem came out of telegraph and telephone transmission
-engineering at Bell Labs, and `NAT-240` carries no link to `MED-100` or to
+engineering at Bell Labs, and `MTH-090` carries no link to `MED-100` or to
 anything else in the chain it abstracts. Its `see_also` reaches sideways to
 `NAT-060`, `NAT-180`, `NAT-210`, `NAT-220` and `ENG-330` — every direction
 except the one it actually came from.
@@ -427,9 +428,9 @@ claim; a SOLAS split would take `MAR-337`.
   `region_variants`-and-`date_end` extension of `MED-130`. Leaning: extension,
   since mechanisms 1-4 all apply unchanged, with the literacy-independence
   point if anything stronger.
-- **`NAT-240` Information Theory is orphaned from its own origins.** Shannon's
+- **`MTH-090` Information Theory is orphaned from its own origins.** Shannon's
   channel-capacity work came out of telegraph and telephone transmission
-  engineering; `NAT-240` links to neither. At minimum add `MED-100` to its
+  engineering; `MTH-090` links to neither. At minimum add `MED-100` to its
   `see_also`; a `prereqs` link becomes defensible once `MED-110` exists.
 - **No COM information-speed entry.** Flagged in full below.
 

@@ -1,9 +1,9 @@
 ---
-id: NAT-010
-former_ids: [NAT-002]
+id: MTH-010
+former_ids: [NAT-002, NAT-010]
 title: Mathematics, Geometry, and Calendrical Astronomy
 legacy_ref:
-domain: nature
+domain: mathematics
 domains_touched: [agriculture]
 tier: core
 status: drafted
@@ -23,7 +23,7 @@ absence:
   - region: east-asia
     note: Chinese mathematics (systematized in texts like the Nine Chapters) develops sophisticated algorithmic and computational methods for solving practical problems (area, volume, systems of equations) without pursuing the axiomatic-proof structure Greek geometry emphasizes — a results-and-procedure-oriented tradition rather than a demonstrably lesser one.
 prereqs: [AGR-050]
-enables: [NAT-040, NAT-120, NAT-070, MAR-050, NAT-014]
+enables: [NAT-040, NAT-120, MTH-040, MAR-050, MTH-020]
 see_also: [NAT-020, MED-010]
 contested: false
 contested_note: ""

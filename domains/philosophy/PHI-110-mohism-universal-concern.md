@@ -18,7 +18,7 @@ absence:
     note: No Mediterranean school in this era pairs a systematic impartial-benevolence ethic with organized, technically sophisticated defensive military engineering the way Mozi's followers did — Mohist disciples were renowned specialists in fortification and siege defense, deployed to aid besieged states as a direct practical expression of the doctrine's anti-aggression-war principle, a fusion of ethical theory and applied military technique with no close Greek or Roman equivalent.
 prereqs: [PHI-030]
 enables: []
-see_also: [PHI-080, NAT-030, PHI-320, PHI-330]
+see_also: [PHI-080, MTH-030, PHI-320, PHI-330]
 contested: true
 contested_note: "Whether Mohist jian'ai ('impartial concern,' extending equal care to all people regardless of kinship closeness) and its consequentialist justification (a policy is judged by whether it increases aggregate benefit, li, to the state and common people) are genuinely comparable to modern Western utilitarianism, or whether that comparison anachronistically imports categories (an aggregatable, quantifiable 'utility') foreign to the actual structure of Mohist argument, is disputed in comparative philosophy. Model Mohist policy evaluation as its own distinct benefit-maximizing logic rather than as an early, undeveloped version of Benthamite utilitarianism specifically."
 stats_touched: []
@@ -29,7 +29,7 @@ This entry owns Mozi's ethical-political doctrine — jian'ai (impartial
 concern for all people regardless of kinship distance) defended through
 explicitly consequentialist argument (a practice is justified by whether
 it benefits the state and common people in aggregate); the Mohist
-logicians' formal semantic and inferential work is NAT-030's territory.
+logicians' formal semantic and inferential work is MTH-030's territory.
 
 ## Timing
 

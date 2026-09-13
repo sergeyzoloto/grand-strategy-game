@@ -16,7 +16,7 @@ region_variants: []
 absence:
   - region: middle-east
     note: The Islamic madrasa system develops as a comparable institutionalized higher-education network centuries before and running parallel to the European university, but organized around individual teaching licenses (ijaza) granted by a specific scholar rather than a corporate, self-governing guild of masters and students collectively chartered to grant degrees — a structurally different institutional logic for organizing advanced learning, not a delayed or lesser version of the university model.
-prereqs: [NAT-050, NAT-030, PHI-200]
+prereqs: [NAT-050, MTH-030, PHI-200]
 enables: [PHI-230, PHI-250]
 see_also: [PHI-160]
 contested: false
@@ -29,7 +29,7 @@ The medieval European university organizes itself as a self-governing
 corporate guild of masters and students, and develops the disputatio (a
 formally structured, rule-governed debate) as its central method for
 resolving philosophical and theological questions — converting the
-recovered and translated Aristotelian corpus (NAT-050, NAT-030), reaching
+recovered and translated Aristotelian corpus (NAT-050, MTH-030), reaching
 the Latin West substantially by way of Averroes's own commentaries
 (PHI-200), into the raw material for centuries of rigorous, cumulative
 dialectical argument.
@@ -46,7 +46,7 @@ synthesis and continuing to roughly 1350.
 
 The disputatio method requires a formal proposition, a structured
 back-and-forth of objections and responses following explicit rules of
-valid argument (NAT-030's logical apparatus applied directly to
+valid argument (MTH-030's logical apparatus applied directly to
 theological and philosophical questions), and a resolution reconciling or
 adjudicating between the positions raised — the paradigmatic scholastic
 dispute is the problem of universals: whether general categories like

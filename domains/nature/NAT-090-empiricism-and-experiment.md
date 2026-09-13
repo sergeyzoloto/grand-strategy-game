@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: east-asia
     note: Chinese natural inquiry produces extensive careful observation and technical documentation (astronomical records, pharmacological compendia, and more) without developing an equivalent explicit methodological argument for controlled experimentation as the privileged path to reliable knowledge — systematic empirical documentation without an accompanying formal experimental philosophy.
-prereqs: [NAT-020, NAT-030]
+prereqs: [NAT-020, MTH-030]
 enables: [NAT-160, NAT-190, NAT-130, NAT-080, NAT-150]
 see_also: [PHI-390, PHI-270]
 contested: false
@@ -30,7 +30,7 @@ tags: [empiricism, experiment, ibn-al-haytham, scientific-method]
 
 Deliberately testing a claim against controlled observation rather than
 relying on authority or pure reasoning alone — the specific method that
-converts NAT-020's frameworks and NAT-030's logical validity into claims
+converts NAT-020's frameworks and MTH-030's logical validity into claims
 checked against the world itself.
 
 ## Timing

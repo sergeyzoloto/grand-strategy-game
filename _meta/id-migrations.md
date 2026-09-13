@@ -923,3 +923,32 @@ chronologically ordered.
 | ENG-325 | MED-130 | Broadcast Radio |
 | ENG-327 | MED-140 | Television |
 
+## Run 4 — 2026-09-13 — domain carve-out to MTH
+
+Not a chronological renumbering run. Six entries were moved out of NAT into a
+new domain, `MTH` (mathematics), which owns results obtained by derivation and
+computation as the delegation and execution of procedure — see
+`boundary-rules.md`. Procedure follows Run 3. IDs assigned fresh and
+gap-numbered by `date_start`; vacated NAT numbers are burned and not reused.
+Entries moved and did not retire, so none appear in `retired-ids.md`; each
+carries its old ID in `former_ids`.
+
+MTH slots 050, 060 and 070 are reserved for entries written immediately after
+this run: mechanical and electromechanical computation, calculation as
+organised labour, and the foundational crisis. The first two were proposed in
+`_meta/audits/computation-check-2026-09-13.md` under provisional IDs
+`ENG-168` and `COM-175`; those IDs were never assigned and are not burned.
+They are placed in MTH by explicit decision that computation goes with
+mathematics.
+
+### NAT -> MTH
+
+| old ID | new ID | title |
+|---|---|---|
+| NAT-010 | MTH-010 | Mathematics, Geometry, and Calendrical Astronomy |
+| NAT-014 | MTH-020 | The Algorithm as Delegable Procedure |
+| NAT-030 | MTH-030 | Formal Logic |
+| NAT-070 | MTH-040 | Probability and Statistical Reasoning |
+| NAT-215 | MTH-080 | Computability and the Limits of Formal Systems |
+| NAT-240 | MTH-090 | Information Theory |
+

@@ -1,8 +1,9 @@
 ---
-id: NAT-215
+id: MTH-080
 title: Computability and the Limits of Formal Systems
+former_ids: [NAT-215]
 legacy_ref:
-domain: nature
+domain: mathematics
 domains_touched: [philosophy, engineering]
 tier: core
 status: drafted
@@ -23,9 +24,9 @@ absence:
     note: The constraint here is institutional and not one of mathematical capacity, and Ramanujan is the case that demonstrates it. A mathematician of the first rank working in isolation produced extraordinary results in analysis and number theory and had to travel to Cambridge to be read at all. A negative result about formal systems is not the kind of thing one person produces, because it requires a community that has agreed on a shared programme, formalised it precisely enough to be refuted, and cares about the refutation — so what is absent is the seminar, the journal, and the standing argument, not the talent.
   - region: east-asia
     note: Japanese mathematics was strong and institutionally well-established by this period, with research universities and journals of real standing, and it engaged very little with foundations because the programme that made foundations urgent was a local European argument about the security of mathematics after the set-theoretic paradoxes. A tradition can hold every institutional prerequisite and still not work on a question it has no reason to find pressing, which is a different kind of absence from lacking the means to work on it.
-prereqs: [NAT-014, NAT-030]
+prereqs: [MTH-020, MTH-030]
 enables: []
-see_also: [NAT-240, ENG-330, PHI-390, NAT-210, NAT-050, NAT-180, MED-150]
+see_also: [MTH-090, ENG-330, PHI-390, NAT-210, NAT-050, NAT-180, MED-150]
 contested: true
 contested_note: "Two live disputes. The Church-Turing thesis is not a theorem and cannot be one — it asserts that an informal notion, effective procedure, is exactly captured by a formal one, and its support is the convergence of independent formalisations plus the failure of anyone to produce a counterexample. Model it as extremely well-supported and formally unprovable, which is a genuinely unusual epistemic status and should not be flattened into either a proved result or a mere conjecture; the stronger physical Church-Turing thesis, that no physical process computes more than a Turing machine, is a substantially more contested claim and should be kept separate. Second, what the incompleteness theorems imply outside mathematics is disputed and very widely overstated. Lucas and later Penrose argued they show human minds are not machines; the standard reply is that the argument equivocates on which formal system the mind is being identified with. Treat the theorems as results about formal systems with no established consequence for cognition, and model claims to the contrary as a recurring philosophical argument rather than a settled finding."
 stats_touched: [undecidability ceiling, intellectual authority]
@@ -33,7 +34,7 @@ tags: [computability, godel, turing, church, hilbert, entscheidungsproblem, inco
 ---
 
 A proof that some questions are answerable by no procedure whatsoever —
-not unanswered, but provably unanswerable. NAT-014 establishes what a
+not unanswered, but provably unanswerable. MTH-020 establishes what a
 procedure is and what it can be delegated to; this establishes what no
 procedure can do, and it does so before any machine exists to be limited
 by it.
@@ -67,7 +68,7 @@ This is worth modelling directly, because a research programme that fails
 informatively is a different object from one that merely stops.
 
 **The limits are established before the machines exist.** This is the real
-distinction from NAT-014 and the thing that makes the entry unusual in the
+distinction from MTH-020 and the thing that makes the entry unusual in the
 corpus. Ordinarily a technology is built, its limits are discovered in
 practice, and theory follows to explain them — which is the sequence
 NAT-180's thermodynamics follows after the steam engine. Here the ceiling

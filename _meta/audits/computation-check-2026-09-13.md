@@ -1,3 +1,5 @@
+> **Migration note (2026-09-13):** IDs in this file were rewritten by `id-migrations.md` Run 4, the NAT→MTH domain carve-out. Prose is otherwise unaltered.
+
 # Computation and Computing Machinery — Coverage Check
 
 **Date:** 2026-09-13
@@ -9,7 +11,7 @@ calculator, tabulator, punched card, abacus, Babbage, Lovelace, Hollerith,
 ENIAC/Colossus/EDVAC/EDSAC, transistor, integrated circuit, microprocessor,
 software, program(me), algorithm, memory, mainframe, personal computer,
 packet/TCP/protocol, artificial intelligence, machine learning; inspection of
-`NAT-014`, `NAT-215`, `ENG-330`, `FIN-020`, `COM-170`, `COM-180`, `HLT-270`,
+`MTH-020`, `MTH-080`, `ENG-330`, `FIN-020`, `COM-170`, `COM-180`, `HLT-270`,
 `WAR-250`, `LAW-225`, `MED-150`; ENG region footprint; sort-position and
 burned-ID checks.
 **No entries written.** Proposals only.
@@ -20,17 +22,17 @@ burned-ID checks.
 
 ### What exists between the algorithm and the semiconductor
 
-**Nothing.** `NAT-014` The Algorithm as Delegable Procedure ends at 1800;
-`NAT-215` Computability ends at 1936; `ENG-330` Semiconductors begins at 1947.
+**Nothing.** `MTH-020` The Algorithm as Delegable Procedure ends at 1800;
+`MTH-080` Computability ends at 1936; `ENG-330` Semiconductors begins at 1947.
 Between them the corpus contains no calculating machine, no organised
 calculation, no tabulator, no computer of any kind, no program, and no software.
 
 | Term | Hits | Own Mechanism, or incidental? |
 | --- | --- | --- |
-| computer / computing | `NAT-014`, `NAT-215` | **Incidental.** `NAT-014` names "the calculating office to the computer" as downstream of the algorithm; `NAT-215` notes its limits were proved "a decade before any electronic computer runs." Both point at an entry that does not exist. |
+| computer / computing | `MTH-020`, `MTH-080` | **Incidental.** `MTH-020` names "the calculating office to the computer" as downstream of the algorithm; `MTH-080` notes its limits were proved "a decade before any electronic computer runs." Both point at an entry that does not exist. |
 | calculation | `FIN-200`, `LAW-210`, `LAW-170`, `PHI-320`, `WAR-090` | **False positives** — calculation as reckoning or deliberation, never as computation. |
 | transistor / integrated circuit | `ENG-330`; `MED-130`, `MED-140` | **Own** in `ENG-330`; **incidental** in the media entries (the transistor radio as a cheap receiver). |
-| algorithm | `NAT-014`, `NAT-010` | **Own** in `NAT-014`; `NAT-010` carries the Nine Chapters' algorithmic character. |
+| algorithm | `MTH-020`, `MTH-010` | **Own** in `MTH-020`; `MTH-010` carries the Nine Chapters' algorithmic character. |
 | memory | `MED-010`, `AGR-050`, `DIP-020`, `DIP-030`, `MAR-340`, `COM-210` | **All human or institutional memory.** No machine memory anywhere. |
 | program(me) | `MAR-060`, `LAW-165`, `PHI-230`, `WAR-190`, `DIP-190`, others | **All policy programmes.** No computer program anywhere. |
 | packet / protocol | `MED-150`; `WAR-300` | **Own** in `MED-150` (packet neutrality, ARPANET); `WAR-300` is the Geneva Protocol. |
@@ -38,9 +40,9 @@ calculation, no tabulator, no computer of any kind, no program, and no software.
 
 ### Where the chain breaks, and what is already leaning on the gap
 
-- **`NAT-215` has `enables: []`**, shipped that way deliberately in the NAT-060
+- **`MTH-080` has `enables: []`**, shipped that way deliberately in the NAT-060
   split because its descendants did not exist. They still do not.
-- **`NAT-014`'s Mechanism names the calculating office and the computer** as its
+- **`MTH-020`'s Mechanism names the calculating office and the computer** as its
   consequences, with no entry for either.
 - **`ENG-330` carries half of item 4.** Its Mechanism is fabrication precision
   compounding recursively — transistor density rising by orders of magnitude.
@@ -93,10 +95,10 @@ explicitly and by name, citing Smith's pin factory. `domains_touched: [nature,
 engineering, war, maritime]`. **1790..1970, `century`.** Sorts between `COM-170`
 (1771) and `COM-180` (1811).
 
-**Relationship to `NAT-014`, resolved: `NAT-014` is the prereq.** The algorithm
+**Relationship to `MTH-020`, resolved: `MTH-020` is the prereq.** The algorithm
 entry's mechanism is that a written procedure makes labour *delegable*; this entry
 is that delegation *organised* at industrial scale. `execution delegability` is
-the stat `NAT-014` defines and this entry spends. Also prereq `COM-170`.
+the stat `MTH-020` defines and this entry spends. Also prereq `COM-170`.
 
 **Mechanism.** Before machines, computation was a job, and it was organised as a
 factory. Prony's tables for the French cadastre in the 1790s ran a three-tier
@@ -110,7 +112,7 @@ Mathematical Tables Project, and the computing pools at NACA and JPL.
 
 **The gendering is mechanism, not colour.** The work was substantially female and
 low-paid *because* it had been deskilled — classified as execution rather than
-expertise — which is `NAT-014`'s social consequence (expertise separates from
+expertise — which is `MTH-020`'s social consequence (expertise separates from
 execution, and the two acquire different social positions) made concrete in a
 workforce. The Harvard computers are the case where the boundary visibly failed
 to hold: Leavitt, Cannon and Fleming produced first-rank results from inside a
@@ -176,7 +178,7 @@ general programmable machine; Lovelace's 1843 note states that such a machine
 could operate on symbols of any kind rather than numbers alone. Hollerith (1890)
 makes it pay. Colossus (1943-44) and ENIAC (1945) end the period.
 
-**Prereqs, constrained by chronology.** `NAT-014` and `FIN-020`. The entry *draws
+**Prereqs, constrained by chronology.** `MTH-020` and `FIN-020`. The entry *draws
 on* `ENG-180` looms (1733), `ENG-190` machine tools (1775) and `HLT-270` vital
 registration (1662) — but all three post-date its 1642 start, so the prereq rule
 forbids them. Carry them as `see_also`, and note that this is a structural
@@ -212,10 +214,10 @@ equipment whose economics depended on very large runs.
 **Placement: ENG. 1945..1960, `decade`.** Sorts between `ENG-320` (1909) and
 `ENG-330` (1947). `domains_touched: [nature, war, commerce]`.
 
-**Prereqs: `ENG-168` and `NAT-215` — and this entry finally fills `NAT-215`'s
+**Prereqs: `ENG-168` and `MTH-080` — and this entry finally fills `MTH-080`'s
 empty `enables`.** Turing's universal machine (1936) states the same property
 abstractly a decade before it is built: one machine that reads a description of
-another and behaves as it. The NAT-060 split left `NAT-215` without descendants
+another and behaves as it. The NAT-060 split left `MTH-080` without descendants
 on purpose; this is the descendant.
 
 **Mechanism — the conceptual break.** Instructions and data occupy the same
@@ -387,7 +389,7 @@ available that the end-to-end design was a political settlement.
 ### Machine Learning and Contemporary AI — RECOMMEND FOR. Propose `ENG-350`.
 
 **The inversion is real, and it is the only thing that justifies a separate
-entry.** `NAT-014`'s premise is that a procedure is something a human writes down,
+entry.** `MTH-020`'s premise is that a procedure is something a human writes down,
 and that writing it down is what makes execution delegable. Machine learning
 inverts this: **capability is derived from data rather than specified by a
 programmer**, so procedure ceases to be something any human has written or can
@@ -428,18 +430,18 @@ digitised.
 
 | Proposal | prereqs | enables | key see_also |
 | --- | --- | --- | --- |
-| `COM-175` | `NAT-014`, `COM-170` | — | `ENG-168`, `COM-180`, `ENG-323`, `MAR-250` |
-| `ENG-168` | `NAT-014`, `FIN-020` | `ENG-323` | `ENG-180`, `ENG-190`, `HLT-270`, `WAR-200`, `LAW-165`, `COM-175` |
-| `ENG-323` | `ENG-168`, `NAT-215` | `ENG-333` | `COM-175`, `WAR-315` |
+| `COM-175` | `MTH-020`, `COM-170` | — | `ENG-168`, `COM-180`, `ENG-323`, `MAR-250` |
+| `ENG-168` | `MTH-020`, `FIN-020` | `ENG-323` | `ENG-180`, `ENG-190`, `HLT-270`, `WAR-200`, `LAW-165`, `COM-175` |
+| `ENG-323` | `ENG-168`, `MTH-080` | `ENG-333` | `COM-175`, `WAR-315` |
 | `ENG-333` | `ENG-323`, `ENG-330` | `LAW-240`, `ENG-350` | `MED-150`, `WAR-275` |
 | `LAW-240` | `ENG-333`, `LAW-215` | `MED-150` | `LAW-225`, `MED-140` |
-| `ENG-350` | `ENG-333`, `ENG-330` | — | `NAT-014`, `COM-175`, `ENG-010`, `WAR-275`, `ENG-055`, `MED-040` |
+| `ENG-350` | `ENG-333`, `ENG-330` | — | `MTH-020`, `COM-175`, `ENG-010`, `WAR-275`, `ENG-055`, `MED-040` |
 
 **Chronology checked on every prereq.** The constraint that matters is on
 `ENG-168`: its 1642 start predates `ENG-180`, `ENG-190` and `HLT-270`, and
 `COM-175` (1790) cannot prereq it either, so those relationships are `see_also`.
 
-**Existing entries that should gain links once written:** `NAT-215` `enables`
+**Existing entries that should gain links once written:** `MTH-080` `enables`
 `ENG-323` (retiring its deliberate empty field); `FIN-020` `enables` `ENG-168`;
 `MED-150` `prereqs` `LAW-240`; `COM-180` `see_also` `COM-175`; `HLT-270`
 `see_also` `ENG-168` (its first links of any kind).
@@ -468,7 +470,7 @@ All free, unburned, and not previously named in any audit. No renumbering.
 
 1. **`ENG-168`** — the anchor; Hollerith ties the gap to `FIN-020`, `WAR-200` and
    `LAW-165`.
-2. **`ENG-323`** — the conceptual break, and it retires `NAT-215`'s empty `enables`.
+2. **`ENG-323`** — the conceptual break, and it retires `MTH-080`'s empty `enables`.
 3. **`COM-175`** — makes mechanisation legible as substitution.
 4. **`ENG-333`** — the institutional sequence; highest skew risk, fix built in.
 5. **`LAW-240`** — `MED-150` currently rests on it undocumented.

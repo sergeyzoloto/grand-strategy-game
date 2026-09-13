@@ -1,9 +1,9 @@
 ---
-id: NAT-070
-former_ids: [NAT-018]
+id: MTH-040
+former_ids: [NAT-018, NAT-070]
 title: Probability and Statistical Reasoning
 legacy_ref:
-domain: nature
+domain: mathematics
 domains_touched: []
 tier: core
 status: drafted
@@ -17,8 +17,8 @@ region_variants:
     date_start: 850
     note: Al-Kindi's ninth-century treatise on cryptanalysis develops frequency analysis — inferring a hidden pattern from the known relative frequency of letters in a language — a genuine, specific instance of statistical reasoning about uncertain, aggregate outcomes, applied to cryptography rather than to natural science or games of chance.
 absence: []
-prereqs: [NAT-010]
-enables: [NAT-180, NAT-210, NAT-240]
+prereqs: [MTH-010]
+enables: [NAT-180, NAT-210, MTH-090]
 see_also: [NAT-040]
 contested: false
 contested_note: ""

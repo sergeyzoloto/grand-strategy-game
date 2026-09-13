@@ -1,9 +1,9 @@
 ---
-id: NAT-030
-former_ids: [NAT-003]
+id: MTH-030
+former_ids: [NAT-003, NAT-030]
 title: Formal Logic
 legacy_ref:
-domain: nature
+domain: mathematics
 domains_touched: [philosophy]
 tier: core
 status: drafted
@@ -23,8 +23,8 @@ absence:
   - region: middle-east
     note: Islamic logicians substantially preserve, translate, and extend Aristotelian syllogistic logic (via the translation movement, NAT-050) rather than developing an independent formal system from scratch, becoming the critical transmission link that carries and refines Greek logical method into the medieval Latin world.
 prereqs: []
-enables: [NAT-050, NAT-090, NAT-240, PHI-220, NAT-215]
-see_also: [NAT-020, PHI-110, PHI-190, PHI-390, NAT-014]
+enables: [NAT-050, NAT-090, MTH-090, PHI-220, MTH-080]
+see_also: [NAT-020, PHI-110, PHI-190, PHI-390, MTH-020]
 contested: false
 contested_note: ""
 stats_touched: []

@@ -78,7 +78,7 @@ Spans MED, REL, PHI, LAW, COM, WAR, HLT and NAT. A links-only thread page per
 
 - [[MED-030]] — Relay Messaging. Speed as a purchasable state capability,
   before any of this is electrical.
-- [[NAT-014]] — The Algorithm as Delegable Procedure. The same move —
+- [[MTH-020]] — The Algorithm as Delegable Procedure. The same move —
   capability stored in a written procedure rather than in a practitioner.
 - [[COM-180]] — Technological Displacement of Craft. What happens to a class
   whose scarcity a new medium destroys.

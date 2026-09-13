@@ -1,3 +1,5 @@
+> **Migration note (2026-09-13):** IDs in this file were rewritten by `id-migrations.md` Run 4, the NAT→MTH domain carve-out. Prose is otherwise unaltered.
+
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
@@ -49,7 +51,7 @@ lets a doctrine outlive its founder, and NAT-050 (translation movements) is
 correctly cross-referenced as the raw-material supply line into PHI-220
 (Scholasticism). This is better substrate coverage than most domains manage.
 The one real hole: PHI-220's own Mechanism claims scholasticism converts "the
-recovered and translated Aristotelian corpus (NAT-050, NAT-030)" into
+recovered and translated Aristotelian corpus (NAT-050, MTH-030)" into
 disputatio material — but the actual transmission chain ran substantially
 _through_ Arabic Peripatetic commentary (Averroes was called "The Commentator"
 specifically because Aquinas read Aristotle by way of him), and that link is

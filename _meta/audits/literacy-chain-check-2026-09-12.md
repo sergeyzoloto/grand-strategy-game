@@ -1,3 +1,4 @@
+> **Migration note (2026-09-13):** IDs in this file were rewritten by `id-migrations.md` Run 4, the NAT→MTH domain carve-out. Prose is otherwise unaltered.
 > **Migration note (2026-09-12):** IDs in this file were rewritten by `id-migrations.md` Run 3, the ENG→MED domain carve-out. Prose is otherwise unaltered.
 
 # Literacy and Written Communication — Coverage Check
@@ -43,7 +44,7 @@ Unlike the telecommunications and energy audits, this one found a real chain.
 | `MED-130` Broadcast Radio | 1920..1994 | **Own**, holds `intermediary dependence` and `information sovereignty`. |
 | `PHI-260` Enlightenment Sociability | 1650..1800 | **Incidental** — names "the periodical" in a list of venues and nothing more. |
 | `DIP-030` Interpreters and Linguistic Mediation | -700..1800 | **Own**, but see the Amarna flag below. |
-| `NAT-014` The Algorithm as Delegable Procedure | -1800..1800 | **Own**; holds `literacy`, and its absences already turn on notation. |
+| `MTH-020` The Algorithm as Delegable Procedure | -1800..1800 | **Own**; holds `literacy`, and its absences already turn on notation. |
 
 ### Where it breaks
 

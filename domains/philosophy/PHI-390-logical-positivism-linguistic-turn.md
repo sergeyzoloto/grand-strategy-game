@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-320]
 enables: []
-see_also: [NAT-030, NAT-090, PHI-370, PHI-400, NAT-215]
+see_also: [MTH-030, NAT-090, PHI-370, PHI-400, MTH-080]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -73,7 +73,7 @@ substantive answers.
 ## Regional specifics
 
 This entry's verification-to-use trajectory runs on the same broad
-foundation as NAT-030's formal logic and NAT-090's empirical method —
+foundation as MTH-030's formal logic and NAT-090's empirical method —
 logical positivism explicitly modeled meaningful discourse on natural-
 scientific verification as the gold standard — making its own collapse a
 notable case of a movement's founding methodological confidence in

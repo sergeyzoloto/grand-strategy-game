@@ -44,6 +44,7 @@ label.
 | MIG  | migration   |
 | MAR  | maritime    |
 | MED  | media       |
+| MTH  | mathematics |
 
 ## Filenames
 

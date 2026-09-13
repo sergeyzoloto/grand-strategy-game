@@ -1,9 +1,9 @@
 ---
-id: NAT-240
-former_ids: [NAT-024]
+id: MTH-090
+former_ids: [NAT-024, NAT-240]
 title: Information Theory
 legacy_ref:
-domain: nature
+domain: mathematics
 domains_touched: [engineering]
 tier: standard
 status: drafted
@@ -14,9 +14,9 @@ date_precision: year
 regions: [americas]
 region_variants: []
 absence: []
-prereqs: [NAT-030, NAT-070]
+prereqs: [MTH-030, MTH-040]
 enables: []
-see_also: [ENG-330, NAT-180, NAT-220, NAT-210, MED-100, NAT-014, NAT-215]
+see_also: [ENG-330, NAT-180, NAT-220, NAT-210, MED-100, MTH-020, MTH-080]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -26,7 +26,7 @@ tags: [information-theory, shannon, entropy, channel-capacity]
 Quantifying information itself — treating a message's uncertainty as a
 mathematically measurable quantity and a communication channel's capacity
 to carry it as a hard limit that holds regardless of engineering
-cleverness — split out from the algorithm-and-computability lineage (NAT-014, NAT-215)
+cleverness — split out from the algorithm-and-computability lineage (MTH-020, MTH-080)
 as a mathematically distinct achievement in its own right.
 
 ## Timing
@@ -39,7 +39,7 @@ same work.
 ## Mechanism
 
 Shannon's entropy measure quantifies how much genuine uncertainty a
-message resolves, using the same probabilistic mathematics (NAT-070) that
+message resolves, using the same probabilistic mathematics (MTH-040) that
 statistical mechanics applies to particles — applied here to symbols in a
 message instead. The channel capacity theorem then proves a hard
 mathematical ceiling on how much information any communication channel
@@ -72,5 +72,5 @@ European in origin.
 A gate on how much information any channel can carry regardless of
 engineering cleverness — structurally the same shape as NAT-180's
 thermodynamic ceiling, and split out from the algorithm-and-
-computability lineage (NAT-014, NAT-215) as a mathematically distinct achievement resting
-directly on probability theory (NAT-070) rather than on computability.
+computability lineage (MTH-020, MTH-080) as a mathematically distinct achievement resting
+directly on probability theory (MTH-040) rather than on computability.

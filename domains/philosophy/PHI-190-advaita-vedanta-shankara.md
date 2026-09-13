@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-040]
 enables: []
-see_also: [PHI-090, NAT-030, PHI-030]
+see_also: [PHI-090, MTH-030, PHI-030]
 contested: true
 contested_note: "Shankara's rival dualist and qualified-dualist commentators (Ramanuja's Vishishtadvaita, Madhva's Dvaita, both developing in the following centuries) accused Advaita of being 'crypto-Buddhism' — of covertly reproducing Madhyamaka Buddhist arguments about the ultimate unreality of ordinary phenomenal experience while officially claiming Vedic/Upanishadic orthodoxy and rejecting Buddhism explicitly. Whether this charge identifies a genuine, substantial argumentative debt or is primarily rival-school polemic exaggerating surface similarity is disputed among scholars of Indian philosophy. Model Advaita as making a genuinely distinct metaphysical claim (Brahman as sole positively-existing reality, not Madhyamaka's emptiness of inherent existence) while treating the historical question of argumentative influence from Buddhist dialectic as separately, genuinely open."
 stats_touched: []
@@ -41,7 +41,7 @@ subcontinent.
 Where the Upanishads themselves argue for atman-Brahman identity through
 scattered analogy and instruction (PHI-040), Shankara constructs a
 sustained logical defense using argumentative tools comparable in rigor
-to Nyaya formal logic (NAT-030) — systematically working through and
+to Nyaya formal logic (MTH-030) — systematically working through and
 rebutting rival metaphysical positions (Sankhya dualism, various Buddhist
 schools) to argue maya is neither simply real (it doesn't survive correct
 philosophical analysis) nor simply unreal (it's experienced and has

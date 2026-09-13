@@ -1,3 +1,5 @@
+> **Migration note (2026-09-13):** IDs in this file were rewritten by `id-migrations.md` Run 4, the NAT→MTH domain carve-out. Prose is otherwise unaltered.
+
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
 
 IDs renumbered 2026-09-11; see `_meta/id-migrations.md`.
@@ -94,7 +96,7 @@ mobility range (MIG-050, MIG-040)" → MIG-050/003 get the same treatment as
 WAR-130), and only where that produced no chronological inversion against
 the corpus's own date-ordering convention. Where the language was
 enabling-sounding but the recorded dates would invert (this came up
-repeatedly — NAT-020/NAT-010, NAT-240/ENG-330, AGR-020/HLT-030,
+repeatedly — NAT-020/MTH-010, MTH-090/ENG-330, AGR-020/HLT-030,
 WAR-040/MIG-020, COM-100/COM-200, ENG-280/COM-200, ENG-270/MIG-170,
 REL-090's two citations), I resolved to `see_also` rather than force a
 prereq edge that would break the corpus's own validation convention. This
