@@ -28,7 +28,7 @@ absence:
     note: No state sponsor with both the demand and the precision electromechanical industry existed on the continent. Colonial administrations had their tables, surveys and military calculations computed in metropolitan offices, so the demand that produced these machines was administered from elsewhere, and the machines were built where the demand was administered rather than where it applied.
 prereqs: [MTH-020, ENG-180, ENG-215]
 enables: [MTH-087]
-see_also: [MTH-060, MTH-075, MTH-080, WAR-150, WAR-330]
+see_also: [MTH-060, MTH-075, MTH-080, WAR-150, WAR-330, MTH-072]
 contested: true
 contested_note: "Three disputes, and together they argue against presenting a lineage. Babbage's influence on the builders of the 1940s is disputed: Aiken found Babbage only after conceiving the Mark I, several others did not know his work, and the line from the analytical engine to ENIAC is largely constructed in retrospect. Colossus was secret until the 1970s and could influence nothing. Model programmable machines as repeatedly and independently invented under specific state demand rather than as descendants of one another. Separately, how much of the program in Lovelace's notes is hers rather than Babbage's is disputed among historians; the claim that such a machine could manipulate arbitrary symbols is clearly stated in her notes and is the part the entry relies on. Finally, whether Babbage failed because of precision engineering limits, funding, or his own repeated redesigns is unresolved; the 1991 construction of Difference Engine No. 2 to period tolerances shows the design was buildable, which weakens the pure precision explanation."
 stats_touched: [execution delegability, stranded capital]
