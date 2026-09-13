@@ -28,7 +28,7 @@ region_variants:
 absence:
   - region: middle-east
     note: The 1923 Greek-Turkish population exchange is unusual among forced-movement events in this record for being a formally negotiated, internationally-supervised bilateral treaty instrument (administered under League of Nations auspices) rather than a unilateral state action or an unplanned mass flight — the same forced-migration outcome, achieved through DIP's treaty machinery rather than through either war or administrative fiat alone.
-prereqs: [MIG-230]
+prereqs: [MIG-230, MTH-075]
 enables: []
 see_also: [LAW-110, MIG-240, MIG-210]
 contested: false
