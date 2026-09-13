@@ -20,7 +20,7 @@ absence:
   - region: middle-east
     note: The Ottoman millet system grants substantial communal legal and religious autonomy to recognized non-Muslim religious communities (notably Orthodox Christian and Jewish millets) under a framework of managed difference and communal self-governance rather than either full legal equality or the specifically territorial cuius-regio approach the later European Westphalian settlement takes.
 prereqs: []
-enables: []
+enables: [REL-252]
 see_also: [PHI-280, REL-220]
 contested: true
 contested_note: "Whether historical instances of religious toleration reflect genuine principled commitment to religious pluralism as a value, or primarily pragmatic governance calculation (reduced administrative friction, revenue from a stable minority population, avoiding costly persecution enforcement) with tolerance as an instrumental byproduct rather than a goal in itself, is disputed case by case, with real evidence for pragmatic motivation present even in cases (Ashoka's edicts, Cyrus's policies) sometimes cited as principled exemplars. Model toleration's durability as conditional on whether the practical governance interest it originally served remains intact — a tolerance adopted for pragmatic reasons can persist exactly as long as, and not longer than, those reasons continue to hold."
@@ -84,6 +84,12 @@ principled exemplars. Model toleration's durability as conditional on
 whether the practical governance interest it originally served remains
 intact, rather than assuming a tolerant policy, once adopted, persists
 independent of the conditions that motivated it.
+
+This entry ends at 1648 because that is where toleration stops being only a
+policy a ruler can revoke. REL-252 carries the secular settlement that
+follows, in which the pragmatic concession is written into the constitution
+and citizenship is detached from confession — the point at which toleration's
+durability stops depending solely on the interest that first motivated it.
 
 ## Hook
 

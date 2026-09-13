@@ -21,7 +21,7 @@ absence:
     note: Post-independence African states overwhelmingly retain colonial-era borders rather than redrawing them along ethnic or national lines despite those borders having been set entirely by European colonizers with no reference to indigenous nationhood at all — the Organisation of African Unity's explicit 1963 commitment to colonial-border inviolability prioritizes continental stability over applying the self-determination principle to redraw borders that most European nationalist movements' own logic would seem to call into question.
 prereqs: [LAW-050]
 enables: []
-see_also: [REL-050, PHI-310, DIP-100, WAR-200, MED-090, LAW-165]
+see_also: [REL-050, PHI-310, DIP-100, WAR-200, MED-090, LAW-165, REL-252]
 contested: true
 contested_note: "Whether nationalism as a diplomatic recognition principle is best understood as the discovery of pre-existing natural nations finally gaining deserved political expression, or as itself constructing the national identities it claims only to recognize (drawing a border first creates the shared identity of everyone now living on one side of it, at least as much as a pre-existing identity ever justified drawing the border there), is a foundational and unresolved dispute in nationalism studies. Model national identity and territorial claim as mutually reinforcing rather than assuming either one is simply prior to and causally independent of the other."
 stats_touched: []
@@ -64,7 +64,11 @@ asked to accept a border that splits or merges "their nation" experiences
 the outcome as touching identity itself, not merely administrative
 convenience, which is part of why nationalist boundary disputes prove so
 much harder to resolve through ordinary diplomatic compromise than
-comparable non-nationalist territorial disagreements.
+comparable non-nationalist territorial disagreements. Part of that weight is
+inherited: a state that has given up religion as its legitimation source
+under REL-252's secular settlement needs a substitute, and the nation is the
+one most states found — which is why national claims carry some of the
+existential charge confessional ones once did.
 
 ## Regional specifics
 

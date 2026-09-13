@@ -20,7 +20,7 @@ absence:
   - region: europe
     note: The Peace of Augsburg's cuius regio, eius religio principle (1555) and its later reaffirmation at Westphalia (1648) formalize confessional-state sovereignty specifically as a conflict-management device between rival Christian confessions within one broader civilizational and legal framework — a solution to a specifically intra-Christian problem rather than a general template for religious-political organization applicable everywhere.
 prereqs: [REL-120]
-enables: [REL-040, DIP-100, REL-260]
+enables: [REL-040, DIP-100, REL-260, REL-252]
 see_also: [PHI-290, REL-040, PHI-280]
 contested: false
 contested_note: ""
@@ -50,7 +50,11 @@ religious diversity into a clearer, more legible sorting of subjects into
 loyal-confession and potentially-suspect-other-confession categories,
 which is a powerful tool for internal consolidation but also a durable
 source of internal friction wherever a significant minority holds the
-non-favored confession.
+non-favored confession. The device is affordable only while that minority
+stays small; once it is large and entrenched, the friction outweighs the
+loyalty sorted, and the way out is REL-252's secular settlement — detaching
+citizenship from confession and giving up religion as the state's
+legitimation source.
 
 ## Social consequence
 

@@ -356,7 +356,7 @@ PHI-410,Mass Culture and the Culture Industry,philosophy,health,standard,drafted
 REL-010,"Pre-Institutional Religion: Ancestor Cults, Shamanic Practice, and Sacred Sites",religion,,core,drafted,medium,-20000,-3000,era,0,,1,REL-020,TRUE,gobekli-tepe; shamanism; ancestor-veneration; pre-literate-religion
 REL-020,Temple Economy — Priesthood as Custodian of Reserves and Ritual,religion,finance,core,drafted,high,-3000,1800,era,3,FIN-020; REL-010; AGR-050,2,REL-060; REL-190,FALSE,temple-economy; priesthood; endowment; hindu-temple
 REL-030,The Liturgical Calendar and Sacred Time,religion,,standard,drafted,high,-600,1600,era,1,NAT-015,0,,FALSE,liturgical-calendar; sabbath; ramadan; sacred-time
-REL-040,Religious Toleration,religion,law; diplomacy,core,drafted,high,-539,1648,era,0,,0,,TRUE,toleration; ashoka-edicts; millet-system; peace-of-westphalia
+REL-040,Religious Toleration,religion,law; diplomacy,core,drafted,high,-539,1648,era,0,,1,REL-252,TRUE,toleration; ashoka-edicts; millet-system; peace-of-westphalia
 REL-050,Universalism — The Institutional Consequence of an Ethical Claim,religion,philosophy; migration,core,drafted,medium,-500,700,era,0,,3,REL-070; REL-080; REL-140,FALSE,universalism; axial-age; ummah; ethical-religion
 REL-060,Monasticism and Ascetic Institutions,religion,health,core,drafted,high,-250,900,era,1,REL-020,5,HLT-160; REL-250; REL-090; REL-200; REL-180,FALSE,monasticism; sangha; desert-fathers; ascetic-vows
 REL-070,Canon — The Institutional Fixation of Doctrine,religion,philosophy,core,drafted,high,-250,1382,era,1,REL-050,4,REL-120; REL-150; REL-080; MED-040,FALSE,canon; council-of-nicaea; pali-canon; quran-codification
@@ -374,10 +374,11 @@ REL-180,The Knights Templar: Rise and Suppression,religion,,stub,drafted,high,11
 REL-190,"Indulgences, Purgatory, and the Economy of Salvation",religion,,core,drafted,high,1200,1567,era,1,REL-020,1,REL-230,FALSE,indulgence; purgatory; luther; saint-peters-basilica
 REL-200,Religious Confraternities and Lay Guilds,religion,,standard,drafted,high,1200,1600,era,1,REL-060,0,,FALSE,confraternity; lay-guild; tariqa; mutual-aid
 REL-210,The Parish Network as a Governance Network,religion,law,core,drafted,high,1215,1700,era,1,REL-110,1,WAR-200,FALSE,parish; danka-system; vital-records; local-administration
-REL-220,The Confessional State,religion,law; diplomacy,core,drafted,high,1501,1648,era,1,REL-120,3,REL-040; DIP-100; REL-260,FALSE,confessional-state; safavid-iran; peace-of-augsburg; state-religion
+REL-220,The Confessional State,religion,law; diplomacy,core,drafted,high,1501,1648,era,1,REL-120,4,REL-040; DIP-100; REL-260; REL-252,FALSE,confessional-state; safavid-iran; peace-of-augsburg; state-religion
 REL-230,Printed Religion and the Fragmentation of Institutional Authority,religion,engineering; health,core,drafted,high,1522,1650,century,3,HLT-190; MED-080; REL-190,0,,TRUE,reformation; vernacular-bible; sola-scriptura; print-schism
 REL-240,Syncretic Cults,religion,migration,core,drafted,medium,1526,1850,century,1,MIG-160,0,,FALSE,syncretism; vodou; santeria; candomble
 REL-250,The Dissolution of Religious Institutions,religion,,core,drafted,high,1536,1794,century,1,REL-060,0,,FALSE,dissolution-of-the-monasteries; henry-viii; secularization; church-confiscation
+REL-252,The Secular Settlement,religion,law; diplomacy,core,drafted,medium,1648,1905,era,2,REL-220; REL-040,0,,TRUE,secular-settlement; disestablishment; laicite; first-amendment; catholic-emancipation; tanzimat; millet-system; personal-law; civil-religion
 REL-260,State Shinto and the Modern Invention of a National Religion,religion,philosophy,stub,drafted,high,1868,1945,era,1,REL-220,0,,FALSE,state-shinto; meiji-japan; national-religion; imperial-cult
 WAR-010,Raiding as Subsistence,war,agriculture; migration; commerce,core,drafted,medium,-8000,1830,era,2,AGR-050; AGR-030,2,WAR-020; WAR-035,TRUE,raiding; cattle-raid; tain-bo-cuailnge; gavishti; flower-war; captive-taking; nucleated-settlement
 WAR-020,From Raid to Protection Rent,war,diplomacy; commerce; maritime; migration,core,drafted,medium,-3500,1830,era,1,WAR-010,1,WAR-060,TRUE,protection-rent; danegeld; chauth; khuwwa; roving-bandit; stationary-bandit; tilly; olson; barfield

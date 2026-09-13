@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [REL-220]
 enables: []
-see_also: [PHI-290, REL-210]
+see_also: [PHI-290, REL-210, REL-252]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]
@@ -35,7 +35,7 @@ Where REL-220's early modern confessional states select among already-existing r
 
 ## Social consequence
 
-Because State Shinto is framed as civic obligation rather than confessional choice, it applies uniformly to subjects of every actual religious background — Buddhist, Christian, or otherwise — in a way REL-220's confessional states, which explicitly favor one confession over rival versions of the same tradition, don't attempt, converting religious-nationalist consolidation into something closer to REL-210's parish-registration legibility mechanic than to ordinary confessional persecution.
+Because State Shinto is framed as civic obligation rather than confessional choice, it applies uniformly to subjects of every actual religious background — Buddhist, Christian, or otherwise — in a way REL-220's confessional states, which explicitly favor one confession over rival versions of the same tradition, don't attempt, converting religious-nationalist consolidation into something closer to REL-210's parish-registration legibility mechanic than to ordinary confessional persecution. The framing depends on the secular settlement's own vocabulary (REL-252): the Meiji constitution of 1889 grants freedom of religion, and classifying shrine rites as civic rather than religious is what lets a compulsory cult sit inside that guarantee.
 
 ## Regional specifics
 

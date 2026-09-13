@@ -21,7 +21,7 @@ absence:
     note: Comparable large-scale, single-act state seizure of accumulated religious institutional wealth is not a feature of Ottoman practice in the same era — waqf endowments instead remain legally protected from state confiscation specifically because their perpetual, purpose-bound legal structure makes them difficult for even a powerful state to simply seize outright.
 prereqs: [REL-060]
 enables: []
-see_also: [REL-020, REL-180]
+see_also: [REL-020, REL-180, REL-252]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]
@@ -40,7 +40,7 @@ A monastery or religious institution's accumulated land, reserves, and buildings
 
 ## Social consequence
 
-Dissolution doesn't just transfer property, it eliminates the institution's ongoing social functions — charitable relief, hospitality, local employment, and the specific charitable-medical role REL-060 already notes monasteries carry — with no guarantee any replacement institution fills the resulting gap, meaning a dissolution's social cost frequently extends well beyond the displaced monks and nuns themselves into the surrounding community that depended on the institution's ongoing functions, not just its existence.
+Dissolution doesn't just transfer property, it eliminates the institution's ongoing social functions — charitable relief, hospitality, local employment, and the specific charitable-medical role REL-060 already notes monasteries carry — with no guarantee any replacement institution fills the resulting gap, meaning a dissolution's social cost frequently extends well beyond the displaced monks and nuns themselves into the surrounding community that depended on the institution's ongoing functions, not just its existence. After the secular settlement (REL-252) the same seizure becomes ordinary statute rather than an extraordinary act — Mexico's nationalisation of church property in 1859 and France's transfer of church buildings to public ownership in 1905 are carried out inside a settled constitutional order.
 
 ## Regional specifics
 

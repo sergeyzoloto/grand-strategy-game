@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-250]
 enables: []
-see_also: [DIP-160, PHI-270]
+see_also: [DIP-160, PHI-270, REL-252]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -55,6 +55,10 @@ peoples," say, as coherent entities with their own legitimate claim to
 self-expression and self-governance — vocabulary later cultural and
 political nationalist movements draw on directly and explicitly, well
 beyond Romanticism's own original literary and philosophical concerns.
+The timing matters: this vocabulary arrives as states across Europe are
+detaching legitimacy from confession (REL-252), so the people as a real
+collective is available at exactly the moment a state needs a source of
+legitimacy other than the true faith.
 
 ## Regional specifics
 

@@ -21,7 +21,7 @@ absence:
     note: The Islamic ummah concept frames the ideal political order as one community of believers rather than a system of permanently separate, mutually sovereign, religiously-indifferent territorial states — a normative vision in real tension with Westphalian sovereignty's assumption that religious and political boundaries need not coincide at all.
 prereqs: [REL-220, DIP-080]
 enables: [DIP-120, DIP-130, DIP-180, DIP-200, DIP-150, DIP-140]
-see_also: [PHI-280, DIP-040, DIP-160, DIP-070, PHI-300]
+see_also: [PHI-280, DIP-040, DIP-160, DIP-070, PHI-300, REL-252]
 contested: true
 contested_note: "Whether the 1648 Peace of Westphalia actually established anything like 'sovereign equality' and 'non-interference' in practice, or whether the entire 'Westphalian system' narrative is substantially a 19th- and 20th-century international-relations-theory retrojection onto a much messier settlement that left the Holy Roman Empire's nested, overlapping authority structures largely intact, is a serious and influential revisionist argument in diplomatic history (associated especially with Andreas Osiander), not a fringe view. Model the Westphalian package as the retrospectively-codified template that later diplomatic practice and IR theory treated as foundational and built upon, while leaving open whether 1648 itself was really the clean origin point of that template or a later theoretical construction projected backward onto it."
 stats_touched: []
@@ -65,7 +65,10 @@ international norm, recognition itself becomes a scarce and consequential
 diplomatic resource — a polity's claim to sovereign status matters only
 insofar as other sovereigns are willing to recognize and treat it as such,
 converting statehood from a simple fact of effective control into
-something with an irreducibly social and diplomatic dimension.
+something with an irreducibly social and diplomatic dimension. The internal
+half of the same package — what a sovereign does with the religious
+discretion non-interference hands it — is REL-252's secular settlement,
+which this entry leaves to REL rather than re-deriving.
 
 ## Regional specifics
 
