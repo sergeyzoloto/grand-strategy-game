@@ -21,7 +21,7 @@ absence:
     note: Sustained Ottoman resistance to movable-type printing of Arabic-script religious material (already covered for its mechanical side in MED-080) means the mass-vernacular-scripture-access condition this entry's mechanism depends on simply doesn't arise here in this era at all — not a case of print access failing to produce fragmentation, but of the enabling condition itself remaining absent.
 prereqs: [HLT-190, MED-080, REL-190]
 enables: []
-see_also: [REL-070, REL-120, REL-150, REL-170, WAR-200, MED-070]
+see_also: [REL-070, REL-120, REL-150, REL-170, WAR-200, MED-070, REL-258]
 contested: true
 contested_note: "How much the Protestant Reformation's institutional fragmentation should be attributed causally to vernacular print access itself (letting ordinary believers read and interpret scripture without clerical mediation) versus to pre-existing political, economic, and theological pressures that print merely accelerated or amplified is disputed among historians of the Reformation. Model print access as a necessary enabling condition for the specific form and speed the fragmentation took, without treating it as a sufficient or sole cause of a schism whose underlying pressures substantially predate the printing press itself."
 stats_touched: [religious authority]
@@ -61,7 +61,10 @@ genuinely new practical challenge — dissenting interpretations can now
 spread and sustain a lay following independent of clerical approval or
 suppression, which is a structurally different threat than an earlier
 clerical heretic working within an institution that still fully
-controlled lay scripture access.
+controlled lay scripture access. Every later medium reruns the same
+contest between hierarchy and lay reach — cassette sermons, radio
+evangelism, satellite preachers — and REL-258 carries that competition once
+the state has stopped guaranteeing any church's authority.
 
 ## Regional specifics
 

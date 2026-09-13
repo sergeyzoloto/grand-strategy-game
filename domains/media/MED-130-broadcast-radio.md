@@ -38,7 +38,7 @@ absence:
     note: The reverse case, and the sharpest single contrast with MED-100 in the corpus. The region submarine cable could never justify serving is the region one transmitter serves best, because a signal crossing open water costs nothing extra while every kilometre of cable did. Coverage arrives essentially free where it had been structurally impossible — but arrives as externally-originated signal from colonial capitals rather than as local broadcasting, so the population is reachable long before it is addressable.
 prereqs: [MED-120, ENG-300]
 enables: [WAR-280, PHI-410, WAR-310, MED-140]
-see_also: [MED-100, MED-030, MAR-340, REL-110, DIP-180, WAR-315, LAW-225, MAR-335, MED-090, MED-150]
+see_also: [MED-100, MED-030, MAR-340, REL-110, DIP-180, WAR-315, LAW-225, MAR-335, MED-090, MED-150, REL-258]
 contested: true
 contested_note: "Radio's causal weight in mass mobilisation is disputed and the dispute is worth modelling rather than settling. The maximalist reading treats broadcast as a direct cause of compliance; the sceptical reading, better supported by the media-effects literature, holds that broadcast is powerful at coordination and weak at persuasion — it tells an already-disposed population what to do, when, and in whose company, rather than converting the undisposed. Yanagizawa-Drott's work on RTLM reception geography is the strongest quantitative evidence available and finds real, localised effects on participation, but it identifies a coordination-and-permission channel rather than a conversion one. Model broadcast as a multiplier on existing disposition and as a coordination device that resolves what everyone is about to do, not as a slider that moves belief directly — which also keeps it consistent with design principle 2, since a medium that reshaped disposition on command would be exactly the population slider that principle forbids."
 stats_touched: [broadcast reach, information sovereignty, intermediary dependence]
@@ -125,7 +125,10 @@ same properties that let a state bypass its clergy let a religious movement
 bypass a state, and let one confessional tradition reach populations its
 local institutions had no access to. Whether broadcast centralises or
 disperses religious authority depends on who owns the transmitter, not on
-anything about the medium.
+anything about the medium. REL-258 carries the religious side of this in
+full — radio evangelism, Catholic radio schools, and the later cassette,
+television, satellite and network phases — and draws on the
+funding-model finding here rather than re-deriving it.
 
 Household time also changes shape, though less sharply than television
 later forces. Radio is compatible with work and with other people in the

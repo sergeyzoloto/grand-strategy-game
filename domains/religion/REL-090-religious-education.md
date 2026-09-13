@@ -21,7 +21,7 @@ absence:
     note: Chinese Buddhist and Daoist monastic education trains clergy through temple-based apprenticeship and internal ordination examination rather than a comparably standardized, cross-institutional credentialing network — religious education here stays organized around individual monastery lineages rather than a broader shared institutional system analogous to the madrasa network or European cathedral schools.
 prereqs: [REL-060]
 enables: [REL-140, NAT-050]
-see_also: [PHI-200, LAW-100, REL-070, REL-080, MED-040, MED-070, LAW-165]
+see_also: [PHI-200, LAW-100, REL-070, REL-080, MED-040, MED-070, LAW-165, REL-258]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -40,7 +40,7 @@ Before a dedicated religious-education institution exists, training a jurist, ju
 
 ## Social consequence
 
-A standardized religious-education pipeline produces a recognizable professional class — jurists, judges, scholar-officials — whose social standing rests on institutional credential and demonstrated learning rather than birth or wealth, a status-formation mechanism structurally similar to LAW-100's later secular examination bureaucracy but organized around religious rather than administrative learning specifically, and considerably predating it in several of the traditions covered here.
+A standardized religious-education pipeline produces a recognizable professional class — jurists, judges, scholar-officials — whose social standing rests on institutional credential and demonstrated learning rather than birth or wealth, a status-formation mechanism structurally similar to LAW-100's later secular examination bureaucracy but organized around religious rather than administrative learning specifically, and considerably predating it in several of the traditions covered here. Once a state takes over mass schooling, these institutions stop being the default and become competitors — Deoband's donation-funded madrasa network, Catholic parochial systems, and co-opted religious streams inside state schools are that later contest, carried in REL-258.
 
 ## Regional specifics
 

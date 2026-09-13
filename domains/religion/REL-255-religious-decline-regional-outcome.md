@@ -49,7 +49,7 @@ absence:
     note: Islamic revival from the 1970s across societies undergoing rapid urbanisation, mass schooling and, in the Gulf, very high income and state welfare. The Gulf is the hardest case for the existential-security explanation, since the state removed material risk on a large scale without any reduction in religiosity.
 prereqs: [REL-252]
 enables: []
-see_also: [PHI-280, LAW-165, LAW-210, HLT-160, REL-210, LAW-040]
+see_also: [PHI-280, LAW-165, LAW-210, HLT-160, REL-210, LAW-040, REL-258]
 contested: true
 contested_note: "The strong secularisation thesis — that modernisation produces religious decline — is one of the most thoroughly falsified major claims in the sociology of religion (Berger, The Desecularization of the World, 1999, ch. 1, recanting his own earlier position; Casanova, Public Religions in the Modern World, 1994, ch. 1, which splits the thesis into differentiation, decline and privatisation and keeps only differentiation). What remains disputed is why decline happened where it did. The supply-side account (Stark and Iannaccone, 'A Supply-Side Reinterpretation of the Secularization of Europe', JSSR 1994) blames monopoly establishment; its key pluralism-participation correlation has been shown partly artefactual (Voas, Olson and Crockett, ASR 2002; Chaves and Gorski, Annual Review of Sociology 2001). The functional-differentiation account (Bruce, God is Dead, 2002) blames state absorption of church functions. The existential-security account (Norris and Inglehart, Sacred and Secular, 2004) blames the removal of material risk. Coerced secularisation is a separable policy case. Do not resolve. Make decline conditional on three observable inputs — establishment status, state capacity to absorb church functions, and whether decline was drifted into or imposed — and draw the relative weights of the three drift explanations per scenario."
 stats_touched: [religious participation, religious authority, legibility, medical access]
@@ -186,7 +186,9 @@ coercion lifted, returned to religion as identity rather than as practice. Where
 religion intensified, the same decades brought churches and mosques into the
 functions states could not supply. Pentecostal congregations run mutual aid in
 Brazilian urban peripheries. Mission and Islamic schools educate much of a
-generation in West Africa.
+generation in West Africa. That competition for schooling and attention
+(REL-258) runs mostly where decline did not happen, and should not be read as
+a reaction to it.
 
 ## Regional specifics
 

@@ -45,7 +45,7 @@ absence:
   - region: east-asia
     note: Qing China had no confessional loyalty to detach. The imperial state legitimated itself through ritual and classical orthodoxy rather than membership of a church, registered and regulated Buddhist and Daoist clergy, and treated heterodox sects as problems of public order rather than of confession. Citizenship was never conditional on confession, so there was nothing for a secular settlement to renegotiate — the state instead confronts religion as organised disorder, as in the Taiping war.
 prereqs: [REL-220, REL-040]
-enables: [REL-255]
+enables: [REL-255, REL-258]
 see_also: [DIP-100, LAW-040, DIP-160, PHI-310, PHI-280, REL-260, REL-250, REL-210]
 contested: true
 contested_note: "The settlement's founding story is disputed. The standard account holds that the wars of religion demonstrated the danger of confessional politics and the secular state arose to end them. Cavanaugh (The Myth of Religious Violence, 2009, chs. 3-4) argues the 'wars of religion' were substantially state-building wars, and that the narrative of religious violence tamed by the neutral state is the secular state's own legitimating myth — which matters because it predicts the settlement transfers violence to national conflict rather than reducing it. Model the settlement as reliably lowering confessional conflict between groups inside the polity, and make whether total political violence falls or is displaced into national and ideological conflict conditional on whether a substitute legitimation (nationalism, civil religion) forms, and on how exclusive it is."
@@ -162,7 +162,7 @@ her to.
 Religious institutions change character. Once the state stops guaranteeing
 them, their authority rests on what members give voluntarily — attendance,
 donation, obedience to discipline — and they must win it. That is the condition
-later competition for schools and media depends on. Where the settlement
+competition for schools and media in REL-258 depends on. Where the settlement
 came through confrontation, the church also becomes a political party in all but
 name, and religious identity becomes a line in electoral politics rather than a
 condition of belonging to the polity.
