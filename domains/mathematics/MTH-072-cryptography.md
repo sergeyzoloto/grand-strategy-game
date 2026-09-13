@@ -32,7 +32,7 @@ absence:
     note: Steppe empires sent their most sensitive messages by trusted envoys under authorising tablets (MED-030), frequently memorised rather than written, so there was little enciphered writing to intercept. Where secrecy is held in a messenger's memory and loyalty rather than in text, no adversary accumulates intercepted material, and without intercepted material there is no pressure to develop cryptanalysis or the stronger systems it forces. What is absent is the written secret correspondence at scale that the whole contest depends on.
 prereqs: [MTH-040, MTH-025]
 enables: [MED-150]
-see_also: [MTH-090, MTH-065, MAR-340, DIP-110, MED-120, MTH-080]
+see_also: [MTH-090, MTH-065, MAR-340, DIP-110, MED-120, MTH-080, NAT-250]
 contested: true
 contested_note: "Three disputes. First and most important, the claim that security rests on mathematical structure is only partly a guarantee. Shannon proved the one-time pad perfectly secure, but public-key systems rest on the assumed difficulty of problems such as factoring large numbers, and no one has proved that difficulty — it is conjecture tied to open questions in computational complexity, and Shor's 1994 algorithm shows factoring would be easy on a sufficiently large quantum computer. Model public-key security as conditional on hardness assumptions that could fail, not as proved. Second, priority for public-key cryptography is split between the classified GCHQ work of 1970-73 and the public work of 1976-77; model both as independent inventions, with public credit shaped by secrecy. Third, whether al-Kindi's treatise is the first rests partly on lost texts, since an earlier Arabic work on cryptography by al-Khalil is recorded but does not survive."
 stats_touched: [information sovereignty, latent capability]
@@ -90,7 +90,11 @@ cryptanalysis from a craft of linguists to a discipline of mathematics, and put
 people trained in pure theory inside intelligence institutions with all the
 secrecy that entails. Secrecy then shapes whose work is remembered. GCHQ's
 public-key work of 1970-73 stayed classified until 1997, so credit went to the
-later public inventors — the pattern of Colossus (MTH-065) repeated.
+later public inventors — the pattern of Colossus (MTH-065) repeated. The same
+constraint runs through weapons-linked physics (NAT-250), where results
+classified at birth could be checked only by people already inside, so
+secrecy removes both the credit and the outside scrutiny that publication
+would have supplied.
 
 Once strong encryption is public mathematics, the contest over it becomes
 political. A state that could previously read its own population's and its

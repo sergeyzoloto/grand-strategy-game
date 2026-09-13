@@ -21,7 +21,7 @@ absence:
     note: African skilled emigration in the same era faces a structurally different constraint than the Indian case — a comparatively smaller domestic higher-education output to begin with means the same proportional 'drain' represents a much larger relative loss of a scarcer trained population, compounding the effect rather than merely scaling it down.
 prereqs: [MIG-230]
 enables: []
-see_also: [MIG-200, MIG-170, MIG-270]
+see_also: [MIG-200, MIG-170, MIG-270, NAT-250]
 contested: true
 contested_note: "Whether skilled emigration is better modeled as a pure loss ('brain drain') to the sending country or as a more complex exchange that also generates returning knowledge, remittances, and diaspora investment networks ('brain circulation') is disputed in development economics, with evidence for both patterns depending heavily on the sending country's own absorption capacity and diaspora-engagement policy. Model the emigration event itself as a straightforward loss of trained capacity at time of departure, with a separate, conditional 'circulation' return flow (remittances, diaspora scientific/investment networks) that only activates where the sending country maintains institutional capacity to receive it — not an automatic offset."
 stats_touched: [migration cost, skill differential]
@@ -49,7 +49,11 @@ than to general wage differentials — the trigger is professional
 opportunity and institutional capacity, not the broader economic
 push/pull driving ordinary labor migration (MIG-170, MIG-270), which is why
 this migration type can run strongly even from otherwise not-especially-poor
-sending countries if their specific research infrastructure lags.
+sending countries if their specific research infrastructure lags. Facility-scale
+science sharpens the pull into something close to a requirement (NAT-250): in a
+field whose frontier sits on one accelerator or reactor, a scientist from a
+state below that instrument threshold can do frontier work only by going to
+where the machine is.
 
 ## Social consequence
 

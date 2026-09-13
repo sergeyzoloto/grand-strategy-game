@@ -306,7 +306,7 @@ NAT-110,The Sack of Baghdad and the Loss of the House of Wisdom,nature,religion,
 NAT-120,Heliocentrism,nature,religion,core,drafted,high,1259,1687,century,3,NAT-015; NAT-040; NAT-080,0,,TRUE,heliocentrism; copernicus; maragha-school; tusi-couple
 NAT-130,Germ Theory,nature,health,core,drafted,high,1348,1884,era,2,NAT-090; NAT-080,1,HLT-310,FALSE,germ-theory; pasteur; koch; contagion
 NAT-140,Taxonomy and Systematic Classification,nature,health,standard,drafted,high,1550,1758,century,0,,0,,FALSE,taxonomy; linnaeus; li-shizhen; classification
-NAT-150,The Scientific Society and Peer Review,nature,,core,drafted,high,1660,1900,century,1,NAT-090,0,,TRUE,royal-society; peer-review; scientific-institution; priority-dispute
+NAT-150,The Scientific Society and Peer Review,nature,,core,drafted,high,1660,1900,century,1,NAT-090,1,NAT-250,TRUE,royal-society; peer-review; scientific-institution; priority-dispute
 NAT-160,The Chemical Revolution,nature,engineering,standard,drafted,high,1661,1789,century,1,NAT-090,2,NAT-200; ENG-275,FALSE,chemistry; lavoisier; phlogiston; alchemy
 NAT-170,Electromagnetism,nature,engineering,core,drafted,high,1820,1888,century,2,NAT-040; MTH-045,7,MED-100; ENG-300; NAT-220; MED-120; WAR-315; MED-110; MAR-335,FALSE,electromagnetism; maxwell; faraday; hertz; telegraph-theory
 NAT-180,Thermodynamics,nature,engineering,core,drafted,high,1824,1865,century,3,NAT-040; MTH-040; MTH-045,1,NAT-210,FALSE,thermodynamics; carnot; entropy; heat-engine
@@ -315,6 +315,7 @@ NAT-200,The Periodic Table and Predictive Classification,nature,,standard,drafte
 NAT-210,Quantum Theory,nature,engineering,core,drafted,high,1900,1935,century,3,NAT-180; MTH-040; MTH-045,1,ENG-330,TRUE,quantum-theory; bose-einstein-statistics; copenhagen-interpretation
 NAT-220,Relativity,nature,,standard,drafted,high,1905,1919,decade,3,NAT-040; NAT-170; MTH-045,1,ENG-340,FALSE,relativity; einstein; spacetime; general-relativity
 NAT-230,Plate Tectonics and the Delayed Vindication of Continental Drift,nature,,core,drafted,high,1912,1965,century,1,NAT-100,0,,FALSE,plate-tectonics; continental-drift; wegener; seafloor-spreading
+NAT-250,Big Science,nature,war; finance; diplomacy; migration,core,drafted,medium,1930,2000,decade,1,NAT-150,0,,TRUE,big-science; cyclotron; manhattan-project; cern; apollo; human-genome-project; hyperauthorship; bhabha; two-bombs-one-satellite; kek; huemul
 PHI-010,Pre-Axial Wisdom Literature,philosophy,religion,core,drafted,medium,-2400,-900,era,0,,1,PHI-030,TRUE,wisdom-literature; ptahhotep; edubba; maat; pre-axial
 PHI-020,Zoroastrian Moral Dualism,philosophy,religion,standard,drafted,medium,-1200,-500,era,0,,0,,TRUE,zoroastrianism; gathas; ahura-mazda; dualism; eschatology
 PHI-030,The Emergence of Schools of Thought,philosophy,,core,drafted,medium,-800,-200,era,1,PHI-010,9,PHI-040; PHI-080; PHI-060; PHI-130; PHI-110; PHI-070; PHI-090; PHI-170; PHI-120,FALSE,schools-of-thought; hundred-schools; darsana; lineage-transmission
