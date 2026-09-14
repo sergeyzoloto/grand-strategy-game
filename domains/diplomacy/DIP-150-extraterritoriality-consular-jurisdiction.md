@@ -19,7 +19,7 @@ region_variants:
 absence: []
 prereqs: [DIP-100]
 enables: []
-see_also: [DIP-090, DIP-140, COM-210, LAW-155]
+see_also: [DIP-090, DIP-140, COM-210, LAW-155, FIN-067]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -64,6 +64,10 @@ answerable to a different law and different courts than the host state's
 own citizens face for the same conduct in the same place, a durable and
 visible source of resentment distinct from the underlying trade or
 territorial terms of whatever treaty established it.
+
+The Ottoman capitulations were followed after the 1875 default by the Ottoman Public
+Debt Administration, which collected imperial revenues for foreign bondholders.
+FIN-067 carries that and other creditor administrations.
 
 ## Regional specifics
 

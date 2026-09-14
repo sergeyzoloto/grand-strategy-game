@@ -21,7 +21,7 @@ absence:
     note: Japan and later several other East Asian economies graduate from being aid and development-loan recipients to major donor and creditor nations within a few decades, an unusually fast reversal of position within the same institutional system relative to the multi-generational recipient status several other regions experience.
 prereqs: [FIN-050]
 enables: []
-see_also: [FIN-110]
+see_also: [FIN-110, FIN-067]
 contested: true
 contested_note: "Whether IMF and World Bank loan conditionality genuinely stabilizes struggling economies by imposing needed fiscal and structural discipline, or imposes counterproductive austerity that deepens and prolongs the crises it's meant to resolve, is a live and unresolved debate in development economics, with real cases supporting both readings depending on the specific conditions attached and the borrowing country's own institutional capacity. Model conditionality's effect as dependent on the specific terms attached and the borrower's institutional capacity to absorb them, rather than as a fixed-sign outcome true across every case."
 stats_touched: []
@@ -41,6 +41,10 @@ Where a private bond market (FIN-110) prices a loan purely on expected return an
 ## Social consequence
 
 Conditionality attached to development lending can constrain an indebted state's own democratic or sovereign policy choices as directly as any occupying power's demands, provoking recurring domestic political friction between a government's obligations to its lenders and to its own electorate or population — a tension with no clean resolution built into the lending relationship itself, since both the loan and the conditions attached to it are usually the borrowing state's only realistic option in a genuine crisis.
+
+Conditional lending in the debt crises from 1982 was the twentieth-century answer to
+a borrower no court can bind. FIN-067 carries sovereign default and the line from
+nineteenth-century receivership to structural adjustment.
 
 ## Regional specifics
 

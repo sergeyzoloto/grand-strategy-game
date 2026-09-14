@@ -23,7 +23,7 @@ absence:
   - region: europe
     note: Medieval Christian doctrine treats usury (any interest, not merely excessive interest) as a sin on Aristotelian and scriptural grounds, pushing moneylending into a narrow, socially marginalized niche later occupied disproportionately by Jewish communities excluded from most other trades — directly the same mechanism MIG-100 describes for the Jewish diaspora's forced occupational concentration.
 prereqs: [FIN-020, FIN-010]
-enables: [FIN-150, FIN-040]
+enables: [FIN-150, FIN-040, FIN-067]
 see_also: [MIG-100]
 contested: false
 contested_note: ""
@@ -67,6 +67,10 @@ social stigma and excluded from other livelihoods anyway, concentrating an
 economically essential but socially marginalized role onto a specific
 group, exactly the dynamic MIG-100 traces for European Jewish communities
 under Christian usury doctrine.
+
+Lending to rulers is the case where the creditor has no court above the borrower.
+FIN-067 carries sovereign default, from Philip II's suspensions of 1557 onward, and
+what substitutes for enforcement.
 
 ## Regional specifics
 

@@ -18,7 +18,7 @@ absence:
     note: Domestic Japanese and Chinese credit-rating institutions in this era carry less international market weight than the major American agencies, with cross-border bond issuance from the region frequently seeking a rating from an established Western agency specifically to access international investors who trust that agency's own established track record — a legibility gap not fully closed simply by a domestic rating institution existing.
 prereqs: [FIN-110, MED-100]
 enables: []
-see_also: [FIN-130, MED-110, LAW-215]
+see_also: [FIN-130, MED-110, LAW-215, FIN-067]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -38,6 +38,9 @@ Before a standardized rating exists, an investor considering a bond has to indep
 ## Social consequence
 
 A credit rating becomes a real, priced input into how much an issuer must pay to borrow at all — a downgrade can raise a government's or company's borrowing costs sharply and immediately, converting the rating agencies' own private judgment into a force with direct fiscal consequences for the entities they rate, and periodically drawing criticism (most sharply after ratings on structured mortgage securities proved badly wrong ahead of the 2008 financial crisis) that the agencies' judgment is neither as independent nor as reliable as the market's reliance on it assumes.
+
+Sovereign ratings price the risk of default by borrowers no court can bind. FIN-067
+carries sovereign default and the default history lenders remember.
 
 ## Regional specifics
 

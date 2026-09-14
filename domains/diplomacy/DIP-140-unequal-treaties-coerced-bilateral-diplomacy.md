@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [DIP-100]
 enables: []
-see_also: [DIP-090, DIP-150, COM-210, MAR-185]
+see_also: [DIP-090, DIP-150, COM-210, MAR-185, FIN-067]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -66,6 +66,10 @@ meaningful sense, fueling the specific brand of nationalist grievance
 ("the century of humiliation," in the Chinese case) that later drives
 sustained diplomatic efforts to renegotiate or abrogate the treaties
 entirely.
+
+Foreign control of Chinese customs and salt revenues to service indemnity loans was
+one form of creditor administration. FIN-067 carries it alongside the Ottoman Public
+Debt Administration, Egypt's Dual Control and the Caribbean customs receiverships.
 
 ## Regional specifics
 

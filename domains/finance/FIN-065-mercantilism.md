@@ -38,7 +38,7 @@ absence:
     note: "The Mughal empire had no mercantilist doctrine. Customs duties at Surat were a few per cent, the state welcomed foreign merchants, and it treated the inflow of silver as the normal return for the textiles, indigo and saltpetre Europeans bought, which Europeans called India a sink for silver. Mughal revenue came overwhelmingly from the land tax, so trade policy did not carry the fiscal weight it did in Europe, and no Mughal official needed a trade surplus to pay armies abroad. The mercantilist premise arises from a particular fiscal position, not from the stage of economic thought: a land-revenue empire with its armies at home did not need it."
 prereqs: [MAR-160]
 enables: [COM-150, FIN-140]
-see_also: [FIN-110, WAR-130, MAR-020, MAR-150, COM-190, COM-140, COM-160, DIP-075, MAR-185]
+see_also: [FIN-110, WAR-130, MAR-020, MAR-150, COM-190, COM-140, COM-160, DIP-075, MAR-185, FIN-067]
 contested: true
 contested_note: "Whether mercantilism was a coherent doctrine at all is argued. Heckscher (Mercantilism, 1931) treated it as a unified system of state-building policy. Coleman ('Eli Heckscher and the idea of mercantilism', 1957) argued it was a label invented by its critics — Smith named 'the mercantile system' in Book IV of The Wealth of Nations — and imposed on scattered pamphlets and ad hoc measures. Magnusson (Mercantilism, 1994) and Stern and Wennerlind (Mercantilism Reimagined, 2014) read it as a shared economic language, not a doctrine. Its effects are also disputed: the specie-flow argument showed its central premise was wrong, but British shipping, naval strength and protection against Indian textiles (Parthasarathi, Why Europe Grew Rich, 2011) plausibly served British industrialisation. Model mercantilism as a bundle of separable instruments, each with its own cost and payoff, adopted where a state's fiscal position made specie scarce and its trade rivals near, rather than as a single doctrine switched on or off; and model the transition to free trade as a contested shift whose payoff depends on a state's competitive position."
 stats_touched: [bullion stock, price level, trade reservation]
@@ -174,6 +174,10 @@ The system reached people through prices, prohibitions and enforcement:
 Mercantilism concentrated gains on licensed merchants, shipowners and protected
 manufacturers, and pushed costs onto colonial consumers, foreign carriers and anyone
 whose trade the law excluded. The smuggler was its most common rebel.
+
+Specie shortage also produced default: Philip II's armies abroad were paid with
+bankers' loans against silver fleets, and when the fleets failed the crown suspended
+payment. FIN-067 carries sovereign default.
 
 ## Regional specifics
 

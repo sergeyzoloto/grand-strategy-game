@@ -21,7 +21,7 @@ absence:
     note: Post-WWII Japan experiences significant but comparatively controlled inflation during its reconstruction period rather than a runaway spiral, aided by coordinated fiscal and monetary policy and, crucially, sustained external demand and aid rather than the isolated fiscal collapse driving the Weimar and Zimbabwe cases — showing high inflation risk doesn't automatically cascade into a self-reinforcing spiral given sufficient policy coordination and external support.
 prereqs: [FIN-120, FIN-050]
 enables: []
-see_also: []
+see_also: [FIN-067]
 contested: false
 contested_note: ""
 stats_touched: [price level]
@@ -63,6 +63,10 @@ an arbitrary and often brutal redistribution — debtors whose obligations are
 fixed in the collapsing currency benefit enormously while creditors and
 anyone holding cash savings lose almost everything, a wealth transfer with
 no relationship to merit or planning on either side.
+
+Inflation is also a way to default without declaring it: a state owing in its own
+currency can erase domestic debt by printing. FIN-067 carries sovereign default, and
+why debt in a foreign currency removes that escape.
 
 ## Regional specifics
 

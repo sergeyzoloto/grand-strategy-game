@@ -44,7 +44,7 @@ absence:
     note: "Japan, South Korea and Taiwan developed with almost no mineral rents. Their states had to raise revenue by taxing their populations and to earn foreign exchange by exporting manufactures, which kept the exchange rate competitive and made the state depend on the productivity of its own economy. Scholars of development (Auty, Resource Abundance and Economic Development, 2001) treat this resource poverty as part of the explanation for the East Asian developmental state. The absence of rents removed the channels through which the curse operates, and the region had to build what resource states could buy."
 prereqs: []
 enables: [MIG-270, HLT-350]
-see_also: [COM-140, COM-160, LAW-140, WAR-275, FIN-250, FIN-270, MIG-200, DIP-190, ENG-320]
+see_also: [COM-140, COM-160, LAW-140, WAR-275, FIN-250, FIN-270, MIG-200, DIP-190, ENG-320, FIN-067]
 contested: true
 contested_note: "The resource curse is contested on three fronts. Sachs and Warner (1995) found resource-rich economies grew more slowly; Ross (The Oil Curse, 2012) found oil associated with less democracy, more civil war and less female labour-force participation. Brunnschweiler and Bulte (2008) argued that resource dependence is itself a product of weak institutions and poor growth — a country that manufactures nothing looks dependent on oil — so the correlation may run backwards. Haber and Menaldo ('Do Natural Resources Fuel Authoritarianism?', 2011), using long time series within countries, found no effect of resource income on regime type. The counter-cases (Norway, Botswana, Chile) suggest the outcome depends on institutions at the time of discovery. Model the curse as conditional: the size of each channel's effect scales with rent dependence and revenue volatility and is sharply reduced by institutions present before the rents arrive — a tax state with representative assembly and professional civil service, a fiscal rule, a savings fund — rather than as a fixed penalty for holding a resource."
 stats_touched: [rent dependence, revenue volatility, price level, legibility, sovereign credit capacity]
@@ -180,6 +180,10 @@ expect distribution and owe loyalty, not taxes. When prices fall, the state must
 either impose taxes it has no machinery or legitimacy to collect or cut the
 distribution its legitimacy rests on. Rapid rent-funded urbanisation and food imports
 also reshape diet and health (HLT-350).
+
+Boom-time borrowing against resource revenue often ended in default, as in Peru in
+1876 and Mexico in 1982. FIN-067 carries sovereign default and why defaults cluster
+when commodity prices fall and interest rates rise.
 
 ## Regional specifics
 
