@@ -1,6 +1,6 @@
 # Gaps Recorded — 2026-09-14
 
-Five gaps identified during the MAR and DIP verification passes of 2026-09-14
+Gaps identified during the MAR, DIP and LAW verification passes of 2026-09-14
 and left unwritten by decision. None is fixed here. Each records what is
 absent, where the nearest existing coverage stops, and what a future entry or
 extension would need to carry.
@@ -166,3 +166,39 @@ periphery renegotiate obligation through violence, and that may justify a LAW en
 with `war` touched heavily. It must not be placed in DIP: the DIP domain was flagged
 in the 2026-09-08 cross-domain synthesis as the one most vulnerable to a fold-into-LAW
 argument, and internal-governance material would strengthen that argument.
+
+---
+
+## 6. Moral panic as a recurring legitimation mechanism — generalisation gap inside LAW-150
+
+**Status:** gap inside an existing entry. Generalise `LAW-150`; do not create a new
+entry. Recorded during the LAW verification pass.
+
+**What exists.** `LAW-150` Witch Trials and Legal Panic (1450–1750) is scoped to
+witch trials. Its Mechanism carries one of the three components of a general
+moral-panic mechanism at a level that transfers beyond witchcraft: evidentiary
+standards collapse under social pressure, so the same courts produce false
+convictions without the law's text changing. Its Contested section carries the
+popular-demand versus elite-direction dispute.
+
+**What is missing.**
+
+- **Enemy identification as legitimation.** The entry does not carry how naming an
+  internal enemy strengthens the authority that names it. Accusation is a source of
+  legitimacy for the accusing institution, not only a failure of procedure, which is
+  why panics recur where authorities are insecure.
+- **Termination when accusation reaches the elite.** The entry notes that
+  authorities repudiated their verdicts but not why panics stop when they do.
+  Salem ended as accusations reached prominent people, including the governor's
+  wife. The general pattern is a panic that expands until it reaches people the
+  elite cannot afford to accuse, then collapses. That end condition is modellable
+  and absent.
+- **Recurrence beyond witchcraft.** The entry treats witch trials as the sole
+  instance. The same mechanism runs through heresy inquisitions, the Red Scares,
+  purges and show trials, and panics over ritual abuse. Nothing in the corpus
+  carries it as a general, recurring mechanism, so later entries that need it,
+  such as scapegoating after catastrophe, can only point at a witchcraft entry.
+
+**Placement.** LAW, as an extension of `LAW-150`: the mechanism is the capture of
+legal procedure, which is LAW's. Broadening the title and date range would be part of
+the extension.
