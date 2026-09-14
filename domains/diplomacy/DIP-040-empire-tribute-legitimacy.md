@@ -23,7 +23,7 @@ absence:
   - region: mediterranean
     note: Roman client-kingdom relationships extend a middle option between full annexation and full independence — a client king retains local rule and internal legitimacy while ceding foreign policy and military support obligations to Rome, a diplomatic status distinct from both the Chinese tributary model's ritual hierarchy and the Aztec model's threat-based extraction.
 prereqs: [WAR-060, DIP-010, DIP-030]
-enables: [DIP-060, DIP-025]
+enables: [DIP-060, DIP-025, DIP-075]
 see_also: [DIP-080, PHI-290, DIP-050, DIP-100, WAR-020, DIP-055, DIP-058]
 contested: false
 contested_note: ""
@@ -63,7 +63,8 @@ disputed, choose between claimants (DIP-025).
 
 Where the tributary relationship is genuinely mutually legitimating (the
 Chinese case, where tributary status conferred real trade privilege and
-prestige), subordinate rulers have a real stake in maintaining the system;
+prestige — under the Ming the only lawful access to the China market at all,
+the commercial half DIP-075 carries), subordinate rulers have a real stake in maintaining the system;
 where it functions closer to extraction under standing threat (the Aztec
 case), the relationship stays inherently unstable and prone to defection
 the moment the threatening power's military credibility weakens even

@@ -16,7 +16,7 @@ region_variants: []
 absence:
   - region: south-asia
     note: Opium sold into China in this period is grown and processed under British monopoly in India specifically, making South Asia the production base for the very commodity whose forced sale into China this entry covers — India's role here is as supplier within the same coercive trade system, not a comparable case of its own market being forced open by an equivalent war.
-prereqs: [COM-150]
+prereqs: [COM-150, DIP-075]
 enables: [COM-190]
 see_also: [DIP-140, DIP-150, HLT-260, MAR-185]
 contested: true
@@ -39,7 +39,9 @@ Qing tariff autonomy (COM-190).
 
 ## Mechanism
 
-Qing China restricts foreign trade to a single controlled port (Canton) and
+Qing China restricts foreign trade to a single controlled port (Canton) — the
+last form of a circuit in which access to the China market ran through ritual
+and protocol rather than open negotiation (DIP-075) — and
 attempts to suppress opium imports specifically on public-health grounds;
 Britain's military response converts a market-access dispute into a forced
 settlement opening multiple additional treaty ports, fixing low tariff

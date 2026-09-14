@@ -21,7 +21,7 @@ absence:
     note: Colonial-era smuggling against mercantilist trade restrictions (British North American trade with non-British Caribbean colonies, for instance) is so pervasive and locally tolerated in some ports that enforcement becomes selectively symbolic rather than genuinely suppressive — a case where smuggling's scale effectively renegotiates the enforced trade policy without ever formally changing the law itself.
 prereqs: [MAR-020]
 enables: []
-see_also: [MAR-030, COM-190]
+see_also: [MAR-030, COM-190, DIP-075]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -64,7 +64,9 @@ Ming China's haijin prohibition is a clean case of legal reclassification
 alone converting previously ordinary commerce into criminalized smuggling,
 with the direct, documented side effect of pushing displaced merchants into
 the Wokou raiding networks that the prohibition was nominally meant to
-suppress. Colonial American smuggling against British mercantilist
+suppress. The lawful alternative the prohibition left was the tribute
+embassy, so trade excluded from the ritual gate — as Japanese commerce was
+after the Ningbo incident of 1523 — had nowhere to go but here (DIP-075). Colonial American smuggling against British mercantilist
 restrictions reaching a scale where enforcement becomes selectively
 symbolic shows smuggling volume itself can function as a de facto policy
 override, renegotiating enforced trade terms without any formal legal change.

@@ -38,7 +38,7 @@ absence:
     note: No European power seized a major Japanese or Chinese port before 1842, because both states were strong enough on land to decide who could trade and where. Tokugawa Japan confined the Dutch to the artificial island of Dejima at Nagasaki from 1641 and expelled the Portuguese, and Qing China restricted Western trade to Guangzhou from 1757. The entrepôt contest described here needs a coast whose ruler cannot close it; where the state could close its ports, outsiders traded on terms set by that state or not at all, until force changed the terms in 1842.
 prereqs: [MAR-160]
 enables: [MAR-205]
-see_also: [COM-130, WAR-020, COM-210, DIP-140, MAR-180, MIG-060, COM-150, MAR-038]
+see_also: [COM-130, WAR-020, COM-210, DIP-140, MAR-180, MIG-060, COM-150, MAR-038, DIP-075]
 contested: true
 contested_note: "How much the Portuguese and Dutch port systems actually controlled Asian trade is disputed. Steensgaard (The Asian Trade Revolution of the Seventeenth Century, 1974) reads the Estado da Índia as a redistributive enterprise that sold protection rather than a trading company, and the Dutch as the first to internalise protection costs profitably; Pearson and others show that Gujarati, Acehnese and Chinese shipping evaded or bought into the Portuguese system on a large scale, so the Red Sea spice trade had revived by the mid-sixteenth century. Model port control as raising the cost of trading outside the system rather than preventing it: the share of trade captured should depend on how many alternative open ports exist within reach and how strongly the holding power can patrol between them, not be assumed total because a fortress exists."
 stats_touched: [entrepôt share, protection rent, route knowledge]
@@ -151,7 +151,9 @@ Europeans.
   into East Africa's dominant port, winning the contest on the Swahili coast
   for two centuries.
 - **Macau and Manila** existed because China and Japan restricted direct
-  trade, and they profited from carrying what the states would not allow.
+  trade, and they profited from carrying what the states would not allow. The
+  restriction was ritual as well as legal: Chinese markets opened only through
+  tribute, the circuit DIP-075 carries.
 - **Tokugawa Japan and Qing China** are the absence. Strong land states
   confined Europeans to Dejima and Guangzhou and kept the contest off their
   coasts until force broke it in 1842.

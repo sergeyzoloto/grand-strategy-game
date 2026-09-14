@@ -41,7 +41,7 @@ absence:
     note: Steppe confederations facing settled empires faced less of this particular hazard in their raiding relationship, because their signals were rarely ambiguous: a raid was a raid, a tribute demand was explicit, and mobile forces could withdraw before any spiral of preparation and counter-preparation could build. The security dilemma needs defensive preparation that looks like offensive preparation — fortification, standing mobilisation, forward posts — and mobile pastoral forces neither built nor needed that, so the specific mechanism of mutual defensive arming spiralling into war had little to act on at the steppe edge.
 prereqs: [DIP-010]
 enables: [DIP-170]
-see_also: [DIP-030, MED-030, MED-100, WAR-330, WAR-315, DIP-110, DIP-040, DIP-058]
+see_also: [DIP-030, MED-030, MED-100, WAR-330, WAR-315, DIP-110, DIP-040, DIP-058, DIP-075]
 contested: true
 contested_note: "Whether inadvertent escalation is genuinely distinct from deliberate escalation with deniability is argued. The perceptual school (Jervis, Perception and Misperception in International Politics, 1976; Jervis, 'Cooperation under the Security Dilemma', World Politics, 1978; Herz, who coined the security dilemma in 1950) treats misperception and the spiral as real causes of wars neither side wanted. The rationalist account (Fearon, 'Rationalist Explanations for War', International Organization, 1995) holds that wars arise from private information, incentives to misrepresent it, and commitment problems, so apparent misperception is often strategic concealment; and historians such as Trachtenberg ('The Meaning of Mobilization in 1914', 1990) argue the 1914 timetables were less automatic than the inadvertence story claims. Model escalation as conditional on two separate quantities: the actual intent of each side, and each side's legibility of the other's intent. Inadvertent escalation occurs where intents are defensive and legibility is low; deliberate escalation with deniability where one intent is offensive and the other side's legibility is low; the model should be able to produce both, and should not let the player or the history assert which a given crisis was."
 stats_touched: [intent legibility, information speed, alliance cohesion]
@@ -124,7 +124,8 @@ misreading that more information corrects. Tribute hierarchy against sovereign
 equality, investiture against treaty: every act one side performs means something
 different to the other. The Macartney embassy and the Hideyoshi investiture both
 failed this way. DIP-040 carries the tributary order whose grammar Macartney could
-not enter.
+not enter, and DIP-075 the trade that ran through it, which is why the embassy's
+failure was also a failure to open a market.
 
 ## Social consequence
 
