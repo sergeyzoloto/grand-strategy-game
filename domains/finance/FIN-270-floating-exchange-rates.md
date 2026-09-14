@@ -21,7 +21,7 @@ absence:
     note: Several East Asian economies maintain managed or heavily-intervened exchange rates well after the major floating-rate shift elsewhere, a policy choice directly implicated in setting up the currency-peg vulnerabilities that the 1997 Asian Financial Crisis (FIN-190) later exposes once capital markets test those pegs under stress.
 prereqs: [FIN-250, FIN-050]
 enables: []
-see_also: [FIN-120, FIN-190, FIN-130, WAR-275]
+see_also: [FIN-120, FIN-190, FIN-130, WAR-275, FIN-205]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -60,6 +60,10 @@ trade and investment that fixed regimes had suppressed, spurring the growth
 of currency-hedging instruments (a direct extension of FIN-130's derivative
 mechanism into currency risk specifically) as businesses and investors seek
 to manage a volatility fixed rates previously handled for them by design.
+
+The dollar peg is one way oil states manage revenue denominated in a volatile
+commodity. FIN-205 carries the resource curse, including the volatility channel that
+makes that choice necessary.
 
 ## Regional specifics
 

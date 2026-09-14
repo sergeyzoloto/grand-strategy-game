@@ -22,7 +22,7 @@ region_variants:
 absence:
   - region: africa
     note: Large parts of the continent experience a 'double burden' pattern rather than a clean transition — undernutrition and diet-linked chronic disease (obesity, diabetes) coexisting in the same populations or even the same households, rather than one replacing the other in the sequential pattern the classic transition model assumes.
-prereqs: [HLT-040]
+prereqs: [HLT-040, FIN-205]
 enables: []
 see_also: [HLT-300, HLT-050, HLT-110, WAR-275]
 contested: false
@@ -62,6 +62,10 @@ historical pattern where affluence reliably meant better nutrition — in a
 completed nutrition transition, affluence increasingly buys access to
 better, less processed food instead, while poverty is newly associated with
 obesity rather than protecting against it.
+
+The Gulf's compressed transition rests on oil rents distributed as income, subsidised
+food imports and public employment. FIN-205 carries the rentier state behind that
+income.
 
 ## Regional specifics
 

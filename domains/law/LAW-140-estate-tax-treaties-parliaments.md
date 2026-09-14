@@ -21,7 +21,7 @@ absence:
     note: Contemporary Chinese and Japanese fiscal administration extracts revenue through the centralized bureaucratic and feudal-obligation channels already covered in this domain (LAW-100, LAW-080) rather than through a negotiated consent-for-taxation bargain with organized estates — revenue extraction here runs through existing administrative or personal-obligation hierarchy rather than requiring a separate representative body's assent at all.
 prereqs: [LAW-020, FIN-020]
 enables: [LAW-160, LAW-180]
-see_also: [LAW-100, LAW-080]
+see_also: [LAW-100, LAW-080, FIN-205]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -60,6 +60,10 @@ revenue has to keep the relationship functional — this is the specific
 mechanism by which several European monarchies gradually accumulate
 constitutional constraints on royal authority centuries before anything
 resembling a written constitution (LAW-180) formalizes the relationship.
+
+The bargain can be broken from the revenue side. A ruler with resource rents does not
+need new taxes and so does not need the assembly's consent, which FIN-205 carries as
+the fiscal delinking channel of the resource curse.
 
 ## Regional specifics
 

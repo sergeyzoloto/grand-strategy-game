@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: africa
     note: Labor migration out of former African colonies to former metropoles is comparatively smaller in this specific era than South Asian or Caribbean flows into Britain, with larger African labor-migration volumes of this period instead running intra-continentally (for example, to South African mines and Gulf states later) rather than toward Europe — postcolonial ties didn't produce a uniform migration channel everywhere they existed.
-prereqs: [MIG-230]
+prereqs: [MIG-230, FIN-205]
 enables: []
 see_also: [MIG-170, MIG-260, MIG-200, WAR-275]
 contested: false
@@ -64,6 +64,10 @@ workers under kafala-type sponsorship arrive with no such path regardless of
 tenure, producing a large resident non-citizen labor population by design —
 the same underlying labor-migration volume, structured toward two very
 different long-run social outcomes by the legal-status design choice alone.
+
+The Gulf's demand for foreign labour followed from how its states spent oil rents:
+citizens were employed by the state and private-sector work was imported. FIN-205
+carries the rentier state that produced that labour market.
 
 ## Regional specifics
 

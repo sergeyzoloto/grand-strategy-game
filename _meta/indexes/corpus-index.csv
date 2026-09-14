@@ -136,6 +136,7 @@ FIN-170,Limited Liability,finance,law,standard,drafted,high,1811,1862,century,1,
 FIN-180,Financing Industrialization,finance,commerce; engineering,core,drafted,high,1830,1914,century,2,FIN-070; FIN-170,0,,FALSE,industrial-finance; capital-formation; zaibatsu; bank-financed-industry
 FIN-190,Banking Panics,finance,,core,drafted,high,1837,1998,era,1,FIN-100,1,FIN-230,FALSE,bank-run; financial-panic; asian-financial-crisis; contagion
 FIN-200,Institutional Responses to Critiques of Capitalism,finance,philosophy; law,core,drafted,high,1848,1991,era,1,FIN-140,0,,TRUE,socialism; command-economy; labor-movement; welfare-state
+FIN-205,The Resource Curse,finance,law; commerce; war; migration; diplomacy,core,drafted,medium,1850,2020,era,0,,2,MIG-270; HLT-350,TRUE,resource-curse; dutch-disease; rentier-state; fiscal-delinking; guano; nitrate; oil; diamonds; sovereign-wealth-fund; fiscal-rule; norway; botswana; chile
 FIN-210,Credit Rating Agencies,finance,,standard,drafted,high,1909,2010,era,2,FIN-110; MED-100,0,,FALSE,credit-rating; moodys; bond-market; conflict-of-interest
 FIN-220,Inflationary Spirals,finance,law,core,drafted,high,1920,1924,decade,2,FIN-120; FIN-050,0,,FALSE,hyperinflation; weimar-germany; zimbabwe; monetary-policy
 FIN-230,The Great Depression,finance,commerce; migration,core,drafted,high,1929,1939,decade,2,FIN-080; FIN-190,0,,TRUE,great-depression; 1929-crash; gold-standard-exit; global-crisis
@@ -180,7 +181,7 @@ HLT-320,Psychoanalysis,health,philosophy,standard,drafted,medium,1895,1950,decad
 HLT-325,1918 and the Machinery of Mass Epidemiology,health,war; diplomacy; mathematics; law,core,drafted,medium,1918,1950,decade,2,HLT-270; HLT-230,0,,TRUE,influenza; 1918-pandemic; spanish-flu; ministry-of-health; notifiable-disease; league-health-organisation; samoa; censorship
 HLT-330,Antibiotics,health,sciences; war,core,drafted,high,1928,1945,year,1,HLT-310,0,,FALSE,antibiotics; penicillin; resistance; medicine
 HLT-340,The Therapeutic Turn,health,philosophy,standard,drafted,medium,1950,2000,decade,1,HLT-320,0,,FALSE,therapy; self-help; individualism; mental-health
-HLT-350,The Nutrition Transition,health,agriculture; commerce,core,drafted,high,1950,2020,decade,1,HLT-040,0,,FALSE,nutrition; obesity; food-systems; globalization; chronic-disease
+HLT-350,The Nutrition Transition,health,agriculture; commerce,core,drafted,high,1950,2020,decade,2,HLT-040; FIN-205,0,,FALSE,nutrition; obesity; food-systems; globalization; chronic-disease
 LAW-010,Customary Law and Pre-Written Dispute Resolution,law,religion,core,drafted,medium,-10000,-1754,era,0,,1,LAW-020,TRUE,customary-law; wergild; dispute-resolution; oral-law
 LAW-020,Written Law and the Codification of Inequality,law,,core,drafted,medium,-1754,-450,era,2,FIN-020; LAW-010,16,LAW-050; LAW-060; LAW-100; LAW-080; LAW-140; LAW-120; LAW-130; LAW-110; LAW-200; REL-140; LAW-070; LAW-030; LAW-040; LAW-090; LAW-170; LAW-225,FALSE,written-law; hammurabi; manusmriti; legalism
 LAW-030,"Courts, Judges, and Trial Procedure",law,religion,core,drafted,high,-1754,1800,era,1,LAW-020,1,LAW-150,FALSE,courts; trial-procedure; jury; qadi; adversarial-inquisitorial
@@ -312,7 +313,7 @@ MIG-230,"Passports, Visas, and Borders as an Institution",migration,law; diploma
 MIG-240,Refugee Status and Asylum as a Legal Category,migration,law; diplomacy,core,drafted,high,1921,1980,century,1,MIG-230,0,,TRUE,refugee; asylum; unhcr; nansen-passport; non-refoulement
 MIG-250,State-Driven Forced Population Movement,migration,law; diplomacy,core,drafted,high,1923,1990,decade,2,MIG-230; MTH-075,0,,FALSE,deportation; population-exchange; partition; forced-migration; nation-state; repatriation; decolonization; settler-return
 MIG-260,Scientific Migration and Brain Drain,migration,nature,core,drafted,high,1933,2000,decade,1,MIG-230,0,,TRUE,brain-drain; scientific-migration; skilled-labor; higher-education
-MIG-270,Postcolonial and Labor Migration,migration,commerce; law,core,drafted,high,1948,1980,decade,1,MIG-230,0,,FALSE,postcolonial-migration; guest-worker; kafala; decolonization; labor-migration
+MIG-270,Postcolonial and Labor Migration,migration,commerce; law,core,drafted,high,1948,1980,decade,2,MIG-230; FIN-205,0,,FALSE,postcolonial-migration; guest-worker; kafala; decolonization; labor-migration
 MIG-280,Migration Unions (Free-Movement Agreements),migration,diplomacy; law,standard,drafted,medium,1954,1995,decade,1,MIG-230,0,,FALSE,free-movement; nordic-passport-union; eu; ecowas; treaty
 NAT-015,Positional Astronomy and Predictive Tables,nature,mathematics; religion; maritime; agriculture,core,drafted,medium,-1650,1700,era,2,MED-010; MTH-015,3,MAR-050; REL-030; NAT-120,TRUE,astronomy; saros; almagest; zij; maragha; samarkand; dresden-codex; astronomical-bureau
 NAT-020,Metaphysics as an Explanatory Framework,nature,philosophy,core,drafted,medium,-600,1200,era,0,,2,NAT-090; PHI-100,FALSE,metaphysics; cosmology; nyaya; correlative-cosmology

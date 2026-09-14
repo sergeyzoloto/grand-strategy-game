@@ -18,7 +18,7 @@ absence:
     note: Gulf oil-exporting states, not yet major independent actors in international monetary diplomacy at Bretton Woods's founding, become significant influences on the international monetary system only later, once oil-price shocks and dollar-pegging decisions (FIN-270) give their reserve holdings genuine systemic weight — a case of a region's monetary influence arriving well after the system's own founding architecture was already fixed by others.
 prereqs: [FIN-050]
 enables: [FIN-270]
-see_also: [WAR-275]
+see_also: [WAR-275, FIN-205]
 contested: false
 contested_note: ""
 stats_touched: [price level]
@@ -38,6 +38,10 @@ Bretton Woods solves the multi-currency coordination problem by designating a si
 ## Social consequence
 
 Because the system concentrates so much structural importance in a single anchor currency and the state issuing it, that state gains an unusual, largely non-reciprocal influence over global monetary conditions — other states' own domestic monetary policy has to account for dollar-denominated trade and reserve holdings in a way the reverse isn't true, a systemic asymmetry that persists in modified form well past the system's own formal 1971 end.
+
+The Gulf states' later weight rested on oil rents their governments received directly
+rather than through taxation. FIN-205 carries that rentier state and the volatility
+of its revenue.
 
 ## Regional specifics
 
