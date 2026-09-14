@@ -20,7 +20,7 @@ absence:
   - region: middle-east
     note: Mamluk Egypt and Syria suffer comparable plague mortality (HLT-220) without a comparable serfdom-divergence outcome in either direction, because the region's prevailing agrarian institution (the iqta land-assignment system, granting revenue rights rather than hereditary land-bound tenant labor) was never structured around the specific hereditary labor-bound tenancy category that either weakens or intensifies in the European cases — the same mortality shock hitting a genuinely different prior agrarian institutional base produces no comparable fork at all, rather than a third, undocumented variant of the same fork.
 prereqs: [HLT-220]
-enables: []
+enables: [LAW-175]
 see_also: [LAW-080, AGR-200]
 contested: true
 contested_note: "The 'Brenner debate' in agrarian history disputes why the same Black Death mortality shock (HLT-220) produced serfdom's durable decline in Western Europe but its intensification in Eastern Europe — Robert Brenner's influential argument centers prior differences in peasant class organization and bargaining capacity (stronger village solidarity and legal custom in the West constraining lords' ability to re-impose old terms once labor grew scarce, weaker peasant organization in the East allowing it), while other historians weight market-access differences (Western Europe's access to a growing wage-labor and commercial economy versus Eastern Europe's grain-export opportunity to the West) more heavily. Model the divergence as branching on prior peasant organizational strength and available market alternatives together (design principle 1), rather than crediting either factor alone as sufficient."
@@ -76,7 +76,10 @@ intensified, re-bound peasant labor supplies — the two regions'
 divergent outcomes aren't independent but directly linked, with Western
 Europe's own labor-market transformation partly creating the market
 conditions that make Eastern re-serfdomization commercially attractive
-to its landowning class.
+to its landowning class. The second serfdom's legal end came only with Russia's
+emancipation of 1861, which gave peasants land but charged them redemption
+payments for it — the formerly unfree buying their own freedom on credit
+(LAW-175).
 
 ## Contested
 

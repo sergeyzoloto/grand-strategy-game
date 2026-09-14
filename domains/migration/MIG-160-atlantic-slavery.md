@@ -20,7 +20,7 @@ absence:
   - region: africa
     note: The scale and destination pattern of forced removal varies enormously by African region and era depending on which coastal and interior polities and networks participated as suppliers versus which stayed largely outside the Atlantic system, a highly uneven geography of involvement rather than a uniform continent-wide phenomenon — the demographic and social impact was not remotely equivalent everywhere captives were drawn from.
 prereqs: [WAR-035]
-enables: [REL-240, AGR-210]
+enables: [REL-240, AGR-210, LAW-175]
 see_also: [MIG-150, HLT-240, WAR-010]
 contested: true
 contested_note: "Total mortality across the full forced-migration chain (capture and marching to the coast, coastal holding, the Middle Passage crossing itself, and initial 'seasoning' after arrival) is harder to establish with confidence than Middle Passage mortality alone, and estimates of overall demographic impact on African source regions and societies remain actively debated and revised as records are digitized and reanalyzed (the Trans-Atlantic Slave Trade Database being the main ongoing effort). Model total forced-migration mortality as a range with meaningful uncertainty bands rather than a single point estimate, and treat demographic-impact-on-source-region as a genuinely separate, more uncertain question from transport mortality itself."
@@ -62,6 +62,9 @@ categorization used to justify and maintain them) around a population that
 arrived through total coercion rather than any of this domain's other
 migration mechanics — a foundational social rupture with none of the
 partial agency present even in indentured servitude (MIG-150).
+When slavery was abolished, plantations turned to indentured Indian and
+Chinese migrants as replacement labour under penal contracts, part of the
+post-emancipation transition LAW-175 carries.
 
 ## Regional specifics
 

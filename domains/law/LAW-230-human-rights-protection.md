@@ -21,7 +21,7 @@ absence:
     note: Lebanese delegate and philosopher Charles Malik and Chinese delegate and playwright P.C. Chang are both central figures on the drafting committee itself — Chang specifically pushing for language and concepts (including from Confucian ethical tradition) intended to secure the document's claim to genuine cross-cultural rather than purely Western philosophical grounding — complicating any framing of the UDHR as a solely Western-authored document later applied universally.
 prereqs: [LAW-050]
 enables: []
-see_also: [DIP-180, PHI-160, PHI-270, LAW-070, LAW-225]
+see_also: [DIP-180, PHI-160, PHI-270, LAW-070, LAW-225, LAW-175]
 contested: true
 contested_note: "Whether human rights as codified in the UDHR and subsequent covenants represent genuinely universal cross-cultural values or primarily encode a specifically Western liberal-individualist philosophical framework presented as universal is a long-running and unresolved debate, sometimes termed the universalism-versus-cultural-relativism dispute, with real states and scholars on multiple sides. Model international human rights law's actual enforcement and domestic uptake as conditional on a state's own institutional alignment with the framework, rather than assuming uniform acceptance or uniform rejection — letting the underlying philosophical dispute stay genuinely open while still tracking which specific provisions a given state's domestic law actually incorporates."
 stats_touched: []
@@ -60,7 +60,10 @@ state — a genuinely novel legal relationship distinct from ordinary
 citizenship rights (LAW-050), which a state grants and can in principle
 also restrict, since human rights claims are framed as existing
 independent of and prior to state recognition rather than as a state's
-gift to its own citizens.
+gift to its own citizens. The limits of formal equal status were learned first
+after emancipation, where freed groups with no land or capital gained equal
+legal standing and little else, which is what produced group-differentiated
+protection as a remedy (LAW-175).
 
 ## Regional specifics
 

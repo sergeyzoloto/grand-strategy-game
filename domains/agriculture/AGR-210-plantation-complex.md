@@ -21,7 +21,7 @@ absence:
     note: The Dutch Cultivation System's Java coffee and sugar estates (COM-160) achieve comparable export-monoculture output through compelled peasant smallholder labor integrated into existing village landholding, rather than through the plantation complex's characteristic large consolidated estate worked by a resident enslaved or indentured gang labor force — a structurally distinct production system reaching a broadly similar commodity-export outcome.
 prereqs: [MIG-160, WAR-035]
 enables: []
-see_also: [COM-160, HLT-265]
+see_also: [COM-160, HLT-265, LAW-175]
 contested: false
 contested_note: ""
 stats_touched: [soil fertility]
@@ -70,7 +70,10 @@ only by the total coercive control MIG-160's forced-migration mechanic
 supplies. Planters justified that coercion partly through a claim of
 differential immunity — that Africans could work malarial and yellow-fever
 lowlands where Europeans could not — which rested on a real but partial
-biological difference and went far beyond it (HLT-265).
+biological difference and went far beyond it (HLT-265). The complex's legal end left
+land and mills with former owners, and apprenticeship, sharecropping and
+indentured migration kept plantation labour cheap under legal freedom
+(LAW-175).
 
 ## Regional specifics
 

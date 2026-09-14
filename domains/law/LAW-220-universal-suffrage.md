@@ -21,7 +21,7 @@ absence:
     note: The United States' 1965 Voting Rights Act is necessary a full century after the Fifteenth Amendment nominally granted Black male citizens the vote, because durable state-level legal and extra-legal barriers (poll taxes, literacy tests, and outright intimidation and violence) continued to suppress that formal right in practice — a case where the legal text alone, unlike India's, was insufficient to secure the underlying right without a much later second legislative and enforcement intervention.
 prereqs: [LAW-050]
 enables: []
-see_also: [LAW-040, LAW-215, WAR-200, LAW-165]
+see_also: [LAW-040, LAW-215, WAR-200, LAW-165, LAW-175]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -74,7 +74,9 @@ settles it all at once. The United States' need for a second major
 legislative intervention a full century after the first formal grant
 shows a legal right and its actual practical exercise can diverge for
 generations when enforcement mechanisms are weak or actively undermined at
-the local level.
+the local level. The disenfranchisement it corrected was part of the
+reversal of emancipation, in which legal freedom without land or enforced
+political rights was rebuilt into subordination (LAW-175).
 
 ## Hook
 

@@ -40,7 +40,7 @@ absence:
     note: "The French old colonies of the Caribbean and Réunion had no native legal track after 1848. Emancipation that year made their largely formerly enslaved populations French citizens under metropolitan law, so the indigénat and the subject-citizen division that governed France's later colonies in Africa and Asia never applied there. The dual order exists where a colonial state rules a population it defines as different in kind; where it had made the population citizens, there was nothing for the second track to govern."
 prereqs: [LAW-040]
 enables: []
-see_also: [DIP-150, AGR-200, REL-252, LAW-170, LAW-070]
+see_also: [DIP-150, AGR-200, REL-252, LAW-170, LAW-070, LAW-175]
 contested: true
 contested_note: "Whether legal pluralism preserves autonomy or entrenches inequality is argued by serious scholars on both sides. Mamdani (Citizen and Subject, 1996) reads colonial dualism as a bifurcated state in which customary authority, codified and backed by the colonial state, became a decentralised despotism over rural subjects, and Chanock and Ranger show much 'customary' law was invented or frozen in the interests of colonial informants. Benton (Law and Colonial Cultures, 2002) and historians of Indigenous litigation such as Owensby show the governed using plural jurisdictions strategically, and defenders of legal pluralism argue that communal law can protect autonomy against a unifying state. Model dualism as conditional: it tends to preserve autonomy where the community controls revision of its own law and members can exit to the general courts at low cost; it tends to entrench inequality where the colonial state fixed the law through elite informants and exit is costly or barred, which falls hardest on women and juniors."
 stats_touched: [legibility, contract enforcement]
@@ -163,7 +163,10 @@ Dualism produced intermediaries whose power rested on it:
 - **Interpreters and pleaders** who could move between systems.
 
 Many of them became the elites of independent states, which is part of why the systems
-survived. It also produced resentment at the category itself. The indigénat's summary
+survived. The same dependence shaped how colonial states ended slavery: Northern
+Nigeria abolished the legal status of slaves in 1901 without freeing them, to protect
+the aristocracies indirect rule relied on (LAW-175). It also produced resentment at the
+category itself. The indigénat's summary
 punishments and the subject-citizen line in French Africa were among the most bitterly
 remembered features of colonial rule, precisely because they made inequality a legal
 status rather than a practice.
