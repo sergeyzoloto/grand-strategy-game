@@ -37,7 +37,7 @@ absence:
   - region: oceania
     note: No anthropogenic lead burden before contact. Australian and Pacific societies did not smelt metals, so the silver-lead byproduct chain that begins this entry never started, and the only lead reaching them was the trace atmospheric fallout of Eurasian smelting, too small to matter. The burden arrives with colonial mining, lead paint and later leaded petrol — Queensland's childhood lead poisoning from paint is identified in the 1890s and 1900s — as an import rather than an inheritance.
   - region: americas
-    note: Pre-contact North America north of Mesoamerica had metalworking without smelting. Native copper and occasionally galena were worked cold or used as pigment, so there was no cupellation, no litharge, and no rising lead stock in soil or water. The absence is precise: the craft that creates the burden is smelting argentiferous ore, not using metal, and a metal-using society without smelting carries almost none of it.
+    note: "Pre-contact North America north of Mesoamerica had metalworking without smelting. Native copper and occasionally galena were worked cold or used as pigment, so there was no cupellation, no litharge, and no rising lead stock in soil or water. The absence is precise: the craft that creates the burden is smelting argentiferous ore, not using metal, and a metal-using society without smelting carries almost none of it."
 prereqs: [ENG-010]
 enables: []
 see_also: [COM-140, HLT-030, ENG-165, ENG-275, HLT-150]

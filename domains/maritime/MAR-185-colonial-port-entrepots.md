@@ -29,7 +29,7 @@ region_variants:
     note: On the Swahili coast the Portuguese built Fort Jesus at Mombasa in 1593, but Omani forces took it in 1698, and in 1840 Sayyid Said moved his capital to Zanzibar, which became the dominant entrepôt of the East African coast — cloves, ivory and the slave trade funnelled through one island's customs house. The contest for the coast's trade was won by a Gulf Arab maritime state, not a European one, for most of two centuries.
   - region: middle-east
     date_start: 1839
-    note: Britain seized Aden in 1839 as a coaling station on the steam route to India, and made it a free port in 1850. It illustrates the steam-age version of the entrepôt: a position on a route whose value came from fuel and transshipment rather than from a productive hinterland, and whose worth multiplied once the Suez Canal opened in 1869.
+    note: "Britain seized Aden in 1839 as a coaling station on the steam route to India, and made it a free port in 1850. It illustrates the steam-age version of the entrepôt: a position on a route whose value came from fuel and transshipment rather than from a productive hinterland, and whose worth multiplied once the Suez Canal opened in 1869."
   - region: europe
     date_start: 1639
     note: The British East India Company builds its Indian presidencies at Madras from 1639, Bombay from 1668 (acquired as Catherine of Braganza's dowry), and Calcutta from 1690, each a fortified factory that grew into a port city taxing and transshipping for a vast hinterland. The companies were the operating form (COM-150), and the ports were the assets they actually fought for.
