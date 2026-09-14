@@ -346,7 +346,7 @@ PHI-050,"Hebrew Prophetic Ethics: Covenant, Critique of Power, and Social Justic
 PHI-060,Daoism: Non-Action and Naturalness,philosophy,,core,drafted,medium,-600,-200,era,1,PHI-030,0,,TRUE,daoism; wu-wei; ziran; laozi; zhuangzi
 PHI-070,Non-Violence (Jainism),philosophy,,core,drafted,medium,-599,-527,era,1,PHI-030,0,,TRUE,jainism; mahavira; ahimsa; anekantavada
 PHI-080,Confucian Universal Ethics and Ritual (Li),philosophy,,core,drafted,medium,-551,-221,era,1,PHI-030,1,PHI-210,TRUE,confucianism; li; ren; virtue-ethics
-PHI-090,Nirvana and the Four Noble Truths (Buddhism),philosophy,religion,core,drafted,medium,-480,-400,era,1,PHI-030,1,PHI-180,TRUE,buddhism; four-noble-truths; nirvana; anatta
+PHI-090,Nirvana and the Four Noble Truths (Buddhism),philosophy,religion,core,drafted,medium,-480,-400,era,1,PHI-030,1,PHI-175,TRUE,buddhism; four-noble-truths; nirvana; anatta
 PHI-100,The Socratic Turn,philosophy,,core,drafted,medium,-470,-399,year,1,NAT-020,2,PHI-140; PHI-150,TRUE,socrates; elenchus; dialectic; ethics
 PHI-110,Mohism: Universal Concern and Early Consequentialism,philosophy,war,core,drafted,medium,-470,-221,era,1,PHI-030,0,,TRUE,mohism; mozi; jian-ai; consequentialism
 PHI-120,Cynicism and the Rejection of Convention,philosophy,,standard,drafted,medium,-412,-323,era,1,PHI-030,0,,FALSE,cynicism; diogenes; anti-conventionalism
@@ -355,7 +355,8 @@ PHI-140,Justice and the Politics of the Polis,philosophy,law,core,drafted,medium
 PHI-150,The Collapse of the Polis and Hellenistic Ethics,philosophy,,core,drafted,medium,-323,-30,era,1,PHI-140,1,PHI-160,TRUE,stoicism; epicureanism; skepticism; hellenistic-philosophy
 PHI-160,Natural Law,philosophy,law,core,drafted,medium,-300,1274,era,2,PHI-140; PHI-150,1,PHI-270,TRUE,natural-law; stoicism; aquinas; mutazila
 PHI-170,Suppression and Closure of Philosophical Institutions,philosophy,,core,drafted,high,-213,529,era,2,PHI-030; PHI-130,0,,FALSE,book-burning; qin-dynasty; academy-of-athens; justinian; suppression
-PHI-180,Chan/Zen: Practice as Epistemology,philosophy,,core,drafted,medium,500,1253,era,1,PHI-090,0,,TRUE,chan-buddhism; zen; koan; dogen; bodhidharma
+PHI-175,Mahāyāna: Emptiness and the Bodhisattva,philosophy,religion; media; commerce; migration,core,drafted,medium,-100,500,era,1,PHI-090,1,PHI-180,TRUE,mahayana; sunyata; emptiness; nagarjuna; madhyamaka; yogacara; vasubandhu; bodhisattva; lotus-sutra; kumarajiva; xuanzang; samye-debate; pure-land; kushan; nalanda
+PHI-180,Chan/Zen: Practice as Epistemology,philosophy,,core,drafted,medium,500,1253,era,1,PHI-175,0,,TRUE,chan-buddhism; zen; koan; dogen; bodhidharma
 PHI-190,Advaita Vedanta (Shankara),philosophy,religion,core,drafted,medium,700,750,century,1,PHI-040,0,,TRUE,advaita-vedanta; shankara; non-dualism; maya
 PHI-200,Falsafa: Islamic Peripatetic Philosophy and the Reason-Revelation Synthesis,philosophy,nature; religion,core,drafted,high,850,1198,era,1,NAT-050,1,PHI-220,TRUE,falsafa; avicenna; averroes; al-ghazali; al-farabi; incoherence
 PHI-210,Neo-Confucianism,philosophy,law,core,drafted,medium,1000,1200,century,1,PHI-080,0,,FALSE,neo-confucianism; zhu-xi; li-principle; qi

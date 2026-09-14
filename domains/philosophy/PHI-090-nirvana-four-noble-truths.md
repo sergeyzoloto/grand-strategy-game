@@ -17,8 +17,8 @@ absence:
   - region: south-asia
     note: The Upanishadic tradition (PHI-040) the Buddha teaches against holds that liberation comes through realizing the self's identity with an ultimate reality (Brahman) — Buddhism's anatta (no-self) doctrine instead denies there is any fixed, essential self to be identified with anything at all, a direct doctrinal rejection rather than a variant of the tradition it emerges alongside.
 prereqs: [PHI-030]
-enables: [PHI-180]
-see_also: [PHI-040, PHI-070, PHI-190, PHI-210, PHI-020, REL-060, PHI-100]
+enables: [PHI-175]
+see_also: [PHI-040, PHI-070, PHI-190, PHI-210, PHI-020, REL-060, PHI-100, PHI-180]
 contested: true
 contested_note: "The Buddha's traditional dates (Theravada chronology places his death around 544 BCE) are substantially earlier than the 'corrected' chronology most historians now favor (death around 400 BCE, with birth correspondingly later than traditional accounts), a roughly century-and-a-half discrepancy with real consequences for dating Buddhism's relationship to other South Asian developments. Model the Buddha's dates using the historians' corrected chronology (era precision) while noting traditional Buddhist chronology differs substantially and is not simply an error to be corrected away within Buddhist historiography itself."
 stats_touched: []
@@ -61,6 +61,11 @@ not merely intellectual assent to a proposition, which is part of why the
 doctrine and the institutional practice-community that sustains it (the
 Sangha, REL-060) develop as tightly linked from the tradition's earliest
 period rather than as separable doctrine-then-institution stages.
+
+The tradition did not stay renunciant or scholastic in the Abhidharma form. PHI-175
+carries Mahayana, which turned Buddhist analysis on its own elements and replaced
+individual liberation with the bodhisattva's vow to save all beings; PHI-180's Chan
+emerged from it.
 
 ## Regional specifics
 

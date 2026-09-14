@@ -21,7 +21,7 @@ absence:
     note: Jesuit missionaries in Ming and Qing China (Matteo Ricci prominent among them) pursue a deliberate top-down accommodation strategy — mastering Confucian classical learning and court etiquette to gain access to and influence the imperial court and scholar-official elite specifically — achieving real but ultimately limited and precarious conversion reach, contained by an ongoing Rites Controversy over how much Chinese ritual practice a convert could retain, before the mission's influence collapses following papal rejection of that same accommodation.
 prereqs: [REL-070, REL-050]
 enables: []
-see_also: [MIG-070, REL-090, MED-070]
+see_also: [MIG-070, REL-090, MED-070, PHI-175]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]
@@ -60,6 +60,9 @@ cultural and diplomatic reach into regions no accompanying army or
 state ever directly controlled — a genuinely different mechanism of
 influence-projection than territorial conquest, operating on cultural
 and institutional persuasion instead.
+
+Mahayana's missionaries into China were often Central Asian monks travelling the Silk
+Road. PHI-175 carries that transmission and the regional schools it produced.
 
 ## Regional specifics
 

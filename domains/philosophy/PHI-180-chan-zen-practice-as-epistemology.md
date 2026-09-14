@@ -17,9 +17,9 @@ region_variants:
     date_start: 1200
     note: Dogen's transmission of Soto Zen to Japan in the early 13th century (formalized by his 1253 death) adapts Chinese Chan's practice-as-epistemology stance into a distinct Japanese institutional and doctrinal form, most notably shikantaza ("just sitting") meditation practiced as itself already the expression of enlightenment rather than as a means toward a separate future enlightenment goal — a real doctrinal refinement, not merely a geographic relocation of an unchanged Chinese teaching.
 absence: []
-prereqs: [PHI-090]
+prereqs: [PHI-175]
 enables: []
-see_also: [PHI-210, PHI-030, PHI-080, PHI-150, PHI-290]
+see_also: [PHI-210, PHI-030, PHI-080, PHI-150, PHI-290, PHI-090]
 contested: true
 contested_note: "Chan's own traditional lineage narrative — an unbroken chain of patriarchs transmitting a 'special transmission outside the scriptures' back to Bodhidharma and ultimately the Buddha himself — is substantially a retrospective construction: Dunhuang manuscript discoveries reveal early Chan history was considerably more contested and multi-branched than the later standardized lineage account admits, with Bodhidharma's own historicity genuinely uncertain. Model Chan's foundational lineage claim as a legitimating narrative constructed well after the fact (a pattern comparable to this project's other 'invented tradition' cases, PHI-290) rather than as reliable history of the tradition's actual early transmission."
 stats_touched: [habitus formation]
@@ -62,6 +62,12 @@ structure (comparable to PHI-030's general schools-of-thought mechanism)
 carries a different kind of institutional authority than a scholastic
 teaching lineage's — one grounded in personally certified experiential
 attainment rather than in demonstrated command of doctrine.
+
+Chan did not descend from the Four Noble Truths directly. It emerged from six
+centuries of Mahayana: Nagarjuna's argument that no concept reaches ultimate truth is
+the theory behind its distrust of words, and the Chinese schools and translations
+that preceded it are its immediate milieu. PHI-175 carries that tradition, including
+the Samye debate in which Tibet chose the Indian gradual path over Chan's sudden one.
 
 ## Regional specifics
 

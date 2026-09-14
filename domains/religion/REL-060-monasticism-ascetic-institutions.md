@@ -21,7 +21,7 @@ absence:
     note: Ethiopian Orthodox monasticism, tracing its own tradition to very early contact with Egyptian desert monasticism, develops into one of the most sustained and socially central monastic traditions anywhere, with monasteries functioning as major regional centers of literacy, land management, and political influence for over a millennium — a case where the usual origin-versus-periphery framing in monastic history undersells a tradition that became genuinely central to its own society's institutional life.
 prereqs: [REL-020]
 enables: [HLT-160, REL-250, REL-090, REL-200, REL-180]
-see_also: [PHI-090, LAW-130, PHI-030]
+see_also: [PHI-090, LAW-130, PHI-030, PHI-175]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]
@@ -62,6 +62,10 @@ refuge, alternative career path, or major economic actor in its own right
 — a young person entering a monastery exits the ordinary secular social
 and economic system entirely while remaining fully provided for within a
 parallel institutional one.
+
+Mahayana changed what monasteries were for without abolishing them. PHI-175 carries
+the bodhisattva ideal, under which the laity could reach the goal themselves and
+monastic patronage became a way for householders to make merit.
 
 ## Regional specifics
 

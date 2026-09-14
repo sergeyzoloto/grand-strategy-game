@@ -28,7 +28,7 @@ absence:
     note: The Kerala school, from Madhava around 1400, worked with infinite series for the sine, cosine and arctangent and handled infinite processes with real sophistication and no foundational crisis. Justification in this tradition (yukti, upapatti) established each result by its own demonstration rather than by derivation from a shared axiomatic base, so there was no single foundation for a paradox to undermine. European calculus, working with comparable infinite processes, drew Berkeley's attack on its foundations in 1734 precisely because it did claim one.
 prereqs: [MTH-030, MTH-025, MTH-045]
 enables: [MTH-080]
-see_also: [PHI-390, NAT-220, NAT-150, MTH-020, MTH-015]
+see_also: [PHI-390, NAT-220, NAT-150, MTH-020, MTH-015, PHI-175]
 contested: true
 contested_note: "Whether crisis is the right description is disputed. Historians of mathematics including Ferreiros argue that the great majority of working mathematicians were unaffected — analysis, number theory and applied mathematics went on producing results through the whole period — and that the crisis belonged to a small community concerned with foundations rather than to mathematics as practised. The opposing view holds that the foundational community set the agenda of the following half-century, including the programme whose failure produced computability theory, so a crisis of a small community was nonetheless consequential. Model it as branching by audience — near-zero effect on the output of working mathematics, and a large effect on the research agenda and on the authority of foundations as a field. Separately, the Hippasus story is legend and should be carried only as the tradition's own account of the incommensurability discovery, not as an event."
 stats_touched: [intellectual authority]
@@ -108,6 +108,11 @@ expel mathematicians from the paradise Cantor had created is a statement
 about authority rather than logic — a refusal to accept a repair that cost
 too much of the existing structure — and it is the position most working
 mathematicians effectively took.
+
+Buddhist philosophy supplies a much earlier case of a tradition turning its method on
+its own foundations. Nagarjuna applied Abhidharma analysis to the elements it treated
+as ultimate and found them empty, but drew the opposite lesson: the search for
+foundations was itself the error. PHI-175 carries that branch.
 
 ## Regional specifics
 

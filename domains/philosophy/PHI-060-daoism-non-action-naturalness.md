@@ -18,7 +18,7 @@ absence:
     note: Greek Cynicism (PHI-150) reaches a partially comparable rejection of convention and artificial social striving through Diogenes's deliberate flouting of custom, but pursues it as confrontational public performance aimed at exposing others' hypocrisy rather than as wu wei's quieter alignment with an impersonal cosmic process — a superficially similar anti-conventionalism arrived at through a very different underlying logic.
 prereqs: [PHI-030]
 enables: []
-see_also: [PHI-080, PHI-130, PHI-150, PHI-120, PHI-100, PHI-070, PHI-210]
+see_also: [PHI-080, PHI-130, PHI-150, PHI-120, PHI-100, PHI-070, PHI-210, PHI-175]
 contested: true
 contested_note: "Whether the Daodejing was composed by a single historical author (the traditionally posited 'Laozi') or is a composite text assembled and edited across generations, and how it relates chronologically to the more clearly single-authored Zhuangzi, is genuinely unresolved textual-critical scholarship, not a settled matter of tradition versus modern skepticism only. Model 'Daoism' in this era as a textual tradition with real authorial and compositional uncertainty rather than as originating from one identifiable founder-philosopher the way PHI-100's Socrates or PHI-070's Mahavira more plausibly do."
 stats_touched: []
@@ -57,6 +57,10 @@ refuge for scholars and officials disillusioned with or excluded from
 court politics — a socially legible "drop out and align with the Dao
 instead" option that Confucian and Legalist officialdom, both fully
 invested in active participation in state affairs, don't provide.
+
+Early Chinese readers took Buddhist emptiness for Daoist non-being, and translators
+rendered it in Daoist vocabulary until Kumarajiva's terminology separated them.
+PHI-175 carries Mahayana and that encounter.
 
 ## Regional specifics
 
