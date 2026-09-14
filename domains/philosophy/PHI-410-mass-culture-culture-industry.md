@@ -19,7 +19,7 @@ region_variants:
 absence: []
 prereqs: [PHI-350, MED-130]
 enables: []
-see_also: [HLT-340, MED-140, MED-150]
+see_also: [HLT-340, MED-140, MED-150, PHI-305]
 contested: true
 contested_note: "Walter Benjamin, closely associated with the same Frankfurt School milieu, takes a substantially more ambivalent and at points hopeful position in 'The Work of Art in the Age of Mechanical Reproduction': stripping art of its traditional ritual 'aura' through mass reproduction could, he argues, be democratizing and politically emancipatory rather than simply pacifying, a position in real, documented tension with Adorno's and Horkheimer's more thoroughly pessimistic culture-industry thesis. Model mass-produced culture's effect as genuinely contested between standardizing/pacifying and democratizing/access-expanding readings, rather than resolving the internal Frankfurt-School-adjacent disagreement in either direction."
 stats_touched: []
@@ -61,6 +61,10 @@ produced consumption — directly parallel to, and reinforcing, the
 communal-network thinning HLT-340 describes elsewhere in this record,
 with mass-marketed cultural product filling social and psychological
 space previously occupied by other, less commercially mediated activity.
+
+The culture-industry critique supplied part of the vocabulary for later technological
+disenchantment. PHI-305 carries the population-level cycle of confidence in and
+distrust of expertise that those arguments came to describe.
 
 ## Regional specifics
 

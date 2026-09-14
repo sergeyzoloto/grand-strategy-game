@@ -21,7 +21,7 @@ absence:
     note: East Asian contributions to quantum theory's foundational development in this era are minimal, with the region's major independent contributions to 20th-century physics concentrating instead in the subsequent generation once postwar institution-building (including Japan's own postwar physics community) had time to mature — a case of a later rather than absent contribution.
 prereqs: [NAT-180, MTH-040, MTH-045]
 enables: [ENG-330]
-see_also: [NAT-040, NAT-230, MTH-090, MTH-080]
+see_also: [NAT-040, NAT-230, MTH-090, MTH-080, PHI-305]
 contested: true
 contested_note: "The 'Copenhagen interpretation' (Bohr and Heisenberg's reading of quantum mechanics as describing genuine indeterminacy rather than merely incomplete knowledge) is not the only interpretation consistent with the mathematics, and rival interpretations (many-worlds, pilot-wave theory, among others) remain live, unresolved questions in the philosophy and foundations of physics rather than settled matters. Model the mathematical predictions of quantum mechanics as extremely well-confirmed and not in dispute, while treating the deeper interpretive question of what the mathematics actually implies about the nature of reality as a genuinely open, unresolved question distinct from the theory's predictive success."
 stats_touched: []
@@ -69,6 +69,10 @@ rather than merely unknown but fixed values — forces physics to accept a
 theory that works extremely well while leaving open deep, unresolved
 questions about what it actually implies about the nature of reality, a
 tension the field has carried for a century without full resolution.
+
+The physics of this period led within a generation to nuclear weapons, making the
+most prestigious science also the source of the greatest threat. PHI-305 carries the
+effect on public trust in expertise.
 
 ## Regional specifics
 

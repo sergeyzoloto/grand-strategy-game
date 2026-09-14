@@ -27,7 +27,7 @@ absence:
     note: Formal European medicine has no comparable deliberate-immunization practice of its own before these external transmissions; Jenner's 1796 cowpox vaccination is a refinement (a safer, non-smallpox-derived method) of an already-imported concept, not the origin of the underlying idea of deliberate immunization.
 prereqs: [HLT-150]
 enables: []
-see_also: []
+see_also: [PHI-305]
 contested: false
 contested_note: ""
 stats_touched: [immunological capital, medical efficacy]
@@ -71,6 +71,10 @@ and publicize — both routes cut directly against the era's usual authority
 hierarchy of whose medical knowledge counted, and both faced significant
 resistance from formally credentialed physicians specifically because of
 where the knowledge came from, not because of its measured effectiveness.
+
+Acceptance of vaccination depends on public trust in expertise, which rises slowly
+and falls sharply after attributed disasters. PHI-305 carries that cycle, including
+contemporary vaccine hesitancy.
 
 ## Regional specifics
 

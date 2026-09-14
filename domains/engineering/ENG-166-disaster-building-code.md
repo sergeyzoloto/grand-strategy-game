@@ -43,7 +43,7 @@ absence:
     note: "A felt yurt on a lattice frame does not start a conflagration that spreads through a city, does not collapse lethally in an earthquake, and is rebuilt in hours. Mobile pastoral housing presents none of the externality that makes codes necessary: the risk does not pass to neighbours, because there is no dense fabric for it to pass through. The building code is a property of dense settled cities of durable combustible or heavy buildings."
 prereqs: []
 enables: []
-see_also: [MAR-337, LAW-075, LAW-200, ENG-040, ENG-055, FIN-090, ENG-310, MIG-170, ENG-170, ENG-065]
+see_also: [MAR-337, LAW-075, LAW-200, ENG-040, ENG-055, FIN-090, ENG-310, MIG-170, ENG-170, ENG-065, PHI-305]
 contested: true
 contested_note: "Whether building codes save lives or relocate risk is disputed. Engineering evidence is strong that enforced seismic and fire codes reduce deaths in buildings built to them — Chile's code, raised after the Talca earthquake of 1928 and Chillan in 1939, is the standard example of a society that dies less in comparable shaking. Critics of code-led housing policy (Turner, Housing by People, 1976, and later work on informal settlement) argue that codes raise the cost of legal construction beyond what the poor can pay, push them into informal building that no code reaches, and so concentrate disaster mortality where regulation cannot go. Model a code's effect as conditional on enforcement capacity and on the cost gap between legal and informal building: an enforced code in a city where most people can afford to comply saves lives, and the same code in a city where they cannot mainly moves the dead into the informal districts."
 stats_touched: [building safety floor, urban absorption capacity, maritime safety floor]
@@ -193,6 +193,10 @@ The safety each code creates was paid for by the people who died before it and i
 enjoyed by those who can afford to comply. The political fight is rarely over whether
 buildings should be safe. It is over who pays for the safety, and whether the people
 who cannot pay are allowed to build at all.
+
+Bhopal also became an emblem of industrial risk exported to the poor and a charge
+against expertise itself. PHI-305 carries how such disasters lower public trust in
+expert-led change.
 
 ## Regional specifics
 

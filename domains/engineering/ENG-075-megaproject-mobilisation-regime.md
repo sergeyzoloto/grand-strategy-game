@@ -55,7 +55,7 @@ absence:
     note: "Rapa Nui's moai were carved and moved by kin-based groups competing in display, under chiefs but without a bureaucratic state or a labour register. Like Gobekli Tepe, the island shows monumental construction without a state apparatus: effort organised through lineage and prestige leaves no administrative capability that can be turned to war, tax or famine relief, which is what distinguishes it from the mobilisation regimes in this entry."
 prereqs: [FIN-020]
 enables: []
-see_also: [ENG-020, COM-070, WAR-035, ENG-065, AGR-100, DIP-050, MIG-250, MAR-285]
+see_also: [ENG-020, COM-070, WAR-035, ENG-065, AGR-100, DIP-050, MIG-250, MAR-285, PHI-305]
 contested: true
 contested_note: "Two debates bear on this entry. First, whether megaprojects built state capacity or presupposed it: Wittfogel's hydraulic despotism (carried in AGR-100) held that large works produced centralised states, and archaeology of Mesopotamia and Egypt found the states existed before the largest works. This entry reads the relationship as reciprocal — a state needs some capacity to begin a megaproject, and the project enlarges and trains it. Second, whether megaprojects repay their cost: Flyvbjerg's studies of modern megaprojects found most run over budget and over time and deliver less than forecast, and critics of large dams (the World Commission on Dams report of 2000) found their displacement and ecological costs routinely understated. Model a megaproject's return as three separate outputs — the works, the retained apparatus, and legitimacy — each of which can succeed while another fails."
 stats_touched: [mobilisation capacity, mobilisable manpower, coerced labour stock, legibility, maintenance debt]
@@ -176,6 +176,10 @@ The regime's return — the apparatus, the legitimacy — accrues to the state. 
 falls on the bodies of the people it moves. Displacement is the modern megaproject's
 largest human cost, and MIG-250 carries state-driven population movement in general;
 the Three Gorges resettled more than a million people.
+
+Megaprojects are also where the cycle of technological optimism and disenchantment is
+most visible: Nehru's temples of modern India became the Narmada protests. PHI-305
+carries that cycle.
 
 ## Regional specifics
 

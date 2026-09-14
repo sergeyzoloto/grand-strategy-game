@@ -47,7 +47,7 @@ absence:
     note: No domestic competition for schooling in the People's Republic of China. The state bars religious instruction of minors and holds the school and broadcast systems as monopolies, so religious bodies have no legal route to either instrument, and the competition this entry describes does not run. What remains is cross-border Christian radio, unregistered house-church instruction, and later tightly policed online content — evidence that the mechanism requires the secular settlement's guarantee of pluralism and stops where coercion replaces it.
 prereqs: [REL-252]
 enables: []
-see_also: [LAW-165, MED-130, MED-140, MED-150, REL-090, REL-230, REL-255]
+see_also: [LAW-165, MED-130, MED-140, MED-150, REL-090, REL-230, REL-255, PHI-305]
 contested: false
 contested_note: ""
 stats_touched: [religious authority, intermediary dependence, broadcast reach, information sovereignty, production cost floor, literacy]
@@ -198,6 +198,11 @@ school prayer. Each of those acts is itself a move in the competition. The
 post-settlement state is neutral among religions in principle and a participant in
 practice, because every rule about what schools may teach or broadcasters may say
 favours some religious body.
+
+Religious mobilisation and technological disenchantment frequently run together,
+because both reject the authority of the same modernising elite. PHI-305 carries the
+Iranian case, where the revolution joined rejection of imposed technocratic
+modernisation to religious revival.
 
 ## Regional specifics
 

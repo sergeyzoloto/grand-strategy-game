@@ -18,7 +18,7 @@ region_variants:
     note: Ethiopian philosopher Zera Yacob's Hatata, composed in 1667, independently develops a methodical-doubt argument strikingly parallel to Descartes's — subjecting inherited religious and scriptural authority to systematic rational scrutiny and grounding reliable belief in reason alone — with no contact whatsoever between Yacob and the roughly contemporaneous Cartesian tradition, a genuine case of convergent rationalist method rather than diffusion from Europe.
 absence: []
 prereqs: [PHI-220]
-enables: [PHI-310, PHI-320, PHI-370, PHI-360, PHI-260]
+enables: [PHI-310, PHI-320, PHI-370, PHI-360, PHI-260, PHI-305]
 see_also: [PHI-270]
 contested: true
 contested_note: "Descartes's own foundationalist project faces the 'Cartesian Circle' objection, raised by his contemporary Antoine Arnauld and debated ever since: Descartes uses clear-and-distinct perception to prove God's existence and non-deceiving nature, then invokes God's non-deception to guarantee the reliability of clear-and-distinct perception generally — an apparently circular argument that has never received a consensus resolution among Descartes scholars. Model the cogito's foundational certainty as secure on its own narrow terms while treating the wider project of certifying all clear-and-distinct perceptions as reliable knowledge as resting on argument many specialists consider not fully successful."
@@ -62,6 +62,10 @@ independent authority to reach truth that theological or classical
 authority previously held more exclusively — a democratizing epistemic
 move in principle, even though rationalism's actual practitioners
 remained a narrow, highly educated elite in practice.
+
+Confidence in method grew into confidence in progress. PHI-305 carries the
+Enlightenment and positivist belief that reason and science would improve human life
+without limit, and the cycle of disenchantment that followed its disconfirmations.
 
 ## Regional specifics
 

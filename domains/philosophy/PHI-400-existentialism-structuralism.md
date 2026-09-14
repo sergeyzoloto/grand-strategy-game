@@ -19,7 +19,7 @@ region_variants:
 absence: []
 prereqs: [PHI-380, PHI-360, PHI-340]
 enables: []
-see_also: [PHI-390, HLT-320]
+see_also: [PHI-390, HLT-320, PHI-305]
 contested: true
 contested_note: "Whether structuralism's 'death of the subject' — impersonal underlying structures (language, kinship, discursive formation), not individual conscious agents, as the proper unit of philosophical and social analysis — represents a genuine advance over existentialism's individual-freedom-centered starting point, or a totalizing overreach that erases real individual agency and moral responsibility, is a foundational and still-live dispute in philosophy and social theory, not merely a settled historical succession from one school to the next. Model individual agency and impersonal structure as competing, both-partially-valid explanatory registers whose relative weight is itself the contested variable, rather than assuming either fully displaces the other."
 stats_touched: []
@@ -69,6 +69,10 @@ individual's conscious choice — a genuinely different account of how much
 credit or blame an individual actually deserves for who they've become,
 with real stakes for how each framework treats moral and political
 responsibility.
+
+The questioning of the rational subject gave later disenchantment with progress part
+of its language. PHI-305 carries that disenchantment as a cycle in public trust in
+expertise.
 
 ## Regional specifics
 

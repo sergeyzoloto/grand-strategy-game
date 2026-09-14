@@ -21,7 +21,7 @@ absence:
     note: Mass antibiotic access lags decades behind Europe/North America across most of the continent even after global availability increases, an access and distribution gap rather than a knowledge or capability gap, with consequences (untreated bacterial infection mortality persisting long after a cure exists elsewhere) that are purely a function of supply chains and purchasing power, not of anything else.
 prereqs: [HLT-310]
 enables: []
-see_also: []
+see_also: [PHI-305]
 contested: false
 contested_note: ""
 stats_touched: [antibiotic pool]
@@ -59,6 +59,10 @@ of `medical efficacy` gap into a period of a few decades in the regions with
 early access, while regions with delayed access continue experiencing
 pre-antibiotic mortality patterns for those same conditions well into the
 20th century and beyond.
+
+Resistance makes antibiotics the clean instance of a solution generating its own
+problem class. PHI-305 carries how such cumulative self-inflicted problems erode
+public trust in expertise.
 
 ## Regional specifics
 

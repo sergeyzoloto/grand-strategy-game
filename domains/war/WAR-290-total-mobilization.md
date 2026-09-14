@@ -21,7 +21,7 @@ absence:
     note: Japan's total mobilization effort, while extensive, operates from a substantially smaller industrial and raw-material base than the United States and increasingly cannot sustain the same conversion ratio as the war progresses and Allied sea-lane interdiction (MAR-220, MAR-320) cuts off critical imports — mobilization doctrine alone cannot manufacture resources a state's territory and trade access don't provide.
 prereqs: [WAR-200, MED-100]
 enables: []
-see_also: [MAR-220, MAR-320, WAR-275, MTH-084, WAR-037, LAW-075]
+see_also: [MAR-220, MAR-320, WAR-275, MTH-084, WAR-037, LAW-075, PHI-305]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -69,6 +69,11 @@ openings in the record. The obligation a state incurs by mobilising its whole
 population, and the fiscal emergency of paying for it, lower the ability of
 incumbents to block reform, which is why suffrage expansion and welfare
 settlements cluster after the world wars (LAW-075).
+
+The war was also the first mass disconfirmation of faith in progress: the chemistry,
+engineering and organisation of industrial society applied to killing. PHI-305
+carries the collapse of expert trust that followed, from Spengler to Liang Qichao's
+report from postwar Europe.
 
 ## Regional specifics
 

@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-250, PHI-270]
 enables: []
-see_also: [PHI-390]
+see_also: [PHI-390, PHI-305]
 contested: true
 contested_note: "William James's formulation that a belief is 'true' insofar as it usefully guides action (its 'cash value') was immediately and heavily criticized by contemporaries — Bertrand Russell prominently mocked it as collapsing truth into mere usefulness — and the objection remains standard: does 'useful to believe' collapse into 'true,' or does defining truth partly by usefulness risk a circular or relativist result where whatever one finds convenient to believe counts as true? Model pragmatist truth as a genuinely distinct, contested theory of truth (not merely a theory of justified belief) whose relationship to usefulness-versus-correspondence-with-fact remains a live, unresolved dispute rather than a settled refinement of earlier theories."
 stats_touched: []
@@ -59,6 +59,10 @@ institutions themselves function best as ongoing, revisable experiments in
 collective problem-solving rather than as the application of a fixed
 political doctrine — a distinctly practice-oriented, anti-dogmatic civic
 philosophy with real influence on American public education.
+
+Pragmatism's confidence that ideas are tools that work belongs to the high point of
+nineteenth- and early twentieth-century faith in expertise. PHI-305 carries that
+confidence and its collapses after 1914 and 1945.
 
 ## Regional specifics
 
