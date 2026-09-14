@@ -30,7 +30,7 @@ absence:
     note: The 1923 Greek-Turkish population exchange is unusual among forced-movement events in this record for being a formally negotiated, internationally-supervised bilateral treaty instrument (administered under League of Nations auspices) rather than a unilateral state action or an unplanned mass flight — the same forced-migration outcome, achieved through DIP's treaty machinery rather than through either war or administrative fiat alone.
 prereqs: [MIG-230, MTH-075]
 enables: []
-see_also: [LAW-110, MIG-240, MIG-210]
+see_also: [LAW-110, MIG-240, MIG-210, ENG-075]
 contested: false
 contested_note: ""
 stats_touched: [displacement pressure]
@@ -85,6 +85,10 @@ cases) exactly as forcibly as it moves recent migrants, collapsing any
 distinction between "recent migrant" and "long-settled resident" once a
 state decides the relevant category is ancestry or origin rather than
 residence.
+
+Megaprojects are a major driver of state-directed displacement: the Aswan High Dam
+moved about a hundred thousand Nubians and the Three Gorges more than a million
+people. ENG-075 carries the megaproject regime behind those moves.
 
 ## Regional specifics
 

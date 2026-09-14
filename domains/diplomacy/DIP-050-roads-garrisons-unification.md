@@ -21,7 +21,7 @@ absence:
     note: Roman road and garrison infrastructure achieves comparable administrative reach but through a more explicitly military-first logic (roads built substantially for legion movement, with civil administrative and commercial use following) than the Persian and Inca cases, where road networks appear designed from the outset with integrated administrative messaging as a co-equal purpose alongside military logistics.
 prereqs: [ENG-090]
 enables: []
-see_also: [DIP-040]
+see_also: [DIP-040, ENG-075]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -63,6 +63,10 @@ cuts both ways, since the same infrastructure that delivers protection and
 integration into a wider trade and administrative network also delivers
 extraction demands and military presence a subject population has no real
 ability to refuse.
+
+Imperial roads were also built as megaprojects, and the apparatus that built them —
+registers, rotating labour, storehouses — outlasted the construction. ENG-075 carries
+that mobilisation regime, including the Inca road system built on mit'a.
 
 ## Regional specifics
 

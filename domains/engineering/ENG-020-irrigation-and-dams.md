@@ -24,7 +24,7 @@ absence:
     note: Andean terracing and canal irrigation (developed independently, reaching sophisticated scale under the Inca and predecessor cultures) achieves comparable agricultural water-management function without wheeled-vehicle transport or draft-animal-scale earth-moving equipment, relying instead on organized mass labor mobilization — a materially different engineering toolkit reaching a functionally similar outcome.
 prereqs: [ENG-060]
 enables: [ENG-080, AGR-100, ENG-065]
-see_also: [ENG-320, ENG-120, AGR-060, ENG-055]
+see_also: [ENG-320, ENG-120, AGR-060, ENG-055, ENG-075]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -67,6 +67,10 @@ A dam or canal is built once and must be maintained every year, and the silt tha
 fills a reservoir or channel does not wait on the budget. ENG-065 carries the
 political economy that makes that upkeep lose to new construction, and the failures
 that follow when it does.
+
+This entry owns hydraulic technique. The capacity to make a population build a dam or
+canal is a separate regime property shared with pyramids, walls and roads, and
+ENG-075 carries it, from the Sui Grand Canal to Aswan and the Three Gorges.
 
 ## Regional specifics
 

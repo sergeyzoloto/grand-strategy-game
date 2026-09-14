@@ -84,6 +84,7 @@ ENG-055,The Organic Energy Economy and Its Ceiling,engineering,agriculture; comm
 ENG-060,"Simple Machines: Lever, Pulley, Screw, and Wedge",engineering,,core,drafted,high,-3000,-250,era,0,,3,ENG-020; ENG-090; ENG-110,FALSE,simple-machines; lever; pulley; archimedes; mechanical-advantage
 ENG-065,Maintenance Debt and Infrastructure Failure,engineering,agriculture; commerce; law; finance,core,drafted,medium,-3000,2010,era,1,ENG-020,0,,TRUE,maintenance; infrastructure-failure; yellow-river; flood-control; water-boards; qanat; angkor; tank-cascade; blackout; cascade-failure; tight-coupling
 ENG-070,Sewer and Waste Removal Engineering,engineering,health,core,drafted,high,-2600,1875,era,1,ENG-080,1,HLT-090,FALSE,sewer; cloaca-maxima; bazalgette; great-stink; waste-removal
+ENG-075,The Megaproject as a Mobilisation Regime,engineering,finance; law; war; migration; religion,core,drafted,medium,-2560,2012,era,1,FIN-020,0,,TRUE,megaproject; mobilisation; corvee; mita; pyramids; grand-canal; great-wall; aqueduct; waqf; gulag; tva; aswan; three-gorges; legitimacy
 ENG-080,Water Supply Engineering,engineering,health; agriculture,core,drafted,high,-2500,1900,era,1,ENG-020,3,HLT-090; ENG-270; ENG-070,FALSE,aqueduct; qanat; hydraulic-engineering
 ENG-090,Roads and Bridges,engineering,war; commerce,core,drafted,high,-500,1533,era,1,ENG-060,3,REL-160; DIP-050; MED-030,FALSE,roads; bridges; inca-road-system; persian-royal-road
 ENG-110,"Concrete, Vault, and Dome",engineering,,core,drafted,medium,-100,1300,era,1,ENG-060,3,ENG-050; REL-110; ENG-130,FALSE,concrete; vault; dome; roman-concrete; muqarnas
@@ -114,7 +115,7 @@ ENG-320,Agrochemicals and Synthetic Fertilizers,engineering,agriculture; migrati
 ENG-330,Semiconductors,engineering,nature; commerce,core,drafted,high,1947,1990,century,2,ENG-190; NAT-210,2,ENG-340; MED-150,FALSE,semiconductor; transistor; integrated-circuit; fabrication
 ENG-340,Satellite Positioning,engineering,maritime; war; commerce; diplomacy; nature,core,drafted,medium,1973,2000,decade,3,MAR-335; ENG-330; NAT-220,0,,TRUE,gps; navstar; galileo; beidou; navic; selective-availability; positioning
 FIN-010,Coinage and the Invention of Money,finance,commerce,core,drafted,high,-3000,-400,era,0,,2,FIN-020; FIN-030,TRUE,coinage; commodity-money; lydia; barter
-FIN-020,"Cadastre, Tax, and Census",finance,law,core,drafted,medium,-3000,-100,era,1,FIN-010,12,FIN-030; FIN-060; FIN-100; FIN-050; FIN-140; FIN-240; REL-130; FIN-110; LAW-210; WAR-200; LAW-165; MTH-075,FALSE,cadastre; census; taxation; state-capacity
+FIN-020,"Cadastre, Tax, and Census",finance,law,core,drafted,medium,-3000,-100,era,1,FIN-010,13,FIN-030; FIN-060; FIN-100; FIN-050; FIN-140; FIN-240; REL-130; FIN-110; LAW-210; WAR-200; LAW-165; MTH-075; ENG-075,FALSE,cadastre; census; taxation; state-capacity
 FIN-030,"Credit, Interest, and Usury",finance,religion; law,core,drafted,high,-1800,1600,era,2,FIN-020; FIN-010,2,FIN-150; FIN-040,FALSE,credit; interest; usury; riba; moneylending
 FIN-040,Bills of Exchange and Negotiable Instruments,finance,commerce,core,drafted,high,700,1400,era,1,FIN-030,1,FIN-060,FALSE,bill-of-exchange; suftaja; negotiable-instrument; merchant-banking
 FIN-050,Paper Money and Fiat Currency,finance,,core,drafted,medium,806,1930,era,1,FIN-020,4,FIN-250; FIN-260; FIN-220; FIN-270,FALSE,paper-money; fiat-currency; jiaozi

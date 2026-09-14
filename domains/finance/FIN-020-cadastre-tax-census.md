@@ -23,7 +23,7 @@ absence:
   - region: middle-east
     note: Early Mesopotamian cadastral and tax administration (clay-tablet land surveys and grain-tax records) predates comparable systematic Egyptian Nilometer-based assessment by centuries in some respects, but neither achieves the household-level individual registration granularity Han China reaches — a difference in fiscal resolution, not in the basic underlying administrative concept.
 prereqs: [FIN-010]
-enables: [FIN-030, FIN-060, FIN-100, FIN-050, FIN-140, FIN-240, REL-130, FIN-110, LAW-210, WAR-200, LAW-165, MTH-075]
+enables: [FIN-030, FIN-060, FIN-100, FIN-050, FIN-140, FIN-240, REL-130, FIN-110, LAW-210, WAR-200, LAW-165, MTH-075, ENG-075]
 see_also: [AGR-100, AGR-120, MED-010, MTH-062, MED-085]
 contested: false
 contested_note: ""
@@ -66,6 +66,10 @@ regardless of whether the resulting tax burden is fairer or heavier than
 before. A register's physical form decides how far that reach extends: a
 bound census counts a population, while a card index of the same records
 makes any individual in it findable and re-sortable (MED-085).
+
+The same registers made large labour mobilisation possible. A state that can count
+and locate its people can rotate them through a pyramid site or a canal levy, and
+ENG-075 carries the megaproject as the regime that grows out of that capacity.
 
 ## Regional specifics
 

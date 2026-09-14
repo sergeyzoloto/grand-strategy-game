@@ -24,7 +24,7 @@ absence:
     note: The Roman road network's exceptionally durable construction (deep multi-layer foundations, cambered drainage) let a meaningful share of the network remain physically usable for travel and local trade for centuries after the Western Empire's 476 collapse ended any centralized maintenance program — a case where high enough upfront construction investment substitutes for standing maintenance spend, rather than every infrastructure type requiring it in equal measure.
 prereqs: [COM-080, AGR-100]
 enables: []
-see_also: [AGR-150, ENG-065]
+see_also: [AGR-150, ENG-065, ENG-075]
 contested: false
 contested_note: ""
 stats_touched: [route capacity]
@@ -71,6 +71,10 @@ maintenance into a growing rather than a fixed restoration cost.
 This entry carries the depletion of route capacity. ENG-065 carries why that
 depletion is so reliably allowed to happen — building is visible and maintenance is
 not — and extends the argument to hydraulic works and power grids.
+
+The Grand Canal was built by a mobilisation that destroyed the Sui dynasty within a
+generation, and the Tang inherited it. ENG-075 carries the megaproject as a
+mobilisation regime; this entry carries the canal's upkeep afterwards.
 
 ## Regional specifics
 

@@ -35,7 +35,7 @@ absence:
     note: No second interoceanic canal was ever built through Central America. The Nicaragua route was surveyed repeatedly from the 1850s, preferred by some American planners before Panama was chosen, and revived in concession form in the 2010s, but never constructed. Panama's canal therefore had no parallel route to absorb a closure or share the dimension-setting role, which is why a drought on one lake in 2023 could restrict traffic between two oceans — the absence of redundancy is what makes the chokepoint a single point of failure.
 prereqs: [COM-130]
 enables: []
-see_also: [MAR-330, MAR-370, WAR-275, MAR-038]
+see_also: [MAR-330, MAR-370, WAR-275, MAR-038, ENG-075]
 contested: false
 contested_note: ""
 stats_touched: [capital specificity, protection rent]
@@ -138,6 +138,10 @@ with Europe, which Suez had made cheap, became expensive again for eight years. 
 cities at the canal's approaches lost business. Shipyards that could build the
 larger ships gained it. The closure redistributed shipbuilding and port activity
 toward those able to serve the long route.
+
+The Suez Canal was dug largely by Egyptian corvee labour until 1864, and Nasser's
+nationalisation in 1956 followed the withdrawal of Western finance for the Aswan High
+Dam. ENG-075 carries both as megaprojects of mobilisation and legitimacy.
 
 ## Regional specifics
 

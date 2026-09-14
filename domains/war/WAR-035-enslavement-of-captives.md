@@ -40,7 +40,7 @@ absence:
     note: Northwest European chattel slavery contracts sharply between roughly 900 and 1200 and is replaced by serfdom, not by freedom. Dispersed arable worked by household tenants makes gang supervision expensive and rent extraction cheap, so the lord converts bound people into bound tenants — the coercion persists and the property form does not, which shows the two are separable variables rather than one.
 prereqs: [WAR-010, AGR-010, AGR-050]
 enables: [MIG-160, AGR-210, LAW-175]
-see_also: [WAR-020, WAR-070, LAW-020, LAW-040, COM-160, MIG-150, REL-240, PHI-140, PHI-270, AGR-090, MTH-060]
+see_also: [WAR-020, WAR-070, LAW-020, LAW-040, COM-160, MIG-150, REL-240, PHI-140, PHI-270, AGR-090, MTH-060, ENG-075]
 contested: true
 contested_note: "Three live disputes. Finley's societies-with-slaves versus slave-societies typology is widely used and widely attacked as too binary, with critics arguing the threshold is arbitrary and that it flatters the classical cases by making them exceptional. The role of slavery in Roman economic decline is unresolved — the older account in which conquest-fed supply collapses and drags the villa system down with it has been substantially revised toward continuity and toward other causes, and the entry should not assume the supply-shock story. The Nieboer-Domar hypothesis, that coerced labour appears where land is abundant relative to labour, predicts well in some cases and fails visibly in others including densely populated slaveholding societies, so treat it as one input to the supervision-cost term rather than as a law."
 stats_touched: [coerced labour stock, supervision cost, labour-saving incentive, legibility]
@@ -131,6 +131,11 @@ institution into something else.
 Ending it by law is a separate problem: emancipation removes the owner's claim
 without redistributing land or coercive power, and the transitional
 institutions that followed are carried in LAW-175.
+
+Coerced labour was one of several sources for monumental building, alongside paid
+rotation, community corvee such as mit'a, and penal labour. ENG-075 carries how that
+choice set the human cost of megaprojects and whether they preserved or spent the
+population.
 
 ## Regional specifics
 
