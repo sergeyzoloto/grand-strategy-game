@@ -30,7 +30,7 @@ absence:
     note: Comparable steam-power development does not occur independently in East Asia despite otherwise sophisticated mechanical and metallurgical traditions in this era, and the technology arrives only through direct Western technical transfer during the following century's industrial-modernization efforts — a genuinely Europe-originated technology rather than one with an independent regional counterpart to compare against.
 prereqs: [NAT-040, ENG-165]
 enables: [COM-170, COM-200, ENG-190, ENG-250, ENG-300, ENG-220, MAR-260]
-see_also: [NAT-180, ENG-055, ENG-120, ENG-210]
+see_also: [NAT-180, ENG-055, ENG-120, ENG-210, MAR-038]
 contested: false
 contested_note: ""
 stats_touched: [energy budget, extraction depth cost]
@@ -60,7 +60,10 @@ reciprocating power that doesn't depend on a specific geographic feature
 (a river's flow) the way a water wheel does — this location-independence is
 what lets industrial production concentrate wherever labor, raw material,
 and market access are best, rather than being tied to wherever a suitable
-watercourse happens to be.
+watercourse happens to be. At sea the same independence frees ships from
+the wind: a steamship keeps a schedule against wind and through calm, which
+ends the seasonal, directional route system sail had always worked inside
+(MAR-038).
 
 ## Social consequence
 

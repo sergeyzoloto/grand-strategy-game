@@ -197,11 +197,12 @@ LAW-215,Antitrust and the Limits of Combination,law,commerce; finance; engineeri
 LAW-220,Universal Suffrage,law,,standard,drafted,high,1893,1965,era,1,LAW-050,0,,FALSE,suffrage; voting-rights-expansion; voting-rights-act; indian-constitution
 LAW-225,Spectrum as Regulated Property,law,diplomacy; engineering; commerce; war,core,drafted,high,1906,1934,decade,2,MED-120; LAW-020,0,,FALSE,spectrum; licensing; radio-act; fcc; itu; interference; property
 LAW-230,Human Rights Protection,law,diplomacy,core,drafted,high,1948,1976,decade,1,LAW-050,0,,TRUE,human-rights; udhr; universalism; cultural-relativism
+MAR-038,"Winds, Currents, and Sailing Seasons",maritime,commerce; migration; war; nature,core,drafted,medium,-3500,1870,era,0,,3,MAR-020; MAR-050; MAR-160,FALSE,monsoon; trade-winds; volta-do-mar; tornaviaje; roaring-forties; typhoon; hurricane; doldrums; sailing-season; steam-transition
 MAR-010,Shipbuilding and Hull Construction,maritime,engineering,core,drafted,high,-3000,1200,era,0,,3,MAR-020; MAR-040; MAR-100,FALSE,shipbuilding; hull-construction; clinker; junk; dhow
-MAR-020,Coastal Trade,maritime,commerce,core,drafted,high,-3000,1500,era,1,MAR-010,8,MAR-030; MAR-090; MAR-120; MAR-240; MAR-260; MAR-150; MAR-220; AGR-170,FALSE,coastal-trade; cabotage; indian-ocean; mediterranean
+MAR-020,Coastal Trade,maritime,commerce,core,drafted,high,-3000,1500,era,2,MAR-010; MAR-038,8,MAR-030; MAR-090; MAR-120; MAR-240; MAR-260; MAR-150; MAR-220; AGR-170,FALSE,coastal-trade; cabotage; indian-ocean; mediterranean
 MAR-030,Piracy,maritime,law; commerce,core,drafted,high,-1300,1830,era,1,MAR-020,2,MAR-110; MAR-120,FALSE,piracy; barbary-corsairs; wokou; caribbean
 MAR-040,Warships,maritime,war,core,drafted,high,-1200,1500,era,1,MAR-010,3,MAR-060; MAR-210; MAR-190,FALSE,warship; galley; naval-warfare; premodern
-MAR-050,Celestial Navigation,maritime,nature,core,drafted,high,-600,1500,era,1,NAT-015,2,MAR-160; MAR-250,FALSE,navigation; astronomy; wayfinding; polynesian
+MAR-050,Celestial Navigation,maritime,nature,core,drafted,high,-600,1500,era,2,NAT-015; MAR-038,2,MAR-160; MAR-250,FALSE,navigation; astronomy; wayfinding; polynesian
 MAR-060,Regular Navy,maritime,war; finance,core,drafted,high,-500,1700,era,1,MAR-040,3,MAR-140; MAR-230; MAR-210,FALSE,navy; standing-force; naval-administration; state-capacity
 MAR-070,Lighthouses and Aids to Navigation,maritime,engineering,standard,drafted,high,-280,1759,era,0,,0,,FALSE,lighthouse; aids-to-navigation; eddystone; pharos
 MAR-080,Lateen Sail,maritime,commerce; war,core,drafted,medium,100,1450,century,0,,1,MAR-160,TRUE,lateen-sail; rigging; sailing-technology; dhow
@@ -212,7 +213,7 @@ MAR-120,Marine Insurance,maritime,finance; commerce,core,drafted,high,1300,1700,
 MAR-130,Naval Gunnery and Ship Artillery,maritime,engineering; war,core,drafted,high,1350,1858,era,0,,2,MAR-210; MAR-200,FALSE,naval-gunnery; cannon; paixhans-gun; explosive-shell
 MAR-140,Admiralty,maritime,law; war,core,drafted,medium,1360,1900,century,1,MAR-060,0,,FALSE,admiralty; prize-court; naval-administration; maritime-law
 MAR-150,Smuggling,maritime,commerce; law,standard,drafted,high,1400,1900,century,1,MAR-020,0,,FALSE,smuggling; mercantilism; haijin; customs
-MAR-160,Ocean Navigation,maritime,commerce; migration,core,drafted,high,1405,1522,decade,2,MAR-050; MAR-080,4,COM-140; AGR-220; MAR-170; MAR-180,FALSE,zheng-he; age-of-exploration; ocean-crossing; treasure-fleet
+MAR-160,Ocean Navigation,maritime,commerce; migration,core,drafted,high,1405,1522,decade,3,MAR-050; MAR-080; MAR-038,4,COM-140; AGR-220; MAR-170; MAR-180,FALSE,zheng-he; age-of-exploration; ocean-crossing; treasure-fleet
 MAR-170,Naval Provisioning and Scurvy,maritime,health,core,drafted,high,1497,1795,era,1,MAR-160,0,,FALSE,scurvy; provisioning; james-lind; royal-navy
 MAR-180,The Cape Route and the Collapse of the Mediterranean Spice Trade,maritime,commerce,core,drafted,high,1498,1600,century,1,MAR-160,0,,FALSE,cape-route; spice-trade; venice; vasco-da-gama
 MAR-190,Marines,maritime,war,standard,drafted,high,1537,1900,century,1,MAR-040,1,MAR-360,FALSE,marines; naval-infantry; amphibious-warfare

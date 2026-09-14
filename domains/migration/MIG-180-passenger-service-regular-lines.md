@@ -21,7 +21,7 @@ absence:
     note: Sub-Saharan Africa is overwhelmingly a source of forced rather than commercial-passenger cross-ocean movement in the era this entry covers (see MIG-160), with regular commercial passenger-line service to and from the continent developing much later and on a much smaller scale than the Atlantic emigrant-line or Indian indentured-line systems — the same steamship technology, an entirely different migration channel serving it.
 prereqs: []
 enables: [MIG-230, MIG-220, MIG-200, MIG-210]
-see_also: [MIG-150, MIG-170, WAR-200]
+see_also: [MIG-150, MIG-170, WAR-200, MAR-038]
 contested: false
 contested_note: ""
 stats_touched: [migration cost, migration range]
@@ -50,7 +50,9 @@ set by multiple operating companies, while steam power's speed and
 reliability sharply cut both the ticket-holder's transit-mortality risk and
 the calendar time a migration decision commits a household to — all three
 changes compound to pull migration decisions within reach of a much larger
-and less wealthy population than before.
+and less wealthy population than before. A schedule was impossible under
+sail, where departure waited on the season and the wind (MAR-038); steam is
+what made a published sailing date a promise rather than an intention.
 
 ## Social consequence
 

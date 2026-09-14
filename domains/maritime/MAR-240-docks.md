@@ -21,7 +21,7 @@ absence:
     note: Chinese ports in this era rely more on natural sheltered anchorages and comparatively simple wharf infrastructure than on the enclosed, lock-gated wet-dock model developing in Europe, sufficient for the tidal and vessel-draft conditions of most Chinese treaty ports without requiring the same engineering investment European tidal-range conditions specifically demanded.
 prereqs: [MAR-020]
 enables: [MAR-370]
-see_also: [MAR-070]
+see_also: [MAR-070, MAR-038]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -47,7 +47,10 @@ eliminating the tidal-window constraint on loading and unloading, directly
 increasing a port's cargo throughput capacity per berth — the investment
 only pays off where tidal range is large enough, and cargo volume high
 enough, to make the constant availability worth the construction and
-maintenance cost, which is why it doesn't appear everywhere ports exist.
+maintenance cost, which is why it doesn't appear everywhere ports exist. Tides and river bars
+were a constraint on port access long before docks answered them, part of
+the physical sea MAR-038 describes: ports whose approaches could not admit
+larger hulls lost their trade to deeper ones.
 
 ## Social consequence
 

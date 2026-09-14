@@ -21,7 +21,7 @@ absence:
     note: Clippers are rendered commercially obsolete within a few decades by steamships and, specifically, the Suez Canal (1869) — a canal route steamships can use reliably but which offers little advantage to a sailing ship dependent on open-ocean wind patterns the canal's approach doesn't favor — showing a narrow sailing-ship speed advantage can be erased by a single infrastructure change that reshapes the relevant route geometry rather than by any gradual technology catch-up.
 prereqs: [MAR-020, ENG-170]
 enables: []
-see_also: [MIG-190, MED-100]
+see_also: [MIG-190, MED-100, MAR-038]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -46,7 +46,10 @@ speed, a trade that only makes commercial sense where a specific market
 pays a real premium for early arrival — the China tea trade's "first ship
 home" premium is the paradigm case, rewarding speed directly and
 disproportionately rather than paying a flat per-ton rate that would favor
-a slower, higher-capacity vessel instead.
+a slower, higher-capacity vessel instead. The speed came as much from the
+route as the hull — running the roaring forties and the charted trade-wind
+belts (MAR-038) — which is why the clipper was the last refinement of sail
+rather than a way around the wind.
 
 ## Social consequence
 

@@ -22,7 +22,7 @@ region_variants:
 absence:
   - region: americas
     note: Pre-contact American coastal trade (notable cases include Pacific Northwest and Andean coastal networks) stays regionally bounded rather than developing into the kind of long-range, multi-society-connecting network seen in the Mediterranean or Indian Ocean, plausibly reflecting the absence of a comparable large-scale bulk cargo vessel and sail technology (see MAR-080) rather than any lack of coastal geography or trading impulse.
-prereqs: [MAR-010]
+prereqs: [MAR-010, MAR-038]
 enables: [MAR-030, MAR-090, MAR-120, MAR-240, MAR-260, MAR-150, MAR-220, AGR-170]
 see_also: [ENG-090, COM-230, MAR-050, MAR-080, MAR-160, MAR-170, MAR-100]
 contested: false
@@ -68,7 +68,8 @@ The Indian Ocean system's dependence on a reversing monsoon wind calendar
 (sail one direction for months, then wait for the wind to reverse) shapes an
 entirely different trade rhythm from the Mediterranean's more evenly
 distributed conditions, without either system being more "advanced" than the
-other. The Swahili coast's specific role as an intermediary layer between the
+other. The wind systems themselves, and what their seasonal windows do to a
+trading world's social structure, are MAR-038's. The Swahili coast's specific role as an intermediary layer between the
 African interior and the wider Indian Ocean network shows coastal trade
 doesn't require a society to be either the ultimate source or destination of
 what it carries. Pre-contact American coastal networks staying regionally

@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: africa
     note: Despite centuries of Indian Ocean coastal and monsoon trade participation (MAR-020), no African maritime power undertakes a comparable deliberate long-range ocean-crossing project in this era — plausibly reflecting that the existing monsoon coastal network already reached every market worth reaching from African ports, leaving little of the specific incentive (an unreached, valuable, distant market) that drove both the Chinese and Iberian voyages.
-prereqs: [MAR-050, MAR-080]
+prereqs: [MAR-050, MAR-080, MAR-038]
 enables: [COM-140, AGR-220, MAR-170, MAR-180]
 see_also: [MAR-020, MAR-060, MAR-220, MAR-100]
 contested: false
@@ -48,7 +48,11 @@ flexible rigging able to handle a much wider range of wind conditions over
 a long passage (MAR-080), and large enough vessels to carry the food and
 water reserves a multi-week or multi-month passage requires — no single
 component is sufficient alone, which is why the capability appears only once
-all three mature roughly together, in more than one place independently.
+all three mature roughly together, in more than one place independently. A
+fourth ingredient is knowledge rather than equipment: the ocean's wind and
+current systems (MAR-038) make the viable routes directional and seasonal, and
+some — the Volta do Mar, the Pacific return passage found only in 1565 — could
+be discovered only by trial.
 
 ## Social consequence
 

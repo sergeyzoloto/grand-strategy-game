@@ -22,7 +22,7 @@ region_variants:
 absence:
   - region: americas
     note: No comparable instrumented or systematized celestial navigation tradition develops in the pre-contact Americas at a scale supporting long-range open-ocean voyaging, consistent with MAR-020's absence case — coastal geography and trade motive existed, but the navigation technique enabling a break from coastal cabotage did not.
-prereqs: [NAT-015]
+prereqs: [NAT-015, MAR-038]
 enables: [MAR-160, MAR-250]
 see_also: [MAR-020, MAR-070, MTH-060]
 contested: false
@@ -50,6 +50,9 @@ that otherwise caps a vessel's safe range at coastal cabotage (MAR-020) —
 the specific instrument or method varies enormously by tradition, but the
 underlying trade is the same: replace local, learned landmark knowledge with
 a portable, teachable, sky-based method that works anywhere on Earth.
+Knowing where the ship is does not decide where it can go: that is set by
+the wind and current systems and their seasonal windows (MAR-038), which
+Polynesian wayfinders read through swell and wind as much as through stars.
 
 ## Social consequence
 

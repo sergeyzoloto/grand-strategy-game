@@ -24,7 +24,7 @@ absence:
     note: Overseas Chinese merchant networks in this era are comparatively modest in geographic reach relative to the Indian Ocean and Sahelian cases, restricted more by state emigration policy (periodic bans on private overseas trade and settlement) than by any lack of the same underlying kin-trust mechanism, which becomes far more visible in the much larger post-1500 Chinese diaspora.
 prereqs: [MIG-080]
 enables: [MIG-100, REL-080]
-see_also: [COM-010, LAW-070]
+see_also: [COM-010, LAW-070, MAR-038]
 contested: false
 contested_note: ""
 stats_touched: [diaspora reach]
@@ -63,7 +63,10 @@ often locally indispensable, while remaining culturally and legally distinct
 from the surrounding population in ways that make them simultaneously useful
 to and vulnerable under local rulers — a tension that recurs across nearly
 every diaspora case in this record regardless of the specific ethnic or
-religious identity involved.
+religious identity involved. In the Indian Ocean the settlement itself had a
+physical cause: the monsoon reverses only twice a year, so a merchant who
+missed the return wind stayed for a year, and long residence turned visiting
+traders into permanent communities with local households (MAR-038).
 
 ## Regional specifics
 
