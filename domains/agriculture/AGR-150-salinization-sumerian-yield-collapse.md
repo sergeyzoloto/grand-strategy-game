@@ -18,7 +18,7 @@ absence:
     note: Egyptian Nile irrigation avoids comparable large-scale salinization because the annual flood cycle naturally flushes accumulated salts from the floodplain every year, rather than requiring the constant, active field drainage Mesopotamia's more static canal-irrigation system depends on to achieve the same result — the same underlying salt-accumulation risk, neutralized by a favorable natural hydrology rather than by comparable engineered drainage effort.
 prereqs: [AGR-100]
 enables: []
-see_also: [COM-070, ENG-130]
+see_also: [COM-070, ENG-130, ENG-065]
 contested: true
 contested_note: "The classic thesis (most associated with Thorkild Jacobsen and Robert McC. Adams) that progressive soil salinization from centuries of irrigation without adequate drainage directly explains southern Mesopotamia's documented shift from wheat to more salt-tolerant barley cultivation and a broader yield decline is influential but has been challenged by scholars who point to political fragmentation, warfare, and canal-maintenance breakdown as at least equally plausible contributing causes for the same archaeological and textual signal, with salinization's precise quantitative contribution difficult to isolate from these other factors using the available evidence. Model salinization as a real, mechanistically well-understood risk of sustained irrigation without adequate drainage (per this entry's Mechanism), while treating its specific weighted contribution to the Sumerian yield decline, versus political and institutional causes, as genuinely contested."
 stats_touched: [soil fertility]
@@ -58,6 +58,10 @@ lower-value crops (barley over wheat) trades some yield for slower
 long-term soil degradation — a choice between two different rates of
 decline rather than between decline and no decline, once salinization has
 progressed far enough.
+
+Salinisation followed where drainage lapsed, which makes it a maintenance failure as
+much as an agronomic one. ENG-065 carries the fiscal and institutional reasons canal
+and drainage upkeep is deferred until the system fails.
 
 ## Regional specifics
 

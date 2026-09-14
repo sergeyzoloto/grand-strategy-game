@@ -21,7 +21,7 @@ absence:
     note: Container port infrastructure investment across much of Africa lags well behind Asian, American, and European ports through this period, a specific bottleneck that constrains export-oriented manufacturing development options for economies without deep-water container terminal access in a way that mirrors, on modern container-scale infrastructure terms, the tidal-dock investment gap noted in MAR-240.
 prereqs: [MAR-240]
 enables: []
-see_also: [COM-200, ENG-340, MAR-285]
+see_also: [COM-200, ENG-340, MAR-285, ENG-065]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -66,6 +66,10 @@ to wherever labor is cheapest rather than wherever is closest to the end
 market — the technology that shrinks one workforce (dockworkers) directly
 enables the offshoring that reshapes a much larger one (manufacturing labor)
 globally.
+
+Removing buffer stocks couples the network tightly, and tight coupling transmits
+failure. ENG-065 traces the same cascade from the Bronze Age trade network through
+hydraulic systems to electrical grids.
 
 ## Regional specifics
 

@@ -21,7 +21,7 @@ absence:
     note: Egyptian Nile agriculture relies on the river's predictable annual flood cycle for natural irrigation rather than requiring the same scale of constructed canal and reservoir infrastructure Mesopotamia, South Asia, or China invest in — comparable irrigated-agriculture yield achieved through a favorable natural hydrology substituting for constructed hydraulic capital, not a less-developed version of the same system.
 prereqs: [ENG-020]
 enables: [AGR-150, AGR-170, AGR-280, COM-070]
-see_also: [AGR-120, ENG-120, FIN-020, REL-020, AGR-230, AGR-090, AGR-060, HLT-265]
+see_also: [AGR-120, ENG-120, FIN-020, REL-020, AGR-230, AGR-090, AGR-060, HLT-265, ENG-065]
 contested: true
 contested_note: "Karl Wittfogel's 'hydraulic despotism' thesis — that large-scale irrigation dependency causally produces centralized, despotic state control, since whoever administers the water administers survival itself — is influential but disputed among historians and archaeologists, with counter-cases (irrigation systems managed by decentralized communal or village-level institutions rather than centralized state bureaucracy) documented in multiple regions. Model irrigation-driven water-rights concentration as a real, tracked lever of control, but let whether that control centralizes at state or communal/local level be a separate variable set by prior institutional context, not an automatic consequence of irrigation scale alone."
 stats_touched: [yield ceiling]
@@ -63,6 +63,10 @@ otherwise autonomous landholding population. The same standing water is
 mosquito habitat: canals, paddies and seepage raise malaria burden
 alongside yield (HLT-265), so an irrigated plot can carry a higher `yield
 ceiling` and a sicker workforce at once.
+
+The choice between the two forms matters most when the centre weakens. ENG-065 argues
+that commons which bind each user to maintain their share survive a weak sovereign,
+while systems maintained from the centre fail with its finances.
 
 ## Regional specifics
 

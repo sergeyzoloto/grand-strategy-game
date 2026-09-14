@@ -23,7 +23,7 @@ absence:
   - region: americas
     note: Andean terracing and canal irrigation (developed independently, reaching sophisticated scale under the Inca and predecessor cultures) achieves comparable agricultural water-management function without wheeled-vehicle transport or draft-animal-scale earth-moving equipment, relying instead on organized mass labor mobilization — a materially different engineering toolkit reaching a functionally similar outcome.
 prereqs: [ENG-060]
-enables: [ENG-080, AGR-100]
+enables: [ENG-080, AGR-100, ENG-065]
 see_also: [ENG-320, ENG-120, AGR-060, ENG-055]
 contested: false
 contested_note: ""
@@ -62,6 +62,11 @@ village can organize alone, tying irrigation capacity directly to state or
 communal organizational capacity — a hydraulic system's scale is as much a
 measure of the society that built and maintains it as of the engineering
 technique itself.
+
+A dam or canal is built once and must be maintained every year, and the silt that
+fills a reservoir or channel does not wait on the budget. ENG-065 carries the
+political economy that makes that upkeep lose to new construction, and the failures
+that follow when it does.
 
 ## Regional specifics
 

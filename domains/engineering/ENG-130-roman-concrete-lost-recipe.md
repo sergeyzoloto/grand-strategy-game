@@ -21,7 +21,7 @@ absence:
     note: Islamic architecture solves comparable large-interior-span problems (already documented in `ENG-110`'s squinch and muqarnas solutions) through an entirely separate masonry-and-brick vaulting tradition rather than by reviving or reverse-engineering Roman monolithic concrete — a case where a civilization didn't need to recover a lost technique because it had already developed its own independent solution to the same underlying architectural problem.
 prereqs: [ENG-110]
 enables: []
-see_also: [AGR-150]
+see_also: [AGR-150, ENG-065]
 contested: true
 contested_note: "Recent materials-science research into Roman concrete's self-healing properties (unhydrated lime clasts that recrystallize when exposed to water intrusion, actively studied and only partly settled as of the 2020s) complicates exactly why the material was so durable, beyond the pozzolanic volcanic-ash chemistry long credited for its compressive strength. Separately, how much of the technique's post-Roman disappearance reflects genuinely forgotten chemistry versus economically-abandoned logistics (pozzolana required specific volcanic-ash sourcing that became uneconomical once Mediterranean-wide shipping networks broke down) is disputed. Model both the precise durability mechanism and the completeness of the knowledge loss as open questions, not settled fact — a real case where the 'why' behind a well-documented historical outcome is still actively being revised by ongoing scientific research."
 stats_touched: [engineering knowledge pool]
@@ -71,6 +71,11 @@ longer existed anywhere to draw on, a stark case where a civilization's
 collapse can erase a capability level that its far-later successors
 have to painstakingly rebuild from a different starting point rather
 than simply re-adopt.
+
+The loss of the recipe is one instance of a general failure mode. Maintenance
+requires knowledge that lives in practice, and when repair stops for a generation no
+one remains who can resume it, which ENG-065 generalises across hydraulic and other
+infrastructure.
 
 ## Regional specifics
 

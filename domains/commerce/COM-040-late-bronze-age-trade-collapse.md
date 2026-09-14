@@ -24,7 +24,7 @@ absence:
     note: Egypt survives this same window as a functioning state — Ramesses III's inscriptions claim successful repulsion of the "Sea Peoples" — while still losing most of its long-distance luxury and metal trade connections to the same collapsing network, showing political survival and commercial-network collapse are separable outcomes — a state can outlast the trade system it was embedded in.
 prereqs: [COM-020]
 enables: []
-see_also: [COM-140, WAR-010]
+see_also: [COM-140, WAR-010, ENG-065]
 contested: true
 contested_note: "Whether the Late Bronze Age trade collapse is best explained by systems-collapse dynamics inherent to an over-specialized, tightly-interlocked network (Eric Cline's '1177 BC' synthesis), climate-driven drought and resulting famine and migration pressure, the 'Sea Peoples' migrations and raiding directly, internal social revolt against palace elites, or some combination, is a genuinely live, unresolved multi-causal debate in Bronze Age archaeology, without a single accepted primary cause. Model the collapse as several independently-triggerable stressors (drought, raiding, elite-network disruption) whose combination — not any single one alone — produces cascade failure, rather than scripting one cause as the explanation, echoing the multi-cause structure already used for COM-140's Price Revolution."
 stats_touched: [network fragility]
@@ -69,6 +69,11 @@ long-distance shipping knowledge connecting Cyprus, the Levant, and the
 Aegean — disappears along with the network itself rather than persisting
 in a simpler form, producing the archaeologically visible "dark age"
 that follows across multiple regions simultaneously.
+
+The same cascade mechanism recurs across four thousand years: Angkor's hydraulic
+network, Sri Lanka's tank cascades and the electrical grid failures of 1965 and 2003
+all transmitted a local fault through the coupling that had made them efficient
+(ENG-065).
 
 ## Regional specifics
 
