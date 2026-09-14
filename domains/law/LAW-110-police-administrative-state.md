@@ -21,7 +21,7 @@ absence:
     note: Pre-1829 European urban order relies substantially on a patchwork of night watchmen, parish constables, and military intervention for serious disorder rather than a dedicated, professional, continuously-patrolling civilian police force — a genuine institutional gap that Peel's Metropolitan Police is specifically designed to close, not merely an improvement on an existing comparable institution.
 prereqs: [LAW-020]
 enables: [WAR-200]
-see_also: [MIG-250, WAR-060, LAW-030, LAW-170, MTH-062]
+see_also: [MIG-250, WAR-060, LAW-030, LAW-170, MTH-062, MED-085]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -60,7 +60,10 @@ collective liability for a member's misconduct gives every household
 member a direct stake in everyone else's compliance — a fundamentally
 different social relationship to law enforcement than a professional
 police force's more impersonal, specialized relationship to the population
-it patrols.
+it patrols. A professional force also acquires a memory: from the 1880s police
+identification files — Bertillon's measurement cards, then fingerprint
+classification developed in Calcutta and La Plata — let a force find an
+individual by body rather than by name (MED-085).
 
 ## Regional specifics
 

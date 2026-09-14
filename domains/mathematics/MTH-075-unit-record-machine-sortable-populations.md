@@ -23,7 +23,7 @@ absence:
     note: The punched card encodes a unit record — one card for one individual — and much colonial enumeration in Africa did not count individuals at all, estimating households, huts or taxpayers instead. Where there is no individual-level schedule there is nothing for a card to record, so the machine had no input and no market regardless of administrative will. What is absent is individual legibility, which is the machine's raw material, and it follows directly from the kind of census the administering power chose to run (FIN-020).
   - region: oceania
     note: Tabulating equipment was economic only on very large runs, leased at substantial cost and paying for itself by processing millions of records. No enumeration, commercial ledger or insurance book in the region approached that volume, so the technology that transformed large censuses offered small populations nothing their existing clerical methods did not already supply at lower cost.
-prereqs: [FIN-020, HLT-270]
+prereqs: [FIN-020, HLT-270, MED-085]
 enables: [MIG-250]
 see_also: [WAR-200, LAW-165, MTH-060, COM-180, ENG-215, MTH-020, MTH-065, MTH-084, MTH-062]
 contested: true
@@ -55,7 +55,10 @@ one card, and each attribute — age, sex, birthplace, occupation, religion —
 is a hole in a fixed position. A tabulator reads a card in a fraction of a
 second and counts or sorts a whole population by any combination of punched
 attributes. The cross-tabulation that took a clerical workforce years now
-takes a machine run.
+takes a machine run. The unit record itself was not new: the paper card index
+(MED-085) already held one card per individual, movable and re-sortable by
+clerks. What the punched card adds is a machine that reads the card, which moves
+the sort out of the clerk's hands and places the record in this domain.
 
 **Enumeration stops being bounded by clerical labour.** Every register in
 the corpus — the census (FIN-020), vital registration (HLT-270), the rolls

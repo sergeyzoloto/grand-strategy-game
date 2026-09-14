@@ -37,7 +37,7 @@ absence:
     note: The reverse of MED-130's finding, and the cleanest inversion available. Radio served scattered islands better than anything before it because a signal crossing water costs nothing extra. A packet network reinstates the cable — undersea fibre landing at a few points, with everything beyond a landfall on expensive satellite backhaul — so the region that broadcast served best is served worst again, for exactly the reason the telegraph failed here. The wire constraint MED-130 removed returns with the network that replaced it.
 prereqs: [ENG-330, MED-120, MTH-087, MTH-072]
 enables: []
-see_also: [MED-130, MED-140, MED-100, MED-090, LAW-225, ENG-340, MTH-080, PHI-410, MED-080, MED-070, MED-020, MED-110, REL-258]
+see_also: [MED-130, MED-140, MED-100, MED-090, LAW-225, ENG-340, MTH-080, PHI-410, MED-080, MED-070, MED-020, MED-110, REL-258, MED-085]
 contested: true
 contested_note: "Two disputes worth modelling. First, whether networked media produce political mobilisation: the strong claims made around 2010-2011 have not held up, and the same infrastructure has since served surveillance, identification and counter-mobilisation at least as effectively as it served organisation. Model the network as lowering coordination cost for whoever is coordinating, with no inherent direction — which is the same posture MED-130 takes on broadcast, where the Algerian and Rwandan cases run the identical mechanism to opposite ends, and it should be modelled the same way here for the same reason. Second, whether platform intermediation is a technical necessity or a business-model artefact is unresolved: the discovery problem at network scale is real, but ranking optimised for engagement is a choice about what to solve for rather than a consequence of solving it. Treat re-intermediation as reliably occurring and its particular shape as contingent, so that a network with different funding produces a different gatekeeper rather than none."
 stats_touched: [intermediary dependence, information sovereignty, simultaneity of attention]
@@ -104,7 +104,10 @@ more governable than the one that merely crossed them.
 
 ## Social consequence
 
-The reader's experience inverts. Under scarcity the problem was obtaining
+The networked database also completes a lineage that began with paper: the
+card index (MED-085) first made records movable, extensible and searchable by
+many clerks at once, and the database removes the card's physical position
+altogether. The reader's experience inverts. Under scarcity the problem was obtaining
 things worth reading; under abundance it is selecting among more than can
 be read, which transfers real power to whoever performs the selection
 without the transfer being visible as one. People experience a ranked feed

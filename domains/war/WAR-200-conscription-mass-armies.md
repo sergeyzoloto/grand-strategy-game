@@ -38,7 +38,7 @@ absence:
     note: The Indian Army under British rule was deliberately non-conscript, recruited by volunteer enlistment from populations selected under martial-races doctrine, and the avoidance was a policy rather than an incapacity — the colonial state possessed census machinery of exceptional reach and declined to use it for this. Universal conscription would have armed and trained a population the administration did not trust to arm, and after 1857 that calculation was explicit. A state can hold every prerequisite for conscription and refuse the mechanism because the resulting army would be the wrong army.
 prereqs: [WAR-060, FIN-020, REL-210, LAW-110]
 enables: [WAR-290, LAW-165]
-see_also: [WAR-140, WAR-220, WAR-230, WAR-190, WAR-260, HLT-270, LAW-100, LAW-220, DIP-160, REL-230, MIG-180, MED-090, MTH-075, WAR-037]
+see_also: [WAR-140, WAR-220, WAR-230, WAR-190, WAR-260, HLT-270, LAW-100, LAW-220, DIP-160, REL-230, MIG-180, MED-090, MTH-075, WAR-037, MED-085]
 contested: false
 contested_note: ""
 stats_touched: [mobilisable manpower, legibility, literacy]
@@ -105,7 +105,10 @@ register is expensive and unpopular, and conscription supplies a reason
 to do it that tax alone had often failed to supply, so a state that
 decides to conscript typically ends up with enumeration machinery far
 more complete than its fiscal needs would ever have justified — and that
-machinery is then available for everything else it governs.
+machinery is then available for everything else it governs. The register's
+physical form matters as much as its existence: a roll kept as individual cards
+can be re-sorted by age cohort, district or exemption status and worked by many
+clerks at once, which a bound register cannot (MED-085).
 
 **Mass service then produces literacy on a scale no other institution
 matches.** The barracks is the largest adult education establishment any

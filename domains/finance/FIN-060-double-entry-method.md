@@ -21,7 +21,7 @@ absence:
     note: Surviving medieval Islamic merchant account books show sophisticated running-balance and partnership-profit record-keeping (feeding the mudaraba/musharaka structures in FIN-030) without clear evidence of the specific self-balancing dual-entry mechanism itself, leaving open whether an equivalent existed and wasn't preserved, or whether the tradition's accounting rigor took a genuinely different form.
 prereqs: [FIN-020, FIN-040]
 enables: [FIN-070, FIN-130, FIN-090]
-see_also: [LAW-070]
+see_also: [LAW-070, MED-085]
 contested: true
 contested_note: "Whether Luca Pacioli's 1494 published description of Venetian double-entry method represents an independent Italian development, or was influenced by prior contact with more advanced accounting traditions further east, is debated among accounting historians given how much earlier the Chinese four-column method achieves comparable self-checking function. Model these as independently-arising solutions to the same underlying record-keeping problem by default, since direct transmission evidence is thin, while flagging the timeline gap (China centuries earlier) as a genuine open question rather than asserting either independent invention or transmission as settled."
 stats_touched: [contract enforcement]
@@ -48,7 +48,11 @@ exists somewhere in the books, findable and correctable before it
 compounds. This is a direct multiplier on `contract enforcement` and
 investor trust: a merchant, partner, or creditor can verify a set of
 accounts' internal consistency without needing to independently re-derive
-every underlying transaction from scratch.
+every underlying transaction from scratch. The method's self-audit leans on the
+bound form of the ledger itself — numbered, sewn, sequential pages that show a
+removal or insertion — which is why accounts stayed bound long after other
+administrative records moved to movable cards that cannot prove their own
+completeness (MED-085).
 
 ## Social consequence
 

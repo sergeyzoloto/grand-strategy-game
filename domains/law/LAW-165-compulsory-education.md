@@ -34,7 +34,7 @@ absence:
     note: The instrument requires knowing where a child is on a given morning, which mobile pastoral households defeat in exactly the way they defeat conscription — no fixed residence to register, no daily attendance to check against. Where schooling was eventually imposed it required settling the population first, so the sequence runs sedentarisation then schooling rather than the reverse, and the educational measure is downstream of a much larger coercive one.
 prereqs: [WAR-200, LAW-100, FIN-020]
 enables: []
-see_also: [MED-020, MED-090, MED-070, LAW-220, LAW-210, COM-170, REL-090, DIP-160, HLT-270, REL-210, MTH-075, REL-255, REL-258]
+see_also: [MED-020, MED-090, MED-070, LAW-220, LAW-210, COM-170, REL-090, DIP-160, HLT-270, REL-210, MTH-075, REL-255, REL-258, MED-085]
 contested: true
 contested_note: "What compulsory schooling was for is genuinely disputed and the dispute should be modelled rather than resolved. The civic reading treats it as the extension of citizenship — a literate electorate, equality of opportunity, and the state discharging an obligation to children. The control reading, associated with Foucault and with revisionist historians of education, treats it as the disciplinary production of governable subjects, noting that the curriculum's most reliable outputs are punctuality, obedience to a timetable, and a standardised national identity rather than any particular knowledge. The evidence supports both because states pursued both, frequently in the same legislation. Model the mechanism as producing `literacy`, `time discipline` and national identification together as a bundle that cannot be separated at the point of adoption, so a state cannot buy the literacy without the discipline or the nationalisation — which is a better representation of the historical record than allowing a player to select an outcome, and is consistent with design principle 2's refusal of direct levers on population disposition."
 stats_touched: [literacy, time discipline, legibility, literacy training cost]
@@ -64,7 +64,10 @@ evasion. Compulsory schooling needs all four, plus one more: it must know
 where a child is on a given *morning*, not merely which district they
 live in. It is therefore the more demanding of the two instruments, and it
 is no accident that states which built one generally built the other, often
-within a decade and using the same registers.
+within a decade and using the same registers. Knowing where a child is each
+morning is a filing problem as much as a legal one, and it became tractable
+as registers moved from bound volumes to card files that could be re-sorted
+by school, district and year and kept current as families moved (MED-085).
 
 **What the state actually takes is time, not children.** This matters for
 the mechanic, because it is what makes the instrument expensive to the

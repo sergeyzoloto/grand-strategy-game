@@ -23,7 +23,7 @@ absence:
   - region: africa
     note: No independent sub-Saharan African papermaking tradition develops; Ethiopian scribal culture instead sustains an extensive parchment-based manuscript tradition, and West African Islamic scholarly centers like Timbuktu rely on paper imported via the trans-Saharan trade routes (see the caravan trade, `COM-050`) rather than on local production — a real absence of the manufacturing technique specifically, not of a written scholarly culture to use it.
 prereqs: [MED-010]
-enables: [MED-080]
+enables: [MED-080, MED-085]
 see_also: [COM-050]
 contested: true
 contested_note: "The popular 'Battle of Talas' transmission story — that Chinese papermakers captured by Abbasid forces in 751 CE personally taught the technique to their captors, single-handedly starting Islamic-world papermaking — is a widely-repeated simplification; historians of technology increasingly read the actual transmission as more gradual and multi-channel, with the technique likely already diffusing along Silk Road contact before and independent of that one battle. Model papermaking's westward spread as a diffusion process with a genuinely uncertain specific mechanism, rather than crediting one dramatic transfer event as the documented cause."
@@ -65,7 +65,10 @@ individuals who could never have afforded parchment at comparable
 volume, directly setting up the economics `MED-080`'s later printing
 press depends on — a press with nothing affordable to print onto
 doesn't scale into mass production regardless of how good the
-mechanical printing technique itself is.
+mechanical printing technique itself is. Cheap paper also changes what a
+record can physically be: once a sheet is cheap enough to spend on a single
+entry and throw away when it errs, records can be kept as loose, movable
+slips rather than bound volumes, which is the card index (MED-085).
 
 ## Regional specifics
 
