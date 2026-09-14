@@ -20,7 +20,7 @@ absence:
   - region: europe
     note: European royal marriage diplomacy (the Habsburg dynasty's marriage-driven territorial acquisition being the paradigm case) aims cumulatively at inheritance and territorial union between the marrying houses themselves rather than at buying peace with a militarily superior or otherwise unconquerable rival power — a structurally different strategic logic behind an outwardly similar practice of marrying rulers to secure diplomatic advantage.
 prereqs: [DIP-040, DIP-010]
-enables: []
+enables: [DIP-025]
 see_also: [MIG-110, WAR-020]
 contested: false
 contested_note: ""
@@ -52,6 +52,10 @@ children and in-law kinship ties whose interests span both houses, and a
 valuable gift both signals genuine commitment (a cheap gift signals a
 cheap commitment) and, if reciprocated, creates an ongoing exchange
 relationship harder to unilaterally abandon than a one-time transaction.
+A marriage's kinship stake also has a delayed effect: generations later, when
+a line fails, it supplies a foreign house with a lawful claim to the throne,
+which is how dynastic marriage turns successions into international contests
+(DIP-025).
 
 ## Social consequence
 

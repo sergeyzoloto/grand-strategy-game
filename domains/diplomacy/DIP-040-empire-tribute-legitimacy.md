@@ -23,7 +23,7 @@ absence:
   - region: mediterranean
     note: Roman client-kingdom relationships extend a middle option between full annexation and full independence — a client king retains local rule and internal legitimacy while ceding foreign policy and military support obligations to Rome, a diplomatic status distinct from both the Chinese tributary model's ritual hierarchy and the Aztec model's threat-based extraction.
 prereqs: [WAR-060, DIP-010, DIP-030]
-enables: [DIP-060]
+enables: [DIP-060, DIP-025]
 see_also: [DIP-080, PHI-290, DIP-050, DIP-100, WAR-020, DIP-055]
 contested: false
 contested_note: ""
@@ -54,7 +54,10 @@ superior status and a flow of goods, labor, or military support, which is
 cheaper for the empire to sustain than conquest and garrisoning but only
 functions as long as the tributary continues finding the arrangement's
 benefits (trade access, protection, legitimating recognition) worth more
-than the cost of defection or rebellion.
+than the cost of defection or rebellion. The relationship is most exposed at
+a tributary's accession, when the new ruler must seek investiture and the
+suzerain can grant, withhold or sell it — and where the succession is
+disputed, choose between claimants (DIP-025).
 
 ## Social consequence
 

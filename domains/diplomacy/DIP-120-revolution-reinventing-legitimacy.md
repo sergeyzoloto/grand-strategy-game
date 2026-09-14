@@ -21,7 +21,7 @@ absence:
     note: Haiti's 1804 independence, achieved through the only successful large-scale enslaved-people's revolution in this record, faces sustained diplomatic non-recognition by major powers for decades afterward — France extracts a crushing 1825 indemnity as the actual price of recognition, and the United States withholds recognition until 1862 — showing a legitimacy claim's internal validity and its actual diplomatic recognition can diverge for generations when the claim itself (a former colony of enslaved people governing itself) threatens other powers' own domestic political and economic order.
 prereqs: [DIP-100]
 enables: []
-see_also: [LAW-180, DIP-200]
+see_also: [LAW-180, DIP-200, DIP-025]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -52,7 +52,10 @@ recognizing a revolution led by formerly enslaved people directly threatens
 every other slaveholding power's own domestic institution — which is why
 recognition often depends less on the new regime's actual internal
 stability or effectiveness than on how dangerous its specific legitimating
-claim is to other powers' own continued rule.
+claim is to other powers' own continued rule. A disputed succession runs on a
+different logic (DIP-025): claimants contest who holds power within a principle
+every party accepts, so outside powers intervene for advantage rather than
+self-protection, and recognition is bargained over rather than refused.
 
 ## Social consequence
 
