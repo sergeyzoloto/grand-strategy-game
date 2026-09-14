@@ -20,7 +20,7 @@ absence:
   - region: africa
     note: Despite centuries of Indian Ocean coastal and monsoon trade participation (MAR-020), no African maritime power undertakes a comparable deliberate long-range ocean-crossing project in this era — plausibly reflecting that the existing monsoon coastal network already reached every market worth reaching from African ports, leaving little of the specific incentive (an unreached, valuable, distant market) that drove both the Chinese and Iberian voyages.
 prereqs: [MAR-050, MAR-080, MAR-038]
-enables: [COM-140, AGR-220, MAR-170, MAR-180]
+enables: [COM-140, AGR-220, MAR-170, MAR-180, MAR-185]
 see_also: [MAR-020, MAR-060, MAR-220, MAR-100]
 contested: false
 contested_note: ""
@@ -61,7 +61,10 @@ and political systems into nodes of one connected global network for the
 first time, with enormous and asymmetric consequences for whichever
 societies end up on the receiving end of first contact (see the health and
 migration domains' entries on the Columbian Exchange and virgin-soil
-epidemics) rather than initiating it.
+epidemics) rather than initiating it. The first thing ocean-going powers
+fought over in Asia was not territory but ports — the fortified chain of
+entrepôts from Hormuz to Malacca that let a small navy tax an ocean's trade
+(MAR-185).
 
 ## Regional specifics
 

@@ -24,7 +24,7 @@ absence:
     note: The Cape of Good Hope route around Africa, the original alternative to Middle Eastern overland or Red Sea routes to Asia, loses most of its strategic chokepoint value once the Suez Canal offers a dramatically shorter path — a reminder that a chokepoint's value is relative to available alternatives and can be sharply devalued by infrastructure built somewhere else entirely, without anything changing at the Cape itself.
 prereqs: [MAR-160, ENG-280]
 enables: []
-see_also: [MAR-220, COM-080, WAR-020]
+see_also: [MAR-220, COM-080, WAR-020, MAR-185]
 contested: false
 contested_note: ""
 stats_touched: [protection rent]
@@ -55,7 +55,10 @@ passage, whether by adjacent territorial sovereignty, canal ownership, or
 naval basing rights, can extract tolls, restrict access, or simply hold
 leverage over every state whose trade depends on the route, converting a
 narrow strip of geography into commercial and diplomatic power far out of
-proportion to its physical size.
+proportion to its physical size. This entry owns the passage as a transit
+point; the port as an institution — hinterland, customs regime, merchant
+community, and the contest between rival entrepôts for a region's
+transshipment — is MAR-185's.
 
 ## Social consequence
 

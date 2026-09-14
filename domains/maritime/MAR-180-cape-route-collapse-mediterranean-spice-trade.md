@@ -18,7 +18,7 @@ absence:
     note: The Mamluk and later Ottoman-administered Red Sea and overland relay route, which had carried the bulk of the Indian Ocean spice trade to Mediterranean markets for centuries, is not physically destroyed or blockaded by the Cape route's opening — it simply becomes commercially uncompetitive against an all-water alternative with fewer transshipment stages, showing a route can be rendered obsolete without ever being directly contested.
 prereqs: [MAR-160]
 enables: []
-see_also: [MAR-060]
+see_also: [MAR-060, MAR-185]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -52,7 +52,9 @@ accumulated route knowledge, institutional relationships, and
 toll-collecting position at each stage convert from a durable commercial
 asset into a stranded cost almost overnight — not because any capability
 was lost, but because a competing route made that capability's output no
-longer worth paying a premium for.
+longer worth paying a premium for. The same displacement then repeats
+inside Asia at the scale of single ports, as entrepôt share moves from
+Hormuz to Bandar Abbas and from Malacca to Batavia to Singapore (MAR-185).
 
 ## Social consequence
 

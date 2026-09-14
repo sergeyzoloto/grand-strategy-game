@@ -18,7 +18,7 @@ absence:
     note: Opium sold into China in this period is grown and processed under British monopoly in India specifically, making South Asia the production base for the very commodity whose forced sale into China this entry covers — India's role here is as supplier within the same coercive trade system, not a comparable case of its own market being forced open by an equivalent war.
 prereqs: [COM-150]
 enables: [COM-190]
-see_also: [DIP-140, DIP-150, HLT-260]
+see_also: [DIP-140, DIP-150, HLT-260, MAR-185]
 contested: true
 contested_note: "How much the Opium Wars should be read primarily as a trade-liberalization conflict (Britain forcing open a market Qing policy had restricted) versus primarily as a drug-trafficking war (Britain fighting to preserve profits from a substance the target government was trying to ban on public-health grounds) is a live framing dispute, since both descriptions are simultaneously true of the same events and different historiographical traditions weight them very differently. Model the war's trigger as a genuine dual mechanic — market-access coercion AND protection of an addictive-substance trade (HLT-260) — rather than resolving the tension by picking one framing as the 'real' cause."
 stats_touched: []
@@ -47,7 +47,10 @@ rates Qing China cannot unilaterally raise (COM-190), and establishing
 extraterritorial legal jurisdiction for foreign nationals — trade access
 achieved through military coercion rather than negotiation, with the
 military and commercial objectives inseparable from each other in the
-settlement's actual terms.
+settlement's actual terms. The result is the entrepôt contest imposed on a
+state that was never colonised: Hong Kong ceded as a free port and treaty
+ports opened along the coast, so China kept its territory and lost control of
+its ports (MAR-185).
 
 ## Social consequence
 

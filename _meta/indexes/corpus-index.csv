@@ -213,9 +213,10 @@ MAR-120,Marine Insurance,maritime,finance; commerce,core,drafted,high,1300,1700,
 MAR-130,Naval Gunnery and Ship Artillery,maritime,engineering; war,core,drafted,high,1350,1858,era,0,,2,MAR-210; MAR-200,FALSE,naval-gunnery; cannon; paixhans-gun; explosive-shell
 MAR-140,Admiralty,maritime,law; war,core,drafted,medium,1360,1900,century,1,MAR-060,0,,FALSE,admiralty; prize-court; naval-administration; maritime-law
 MAR-150,Smuggling,maritime,commerce; law,standard,drafted,high,1400,1900,century,1,MAR-020,0,,FALSE,smuggling; mercantilism; haijin; customs
-MAR-160,Ocean Navigation,maritime,commerce; migration,core,drafted,high,1405,1522,decade,3,MAR-050; MAR-080; MAR-038,4,COM-140; AGR-220; MAR-170; MAR-180,FALSE,zheng-he; age-of-exploration; ocean-crossing; treasure-fleet
+MAR-160,Ocean Navigation,maritime,commerce; migration,core,drafted,high,1405,1522,decade,3,MAR-050; MAR-080; MAR-038,5,COM-140; AGR-220; MAR-170; MAR-180; MAR-185,FALSE,zheng-he; age-of-exploration; ocean-crossing; treasure-fleet
 MAR-170,Naval Provisioning and Scurvy,maritime,health,core,drafted,high,1497,1795,era,1,MAR-160,0,,FALSE,scurvy; provisioning; james-lind; royal-navy
 MAR-180,The Cape Route and the Collapse of the Mediterranean Spice Trade,maritime,commerce,core,drafted,high,1498,1600,century,1,MAR-160,0,,FALSE,cape-route; spice-trade; venice; vasco-da-gama
+MAR-185,The Colonial Port and the Contest for Entrepôts,maritime,commerce; diplomacy; war; law,core,drafted,medium,1500,1900,era,1,MAR-160,0,,TRUE,entrepot; cartaz; estado-da-india; malacca; batavia; singapore; hormuz; zanzibar; macau; treaty-ports; free-port
 MAR-190,Marines,maritime,war,standard,drafted,high,1537,1900,century,1,MAR-040,1,MAR-360,FALSE,marines; naval-infantry; amphibious-warfare
 MAR-200,Ironclads,maritime,engineering; war,core,drafted,high,1592,1870,decade,2,MAR-210; MAR-130,2,MAR-270; MAR-300,FALSE,ironclad; turtle-ship; armor; naval-technology
 MAR-210,Ship of the Line,maritime,war,core,drafted,high,1650,1850,century,3,MAR-040; MAR-130; MAR-060,1,MAR-200,FALSE,ship-of-the-line; line-of-battle; sailing-navy; gunnery

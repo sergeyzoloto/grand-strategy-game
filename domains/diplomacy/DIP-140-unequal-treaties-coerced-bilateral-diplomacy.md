@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [DIP-100]
 enables: []
-see_also: [DIP-090, DIP-150, COM-210]
+see_also: [DIP-090, DIP-150, COM-210, MAR-185]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -49,7 +49,10 @@ substantive terms (forced port openings, fixed low tariffs it cannot
 independently revise, extraterritorial jurisdiction for the victor's
 citizens) are dictated by the victor with no real negotiating room on the
 losing side, converting the treaty form itself into a legal fiction of
-equality covering a substantively coercive, one-sided outcome.
+equality covering a substantively coercive, one-sided outcome. What the
+treaties most often took was ports — concessions, customs control and
+foreign residence at named harbours — which is the colonial entrepôt
+mechanism applied without annexation (MAR-185).
 
 ## Social consequence
 

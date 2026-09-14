@@ -41,7 +41,7 @@ absence:
     note: The sailing form of the constraint was largely absent from the pre-contact Americas because sail was. Caribbean and most Atlantic-coast craft were paddled canoes, so routes were bounded by distance, currents and paddler endurance rather than by wind direction and season; the exception is the Pacific coast of Ecuador and Peru, where balsa sailing rafts traded along the coast. What the region lacked was the rig that makes a wind system into a route system, so the seasonal-window structure described here arrived with European ships rather than existing beforehand.
 prereqs: []
 enables: [MAR-020, MAR-050, MAR-160]
-see_also: [MIG-070, MAR-260, ENG-170, MAR-240, MIG-180]
+see_also: [MIG-070, MAR-260, ENG-170, MAR-240, MIG-180, MAR-185]
 contested: false
 contested_note: ""
 stats_touched: [sailing window, route knowledge]
@@ -93,7 +93,8 @@ wind, and coastal trade (MAR-020) ran to this calendar long before any ship left
 sight of land. MIG-070 carries trade diasporas as a network mechanism, and this is the
 physical reason the maritime ones settled rather than commuted. It also places
 markets. Malacca prospered because it sat where the two monsoons' shipping had to
-wait for each other.
+wait for each other, which made it the prize in the later contest for entrepôts
+(MAR-185).
 
 **Consequence two: the counterintuitive route makes route knowledge an asset.** The
 Volta do Mar requires sailing away from your destination to find the wind that

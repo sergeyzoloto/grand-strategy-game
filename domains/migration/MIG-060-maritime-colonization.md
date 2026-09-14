@@ -21,7 +21,7 @@ absence:
     note: East African Swahili coast city-states (from roughly 800) are themselves the receiving end of this pattern rather than the colonizing end for most of this period — Indian Ocean trading-post colonization runs into the coast from Arabia, Persia, and India, making the Swahili coast a node in someone else's network before it becomes, in its city-states, a comparable network of its own.
 prereqs: []
 enables: [MIG-150, DIP-090]
-see_also: [MIG-090]
+see_also: [MIG-090, MAR-185]
 contested: false
 contested_note: ""
 stats_touched: [settler footprint]
@@ -52,7 +52,9 @@ whatever polity controls the adjacent hinterland. The founding cost is low
 and mostly capital/logistics rather than manpower, which is what lets a
 comparatively small city-state project this pattern across a very wide
 maritime range simultaneously (dozens of Greek colonies within a few
-centuries).
+centuries). Once founded, a trading post's value lies in its function as a
+port — taxing, transshipping and excluding — and the contest between powers
+for the few ports a region's trade will use is MAR-185's.
 
 ## Social consequence
 
