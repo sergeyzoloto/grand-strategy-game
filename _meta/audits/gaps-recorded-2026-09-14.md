@@ -1,6 +1,6 @@
 # Gaps Recorded — 2026-09-14
 
-Gaps identified during the MAR, DIP, LAW and ENG verification passes of 2026-09-14
+Gaps identified during the MAR, DIP, LAW, ENG and PHI verification passes of 2026-09-14
 and left unwritten by decision. None is fixed here. Each records what is
 absent, where the nearest existing coverage stops, and what a future entry or
 extension would need to carry.
@@ -264,3 +264,68 @@ industrial base.
 **Placement.** ENG, under the boundary rule that ENG owns technique and WAR owns
 doctrine. It would sit around 1926–1970 and link `WAR-330`, `NAT-250`, `ENG-340` and
 `MED-140`.
+
+---
+
+## 9. The grounding problem after the death of God — a gap inside PHI-360
+
+**Status:** gap inside an existing entry. Not written.
+
+**What exists.** `PHI-360` Nietzschean Genealogy carries the genealogical method: moral
+concepts traced to the power relations that produced them, master and slave morality,
+ressentiment, and the self-undermining objection. `PHI-400` carries existentialism,
+which is in effect one response to the problem below, without naming the problem.
+
+**What is missing.** The consequence, as distinct from the critique. `PHI-360` never
+mentions the death of God, nihilism, or the question it poses: how morality is grounded
+once a transcendent source is no longer publicly credible. Nor does it carry the
+responses — Nietzsche's own revaluation, Dostoevsky's "if God does not exist, everything
+is permitted" as the conservative statement of the problem, Kantian and utilitarian
+secular grounding (`PHI-320`, `PHI-330`) recast as answers to it after the fact,
+existentialist self-authorship (`PHI-400`), and religious restatement.
+
+**Placement.** An extension of `PHI-360`'s Mechanism and Hook, with see_also to
+`PHI-320`, `PHI-330`, `PHI-400`, `PHI-280` and `REL-255`. Not a separate entry unless
+the responses grow their own Mechanism.
+
+---
+
+## 10. 1968 and the critique of institutions — absent from PHI
+
+**Status:** gap. No entry. Proposed as covered by `PHI-400` and `PHI-410`; neither
+carries it.
+
+**What exists.** `PHI-400` Existentialism and Structuralism ends in 1966 and names
+Foucault only as structuralism's peak with The Order of Things. `PHI-410` Mass Culture and
+the Culture Industry ends in 1960 with Adorno and Horkheimer.
+
+**What is missing.** The turn from critique of culture to critique of institutions, and
+its moment of mass uptake: Marcuse's One-Dimensional Man (1964) as the bridge from
+`PHI-410`; Foucault's histories of the asylum, clinic and prison (1961-1975); Illich on
+schooling and medicine; anti-psychiatry; and the student and worker movements of 1968 in
+Paris, Mexico City, Prague, Tokyo and the United States as the point where these
+arguments became political practice.
+
+**Placement.** PHI, around 1964-1980, with prereqs `PHI-400` and `PHI-410`, and see_also
+to `LAW-165` (schooling), `HLT-340` (medicine) and `PHI-305` once it exists.
+
+---
+
+## 11. Hellenistic syncretism — absent; belongs mainly in REL-240
+
+**Status:** gap. No entry. Recommendation, not a proposal to write in PHI.
+
+**What exists.** `PHI-150` carries the Hellenistic ethical schools and nothing on
+religious hybridisation. `REL-240` Syncretic Cults owns syncretism as a mechanism but
+only for 1526-1850 in Africa and the Americas.
+
+**What is missing.** Cult hybridisation in the Hellenistic and Roman world: the
+Ptolemaic creation of Serapis, the spread of the Isis cult, interpretatio romana as a
+systematic equation of gods, the mystery cults, and Graeco-Buddhist Gandhara.
+
+**Recommendation.** Extend `REL-240` backwards with region variants for the Mediterranean,
+Middle East and South Asia (Gandhara), since the mechanism — deities merged across
+traditions under conquest and migration — is REL's. `PHI-150` should carry at most a
+see_also and a sentence on Stoic cosmopolitan theology treating the gods as names for one
+divine reason, which is the philosophical half.
+
