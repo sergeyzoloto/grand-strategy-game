@@ -21,7 +21,7 @@ absence:
     note: Direct great-power military confrontation within Europe itself stays absent throughout the nuclear deterrence era (WAR-330) covered here, with European proxy and hybrid conflict activity instead exported to other regions or conducted through non-military means (economic pressure, disinformation) rather than through armed proxy forces on European soil — deterrence holding specifically for the direct-confrontation scenario it was built to prevent.
 prereqs: [WAR-330, WAR-240]
 enables: []
-see_also: [WAR-320]
+see_also: [WAR-320, DIP-115]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -52,7 +52,10 @@ otherwise backing a local combatant force whose own motivations may be only
 partly aligned with the sponsor's — this arm's-length structure lets a
 sponsor claim deniability and limits its own direct casualties, at the cost
 of much less control over how the proxy actually fights or what political
-outcome it ultimately pursues.
+outcome it ultimately pursues. The underlying logic predates deterrence:
+rivals sponsored revolts in each other's peripheries for two and a half
+centuries before 1945, and the obligation a sponsored movement incurs is
+carried in DIP-115, which this entry extends into the nuclear era.
 
 ## Social consequence
 

@@ -21,7 +21,7 @@ absence:
     note: Anti-colonial guerrilla movements across mid-20th-century Africa (Algeria, Kenya, Mozambique among others) adapt the broader guerrilla template to campaigns explicitly aimed at colonial withdrawal and sovereignty rather than at displacing a domestic rival regime, tying the strategy's political objective directly to decolonization diplomacy (DIP's territory) rather than to a civil conflict's internal power struggle.
 prereqs: [WAR-060, WAR-037]
 enables: [WAR-340, WAR-320]
-see_also: [WAR-120]
+see_also: [WAR-120, DIP-115]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -62,7 +62,10 @@ counterinsurgent force for intelligence and to deny the guerrillas that same
 support — a dynamic that recurringly produces the population displacement
 this domain's migration entries track (MIG's territory) as controlling or
 denying population becomes as strategically important as any battlefield
-engagement.
+engagement. A second resource can substitute for part of that population
+support: a foreign sponsor supplying arms, money and sanctuary, which is why
+guerrilla movements in colonial peripheries so often sought one, and why
+losing a sponsor can end a movement faster than losing a battle (DIP-115).
 
 ## Regional specifics
 

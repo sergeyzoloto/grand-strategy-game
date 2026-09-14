@@ -21,7 +21,7 @@ absence:
     note: Qing China finances state expenditure predominantly through direct taxation and, in fiscal emergencies, sale of offices or informal levies rather than through a developed tradable government bond market, leaving it without the same capacity to mobilize large-scale, up-front capital against future revenue that European sovereign-debt markets provide their own governments.
 prereqs: [FIN-020, FIN-100]
 enables: [FIN-210]
-see_also: [FIN-260, WAR-037]
+see_also: [FIN-260, WAR-037, DIP-115]
 contested: false
 contested_note: ""
 stats_touched: [sovereign credit capacity]
@@ -36,7 +36,7 @@ England's "financial revolution" following the 1688 Glorious Revolution establis
 
 ## Mechanism
 
-Rather than raising an entire war's cost through immediate taxation (politically costly and often practically impossible to collect fast enough), a state issues bonds — a promise to pay a fixed return over time — sold to investors for cash today, converting a claim on decades of future tax revenue into immediately spendable capital now. The bond's market price directly reflects investor confidence in the state's ability and willingness to keep paying, converting FIN-020's abstract sovereign credit capacity into a continuously-updated, publicly observable number.
+Rather than raising an entire war's cost through immediate taxation (politically costly and often practically impossible to collect fast enough), a state issues bonds — a promise to pay a fixed return over time — sold to investors for cash today, converting a claim on decades of future tax revenue into immediately spendable capital now. The bond's market price directly reflects investor confidence in the state's ability and willingness to keep paying, converting FIN-020's abstract sovereign credit capacity into a continuously-updated, publicly observable number. The difference decided a war's aftermath in the 1780s: France paid for its intervention in the American Revolution by borrowing at high cost without a comparable funded debt, and the resulting fiscal crisis outlived the victory it bought (DIP-115).
 
 ## Social consequence
 

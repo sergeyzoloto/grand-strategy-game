@@ -21,7 +21,7 @@ absence:
     note: The League of Nations mandate system applies collective-security-adjacent international oversight to former Ottoman territories in the Middle East without extending League membership or full sovereign standing to those territories themselves — a supervised, subordinate status distinct from full participation in the collective-security system being simultaneously constructed for its actual member states.
 prereqs: [DIP-100, DIP-170]
 enables: [DIP-190]
-see_also: [LAW-230, DIP-090, DIP-130, DIP-200, MED-120, MED-130, LAW-225, HLT-325]
+see_also: [LAW-230, DIP-090, DIP-130, DIP-200, MED-120, MED-130, LAW-225, HLT-325, DIP-115]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -90,4 +90,7 @@ choices made at founding (permanent council seats, mandate-system
 subordinate status) can lock in durable inequality among members for
 decades — and, per the Non-Aligned Movement, states excluded from shaping
 that original design can and do construct their own alternative
-institutions rather than simply accepting the terms on offer.
+institutions rather than simply accepting the terms on offer. Many of those
+states had themselves won independence through foreign-sponsored revolts, and
+non-alignment was in part a refusal to be sponsored again — to become the proxy
+in someone else's rivalry (DIP-115).
