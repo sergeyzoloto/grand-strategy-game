@@ -34,7 +34,7 @@ absence:
     note: Sub-Saharan Africa has no commercial production in this window at all, with the significant finds arriving only from the 1950s. The continent is therefore absent from the formative period in which the industry's corporate structures, concession terms, and property rules were all settled — so when African oil does arrive it arrives into arrangements designed elsewhere by parties with no African interest, which is a more durable disadvantage than the delay itself.
 prereqs: [ENG-280, MAR-100]
 enables: [ENG-275, WAR-275, LAW-215]
-see_also: [ENG-165, ENG-055, COM-230, ENG-300, ENG-290]
+see_also: [ENG-165, ENG-055, COM-230, ENG-300, ENG-290, MAR-337]
 contested: false
 contested_note: ""
 stats_touched: [stranded capital, energy budget, extraction depth cost]
@@ -95,6 +95,11 @@ rather than after a learning period, so there was no interval in which
 the incumbent could adapt. And the incumbent's capital was **maximally
 specific** — a whaler converts to nothing, unlike a textile mill that can
 weave something else.
+
+This entry owns extraction and the substitution it causes. Moving oil by sea,
+and the tanker spills and pollution regulation that followed from the Torrey
+Canyon to the Exxon Valdez, are transport and regulation rather than
+extraction, and belong to MAR-337.
 
 ## Social consequence
 

@@ -21,7 +21,7 @@ absence:
     note: Capital flight from African resource-exporting economies into foreign tax havens and offshore accounts is a persistent, well-documented drain on domestic investment and tax revenue — the haven mechanism's cost falls here not on the haven's own citizens but on origin-country populations who never see the diverted revenue as public investment or services at all.
 prereqs: [FIN-020]
 enables: []
-see_also: [FIN-170]
+see_also: [FIN-170, MAR-337]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -52,7 +52,11 @@ registration fees and a local financial-services industry, while the
 origin country whose capital or corporate profits relocate there loses the
 tax revenue and legibility (FIN-020) it would otherwise have had over that
 same wealth, a direct transfer of fiscal capacity from large economies to
-small ones structured specifically to attract it.
+small ones structured specifically to attract it. Shipping runs the same
+arbitrage on regulation rather than tax: flags of convenience let an owner
+register a ship wherever safety enforcement is lightest, and the counter-move
+is enforcement by the port a ship arrives at rather than the state it is
+registered in (MAR-337).
 
 ## Social consequence
 

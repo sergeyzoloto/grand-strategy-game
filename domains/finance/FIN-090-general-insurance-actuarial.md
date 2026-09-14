@@ -21,7 +21,7 @@ absence:
     note: Conventional fixed-premium insurance contracts raise the same gharar (excessive uncertainty) concerns under Islamic finance principles that constrain conventional derivatives (FIN-130), with takaful — a cooperative, mutual-risk-sharing structure where participants contribute to a shared fund and share both the risk and any surplus — developing as the principle-compliant alternative achieving comparable protection.
 prereqs: [FIN-060]
 enables: []
-see_also: [MAR-120, HLT-070, HLT-210, HLT-270, FIN-130, MTH-060, MTH-062]
+see_also: [MAR-120, HLT-070, HLT-210, HLT-270, FIN-130, MTH-060, MTH-062, MAR-337]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -36,7 +36,11 @@ London's 1666 Great Fire directly triggers the scaling of organized fire insuran
 
 ## Mechanism
 
-An individual catastrophic loss (a house burning down, a breadwinner dying young) is financially devastating for the one household it happens to, but statistically predictable in aggregate across a large enough pool of similar households — an insurer collects a premium from everyone in the pool calibrated to the pool's average loss rate, using that aggregate predictability to convert an unpredictable individual catastrophe into a small, budgetable, and profitable-to-the-insurer recurring cost. This requires actuarial science: without a reliable statistical basis for the underlying risk (a mortality table, a fire-frequency estimate), an insurer cannot price the pool correctly and risks insolvency from adverse selection or sheer bad luck.
+An individual catastrophic loss (a house burning down, a breadwinner dying young) is financially devastating for the one household it happens to, but statistically predictable in aggregate across a large enough pool of similar households — an insurer collects a premium from everyone in the pool calibrated to the pool's average loss rate, using that aggregate predictability to convert an unpredictable individual catastrophe into a small, budgetable, and profitable-to-the-insurer recurring cost. This requires actuarial science: without a reliable statistical basis for the underlying risk (a mortality table, a fire-frequency estimate), an insurer cannot price the pool correctly and risks insolvency from adverse selection or sheer bad luck. Because the insurer
+bears the loss, it has a reason to inspect and refuse bad risks, which makes
+insurance a regulator in its own right: in twentieth-century shipping,
+insurers' refusal of cover to substandard ships often enforced safety more
+effectively than the international conventions did (MAR-337).
 
 ## Social consequence
 

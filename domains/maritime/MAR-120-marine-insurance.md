@@ -21,7 +21,7 @@ absence:
     note: Chinese maritime trade in this era relies more heavily on cargo-splitting across multiple vessels and diversified partnership investment to manage voyage risk than on a dedicated premium-based insurance instrument comparable to the Mediterranean model, achieving comparable risk mitigation through portfolio diversification rather than a transferable risk contract.
 prereqs: [MAR-020, MAR-030]
 enables: []
-see_also: [FIN-090, MAR-250]
+see_also: [FIN-090, MAR-250, MAR-337]
 contested: false
 contested_note: ""
 stats_touched: [contract enforcement]
@@ -49,7 +49,10 @@ investors who couldn't otherwise absorb the risk of any single voyage's
 total loss — the underwriter's business model in turn depends on
 aggregating enough independent voyages that the law of large numbers makes
 the aggregate risk predictable even though any single voyage's outcome
-isn't.
+isn't. The underwriter's stake in each hull later turns marine insurance and
+the classification societies that serve it into the working enforcement of
+modern safety and pollution rules, since a ship denied cover or class cannot
+trade whatever flag it flies (MAR-337).
 
 ## Social consequence
 

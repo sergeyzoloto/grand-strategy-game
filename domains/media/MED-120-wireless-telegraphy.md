@@ -31,7 +31,7 @@ absence:
   - region: south-asia
     note: British India had one of the world's densest telegraph networks already, which is precisely why wireless arrives late and thinly. Where the wire is in place and working, the marginal value of a wireless link is small — the technology gets adopted first by the places the cable never reached, so the strength of a region's existing telegraph infrastructure predicts slow rather than fast wireless adoption, an inversion worth modelling directly.
 prereqs: [NAT-170, MED-100]
-enables: [MED-130, WAR-315, LAW-225, MAR-335, MED-150]
+enables: [MED-130, WAR-315, LAW-225, MAR-335, MED-150, MAR-337]
 see_also: [MED-030, MAR-330, MAR-320, MAR-340, ENG-300, DIP-180, MED-110, MTH-072]
 contested: false
 contested_note: ""
@@ -85,7 +85,10 @@ binding constraint the continuous human watch rather than the apparatus —
 the same standing-readiness cost structure MED-030 establishes for relay
 stations, reappearing in a technology that otherwise has nothing in common
 with it. SOLAS 1914 encodes exactly this: the requirement is not that ships
-carry wireless but that someone is always listening.
+carry wireless but that someone is always listening. The Titanic-to-SOLAS
+sequence is also the first turn of a pattern that runs through the rest of
+the century — maritime safety law advancing in steps triggered by visible
+disasters rather than by steady improvement — which MAR-337 carries.
 
 ## Social consequence
 

@@ -38,7 +38,7 @@ absence:
     note: The Caspian had no settled law-of-the-sea regime for most of this period, because whether it is a sea or a lake was itself disputed — a sea would be divided into national zones under the convention, a lake shared or divided by treaty among its shores. After the Soviet collapse five littoral states contested the answer, with its oil and gas at stake, until a 2018 convention created a special regime. The world's largest enclosed body of water sat outside the enclosure this entry describes because its legal category could not be agreed.
 prereqs: [MAR-185]
 enables: []
-see_also: [AGR-200, MAR-140, MAR-100]
+see_also: [AGR-200, MAR-140, MAR-100, MAR-337]
 contested: true
 contested_note: "Two disputes. First, whether enclosure conserves a commons. Gordon's 1954 fishery economics and Hardin's 'Tragedy of the Commons' (Science, 1968) argued open access destroys a shared resource and that property or exclusive jurisdiction protects it; Ostrom (Governing the Commons, 1990) showed many commons are sustainably managed by user communities without enclosure. The ocean record supports both: Iceland and later quota systems stabilised some fisheries under national control, while Newfoundland cod collapsed in 1992 fifteen years after Canada extended its jurisdiction to 200 miles, under national management. Model enclosure as transferring control rather than guaranteeing conservation, with stock outcomes conditional on the enclosing state's management capacity and its willingness to limit its own fleet. Second, whether the common-heritage principle for the deep seabed is a real regime or a formality: the 1994 implementation agreement rewrote the convention's seabed provisions to meet industrial states' objections, and the United States has still not ratified. Treat the seabed regime as contested and incompletely binding on the largest maritime power."
 stats_touched: [fishery stock]
@@ -116,7 +116,9 @@ Senkaku/Diaoyu islands are disputed; Britain gave up an EEZ claim from Rockall w
 it ratified. The convention denies a zone to rocks that cannot sustain habitation
 or economic life, so states have an incentive to make features look habitable.
 Archipelagic baselines, pioneered by Indonesia, let a state enclose whole inland
-seas.
+seas. Jurisdiction over vessels runs on a separate axis: a ship is governed by the
+flag it chooses, not the waters it sails, which is the opening flags of convenience
+exploit and port state control answers (MAR-337).
 
 **Enforcement produced the first conflicts between allies.** The Cod Wars pitted
 Iceland against Britain inside NATO. They show that a small state with one vital
