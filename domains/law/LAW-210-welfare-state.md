@@ -21,7 +21,7 @@ absence:
     note: Formal state-administered welfare systems on the European model remain limited across most of colonial and early postcolonial Africa in this era, with social protection continuing to run substantially through extended family, lineage, and community obligation networks rather than through state-administered entitlement programs — informal but real social insurance existing alongside, not preceding, formal state welfare systems elsewhere.
 prereqs: [FIN-020]
 enables: []
-see_also: [REL-130, FIN-230, LAW-165, WAR-037, REL-255]
+see_also: [REL-130, FIN-230, LAW-165, WAR-037, REL-255, LAW-075]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -67,6 +67,12 @@ relief, which REL-255 treats as one of the transfers that strip religious
 authority of its practical base — and, through removing the risks religion
 addressed, as the input to the existential-security explanation of where
 religious participation fell.
+
+The comprehensive welfare settlements came after catastrophe: the Beveridge
+report was drafted in 1942, in the middle of a war that had drawn on the whole
+population and created a claim the state had to answer. War lowers the capacity
+of those who would block such reform, which is why the architecture expanded in
+bursts after crises rather than steadily (LAW-075).
 
 ## Regional specifics
 

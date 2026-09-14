@@ -21,7 +21,7 @@ absence:
     note: China's 14th-century plague mortality (entangled with Yuan-Ming political collapse) does not produce the same well-documented labor-price rupture and peasant-bargaining-power shift credited to the European case, though whether that reflects a genuinely different social outcome or a thinner surviving documentary record for teasing the two apart is unresolved.
 prereqs: [HLT-170]
 enables: [AGR-190]
-see_also: [NAT-130]
+see_also: [NAT-130, LAW-075]
 contested: true
 contested_note: "How much of the well-documented post-plague European shift (rising real wages, weakened serfdom, sumptuary-law backlash against lower-class spending) was actually caused by the mortality shock itself, versus longer-running agrarian and institutional trends the plague only accelerated or coincided with, is a live historiographical dispute. Model the labor-scarcity wage/status effect as real and mortality-scaled, but let its long-run institutional consequence (does serfdom actually weaken, or snap back) branch on the prior strength of lordly coercive institutions, not resolve automatically from the mortality number alone."
 stats_touched: []
@@ -58,6 +58,12 @@ experience the same event as a threat to a social order they'd taken as fixed,
 which is exactly why the legal backlash is aimed at appearance and spending
 rather than at wages directly — the fight is over the marker, because the
 underlying economic shift is harder to legislate away.
+
+The sumptuary backlash was one attempt to use law to hold a position the
+pandemic had broken, alongside wage-freezing statutes. Mass mortality is one of
+the main channels through which catastrophe opens institutions to change, and
+the legal fight over wages and dress is what that opening looks like while it
+is still contested (LAW-075).
 
 ## Regional specifics
 

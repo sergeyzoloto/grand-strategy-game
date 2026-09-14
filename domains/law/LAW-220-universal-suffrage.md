@@ -21,7 +21,7 @@ absence:
     note: The United States' 1965 Voting Rights Act is necessary a full century after the Fifteenth Amendment nominally granted Black male citizens the vote, because durable state-level legal and extra-legal barriers (poll taxes, literacy tests, and outright intimidation and violence) continued to suppress that formal right in practice — a case where the legal text alone, unlike India's, was insufficient to secure the underlying right without a much later second legislative and enforcement intervention.
 prereqs: [LAW-050]
 enables: []
-see_also: [LAW-040, LAW-215, WAR-200, LAW-165, LAW-175]
+see_also: [LAW-040, LAW-215, WAR-200, LAW-165, LAW-175, LAW-075]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -62,6 +62,12 @@ reflects which excluded group had enough organized political leverage to
 force its own inclusion first — the order of expansion is itself a
 legible record of relative political power among excluded groups at each
 stage.
+
+Several of the largest expansions followed mass war, when a state that had
+drawn on its whole adult population faced a claim it could not refuse: Britain
+extended the vote in 1918 and France to women in 1944-45. Catastrophe opens
+the franchise when it creates an obligation incumbents can no longer block
+(LAW-075).
 
 ## Regional specifics
 

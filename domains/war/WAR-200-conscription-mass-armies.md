@@ -38,7 +38,7 @@ absence:
     note: The Indian Army under British rule was deliberately non-conscript, recruited by volunteer enlistment from populations selected under martial-races doctrine, and the avoidance was a policy rather than an incapacity — the colonial state possessed census machinery of exceptional reach and declined to use it for this. Universal conscription would have armed and trained a population the administration did not trust to arm, and after 1857 that calculation was explicit. A state can hold every prerequisite for conscription and refuse the mechanism because the resulting army would be the wrong army.
 prereqs: [WAR-060, FIN-020, REL-210, LAW-110]
 enables: [WAR-290, LAW-165]
-see_also: [WAR-140, WAR-220, WAR-230, WAR-190, WAR-260, HLT-270, LAW-100, LAW-220, DIP-160, REL-230, MIG-180, MED-090, MTH-075, WAR-037, MED-085]
+see_also: [WAR-140, WAR-220, WAR-230, WAR-190, WAR-260, HLT-270, LAW-100, LAW-220, DIP-160, REL-230, MIG-180, MED-090, MTH-075, WAR-037, MED-085, LAW-075]
 contested: false
 contested_note: ""
 stats_touched: [mobilisable manpower, legibility, literacy]
@@ -156,6 +156,11 @@ WAR-037's demobilisation problem by an order of magnitude without changing
 its mechanism — the conscript has a prior civilian life to return to, but the
 numbers overwhelm whatever absorption the state has built, and the order of
 release becomes a political question in its own right.
+
+The obligation runs both ways. A state that conscripts its population incurs a
+claim, and after mass war that claim is paid in suffrage, social insurance and
+veterans' benefits — the obligation channel through which catastrophe opens
+institutions to change (LAW-075).
 
 ## Regional specifics
 

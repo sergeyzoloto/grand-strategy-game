@@ -21,7 +21,7 @@ absence:
     note: Mamluk Egypt and Syria suffer comparable plague mortality (HLT-220) without a comparable serfdom-divergence outcome in either direction, because the region's prevailing agrarian institution (the iqta land-assignment system, granting revenue rights rather than hereditary land-bound tenant labor) was never structured around the specific hereditary labor-bound tenancy category that either weakens or intensifies in the European cases — the same mortality shock hitting a genuinely different prior agrarian institutional base produces no comparable fork at all, rather than a third, undocumented variant of the same fork.
 prereqs: [HLT-220]
 enables: [LAW-175]
-see_also: [LAW-080, AGR-200]
+see_also: [LAW-080, AGR-200, LAW-075]
 contested: true
 contested_note: "The 'Brenner debate' in agrarian history disputes why the same Black Death mortality shock (HLT-220) produced serfdom's durable decline in Western Europe but its intensification in Eastern Europe — Robert Brenner's influential argument centers prior differences in peasant class organization and bargaining capacity (stronger village solidarity and legal custom in the West constraining lords' ability to re-impose old terms once labor grew scarce, weaker peasant organization in the East allowing it), while other historians weight market-access differences (Western Europe's access to a growing wage-labor and commercial economy versus Eastern Europe's grain-export opportunity to the West) more heavily. Model the divergence as branching on prior peasant organizational strength and available market alternatives together (design principle 1), rather than crediting either factor alone as sufficient."
 stats_touched: []
@@ -65,6 +65,10 @@ production for export — the two regions' peasantries end up with
 starkly different long-run social and economic positions despite having
 experienced, within a comparable timeframe, the same originating
 demographic catastrophe.
+
+The fourteenth-century fork is the clearest instance of a general pattern:
+catastrophe lowers the capacity of incumbents to block institutional change, and
+what the opening produces depends on who was organised before the shock (LAW-075).
 
 ## Regional specifics
 

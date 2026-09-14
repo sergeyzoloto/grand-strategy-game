@@ -183,6 +183,7 @@ LAW-040,"Marriage, Inheritance, and Personal Status Law",law,religion; migration
 LAW-050,Citizenship and Voting Rights,law,diplomacy; agriculture,core,drafted,high,-594,1000,era,1,LAW-020,3,LAW-230; LAW-220; DIP-160,FALSE,citizenship; voting-rights; athenian-democracy; dhimmi
 LAW-060,Senate and Elite Council as a Coalition Mechanism,law,diplomacy,core,drafted,medium,-509,1450,era,1,LAW-020,0,,FALSE,senate; council-of-elders; iroquois-confederacy; censorate
 LAW-070,"Civil Law: Property, Contract, and Inheritance",law,commerce; finance,core,drafted,high,-450,1900,era,1,LAW-020,0,,FALSE,civil-law; property-law; contract-law; napoleonic-code; inheritance
+LAW-075,Catastrophe as an Institutional Opening,law,war; finance; health; agriculture,core,drafted,medium,-413,2010,era,0,,0,,TRUE,critical-juncture; crisis-and-reform; distributional-coalitions; black-death; two-tax-system; famine-codes; prussian-reform; displacement-effect; emergency-powers; shock-doctrine
 LAW-080,Feudalism and Vassalage,law,war; agriculture,core,drafted,high,250,1400,era,2,LAW-020; AGR-170,0,,FALSE,feudalism; vassalage; land-tenure; samurai; knight-service; iqta
 LAW-090,The Reception of Roman Law,law,philosophy,core,drafted,high,500,1200,era,1,LAW-020,1,LAW-130,FALSE,roman-law; corpus-juris-civilis; bologna; glossators
 LAW-100,Meritocracy and State Bureaucracy — Examinations and Career,law,philosophy,core,drafted,high,605,1854,era,1,LAW-020,1,LAW-165,FALSE,examination-system; meritocracy; civil-service; keju

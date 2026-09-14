@@ -21,7 +21,7 @@ absence:
     note: Comparable large-scale, legally-prosecuted witch-hunting panics using formal court procedure are not a significant feature of contemporary Ottoman or wider Islamic legal practice in this era, despite widespread belief in supernatural harm existing across many societies — showing legal-system capture by this specific kind of moral panic is not an inevitable consequence of the underlying belief being present, but depends on the surrounding legal and religious institutional context.
 prereqs: [LAW-030]
 enables: []
-see_also: []
+see_also: [LAW-075]
 contested: true
 contested_note: "How much the witch-trial phenomenon reflects genuine, widespread popular belief driving prosecution demands from below, versus systematic direction and evidentiary standard-setting by religious and legal elites from above, is debated among historians, with the balance of drivers appearing to vary by region and specific panic. Model the trigger and intensity of a given panic as a variable mix of both popular demand and elite direction rather than committing to one as the primary cause everywhere it occurs."
 stats_touched: []
@@ -41,6 +41,10 @@ A witch trial uses the same courts, procedures, and (per LAW-030) confession-ext
 ## Social consequence
 
 Because the panic operates through legitimate-looking legal procedure rather than through extralegal violence, it draws in local elites, clergy, and neighbors as active participants (accusers, witnesses, judges) rather than requiring a small group of dedicated persecutors — implicating an entire community's ordinary legal and religious institutions in producing an outcome those same institutions typically repudiate once the panic subsides, as Massachusetts's own colonial authorities did after Salem.
+
+Panics also follow catastrophe. Disaster lowers the checks on authority and
+supplies a need for someone to blame, so the same opening that can admit reform
+can admit scapegoating instead, as after the Tokyo earthquake of 1923 (LAW-075).
 
 ## Regional specifics
 
