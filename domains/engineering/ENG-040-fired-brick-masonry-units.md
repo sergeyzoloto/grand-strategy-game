@@ -24,7 +24,7 @@ absence:
     note: Mesoamerican and Andean monumental construction relies on dressed stone masonry and sun-dried adobe rather than kiln-fired brick at comparable scale — a real absence of the specific fired-clay technique, not of large-scale masonry ambition or skill, with stone substituting directly for the durability role fired brick plays in the Old World.
 prereqs: []
 enables: []
-see_also: [COM-030, ENG-110, ENG-055]
+see_also: [COM-030, ENG-110, ENG-055, ENG-166]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -69,6 +69,11 @@ market-weight standardization shows up identically in that
 civilization's brick dimensions, suggesting a shared underlying
 administrative or craft-guild discipline rather than two unrelated
 coincidences.
+
+Fired brick became a legal requirement as well as a technical choice once cities
+began to burn. ENG-166 carries the fire codes, from London's Rebuilding Act of 1667
+to Istanbul's Tanzimat regulations and Meiji Tokyo, that mandated brick and stone
+over timber.
 
 ## Regional specifics
 

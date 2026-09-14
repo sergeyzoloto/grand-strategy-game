@@ -92,6 +92,7 @@ ENG-130,Roman Concrete's Lost Recipe,engineering,,core,drafted,medium,476,1824,e
 ENG-140,Gunpowder Engineering and Explosives,engineering,,core,drafted,high,850,1450,century,0,,2,WAR-130; ENG-280,FALSE,gunpowder; saltpeter; corning-process; explosives
 ENG-160,Mechanical Clockwork and the Escapement,engineering,,standard,drafted,medium,1092,1400,era,0,,1,MAR-250,TRUE,clockwork; escapement; su-song; al-jazari; verge-and-foliot
 ENG-165,The Coal Economy,engineering,commerce; health; war; nature,core,drafted,high,1550,1900,decade,1,ENG-055,3,ENG-170; ENG-300; ENG-260,TRUE,coal; coalfield; drainage; pomeranz; great-divergence; anthracite
+ENG-166,Disaster and the Building Code,engineering,law; finance; migration; health,core,drafted,medium,1666,1970,era,0,,0,,TRUE,building-code; fire; earthquake; great-fire-of-london; meireki-fire; lisbon-1755; kanto-earthquake; chicago-fire; triangle-shirtwaist; boiler-inspection; mine-inspectorate; informal-housing
 ENG-170,The Steam Engine,engineering,nature; commerce; health,core,drafted,high,1712,1830,decade,2,NAT-040; ENG-165,7,COM-170; COM-200; ENG-190; ENG-250; ENG-300; ENG-220; MAR-260,FALSE,steam-engine; watt-engine; newcomen-engine; mechanical-power
 ENG-180,Weaving Looms and Textile Mechanization,engineering,commerce,core,drafted,high,1733,1830,century,0,,1,MTH-065,FALSE,loom; spinning-jenny; power-loom; textile-machinery
 ENG-190,Machine Tools,engineering,,core,drafted,high,1775,1840,century,1,ENG-170,4,ENG-210; ENG-290; ENG-330; ENG-215,FALSE,machine-tools; lathe; boring-machine; precision-manufacturing

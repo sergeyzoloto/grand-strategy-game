@@ -41,7 +41,7 @@ absence:
     note: "The Taiping war of 1850-64 killed tens of millions of people in China and produced no opening of the kind this entry describes. The dynasty survived, and the rebellion was put down by regional armies raised and led by Confucian gentry officials such as Zeng Guofan, whose standing the war increased rather than destroyed. What followed was the Tongzhi Restoration, a deliberate reassertion of the Confucian order with reform confined to arsenals and shipyards (Mary Wright, The Last Stand of Chinese Conservatism, 1957). Catastrophe opens institutions only when it removes or discredits the incumbents; a catastrophe the incumbents win strengthens them."
 prereqs: []
 enables: []
-see_also: [AGR-190, HLT-220, FIN-110, WAR-290, LAW-210, LAW-220, WAR-200, LAW-150, LAW-175]
+see_also: [AGR-190, HLT-220, FIN-110, WAR-290, LAW-210, LAW-220, WAR-200, LAW-150, LAW-175, ENG-166]
 contested: true
 contested_note: "Whether crisis genuinely enables reform or merely accelerates change already under way is argued. Olson (The Rise and Decline of Nations, 1982) holds that stable societies accumulate distributional coalitions that block efficient reform, and that defeat and occupation cleared them in postwar Germany and Japan; Scheidel (The Great Leveler, 2017) finds major reductions in inequality almost only after mass-mobilisation war, revolution, state collapse and pandemic; Peacock and Wiseman's displacement effect (1961) shows public spending ratcheting up in war and not returning. Against this, historians of gradual institutional change (Streeck and Thelen, Beyond Continuity, 2005) show large transformations built through layering and drift without catastrophe, and argue that many post-crisis reforms were drafted long before the crisis that passed them; Klein (The Shock Doctrine, 2007) and theorists of emergency powers stress crises exploited to consolidate authority. Model catastrophe as a temporary reduction in the incumbent veto whose outcome is conditional on prior institutional state (design principle 1): which groups the catastrophe removes or discredits, which alternative programmes are already prepared, and whether the state faces an obligation it must answer. The same opening should be able to produce reform, consolidation, or restoration."
 stats_touched: [incumbent veto, sovereign credit capacity, mobilisable manpower]
@@ -168,6 +168,10 @@ the sacrifices demand an answer. This is why programmes prepared in advance matt
 much: the Beveridge plan, the Prussian reform memoranda and the Meiji oligarchs' borrowed
 institutions were ready when the moment came, and a reform not already drafted rarely
 survives the few years before new incumbents entrench.
+
+The narrowest technical form of the opening is the building code. ENG-166 carries the
+fire, earthquake and industrial disasters after which the standard to which things
+are built was raised and not lowered again.
 
 ## Regional specifics
 

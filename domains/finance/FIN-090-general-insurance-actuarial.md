@@ -21,7 +21,7 @@ absence:
     note: Conventional fixed-premium insurance contracts raise the same gharar (excessive uncertainty) concerns under Islamic finance principles that constrain conventional derivatives (FIN-130), with takaful — a cooperative, mutual-risk-sharing structure where participants contribute to a shared fund and share both the risk and any surplus — developing as the principle-compliant alternative achieving comparable protection.
 prereqs: [FIN-060]
 enables: []
-see_also: [MAR-120, HLT-070, HLT-210, HLT-270, FIN-130, MTH-060, MTH-062, MAR-337]
+see_also: [MAR-120, HLT-070, HLT-210, HLT-270, FIN-130, MTH-060, MTH-062, MAR-337, ENG-166]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -45,6 +45,10 @@ effectively than the international conventions did (MAR-337).
 ## Social consequence
 
 Widely available fire and life insurance lets households and businesses take on risks (building in a fire-prone city, supporting a family on a single income) they would otherwise have to self-insure against through informal saving or kin networks alone, transferring that risk to a specialized institution built specifically to absorb it at scale — a genuine expansion of what an ordinary household can afford to risk, paired with a new dependency on the insurer's own continued solvency and good faith in eventually paying claims.
+
+Insurers also became enforcers of building standards. After Chicago's second fire in
+1874 the underwriters threatened to withdraw cover unless the city enforced its fire
+code, and ENG-166 carries that and the wider codes that followed urban disasters.
 
 ## Regional specifics
 

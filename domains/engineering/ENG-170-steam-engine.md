@@ -30,7 +30,7 @@ absence:
     note: Comparable steam-power development does not occur independently in East Asia despite otherwise sophisticated mechanical and metallurgical traditions in this era, and the technology arrives only through direct Western technical transfer during the following century's industrial-modernization efforts — a genuinely Europe-originated technology rather than one with an independent regional counterpart to compare against.
 prereqs: [NAT-040, ENG-165]
 enables: [COM-170, COM-200, ENG-190, ENG-250, ENG-300, ENG-220, MAR-260]
-see_also: [NAT-180, ENG-055, ENG-120, ENG-210, MAR-038]
+see_also: [NAT-180, ENG-055, ENG-120, ENG-210, MAR-038, ENG-166]
 contested: false
 contested_note: ""
 stats_touched: [energy budget, extraction depth cost]
@@ -73,6 +73,10 @@ other rather than being scattered along whatever waterways provide
 sufficient flow — directly enabling the industrial internal migration
 pattern and urban labor concentration already covered in this record's
 migration and health-adjacent entries.
+
+Early high-pressure boilers exploded often and lethally, and ENG-166 carries the
+inspection regimes that followed, from the United States Steamboat Act of 1852 to
+insurer-inspectors such as Hartford Steam Boiler from 1866.
 
 ## Regional specifics
 

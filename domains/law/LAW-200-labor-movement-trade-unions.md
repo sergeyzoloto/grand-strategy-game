@@ -21,7 +21,7 @@ absence:
     note: Formal trade union legal recognition across most of the Middle East in this era lags behind Europe, the Americas, and South Asia, with organized labor's legal standing often more directly and explicitly tied to state political control than in the more adversarial (if still constrained) legal frameworks that develop elsewhere — union recognition here arriving later and under tighter state supervision from the outset rather than emerging from sustained independent organizing pressure.
 prereqs: [LAW-020]
 enables: []
-see_also: [FIN-200]
+see_also: [FIN-200, ENG-166]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -61,6 +61,10 @@ confrontations, converting labor conditions into something bargained and
 periodically renegotiated through an institutionalized process rather than
 either unilaterally set by employers or won and lost through episodic,
 legally risky collective action each time.
+
+Industrial disasters gave organised workers a case they had already been making.
+ENG-166 carries the mine, boiler and factory codes that followed Hartley Colliery in
+1862 and the Triangle Shirtwaist fire in 1911.
 
 ## Regional specifics
 
