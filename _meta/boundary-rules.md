@@ -268,3 +268,32 @@ purposes, they aren't. `domains_touched` still points to WAR/ENG/COM/FIN
 where a specific entry's non-maritime angle is substantial (a war fought
 partly at sea touches WAR; a chronometer's horology touches ENG), but doesn't
 require a split the way a genuinely two-Mechanism entry would.
+
+## MAR / (LAW, DIP)
+
+The LAW/DIP rule above gives LAW internal enforceable obligation and DIP
+inter-polity relation, and states that a treaty is always DIP. The sea
+needs a qualification to that rule, because a large body of maritime law is
+neither of those things at its core: it is the governance of the marine
+domain itself.
+
+- **MAR owns legal and institutional regimes whose subject is the sea
+  itself** — jurisdiction over waters, seabed, and vessels. Territorial
+  seas, continental shelves, exclusive economic zones, flag and port state
+  jurisdiction, prize and admiralty law, and the appropriation of the ocean
+  as a resource are MAR. This follows the same principle that places the
+  enclosure of land in AGR (`AGR-200`) rather than in LAW: the appropriation
+  of a resource sits with the domain whose resource it is.
+- **Treaties that happen to concern the sea remain DIP where their mechanism
+  is inter-polity relation** — an alliance's naval clauses, a recognition
+  dispute conducted at sea, a peace settlement that transfers a port as one
+  term among many.
+- **The test is the mechanism, not the instrument.** Where the entry's claim
+  is about how the marine domain is appropriated or governed, it is MAR even
+  when the instrument is a treaty; where the claim is about how polities
+  relate to one another, it is DIP even when the subject matter is maritime.
+
+`MAR-140` (Admiralty, including prize law) is the existing precedent: a
+body of law placed in MAR because its subject is the sea and the vessels on
+it. `domains_touched` should carry `law` and `diplomacy` heavily on any
+entry placed under this clause.
