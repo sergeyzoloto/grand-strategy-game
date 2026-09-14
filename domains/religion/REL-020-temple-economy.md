@@ -21,7 +21,7 @@ absence:
     note: Delphi's temple treasury, while wealthy and politically influential across the Greek world, operates at a much smaller and more narrowly ritual-focused economic scale than the Mesopotamian or South Indian cases — a temple that accumulates and safeguards wealth (functioning as a pan-Hellenic bank of sorts) without becoming a major direct agricultural landholder and employer the way its Near Eastern and Indian counterparts do.
 prereqs: [FIN-020, REL-010, AGR-050]
 enables: [REL-060, REL-190]
-see_also: [REL-250, REL-180, FIN-100, AGR-100]
+see_also: [REL-250, REL-180, FIN-100, AGR-100, PHI-185]
 contested: false
 contested_note: ""
 stats_touched: [religious authority]
@@ -60,6 +60,10 @@ matter as much to ordinary survival as anything the state itself provides,
 concentrating a form of soft power in religious institutions that persists
 long after more sophisticated secular financial institutions eventually
 develop.
+
+Temples absorbed the devotional movements that bypassed them. PHI-185 carries bhakti,
+whose Tamil hymns became Chola temple liturgy and whose poet-saints received shrines
+inside the institutions they had routed around.
 
 ## Regional specifics
 

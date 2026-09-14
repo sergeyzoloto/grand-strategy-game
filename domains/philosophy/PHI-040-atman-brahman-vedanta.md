@@ -20,7 +20,7 @@ absence:
   - region: east-asia
     note: Chinese correlative cosmology (see NAT-020) organizes reality through relational, cyclical categories (yin-yang, five phases) rather than positing one unifying underlying substance whose apparent multiplicity is illusory — a structurally different move from Vedantic monism, not a cruder or partial version of it.
 prereqs: [PHI-030]
-enables: [PHI-190]
+enables: [PHI-190, PHI-185]
 see_also: [NAT-020, PHI-070, PHI-090, PHI-020, PHI-010]
 contested: true
 contested_note: "Whether the Upanishads articulate one coherent monist doctrine (individual self, atman, is ultimately identical to the cosmic ground, Brahman) or a genuinely polyphonic collection accommodating dualist and non-dualist readings alike is disputed — later rival Vedanta schools (Shankara's non-dualist Advaita, PHI-190, versus Ramanuja's qualified-dualist Vishishtadvaita and Madhva's fully dualist Dvaita) all claim direct Upanishadic textual support for incompatible metaphysical conclusions. Model the Upanishads as an underdetermined textual corpus that later systematic schools resolve in different, mutually exclusive directions, rather than as already committing to any one school's later reading."
@@ -60,6 +60,10 @@ religious efficacy, part of the same broader ferment (alongside the
 shramana movements, PHI-070, PHI-090) that produces renunciate and
 forest-dwelling seekers pursuing this insight outside settled priestly
 institutions entirely.
+
+The Upanishads' path of knowledge was one of three. PHI-185 carries bhakti, which
+held that loving devotion to a personal god suffices for liberation and so bypassed
+Sanskrit learning, Brahmin ritual and caste together.
 
 ## Regional specifics
 

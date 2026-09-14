@@ -34,7 +34,7 @@ absence:
     note: Buddhist and Islamic texts were translated into Sogdian, Uyghur, Mongolian and Manchu extensively, and the effect this entry describes did not follow, because the translations were sponsored by the same religious and political authorities who held the canon. Where the institution commissions the translation there is no intermediary to displace — it is the intermediary, extending its own reach. The mechanism needs the translation to be produced by or for someone outside the gate.
 prereqs: [MED-040]
 enables: [MED-080]
-see_also: [REL-230, REL-080, REL-090, MED-020, MED-060, MIG-100, MED-150, LAW-165, PHI-175]
+see_also: [REL-230, REL-080, REL-090, MED-020, MED-060, MIG-100, MED-150, LAW-165, PHI-175, PHI-185]
 contested: true
 contested_note: "Whether translation causes institutional fragmentation is the dispute, and the corpus already holds both halves of the answer. The Reformation reading treats vernacular scripture as dissolving clerical mediation and producing schism, which REL-230 covers from the religious side. The Chinese Buddhist case is a direct counterexample of comparable scale running the other way, and the Geez and Central Asian cases agree with it. Model translation as removing the language barrier and nothing else, with fragmentation conditional on two further variables: whether the translating party is inside or outside the institution holding the canon, and whether a doctrinal quarrel with institutional backing already exists. Institution-sponsored translation extends reach and produces no schism; externally produced translation into a live doctrinal quarrel produces one. Note separately that print alone is not the trigger either — China had print for seven centuries with no comparable rupture, which REL-230 also records — so the condition is translation plus print plus schism, and any two of the three produce nothing."
 stats_touched: [intermediary dependence, literacy training cost, religious authority]
@@ -122,6 +122,11 @@ merely restrictive.
 PHI-175 carries what the Chinese Buddhist translation project transmitted —
 Madhyamaka, Yogacara and the bodhisattva ideal — and how Kumarajiva's terminology
 separated emptiness from Daoist non-being so Chinese schools could build on it.
+
+Bhakti is the stronger form of this mechanism. PHI-185 carries it: the vernacular
+poetry of the Alvars, Basava, Tukaram, Kabir and Mirabai was original composition
+rather than translation of a Sanskrit canon, so the vernacular held religious
+authority of its own rather than borrowing it from a source text.
 
 ## Regional specifics
 

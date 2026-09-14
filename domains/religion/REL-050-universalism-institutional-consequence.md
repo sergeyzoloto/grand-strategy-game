@@ -21,7 +21,7 @@ absence:
     note: Confucianism, despite its ethical sophistication and enormous institutional influence across East Asia, stays oriented toward this-worldly social and familial obligation within a defined civilizational sphere rather than making an explicit universalist claim to transcend ethnic or civilizational boundary the way contemporaneous Buddhist and later Christian and Islamic universalism do — comparable ethical seriousness without the specific institution-restructuring universalist move.
 prereqs: []
 enables: [REL-070, REL-080, REL-140]
-see_also: [DIP-160, PHI-175]
+see_also: [DIP-160, PHI-175, PHI-185]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -66,6 +66,10 @@ Buddhism also shows a second ceiling being lifted inside a religion already univ
 in membership. PHI-175 carries the Mahayana bodhisattva ideal, which opened the
 tradition's highest goal to householders rather than only monks — a distinct move
 from the membership universalism this entry owns.
+
+Bhakti removes a different ceiling. PHI-185 carries devotion that opened liberation
+to people of any caste within a tradition whose membership stayed defined by birth,
+the reverse of the membership universalism this entry owns.
 
 ## Regional specifics
 

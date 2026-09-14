@@ -341,7 +341,7 @@ NAT-260,Simulation as a Third Mode of Inquiry,nature,mathematics; engineering; w
 PHI-010,Pre-Axial Wisdom Literature,philosophy,religion,core,drafted,medium,-2400,-900,era,0,,1,PHI-030,TRUE,wisdom-literature; ptahhotep; edubba; maat; pre-axial
 PHI-020,Zoroastrian Moral Dualism,philosophy,religion,standard,drafted,medium,-1200,-500,era,0,,0,,TRUE,zoroastrianism; gathas; ahura-mazda; dualism; eschatology
 PHI-030,The Emergence of Schools of Thought,philosophy,,core,drafted,medium,-800,-200,era,1,PHI-010,9,PHI-040; PHI-080; PHI-060; PHI-130; PHI-110; PHI-070; PHI-090; PHI-170; PHI-120,FALSE,schools-of-thought; hundred-schools; darsana; lineage-transmission
-PHI-040,Atman/Brahman — Vedanta and the Upanishads,philosophy,nature,core,drafted,medium,-800,-200,era,1,PHI-030,1,PHI-190,TRUE,vedanta; upanishads; atman; brahman; monism
+PHI-040,Atman/Brahman — Vedanta and the Upanishads,philosophy,nature,core,drafted,medium,-800,-200,era,1,PHI-030,2,PHI-190; PHI-185,TRUE,vedanta; upanishads; atman; brahman; monism
 PHI-050,"Hebrew Prophetic Ethics: Covenant, Critique of Power, and Social Justice",philosophy,,core,drafted,medium,-750,-500,era,0,,0,,TRUE,hebrew-prophets; covenant; amos; isaiah; jeremiah; social-justice
 PHI-060,Daoism: Non-Action and Naturalness,philosophy,,core,drafted,medium,-600,-200,era,1,PHI-030,0,,TRUE,daoism; wu-wei; ziran; laozi; zhuangzi
 PHI-070,Non-Violence (Jainism),philosophy,,core,drafted,medium,-599,-527,era,1,PHI-030,0,,TRUE,jainism; mahavira; ahimsa; anekantavada
@@ -357,6 +357,7 @@ PHI-160,Natural Law,philosophy,law,core,drafted,medium,-300,1274,era,2,PHI-140; 
 PHI-170,Suppression and Closure of Philosophical Institutions,philosophy,,core,drafted,high,-213,529,era,2,PHI-030; PHI-130,0,,FALSE,book-burning; qin-dynasty; academy-of-athens; justinian; suppression
 PHI-175,Mahāyāna: Emptiness and the Bodhisattva,philosophy,religion; media; commerce; migration,core,drafted,medium,-100,500,era,1,PHI-090,1,PHI-180,TRUE,mahayana; sunyata; emptiness; nagarjuna; madhyamaka; yogacara; vasubandhu; bodhisattva; lotus-sutra; kumarajiva; xuanzang; samye-debate; pure-land; kushan; nalanda
 PHI-180,Chan/Zen: Practice as Epistemology,philosophy,,core,drafted,medium,500,1253,era,1,PHI-175,0,,TRUE,chan-buddhism; zen; koan; dogen; bodhidharma
+PHI-185,Bhakti: Devotion as Mass Practice,philosophy,religion; media; law,core,drafted,medium,600,1600,era,1,PHI-040,0,,TRUE,bhakti; alvars; nayanars; basava; lingayat; varkari; tukaram; kabir; mirabai; chaitanya; sankardev; guru-nanak; adi-granth; langar; chishti; sufism; sampradaya; vernacular
 PHI-190,Advaita Vedanta (Shankara),philosophy,religion,core,drafted,medium,700,750,century,1,PHI-040,0,,TRUE,advaita-vedanta; shankara; non-dualism; maya
 PHI-200,Falsafa: Islamic Peripatetic Philosophy and the Reason-Revelation Synthesis,philosophy,nature; religion,core,drafted,high,850,1198,era,1,NAT-050,1,PHI-220,TRUE,falsafa; avicenna; averroes; al-ghazali; al-farabi; incoherence
 PHI-210,Neo-Confucianism,philosophy,law,core,drafted,medium,1000,1200,century,1,PHI-080,0,,FALSE,neo-confucianism; zhu-xi; li-principle; qi

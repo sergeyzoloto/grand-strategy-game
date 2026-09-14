@@ -21,7 +21,7 @@ absence:
     note: Buddhist pilgrimage networks (to sites in India tied to the Buddha's life, and to regional sacred mountains in China and Japan) develop real supporting infrastructure but never consolidate into a single obligatory mass pilgrimage on the scale or with the universal individual obligation the Hajj carries — pilgrimage here stays a valued devotional practice rather than a mandated pillar of religious obligation.
 prereqs: [ENG-090]
 enables: []
-see_also: [REL-100]
+see_also: [REL-100, PHI-185]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]
@@ -60,6 +60,9 @@ travel and lodge together under a shared religious purpose that overrides
 ordinary social separation, making pilgrimage routes unusually effective
 channels for the spread of goods, news, and ideas alongside the religious
 purpose that generates the traffic in the first place.
+
+Pilgrimage also organised devotional movements at scale. PHI-185 carries bhakti,
+including the Varkari walk to Pandharpur, in which castes travelled together.
 
 ## Regional specifics
 

@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [PHI-040]
 enables: []
-see_also: [PHI-090, MTH-030, PHI-030, PHI-175]
+see_also: [PHI-090, MTH-030, PHI-030, PHI-175, PHI-185]
 contested: true
 contested_note: "Shankara's rival dualist and qualified-dualist commentators (Ramanuja's Vishishtadvaita, Madhva's Dvaita, both developing in the following centuries) accused Advaita of being 'crypto-Buddhism' — of covertly reproducing Madhyamaka Buddhist arguments about the ultimate unreality of ordinary phenomenal experience while officially claiming Vedic/Upanishadic orthodoxy and rejecting Buddhism explicitly. Whether this charge identifies a genuine, substantial argumentative debt or is primarily rival-school polemic exaggerating surface similarity is disputed among scholars of Indian philosophy. Model Advaita as making a genuinely distinct metaphysical claim (Brahman as sole positively-existing reality, not Madhyamaka's emptiness of inherent existence) while treating the historical question of argumentative influence from Buddhist dialectic as separately, genuinely open."
 stats_touched: []
@@ -60,6 +60,10 @@ describes generally.
 
 PHI-175 carries the Madhyamaka and Yogacara positions the crypto-Buddhism charge
 refers to, and the debate between them at Nalanda.
+
+Shankara's path of knowledge had a mass rival. PHI-185 carries bhakti, to which
+Ramanuja's qualified non-dualism gave a theology in which a distinct soul loves a
+personal God.
 
 ## Regional specifics
 

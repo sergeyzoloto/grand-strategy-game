@@ -32,10 +32,10 @@ absence:
     note: "Sri Lanka had Mahayana monks and texts at the Abhayagiri monastery from the early centuries CE, but the rival Mahavihara, which held to the Pali canon and the arhat ideal, prevailed, and Parakramabahu I unified the island's sangha under Mahavihara orthodoxy in the 1160s. Theravada Sri Lanka kept a tradition in which full liberation was the goal of the monk, and lay religious life centred on merit made by supporting monks. Theravada later spread from Sri Lanka to Burma, Thailand, Laos and Cambodia, so mainland Southeast Asia too followed the older ideal, while Mahayana carried East Asia. The absence shows the bodhisattva ideal was a choice between available forms, not the destiny of Buddhism as it spread."
 prereqs: [PHI-090]
 enables: [PHI-180]
-see_also: [MTH-070, REL-050, MED-070, COM-080, PHI-060, PHI-190, REL-060, REL-080]
+see_also: [MTH-070, REL-050, MED-070, COM-080, PHI-060, PHI-190, REL-060, REL-080, PHI-185]
 contested: true
 contested_note: "Two disputes. First, Mahayana's social origin. Hirakawa argued in the 1960s that it arose among laypeople around stupa worship, which would make householder access its starting point; Schopen, Harrison and Nattier (A Few Good Men, 2003) read the earliest Mahayana sutras as the work of rigorous forest-dwelling monks for whom the bodhisattva path was harder than the arhat's, not easier. The mass lay religion came later, through devotional forms such as Pure Land and through state patronage in East Asia. Second, how to read emptiness: as a metaphysical thesis about reality, as a purely therapeutic dialectic that asserts nothing, or — as the Yogacara critics and later Advaita opponents charged — as nihilism. Model Mahayana's expansion of access as conditional on institutional carriers (devotional practice, lay patronage, state sponsorship) rather than as an automatic consequence of the bodhisattva doctrine, and model Madhyamaka and Yogacara as rival readings that a tradition can hold in tension or synthesise."
-stats_touched: [salvific access, intellectual authority, habitus formation]
+stats_touched: [salvific access, intellectual authority]
 tags: [mahayana, sunyata, emptiness, nagarjuna, madhyamaka, yogacara, vasubandhu, bodhisattva, lotus-sutra, kumarajiva, xuanzang, samye-debate, pure-land, kushan, nalanda]
 ---
 
@@ -183,6 +183,11 @@ of monasteries, images and copying a way of making merit that carried whole econ
 donation. It also changed gender and status in text if not always in practice: the lay
 bodhisattva and the universal vow put householders and, in some sutras, women within
 reach of the goal, while monastic institutions kept their hierarchy.
+
+Bhakti offered South Asian householders a comparable opening by another route.
+PHI-185 carries devotion to a personal god as a sufficient path, which lifted the
+gates of sacred language, ritual specialist and caste rather than the ceiling of
+renunciation, with Pure Land devotion as its closest Buddhist parallel.
 
 ## Regional specifics
 
