@@ -41,7 +41,7 @@ absence:
     note: Steppe confederations facing settled empires faced less of this particular hazard in their raiding relationship, because their signals were rarely ambiguous: a raid was a raid, a tribute demand was explicit, and mobile forces could withdraw before any spiral of preparation and counter-preparation could build. The security dilemma needs defensive preparation that looks like offensive preparation — fortification, standing mobilisation, forward posts — and mobile pastoral forces neither built nor needed that, so the specific mechanism of mutual defensive arming spiralling into war had little to act on at the steppe edge.
 prereqs: [DIP-010]
 enables: [DIP-170]
-see_also: [DIP-030, MED-030, MED-100, WAR-330, WAR-315, DIP-110, DIP-040]
+see_also: [DIP-030, MED-030, MED-100, WAR-330, WAR-315, DIP-110, DIP-040, DIP-058]
 contested: true
 contested_note: "Whether inadvertent escalation is genuinely distinct from deliberate escalation with deniability is argued. The perceptual school (Jervis, Perception and Misperception in International Politics, 1976; Jervis, 'Cooperation under the Security Dilemma', World Politics, 1978; Herz, who coined the security dilemma in 1950) treats misperception and the spiral as real causes of wars neither side wanted. The rationalist account (Fearon, 'Rationalist Explanations for War', International Organization, 1995) holds that wars arise from private information, incentives to misrepresent it, and commitment problems, so apparent misperception is often strategic concealment; and historians such as Trachtenberg ('The Meaning of Mobilization in 1914', 1990) argue the 1914 timetables were less automatic than the inadvertence story claims. Model escalation as conditional on two separate quantities: the actual intent of each side, and each side's legibility of the other's intent. Inadvertent escalation occurs where intents are defensive and legibility is low; deliberate escalation with deniability where one intent is offensive and the other side's legibility is low; the model should be able to produce both, and should not let the player or the history assert which a given crisis was."
 stats_touched: [intent legibility, information speed, alliance cohesion]
@@ -74,14 +74,14 @@ is its `intent legibility`, and it is low by default, because the actions availa
 to a state are compatible with more than one purpose. Escalation between two
 defensive states follows directly from that ambiguity.
 
-**The distinction from balancing.** A coalition forming against a rising power
-responds to capability: the other side really is getting stronger, whatever it
-intends. The spiral described here responds to misread intent: neither side is
-aggressive, and each reads the other as if it were. The two can look the same from
-outside, as mutual arming and hostile alignment, and they have different causes
-and different remedies. Balancing is answered by the distribution of power; the
-spiral is answered by making intent legible. They must not be treated as one
-mechanism.
+**The spiral responds to misread intent. Balancing in DIP-058 responds to
+capability.** A coalition forming against a rising power responds to capability:
+the other side really is getting stronger, whatever it intends. The spiral
+described here responds to misread intent: neither side is aggressive, and each
+reads the other as if it were. The two can look the same from outside, as mutual
+arming and hostile alignment, and they have different causes and different
+remedies. Balancing is answered by the distribution of power; the spiral is
+answered by making intent legible. They must not be treated as one mechanism.
 
 **The security dilemma.** Defensive preparation is indistinguishable from offensive
 preparation: a fortress, a standing army, a forward post or a new warship class
@@ -205,6 +205,6 @@ side's ability to back down. Time-critical mobilisation plans and early-warning
 systems collapse the decision window, so a misread signal escalates before it can
 be checked.
 
-This is distinct from balancing, which responds to real capability rather than
-misread intent. It is also distinct from deliberate escalation with deniability,
+This is distinct from balancing (DIP-058), which responds to real capability rather
+than misread intent. It is also distinct from deliberate escalation with deniability,
 which the same low legibility makes possible.

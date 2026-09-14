@@ -19,7 +19,7 @@ region_variants:
 absence: []
 prereqs: [DIP-100]
 enables: []
-see_also: [DIP-120, DIP-180]
+see_also: [DIP-120, DIP-180, DIP-058]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -51,7 +51,10 @@ when a rival claimant's case becomes more diplomatically attractive
 individual recognizing states can and do switch their recognition to the
 rival, one bilateral relationship at a time, without any change in the
 original recognized state's own actual internal governance or territorial
-control triggering the loss.
+control triggering the loss. The switch can itself be balancing: the United
+States' move toward the People's Republic from 1971 was driven by the wish to
+counter Soviet power, and Taiwan's derecognition was the price of that
+realignment (DIP-058).
 
 ## Social consequence
 

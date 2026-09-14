@@ -20,7 +20,7 @@ absence:
   - region: americas
     note: Haudenosaunee treaty diplomacy (already covered in this record's law domain for its confederational council structure, LAW-060) records binding inter-nation agreements through wampum belts — woven shell-bead patterns serving as both mnemonic device and physical, exchangeable token of the agreement itself — a durable non-written treaty-recording technology functioning without literacy at all.
 prereqs: [DIP-010]
-enables: [DIP-080, DIP-025]
+enables: [DIP-080, DIP-025, DIP-058]
 see_also: [LAW-060, DIP-130]
 contested: false
 contested_note: ""
@@ -61,7 +61,10 @@ faces a durable diplomatic cost even if no single violation triggers
 immediate military consequence. Because the oath binds the person who swore
 it, it lapses with that person: every accession reopens a state's sworn
 relationships and must be followed by renewal, which is what makes a
-succession an international event (DIP-025).
+succession an international event (DIP-025). A sworn alliance is also what
+lets rivals combine against a stronger power they could not face alone, and
+the fragility of such oaths among habitual enemies is why balancing
+coalitions dissolve once the threat recedes (DIP-058).
 
 ## Regional specifics
 

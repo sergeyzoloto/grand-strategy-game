@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [DIP-130, MED-100, DIP-055]
 enables: [DIP-180]
-see_also: []
+see_also: [DIP-058]
 contested: false
 contested_note: ""
 stats_touched: [alliance cohesion]
@@ -51,7 +51,10 @@ turn, with no single power's leadership fully choosing the outcome any of
 them individually end up in. This is the developed instance of the general
 mechanism DIP-055 carries — commitments made credible by removing the
 option to back down, and mobilisation timetables that run ahead of the
-politics — applied across a whole alliance system at once.
+politics — applied across a whole alliance system at once. The alliances themselves were
+balancing coalitions hardened into standing commitments (DIP-058): the Entente
+formed against German preponderance, which is why a crisis involving Germany
+could trigger the whole structure.
 
 ## Social consequence
 

@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: east-asia
     note: The Chinese tributary hierarchy (DIP-040) manages multi-power regional order through graduated subordination to one acknowledged center rather than through negotiated coordination among nominally equal great powers — a genuine alternative model for preventing multi-power conflict, achieving comparable stability through hierarchy rather than through the Concert's periodic negotiated consensus among formal equals.
-prereqs: [DIP-100]
+prereqs: [DIP-100, DIP-058]
 enables: [DIP-170]
 see_also: [DIP-090, DIP-020, DIP-180, MED-100]
 contested: false
@@ -51,7 +51,11 @@ cared about — the system's stability depends entirely on all major
 participants continuing to value the coordination more than they value
 any specific gain available from breaking it, which is exactly what
 eventually fails as rising and revisionist powers judge the existing
-spheres arrangement no longer serves their own growing interests.
+spheres arrangement no longer serves their own growing interests. The concert
+is an institution built on top of the underlying balancing mechanism (DIP-058):
+it exists to keep any one power from grasping for enough to provoke a
+coalition against itself, and it fails when a rising power's gains make that
+coalition form anyway.
 
 ## Social consequence
 
