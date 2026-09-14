@@ -26,7 +26,7 @@ absence:
     note: The same constraint in its most extreme form, and a genuine inversion of the technology's promise. An engine extends range only as far as the next place fuel can be bought, so in a region with no distribution network it offers less effective range than the animals it was meant to replace — which continue to outperform it precisely because they refuel from the ground they cross. Motor transport is worse than useless here until the fuel network precedes it.
 prereqs: [ENG-190, ENG-275]
 enables: [AGR-260, MAR-320, WAR-270]
-see_also: [COM-170, ENG-310, ENG-265, ENG-055]
+see_also: [COM-170, ENG-310, ENG-265, ENG-055, ENG-217]
 contested: false
 contested_note: ""
 stats_touched: [refining flexibility, energy budget, stranded capital]
@@ -79,6 +79,10 @@ line factory discipline (COM-170) restructure personal mobility and urban
 geography around private vehicle ownership over the following decades, a
 transformation of daily life and city design as significant in its own
 domain as railways were for long-distance transport a century earlier.
+
+The automobile enlarged the commuting radius across all the land between rail lines.
+ENG-217 carries how that remade cities, and why the outcome branched on the city's
+prior state, from dense rail-shaped cores to low-density sprawl.
 
 ## Regional specifics
 

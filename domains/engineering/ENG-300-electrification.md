@@ -21,7 +21,7 @@ absence:
     note: Rural electrification across most of colonial and early postcolonial India lags urban electrification by many decades, with the resulting urban-rural electricity access gap directly shaping which regions could adopt electricity-dependent agricultural and industrial technology and which couldn't, well into the 20th century.
 prereqs: [ENG-170, NAT-170, ENG-165]
 enables: [MED-130, MED-140]
-see_also: [MED-100, MED-120, MED-110, ENG-055, ENG-120, ENG-265, ENG-065]
+see_also: [MED-100, MED-120, MED-110, ENG-055, ENG-120, ENG-265, ENG-065, ENG-217]
 contested: true
 contested_note: "Whether the American 'War of the Currents' outcome (alternating current's eventual dominance over Edison's direct current, driven substantially by AC's superior long-distance transmission efficiency and Westinghouse and Tesla's commercial strategy) was primarily a sound engineering verdict or was also shaped significantly by patent strategy, public-perception campaigns, and business rivalry independent of the underlying technical merits, is debated among historians of technology. Model AC's technical transmission-efficiency advantage as real and load-bearing for the long-distance-grid outcome, while treating the specific pace and manner of DC's displacement as also shaped by commercial and reputational factors particular to that rivalry, not purely by engineering merit."
 stats_touched: [energy budget, toxic burden]
@@ -84,6 +84,10 @@ A grid couples its generators and lines tightly enough that one fault can shed l
 onto neighbours until a region goes dark, as in the northeastern blackout of 1965 and
 the North American and Italian blackouts of 2003. ENG-065 carries the cascade and the
 neglected maintenance that triggers it.
+
+The electric streetcar was among electrification's first mass uses, spreading across
+American cities within a decade of 1888. ENG-217 carries the streetcar suburb and the
+land play built around it.
 
 ## Regional specifics
 

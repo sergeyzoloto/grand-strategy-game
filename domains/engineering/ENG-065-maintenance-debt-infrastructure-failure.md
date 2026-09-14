@@ -40,7 +40,7 @@ absence:
     note: "The great earthen mounds of Cahokia and the Hopewell earthworks survive a thousand years or more after the societies that raised them dispersed. Packed earth, shaped to shed water, has no maintenance requirement that a collapse can interrupt, so its persistence is not evidence of continued care but of a design that did not need it. Where infrastructure is inert, political breakdown leaves it standing; where it is a working system, breakdown ends it."
 prereqs: [ENG-020]
 enables: []
-see_also: [WAR-020, ENG-130, COM-040, MAR-370, AGR-150, AGR-100, COM-070, ENG-300, ENG-166, ENG-075]
+see_also: [WAR-020, ENG-130, COM-040, MAR-370, AGR-150, AGR-100, COM-070, ENG-300, ENG-166, ENG-075, ENG-217]
 contested: true
 contested_note: "Whether infrastructure collapse is best explained by environmental shock or by the social and fiscal failure to maintain is disputed. Environmental accounts (Diamond, Collapse, 2005, and palaeoclimate work on Angkor and the Harappan decline) stress droughts, floods and river shifts; Tainter (The Collapse of Complex Societies, 1988) stresses the rising cost of maintaining complexity with diminishing returns; and McAnany and Yoffee (Questioning Collapse, 2010) argue many 'collapses' were reorganisations. The Harappan case in particular is now read by many as a weakening of monsoon-fed rivers beyond any maintenance capacity rather than a neglected system. Model failure as conditional on both a shock and the accumulated maintenance debt at the moment it arrives: a well-maintained system absorbs a shock that destroys a neglected one, and some shocks exceed any maintenance a society could have performed."
 stats_touched: [maintenance debt, route capacity, engineering knowledge pool, network fragility]
@@ -184,6 +184,9 @@ disasters produced.
 Megaprojects are the building incentive at its largest, and each adds maintenance
 debt unless its founders endowed its upkeep, as Ottoman waqf complexes and the Taj
 Mahal did. ENG-075 carries the megaproject as a mobilisation regime.
+
+North American street railways with fares fixed by franchise deferred maintenance as
+costs rose, and failed when the automobile arrived. ENG-217 carries that case.
 
 ## Regional specifics
 

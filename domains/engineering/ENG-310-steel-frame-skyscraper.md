@@ -18,7 +18,7 @@ absence:
     note: East Asian building traditions continue wood, masonry, and mid-rise construction through this era without independently adopting steel-frame technique, arriving only through direct 20th-century technology transfer — consistent with the broader Western-origin pattern already documented for `ENG-170` and `ENG-190` specifically.
 prereqs: [ENG-260]
 enables: []
-see_also: [ENG-250, ENG-050, ENG-240, ENG-200, ENG-290, MED-110, ENG-166]
+see_also: [ENG-250, ENG-050, ENG-240, ENG-200, ENG-290, MED-110, ENG-166, ENG-217]
 contested: true
 contested_note: "Whether Chicago's 1885 Home Insurance Building genuinely holds priority as the first true skeletal steel-frame building — where the frame, not the exterior walls, carries the entire structural load — versus earlier partial iron-frame precedents in Britain (commercial buildings using iron columns and beams internally while exterior walls still carried real structural load) is a real, still-debated architectural-history attribution question, turning partly on how strictly 'fully load-bearing frame' is defined. Model the transition from partial iron-frame reinforcement to fully load-bearing steel skeleton as a spectrum crossed gradually by several buildings in the 1880s-90s, rather than crediting one building as a clean, uncontested first."
 stats_touched: []
@@ -68,6 +68,9 @@ per unit of scarce central land.
 
 Tall steel-framed buildings brought fireproofing and structural rules with them.
 ENG-166 carries the codes those rules belong to, raised after fires and earthquakes.
+
+Concentrating office jobs in tall central buildings only worked if transit could
+carry the workers to them. ENG-217 carries the commuting systems that did.
 
 ## Regional specifics
 

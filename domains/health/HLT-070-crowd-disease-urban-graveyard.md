@@ -21,7 +21,7 @@ absence:
     note: Pre-contact Mesoamerican and Andean cities reached comparable or greater density (Tenochtitlan, Cusco) without the Old World's crowd-disease roster, for lack of the animal-dense zoonotic reservoir (see HLT-030) rather than for lack of density itself — the graveyard effect here is a post-contact import, not an endogenous development.
 prereqs: [HLT-030, HLT-010]
 enables: [HLT-090, HLT-230, HLT-170]
-see_also: [HLT-120, AGR-040, MIG-170, HLT-270, FIN-090]
+see_also: [HLT-120, AGR-040, MIG-170, HLT-270, FIN-090, ENG-217]
 contested: true
 contested_note: "The date at which any given city's population became self-sustaining without constant rural in-migration ('urban graveyard' closing) is disputed and varies by scholar and by city, since it depends on reconstructed vital rates that are themselves uncertain. Model as a per-city threshold function of density and water/waste infrastructure quality rather than a fixed calendar date."
 stats_touched: [immunological capital]
@@ -57,6 +57,10 @@ land, not for health. This produces a permanent underclass of recent migrants
 disproportionately exposed to the disease pool before any acquired immunity
 catches up, and a demographic churn that keeps urban culture perpetually
 replenished by newcomers rather than growing organically from within.
+
+Much of the crowding followed from the walking city's limit: without cheap transport,
+workers had to live within walking distance of work. ENG-217 carries the transit that
+loosened that limit.
 
 ## Regional specifics
 

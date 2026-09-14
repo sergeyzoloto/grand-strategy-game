@@ -24,7 +24,7 @@ absence:
     note: No African city builds an underground metro system in this era, urban transit growth across the continent instead running through surface rail, tram, and later bus systems — a case where the underlying urban-density and transit-demand conditions driving subway construction elsewhere hadn't yet developed at comparable scale.
 prereqs: [ENG-080]
 enables: []
-see_also: [COM-200, ENG-090, MIG-170]
+see_also: [COM-200, ENG-090, MIG-170, ENG-217]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -61,6 +61,10 @@ without further surface disruption or land acquisition, directly enabling
 continued urban density increase and the daily commuting patterns that
 industrial internal migration (MIG-170) depends on once a city's surface
 street capacity is already saturated.
+
+The underground added capacity inside a built core. ENG-217 carries the wider
+remaking of the city by each faster mode, and why the land value transit created
+mostly went to landowners.
 
 ## Regional specifics
 
