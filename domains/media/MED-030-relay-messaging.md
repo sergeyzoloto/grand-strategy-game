@@ -41,7 +41,7 @@ absence:
     note: No polity spans a distance over which a chain of fixed relay stations would repay its standing cost, and the intervening surface is water that cannot be posted at intervals in any case. Long-range information moves by voyaging — fast for its era but episodic, tied to a vessel's own journey rather than purchasable on demand, which is precisely the distinction this entry turns on.
 prereqs: [ENG-090, MIG-050, MED-020]
 enables: [MED-100]
-see_also: [DIP-010, DIP-030, DIP-080, WAR-090, WAR-110, COM-080, MED-080, MED-120, MED-130, WAR-315, MED-110, ENG-340, MED-090]
+see_also: [DIP-010, DIP-030, DIP-080, WAR-090, WAR-110, COM-080, MED-080, MED-120, MED-130, WAR-315, MED-110, ENG-340, MED-090, DIP-055]
 contested: false
 contested_note: ""
 stats_touched: [information speed, legibility]
@@ -92,7 +92,10 @@ fiscal crisis. It is cheap to cut and the saving is immediate, which makes
 it an early target; and the cut compounds, because a state that has slowed
 its own information learns about the next crisis later than it would have.
 A polity can enter a downward spiral in which fiscal stress degrades the
-speed at which fiscal stress is detected.
+speed at which fiscal stress is detected. Between states the same speed sets
+how stale an envoy's instructions are when he acts on them, which is one of
+the channels through which intentions are misread and crises escalate
+without either court choosing it (DIP-055).
 
 ## Social consequence
 

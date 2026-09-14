@@ -31,7 +31,7 @@ absence:
     note: Island scatter defeats a wire network almost completely. Trans-Pacific cable does not close until 1902, and then only along a handful of deliberately chosen landfalls, leaving most Pacific islands with no connection of any kind at the point this entry ends. This is the structural limit in its clearest form — between two landfalls there is simply no ground to lay cable on, and no amount of capital changes that.
 prereqs: [NAT-170, MED-030]
 enables: [DIP-170, WAR-290, FIN-210, MED-120, MED-110, MED-090]
-see_also: [ENG-300, COM-200, COM-220, DIP-080, DIP-130, WAR-110, WAR-280, MAR-260, MED-130, LAW-225, MTH-090, MED-140, MAR-335, MED-150]
+see_also: [ENG-300, COM-200, COM-220, DIP-080, DIP-130, WAR-110, WAR-280, MAR-260, MED-130, LAW-225, MTH-090, MED-140, MAR-335, MED-150, DIP-055]
 contested: false
 contested_note: ""
 stats_touched: [information speed, arbitrage rent]
@@ -93,7 +93,11 @@ delayed by minutes wherever the network reaches, fundamentally changing how
 centralized control and coordination over distant territory or operations
 can function — a colonial administration, a military headquarters, or a
 commodity market can now react to distant events same-day rather than
-whenever the next ship or courier happens to arrive.
+whenever the next ship or courier happens to arrive. In diplomacy the gain
+has a cost: the delay the telegraph removed had also been deliberation time,
+in which tempers cooled before a reply arrived, so faster channels carried
+first reactions and shortened the interval in which a misread signal could be
+checked (DIP-055).
 
 ## Regional specifics
 

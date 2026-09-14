@@ -21,7 +21,7 @@ absence:
     note: South Africa developed and then voluntarily dismantled a small nuclear arsenal (disclosed in 1993) before the end of apartheid rule, the only case in this record of a state actually giving up an existing weapons capability entirely rather than either maintaining or never acquiring one — a reminder that this entry's core mechanic (mutual deterrence) requires an opponent worth deterring, which South Africa's post-apartheid transition context no longer clearly provided.
 prereqs: [WAR-150, WAR-315, MTH-084]
 enables: [WAR-340]
-see_also: [WAR-300, WAR-280, MTH-065, MTH-087, NAT-250]
+see_also: [WAR-300, WAR-280, MTH-065, MTH-087, NAT-250, DIP-055]
 contested: true
 contested_note: "Whether nuclear deterrence genuinely prevented direct great-power war during the Cold War (the 'long peace' thesis), or whether that peace is better explained by other factors (economic interdependence, conventional military balance, simple chance across a fairly short historical sample) with nuclear weapons as a contributing but non-decisive factor, is a long-running and unresolved debate among international relations scholars. Model deterrence effect as real but probabilistic and conditional on both sides maintaining credible second-strike capability and clear communication of resolve — not as an automatic, guaranteed war-prevention mechanism — leaving room for deterrence to fail under sufficiently degraded conditions (miscommunication, leadership crisis) rather than treating nuclear possession alone as sufficient."
 stats_touched: []
@@ -88,7 +88,10 @@ sample available. Model deterrence as a real but probabilistic effect
 conditional on both sides maintaining credible second-strike capability and
 clear communication of resolve, capable of failing under sufficiently
 degraded conditions (miscommunication, leadership crisis) rather than as an
-automatic guarantee that follows from weapons possession alone.
+automatic guarantee that follows from weapons possession alone. The closest
+approach to failure came through misread intent rather than decision — the
+1983 early-warning false alarm and the Able Archer exercise watched as cover
+for attack — the inadvertent-escalation mechanism DIP-055 carries.
 
 ## Hook
 

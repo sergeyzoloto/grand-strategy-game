@@ -24,7 +24,7 @@ absence:
     note: Roman client-kingdom relationships extend a middle option between full annexation and full independence — a client king retains local rule and internal legitimacy while ceding foreign policy and military support obligations to Rome, a diplomatic status distinct from both the Chinese tributary model's ritual hierarchy and the Aztec model's threat-based extraction.
 prereqs: [WAR-060, DIP-010, DIP-030]
 enables: [DIP-060]
-see_also: [DIP-080, PHI-290, DIP-050, DIP-100, WAR-020]
+see_also: [DIP-080, PHI-290, DIP-050, DIP-100, WAR-020, DIP-055]
 contested: false
 contested_note: ""
 stats_touched: [protection rent]
@@ -71,7 +71,10 @@ each type of tribute empire tends to collapse once challenged.
 
 The Chinese tributary system's ritual-cosmological legitimation gives it
 unusual durability, since tributary states have genuine reputational and
-commercial stakes in the relationship beyond fear of reprisal. The Aztec
+commercial stakes in the relationship beyond fear of reprisal. Its ritual grammar is also what made it unreadable
+to outsiders who did not share it: the Ming investiture of Hideyoshi in 1596
+and the Macartney embassy of 1793 both failed because each side read the
+other's conduct through an incompatible order (DIP-055). The Aztec
 model's much thinner legitimating logic — compliance under standing threat
 of renewed conquest — helps explain how quickly subordinate city-states
 defected to support the Spanish conquest once Aztec military credibility

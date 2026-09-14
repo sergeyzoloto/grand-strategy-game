@@ -16,7 +16,7 @@ region_variants: []
 absence: []
 prereqs: [DIP-080]
 enables: []
-see_also: [DIP-190, MTH-072]
+see_also: [DIP-190, MTH-072, DIP-055]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -57,7 +57,11 @@ a host state discovering a broad intelligence operation can expel dozens of
 personnel simultaneously as a single, dramatic diplomatic signal, doing
 real damage to the sending state's embassy staffing and information access
 without any individual prosecution, trial, or the escalation risk a
-criminal case against a foreign diplomat would otherwise carry.
+criminal case against a foreign diplomat would otherwise carry. What
+espionage is ultimately for is reading another state's intentions directly,
+and when it looks for evidence of hostile intent that is not there, as the
+Soviet search for signs of surprise attack did in 1983, it can deepen the
+misperception it exists to correct (DIP-055).
 
 ## Regional specifics
 

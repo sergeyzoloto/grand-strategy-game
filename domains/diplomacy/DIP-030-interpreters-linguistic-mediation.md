@@ -24,7 +24,7 @@ absence:
     note: Chinese tributary missions (DIP-040) are frequently accompanied by interpreters drawn from border populations or resident foreign communities rather than by a formalized, career diplomatic-interpreter office comparable to the Ottoman dragoman — linguistic mediation clearly occurs but stays organizationally ad hoc relative to the Ottoman case's institutionalization.
 prereqs: []
 enables: [DIP-040, DIP-080, DIP-090]
-see_also: [MED-030, MED-060, MED-040]
+see_also: [MED-030, MED-060, MED-040, DIP-055]
 contested: false
 contested_note: ""
 stats_touched: [information speed]
@@ -67,7 +67,11 @@ also makes their loyalty a standing object of suspicion from both
 directions, a position some interpreters (the Ottoman Phanariote dragomans)
 convert into real independent political influence and others (Malintzin)
 experience as a role assigned under coercion with no comparable personal
-leverage of their own.
+leverage of their own. When an intermediary shades a message to avoid
+reporting failure, the distortion can hide an unbridgeable gap until it
+produces war — the Ming–Hideyoshi negotiations of the 1590s, where
+negotiators on both sides misreported the other's terms, are the case
+DIP-055 carries.
 
 ## Regional specifics
 
