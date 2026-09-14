@@ -21,7 +21,7 @@ absence:
     note: No African state participates in the dreadnought arms race in any capacity, the naval-status competition MAR-300 and this entry both describe remaining structurally closed to every polity on the continent for the same industrial-base reasons noted there.
 prereqs: [MAR-300]
 enables: []
-see_also: [MAR-280, MAR-350, MED-120]
+see_also: [MAR-280, MAR-350, MED-120, MAR-285]
 contested: true
 contested_note: "Whether HMS Dreadnought's 1906 launch was a strategically necessary response to genuine technological trends already underway elsewhere (other navies were independently converging on all-big-gun designs) or a self-inflicted British strategic error that needlessly reset a naval arms race Britain was already comfortably winning under the old pre-dreadnought standard, is debated among naval historians. Model the all-big-gun design as a technology that was going to be adopted by some major power regardless of British action, but let the specific decision to build and publicize Dreadnought as dramatically as Britain did be a modelable choice with its own diplomatic/arms-race-acceleration consequence, separable from the underlying technology's own inevitability."
 stats_touched: [naval prestige]
@@ -68,7 +68,10 @@ the standard reset, shows a power can convert one status gain directly into
 continued competitiveness on a completely new technological basis. Africa's
 total exclusion from the race is the same structural absence noted in
 MAR-300, unchanged by the standard's reset since the underlying industrial-
-base gap the reset didn't touch.
+base gap the reset didn't touch. The reset reached infrastructure too:
+Germany had to widen and deepen the Kiel Canal in 1907-14 because its own
+dreadnoughts could not pass it, a warship design forcing a canal rebuild
+(MAR-285).
 
 ## Contested
 

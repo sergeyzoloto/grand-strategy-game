@@ -41,7 +41,7 @@ absence:
     note: The sailing form of the constraint was largely absent from the pre-contact Americas because sail was. Caribbean and most Atlantic-coast craft were paddled canoes, so routes were bounded by distance, currents and paddler endurance rather than by wind direction and season; the exception is the Pacific coast of Ecuador and Peru, where balsa sailing rafts traded along the coast. What the region lacked was the rig that makes a wind system into a route system, so the seasonal-window structure described here arrived with European ships rather than existing beforehand.
 prereqs: []
 enables: [MAR-020, MAR-050, MAR-160]
-see_also: [MIG-070, MAR-260, ENG-170, MAR-240, MIG-180, MAR-185]
+see_also: [MIG-070, MAR-260, ENG-170, MAR-240, MIG-180, MAR-185, MAR-285]
 contested: false
 contested_note: ""
 stats_touched: [sailing window, route knowledge]
@@ -134,7 +134,8 @@ from 1840, and Alfred Holt's compound-engined ships to China from 1866 turned
 shipping from a seasonal expedition into timetabled service. Holt's engines burned
 little enough coal to make the long run economic. The Suez Canal of 1869 sealed it,
 because the Red Sea's contrary winds made the canal close to useless for sailing
-ships and ideal for steam. The clipper (MAR-260) was sail's last answer. It ran
+ships and ideal for steam. The canal era that followed brought its own route
+constraint, set by locks and closures rather than winds (MAR-285). The clipper (MAR-260) was sail's last answer. It ran
 the charted wind belts faster than any sailing ship before it, in the same decades
 steam power (ENG-170) was reaching the ocean, and it could not survive the
 change. Regular passenger lines (MIG-180) are what the change made possible.

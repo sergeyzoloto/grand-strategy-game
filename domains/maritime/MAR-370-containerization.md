@@ -21,7 +21,7 @@ absence:
     note: Container port infrastructure investment across much of Africa lags well behind Asian, American, and European ports through this period, a specific bottleneck that constrains export-oriented manufacturing development options for economies without deep-water container terminal access in a way that mirrors, on modern container-scale infrastructure terms, the tidal-dock investment gap noted in MAR-240.
 prereqs: [MAR-240]
 enables: []
-see_also: [COM-200, ENG-340]
+see_also: [COM-200, ENG-340, MAR-285]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -50,7 +50,10 @@ relative to break-bulk cargo handling, which had previously required
 laboriously loading and unloading individually-shaped items by hand at
 every transfer point — the cost reduction is so large that it makes
 manufacturing-for-export viable from far more distant locations than
-previous shipping economics would have supported.
+previous shipping economics would have supported. Container ships were sized to
+the Panama Canal's locks until owners began building post-Panamax hulls that gave
+up the canal for scale, so the size of the largest ships was set by a lock rather
+than by the cargo (MAR-285).
 
 ## Social consequence
 

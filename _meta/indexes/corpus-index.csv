@@ -39,7 +39,7 @@ COM-090,The Periodic Fair and the Law Merchant,commerce,law,core,drafted,medium,
 COM-100,Manufactories,commerce,engineering; finance,core,drafted,medium,1104,1780,era,1,COM-020,2,COM-180; COM-170,FALSE,manufactory; jingdezhen; venice-arsenal; proto-industrial
 COM-110,The Hanseatic League,commerce,law; diplomacy,core,drafted,high,1358,1669,century,1,MAR-090,1,COM-150,FALSE,hanseatic-league; merchant-league; kontor; baltic-trade
 COM-120,The Putting-Out System,commerce,,standard,drafted,high,1400,1800,era,0,,0,,FALSE,putting-out; domestic-system; cottage-industry; merchant-capitalist
-COM-130,The Race for Narrow Sea Chokepoints,commerce,war; diplomacy,standard,drafted,high,1500,1979,era,2,MAR-160; ENG-280,0,,FALSE,chokepoint; suez-canal; panama-canal; strait-of-malacca
+COM-130,The Race for Narrow Sea Chokepoints,commerce,war; diplomacy,standard,drafted,high,1500,1979,era,2,MAR-160; ENG-280,1,MAR-285,FALSE,chokepoint; suez-canal; panama-canal; strait-of-malacca
 COM-140,Silver Shock — American Silver and the Price Revolution,commerce,finance,core,drafted,high,1545,1650,decade,1,MAR-160,0,,TRUE,silver; price-revolution; potosi; manila-galleon; ming-china; sovereign-default
 COM-150,The Chartered Trading Company,commerce,finance; war; diplomacy,core,drafted,high,1600,1874,century,1,COM-110,1,COM-210,FALSE,chartered-company; east-india-company; joint-stock; colonialism
 COM-160,Colonial Commodity Traps,commerce,migration; finance; agriculture,core,drafted,high,1650,1975,century,1,MIG-150,0,,TRUE,monoculture; cash-crop; dependency; colonial-economy
@@ -228,6 +228,7 @@ MAR-250,Chronometer and Coordinates,maritime,nature; engineering,standard,drafte
 MAR-260,Clippers,maritime,commerce; engineering,standard,drafted,high,1840,1870,decade,2,MAR-020; ENG-170,0,,FALSE,clippers; tea-trade; sailing-ship; suez-canal
 MAR-270,Monitor,maritime,war; engineering,standard,drafted,high,1862,1900,decade,1,MAR-200,0,,FALSE,monitor; coastal-defense; hampton-roads; ironclad
 MAR-280,Torpedoes,maritime,engineering; war,core,drafted,high,1866,1905,decade,0,,3,MAR-290; MAR-310; MAR-320,FALSE,torpedo; whitehead-torpedo; naval-weapons
+MAR-285,Canal Chokepoints and Closure Crises,maritime,commerce; diplomacy; engineering; war,core,drafted,medium,1869,2021,decade,1,COM-130,0,,FALSE,suez-canal; panama-canal; kiel-canal; montreux-convention; suez-crisis; supertanker; panamax; suezmax; neopanamax; ever-given
 MAR-290,Jeune École,maritime,war,standard,drafted,high,1870,1900,decade,1,MAR-280,0,,TRUE,jeune-ecole; naval-doctrine; torpedo-boats; commerce-raiding
 MAR-300,Battleship,maritime,war; engineering; finance,core,drafted,high,1870,1905,decade,1,MAR-200,2,MAR-330; MAR-350,FALSE,battleship; pre-dreadnought; great-power-status; naval-arms-race
 MAR-310,Destroyer,maritime,war; engineering,core,drafted,high,1893,1945,decade,1,MAR-280,0,,FALSE,destroyer; torpedo-boat-destroyer; screening; fleet-doctrine
