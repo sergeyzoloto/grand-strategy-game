@@ -1,6 +1,6 @@
 # Gaps Recorded — 2026-09-14
 
-Gaps identified during the MAR, DIP and LAW verification passes of 2026-09-14
+Gaps identified during the MAR, DIP, LAW and ENG verification passes of 2026-09-14
 and left unwritten by decision. None is fixed here. Each records what is
 absent, where the nearest existing coverage stops, and what a future entry or
 extension would need to carry.
@@ -202,3 +202,65 @@ popular-demand versus elite-direction dispute.
 **Placement.** LAW, as an extension of `LAW-150`: the mechanism is the capture of
 legal procedure, which is LAW's. Broadening the title and date range would be part of
 the extension.
+
+---
+
+## 7. Timber as structural material and the naval timber crisis — gap inside ENG-055, absent from MAR
+
+**Status:** gap inside an existing entry, with a maritime half that has no home.
+Extend `ENG-055` for the structural constraint; the naval timber crisis may justify
+its own MAR entry.
+
+**What exists.** `ENG-055` The Organic Energy Economy and Its Ceiling treats timber
+as one of four claims on land (fuel, food, fodder, timber) and discusses it almost
+entirely as fuel and charcoal, including the English timber shortage read as a fuel
+crisis. `MAR-010` Shipbuilding and Hull Construction mentions timber supply only as a
+reason shipyards sit where they do.
+
+**What is missing.** Timber as structural material, which is a separate constraint
+from fuel because it needs particular species, sizes and shapes that cannot be
+substituted by quantity:
+
+- **Ship timber and masts.** Great oaks for frames and compass timber, and tall
+  straight conifers for masts, took a century or more to grow. Navies reserved them
+  by law: Britain's Broad Arrow policy marking New England mast pines from 1691, the
+  Venetian Arsenal's reserved oak forests, and French forest ordinances under Colbert.
+  Britain's dependence on Baltic mast and naval stores made the Sound a strategic
+  chokepoint and the American colonies a mast reserve; the United States later
+  reserved live oak for naval use.
+- **Construction timber.** Beams long enough for large roofs and halls became scarce
+  in deforested regions, shaping architecture toward masonry and vaulting.
+- **Mine props.** Deep mining consumed timber for pit props at industrial scale, tying
+  coal output (`ENG-165`) back to woodland.
+
+The naval crisis is a real strategic constraint: fleet size was capped by the supply
+of large timber, not by money or labour, until iron hulls ended it.
+
+**Placement.** The structural constraint extends `ENG-055`. The naval crisis is MAR,
+under the boundary rule that shipbuilding technique and naval institutions are MAR,
+and would link `MAR-010`, `MAR-060` and `MAR-200`.
+
+---
+
+## 8. Rocketry and launch capability — absent from ENG
+
+**Status:** gap. No entry. Recorded instead of a space-race entry.
+
+**What exists.** A space-race entry would duplicate existing coverage. `NAT-250` Big
+Science carries the Soviet and American space programmes, Apollo's budget share, ISRO
+and China's first satellite as facility-scale state science and prestige competition.
+`ENG-340` Satellite Positioning carries navigation satellites. `MED-140` carries
+satellite broadcasting. `WAR-330` Nuclear Deterrence carries delivery systems as
+doctrine.
+
+**What is missing.** Rocketry as technique — the engineering line from liquid-fuel
+experiment through the V-2 to the intercontinental ballistic missile and the launch
+vehicle. Every one of the entries above assumes launch capability exists and none
+covers how it was built: propulsion, guidance, staging, the transfer of German
+engineers and hardware to both superpowers after 1945, and the convergence of missile
+and launcher programmes that made space capability and nuclear delivery the same
+industrial base.
+
+**Placement.** ENG, under the boundary rule that ENG owns technique and WAR owns
+doctrine. It would sit around 1926–1970 and link `WAR-330`, `NAT-250`, `ENG-340` and
+`MED-140`.
