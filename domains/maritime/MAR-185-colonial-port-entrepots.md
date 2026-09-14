@@ -37,7 +37,7 @@ absence:
   - region: east-asia
     note: No European power seized a major Japanese or Chinese port before 1842, because both states were strong enough on land to decide who could trade and where. Tokugawa Japan confined the Dutch to the artificial island of Dejima at Nagasaki from 1641 and expelled the Portuguese, and Qing China restricted Western trade to Guangzhou from 1757. The entrepôt contest described here needs a coast whose ruler cannot close it; where the state could close its ports, outsiders traded on terms set by that state or not at all, until force changed the terms in 1842.
 prereqs: [MAR-160]
-enables: []
+enables: [MAR-205]
 see_also: [COM-130, WAR-020, COM-210, DIP-140, MAR-180, MIG-060, COM-150, MAR-038]
 contested: true
 contested_note: "How much the Portuguese and Dutch port systems actually controlled Asian trade is disputed. Steensgaard (The Asian Trade Revolution of the Seventeenth Century, 1974) reads the Estado da Índia as a redistributive enterprise that sold protection rather than a trading company, and the Dutch as the first to internalise protection costs profitably; Pearson and others show that Gujarati, Acehnese and Chinese shipping evaded or bought into the Portuguese system on a large scale, so the Red Sea spice trade had revived by the mid-sixteenth century. Model port control as raising the cost of trading outside the system rather than preventing it: the share of trade captured should depend on how many alternative open ports exist within reach and how strongly the holding power can patrol between them, not be assumed total because a fortress exists."
@@ -144,7 +144,9 @@ Europeans.
   position is lost.
 - **Aceh, Banten and Makassar** ran open entrepôts that competed with the
   European ports for a century. Makassar's ruler answered Dutch monopoly with
-  a claim that the sea belonged to all.
+  a claim that the sea belonged to all, the same argument Grotius had made
+  for the Dutch against the Portuguese, from which the law of the sea grew
+  (MAR-205).
 - **Oman** expelled the Portuguese from Muscat and Mombasa and built Zanzibar
   into East Africa's dominant port, winning the contest on the Swahili coast
   for two centuries.

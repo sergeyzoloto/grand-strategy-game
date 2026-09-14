@@ -21,7 +21,7 @@ absence:
     note: Communal and lineage-based land-tenure systems across much of precolonial sub-Saharan Africa don't generate an equivalent enclosure movement, since land rights vested in a kin-group or community rather than in an individual titleholder can't be individually fenced off and privatized the same way an English commoner's traditional-use rights over shared land could be legally extinguished — a structurally different starting tenure regime that closes off the specific enclosure mechanism entirely, not merely delays it.
 prereqs: [AGR-180]
 enables: []
-see_also: [LAW-080, AGR-190, AGR-270, AGR-070, AGR-080, AGR-240, MIG-090, AGR-260]
+see_also: [LAW-080, AGR-190, AGR-270, AGR-070, AGR-080, AGR-240, MIG-090, AGR-260, MAR-205]
 contested: true
 contested_note: "Whether enclosure's net effect on the dispossessed rural population was primarily positive (freeing labor for the more productive commercial agriculture and, later, urban industrial employment that a growing population needed, per the classic economic-efficiency reading) or primarily negative (breaking a customary subsistence safety net and communal-use rights with inadequate compensation, per the social-history 'world we have lost' reading, associated with E.P. Thompson among others) is a long-running historiographical dispute. Model enclosure as raising land's commercial `yield ceiling` while separately, and with a genuinely contested net welfare sign, displacing customary-use rights the dispossessed population had no formal legal title to but had long depended on."
 stats_touched: [yield ceiling]
@@ -55,7 +55,11 @@ open-field systems' distributed, custom-bound management structure
 doesn't easily permit — raising commercial `yield ceiling` at the direct
 cost of extinguishing the traditional grazing, gleaning, and
 subsistence-use rights a substantial share of the rural population
-depended on without holding formal legal title to.
+depended on without holding formal legal title to. The same mechanism
+runs at sea in the twentieth century (MAR-205): once oil and industrial
+fishing made the ocean worth holding, coastal states enclosed a third of it
+into exclusive zones, and distant-water fleets that had fished without
+title lost their access as commoners had lost theirs.
 
 ## Social consequence
 

@@ -21,7 +21,7 @@ absence:
     note: Ming and Qing China administer naval affairs through the general imperial bureaucracy rather than a dedicated, specialized maritime administrative-judicial institution comparable to a European admiralty, consistent with the broader absence of sustained naval institution-building noted in MAR-060 — administrative capacity existed, but not concentrated into a maritime-specific institution.
 prereqs: [MAR-060]
 enables: []
-see_also: [MAR-110]
+see_also: [MAR-110, MAR-205]
 contested: false
 contested_note: ""
 stats_touched: [legibility]
@@ -50,6 +50,9 @@ institution makes sense specifically because both functions require the same
 scarce specialized knowledge of maritime affairs that a general-purpose
 court or treasury department wouldn't have — the institution exists because
 the expertise, not the two functions themselves, is what's genuinely shared.
+Prize law is the precedent for placing sea law in this domain: its subject is
+the sea and the vessels on it, which is the principle the boundary rules later
+apply to the law of the sea and the enclosure of the ocean (MAR-205).
 
 ## Social consequence
 

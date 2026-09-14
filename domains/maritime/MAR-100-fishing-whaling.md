@@ -24,7 +24,7 @@ absence:
     note: Indian Ocean coastal communities engage in fishing at a subsistence and local-market scale throughout this period without developing an export-oriented industrial fishery or whaling industry comparable to the Basque, Yankee, or Japanese cases, plausibly reflecting the monsoon trade system's (MAR-020) greater relative profitability for the same coastal labor and capital.
 prereqs: [MAR-010]
 enables: [ENG-265]
-see_also: [MAR-020, MAR-160, ENG-340]
+see_also: [MAR-020, MAR-160, ENG-340, MAR-205]
 contested: false
 contested_note: ""
 stats_touched: [fishery stock]
@@ -65,7 +65,10 @@ faster than it replenishes, a boom-that-undermines-itself dynamic none
 of this domain's trade or naval mechanics otherwise produce, and one that
 recurs independently in the North Sea herring fishery, the Grand Banks
 cod fishery, and the depletion of whale populations near established
-whaling grounds.
+whaling grounds. Exclusive economic zones were meant partly to stop this by
+giving a coastal state ownership of the stock, and they did not reliably do so:
+Newfoundland cod collapsed in 1992 under the jurisdiction Canada had enclosed
+fifteen years earlier (MAR-205).
 
 ## Regional specifics
 
