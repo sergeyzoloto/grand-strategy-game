@@ -24,7 +24,7 @@ absence:
     note: Qing Chinese law embeds property, contract, and inheritance provisions within a single unified penal-and-civil code rather than treating private law as a separate legal category from criminal law the way the Roman and later European civil-law tradition does, achieving comparable practical coverage of the same transactions through a structurally different code architecture.
 prereqs: [LAW-020]
 enables: []
-see_also: [COM-110, COM-030, COM-090, FIN-040, FIN-060, LAW-100, LAW-230, MIG-070, LAW-040, MTH-035]
+see_also: [COM-110, COM-030, COM-090, FIN-040, FIN-060, LAW-100, LAW-230, MIG-070, LAW-040, MTH-035, LAW-155]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -43,7 +43,7 @@ Private law converts an informal expectation between two parties — that a sale
 
 ## Social consequence
 
-A codified, publicly known private-law regime lets strangers transact with each other on the strength of the law itself rather than requiring personal trust, reputation, or a shared community's informal enforcement (the diaspora-network trust substitute MIG-070 describes for exactly the situations where this legal substrate isn't reliably available) — converting commercial and property relationships from something that requires an ongoing personal or communal relationship into something a court-enforceable legal claim can secure between total strangers.
+A codified, publicly known private-law regime lets strangers transact with each other on the strength of the law itself rather than requiring personal trust, reputation, or a shared community's informal enforcement (the diaspora-network trust substitute MIG-070 describes for exactly the situations where this legal substrate isn't reliably available) — converting commercial and property relationships from something that requires an ongoing personal or communal relationship into something a court-enforceable legal claim can secure between total strangers. Colonial states applied that security selectively: metropolitan private law governed settlers and commerce while the governed were left under codified custom, so the reach of court-enforceable contract depended on a person's legal category (LAW-155).
 
 ## Regional specifics
 

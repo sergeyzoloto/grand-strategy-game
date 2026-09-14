@@ -23,7 +23,7 @@ absence:
   - region: europe
     note: Post-Reformation European states increasingly move marriage and family law under unified state civil jurisdiction rather than leaving it to competing ecclesiastical courts, a slow secularization of personal-status law running in the opposite direction from the Ottoman millet system's formalized religious pluralism over the same broad era.
 prereqs: [LAW-020]
-enables: []
+enables: [LAW-155]
 see_also: [LAW-050, LAW-220, LAW-070, WAR-035, REL-252, REL-255]
 contested: false
 contested_note: ""
@@ -43,7 +43,7 @@ A polity can govern marriage, divorce, and inheritance either as part of one uni
 
 ## Social consequence
 
-Personal-status law reaches into a household's most intimate legal relationships — who can marry whom, how a divorce is granted, which children inherit what — in a way LAW-050's citizenship or LAW-220's suffrage never does, meaning a subject's actual legal experience of the state can differ enormously by religious or communal category even where general civil and criminal law applies uniformly to everyone.
+Personal-status law reaches into a household's most intimate legal relationships — who can marry whom, how a divorce is granted, which children inherit what — in a way LAW-050's citizenship or LAW-220's suffrage never does, meaning a subject's actual legal experience of the state can differ enormously by religious or communal category even where general civil and criminal law applies uniformly to everyone. Under colonial rule the separate personal-status track was one part of a wider dual legal order — metropolitan law for settlers, codified custom for the governed — whose forum shopping, frozen codification and survival past independence LAW-155 carries.
 
 ## Regional specifics
 

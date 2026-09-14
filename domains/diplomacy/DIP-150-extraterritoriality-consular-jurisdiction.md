@@ -19,7 +19,7 @@ region_variants:
 absence: []
 prereqs: [DIP-100]
 enables: []
-see_also: [DIP-090, DIP-140, COM-210]
+see_also: [DIP-090, DIP-140, COM-210, LAW-155]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -49,7 +49,11 @@ court hears the case, applies the foreign power's own legal code, and the
 host state's own courts and law simply don't apply to the covered
 population at all, converting legal jurisdiction from an automatic
 consequence of physical presence within a territory into an explicitly
-negotiated, and asymmetrically applied, diplomatic variable.
+negotiated, and asymmetrically applied, diplomatic variable. It is the mirror image of colonial
+legal dualism (LAW-155): there the governed live under a lesser law in their
+own country, here foreigners live above the law of the country they are in,
+and in both a population's legal category rather than its location decides
+which courts apply.
 
 ## Social consequence
 

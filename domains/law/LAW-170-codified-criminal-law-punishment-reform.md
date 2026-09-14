@@ -21,7 +21,7 @@ absence:
     note: Qing Chinese criminal law in this era continues to rely on a graduated system of corporal and capital punishment codified in explicit statute (the Great Qing Code) rather than adopting a comparable proportionality-and-reform theoretical shift or the penitentiary as an institutional response, achieving a systematically codified punishment schedule without the same Enlightenment-driven theoretical break from spectacle and retribution.
 prereqs: [LAW-020]
 enables: []
-see_also: [HLT-200, LAW-110]
+see_also: [HLT-200, LAW-110, LAW-155]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -40,7 +40,7 @@ Beccaria's core argument is that punishment's purpose is deterring future crime 
 
 ## Social consequence
 
-Converting punishment's stated purpose from retributive spectacle to calculated deterrence and reform changes what the state's exercise of penal power is supposed to look like in public — a public execution or corporal punishment staged for maximum visible deterrent effect gives way to a punishment carried out privately, behind institutional walls, whose reformative claim (successfully reforming the offender) becomes a new, separate, and often unmet standard the institution can be judged against.
+Converting punishment's stated purpose from retributive spectacle to calculated deterrence and reform changes what the state's exercise of penal power is supposed to look like in public — a public execution or corporal punishment staged for maximum visible deterrent effect gives way to a punishment carried out privately, behind institutional walls, whose reformative claim (successfully reforming the offender) becomes a new, separate, and often unmet standard the institution can be judged against. Codification also travelled: Macaulay's Indian Penal Code of 1860 unified criminal law across British India while personal law stayed plural, was exported across the empire, and outlived it by decades in successor states — part of the colonial dual order LAW-155 carries.
 
 ## Regional specifics
 

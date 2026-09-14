@@ -179,7 +179,7 @@ HLT-350,The Nutrition Transition,health,agriculture; commerce,core,drafted,high,
 LAW-010,Customary Law and Pre-Written Dispute Resolution,law,religion,core,drafted,medium,-10000,-1754,era,0,,1,LAW-020,TRUE,customary-law; wergild; dispute-resolution; oral-law
 LAW-020,Written Law and the Codification of Inequality,law,,core,drafted,medium,-1754,-450,era,2,FIN-020; LAW-010,16,LAW-050; LAW-060; LAW-100; LAW-080; LAW-140; LAW-120; LAW-130; LAW-110; LAW-200; REL-140; LAW-070; LAW-030; LAW-040; LAW-090; LAW-170; LAW-225,FALSE,written-law; hammurabi; manusmriti; legalism
 LAW-030,"Courts, Judges, and Trial Procedure",law,religion,core,drafted,high,-1754,1800,era,1,LAW-020,1,LAW-150,FALSE,courts; trial-procedure; jury; qadi; adversarial-inquisitorial
-LAW-040,"Marriage, Inheritance, and Personal Status Law",law,religion; migration,core,drafted,high,-1754,1950,era,1,LAW-020,0,,FALSE,personal-status-law; marriage-law; inheritance; millet-system; colonial-codification
+LAW-040,"Marriage, Inheritance, and Personal Status Law",law,religion; migration,core,drafted,high,-1754,1950,era,1,LAW-020,1,LAW-155,FALSE,personal-status-law; marriage-law; inheritance; millet-system; colonial-codification
 LAW-050,Citizenship and Voting Rights,law,diplomacy; agriculture,core,drafted,high,-594,1000,era,1,LAW-020,3,LAW-230; LAW-220; DIP-160,FALSE,citizenship; voting-rights; athenian-democracy; dhimmi
 LAW-060,Senate and Elite Council as a Coalition Mechanism,law,diplomacy,core,drafted,medium,-509,1450,era,1,LAW-020,0,,FALSE,senate; council-of-elders; iroquois-confederacy; censorate
 LAW-070,"Civil Law: Property, Contract, and Inheritance",law,commerce; finance,core,drafted,high,-450,1900,era,1,LAW-020,0,,FALSE,civil-law; property-law; contract-law; napoleonic-code; inheritance
@@ -191,6 +191,7 @@ LAW-120,City Charters and Communal Self-Government,law,commerce; religion,core,d
 LAW-130,"Corporate Forms — The University, City, Church, and Company as Legal Persons",law,finance; religion,core,drafted,high,1088,1600,era,2,LAW-020; LAW-090,1,FIN-070,FALSE,corporate-personhood; universitas; waqf; legal-entity
 LAW-140,"Estate Tax Treaties — Cortes, Estates, and Parliaments",law,finance,core,drafted,high,1188,1789,era,2,LAW-020; FIN-020,2,LAW-160; LAW-180,FALSE,cortes; estates-general; parliament; tax-consent
 LAW-150,Witch Trials and Legal Panic,law,religion,standard,drafted,high,1450,1750,century,1,LAW-030,0,,TRUE,witch-trials; moral-panic; spectral-evidence; salem
+LAW-155,Colonial Legal Dualism,law,religion; diplomacy; agriculture,core,drafted,medium,1500,1975,era,1,LAW-040,0,,TRUE,legal-dualism; legal-pluralism; indirect-rule; customary-law; code-de-l-indigenat; two-republics; adat-law; anglo-hindu-law; indian-penal-code; terra-nullius; bifurcated-state
 LAW-160,Representation and Political Parties,law,,core,drafted,high,1679,1900,century,1,LAW-140,1,LAW-180,FALSE,political-parties; representation; whigs-tories; meiji-diet
 LAW-165,Compulsory Education,law,war; commerce; philosophy; health,core,drafted,high,1763,1950,decade,3,WAR-200; LAW-100; FIN-020,0,,TRUE,compulsory-schooling; prussia; likbez; truancy; household-examination; assimilation
 LAW-170,Codified Criminal Law and Punishment Reform,law,philosophy,standard,drafted,high,1764,1900,century,1,LAW-020,0,,FALSE,criminal-law; beccaria; penitentiary; punishment-reform
