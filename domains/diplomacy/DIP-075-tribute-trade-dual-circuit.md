@@ -35,7 +35,7 @@ absence:
     note: The Mughal empire did not run foreign trade through a tribute circuit. European companies obtained trading rights by purchased imperial grants (farmans) and paid customs, and gifts to the court were a cost of doing business rather than an acknowledgement of subordination that the trade depended on. The Mughal state drew its revenue from land and taxed commerce rather than rationing it through embassies, so there was no ritual form whose breach could close the market — which is why European access in India was contested through grants, customs and eventually force rather than through protocol.
 prereqs: [DIP-040]
 enables: [COM-210]
-see_also: [DIP-055, MAR-185, MAR-150]
+see_also: [DIP-055, MAR-185, MAR-150, FIN-065]
 contested: true
 contested_note: "The 'tributary system' as a single coherent institution is disputed. Fairbank's formulation (Fairbank and Teng, 'On the Ch'ing Tributary System', Harvard Journal of Asiatic Studies, 1941; The Chinese World Order, 1968) described a Sinocentric order in which trade was subordinated to ritual hierarchy; Hamashita Takeshi reads the same record as a regional trading system in which tribute was the form taken by commerce, with trade driving the ritual rather than the reverse; and Perdue and others argue 'the tributary system' is a later abstraction imposed on a variety of pragmatic arrangements the Ming and Qing adjusted case by case. Model market access as gated on ritual compliance while treating the balance of motive as contested: some polities performed tribute for the market, some traded as a by-product of tribute, and the court sometimes subsidised missions at a loss for prestige. Let a breach of ritual close trade, and let the commercial weight of the trade decide how quickly both sides seek a way to reopen it."
 stats_touched: [entrepôt share, intent legibility]
@@ -129,6 +129,10 @@ coast were criminals under the Ming prohibition unless they sailed inside an
 embassy or bought licences later. That turned whole coastal communities toward
 smuggling and made the line between merchant, smuggler and pirate a matter of the
 court's current policy rather than of what anyone was doing.
+
+The Qing restriction rested on order and security rather than bullion accumulation,
+which set it apart from European mercantilism in the same centuries. FIN-065 carries
+that comparison alongside Ottoman provisionism and Tokugawa bullion limits.
 
 ## Regional specifics
 

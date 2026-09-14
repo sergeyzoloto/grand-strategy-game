@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: middle-east
     note: The Ottoman Empire and other major Middle Eastern polities grant foreign merchants trade privileges through bilateral capitulation agreements with the sponsoring European state directly, rather than licensing a chartered company as an intermediary sovereign-adjacent actor — a structurally different way of managing the same underlying foreign-trade-access problem, negotiated state-to-state rather than delegated to a company.
-prereqs: [COM-110]
+prereqs: [COM-110, FIN-065]
 enables: [COM-210]
 see_also: [DIP-090, FIN-070, LAW-130, COM-160, LAW-215, MAR-185]
 contested: false
@@ -66,6 +66,11 @@ governance of a foreign population — profit and sovereignty become the same
 balance sheet, with shareholder dividend expectations directly shaping how
 aggressively a company's territorial administration extracts revenue from
 the population it governs.
+
+The mercantilist premise supplied the chartering rationale: a national company
+holding a distant trade as a monopoly kept its profits and shipping out of foreign
+hands. FIN-065 carries that premise and its contradiction, since the East India trade
+required exporting the silver the doctrine said must stay home.
 
 ## Regional specifics
 

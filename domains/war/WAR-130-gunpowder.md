@@ -24,7 +24,7 @@ absence:
     note: Mughal gunpowder adoption is rapid and militarily decisive (matchlock infantry and siege artillery central to Mughal conquest campaigns) but stays more concentrated in state arsenals and less diffused into broad-based standing infantry doctrine than the Ottoman case, reflecting a different balance between centralized artillery/siege capability and dispersed infantry firearms investment.
 prereqs: [WAR-060, WAR-040, ENG-140]
 enables: [WAR-150, WAR-170]
-see_also: [WAR-070, WAR-080]
+see_also: [WAR-070, WAR-080, FIN-065]
 contested: false
 contested_note: ""
 stats_touched: []
@@ -64,6 +64,10 @@ lifetime of costly equestrian training — a lower-status, mass-trainable
 soldier can now reliably defeat a higher-status, individually superior one,
 directly threatening the social hierarchy the older cavalry-dominant system
 had rested on.
+
+Gunpowder armies made campaigns expensive and payable only in coin, which is the
+fiscal position FIN-065's mercantilist premise answered: accumulate specie through a
+trade surplus so the state can fight abroad.
 
 ## Regional specifics
 

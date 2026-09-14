@@ -21,7 +21,7 @@ absence:
     note: Qing China finances state expenditure predominantly through direct taxation and, in fiscal emergencies, sale of offices or informal levies rather than through a developed tradable government bond market, leaving it without the same capacity to mobilize large-scale, up-front capital against future revenue that European sovereign-debt markets provide their own governments.
 prereqs: [FIN-020, FIN-100]
 enables: [FIN-210]
-see_also: [FIN-260, WAR-037, DIP-115, LAW-075]
+see_also: [FIN-260, WAR-037, DIP-115, LAW-075, FIN-065]
 contested: false
 contested_note: ""
 stats_touched: [sovereign credit capacity]
@@ -45,6 +45,10 @@ A liquid, tradable sovereign debt market gives bondholders a direct financial st
 War is also when taxation and borrowing capacity leap: fiscal emergency
 forces revenue measures that peacetime politics would block, and the
 administrative capacity built to collect them outlasts the war (LAW-075).
+
+Before funded debt, specie was the war chest. FIN-065 carries mercantilism as war
+finance dressed as economics: a trade surplus accumulated the coin armies abroad had
+to be paid in.
 
 ## Regional specifics
 

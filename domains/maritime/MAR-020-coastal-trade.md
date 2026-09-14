@@ -24,7 +24,7 @@ absence:
     note: Pre-contact American coastal trade (notable cases include Pacific Northwest and Andean coastal networks) stays regionally bounded rather than developing into the kind of long-range, multi-society-connecting network seen in the Mediterranean or Indian Ocean, plausibly reflecting the absence of a comparable large-scale bulk cargo vessel and sail technology (see MAR-080) rather than any lack of coastal geography or trading impulse.
 prereqs: [MAR-010, MAR-038]
 enables: [MAR-030, MAR-090, MAR-120, MAR-240, MAR-260, MAR-150, MAR-220, AGR-170]
-see_also: [ENG-090, COM-230, MAR-050, MAR-080, MAR-160, MAR-170, MAR-100]
+see_also: [ENG-090, COM-230, MAR-050, MAR-080, MAR-160, MAR-170, MAR-100, FIN-065]
 contested: false
 contested_note: ""
 stats_touched: [route knowledge]
@@ -61,6 +61,10 @@ disproportionate wealth and cosmopolitan population relative to their
 immediate hinterland, becoming commercially important out of proportion to
 their agricultural or political weight — a pattern that recurs independently
 in the Mediterranean, the Swahili coast, and the Indian Ocean rim alike.
+
+From the seventeenth century much of this trade came under national flags. FIN-065
+carries the cargo reservation of the Navigation Acts and the Spanish fleet system,
+which closed carrying trades to foreign ships.
 
 ## Regional specifics
 

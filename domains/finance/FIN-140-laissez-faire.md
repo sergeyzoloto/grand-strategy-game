@@ -19,7 +19,7 @@ region_variants:
 absence:
   - region: europe
     note: The German historical school of economics (Friedrich List prominent among them) explicitly argues against laissez-faire for developing industrial economies, advocating protective tariffs (COM-190) and state-directed industrial policy instead — a substantial internal European counter-current to classical liberalism, not a view held only outside Europe.
-prereqs: [FIN-020]
+prereqs: [FIN-020, FIN-065]
 enables: [FIN-200]
 see_also: [COM-190, FIN-230]
 contested: true
@@ -62,6 +62,11 @@ for workers and smaller producers who have no equivalent access to
 diversification or exit that larger capital holders do — the doctrine's
 distributional effects, not just its aggregate growth effects, are part of
 why it remains politically contested wherever it's actually implemented.
+
+Smith's argument was aimed at a specific regime. FIN-065 carries mercantilism itself,
+from the Navigation Acts and Colbert to Ottoman provisionism as a contemporary
+alternative, and why the shift away from it was contested rather than a simple
+correction.
 
 ## Regional specifics
 

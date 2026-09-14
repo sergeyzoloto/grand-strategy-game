@@ -41,7 +41,7 @@ COM-110,The Hanseatic League,commerce,law; diplomacy,core,drafted,high,1358,1669
 COM-120,The Putting-Out System,commerce,,standard,drafted,high,1400,1800,era,0,,0,,FALSE,putting-out; domestic-system; cottage-industry; merchant-capitalist
 COM-130,The Race for Narrow Sea Chokepoints,commerce,war; diplomacy,standard,drafted,high,1500,1979,era,2,MAR-160; ENG-280,1,MAR-285,FALSE,chokepoint; suez-canal; panama-canal; strait-of-malacca
 COM-140,Silver Shock — American Silver and the Price Revolution,commerce,finance,core,drafted,high,1545,1650,decade,1,MAR-160,0,,TRUE,silver; price-revolution; potosi; manila-galleon; ming-china; sovereign-default
-COM-150,The Chartered Trading Company,commerce,finance; war; diplomacy,core,drafted,high,1600,1874,century,1,COM-110,1,COM-210,FALSE,chartered-company; east-india-company; joint-stock; colonialism
+COM-150,The Chartered Trading Company,commerce,finance; war; diplomacy,core,drafted,high,1600,1874,century,2,COM-110; FIN-065,1,COM-210,FALSE,chartered-company; east-india-company; joint-stock; colonialism
 COM-160,Colonial Commodity Traps,commerce,migration; finance; agriculture,core,drafted,high,1650,1975,century,1,MIG-150,0,,TRUE,monoculture; cash-crop; dependency; colonial-economy
 COM-170,The Factory and Division of Labor,commerce,engineering; migration,core,drafted,high,1771,1850,century,2,COM-100; ENG-170,1,COM-220,FALSE,factory-system; division-of-labor; industrial-revolution; mechanization
 COM-180,Technological Displacement of Craft,commerce,law; migration,core,drafted,medium,1811,1860,century,1,COM-100,0,,TRUE,luddites; deindustrialization; craft-displacement; hand-loom-weavers
@@ -121,6 +121,7 @@ FIN-030,"Credit, Interest, and Usury",finance,religion; law,core,drafted,high,-1
 FIN-040,Bills of Exchange and Negotiable Instruments,finance,commerce,core,drafted,high,700,1400,era,1,FIN-030,1,FIN-060,FALSE,bill-of-exchange; suftaja; negotiable-instrument; merchant-banking
 FIN-050,Paper Money and Fiat Currency,finance,,core,drafted,medium,806,1930,era,1,FIN-020,4,FIN-250; FIN-260; FIN-220; FIN-270,FALSE,paper-money; fiat-currency; jiaozi
 FIN-060,The Double-Entry Method,finance,commerce,core,drafted,medium,1000,1494,century,2,FIN-020; FIN-040,3,FIN-070; FIN-130; FIN-090,TRUE,double-entry; bookkeeping; accounting; pacioli
+FIN-065,Mercantilism,finance,commerce; maritime; war; law; diplomacy,core,drafted,medium,1500,1776,era,1,MAR-160,2,COM-150; FIN-140,TRUE,mercantilism; navigation-acts; colbert; carrera-de-indias; flota; bullion; provisionism; narh; canton-system; sakoku; shotoku-regulations; calico-acts; specie-flow
 FIN-070,Joint-Stock Companies,finance,commerce,core,drafted,high,1602,1720,century,2,FIN-060; LAW-130,5,FIN-080; FIN-170; FIN-180; FIN-160; LAW-215,FALSE,joint-stock; shares; capital-pooling; voc
 FIN-080,Asset Bubbles,finance,commerce,core,drafted,high,1636,1990,era,1,FIN-070,1,FIN-230,TRUE,asset-bubble; tulip-mania; south-sea-bubble; japan-bubble
 FIN-090,General Insurance and Actuarial Risk-Pooling,finance,maritime; health,core,drafted,high,1666,1900,century,1,FIN-060,0,,FALSE,insurance; fire-insurance; life-insurance; actuarial-science; takaful; halley; mortality-table
@@ -128,7 +129,7 @@ FIN-100,Central Banking,finance,,core,drafted,high,1668,1913,century,1,FIN-020,2
 FIN-110,Sovereign Debt and Government Bond Markets,finance,war,core,drafted,high,1690,1900,era,2,FIN-020; FIN-100,1,FIN-210,FALSE,sovereign-debt; government-bonds; financial-revolution; war-finance
 FIN-120,Gold Standard,finance,diplomacy,core,drafted,high,1717,1971,century,1,COM-140,1,FIN-220,TRUE,gold-standard; monetary-regime; currency-board; silver-standard
 FIN-130,Derivative Finance,finance,commerce,core,drafted,high,1730,1995,era,1,FIN-060,0,,FALSE,derivatives; futures; options; dojima-rice-exchange
-FIN-140,Laissez-Faire as Economic Policy,finance,philosophy; commerce,core,drafted,high,1776,1930,century,1,FIN-020,1,FIN-200,TRUE,laissez-faire; classical-liberalism; economic-policy; free-trade
+FIN-140,Laissez-Faire as Economic Policy,finance,philosophy; commerce,core,drafted,high,1776,1930,century,2,FIN-020; FIN-065,1,FIN-200,TRUE,laissez-faire; classical-liberalism; economic-policy; free-trade
 FIN-150,Consumer Lending,finance,,core,drafted,high,1807,1958,century,1,FIN-030,0,,FALSE,consumer-credit; installment-lending; credit-card; rosca
 FIN-160,Mutual and Cooperative Banking,finance,,standard,drafted,high,1810,1900,century,1,FIN-070,0,,FALSE,mutual-bank; savings-bank; cooperative-credit; raiffeisen
 FIN-170,Limited Liability,finance,law,standard,drafted,high,1811,1862,century,1,FIN-070,1,FIN-180,FALSE,limited-liability; incorporation; corporate-law
@@ -225,7 +226,7 @@ MAR-120,Marine Insurance,maritime,finance; commerce,core,drafted,high,1300,1700,
 MAR-130,Naval Gunnery and Ship Artillery,maritime,engineering; war,core,drafted,high,1350,1858,era,0,,2,MAR-210; MAR-200,FALSE,naval-gunnery; cannon; paixhans-gun; explosive-shell
 MAR-140,Admiralty,maritime,law; war,core,drafted,medium,1360,1900,century,1,MAR-060,0,,FALSE,admiralty; prize-court; naval-administration; maritime-law
 MAR-150,Smuggling,maritime,commerce; law,standard,drafted,high,1400,1900,century,1,MAR-020,0,,FALSE,smuggling; mercantilism; haijin; customs
-MAR-160,Ocean Navigation,maritime,commerce; migration,core,drafted,high,1405,1522,decade,3,MAR-050; MAR-080; MAR-038,5,COM-140; AGR-220; MAR-170; MAR-180; MAR-185,FALSE,zheng-he; age-of-exploration; ocean-crossing; treasure-fleet
+MAR-160,Ocean Navigation,maritime,commerce; migration,core,drafted,high,1405,1522,decade,3,MAR-050; MAR-080; MAR-038,6,COM-140; AGR-220; MAR-170; MAR-180; MAR-185; FIN-065,FALSE,zheng-he; age-of-exploration; ocean-crossing; treasure-fleet
 MAR-170,Naval Provisioning and Scurvy,maritime,health,core,drafted,high,1497,1795,era,1,MAR-160,0,,FALSE,scurvy; provisioning; james-lind; royal-navy
 MAR-180,The Cape Route and the Collapse of the Mediterranean Spice Trade,maritime,commerce,core,drafted,high,1498,1600,century,1,MAR-160,0,,FALSE,cape-route; spice-trade; venice; vasco-da-gama
 MAR-185,The Colonial Port and the Contest for Entrepôts,maritime,commerce; diplomacy; war; law,core,drafted,medium,1500,1900,era,1,MAR-160,1,MAR-205,TRUE,entrepot; cartaz; estado-da-india; malacca; batavia; singapore; hormuz; zanzibar; macau; treaty-ports; free-port
