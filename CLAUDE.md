@@ -21,9 +21,13 @@ ctest --test-dir build/release --output-on-failure
 
 # Verbose test output (shows MESSAGE lines such as sizeof(Character))
 ./build/debug-asan/tests/sim_tests -s
+
+# Manual benchmarks (Release only; not part of ctest; timings reported, never asserted)
+cmake --build build/release --target sim_bench && ./build/release/bench/sim_bench
 ```
 
-CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_TESTS` (ON).
+CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_TESTS` (ON),
+`SIM_BUILD_BENCH` (ON).
 Warnings: `-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Werror`
 (MSVC: `/W4 /WX /permissive-`), applied to our own targets only via `sim_configure_target`;
 doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; never `-ffast-math`.
@@ -42,8 +46,10 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - No SoA, SIMD, pools or hot/cold splitting unless profiling asks for it.
 - Commit once at the end of each step, after the tests pass and the report is written.
 - Never reset, rebase or amend commits (or otherwise rewrite history) without asking first.
-- Every bipolar trait scale in the model uses integers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX`),
-  stored directly with raw == value, including scales added in later steps (reputation, opinions).
+- Every bipolar scale in the model uses integers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX` in
+  `sim/bipolar.hpp`), stored directly with raw == value: traits, reputation, stances, and scales
+  added in later steps (opinions). Computed weak opinions are doubles on the same scale; rounding
+  them to whole numbers is the caller's explicit choice.
 - Fractional values reach bipolar scales only through explicit rounding by the caller. Bipolar
   `set_`/`add_` accept integral types only (`StrictIntegral` in `sim/integral.hpp`: no floats, bool
   or character types; also used for other whole-number inputs such as involvement weights);
@@ -72,7 +78,10 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   first, so no integer width or signedness can overflow. -128 is never stored.
 - **Derived values** (age, mortality) are free functions and never stored.
 - **Floating point** in getters and derived math is not bit-identical across platforms; fine for
-  now, revisit (fixed-point) if lockstep multiplayer or replays are needed.
+  now, revisit (fixed-point) if lockstep multiplayer or replays are needed. Exception: opinion
+  math (`sim/opinion.hpp`, `sim/noise.hpp`) uses only + - * / and comparisons on doubles, never
+  exp, log or pow, so its results are identical across platforms under our flags; golden values
+  (exact hexfloat comparisons) pin them in both builds.
 - **CharacterRegistry is the only creator of characters** (passkey `CharacterKey`, whose private
   constructor only the registry can call; this relies on C++20, where a class with a user-declared
   constructor is not an aggregate, so `CharacterKey{}` cannot bypass it). Tests create characters
@@ -98,10 +107,11 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - **Atomicity under allocation:** check everything first, then reserve room in every container
   an edit will grow (`detail::reserve_one_more`, geometric doubling), then write. Never
   `reserve(size() + 1)`: it reallocates on every insert.
-- `Character` layout is pinned by `static_assert(sizeof(Character) == 444)` and by `offsetof`
+- `Character` layout is pinned by `static_assert(sizeof(Character) == 448)` and by `offsetof`
   static_asserts in the constructor. The 30-byte core (id, name, birth, conditions, gender,
   traits) keeps offsets 0..29; practise (the only align-2 list) sits at 30, then nicknames (288),
-  involvement (308) and sacred (376). Don't reorder without flagging it.
+  involvement (308), sacred (376) and reputation (444, appended in Step 4; 3 bytes tail padding).
+  New fields are appended so existing offsets stay. Don't reorder without flagging it.
 - **Per-character lists** (`sim/character_lists.hpp`) are `FixedVector`s inside Character; the
   public API never exposes `FixedVector`. Reads return `std::span<const Entry>`, valid only until
   the next mutation of that Character or until it is copied, moved or destroyed (Step 3 stores
@@ -124,6 +134,24 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Adding a `Gender` value: append (never renumber) and handle it in every `switch`
   (no `default:`, so `-Wswitch` flags omissions, e.g. in `mortality.cpp`).
 
+- **StanceTable** (`sim/stance_table.hpp`) stores explicit stances from a community towards a
+  TargetId (community or topic), -100..+100, and the community hierarchy (at most
+  `MAX_COMMUNITY_DEPTH` = 6 per chain). An explicit 0 is a real value, not a removal. Resolution:
+  for each source in chain(from), nearest first, try each target in chain(to), nearest first (a
+  topic walks no chain); the first explicit entry wins, else 0. Storage is two sorted vectors
+  with binary search; lookups never allocate. Public chain APIs return ids only: never expose
+  index ranges into the vectors (they go stale after any edit). Caching index ranges waits
+  until the benchmark shows it's needed, and then stays private. Bulk loading one insert at a
+  time is O(n^2); a sort-once bulk loader comes later.
+- **Noise** (`sim/noise.hpp`): full SplitMix64 steps over (world seed, source id, NoiseSubject,
+  target id), mapped to [-1, 1]. `WorldSeed` is always passed explicitly. The hash and
+  `NoiseSubject` values are frozen: changing them shifts the noise of the whole world, and
+  golden values in the tests catch it.
+- **Weak opinions** (`sim/opinion.hpp`) are computed, never stored or cached: community stances
+  weighted by raw involvement weights (integer accumulation, one division), plus reputation,
+  personality compatibility and noise; every coefficient is in `OpinionConfig`. Relations don't
+  affect weak opinions.
+
 ## Conventions
 
 - Types and enumerators: `PascalCase` (`CharacterId`, `Gender::Female`).
@@ -139,3 +167,5 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Randomized tests use `std::mt19937` with a fixed seed and derive values from its raw output
   (e.g. `rng() % n`); standard distributions differ between standard libraries. Property tests
   compare against a naive reference model and must stay fast in the Debug + ASan build.
+- Tests must follow the lifetime rule too: create every character first, then take references
+  (a reference into the registry dangles after the next create once the vector reallocates).

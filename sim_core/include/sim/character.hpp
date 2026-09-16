@@ -7,6 +7,7 @@
 #include <type_traits>
 #include <utility>
 
+#include "sim/bipolar.hpp"
 #include "sim/character_lists.hpp"
 #include "sim/date.hpp"
 #include "sim/fixed_vector.hpp"
@@ -15,22 +16,9 @@
 
 namespace sim {
 
-// Every bipolar trait scale in the model is a whole number in -100..+100.
-inline constexpr int BIPOLAR_MIN = -100;
-inline constexpr int BIPOLAR_MAX = 100;
-
 // Condition scales (health, stress, capacity) are fractional 0..100, stored in hundredths.
 inline constexpr float CONDITION_MIN = 0.0f;
 inline constexpr float CONDITION_MAX = 100.0f;
-
-namespace detail {
-
-// Clamps any integer to -100..+100 using mixed-sign-safe comparisons.
-[[nodiscard]] constexpr std::int8_t clamp_bipolar(StrictIntegral auto v) noexcept {
-    return static_cast<std::int8_t>(clamp_integer(v, BIPOLAR_MIN, BIPOLAR_MAX));
-}
-
-} // namespace detail
 
 // Initial value of a bipolar field, used only in CharacterInit. Converts implicitly
 // from any StrictIntegral and clamps to -100..+100, so designated initializers
@@ -71,6 +59,7 @@ struct CharacterInit {
     BipolarInit height{};            // PLACEHOLDER default, -100..+100
     BipolarInit shape{};             // PLACEHOLDER default, -100..+100
     BipolarInit charisma{};          // PLACEHOLDER default, -100..+100
+    BipolarInit reputation{};        // PLACEHOLDER default, -100..+100
 };
 
 class CharacterRegistry;
@@ -131,6 +120,7 @@ public:
     [[nodiscard]] int height() const noexcept { return height_; }
     [[nodiscard]] int shape() const noexcept { return shape_; }
     [[nodiscard]] int charisma() const noexcept { return charisma_; }
+    [[nodiscard]] int reputation() const noexcept { return reputation_; }
 
     void set_health(float v) noexcept;
     void set_stress(float v) noexcept;
@@ -151,6 +141,7 @@ public:
     void set_height(StrictIntegral auto v) noexcept { height_ = detail::clamp_bipolar(v); }
     void set_shape(StrictIntegral auto v) noexcept { shape_ = detail::clamp_bipolar(v); }
     void set_charisma(StrictIntegral auto v) noexcept { charisma_ = detail::clamp_bipolar(v); }
+    void set_reputation(StrictIntegral auto v) noexcept { reputation_ = detail::clamp_bipolar(v); }
 
     void add_strength(StrictIntegral auto d) noexcept { strength_ = add_bipolar(strength_, d); }
     void add_intelligence(StrictIntegral auto d) noexcept { intelligence_ = add_bipolar(intelligence_, d); }
@@ -163,6 +154,7 @@ public:
     void add_height(StrictIntegral auto d) noexcept { height_ = add_bipolar(height_, d); }
     void add_shape(StrictIntegral auto d) noexcept { shape_ = add_bipolar(shape_, d); }
     void add_charisma(StrictIntegral auto d) noexcept { charisma_ = add_bipolar(charisma_, d); }
+    void add_reputation(StrictIntegral auto d) noexcept { reputation_ = add_bipolar(reputation_, d); }
 
     // ---- nicknames: insertion order, no duplicates ----
 
@@ -277,6 +269,9 @@ private:
     FixedVector<NameId, NICKNAME_CAP> nicknames_;                // insertion order, unique, 20 bytes
     FixedVector<InvolvementEntry, INVOLVEMENT_CAP> involvement_; // sorted by community, weight 1..255, 68 bytes
     FixedVector<SacredEntry, SACRED_CAP> sacred_;                // sorted by target, unique targets, 68 bytes
+
+    // Appended in Step 4 so every earlier offset stays; 3 bytes tail padding follow.
+    std::int8_t reputation_ = 0;        // -100..+100 units, stored directly
 };
 
 static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f && CharacterInit{}.capacity == 100.0f,
@@ -285,6 +280,6 @@ static_assert(CharacterInit{}.strength.value() == 0);
 static_assert(std::is_trivially_copyable_v<Character>);
 static_assert(!std::is_copy_assignable_v<Character> && !std::is_move_assignable_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
-static_assert(sizeof(Character) == 444, "Character layout changed; update the plan and field comments");
+static_assert(sizeof(Character) == 448, "Character layout changed; update the plan and field comments");
 
 } // namespace sim

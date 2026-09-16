@@ -53,6 +53,18 @@ static_assert(RejectedEverywhere<char>);
 static_assert(RejectedEverywhere<char8_t>);
 static_assert(RejectedEverywhere<wchar_t>);
 
+template<class T>
+concept CanSetReputation = requires(Character& c, T v) { c.set_reputation(v); };
+template<class T>
+concept CanAddReputation = requires(Character& c, T v) { c.add_reputation(v); };
+template<class T>
+concept CanInitReputation = requires(T v) { CharacterInit{.reputation = v}; };
+
+static_assert(CanSetReputation<int> && CanAddReputation<std::int64_t> && CanInitReputation<unsigned>);
+static_assert(!CanSetReputation<float> && !CanAddReputation<double> && !CanInitReputation<float>);
+static_assert(!CanSetReputation<bool> && !CanInitReputation<char>);
+static_assert(sizeof(Character) == 448);
+
 // Designated initializers are a second way into bipolar fields; they must accept
 // and reject exactly the same argument types as the mutators.
 template<class T>
@@ -128,6 +140,8 @@ void for_each_bipolar(Visit&& visit) {
           [](Character& c, auto v) { c.set_shape(v); }, [](Character& c, auto d) { c.add_shape(d); });
     visit("charisma", [](const Character& c) { return c.charisma(); },
           [](Character& c, auto v) { c.set_charisma(v); }, [](Character& c, auto d) { c.add_charisma(d); });
+    visit("reputation", [](const Character& c) { return c.reputation(); },
+          [](Character& c, auto v) { c.set_reputation(v); }, [](Character& c, auto d) { c.add_reputation(d); });
 }
 
 } // namespace
@@ -159,6 +173,8 @@ TEST_CASE("defaults match the init struct") {
     CHECK(c.height() == init.height.value());
     CHECK(c.shape() == init.shape.value());
     CHECK(c.charisma() == init.charisma.value());
+    CHECK(c.reputation() == init.reputation.value());
+    CHECK(c.reputation() == 0);
 }
 
 TEST_CASE("non-default init values are applied and clamped") {
@@ -170,6 +186,15 @@ TEST_CASE("non-default init values are applied and clamped") {
     CHECK(c.charisma() == -100); // clamped
     CHECK(c.capacity() == 100.0f); // untouched default
     CHECK(c.intelligence() == 0);
+}
+
+TEST_CASE("reputation: init values clamp and arrive") {
+    const Character c = make_character(NameId{3}, Gender::Female, Date{0},
+                                       CharacterInit{.charisma = 5, .reputation = runtime_int(-150)});
+    CHECK(c.reputation() == -100);
+    const Character d = make_character(NameId{4}, Gender::Male, Date{0}, CharacterInit{.reputation = 42});
+    CHECK(d.reputation() == 42);
+    CHECK(d.charisma() == 0);
 }
 
 TEST_CASE("init struct clamps non-constant out-of-range integers") {

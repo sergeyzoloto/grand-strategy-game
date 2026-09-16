@@ -65,6 +65,7 @@ Character::Character(CharacterKey /*key*/, CharacterId id, NameId name, Gender g
                   && offsetof(Character, charisma_) == 29);
     static_assert(offsetof(Character, practise_) == 30 && offsetof(Character, nicknames_) == 288
                   && offsetof(Character, involvement_) == 308 && offsetof(Character, sacred_) == 376);
+    static_assert(offsetof(Character, reputation_) == 444);
 
     // The registry (a later step) is the only creator; an invalid id is a programmer error.
     assert(id.valid());
@@ -82,6 +83,7 @@ Character::Character(CharacterKey /*key*/, CharacterId id, NameId name, Gender g
     set_height(init.height.value());
     set_shape(init.shape.value());
     set_charisma(init.charisma.value());
+    set_reputation(init.reputation.value());
 }
 
 float Character::health() const noexcept { return get_hundredths(health_); }

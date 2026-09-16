@@ -9,6 +9,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(SIM_BUILD_TESTS "Build the sim_core test executable" ON)
 option(SIM_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" ON)
+option(SIM_BUILD_BENCH "Build the manual benchmark executable sim_bench (not run by ctest)" ON)
 option(SIM_SANITIZE "Build with AddressSanitizer and UndefinedBehaviorSanitizer (use with Debug)" OFF)
 
 # Applies warning, floating-point and sanitizer flags to one of our own targets.
@@ -41,6 +42,10 @@ function(sim_configure_target target)
 endfunction()
 
 add_subdirectory(sim_core)
+
+if(SIM_BUILD_BENCH)
+    add_subdirectory(bench)
+endif()
 
 if(SIM_BUILD_TESTS)
     enable_testing()
