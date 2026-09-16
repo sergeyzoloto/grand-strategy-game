@@ -1,12 +1,15 @@
 #include <doctest.h>
 
+#include <algorithm>
 #include <array>
+#include <cstddef>
 #include <cstdint>
 #include <map>
 #include <random>
 #include <vector>
 
 #include "sim/character_registry.hpp"
+#include "sim/relation_graph.hpp"
 #include "sim/relations.hpp"
 
 using namespace sim;
@@ -493,20 +496,28 @@ TEST_CASE("memory: 1,500 characters with 20 edges each") {
             REQUIRE(r.set_relation(CharacterId{id}, RelationType::Friend, other) == EditResult::Ok);
         }
     }
+    // Geometric doubling from a minimum capacity guarantees capacity <= max(minimum, 2 * size)
+    // for every vector that only grew. Bound relation storage by that, independent of
+    // sizeof(Character).
     std::size_t edge_count = 0;
     std::size_t edge_blocks = 0;
+    std::size_t bound = std::max(RelationGraph::MIN_NODE_CAPACITY, std::size_t{2} * COUNT)
+                        * sizeof(std::vector<RelationEdge>);
     for (std::uint32_t id = 1; id <= COUNT; ++id) {
-        edge_count += r.relations(CharacterId{id}).size();
-        edge_blocks += r.relations(CharacterId{id}).empty() ? 0u : 1u;
+        const std::size_t size = r.relations(CharacterId{id}).size();
+        edge_count += size;
+        edge_blocks += size == 0 ? 0u : 1u;
+        if (size != 0) {
+            bound += std::max(RelationGraph::MIN_EDGE_CAPACITY, 2 * size) * sizeof(RelationEdge);
+        }
     }
     CHECK(edge_count == COUNT * EDGES);
-    const std::size_t measured = r.allocated_bytes();
-    // Allocator headers are not in allocated_bytes(); glibc adds about 16 bytes per block
-    // (one per non-empty edge list, plus the two outer vectors).
-    const std::size_t with_headers = measured + (edge_blocks + 2) * 16;
-    MESSAGE("allocated_bytes = " << measured << " (" << measured / 1024 << " KiB); with ~16 B allocator headers: "
-                                 << with_headers << " (" << with_headers / 1024 << " KiB)");
-    MESSAGE("character storage = " << r.characters().size() * sizeof(Character) << " B in use");
-    // Character grew to 1352 bytes in Step 5 (strong opinion lists); relation storage is unchanged.
-    CHECK(measured < 4 * 1024 * 1024);
+    const std::size_t relation_bytes = r.relation_bytes();
+    // Allocator headers are not counted; glibc adds about 16 bytes per block (one per
+    // non-empty edge list, plus the outer vector).
+    MESSAGE("relation_bytes = " << relation_bytes << " (bound " << bound << "); with ~16 B allocator headers: "
+                                << relation_bytes + (edge_blocks + 1) * 16);
+    MESSAGE("registry allocated_bytes = " << r.allocated_bytes() << " (includes Character storage; not asserted)");
+    CHECK(relation_bytes <= bound);
+    CHECK(relation_bytes >= edge_count * sizeof(RelationEdge));
 }

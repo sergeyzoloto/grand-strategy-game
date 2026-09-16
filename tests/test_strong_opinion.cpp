@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <cstddef>
 #include <cstdint>
 #include <limits>
 #include <map>
@@ -108,6 +109,53 @@ TEST_CASE("retention power: 1 at 0 weeks, matches naive multiplication, cutoff, 
     CHECK(retention_power(0.98, 1000) == 0x1.ce9c4ca6be05p-30);
     CHECK(retention_power(0.98, 1367) == 0x1.1d6baa3bf72fcp-40); // just above 1e-12
     CHECK(retention_power(0.98, 1368) == 0.0);                   // just below
+}
+
+// std::pow is fine in tests; the no-exp/log/pow rule applies to simulation code. The
+// golden values above come from the implementation itself; this checks them against an
+// independent reference.
+TEST_CASE("retention power: matches std::pow for 0..2000 weeks") {
+    constexpr int MAX_WEEKS = 2000;
+    constexpr double TOLERANCE = 1e-12;   // relative
+    constexpr double ZERO_BELOW = 5e-13;  // pow below this: the cutoff must give exactly 0
+    constexpr double COMPARE_FROM = 2e-12; // between the two: either side of the cutoff, skipped
+    double max_relative_error = 0.0;
+    std::size_t compared = 0;
+    std::size_t zeros = 0;
+    std::size_t skipped = 0;
+    std::size_t failures = 0;
+    for (const double r : {0.5, std::sqrt(0.5), 0.9, 0.95, 0.965, 0.98, 0.99, 0.999}) {
+        for (int n = 0; n <= MAX_WEEKS; ++n) {
+            const double expected = std::pow(r, n);
+            const double actual = retention_power(r, n);
+            if (expected < ZERO_BELOW) {
+                ++zeros;
+                if (actual != 0.0) {
+                    ++failures;
+                    CAPTURE(r);
+                    CAPTURE(n);
+                    CHECK(actual == 0.0);
+                }
+            } else if (expected < COMPARE_FROM) {
+                ++skipped;
+            } else {
+                ++compared;
+                const double relative_error = std::abs(actual - expected) / expected;
+                max_relative_error = std::max(max_relative_error, relative_error);
+                if (!(relative_error <= TOLERANCE)) {
+                    ++failures;
+                    CAPTURE(r);
+                    CAPTURE(n);
+                    CHECK(relative_error <= TOLERANCE);
+                }
+            }
+        }
+    }
+    MESSAGE("retention_power vs std::pow: " << compared << " compared (max relative error " << max_relative_error
+                                            << "), " << zeros << " exact zeros, " << skipped << " skipped");
+    CHECK(failures == 0);
+    CHECK(compared > 0);
+    CHECK(zeros > 0);
 }
 
 // ---- traits ------------------------------------------------------------------------------------

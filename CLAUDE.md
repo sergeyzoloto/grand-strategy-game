@@ -26,6 +26,12 @@ ctest --test-dir build/release --output-on-failure
 cmake --build build/release --target sim_bench && ./build/release/bench/sim_bench
 ```
 
+`sim_bench` has two kinds of stance world, and optimisation decisions use both: random worlds
+(`typical`, `worst`; stances on every community, almost none match: the worst case for the
+block lookup) and a `structured` hierarchy (stances on upper levels, roots with self-stances,
+leaves without stances; random pairs and acquaintances reported separately). The `maintain`
+benchmark runs every pass on a fresh copy of a filled template with t0 spread over 520 weeks.
+
 CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_TESTS` (ON),
 `SIM_BUILD_BENCH` (ON).
 Warnings: `-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Werror`
@@ -106,6 +112,9 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - **Edit results** are `EditResult` (`sim/edit_result.hpp`, formerly `ListResult`). Check order:
   Invalid (id 0, a == b, unknown enum, wrong kind), NotFound (unknown character), then Duplicate /
   Conflict / NotFound against existing state, then Full. A failed edit changes nothing.
+- **Memory tests** bound each storage kind on its own (e.g. `relation_bytes()`) using what
+  doubling guarantees, capacity <= max(minimum, 2 * size) with the minimums taken from the code
+  (`RelationGraph::MIN_EDGE_CAPACITY`), so a change to `sizeof(Character)` cannot break them.
 - **Atomicity under allocation:** check everything first, then reserve room in every container
   an edit will grow (`detail::reserve_one_more`, geometric doubling), then write. Never
   `reserve(size() + 1)`: it reallocates on every insert.

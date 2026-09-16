@@ -21,6 +21,11 @@ namespace sim {
 // Spans and vectors obtained from the graph are invalidated by any edit or new node.
 class RelationGraph {
 public:
+    // Minimum capacities passed to detail::reserve_one_more: the node vector and each edge
+    // list grow by doubling from these.
+    static constexpr std::size_t MIN_NODE_CAPACITY = 16;
+    static constexpr std::size_t MIN_EDGE_CAPACITY = 4;
+
     // Prepares room for one more node; may throw bad_alloc. add_node() then cannot fail.
     void reserve_node();
     // Adds node node_count() + 1. Requires a preceding reserve_node().

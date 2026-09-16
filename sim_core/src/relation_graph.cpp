@@ -11,9 +11,6 @@ namespace sim {
 
 namespace {
 
-constexpr std::size_t MIN_NODE_CAPACITY = 16;
-constexpr std::size_t MIN_EDGE_CAPACITY = 4;
-
 const RelationEdge* find_edge(std::span<const RelationEdge> edges, CharacterId other) noexcept {
     const auto* it = std::lower_bound(edges.data(), edges.data() + edges.size(), other,
                                       [](const RelationEdge& e, CharacterId id) { return e.other < id; });

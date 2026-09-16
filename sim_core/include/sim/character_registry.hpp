@@ -101,6 +101,8 @@ public:
     // Bytes held by the registry and its vectors (capacity, not size), excluding
     // allocator headers.
     [[nodiscard]] std::size_t allocated_bytes() const noexcept;
+    // Bytes held by relation storage only (RelationGraph::allocated_bytes()).
+    [[nodiscard]] std::size_t relation_bytes() const noexcept { return relations_.allocated_bytes(); }
 
 private:
     [[nodiscard]] OpinionEventResult<CharacterId> apply_person_event(CharacterId a, CharacterId b, int delta, Date now,
