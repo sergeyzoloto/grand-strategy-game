@@ -1,6 +1,6 @@
 #include "sim/opinion.hpp"
 
-#include "sim/strong_opinion.hpp"
+#include "sim/personal_opinion.hpp"
 
 #include <algorithm>
 #include <array>
@@ -142,37 +142,39 @@ double weak_opinion(const Character& a, TargetId target, const StanceTable& stan
 }
 
 OpinionBreakdown opinion_breakdown(const Character& a, const Character& b, const StanceTable& stances,
-                                   const OpinionConfig& config, WorldSeed seed, Date now) noexcept {
+                                   const OpinionConfig& config, WorldSeed seed) noexcept {
     OpinionBreakdown result;
     result.weak = weak_opinion_breakdown(a, b, stances, config, seed);
     if (a.id() == b.id()) {
         return result;
     }
-    result.deviation = strong_deviation(a, b.id(), now, config);
-    result.total = clamp_opinion(result.weak.total + result.deviation);
+    result.long_term = long_opinion(a, b.id());
+    result.short_term = short_opinion(a, b.id());
+    result.total = clamp_opinion(result.weak.total + static_cast<double>(result.long_term + result.short_term));
     return result;
 }
 
 double opinion(const Character& a, const Character& b, const StanceTable& stances, const OpinionConfig& config,
-               WorldSeed seed, Date now) noexcept {
-    return opinion_breakdown(a, b, stances, config, seed, now).total;
+               WorldSeed seed) noexcept {
+    return opinion_breakdown(a, b, stances, config, seed).total;
 }
 
 OpinionBreakdown opinion_breakdown(const Character& a, TargetId target, const StanceTable& stances,
-                                   const OpinionConfig& config, WorldSeed seed, Date now) noexcept {
+                                   const OpinionConfig& config, WorldSeed seed) noexcept {
     OpinionBreakdown result;
     result.weak = weak_opinion_breakdown(a, target, stances, config, seed);
     if (!target.valid()) {
         return result;
     }
-    result.deviation = strong_deviation(a, target, now, config);
-    result.total = clamp_opinion(result.weak.total + result.deviation);
+    result.long_term = long_opinion(a, target);
+    result.short_term = short_opinion(a, target);
+    result.total = clamp_opinion(result.weak.total + static_cast<double>(result.long_term + result.short_term));
     return result;
 }
 
 double opinion(const Character& a, TargetId target, const StanceTable& stances, const OpinionConfig& config,
-               WorldSeed seed, Date now) noexcept {
-    return opinion_breakdown(a, target, stances, config, seed, now).total;
+               WorldSeed seed) noexcept {
+    return opinion_breakdown(a, target, stances, config, seed).total;
 }
 
 } // namespace sim

@@ -13,7 +13,7 @@
 #include "sim/character_registry.hpp"
 #include "sim/opinion.hpp"
 #include "sim/stance_table.hpp"
-#include "sim/strong_opinion.hpp"
+#include "sim/personal_opinion.hpp"
 
 using namespace sim;
 
@@ -118,12 +118,12 @@ void bench_stance_inserts() {
 }
 
 // A world of 1,500 characters with 3 communities each (chains of depth 3) and random traits.
-struct StrongWorld {
+struct PersonalWorld {
     CharacterRegistry registry;
     StanceTable stances;
 };
 
-void build_strong_world(StrongWorld& world, std::mt19937& rng, int extraversion_override) {
+void build_personal_world(PersonalWorld& world, std::mt19937& rng, int extraversion_override) {
     constexpr std::uint32_t CHAINS = 300;
     constexpr std::uint32_t DEPTH = 3;
     std::vector<CommunityId> leaves;
@@ -154,120 +154,103 @@ void build_strong_world(StrongWorld& world, std::mt19937& rng, int extraversion_
     }
 }
 
-void bench_strong_opinions() {
+int random_nonzero(std::mt19937& rng, int max) {
+    const int magnitude = 1 + static_cast<int>(pick(rng, static_cast<std::uint32_t>(max)));
+    return pick(rng, 2) == 0 ? magnitude : -magnitude;
+}
+
+void bench_personal_opinions() {
     const OpinionConfig config{};
     const WorldSeed seed{0x5701u};
     constexpr std::uint32_t CHARACTERS = 1500;
+    const auto other = [](std::uint32_t a, std::uint32_t k) { return CharacterId{(a - 1 + k) % CHARACTERS + 1}; };
 
-    // 1,000,000 events: random pairs and topics, one week passes every 1,500 events.
-    StrongWorld world;
+    // Background state: every character holds 20 long-term opinions of people and 16
+    // modifiers (kinds 1 and 2 on its next 8 people), so lists are not empty.
+    PersonalWorld world;
     std::mt19937 rng(777u);
-    build_strong_world(world, rng, 0);
-    constexpr std::uint32_t EVENTS = 1'000'000;
-    std::array<std::size_t, 6> outcomes{};
-    auto start = Clock::now();
-    for (std::uint32_t i = 0; i < EVENTS; ++i) {
-        const CharacterId a{1 + pick(rng, CHARACTERS)};
-        const Date now{static_cast<std::int32_t>(i / CHARACTERS)};
-        const int delta = static_cast<int>(pick(rng, 401)) - 200;
-        if (pick(rng, 4) == 0) {
-            const auto result = world.registry.apply_opinion_event(a, *TargetId::from(TopicId{1 + pick(rng, 40)}), delta,
-                                                                   now, CauseId{1}, config);
-            ++outcomes[static_cast<std::size_t>(result.outcome)];
-        } else {
-            CharacterId b{1 + pick(rng, CHARACTERS - 1)};
-            if (b.value >= a.value) {
-                b = CharacterId{b.value + 1};
-            }
-            const auto result = world.registry.apply_opinion_event(a, b, delta, now, CauseId{1}, config);
-            ++outcomes[static_cast<std::size_t>(result.outcome)];
+    build_personal_world(world, rng, 100);
+    for (std::uint32_t a = 1; a <= CHARACTERS; ++a) {
+        for (std::uint32_t k = 1; k <= 20; ++k) {
+            (void)world.registry.add_long_opinion(CharacterId{a}, other(a, k), random_nonzero(rng, 200));
         }
+        for (std::uint32_t k = 1; k <= 8; ++k) {
+            for (std::uint16_t m = 1; m <= 2; ++m) {
+                (void)world.registry.add_modifier(CharacterId{a}, other(a, k), ModifierId{m}, random_nonzero(rng, 100));
+            }
+        }
+    }
+
+    // 1,000,000 add-and-remove pairs: kinds 3..6 on random people, so every add is Ok and
+    // lands at a varying position in a 16-entry list.
+    constexpr std::uint32_t PAIRS = 1'000'000;
+    std::size_t added = 0;
+    std::size_t removed = 0;
+    auto start = Clock::now();
+    for (std::uint32_t i = 0; i < PAIRS; ++i) {
+        const CharacterId a{1 + pick(rng, CHARACTERS)};
+        const CharacterId b = other(a.value, 1 + pick(rng, CHARACTERS - 1));
+        const ModifierId m{static_cast<std::uint16_t>(3 + pick(rng, 4))};
+        added += world.registry.add_modifier(a, b, m, static_cast<int>(pick(rng, 201)) - 100) == EditResult::Ok;
+        removed += world.registry.remove_modifier(a, b, m) == EditResult::Ok;
     }
     double elapsed = seconds_since(start);
-    std::size_t people_records = 0;
-    for (const Character& c : world.registry.characters()) {
-        people_records += c.strong_people().size();
-    }
-    std::printf("opinion events: %u in %.3f s = %.1f ns each (updated %zu, created %zu, with eviction %zu, dropped %zu; "
-                "%zu people records)\n",
-                EVENTS, elapsed, elapsed * 1e9 / EVENTS, outcomes[0], outcomes[1], outcomes[2], outcomes[3],
-                people_records);
+    std::printf("modifier add+remove: %u pairs in %.3f s = %.1f ns per pair (%zu added, %zu removed, 16 modifiers "
+                "per character)\n",
+                PAIRS, elapsed, elapsed * 1e9 / PAIRS, added, removed);
 
-    // 1,000,000 opinion reads for pairs that have records.
+    // 1,000,000 opinion reads for pairs with a long-term entry and two modifiers.
     std::vector<std::pair<const Character*, const Character*>> pairs;
-    for (const Character& c : world.registry.characters()) {
-        for (const StrongOpinion& r : c.strong_people()) {
-            if (pairs.size() < 5000) {
-                pairs.emplace_back(&c, world.registry.find(CharacterId{r.target}));
-            }
+    for (std::uint32_t a = 1; a <= CHARACTERS; ++a) {
+        for (std::uint32_t k = 1; k <= 8; ++k) {
+            pairs.emplace_back(world.registry.find(CharacterId{a}), world.registry.find(other(a, k)));
         }
     }
-    const Date read_now{static_cast<std::int32_t>(EVENTS / CHARACTERS + 5)};
     constexpr std::uint32_t READS = 1'000'000;
     double checksum = 0.0;
     start = Clock::now();
     for (std::uint32_t i = 0; i < READS; ++i) {
         const auto& [a, b] = pairs[i % pairs.size()];
-        checksum += opinion(*a, *b, world.stances, config, seed, read_now);
+        checksum += opinion(*a, *b, world.stances, config, seed);
     }
     elapsed = seconds_since(start);
     std::printf("opinion reads with records: %u in %.3f s = %.1f ns each (%zu pairs, checksum %.6f)\n", READS, elapsed,
                 elapsed * 1e9 / READS, pairs.size(), checksum);
 
-    // maintain over 1,500 characters with full lists (40 people, 16 topics each). Every record
-    // gets its own t0 in weeks 0..519 and maintain runs at week 520, so retention_power sees
-    // exponents 1..520. Deltas of 20..200 in either direction let some records decay below the
-    // exit threshold; a third of the characters then get a random extraversion, so the pass also
-    // trims people lists over their limit. Each pass runs on a fresh copy of the same template.
-    StrongWorld full;
+    // maintain trimming over 1,500 characters: a template with 40 people and 16 targets each
+    // at extraversion +100, then a random extraversion for every character. Each pass runs
+    // on a fresh copy of the template.
+    PersonalWorld full;
     std::mt19937 rng_full(4242u);
-    build_strong_world(full, rng_full, 100);
-    constexpr std::int32_t FILL_WEEKS = 520;
-    const auto fill_delta = [&] {
-        const int magnitude = 20 + static_cast<int>(pick(rng_full, 181));
-        return pick(rng_full, 2) == 0 ? magnitude : -magnitude;
-    };
-    const auto fill_date = [&] { return Date{static_cast<std::int32_t>(pick(rng_full, FILL_WEEKS))}; };
-    std::size_t fill_created = 0;
+    build_personal_world(full, rng_full, 100);
     for (std::uint32_t a = 1; a <= CHARACTERS; ++a) {
-        // Distinct targets and no list reaches its limit before its last insert, so no event
-        // reads another record at a date before its t0.
         for (std::uint32_t k = 1; k <= PERSON_LIMIT_MAX; ++k) {
-            const CharacterId b{(a - 1 + k) % CHARACTERS + 1};
-            fill_created += full.registry.apply_opinion_event(CharacterId{a}, b, fill_delta(), fill_date(), CauseId{},
-                                                              config).outcome == OpinionEventOutcome::Created;
+            (void)full.registry.add_long_opinion(CharacterId{a}, other(a, k), random_nonzero(rng_full, 200));
         }
         for (std::uint32_t t = 1; t <= TARGET_LIMIT; ++t) {
-            fill_created += full.registry.apply_opinion_event(CharacterId{a}, *TargetId::from(TopicId{t}), fill_delta(),
-                                                              fill_date(), CauseId{}, config).outcome
-                            == OpinionEventOutcome::Created;
+            (void)full.registry.add_long_opinion(CharacterId{a}, *TargetId::from(TopicId{t}),
+                                                 random_nonzero(rng_full, 200));
         }
-        if (a % 3 == 0) {
-            full.registry.find(CharacterId{a})->set_extraversion(static_cast<int>(pick(rng_full, 201)) - 100);
-        }
+        full.registry.find(CharacterId{a})->set_extraversion(static_cast<int>(pick(rng_full, 201)) - 100);
     }
-    const Date maintain_now{FILL_WEEKS};
     std::vector<double> passes;
-    std::printf("maintain over %u characters at week %d (t0 in weeks 0..%d, %zu records created):\n", CHARACTERS,
-                maintain_now.weeks, FILL_WEEKS - 1, fill_created);
+    std::printf("maintain trimming over %u characters:\n", CHARACTERS);
     for (int pass = 0; pass < 7; ++pass) {
         CharacterRegistry work = full.registry; // untimed refill
         std::size_t before = 0;
         for (const Character& c : work.characters()) {
-            before += c.strong_people().size() + c.strong_targets().size();
+            before += c.long_people().size() + c.long_targets().size();
         }
         start = Clock::now();
-        const StrongMaintainCounts counts = work.maintain(maintain_now, config);
+        const std::size_t trimmed = work.maintain();
         const double pass_seconds = seconds_since(start);
         passes.push_back(pass_seconds);
-        std::printf("  pass %d: %zu records before, %zu removed decayed, %zu trimmed, %.3f ms = %.1f ns per record\n",
-                    pass, before, counts.removed_decayed, counts.evicted_over_limit, pass_seconds * 1e3,
-                    pass_seconds * 1e9 / static_cast<double>(before));
+        std::printf("  pass %d: %zu entries before, %zu trimmed, %.3f ms = %.1f ns per entry\n", pass, before, trimmed,
+                    pass_seconds * 1e3, pass_seconds * 1e9 / static_cast<double>(before));
     }
     std::sort(passes.begin(), passes.end());
-    std::printf("  median %.3f ms per pass (min %.3f, max %.3f) = %.1f ns per record\n",
-                passes[passes.size() / 2] * 1e3, passes.front() * 1e3, passes.back() * 1e3,
-                passes[passes.size() / 2] * 1e9 / static_cast<double>(fill_created));
+    std::printf("  median %.3f ms per pass (min %.3f, max %.3f)\n", passes[passes.size() / 2] * 1e3,
+                passes.front() * 1e3, passes.back() * 1e3);
 }
 
 // A structured world: 10 roots, 5 level-2 communities per root, 5 level-3 per level-2 and
@@ -435,6 +418,6 @@ int main() {
     bench_weak_opinions(Scenario{"worst", 300, 6, 8, 20'000});
     bench_structured_world();
     bench_stance_inserts();
-    bench_strong_opinions();
+    bench_personal_opinions();
     return 0;
 }

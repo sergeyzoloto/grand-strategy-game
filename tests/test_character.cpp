@@ -63,7 +63,7 @@ concept CanInitReputation = requires(T v) { CharacterInit{.reputation = v}; };
 static_assert(CanSetReputation<int> && CanAddReputation<std::int64_t> && CanInitReputation<unsigned>);
 static_assert(!CanSetReputation<float> && !CanAddReputation<double> && !CanInitReputation<float>);
 static_assert(!CanSetReputation<bool> && !CanInitReputation<char>);
-static_assert(sizeof(Character) == 1352);
+static_assert(sizeof(Character) == 1164);
 
 // Designated initializers are a second way into bipolar fields; they must accept
 // and reject exactly the same argument types as the mutators.

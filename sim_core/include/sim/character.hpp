@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cassert>
+#include <cstddef>
 #include <cstdint>
 #include <optional>
 #include <span>
@@ -13,7 +14,7 @@
 #include "sim/fixed_vector.hpp"
 #include "sim/ids.hpp"
 #include "sim/integral.hpp"
-#include "sim/strong_opinion_record.hpp"
+#include "sim/opinion_records.hpp"
 
 namespace sim {
 
@@ -64,10 +65,9 @@ struct CharacterInit {
 };
 
 class CharacterRegistry;
-struct OpinionConfig;
 
 // Passkey: only CharacterRegistry can create one, so only the registry constructs
-// Characters and calls the keyed mutators (strong opinions). Relies on C++20: a class with a user-declared constructor is not an
+// Characters and calls the keyed mutators (personal opinions). Relies on C++20: a class with a user-declared constructor is not an
 // aggregate, so CharacterKey{} cannot bypass the private constructor.
 class CharacterKey {
     constexpr CharacterKey() noexcept = default;
@@ -218,33 +218,43 @@ public:
     [[nodiscard]] EditResult remove_sacred(TargetId target) noexcept;
     [[nodiscard]] std::optional<SacredSign> sacred_sign(TargetId target) const noexcept;
 
-    // ---- strong opinions: remembered deviations from the weak opinion ----
+    // ---- personal opinions: long-term values and short-term modifiers ----
     // Reads are public; mutations go only through CharacterRegistry (keyed members).
+    // Nothing here depends on time. Spans are valid only until the next mutation of this
+    // Character, or until it is copied, moved or destroyed.
 
-    // Opinions about people, sorted by CharacterId. The span is valid only until the
-    // next mutation of this Character, or until it is copied, moved or destroyed.
-    [[nodiscard]] std::span<const StrongOpinion> strong_people() const noexcept {
-        return {strong_people_.data(), strong_people_.size()};
+    // Long-term opinions about people, sorted by CharacterId; size may exceed person_limit
+    // after extraversion dropped, until the registry's maintain().
+    [[nodiscard]] std::span<const LongOpinion> long_people() const noexcept {
+        return {long_people_.data(), long_people_.size()};
     }
-    // Opinions about communities and topics, sorted by TargetId raw value. The span is
-    // valid only until the next mutation of this Character, or until it is copied,
-    // moved or destroyed.
-    [[nodiscard]] std::span<const StrongOpinion> strong_targets() const noexcept {
-        return {strong_targets_.data(), strong_targets_.size()};
+    // Long-term opinions about communities and topics, sorted by TargetId raw value.
+    [[nodiscard]] std::span<const LongOpinion> long_targets() const noexcept {
+        return {long_targets_.data(), long_targets_.size()};
+    }
+    // Active modifiers, sorted by (domain, target, modifier).
+    [[nodiscard]] std::span<const OpinionModifier> modifiers() const noexcept {
+        return {modifiers_.data(), modifiers_.size()};
     }
 
-    // Registry only (CharacterKey). `delta` is clamped to -200..+200. Returns Invalid for
-    // an invalid target or target == id(); unknown characters are the registry's NotFound.
-    [[nodiscard]] OpinionEventResult<CharacterId> apply_opinion_event(CharacterKey key, CharacterId target, int delta,
-                                                                      Date now, CauseId cause,
-                                                                      const OpinionConfig& config) noexcept;
-    [[nodiscard]] OpinionEventResult<TargetId> apply_opinion_event(CharacterKey key, TargetId target, int delta,
-                                                                   Date now, CauseId cause,
-                                                                   const OpinionConfig& config) noexcept;
-    // Registry only (CharacterKey). Removes records with |dev(now)| < exit_threshold, then
-    // evicts the weakest people records until the list fits person_limit.
-    [[nodiscard]] StrongMaintainCounts maintain_strong_opinions(CharacterKey key, Date now,
-                                                                const OpinionConfig& config) noexcept;
+    // Registry only (CharacterKey). Unknown characters are the registry's NotFound.
+    // Invalid: an invalid target, target == id(), or ModifierId 0. `effect` is clamped to
+    // -100..+100. Then Duplicate, then Full (MODIFIER_CAP; never evicts).
+    [[nodiscard]] EditResult add_modifier(CharacterKey key, CharacterId target, ModifierId modifier,
+                                          int effect) noexcept;
+    [[nodiscard]] EditResult add_modifier(CharacterKey key, TargetId target, ModifierId modifier, int effect) noexcept;
+    // Ok, Invalid or NotFound.
+    [[nodiscard]] EditResult remove_modifier(CharacterKey key, CharacterId target, ModifierId modifier) noexcept;
+    [[nodiscard]] EditResult remove_modifier(CharacterKey key, TargetId target, ModifierId modifier) noexcept;
+
+    // Registry only (CharacterKey). `delta` is clamped to -400..+400, the result to
+    // -200..+200. See LongOpinionOutcome; one eviction at most per call.
+    [[nodiscard]] LongOpinionResult<CharacterId> add_long_opinion(CharacterKey key, CharacterId target,
+                                                                  int delta) noexcept;
+    [[nodiscard]] LongOpinionResult<TargetId> add_long_opinion(CharacterKey key, TargetId target, int delta) noexcept;
+    // Registry only (CharacterKey). Evicts the weakest long-term entries until each list
+    // fits its limit; returns the number evicted. Idempotent.
+    [[nodiscard]] std::size_t trim_long_opinions(CharacterKey key) noexcept;
 
 private:
     [[nodiscard]] EditResult set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept;
@@ -304,8 +314,9 @@ private:
     std::int8_t reputation_ = 0;        // -100..+100 units, stored directly
 
     // Appended in Step 5 (from offset 448) so every earlier offset stays.
-    FixedVector<StrongOpinion, PERSON_LIMIT_MAX> strong_people_; // sorted by CharacterId, size may exceed person_limit until maintain; 644 bytes
-    FixedVector<StrongOpinion, TARGET_LIMIT> strong_targets_;    // sorted by TargetId raw; 260 bytes
+    FixedVector<LongOpinion, PERSON_LIMIT_MAX> long_people_;     // sorted by CharacterId, values != 0; 324 bytes
+    FixedVector<LongOpinion, TARGET_LIMIT> long_targets_;        // sorted by TargetId raw, values != 0; 132 bytes
+    FixedVector<OpinionModifier, MODIFIER_CAP> modifiers_;       // sorted by (domain, target, modifier); 260 bytes
 };
 
 static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f && CharacterInit{}.capacity == 100.0f,
@@ -314,6 +325,6 @@ static_assert(CharacterInit{}.strength.value() == 0);
 static_assert(std::is_trivially_copyable_v<Character>);
 static_assert(!std::is_copy_assignable_v<Character> && !std::is_move_assignable_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
-static_assert(sizeof(Character) == 1352, "Character layout changed; update the plan and field comments");
+static_assert(sizeof(Character) == 1164, "Character layout changed; update the plan and field comments");
 
 } // namespace sim

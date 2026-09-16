@@ -15,7 +15,7 @@ static_assert(!std::is_constructible_v<Character, CharacterId, NameId, Gender, D
 static_assert(std::is_copy_constructible_v<Character>);
 static_assert(!std::is_copy_assignable_v<Character> && !std::is_move_assignable_v<Character>);
 static_assert(std::is_trivially_copyable_v<Character>);
-static_assert(sizeof(Character) == 1352);
+static_assert(sizeof(Character) == 1164);
 
 TEST_CASE("registry: ids start at 1 and increase by one") {
     CharacterRegistry registry;

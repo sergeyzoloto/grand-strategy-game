@@ -48,7 +48,7 @@ TEST_CASE("sizeof of Character and list entries") {
     MESSAGE("sizeof(Character) = " << sizeof(Character) << ", alignof = " << alignof(Character)
             << "; PractiseEntry = " << sizeof(PractiseEntry) << ", InvolvementEntry = " << sizeof(InvolvementEntry)
             << ", SacredEntry = " << sizeof(SacredEntry) << ", NameId = " << sizeof(NameId));
-    CHECK(sizeof(Character) == 1352);
+    CHECK(sizeof(Character) == 1164);
 }
 
 TEST_CASE("lists start empty") {

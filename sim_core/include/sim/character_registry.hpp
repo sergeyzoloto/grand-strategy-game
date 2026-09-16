@@ -4,14 +4,16 @@
 #include <span>
 #include <vector>
 
+#include "sim/bipolar.hpp"
 #include "sim/character.hpp"
 #include "sim/date.hpp"
 #include "sim/edit_result.hpp"
 #include "sim/fixed_vector.hpp"
 #include "sim/ids.hpp"
+#include "sim/integral.hpp"
+#include "sim/opinion_records.hpp"
 #include "sim/relation_graph.hpp"
 #include "sim/relations.hpp"
-#include "sim/strong_opinion_record.hpp"
 
 namespace sim {
 
@@ -77,26 +79,38 @@ public:
         return relations_.shared_parents(a, b);
     }
 
-    // ---- strong opinions: the only way to change them ----
+    // ---- personal opinions: the only way to change them ----
+    // Check order: Invalid (id 0, a == b, an invalid TargetId or ModifierId 0), NotFound
+    // (an unknown character), then the list's own results. Nothing depends on time.
 
-    // Applies an opinion event of `a` about person `b` at `now`. `delta` is a whole number
-    // clamped to -200..+200. Invalid: id 0 or a == b. NotFound: an unknown character.
-    [[nodiscard]] OpinionEventResult<CharacterId> apply_opinion_event(CharacterId a, CharacterId b,
-                                                                      StrictIntegral auto delta, Date now,
-                                                                      CauseId cause, const OpinionConfig& config) noexcept {
-        return apply_person_event(a, b, detail::clamp_integer(delta, -EVENT_DELTA_MAX, EVENT_DELTA_MAX), now, cause,
-                                  config);
+    // Adds modifier `modifier` of a about b with a fixed effect, clamped to -100..+100.
+    // Duplicate if a has it for that target already; Full at MODIFIER_CAP (never evicts).
+    [[nodiscard]] EditResult add_modifier(CharacterId a, CharacterId b, ModifierId modifier,
+                                          StrictIntegral auto effect) noexcept {
+        return add_person_modifier(a, b, modifier, detail::clamp_bipolar(effect));
     }
-    // Same for a community or topic target. Invalid: id 0 or an invalid TargetId.
-    [[nodiscard]] OpinionEventResult<TargetId> apply_opinion_event(CharacterId a, TargetId target,
-                                                                   StrictIntegral auto delta, Date now, CauseId cause,
-                                                                   const OpinionConfig& config) noexcept {
-        return apply_target_event(a, target, detail::clamp_integer(delta, -EVENT_DELTA_MAX, EVENT_DELTA_MAX), now,
-                                  cause, config);
+    [[nodiscard]] EditResult add_modifier(CharacterId a, TargetId target, ModifierId modifier,
+                                          StrictIntegral auto effect) noexcept {
+        return add_target_modifier(a, target, modifier, detail::clamp_bipolar(effect));
     }
-    // One pass over all characters in id order: removes decayed records, then trims
-    // people lists above their current limit. Idempotent for the same `now`.
-    [[nodiscard]] StrongMaintainCounts maintain(Date now, const OpinionConfig& config) noexcept;
+    // Ok, Invalid or NotFound (an unknown character or no such modifier).
+    [[nodiscard]] EditResult remove_modifier(CharacterId a, CharacterId b, ModifierId modifier) noexcept;
+    [[nodiscard]] EditResult remove_modifier(CharacterId a, TargetId target, ModifierId modifier) noexcept;
+
+    // Adds `delta` (clamped to -400..+400) to a's long-term opinion of the target; the
+    // result is clamped to -200..+200. See LongOpinionOutcome.
+    [[nodiscard]] LongOpinionResult<CharacterId> add_long_opinion(CharacterId a, CharacterId b,
+                                                                  StrictIntegral auto delta) noexcept {
+        return add_person_long(a, b, detail::clamp_integer(delta, -LONG_DELTA_MAX, LONG_DELTA_MAX));
+    }
+    [[nodiscard]] LongOpinionResult<TargetId> add_long_opinion(CharacterId a, TargetId target,
+                                                               StrictIntegral auto delta) noexcept {
+        return add_target_long(a, target, detail::clamp_integer(delta, -LONG_DELTA_MAX, LONG_DELTA_MAX));
+    }
+    // One pass over all characters in id order: evicts the weakest long-term entries of
+    // lists above their limit (after extraversion dropped). Returns the number evicted.
+    // Idempotent.
+    [[nodiscard]] std::size_t maintain() noexcept;
 
     // Bytes held by the registry and its vectors (capacity, not size), excluding
     // allocator headers.
@@ -105,10 +119,12 @@ public:
     [[nodiscard]] std::size_t relation_bytes() const noexcept { return relations_.allocated_bytes(); }
 
 private:
-    [[nodiscard]] OpinionEventResult<CharacterId> apply_person_event(CharacterId a, CharacterId b, int delta, Date now,
-                                                                     CauseId cause, const OpinionConfig& config) noexcept;
-    [[nodiscard]] OpinionEventResult<TargetId> apply_target_event(CharacterId a, TargetId target, int delta, Date now,
-                                                                  CauseId cause, const OpinionConfig& config) noexcept;
+    [[nodiscard]] EditResult add_person_modifier(CharacterId a, CharacterId b, ModifierId modifier,
+                                                 int effect) noexcept;
+    [[nodiscard]] EditResult add_target_modifier(CharacterId a, TargetId target, ModifierId modifier,
+                                                 int effect) noexcept;
+    [[nodiscard]] LongOpinionResult<CharacterId> add_person_long(CharacterId a, CharacterId b, int delta) noexcept;
+    [[nodiscard]] LongOpinionResult<TargetId> add_target_long(CharacterId a, TargetId target, int delta) noexcept;
 
     std::vector<Character> characters_; // index = id - 1
     RelationGraph relations_;           // one node per character, same indexing

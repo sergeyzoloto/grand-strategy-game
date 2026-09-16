@@ -1,7 +1,6 @@
 #pragma once
 
 #include "sim/character.hpp"
-#include "sim/date.hpp"
 #include "sim/ids.hpp"
 #include "sim/noise.hpp"
 #include "sim/opinion_config.hpp"
@@ -50,24 +49,28 @@ struct WeakOpinionBreakdown {
 [[nodiscard]] double weak_opinion(const Character& a, TargetId target, const StanceTable& stances,
                                   const OpinionConfig& config, WorldSeed seed) noexcept;
 
-// ---- opinions with strong records -----------------------------------------------------
+// ---- opinions with personal history -----------------------------------------------------
 
-// A weak opinion plus the remembered deviation. total = clamp(weak.total + deviation).
+// A weak opinion plus the personal terms. total = clamp(weak.total + long_term + short_term),
+// where weak.total is already clamped: personal history can pull an opinion back from a
+// saturated community stance.
 struct OpinionBreakdown {
     WeakOpinionBreakdown weak; // weak terms and the clamped weak total
-    double deviation = 0.0;    // strong deviation at `now` in value units; 0 without a record
-    double total = 0.0;        // clamp(weak.total + deviation, -100, +100)
+    int long_term = 0;         // stored long-term value, -200..+200; 0 without an entry
+    int short_term = 0;        // sum of active modifier effects; 0 without modifiers
+    double total = 0.0;        // clamp(weak.total + long_term + short_term, -100, +100)
 };
 
-// opinion(A, X) = clamp(weak(A -> X) + dev(now), -100, +100). Without a record it equals
-// the weak opinion. Reading never writes; nothing is stored or cached.
+// opinion(A, X) = clamp(weak(A -> X) + long(A -> X) + short(A -> X), -100, +100). Without
+// personal records it equals the weak opinion. Nothing depends on time; nothing is stored
+// or cached.
 [[nodiscard]] OpinionBreakdown opinion_breakdown(const Character& a, const Character& b, const StanceTable& stances,
-                                                 const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
+                                                 const OpinionConfig& config, WorldSeed seed) noexcept;
 [[nodiscard]] double opinion(const Character& a, const Character& b, const StanceTable& stances,
-                             const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
+                             const OpinionConfig& config, WorldSeed seed) noexcept;
 [[nodiscard]] OpinionBreakdown opinion_breakdown(const Character& a, TargetId target, const StanceTable& stances,
-                                                 const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
+                                                 const OpinionConfig& config, WorldSeed seed) noexcept;
 [[nodiscard]] double opinion(const Character& a, TargetId target, const StanceTable& stances,
-                             const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
+                             const OpinionConfig& config, WorldSeed seed) noexcept;
 
 } // namespace sim

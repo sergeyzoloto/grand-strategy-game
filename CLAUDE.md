@@ -30,7 +30,7 @@ cmake --build build/release --target sim_bench && ./build/release/bench/sim_benc
 (`typical`, `worst`; stances on every community, almost none match: the worst case for the
 block lookup) and a `structured` hierarchy (stances on upper levels, roots with self-stances,
 leaves without stances; random pairs and acquaintances reported separately). The `maintain`
-benchmark runs every pass on a fresh copy of a filled template with t0 spread over 520 weeks.
+trimming benchmark runs every pass on a fresh copy of a filled template.
 
 CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_TESTS` (ON),
 `SIM_BUILD_BENCH` (ON).
@@ -50,14 +50,14 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Invariants are asserted in debug builds; input errors are reported through return values, not exceptions.
 - The build has zero warnings and all tests pass at the end of every step.
 - No SoA, SIMD, pools or hot/cold splitting unless profiling asks for it.
-- Commit once at the end of each step, after the tests pass and the report is written.
+- Commit once at the end of each step, after the tests pass; then write the report, citing the
+  commit hash.
 - Never reset, rebase or amend commits (or otherwise rewrite history) without asking first.
 - Every bipolar scale in the model uses integers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX` in
   `sim/bipolar.hpp`), stored directly with raw == value: traits, reputation, stances, and scales
   added in later steps. Computed opinions are doubles on the same scale; rounding them to whole
-  numbers is the caller's explicit choice. **One exception:** strong opinion deviations are
-  stored in hundredths (int16, -200.00..+200.00, `sim/strong_opinion_record.hpp`), because decay
-  needs sub-unit resolution; event deltas are still whole numbers clamped to -200..+200.
+  numbers is the caller's explicit choice. Personal opinion values are whole numbers too
+  (modifier effects -100..+100, long-term values -200..+200).
 - Fractional values reach bipolar scales only through explicit rounding by the caller. Bipolar
   `set_`/`add_` accept integral types only (`StrictIntegral` in `sim/integral.hpp`: no floats, bool
   or character types; also used for other whole-number inputs such as involvement weights);
@@ -76,8 +76,8 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   adds in a wide integer: the same delta always adds the same steps and add(d), add(-d) restores
   raw unless saturated. A delta below 0.005 rounds away by design. Fields start at the
   `CharacterInit` defaults, so a NaN init value in release still yields a defined value. Non-constant int arguments may
-  need an explicit cast under `-Wconversion`. The hundredths helper is private to `character.cpp`;
-  extract a shared one when a later step needs hundredths again.
+  need an explicit cast under `-Wconversion`. The hundredths helper is `detail::clamp_round` in
+  `sim/hundredths.hpp`.
 - **Release-only NaN branches:** NaN input is asserted in debug, so the release fallback (field
   unchanged) is tested only by the `#ifdef NDEBUG` tests in the release build; the debug/ASan
   run skips them. Run both builds' tests before committing.
@@ -99,8 +99,8 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   When characters can be removed later, relocate slots with `std::destroy_at` plus
   `std::construct_at`.
 - **Lifetimes:** any pointer, reference or span obtained from the registry or from a Character is
-  valid only until the next registry mutation (create or any relation edit): the registry may
-  reallocate. Vectors returned by queries are independent copies.
+  valid only until the next registry mutation (create, any relation edit or personal opinion
+  edit): the registry may reallocate or shift list entries. Vectors returned by queries are independent copies.
 - **Relations** live in `RelationGraph`, owned by the registry and edited only through it. One
   `RelationEdge {other, mask}` per ordered pair, stored per source and sorted by other; a bit on
   a -> b names b's role for a. `relation_info` is the single source of kind and complement:
@@ -118,11 +118,11 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - **Atomicity under allocation:** check everything first, then reserve room in every container
   an edit will grow (`detail::reserve_one_more`, geometric doubling), then write. Never
   `reserve(size() + 1)`: it reallocates on every insert.
-- `Character` layout is pinned by `static_assert(sizeof(Character) == 1352)` and by `offsetof`
+- `Character` layout is pinned by `static_assert(sizeof(Character) == 1164)` and by `offsetof`
   static_asserts in the constructor. The 30-byte core (id, name, birth, conditions, gender,
   traits) keeps offsets 0..29; practise (the only align-2 list) sits at 30, then nicknames (288),
-  involvement (308), sacred (376), reputation (444, Step 4), strong people opinions (448, Step 5)
-  and strong target opinions (1092). New fields are appended so existing offsets stay. Don't
+  involvement (308), sacred (376), reputation (444, Step 4), then long-term people opinions (448),
+  long-term target opinions (772) and modifiers (904), sizeof 1164 (Step 5 rework). New fields are appended so existing offsets stay. Don't
   reorder without flagging it.
 - **Per-character lists** (`sim/character_lists.hpp`) are `FixedVector`s inside Character; the
   public API never exposes `FixedVector`. Reads return `std::span<const Entry>`, valid only until
@@ -161,24 +161,28 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   golden values in the tests catch it.
 - **Hundredths** (`sim/hundredths.hpp`): `detail::clamp_round` clamps before converting and
   rounds with `std::round`. When a fractional delta is added to an integer, round the delta, not
-  the sum (condition adds, strong opinion `long_dev`).
-- **Strong opinions** (`sim/strong_opinion.hpp`) are remembered deviations from the weak
-  opinion, stored per character in two lists (people up to `PERSON_LIMIT_MAX`, communities and
-  topics up to `TARGET_LIMIT`), sorted by target. `StrongOpinion::target` is raw in storage;
-  every API converts to `CharacterId` or `TargetId` at the boundary (e.g. evicted targets).
-  - Mutations go only through `CharacterRegistry` (`apply_opinion_event`, `maintain`); the
-    Character members they call require the `CharacterKey` passkey. Reads are public spans.
-  - Value at `now`: `dev = long + (short - long) * retention^(now - t0)`, with `retention_power`
-    computed by repeated squaring (no exp/log/pow) and cut to 0 below 1e-12. Reading never writes;
-    opinion = clamp(weak + dev). No absolute opinion is stored; weak opinions are never cached.
-  - Retention and amplitude use the character's **current** stability, so a stability change
-    re-times the decay of every existing record over its whole elapsed time. Accepted for now;
-    pinned by a test.
-  - Events: update (s rounded first, then `long += round(k * (s - long))`), drop below
-    `enter_threshold`, or create; at the limit, evict the weakest |dev(now)| (ties to the smaller
-    target) only if the new |d| is strictly greater. One eviction per event even when a list is
-    above its limit (extraversion dropped); `maintain` trims the rest and removes records below
-    `exit_threshold` (hysteresis: exit < enter). The weak tier keeps no history of dropped events.
+  the sum (condition adds).
+- **Personal opinions** (`sim/personal_opinion.hpp`, records in `sim/opinion_records.hpp`):
+  `opinion(A, X) = clamp(weak.total + long_term + short_term, -100, +100)`, where `weak.total` is
+  the already clamped weak opinion, so personal history can pull an opinion back from a saturated
+  community stance. Nothing depends on time: no dates, no decay, no recalculation.
+  - **Modifiers** are circumstances (an insult, a gift) with an effect fixed when added
+    (-100..+100, int8; 0 is allowed). short = sum of the active modifiers' effects on X, computed
+    on read, never stored. Ticks only add or remove modifiers. At most one per (domain, target,
+    ModifierId): no stacking, a repeat is Duplicate. `ModifierDomain` keeps a CharacterId and a
+    TargetId with the same number apart. `MODIFIER_CAP` = 32 is a storage bound: Full, never
+    evicted. Adds and removes are symmetric, so code that added a circumstance can remove it.
+  - **Long-term values** are stored whole numbers (-200..+200, 0 never stored), changed only
+    through `add_long_opinion` for now. Only these are limited (people: `person_limit` by
+    extraversion; targets: `TARGET_LIMIT`). A new entry at the limit evicts the weakest |long|
+    (ties to the smaller target) only if strictly stronger, else Dropped; one eviction per call
+    even above the limit; `maintain()` trims lists above their limit. Unchanged means nothing
+    was written (delta 0, or saturated); Dropped means only "at the limit and too weak".
+    Modifiers count towards neither limits nor strength.
+  - Short-to-long conversion is a later step; so are modifier durations or expiry.
+  - Mutations go only through `CharacterRegistry`; the Character members they call require the
+    `CharacterKey` passkey. Stored targets are raw; every API converts to `CharacterId` or
+    `TargetId` at the boundary (e.g. evicted targets).
 - **Weak opinions** (`sim/opinion.hpp`) are computed, never stored or cached: community stances
   weighted by raw involvement weights (integer accumulation, one division; stances for all
   community pairs are resolved in one `StanceTable::stances` batch), plus reputation,

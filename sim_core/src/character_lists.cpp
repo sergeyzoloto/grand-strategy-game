@@ -3,6 +3,8 @@
 #include <cstddef>
 #include <cstdint>
 #include <optional>
+#include <span>
+#include <tuple>
 
 #include "sim/character.hpp"
 
@@ -16,6 +18,16 @@ bool is_valid(SkillKind kind) noexcept {
     case SkillKind::Ability:
     case SkillKind::Education:
     case SkillKind::Language:
+        return true;
+    }
+    return false;
+}
+
+bool is_valid(ModifierDomain domain) noexcept {
+    // No default: appending a ModifierDomain triggers -Wswitch here.
+    switch (domain) {
+    case ModifierDomain::Person:
+    case ModifierDomain::Target:
         return true;
     }
     return false;
@@ -239,6 +251,31 @@ bool Character::lists_valid() const noexcept {
         const SacredEntry& e = sacred_[i];
         if (!e.target.valid() || !is_valid(e.sign) || (i > 0 && !(sacred_[i - 1].target < e.target))) {
             return false;
+        }
+    }
+    for (const auto list : {long_people(), long_targets()}) {
+        for (std::size_t i = 0; i < list.size(); ++i) {
+            const LongOpinion& e = list[i];
+            if (e.target == 0 || e.value == 0 || e.value < -LONG_VALUE_MAX || e.value > LONG_VALUE_MAX
+                || e.reserved != 0 || (i > 0 && !(list[i - 1].target < e.target))) {
+                return false;
+            }
+        }
+    }
+    for (std::size_t i = 0; i < modifiers_.size(); ++i) {
+        const OpinionModifier& m = modifiers_[i];
+        if (m.target == 0 || !m.modifier.valid() || !is_valid(m.domain) || m.effect < -MODIFIER_EFFECT_MAX
+            || m.effect > MODIFIER_EFFECT_MAX) {
+            return false;
+        }
+        if (i > 0) {
+            const OpinionModifier& p = modifiers_[i - 1];
+            const auto key = [](const OpinionModifier& x) {
+                return std::tuple{static_cast<std::uint8_t>(x.domain), x.target, x.modifier.value};
+            };
+            if (!(key(p) < key(m))) {
+                return false;
+            }
         }
     }
     return true;
