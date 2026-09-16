@@ -1,5 +1,7 @@
 #include "sim/character.hpp"
 
+#include "sim/hundredths.hpp"
+
 #include <algorithm>
 #include <cassert>
 #include <cmath>
@@ -10,21 +12,14 @@ namespace sim {
 
 namespace {
 
-// Hundredths helper shared by the condition fields: raw 0..10000, value = raw / 100.
+using detail::clamp_round;
+using detail::HUNDREDTHS_PER_UNIT;
+
+// Condition fields: raw 0..10000, value = raw / 100.
 constexpr std::int64_t HUNDREDTHS_MAX = 10000;
-constexpr double HUNDREDTHS_PER_UNIT = 100.0;
 
 float get_hundredths(std::uint16_t raw) noexcept {
     return static_cast<float>(static_cast<double>(raw) / HUNDREDTHS_PER_UNIT);
-}
-
-// Clamps to [lo, hi] and rounds to the nearest integer. Requires a non-NaN input.
-// Clamping comes first: an out-of-range float-to-integer conversion is UB.
-// std::round is half-away-from-zero regardless of the floating-point rounding mode.
-std::int64_t clamp_round(double scaled, std::int64_t lo, std::int64_t hi) noexcept {
-    assert(!std::isnan(scaled));
-    const double clamped = std::clamp(scaled, static_cast<double>(lo), static_cast<double>(hi));
-    return static_cast<std::int64_t>(std::round(clamped));
 }
 
 void set_hundredths(std::uint16_t& raw, float value) noexcept {
@@ -36,11 +31,9 @@ void set_hundredths(std::uint16_t& raw, float value) noexcept {
     raw = static_cast<std::uint16_t>(clamp_round(scaled, 0, HUNDREDTHS_MAX));
 }
 
-// Rounds the delta to whole steps, then adds. Rounding the delta rather than the sum
-// means the same delta always adds the same number of raw steps, and add(d) followed
-// by add(-d) restores raw unless saturation intervened. Rounding the sum breaks this
-// near half steps (half-away-from-zero rounding is not shift-invariant) and would
-// accumulate float error across repeated adds.
+// Rounds the delta to whole steps, then adds (see clamp_round): add(d) followed by
+// add(-d) restores raw unless saturation intervened, and repeated adds accumulate no
+// float error.
 void add_hundredths(std::uint16_t& raw, float delta) noexcept {
     assert(!std::isnan(delta));
     if (std::isnan(delta)) {
@@ -66,6 +59,7 @@ Character::Character(CharacterKey /*key*/, CharacterId id, NameId name, Gender g
     static_assert(offsetof(Character, practise_) == 30 && offsetof(Character, nicknames_) == 288
                   && offsetof(Character, involvement_) == 308 && offsetof(Character, sacred_) == 376);
     static_assert(offsetof(Character, reputation_) == 444);
+    static_assert(offsetof(Character, strong_people_) == 448 && offsetof(Character, strong_targets_) == 1092);
 
     // The registry (a later step) is the only creator; an invalid id is a programmer error.
     assert(id.valid());

@@ -1,25 +1,13 @@
 #pragma once
 
 #include "sim/character.hpp"
+#include "sim/date.hpp"
 #include "sim/ids.hpp"
 #include "sim/noise.hpp"
+#include "sim/opinion_config.hpp"
 #include "sim/stance_table.hpp"
 
 namespace sim {
-
-// Coefficients of weak opinions. All values are PLACEHOLDERS.
-struct OpinionConfig {
-    double k_rep = 0.25;               // PLACEHOLDER: opinion per reputation point of the target
-    double k_compat = 20.0;            // PLACEHOLDER: compat range, -k_compat..+k_compat
-    double w_stability = 1.0;          // PLACEHOLDER: compat weight, >= 0
-    double w_openness = 1.0;           // PLACEHOLDER: compat weight, >= 0
-    double w_extraversion = 1.0;       // PLACEHOLDER: compat weight, >= 0
-    double w_conscientiousness = 1.0;  // PLACEHOLDER: compat weight, >= 0
-    double w_agreeableness = 1.0;      // PLACEHOLDER: compat weight, >= 0
-    double k_noise = 10.0;             // PLACEHOLDER: noise amplitude
-    double openness_factor_min = 0.5;  // PLACEHOLDER: noise factor at openness -100
-    double openness_factor_max = 1.5;  // PLACEHOLDER: noise factor at openness +100
-};
 
 // Terms of a weak opinion before clamping, plus the clamped total. For tuning and
 // for opinion tooltips later. total = clamp(community + reputation + compat + noise).
@@ -61,5 +49,25 @@ struct WeakOpinionBreakdown {
                                                           WorldSeed seed) noexcept;
 [[nodiscard]] double weak_opinion(const Character& a, TargetId target, const StanceTable& stances,
                                   const OpinionConfig& config, WorldSeed seed) noexcept;
+
+// ---- opinions with strong records -----------------------------------------------------
+
+// A weak opinion plus the remembered deviation. total = clamp(weak.total + deviation).
+struct OpinionBreakdown {
+    WeakOpinionBreakdown weak; // weak terms and the clamped weak total
+    double deviation = 0.0;    // strong deviation at `now` in value units; 0 without a record
+    double total = 0.0;        // clamp(weak.total + deviation, -100, +100)
+};
+
+// opinion(A, X) = clamp(weak(A -> X) + dev(now), -100, +100). Without a record it equals
+// the weak opinion. Reading never writes; nothing is stored or cached.
+[[nodiscard]] OpinionBreakdown opinion_breakdown(const Character& a, const Character& b, const StanceTable& stances,
+                                                 const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
+[[nodiscard]] double opinion(const Character& a, const Character& b, const StanceTable& stances,
+                             const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
+[[nodiscard]] OpinionBreakdown opinion_breakdown(const Character& a, TargetId target, const StanceTable& stances,
+                                                 const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
+[[nodiscard]] double opinion(const Character& a, TargetId target, const StanceTable& stances,
+                             const OpinionConfig& config, WorldSeed seed, Date now) noexcept;
 
 } // namespace sim

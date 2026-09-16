@@ -14,6 +14,7 @@ add_executable(sim_tests
     test_registry.cpp
     test_relations.cpp
     test_stances.cpp
+    test_strong_opinion.cpp
 )
 
 target_link_libraries(sim_tests PRIVATE sim_core doctest)

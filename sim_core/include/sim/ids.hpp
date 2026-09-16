@@ -33,6 +33,7 @@ using NameId = Id<struct NameIdTag>;
 using CommunityId = Id<struct CommunityIdTag>;
 using TopicId = Id<struct TopicIdTag>;
 using SkillId = Id<struct SkillIdTag, std::uint16_t>;
+using CauseId = Id<struct CauseIdTag, std::uint16_t>; // cause of an opinion event; 0 = unspecified
 
 // Kind of entity a TargetId refers to. Stored in 2 bits: append-only, at most 4 kinds.
 // Value 2 is intended for persons (a later step); 3 is free.

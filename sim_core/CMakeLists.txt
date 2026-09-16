@@ -6,6 +6,7 @@ add_library(sim_core STATIC
     src/opinion.cpp
     src/relation_graph.cpp
     src/stance_table.cpp
+    src/strong_opinion.cpp
 )
 
 target_include_directories(sim_core PUBLIC include)

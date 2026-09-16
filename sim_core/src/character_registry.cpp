@@ -42,6 +42,40 @@ const Character* CharacterRegistry::find(CharacterId id) const noexcept {
     return &characters_[id.value - 1];
 }
 
+OpinionEventResult<CharacterId> CharacterRegistry::apply_person_event(CharacterId a, CharacterId b, int delta, Date now,
+                                                                      CauseId cause, const OpinionConfig& config) noexcept {
+    if (!a.valid() || !b.valid() || a == b) {
+        return {OpinionEventOutcome::Invalid, CharacterId{}};
+    }
+    Character* source = find(a);
+    if (source == nullptr || find(b) == nullptr) {
+        return {OpinionEventOutcome::NotFound, CharacterId{}};
+    }
+    return source->apply_opinion_event(CharacterKey{}, b, delta, now, cause, config);
+}
+
+OpinionEventResult<TargetId> CharacterRegistry::apply_target_event(CharacterId a, TargetId target, int delta, Date now,
+                                                                   CauseId cause, const OpinionConfig& config) noexcept {
+    if (!a.valid() || !target.valid()) {
+        return {OpinionEventOutcome::Invalid, TargetId{}};
+    }
+    Character* source = find(a);
+    if (source == nullptr) {
+        return {OpinionEventOutcome::NotFound, TargetId{}};
+    }
+    return source->apply_opinion_event(CharacterKey{}, target, delta, now, cause, config);
+}
+
+StrongMaintainCounts CharacterRegistry::maintain(Date now, const OpinionConfig& config) noexcept {
+    StrongMaintainCounts total;
+    for (Character& c : characters_) { // id order
+        const StrongMaintainCounts counts = c.maintain_strong_opinions(CharacterKey{}, now, config);
+        total.removed_decayed += counts.removed_decayed;
+        total.evicted_over_limit += counts.evicted_over_limit;
+    }
+    return total;
+}
+
 std::size_t CharacterRegistry::allocated_bytes() const noexcept {
     return sizeof(*this) + characters_.capacity() * sizeof(Character) + relations_.allocated_bytes();
 }

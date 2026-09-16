@@ -48,8 +48,10 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Never reset, rebase or amend commits (or otherwise rewrite history) without asking first.
 - Every bipolar scale in the model uses integers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX` in
   `sim/bipolar.hpp`), stored directly with raw == value: traits, reputation, stances, and scales
-  added in later steps (opinions). Computed weak opinions are doubles on the same scale; rounding
-  them to whole numbers is the caller's explicit choice.
+  added in later steps. Computed opinions are doubles on the same scale; rounding them to whole
+  numbers is the caller's explicit choice. **One exception:** strong opinion deviations are
+  stored in hundredths (int16, -200.00..+200.00, `sim/strong_opinion_record.hpp`), because decay
+  needs sub-unit resolution; event deltas are still whole numbers clamped to -200..+200.
 - Fractional values reach bipolar scales only through explicit rounding by the caller. Bipolar
   `set_`/`add_` accept integral types only (`StrictIntegral` in `sim/integral.hpp`: no floats, bool
   or character types; also used for other whole-number inputs such as involvement weights);
@@ -107,11 +109,12 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - **Atomicity under allocation:** check everything first, then reserve room in every container
   an edit will grow (`detail::reserve_one_more`, geometric doubling), then write. Never
   `reserve(size() + 1)`: it reallocates on every insert.
-- `Character` layout is pinned by `static_assert(sizeof(Character) == 448)` and by `offsetof`
+- `Character` layout is pinned by `static_assert(sizeof(Character) == 1352)` and by `offsetof`
   static_asserts in the constructor. The 30-byte core (id, name, birth, conditions, gender,
   traits) keeps offsets 0..29; practise (the only align-2 list) sits at 30, then nicknames (288),
-  involvement (308), sacred (376) and reputation (444, appended in Step 4; 3 bytes tail padding).
-  New fields are appended so existing offsets stay. Don't reorder without flagging it.
+  involvement (308), sacred (376), reputation (444, Step 4), strong people opinions (448, Step 5)
+  and strong target opinions (1092). New fields are appended so existing offsets stay. Don't
+  reorder without flagging it.
 - **Per-character lists** (`sim/character_lists.hpp`) are `FixedVector`s inside Character; the
   public API never exposes `FixedVector`. Reads return `std::span<const Entry>`, valid only until
   the next mutation of that Character or until it is copied, moved or destroyed (Step 3 stores
@@ -147,8 +150,29 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   target id), mapped to [-1, 1]. `WorldSeed` is always passed explicitly. The hash and
   `NoiseSubject` values are frozen: changing them shifts the noise of the whole world, and
   golden values in the tests catch it.
+- **Hundredths** (`sim/hundredths.hpp`): `detail::clamp_round` clamps before converting and
+  rounds with `std::round`. When a fractional delta is added to an integer, round the delta, not
+  the sum (condition adds, strong opinion `long_dev`).
+- **Strong opinions** (`sim/strong_opinion.hpp`) are remembered deviations from the weak
+  opinion, stored per character in two lists (people up to `PERSON_LIMIT_MAX`, communities and
+  topics up to `TARGET_LIMIT`), sorted by target. `StrongOpinion::target` is raw in storage;
+  every API converts to `CharacterId` or `TargetId` at the boundary (e.g. evicted targets).
+  - Mutations go only through `CharacterRegistry` (`apply_opinion_event`, `maintain`); the
+    Character members they call require the `CharacterKey` passkey. Reads are public spans.
+  - Value at `now`: `dev = long + (short - long) * retention^(now - t0)`, with `retention_power`
+    computed by repeated squaring (no exp/log/pow) and cut to 0 below 1e-12. Reading never writes;
+    opinion = clamp(weak + dev). No absolute opinion is stored; weak opinions are never cached.
+  - Retention and amplitude use the character's **current** stability, so a stability change
+    re-times the decay of every existing record over its whole elapsed time. Accepted for now;
+    pinned by a test.
+  - Events: update (s rounded first, then `long += round(k * (s - long))`), drop below
+    `enter_threshold`, or create; at the limit, evict the weakest |dev(now)| (ties to the smaller
+    target) only if the new |d| is strictly greater. One eviction per event even when a list is
+    above its limit (extraversion dropped); `maintain` trims the rest and removes records below
+    `exit_threshold` (hysteresis: exit < enter). The weak tier keeps no history of dropped events.
 - **Weak opinions** (`sim/opinion.hpp`) are computed, never stored or cached: community stances
-  weighted by raw involvement weights (integer accumulation, one division), plus reputation,
+  weighted by raw involvement weights (integer accumulation, one division; stances for all
+  community pairs are resolved in one `StanceTable::stances` batch), plus reputation,
   personality compatibility and noise; every coefficient is in `OpinionConfig`. Relations don't
   affect weak opinions.
 

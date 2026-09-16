@@ -13,6 +13,7 @@
 #include "sim/fixed_vector.hpp"
 #include "sim/ids.hpp"
 #include "sim/integral.hpp"
+#include "sim/strong_opinion_record.hpp"
 
 namespace sim {
 
@@ -63,9 +64,10 @@ struct CharacterInit {
 };
 
 class CharacterRegistry;
+struct OpinionConfig;
 
 // Passkey: only CharacterRegistry can create one, so only the registry constructs
-// Characters. Relies on C++20: a class with a user-declared constructor is not an
+// Characters and calls the keyed mutators (strong opinions). Relies on C++20: a class with a user-declared constructor is not an
 // aggregate, so CharacterKey{} cannot bypass the private constructor.
 class CharacterKey {
     constexpr CharacterKey() noexcept = default;
@@ -216,6 +218,34 @@ public:
     [[nodiscard]] EditResult remove_sacred(TargetId target) noexcept;
     [[nodiscard]] std::optional<SacredSign> sacred_sign(TargetId target) const noexcept;
 
+    // ---- strong opinions: remembered deviations from the weak opinion ----
+    // Reads are public; mutations go only through CharacterRegistry (keyed members).
+
+    // Opinions about people, sorted by CharacterId. The span is valid only until the
+    // next mutation of this Character, or until it is copied, moved or destroyed.
+    [[nodiscard]] std::span<const StrongOpinion> strong_people() const noexcept {
+        return {strong_people_.data(), strong_people_.size()};
+    }
+    // Opinions about communities and topics, sorted by TargetId raw value. The span is
+    // valid only until the next mutation of this Character, or until it is copied,
+    // moved or destroyed.
+    [[nodiscard]] std::span<const StrongOpinion> strong_targets() const noexcept {
+        return {strong_targets_.data(), strong_targets_.size()};
+    }
+
+    // Registry only (CharacterKey). `delta` is clamped to -200..+200. Returns Invalid for
+    // an invalid target or target == id(); unknown characters are the registry's NotFound.
+    [[nodiscard]] OpinionEventResult<CharacterId> apply_opinion_event(CharacterKey key, CharacterId target, int delta,
+                                                                      Date now, CauseId cause,
+                                                                      const OpinionConfig& config) noexcept;
+    [[nodiscard]] OpinionEventResult<TargetId> apply_opinion_event(CharacterKey key, TargetId target, int delta,
+                                                                   Date now, CauseId cause,
+                                                                   const OpinionConfig& config) noexcept;
+    // Registry only (CharacterKey). Removes records with |dev(now)| < exit_threshold, then
+    // evicts the weakest people records until the list fits person_limit.
+    [[nodiscard]] StrongMaintainCounts maintain_strong_opinions(CharacterKey key, Date now,
+                                                                const OpinionConfig& config) noexcept;
+
 private:
     [[nodiscard]] EditResult set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept;
     [[nodiscard]] bool lists_valid() const noexcept; // debug invariant check
@@ -270,8 +300,12 @@ private:
     FixedVector<InvolvementEntry, INVOLVEMENT_CAP> involvement_; // sorted by community, weight 1..255, 68 bytes
     FixedVector<SacredEntry, SACRED_CAP> sacred_;                // sorted by target, unique targets, 68 bytes
 
-    // Appended in Step 4 so every earlier offset stays; 3 bytes tail padding follow.
+    // Appended in Step 4 so every earlier offset stays.
     std::int8_t reputation_ = 0;        // -100..+100 units, stored directly
+
+    // Appended in Step 5 (from offset 448) so every earlier offset stays.
+    FixedVector<StrongOpinion, PERSON_LIMIT_MAX> strong_people_; // sorted by CharacterId, size may exceed person_limit until maintain; 644 bytes
+    FixedVector<StrongOpinion, TARGET_LIMIT> strong_targets_;    // sorted by TargetId raw; 260 bytes
 };
 
 static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f && CharacterInit{}.capacity == 100.0f,
@@ -280,6 +314,6 @@ static_assert(CharacterInit{}.strength.value() == 0);
 static_assert(std::is_trivially_copyable_v<Character>);
 static_assert(!std::is_copy_assignable_v<Character> && !std::is_move_assignable_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
-static_assert(sizeof(Character) == 448, "Character layout changed; update the plan and field comments");
+static_assert(sizeof(Character) == 1352, "Character layout changed; update the plan and field comments");
 
 } // namespace sim

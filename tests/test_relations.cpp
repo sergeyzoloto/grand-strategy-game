@@ -507,5 +507,6 @@ TEST_CASE("memory: 1,500 characters with 20 edges each") {
     MESSAGE("allocated_bytes = " << measured << " (" << measured / 1024 << " KiB); with ~16 B allocator headers: "
                                  << with_headers << " (" << with_headers / 1024 << " KiB)");
     MESSAGE("character storage = " << r.characters().size() * sizeof(Character) << " B in use");
-    CHECK(measured < 2 * 1024 * 1024);
+    // Character grew to 1352 bytes in Step 5 (strong opinion lists); relation storage is unchanged.
+    CHECK(measured < 4 * 1024 * 1024);
 }

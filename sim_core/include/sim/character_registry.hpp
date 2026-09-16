@@ -5,11 +5,13 @@
 #include <vector>
 
 #include "sim/character.hpp"
+#include "sim/date.hpp"
 #include "sim/edit_result.hpp"
 #include "sim/fixed_vector.hpp"
 #include "sim/ids.hpp"
 #include "sim/relation_graph.hpp"
 #include "sim/relations.hpp"
+#include "sim/strong_opinion_record.hpp"
 
 namespace sim {
 
@@ -75,11 +77,37 @@ public:
         return relations_.shared_parents(a, b);
     }
 
+    // ---- strong opinions: the only way to change them ----
+
+    // Applies an opinion event of `a` about person `b` at `now`. `delta` is a whole number
+    // clamped to -200..+200. Invalid: id 0 or a == b. NotFound: an unknown character.
+    [[nodiscard]] OpinionEventResult<CharacterId> apply_opinion_event(CharacterId a, CharacterId b,
+                                                                      StrictIntegral auto delta, Date now,
+                                                                      CauseId cause, const OpinionConfig& config) noexcept {
+        return apply_person_event(a, b, detail::clamp_integer(delta, -EVENT_DELTA_MAX, EVENT_DELTA_MAX), now, cause,
+                                  config);
+    }
+    // Same for a community or topic target. Invalid: id 0 or an invalid TargetId.
+    [[nodiscard]] OpinionEventResult<TargetId> apply_opinion_event(CharacterId a, TargetId target,
+                                                                   StrictIntegral auto delta, Date now, CauseId cause,
+                                                                   const OpinionConfig& config) noexcept {
+        return apply_target_event(a, target, detail::clamp_integer(delta, -EVENT_DELTA_MAX, EVENT_DELTA_MAX), now,
+                                  cause, config);
+    }
+    // One pass over all characters in id order: removes decayed records, then trims
+    // people lists above their current limit. Idempotent for the same `now`.
+    [[nodiscard]] StrongMaintainCounts maintain(Date now, const OpinionConfig& config) noexcept;
+
     // Bytes held by the registry and its vectors (capacity, not size), excluding
     // allocator headers.
     [[nodiscard]] std::size_t allocated_bytes() const noexcept;
 
 private:
+    [[nodiscard]] OpinionEventResult<CharacterId> apply_person_event(CharacterId a, CharacterId b, int delta, Date now,
+                                                                     CauseId cause, const OpinionConfig& config) noexcept;
+    [[nodiscard]] OpinionEventResult<TargetId> apply_target_event(CharacterId a, TargetId target, int delta, Date now,
+                                                                  CauseId cause, const OpinionConfig& config) noexcept;
+
     std::vector<Character> characters_; // index = id - 1
     RelationGraph relations_;           // one node per character, same indexing
 };
