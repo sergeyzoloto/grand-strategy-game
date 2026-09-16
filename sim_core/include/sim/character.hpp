@@ -73,6 +73,16 @@ struct CharacterInit {
     BipolarInit charisma{};          // PLACEHOLDER default, -100..+100
 };
 
+class CharacterRegistry;
+
+// Passkey: only CharacterRegistry can create one, so only the registry constructs
+// Characters. Relies on C++20: a class with a user-declared constructor is not an
+// aggregate, so CharacterKey{} cannot bypass the private constructor.
+class CharacterKey {
+    constexpr CharacterKey() noexcept = default;
+    friend class CharacterRegistry;
+};
+
 // Persistent character state. Trivially copyable, no pointers, no floating point,
 // never allocates. Derived values (age, mortality) are free functions elsewhere.
 //
@@ -85,11 +95,21 @@ struct CharacterInit {
 // to -100..+100 without overflow for every input value.
 //
 // Lists (nicknames, practise, involvement, sacred) start empty and are not part of
-// CharacterInit. Every mutator returns a [[nodiscard]] ListResult; reads return
+// CharacterInit. Every mutator returns a [[nodiscard]] EditResult; reads return
 // spans of const entries.
 class Character {
 public:
-    Character(CharacterId id, NameId name, Gender gender, Date birth, const CharacterInit& init) noexcept;
+    Character(CharacterKey key, CharacterId id, NameId name, Gender gender, Date birth,
+              const CharacterInit& init) noexcept;
+
+    // Copy and move construction stay public (trivially copyable). Assignment is
+    // deleted so a registry slot can never take over another character's identity;
+    // relocating slots uses std::destroy_at plus std::construct_at instead.
+    Character(const Character&) noexcept = default;
+    Character(Character&&) noexcept = default;
+    Character& operator=(const Character&) = delete;
+    Character& operator=(Character&&) = delete;
+    ~Character() = default;
 
     [[nodiscard]] CharacterId id() const noexcept { return id_; }
     [[nodiscard]] NameId name() const noexcept { return name_; }
@@ -152,9 +172,9 @@ public:
         return {nicknames_.data(), nicknames_.size()};
     }
     // Ok, Invalid, Duplicate or Full. Appends.
-    [[nodiscard]] ListResult add_nickname(NameId name) noexcept;
+    [[nodiscard]] EditResult add_nickname(NameId name) noexcept;
     // Ok, Invalid or NotFound. Keeps the order of the remaining nicknames.
-    [[nodiscard]] ListResult remove_nickname(NameId name) noexcept;
+    [[nodiscard]] EditResult remove_nickname(NameId name) noexcept;
 
     // ---- practise: skills as capabilities, sorted by (kind, id), never evicted ----
 
@@ -165,9 +185,9 @@ public:
     }
     [[nodiscard]] bool has_skill(SkillKind kind, SkillId skill) const noexcept;
     // Ok, Invalid, Duplicate or Full.
-    [[nodiscard]] ListResult add_skill(SkillKind kind, SkillId skill) noexcept;
+    [[nodiscard]] EditResult add_skill(SkillKind kind, SkillId skill) noexcept;
     // Ok, Invalid or NotFound.
-    [[nodiscard]] ListResult remove_skill(SkillKind kind, SkillId skill) noexcept;
+    [[nodiscard]] EditResult remove_skill(SkillKind kind, SkillId skill) noexcept;
 
     // ---- involvement: weighted communities, sorted by community id ----
 
@@ -178,7 +198,7 @@ public:
     }
     // Whole-number weight clamped to 0..255; 0 removes (Ok also when absent).
     // Ok, Invalid or Full.
-    [[nodiscard]] ListResult set_involvement(CommunityId community, StrictIntegral auto weight) noexcept {
+    [[nodiscard]] EditResult set_involvement(CommunityId community, StrictIntegral auto weight) noexcept {
         return set_involvement_weight(
             community, static_cast<std::uint8_t>(detail::clamp_integer(weight, 0, INVOLVEMENT_WEIGHT_MAX)));
     }
@@ -199,13 +219,13 @@ public:
     }
     // Ok, Invalid, Duplicate (same sign), Conflict (opposite sign) or Full.
     // Flipping a sign takes an explicit remove_sacred first.
-    [[nodiscard]] ListResult add_sacred(TargetId target, SacredSign sign) noexcept;
+    [[nodiscard]] EditResult add_sacred(TargetId target, SacredSign sign) noexcept;
     // Ok, Invalid or NotFound.
-    [[nodiscard]] ListResult remove_sacred(TargetId target) noexcept;
+    [[nodiscard]] EditResult remove_sacred(TargetId target) noexcept;
     [[nodiscard]] std::optional<SacredSign> sacred_sign(TargetId target) const noexcept;
 
 private:
-    [[nodiscard]] ListResult set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept;
+    [[nodiscard]] EditResult set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept;
     [[nodiscard]] bool lists_valid() const noexcept; // debug invariant check
 
     // Adds a delta and clamps. The delta is first clamped to [-200, 200], which
@@ -263,6 +283,7 @@ static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f
               "CharacterInit condition defaults changed; update Character's starting raw values");
 static_assert(CharacterInit{}.strength.value() == 0);
 static_assert(std::is_trivially_copyable_v<Character>);
+static_assert(!std::is_copy_assignable_v<Character> && !std::is_move_assignable_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
 static_assert(sizeof(Character) == 444, "Character layout changed; update the plan and field comments");
 

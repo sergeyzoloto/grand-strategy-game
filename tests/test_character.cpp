@@ -8,6 +8,8 @@
 
 #include "sim/character.hpp"
 
+#include "test_support.hpp"
+
 using namespace sim;
 
 static_assert(std::is_trivially_copyable_v<Character>);
@@ -86,7 +88,7 @@ static_assert(BipolarInit{std::numeric_limits<std::int64_t>::min()}.value() == -
 namespace {
 
 Character make_default() {
-    return Character(CharacterId{1}, NameId{2}, Gender::Male, Date{-1000}, CharacterInit{});
+    return make_character(NameId{2}, Gender::Male, Date{-1000}, CharacterInit{});
 }
 
 // Non-constexpr pass-throughs: their results are never constant expressions, so
@@ -160,7 +162,7 @@ TEST_CASE("defaults match the init struct") {
 }
 
 TEST_CASE("non-default init values are applied and clamped") {
-    const Character c(CharacterId{5}, NameId{6}, Gender::Female, Date{0},
+    const Character c = make_character(NameId{6}, Gender::Female, Date{0},
                       CharacterInit{.health = 25.0f, .strength = 150, .openness = -100, .charisma = INT_MIN});
     CHECK(c.health() == 25.0f);
     CHECK(c.strength() == 100);  // clamped
@@ -173,7 +175,7 @@ TEST_CASE("non-default init values are applied and clamped") {
 TEST_CASE("init struct clamps non-constant out-of-range integers") {
     const int high = runtime_int(150);
     const int low = runtime_int(-150);
-    const Character c(CharacterId{7}, NameId{7}, Gender::Female, Date{0},
+    const Character c = make_character(NameId{7}, Gender::Female, Date{0},
                       CharacterInit{.strength = high, .intelligence = low, .stability = high,
                                     .openness = low, .extraversion = high, .conscientiousness = low,
                                     .agreeableness = high, .attractiveness = low, .height = high,
@@ -192,7 +194,7 @@ TEST_CASE("init struct clamps non-constant out-of-range integers") {
 
     // A wide integer whose low bits are in range must clamp, not wrap.
     const std::int64_t wide = runtime_int64((std::int64_t{1} << 40) + 5);
-    const Character w(CharacterId{8}, NameId{8}, Gender::Male, Date{0},
+    const Character w = make_character(NameId{8}, Gender::Male, Date{0},
                       CharacterInit{.openness = wide, .charisma = -wide});
     CHECK(w.openness() == 100);
     CHECK(w.charisma() == -100);
@@ -324,7 +326,7 @@ TEST_CASE("resolution rule: add_health(0.004) is a no-op, add_health(0.006) is o
 // NaN is asserted in debug builds, so these run in the release test build only.
 TEST_CASE("condition NaN in CharacterInit leaves the default value") {
     const float nan = std::numeric_limits<float>::quiet_NaN();
-    const Character c(CharacterId{9}, NameId{9}, Gender::Female, Date{0},
+    const Character c = make_character(NameId{9}, Gender::Female, Date{0},
                       CharacterInit{.health = nan, .stress = nan, .capacity = nan});
     CHECK(c.health() == 100.0f);
     CHECK(c.stress() == 0.0f);

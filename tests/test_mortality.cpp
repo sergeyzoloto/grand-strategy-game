@@ -5,6 +5,8 @@
 #include "sim/character.hpp"
 #include "sim/mortality.hpp"
 
+#include "test_support.hpp"
+
 using namespace sim;
 
 namespace {
@@ -21,7 +23,7 @@ TEST_CASE("annual mortality stays in [0, 1] across ages, genders, health and str
     for (const Gender gender : {Gender::Female, Gender::Male}) {
         for (const float health : {0.0f, 50.0f, 100.0f}) {
             for (const float stress : {0.0f, 50.0f, 100.0f}) {
-                const Character c(CharacterId{1}, NameId{1}, gender, birth,
+                const Character c = make_character(NameId{1}, gender, birth,
                                   CharacterInit{.health = health, .stress = stress});
                 for (const double years : {-10.0, 0.0, 1.0, 20.0, 60.0, 100.0, 150.0, 500.0, 100000.0}) {
                     CAPTURE(years);
@@ -37,7 +39,7 @@ TEST_CASE("annual mortality stays in [0, 1] across ages, genders, health and str
 TEST_CASE("annual mortality grows with age under the default config") {
     const MortalityConfig config{};
     const Date birth{0};
-    const Character c(CharacterId{1}, NameId{1}, Gender::Female, birth, CharacterInit{});
+    const Character c = make_character(NameId{1}, Gender::Female, birth, CharacterInit{});
     double previous = annual_mortality(c, birth, config);
     for (int years = 1; years <= 100; ++years) {
         CAPTURE(years);
@@ -51,7 +53,7 @@ TEST_CASE("annual mortality grows with age under the default config") {
 }
 
 TEST_CASE("before birth mortality is 0") {
-    const Character c(CharacterId{1}, NameId{1}, Gender::Male, Date{100}, CharacterInit{});
+    const Character c = make_character(NameId{1}, Gender::Male, Date{100}, CharacterInit{});
     CHECK(annual_mortality(c, Date{0}, MortalityConfig{}) == 0.0);
 }
 
@@ -59,10 +61,10 @@ TEST_CASE("worse health, more stress and male gender raise mortality") {
     const MortalityConfig config{};
     const Date birth{0};
     const Date now = weeks_after_birth(birth, 40);
-    const Character base(CharacterId{1}, NameId{1}, Gender::Female, birth, CharacterInit{});
-    const Character sick(CharacterId{2}, NameId{1}, Gender::Female, birth, CharacterInit{.health = 20.0f});
-    const Character stressed(CharacterId{3}, NameId{1}, Gender::Female, birth, CharacterInit{.stress = 80.0f});
-    const Character male(CharacterId{4}, NameId{1}, Gender::Male, birth, CharacterInit{});
+    const Character base = make_character(NameId{1}, Gender::Female, birth, CharacterInit{});
+    const Character sick = make_character(NameId{1}, Gender::Female, birth, CharacterInit{.health = 20.0f});
+    const Character stressed = make_character(NameId{1}, Gender::Female, birth, CharacterInit{.stress = 80.0f});
+    const Character male = make_character(NameId{1}, Gender::Male, birth, CharacterInit{});
     const double p = annual_mortality(base, now, config);
     CHECK(annual_mortality(sick, now, config) > p);
     CHECK(annual_mortality(stressed, now, config) > p);
@@ -80,7 +82,7 @@ TEST_CASE("weekly probability compounds back to the annual one") {
     }
 
     const MortalityConfig config{};
-    const Character c(CharacterId{1}, NameId{1}, Gender::Male, Date{0}, CharacterInit{.health = 60.0f});
+    const Character c = make_character(NameId{1}, Gender::Male, Date{0}, CharacterInit{.health = 60.0f});
     for (int years = 0; years <= 110; years += 5) {
         CAPTURE(years);
         const double annual = annual_mortality(c, weeks_after_birth(Date{0}, years), config);
@@ -146,7 +148,7 @@ TEST_CASE("mortality matches results recorded before the 0..100 condition rescal
         CAPTURE(s.health);
         CAPTURE(s.stress);
         CAPTURE(s.age_weeks);
-        const Character c(CharacterId{1}, NameId{1}, s.gender, Date{0},
+        const Character c = make_character(NameId{1}, s.gender, Date{0},
                           CharacterInit{.health = static_cast<float>(s.health),
                                         .stress = static_cast<float>(s.stress)});
         CHECK(std::abs(annual_mortality(c, Date{s.age_weeks}, config) - s.expected) <= 1e-6);

@@ -7,6 +7,8 @@
 #include "sim/date.hpp"
 #include "sim/mortality.hpp"
 
+#include "test_support.hpp"
+
 using namespace sim;
 
 static_assert(sizeof(Date) == 4);
@@ -15,7 +17,7 @@ static_assert(!std::is_convertible_v<int, Date>);
 namespace {
 
 Character make_born(Date birth) {
-    return Character(CharacterId{1}, NameId{1}, Gender::Female, birth, CharacterInit{});
+    return make_character(NameId{1}, Gender::Female, birth, CharacterInit{});
 }
 
 } // namespace

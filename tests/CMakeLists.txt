@@ -9,6 +9,8 @@ add_executable(sim_tests
     test_character_lists.cpp
     test_fixed_vector.cpp
     test_mortality.cpp
+    test_registry.cpp
+    test_relations.cpp
 )
 
 target_link_libraries(sim_tests PRIVATE sim_core doctest)

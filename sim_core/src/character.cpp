@@ -54,7 +54,8 @@ void add_hundredths(std::uint16_t& raw, float delta) noexcept {
 
 } // namespace
 
-Character::Character(CharacterId id, NameId name, Gender gender, Date birth, const CharacterInit& init) noexcept
+Character::Character(CharacterKey /*key*/, CharacterId id, NameId name, Gender gender, Date birth,
+                     const CharacterInit& init) noexcept
     : id_(id), name_(name), birth_(birth), gender_(gender) {
     // Layout: the 30-byte core keeps its Step 1 offsets; lists follow.
     static_assert(offsetof(Character, id_) == 0 && offsetof(Character, name_) == 4 && offsetof(Character, birth_) == 8);

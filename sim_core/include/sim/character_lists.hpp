@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <type_traits>
 
+#include "sim/edit_result.hpp"
 #include "sim/ids.hpp"
 
 namespace sim {
@@ -26,17 +27,6 @@ enum class SkillKind : std::uint8_t {
 enum class SacredSign : std::uint8_t {
     Plus = 0,
     Minus = 1,
-};
-
-// Result of every list mutation. Check order: Invalid (invalid id or enum value),
-// then Duplicate / Conflict / NotFound against existing entries, then Full.
-enum class ListResult : std::uint8_t {
-    Ok = 0,
-    Full = 1,      // a new entry was needed but the list is at capacity; state unchanged
-    Duplicate = 2, // the entry already exists; state unchanged
-    Conflict = 3,  // the entry exists with a contradicting value; state unchanged
-    NotFound = 4,  // removal of an absent entry; state unchanged
-    Invalid = 5,   // invalid id or enum value; state unchanged
 };
 
 // A skill the character has. Skills are capabilities: present or absent, no value.

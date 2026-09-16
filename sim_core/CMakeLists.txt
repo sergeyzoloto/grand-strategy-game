@@ -1,7 +1,9 @@
 add_library(sim_core STATIC
     src/character.cpp
     src/character_lists.cpp
+    src/character_registry.cpp
     src/mortality.cpp
+    src/relation_graph.cpp
 )
 
 target_include_directories(sim_core PUBLIC include)

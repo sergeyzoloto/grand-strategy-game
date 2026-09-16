@@ -73,8 +73,31 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - **Derived values** (age, mortality) are free functions and never stored.
 - **Floating point** in getters and derived math is not bit-identical across platforms; fine for
   now, revisit (fixed-point) if lockstep multiplayer or replays are needed.
-- `Character` has no default constructor. Only the registry (Step 3) creates characters; an
-  invalid `CharacterId` is a programmer error (debug assert).
+- **CharacterRegistry is the only creator of characters** (passkey `CharacterKey`, whose private
+  constructor only the registry can call; this relies on C++20, where a class with a user-declared
+  constructor is not an aggregate, so `CharacterKey{}` cannot bypass it). Tests create characters
+  in a local registry and copy them (`tests/test_support.hpp`). Ids start at 1, increase by one
+  and are never reused. `Character` has no default constructor; copy and move construction are
+  public, copy and move assignment are deleted so a slot never takes another character's identity.
+  When characters can be removed later, relocate slots with `std::destroy_at` plus
+  `std::construct_at`.
+- **Lifetimes:** any pointer, reference or span obtained from the registry or from a Character is
+  valid only until the next registry mutation (create or any relation edit): the registry may
+  reallocate. Vectors returned by queries are independent copies.
+- **Relations** live in `RelationGraph`, owned by the registry and edited only through it. One
+  `RelationEdge {other, mask}` per ordered pair, stored per source and sorted by other; a bit on
+  a -> b names b's role for a. `relation_info` is the single source of kind and complement:
+  one-way types (Friend, Rival, Attraction) have no complement and touch only a -> b via
+  `set_relation`/`clear_relation`; paired types always change both edges via `link`/`unlink`
+  (Spouse is its own complement). Conflict checks and the symmetry invariant apply to paired
+  types only. Empty edges are removed. Siblings are derived from shared parents and never stored;
+  at most `MAX_PARENTS` = 2 parents. Not checked yet: longer cycles and birth-date sanity.
+- **Edit results** are `EditResult` (`sim/edit_result.hpp`, formerly `ListResult`). Check order:
+  Invalid (id 0, a == b, unknown enum, wrong kind), NotFound (unknown character), then Duplicate /
+  Conflict / NotFound against existing state, then Full. A failed edit changes nothing.
+- **Atomicity under allocation:** check everything first, then reserve room in every container
+  an edit will grow (`detail::reserve_one_more`, geometric doubling), then write. Never
+  `reserve(size() + 1)`: it reallocates on every insert.
 - `Character` layout is pinned by `static_assert(sizeof(Character) == 444)` and by `offsetof`
   static_asserts in the constructor. The 30-byte core (id, name, birth, conditions, gender,
   traits) keeps offsets 0..29; practise (the only align-2 list) sits at 30, then nicknames (288),
@@ -82,7 +105,7 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - **Per-character lists** (`sim/character_lists.hpp`) are `FixedVector`s inside Character; the
   public API never exposes `FixedVector`. Reads return `std::span<const Entry>`, valid only until
   the next mutation of that Character or until it is copied, moved or destroyed (Step 3 stores
-  characters in a container). Every mutator returns a `[[nodiscard]] ListResult`. Check order:
+  characters in a container). Every mutator returns a `[[nodiscard]] EditResult`. Check order:
   `Invalid` (invalid id or enum value) first, then `Duplicate`/`Conflict`/`NotFound` against
   existing entries, then `Full`. A set to 0 on an absent entry is `Ok` with no change; a remove of
   an absent entry is `NotFound`. List caps are storage bounds, not gameplay rules: never evict to
@@ -113,3 +136,6 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Headers in `sim_core/include/sim/`, included as `"sim/foo.hpp"`; sources in `sim_core/src/`.
 - Tests in `tests/test_<area>.cpp`, doctest, one file per area.
 - Comments in English. Placeholder coefficients and defaults are marked `PLACEHOLDER`.
+- Randomized tests use `std::mt19937` with a fixed seed and derive values from its raw output
+  (e.g. `rng() % n`); standard distributions differ between standard libraries. Property tests
+  compare against a naive reference model and must stay fast in the Debug + ASan build.

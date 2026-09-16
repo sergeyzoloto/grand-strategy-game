@@ -47,32 +47,32 @@ std::size_t lower_index(const Vector& items, Pred less_than_key) noexcept {
 
 // ---- nicknames ------------------------------------------------------------------
 
-ListResult Character::add_nickname(NameId name) noexcept {
+EditResult Character::add_nickname(NameId name) noexcept {
     if (!name.valid()) {
-        return ListResult::Invalid;
+        return EditResult::Invalid;
     }
     if (std::find(nicknames_.begin(), nicknames_.end(), name) != nicknames_.end()) {
-        return ListResult::Duplicate;
+        return EditResult::Duplicate;
     }
     if (nicknames_.full()) {
-        return ListResult::Full;
+        return EditResult::Full;
     }
     nicknames_.push_back(name);
     assert(lists_valid());
-    return ListResult::Ok;
+    return EditResult::Ok;
 }
 
-ListResult Character::remove_nickname(NameId name) noexcept {
+EditResult Character::remove_nickname(NameId name) noexcept {
     if (!name.valid()) {
-        return ListResult::Invalid;
+        return EditResult::Invalid;
     }
     const auto* it = std::find(nicknames_.begin(), nicknames_.end(), name);
     if (it == nicknames_.end()) {
-        return ListResult::NotFound;
+        return EditResult::NotFound;
     }
     nicknames_.erase(static_cast<std::size_t>(it - nicknames_.begin()));
     assert(lists_valid());
-    return ListResult::Ok;
+    return EditResult::Ok;
 }
 
 // ---- practise -------------------------------------------------------------------
@@ -85,41 +85,41 @@ bool Character::has_skill(SkillKind kind, SkillId skill) const noexcept {
     return i < practise_.size() && practise_[i].kind == kind && practise_[i].skill == skill;
 }
 
-ListResult Character::add_skill(SkillKind kind, SkillId skill) noexcept {
+EditResult Character::add_skill(SkillKind kind, SkillId skill) noexcept {
     if (!skill.valid() || !is_valid(kind)) {
-        return ListResult::Invalid;
+        return EditResult::Invalid;
     }
     const std::size_t i = lower_index(practise_, [&](const PractiseEntry& e) { return practise_less(e, kind, skill); });
     if (i < practise_.size() && practise_[i].kind == kind && practise_[i].skill == skill) {
-        return ListResult::Duplicate;
+        return EditResult::Duplicate;
     }
     // PRACTISE_CAP is a storage bound: never evict to make room.
     if (practise_.full()) {
-        return ListResult::Full;
+        return EditResult::Full;
     }
     practise_.insert(i, PractiseEntry{.skill = skill, .kind = kind, .reserved = 0});
     assert(lists_valid());
-    return ListResult::Ok;
+    return EditResult::Ok;
 }
 
-ListResult Character::remove_skill(SkillKind kind, SkillId skill) noexcept {
+EditResult Character::remove_skill(SkillKind kind, SkillId skill) noexcept {
     if (!skill.valid() || !is_valid(kind)) {
-        return ListResult::Invalid;
+        return EditResult::Invalid;
     }
     const std::size_t i = lower_index(practise_, [&](const PractiseEntry& e) { return practise_less(e, kind, skill); });
     if (i == practise_.size() || practise_[i].kind != kind || practise_[i].skill != skill) {
-        return ListResult::NotFound;
+        return EditResult::NotFound;
     }
     practise_.erase(i);
     assert(lists_valid());
-    return ListResult::Ok;
+    return EditResult::Ok;
 }
 
 // ---- involvement ----------------------------------------------------------------
 
-ListResult Character::set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept {
+EditResult Character::set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept {
     if (!community.valid()) {
-        return ListResult::Invalid;
+        return EditResult::Invalid;
     }
     const std::size_t i =
         lower_index(involvement_, [&](const InvolvementEntry& e) { return e.community < community; });
@@ -131,12 +131,12 @@ ListResult Character::set_involvement_weight(CommunityId community, std::uint8_t
     } else if (present) {
         involvement_[i].weight = weight;
     } else if (involvement_.full()) {
-        return ListResult::Full;
+        return EditResult::Full;
     } else {
         involvement_.insert(i, InvolvementEntry{.community = community, .weight = weight, .padding = {}});
     }
     assert(lists_valid());
-    return ListResult::Ok;
+    return EditResult::Ok;
 }
 
 int Character::involvement_total() const noexcept {
@@ -172,33 +172,33 @@ std::optional<CommunityId> Character::main_community() const noexcept {
 
 // ---- sacred ---------------------------------------------------------------------
 
-ListResult Character::add_sacred(TargetId target, SacredSign sign) noexcept {
+EditResult Character::add_sacred(TargetId target, SacredSign sign) noexcept {
     if (!target.valid() || !is_valid(sign)) {
-        return ListResult::Invalid;
+        return EditResult::Invalid;
     }
     const std::size_t i = lower_index(sacred_, [&](const SacredEntry& e) { return e.target < target; });
     if (i < sacred_.size() && sacred_[i].target == target) {
-        return sacred_[i].sign == sign ? ListResult::Duplicate : ListResult::Conflict;
+        return sacred_[i].sign == sign ? EditResult::Duplicate : EditResult::Conflict;
     }
     if (sacred_.full()) {
-        return ListResult::Full;
+        return EditResult::Full;
     }
     sacred_.insert(i, SacredEntry{.target = target, .sign = sign, .padding = {}});
     assert(lists_valid());
-    return ListResult::Ok;
+    return EditResult::Ok;
 }
 
-ListResult Character::remove_sacred(TargetId target) noexcept {
+EditResult Character::remove_sacred(TargetId target) noexcept {
     if (!target.valid()) {
-        return ListResult::Invalid;
+        return EditResult::Invalid;
     }
     const std::size_t i = lower_index(sacred_, [&](const SacredEntry& e) { return e.target < target; });
     if (i == sacred_.size() || sacred_[i].target != target) {
-        return ListResult::NotFound;
+        return EditResult::NotFound;
     }
     sacred_.erase(i);
     assert(lists_valid());
-    return ListResult::Ok;
+    return EditResult::Ok;
 }
 
 std::optional<SacredSign> Character::sacred_sign(TargetId target) const noexcept {
