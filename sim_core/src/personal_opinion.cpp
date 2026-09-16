@@ -256,7 +256,10 @@ LongOpinionResult<TargetId> Character::add_long_opinion(CharacterKey /*key*/, Ta
 }
 
 std::size_t Character::trim_long_opinions(CharacterKey /*key*/) noexcept {
-    const std::size_t evicted = trim_to(long_people_, person_limit(*this)) + trim_to(long_targets_, TARGET_LIMIT);
+    // TARGET_LIMIT is fixed and every insert respects it, so only people lists can exceed
+    // their limit (after extraversion dropped).
+    assert(long_targets_.size() <= TARGET_LIMIT);
+    const std::size_t evicted = trim_to(long_people_, person_limit(*this));
     assert(lists_valid());
     return evicted;
 }

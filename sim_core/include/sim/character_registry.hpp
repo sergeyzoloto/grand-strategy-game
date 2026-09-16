@@ -107,8 +107,8 @@ public:
                                                                StrictIntegral auto delta) noexcept {
         return add_target_long(a, target, detail::clamp_integer(delta, -LONG_DELTA_MAX, LONG_DELTA_MAX));
     }
-    // One pass over all characters in id order: evicts the weakest long-term entries of
-    // lists above their limit (after extraversion dropped). Returns the number evicted.
+    // One pass over all characters in id order: evicts the weakest long-term people entries
+    // of lists above their limit (after extraversion dropped). Returns the number evicted.
     // Idempotent.
     [[nodiscard]] std::size_t maintain() noexcept;
 

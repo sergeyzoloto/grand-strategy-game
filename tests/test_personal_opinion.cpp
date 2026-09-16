@@ -199,6 +199,19 @@ TEST_CASE("modifiers: Full at MODIFIER_CAP leaves state unchanged; modifiers are
     CHECK(r.add_modifier(a, b, ModifierId{1}, 100) == EditResult::Ok);
 }
 
+TEST_CASE("modifiers: short is the raw sum of effects; only the opinion total clamps") {
+    StanceTable stances;
+    CharacterRegistry r = make_registry(2);
+    const CharacterId a{1}, b{2};
+    REQUIRE(r.add_modifier(a, b, ModifierId{1}, -100) == EditResult::Ok);
+    REQUIRE(r.add_modifier(a, b, ModifierId{2}, -50) == EditResult::Ok);
+    CHECK(short_opinion(*r.find(a), b) == -150);
+    const OpinionBreakdown o = opinion_breakdown(*r.find(a), *r.find(b), stances, CONFIG, WorldSeed{1});
+    CHECK(o.short_term == -150);
+    CHECK(o.weak.total > -50.0); // the -100 below comes from clamping, not from the weak opinion
+    CHECK(o.total == -100.0);
+}
+
 // ---- long-term opinions --------------------------------------------------------------------------
 
 TEST_CASE("long opinions: create, update, removal at 0, Unchanged, clamping") {
@@ -426,7 +439,7 @@ TEST_CASE("personal opinions: golden values (identical in Debug and Release)") {
     CHECK(reg.add_modifier(a, b, ModifierId{1}, 15) == EditResult::Ok);
     CHECK(reg.add_modifier(a, b, ModifierId{2}, -40) == EditResult::Ok);   // short -25
     CHECK(reg.add_modifier(a, topic7, ModifierId{1}, 10) == EditResult::Ok);
-    CHECK(reg.add_modifier(b, a, ModifierId{3}, -150) == EditResult::Ok);  // clamped to -100
+    CHECK(reg.add_modifier(b, a, ModifierId{3}, -150) == EditResult::Ok);  // effect clamped to -100 at add
     CHECK(reg.add_modifier(c, a, ModifierId{1}, 7) == EditResult::Ok);
     CHECK(reg.add_modifier(c, a, ModifierId{4}, 30) == EditResult::Ok);
     CHECK(reg.remove_modifier(c, a, ModifierId{4}) == EditResult::Ok);     // short +7
@@ -444,7 +457,7 @@ TEST_CASE("personal opinions: golden values (identical in Debug and Release)") {
     CHECK(o_ab.total == 0x1.c1d5915832794p+4);      // 28.114640564460913
     const OpinionBreakdown o_ba = opinion_breakdown(*reg.find(b), *reg.find(a), stances, CONFIG, seed);
     CHECK((o_ba.long_term == -40 && o_ba.short_term == -100));
-    CHECK(o_ba.total == -100.0);                    // weak 13.18... - 140, clamped
+    CHECK(o_ba.total == -100.0);                    // weak 13.18... - 140; only the total is clamped
     const OpinionBreakdown o_at = opinion_breakdown(*reg.find(a), topic7, stances, CONFIG, seed);
     CHECK(o_at.weak.total == 0x1.6e590eb3e1b3cp+5); // 45.793485074353583
     CHECK((o_at.long_term == 35 && o_at.short_term == 10));

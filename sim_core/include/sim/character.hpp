@@ -252,8 +252,9 @@ public:
     [[nodiscard]] LongOpinionResult<CharacterId> add_long_opinion(CharacterKey key, CharacterId target,
                                                                   int delta) noexcept;
     [[nodiscard]] LongOpinionResult<TargetId> add_long_opinion(CharacterKey key, TargetId target, int delta) noexcept;
-    // Registry only (CharacterKey). Evicts the weakest long-term entries until each list
-    // fits its limit; returns the number evicted. Idempotent.
+    // Registry only (CharacterKey). Evicts the weakest long-term people entries until the
+    // list fits person_limit; returns the number evicted. Idempotent. Target lists never
+    // exceed TARGET_LIMIT (asserted).
     [[nodiscard]] std::size_t trim_long_opinions(CharacterKey key) noexcept;
 
 private:

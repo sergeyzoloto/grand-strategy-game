@@ -167,8 +167,8 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   the already clamped weak opinion, so personal history can pull an opinion back from a saturated
   community stance. Nothing depends on time: no dates, no decay, no recalculation.
   - **Modifiers** are circumstances (an insult, a gift) with an effect fixed when added
-    (-100..+100, int8; 0 is allowed). short = sum of the active modifiers' effects on X, computed
-    on read, never stored. Ticks only add or remove modifiers. At most one per (domain, target,
+    (-100..+100, int8; 0 is allowed). short = raw sum of the active modifiers' effects on X (not
+    clamped; only the total is), computed on read, never stored. Ticks only add or remove modifiers. At most one per (domain, target,
     ModifierId): no stacking, a repeat is Duplicate. `ModifierDomain` keeps a CharacterId and a
     TargetId with the same number apart. `MODIFIER_CAP` = 32 is a storage bound: Full, never
     evicted. Adds and removes are symmetric, so code that added a circumstance can remove it.
@@ -176,7 +176,8 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     through `add_long_opinion` for now. Only these are limited (people: `person_limit` by
     extraversion; targets: `TARGET_LIMIT`). A new entry at the limit evicts the weakest |long|
     (ties to the smaller target) only if strictly stronger, else Dropped; one eviction per call
-    even above the limit; `maintain()` trims lists above their limit. Unchanged means nothing
+    even above the limit; `maintain()` trims people lists above their limit (target lists never
+    exceed the fixed `TARGET_LIMIT`; asserted). Unchanged means nothing
     was written (delta 0, or saturated); Dropped means only "at the limit and too weak".
     Modifiers count towards neither limits nor strength.
   - Short-to-long conversion is a later step; so are modifier durations or expiry.
