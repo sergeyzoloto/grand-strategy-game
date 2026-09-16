@@ -132,11 +132,6 @@ void for_each_bipolar(Visit&& visit) {
 
 // ---- layout and construction -------------------------------------------------
 
-TEST_CASE("sizeof(Character)") {
-    MESSAGE("sizeof(Character) = " << sizeof(Character) << ", alignof = " << alignof(Character));
-    CHECK(sizeof(Character) == 32);
-}
-
 TEST_CASE("construction stores identity fields") {
     const Character c = make_default();
     CHECK(c.id() == CharacterId{1});

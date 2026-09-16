@@ -1,13 +1,17 @@
 #pragma once
 
 #include <cassert>
-#include <concepts>
 #include <cstdint>
+#include <optional>
+#include <span>
 #include <type_traits>
 #include <utility>
 
+#include "sim/character_lists.hpp"
 #include "sim/date.hpp"
+#include "sim/fixed_vector.hpp"
 #include "sim/ids.hpp"
+#include "sim/integral.hpp"
 
 namespace sim {
 
@@ -19,42 +23,23 @@ inline constexpr int BIPOLAR_MAX = 100;
 inline constexpr float CONDITION_MIN = 0.0f;
 inline constexpr float CONDITION_MAX = 100.0f;
 
-// Accepted argument types for bipolar mutators: any integer width and signedness.
-// Floating point is rejected so fractional values never truncate silently; the
-// caller rounds explicitly. bool and character types are rejected as well
-// (std::cmp_less/std::cmp_greater do not accept them).
-template<class T>
-concept BipolarInteger = std::integral<T>
-                      && !std::same_as<T, bool>
-                      && !std::same_as<T, char>
-                      && !std::same_as<T, wchar_t>
-                      && !std::same_as<T, char8_t>
-                      && !std::same_as<T, char16_t>
-                      && !std::same_as<T, char32_t>;
-
 namespace detail {
 
 // Clamps any integer to -100..+100 using mixed-sign-safe comparisons.
-[[nodiscard]] constexpr std::int8_t clamp_bipolar(BipolarInteger auto v) noexcept {
-    if (std::cmp_less(v, BIPOLAR_MIN)) {
-        return static_cast<std::int8_t>(BIPOLAR_MIN);
-    }
-    if (std::cmp_greater(v, BIPOLAR_MAX)) {
-        return static_cast<std::int8_t>(BIPOLAR_MAX);
-    }
-    return static_cast<std::int8_t>(v);
+[[nodiscard]] constexpr std::int8_t clamp_bipolar(StrictIntegral auto v) noexcept {
+    return static_cast<std::int8_t>(clamp_integer(v, BIPOLAR_MIN, BIPOLAR_MAX));
 }
 
 } // namespace detail
 
 // Initial value of a bipolar field, used only in CharacterInit. Converts implicitly
-// from any BipolarInteger and clamps to -100..+100, so designated initializers
+// from any StrictIntegral and clamps to -100..+100, so designated initializers
 // cannot truncate a float or wrap a wide integer. Not persistent state. Fully
 // constexpr so CharacterInit{} stays usable in constant expressions.
 class BipolarInit {
 public:
     constexpr BipolarInit() noexcept = default;
-    constexpr BipolarInit(BipolarInteger auto v) noexcept : value_(detail::clamp_bipolar(v)) {}
+    constexpr BipolarInit(StrictIntegral auto v) noexcept : value_(detail::clamp_bipolar(v)) {}
 
     [[nodiscard]] constexpr int value() const noexcept { return value_; }
 
@@ -96,8 +81,12 @@ struct CharacterInit {
 // (asserted in debug). add_* rounds the delta to whole hundredths, so a delta below
 // 0.005 rounds away by design.
 //
-// Bipolar fields: int getters; set_* and add_* take any BipolarInteger and clamp
+// Bipolar fields: int getters; set_* and add_* take any StrictIntegral and clamp
 // to -100..+100 without overflow for every input value.
+//
+// Lists (nicknames, practise, involvement, sacred) start empty and are not part of
+// CharacterInit. Every mutator returns a [[nodiscard]] ListResult; reads return
+// spans of const entries.
 class Character {
 public:
     Character(CharacterId id, NameId name, Gender gender, Date birth, const CharacterInit& init) noexcept;
@@ -131,34 +120,97 @@ public:
     void add_stress(float delta) noexcept;
     void add_capacity(float delta) noexcept;
 
-    void set_strength(BipolarInteger auto v) noexcept { strength_ = detail::clamp_bipolar(v); }
-    void set_intelligence(BipolarInteger auto v) noexcept { intelligence_ = detail::clamp_bipolar(v); }
-    void set_stability(BipolarInteger auto v) noexcept { stability_ = detail::clamp_bipolar(v); }
-    void set_openness(BipolarInteger auto v) noexcept { openness_ = detail::clamp_bipolar(v); }
-    void set_extraversion(BipolarInteger auto v) noexcept { extraversion_ = detail::clamp_bipolar(v); }
-    void set_conscientiousness(BipolarInteger auto v) noexcept { conscientiousness_ = detail::clamp_bipolar(v); }
-    void set_agreeableness(BipolarInteger auto v) noexcept { agreeableness_ = detail::clamp_bipolar(v); }
-    void set_attractiveness(BipolarInteger auto v) noexcept { attractiveness_ = detail::clamp_bipolar(v); }
-    void set_height(BipolarInteger auto v) noexcept { height_ = detail::clamp_bipolar(v); }
-    void set_shape(BipolarInteger auto v) noexcept { shape_ = detail::clamp_bipolar(v); }
-    void set_charisma(BipolarInteger auto v) noexcept { charisma_ = detail::clamp_bipolar(v); }
+    void set_strength(StrictIntegral auto v) noexcept { strength_ = detail::clamp_bipolar(v); }
+    void set_intelligence(StrictIntegral auto v) noexcept { intelligence_ = detail::clamp_bipolar(v); }
+    void set_stability(StrictIntegral auto v) noexcept { stability_ = detail::clamp_bipolar(v); }
+    void set_openness(StrictIntegral auto v) noexcept { openness_ = detail::clamp_bipolar(v); }
+    void set_extraversion(StrictIntegral auto v) noexcept { extraversion_ = detail::clamp_bipolar(v); }
+    void set_conscientiousness(StrictIntegral auto v) noexcept { conscientiousness_ = detail::clamp_bipolar(v); }
+    void set_agreeableness(StrictIntegral auto v) noexcept { agreeableness_ = detail::clamp_bipolar(v); }
+    void set_attractiveness(StrictIntegral auto v) noexcept { attractiveness_ = detail::clamp_bipolar(v); }
+    void set_height(StrictIntegral auto v) noexcept { height_ = detail::clamp_bipolar(v); }
+    void set_shape(StrictIntegral auto v) noexcept { shape_ = detail::clamp_bipolar(v); }
+    void set_charisma(StrictIntegral auto v) noexcept { charisma_ = detail::clamp_bipolar(v); }
 
-    void add_strength(BipolarInteger auto d) noexcept { strength_ = add_bipolar(strength_, d); }
-    void add_intelligence(BipolarInteger auto d) noexcept { intelligence_ = add_bipolar(intelligence_, d); }
-    void add_stability(BipolarInteger auto d) noexcept { stability_ = add_bipolar(stability_, d); }
-    void add_openness(BipolarInteger auto d) noexcept { openness_ = add_bipolar(openness_, d); }
-    void add_extraversion(BipolarInteger auto d) noexcept { extraversion_ = add_bipolar(extraversion_, d); }
-    void add_conscientiousness(BipolarInteger auto d) noexcept { conscientiousness_ = add_bipolar(conscientiousness_, d); }
-    void add_agreeableness(BipolarInteger auto d) noexcept { agreeableness_ = add_bipolar(agreeableness_, d); }
-    void add_attractiveness(BipolarInteger auto d) noexcept { attractiveness_ = add_bipolar(attractiveness_, d); }
-    void add_height(BipolarInteger auto d) noexcept { height_ = add_bipolar(height_, d); }
-    void add_shape(BipolarInteger auto d) noexcept { shape_ = add_bipolar(shape_, d); }
-    void add_charisma(BipolarInteger auto d) noexcept { charisma_ = add_bipolar(charisma_, d); }
+    void add_strength(StrictIntegral auto d) noexcept { strength_ = add_bipolar(strength_, d); }
+    void add_intelligence(StrictIntegral auto d) noexcept { intelligence_ = add_bipolar(intelligence_, d); }
+    void add_stability(StrictIntegral auto d) noexcept { stability_ = add_bipolar(stability_, d); }
+    void add_openness(StrictIntegral auto d) noexcept { openness_ = add_bipolar(openness_, d); }
+    void add_extraversion(StrictIntegral auto d) noexcept { extraversion_ = add_bipolar(extraversion_, d); }
+    void add_conscientiousness(StrictIntegral auto d) noexcept { conscientiousness_ = add_bipolar(conscientiousness_, d); }
+    void add_agreeableness(StrictIntegral auto d) noexcept { agreeableness_ = add_bipolar(agreeableness_, d); }
+    void add_attractiveness(StrictIntegral auto d) noexcept { attractiveness_ = add_bipolar(attractiveness_, d); }
+    void add_height(StrictIntegral auto d) noexcept { height_ = add_bipolar(height_, d); }
+    void add_shape(StrictIntegral auto d) noexcept { shape_ = add_bipolar(shape_, d); }
+    void add_charisma(StrictIntegral auto d) noexcept { charisma_ = add_bipolar(charisma_, d); }
+
+    // ---- nicknames: insertion order, no duplicates ----
+
+    // The span is valid only until the next mutation of this Character, or until
+    // the Character is copied, moved or destroyed.
+    [[nodiscard]] std::span<const NameId> nicknames() const noexcept {
+        return {nicknames_.data(), nicknames_.size()};
+    }
+    // Ok, Invalid, Duplicate or Full. Appends.
+    [[nodiscard]] ListResult add_nickname(NameId name) noexcept;
+    // Ok, Invalid or NotFound. Keeps the order of the remaining nicknames.
+    [[nodiscard]] ListResult remove_nickname(NameId name) noexcept;
+
+    // ---- practise: skills as capabilities, sorted by (kind, id), never evicted ----
+
+    // The span is valid only until the next mutation of this Character, or until
+    // the Character is copied, moved or destroyed.
+    [[nodiscard]] std::span<const PractiseEntry> practise() const noexcept {
+        return {practise_.data(), practise_.size()};
+    }
+    [[nodiscard]] bool has_skill(SkillKind kind, SkillId skill) const noexcept;
+    // Ok, Invalid, Duplicate or Full.
+    [[nodiscard]] ListResult add_skill(SkillKind kind, SkillId skill) noexcept;
+    // Ok, Invalid or NotFound.
+    [[nodiscard]] ListResult remove_skill(SkillKind kind, SkillId skill) noexcept;
+
+    // ---- involvement: weighted communities, sorted by community id ----
+
+    // The span is valid only until the next mutation of this Character, or until
+    // the Character is copied, moved or destroyed.
+    [[nodiscard]] std::span<const InvolvementEntry> involvement() const noexcept {
+        return {involvement_.data(), involvement_.size()};
+    }
+    // Whole-number weight clamped to 0..255; 0 removes (Ok also when absent).
+    // Ok, Invalid or Full.
+    [[nodiscard]] ListResult set_involvement(CommunityId community, StrictIntegral auto weight) noexcept {
+        return set_involvement_weight(
+            community, static_cast<std::uint8_t>(detail::clamp_integer(weight, 0, INVOLVEMENT_WEIGHT_MAX)));
+    }
+    // Exact sum of raw weights, 0..8 * 255. Use for weighted sums; divide once.
+    [[nodiscard]] int involvement_total() const noexcept;
+    // weight / total computed in double, 0 if absent. Never adjusted to force an
+    // exact sum, so equal weights give equal shares.
+    [[nodiscard]] float involvement_share(CommunityId community) const noexcept;
+    // Largest weight, ties to the smaller id; empty when there is no involvement.
+    [[nodiscard]] std::optional<CommunityId> main_community() const noexcept;
+
+    // ---- sacred: signed targets, sorted by target ----
+
+    // The span is valid only until the next mutation of this Character, or until
+    // the Character is copied, moved or destroyed.
+    [[nodiscard]] std::span<const SacredEntry> sacred() const noexcept {
+        return {sacred_.data(), sacred_.size()};
+    }
+    // Ok, Invalid, Duplicate (same sign), Conflict (opposite sign) or Full.
+    // Flipping a sign takes an explicit remove_sacred first.
+    [[nodiscard]] ListResult add_sacred(TargetId target, SacredSign sign) noexcept;
+    // Ok, Invalid or NotFound.
+    [[nodiscard]] ListResult remove_sacred(TargetId target) noexcept;
+    [[nodiscard]] std::optional<SacredSign> sacred_sign(TargetId target) const noexcept;
 
 private:
+    [[nodiscard]] ListResult set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept;
+    [[nodiscard]] bool lists_valid() const noexcept; // debug invariant check
+
     // Adds a delta and clamps. The delta is first clamped to [-200, 200], which
     // already spans the whole scale, so the int sum cannot overflow.
-    [[nodiscard]] static constexpr std::int8_t add_bipolar(std::int8_t current, BipolarInteger auto delta) noexcept {
+    [[nodiscard]] static constexpr std::int8_t add_bipolar(std::int8_t current, StrictIntegral auto delta) noexcept {
         assert(current >= BIPOLAR_MIN && current <= BIPOLAR_MAX);
         const int span = BIPOLAR_MAX - BIPOLAR_MIN;
         int d = 0;
@@ -172,7 +224,7 @@ private:
         return detail::clamp_bipolar(static_cast<int>(current) + d);
     }
 
-    // Field order is by alignment (4, 2, 1 bytes) for density; 2 bytes tail padding.
+    // Core field order is by alignment (4, 2, 1 bytes) for density; offsets 0..29 are fixed.
     CharacterId id_;             // u32 handle, 0 = invalid
     NameId name_;                // u32 handle, 0 = invalid
     Date birth_;                 // i32 weeks since world start, may be negative
@@ -198,6 +250,13 @@ private:
     std::int8_t height_ = 0;            // -100..+100 units, stored directly
     std::int8_t shape_ = 0;             // -100..+100 units, stored directly
     std::int8_t charisma_ = 0;          // -100..+100 units, stored directly
+
+    // Lists. The 30-byte core above keeps its offsets; practise (align 2) takes the
+    // former tail padding at offset 30, then the align-4 lists follow.
+    FixedVector<PractiseEntry, PRACTISE_CAP> practise_;          // skills, sorted by (kind, id), 258 bytes
+    FixedVector<NameId, NICKNAME_CAP> nicknames_;                // insertion order, unique, 20 bytes
+    FixedVector<InvolvementEntry, INVOLVEMENT_CAP> involvement_; // sorted by community, weight 1..255, 68 bytes
+    FixedVector<SacredEntry, SACRED_CAP> sacred_;                // sorted by target, unique targets, 68 bytes
 };
 
 static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f && CharacterInit{}.capacity == 100.0f,
@@ -205,6 +264,6 @@ static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f
 static_assert(CharacterInit{}.strength.value() == 0);
 static_assert(std::is_trivially_copyable_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
-static_assert(sizeof(Character) == 32, "Character layout changed; update the plan and field comments");
+static_assert(sizeof(Character) == 444, "Character layout changed; update the plan and field comments");
 
 } // namespace sim

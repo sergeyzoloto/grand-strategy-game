@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cassert>
 #include <cmath>
+#include <cstddef>
 #include <cstdint>
 
 namespace sim {
@@ -55,6 +56,15 @@ void add_hundredths(std::uint16_t& raw, float delta) noexcept {
 
 Character::Character(CharacterId id, NameId name, Gender gender, Date birth, const CharacterInit& init) noexcept
     : id_(id), name_(name), birth_(birth), gender_(gender) {
+    // Layout: the 30-byte core keeps its Step 1 offsets; lists follow.
+    static_assert(offsetof(Character, id_) == 0 && offsetof(Character, name_) == 4 && offsetof(Character, birth_) == 8);
+    static_assert(offsetof(Character, health_) == 12 && offsetof(Character, stress_) == 14
+                  && offsetof(Character, capacity_) == 16);
+    static_assert(offsetof(Character, gender_) == 18 && offsetof(Character, strength_) == 19
+                  && offsetof(Character, charisma_) == 29);
+    static_assert(offsetof(Character, practise_) == 30 && offsetof(Character, nicknames_) == 288
+                  && offsetof(Character, involvement_) == 308 && offsetof(Character, sacred_) == 376);
+
     // The registry (a later step) is the only creator; an invalid id is a programmer error.
     assert(id.valid());
     set_health(init.health);

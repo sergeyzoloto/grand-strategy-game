@@ -1,5 +1,6 @@
 add_library(sim_core STATIC
     src/character.cpp
+    src/character_lists.cpp
     src/mortality.cpp
 )
 

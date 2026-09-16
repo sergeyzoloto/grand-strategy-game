@@ -45,7 +45,8 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Every bipolar trait scale in the model uses integers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX`),
   stored directly with raw == value, including scales added in later steps (reputation, opinions).
 - Fractional values reach bipolar scales only through explicit rounding by the caller. Bipolar
-  `set_`/`add_` accept integral types only (`BipolarInteger`: no floats, bool or character types);
+  `set_`/`add_` accept integral types only (`StrictIntegral` in `sim/integral.hpp`: no floats, bool
+  or character types; also used for other whole-number inputs such as involvement weights);
   a float argument matches no function and is a hard error regardless of warning flags.
   Init structs hold bipolar fields as `BipolarInit` (same concept, clamps on conversion), so
   designated initializers cannot truncate a float or wrap a wide integer either. Never close
@@ -74,7 +75,29 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   now, revisit (fixed-point) if lockstep multiplayer or replays are needed.
 - `Character` has no default constructor. Only the registry (Step 3) creates characters; an
   invalid `CharacterId` is a programmer error (debug assert).
-- `Character` layout is pinned by `static_assert(sizeof(Character) == 32)`.
+- `Character` layout is pinned by `static_assert(sizeof(Character) == 444)` and by `offsetof`
+  static_asserts in the constructor. The 30-byte core (id, name, birth, conditions, gender,
+  traits) keeps offsets 0..29; practise (the only align-2 list) sits at 30, then nicknames (288),
+  involvement (308) and sacred (376). Don't reorder without flagging it.
+- **Per-character lists** (`sim/character_lists.hpp`) are `FixedVector`s inside Character; the
+  public API never exposes `FixedVector`. Reads return `std::span<const Entry>`, valid only until
+  the next mutation of that Character or until it is copied, moved or destroyed (Step 3 stores
+  characters in a container). Every mutator returns a `[[nodiscard]] ListResult`. Check order:
+  `Invalid` (invalid id or enum value) first, then `Duplicate`/`Conflict`/`NotFound` against
+  existing entries, then `Full`. A set to 0 on an absent entry is `Ok` with no change; a remove of
+  an absent entry is `NotFound`. List caps are storage bounds, not gameplay rules: never evict to
+  make room. Entry structs have no implicit padding (explicit zeroed bytes, pinned with
+  `std::has_unique_object_representations_v`), and FixedVector value-initializes freed slots.
+- **Skills are capabilities**: a character has one or doesn't; `PractiseEntry` has no value (its
+  reserved byte may hold a mastery level later). Capabilities granted by membership in a structure
+  are derived from the character's communities and never stored on Character.
+- **Involvement shares** are `weight / total` computed in double and never adjusted to force an
+  exact sum, so equal weights give equal shares. For weighted sums use raw weights and
+  `involvement_total()` and divide once. A share is not a scale: the -100..+100 and 0..100 rules
+  don't apply to it.
+- **TargetId** packs 2 bits of kind and 30 bits of index into u32; valid iff index != 0, built only
+  via `TargetId::from`, which rejects invalid ids and indices >= 2^30. `TargetKind` is
+  append-only: Community = 0, Topic = 1, 2 reserved for persons, 3 free.
 - Adding a `Gender` value: append (never renumber) and handle it in every `switch`
   (no `default:`, so `-Wswitch` flags omissions, e.g. in `mortality.cpp`).
 
@@ -84,7 +107,9 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Functions and variables: `snake_case` (`age_years`, `add_health`).
 - Constants: `UPPER_CASE` (`WEEKS_PER_YEAR`).
 - Private data members: `snake_case_` with trailing underscore.
-- New id type: one `using XId = Id<struct XIdTag>;` line in `sim/ids.hpp`.
+- New id type: one `using XId = Id<struct XIdTag>;` line in `sim/ids.hpp` (u16 ids:
+  `Id<struct XIdTag, std::uint16_t>`; Rep must be an unsigned `StrictIntegral`).
+- New enums that are persisted are append-only and validated with a `switch` without `default`.
 - Headers in `sim_core/include/sim/`, included as `"sim/foo.hpp"`; sources in `sim_core/src/`.
 - Tests in `tests/test_<area>.cpp`, doctest, one file per area.
 - Comments in English. Placeholder coefficients and defaults are marked `PLACEHOLDER`.
