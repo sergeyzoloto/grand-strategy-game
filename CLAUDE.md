@@ -55,9 +55,13 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   100; infinities saturate; NaN leaves the field unchanged (asserted in debug). Values are
   clamped before any float-to-integer conversion. `add_` rounds the *delta* to whole steps, then
   adds in a wide integer: the same delta always adds the same steps and add(d), add(-d) restores
-  raw unless saturated. A delta below 0.005 rounds away by design. Non-constant int arguments may
+  raw unless saturated. A delta below 0.005 rounds away by design. Fields start at the
+  `CharacterInit` defaults, so a NaN init value in release still yields a defined value. Non-constant int arguments may
   need an explicit cast under `-Wconversion`. The hundredths helper is private to `character.cpp`;
   extract a shared one when a later step needs hundredths again.
+- **Release-only NaN branches:** NaN input is asserted in debug, so the release fallback (field
+  unchanged) is tested only by the `#ifdef NDEBUG` tests in the release build; the debug/ASan
+  run skips them. Run both builds' tests before committing.
 - **Bipolar scales are whole numbers**, so they never round silently. `set_` clamps any integer
   to -100..+100 with `std::cmp_less`/`std::cmp_greater`; `add_` clamps the delta to [-200, 200]
   first, so no integer width or signedness can overflow. -128 is never stored.

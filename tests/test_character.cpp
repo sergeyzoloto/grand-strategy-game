@@ -258,7 +258,16 @@ TEST_CASE("resolution rule: add_health(0.004) is a no-op, add_health(0.006) is o
 }
 
 #ifdef NDEBUG
-// NaN is asserted in debug builds, so this runs in release only.
+// NaN is asserted in debug builds, so these run in the release test build only.
+TEST_CASE("condition NaN in CharacterInit leaves the default value") {
+    const float nan = std::numeric_limits<float>::quiet_NaN();
+    const Character c(CharacterId{9}, NameId{9}, Gender::Female, Date{0},
+                      CharacterInit{.health = nan, .stress = nan, .capacity = nan});
+    CHECK(c.health() == 100.0f);
+    CHECK(c.stress() == 0.0f);
+    CHECK(c.capacity() == 100.0f);
+}
+
 TEST_CASE("condition NaN leaves the field unchanged") {
     Character c = make_default();
     const float nan = std::numeric_limits<float>::quiet_NaN();
@@ -384,5 +393,19 @@ TEST_CASE("bipolar add_ with extreme deltas saturates without overflow") {
             add(c, std::numeric_limits<unsigned>::max());
             CHECK(get(c) == 100);
         }
+    });
+}
+
+TEST_CASE("bipolar add_ applies deltas beyond +-100 in full") {
+    // The delta clamp is +-200, the full span of the scale, not +-100.
+    for_each_bipolar([](const char* name, auto get, auto set, auto add) {
+        CAPTURE(name);
+        Character c = make_default();
+        set(c, -100);
+        add(c, 150);
+        CHECK(get(c) == 50);
+        set(c, 100);
+        add(c, -150);
+        CHECK(get(c) == -50);
     });
 }

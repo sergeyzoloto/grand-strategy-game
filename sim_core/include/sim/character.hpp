@@ -39,7 +39,7 @@ enum class Gender : std::uint8_t {
 };
 
 // Initial values for a new Character. Condition fields are 0..100: out-of-range
-// values saturate, NaN leaves the field at raw 0 (asserted in debug). Bipolar
+// values saturate, NaN leaves the field at its default (asserted in debug). Bipolar
 // fields are whole numbers clamped to -100..+100.
 struct CharacterInit {
     float health = 100.0f;          // PLACEHOLDER default, 0..100
@@ -158,9 +158,11 @@ private:
     NameId name_;                // u32 handle, 0 = invalid
     Date birth_;                 // i32 weeks since world start, may be negative
 
-    std::uint16_t health_ = 0;   // 0..100 in hundredths: raw 0..10000, value = raw / 100
-    std::uint16_t stress_ = 0;   // 0..100 in hundredths: raw 0..10000, value = raw / 100
-    std::uint16_t capacity_ = 0; // 0..100 in hundredths: raw 0..10000, value = raw / 100
+    // Starting values match the CharacterInit defaults, so a NaN init value (which
+    // leaves the field unchanged in release) still yields a defined default.
+    std::uint16_t health_ = 10000;   // 0..100 in hundredths: raw 0..10000, value = raw / 100
+    std::uint16_t stress_ = 0;       // 0..100 in hundredths: raw 0..10000, value = raw / 100
+    std::uint16_t capacity_ = 10000; // 0..100 in hundredths: raw 0..10000, value = raw / 100
 
     Gender gender_;              // u8 enum
 
@@ -179,6 +181,8 @@ private:
     std::int8_t charisma_ = 0;          // -100..+100 units, stored directly
 };
 
+static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f && CharacterInit{}.capacity == 100.0f,
+              "CharacterInit condition defaults changed; update Character's starting raw values");
 static_assert(std::is_trivially_copyable_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
 static_assert(sizeof(Character) == 32, "Character layout changed; update the plan and field comments");

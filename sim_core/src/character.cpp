@@ -17,22 +17,22 @@ float get_hundredths(std::uint16_t raw) noexcept {
     return static_cast<float>(static_cast<double>(raw) / HUNDREDTHS_PER_UNIT);
 }
 
+// Clamps to [lo, hi] and rounds to the nearest integer. Requires a non-NaN input.
+// Clamping comes first: an out-of-range float-to-integer conversion is UB.
+// std::round is half-away-from-zero regardless of the floating-point rounding mode.
+std::int64_t clamp_round(double scaled, std::int64_t lo, std::int64_t hi) noexcept {
+    assert(!std::isnan(scaled));
+    const double clamped = std::clamp(scaled, static_cast<double>(lo), static_cast<double>(hi));
+    return static_cast<std::int64_t>(std::round(clamped));
+}
+
 void set_hundredths(std::uint16_t& raw, float value) noexcept {
     assert(!std::isnan(value));
     if (std::isnan(value)) {
         return;
     }
-    // Saturate before converting: an out-of-range float-to-integer conversion is UB.
     const double scaled = static_cast<double>(value) * HUNDREDTHS_PER_UNIT;
-    if (scaled >= static_cast<double>(HUNDREDTHS_MAX)) {
-        raw = static_cast<std::uint16_t>(HUNDREDTHS_MAX);
-    } else if (scaled <= 0.0) {
-        raw = 0;
-    } else {
-        // std::round is half-away-from-zero regardless of the floating-point rounding mode.
-        raw = static_cast<std::uint16_t>(std::round(scaled));
-    }
-    assert(raw <= HUNDREDTHS_MAX);
+    raw = static_cast<std::uint16_t>(clamp_round(scaled, 0, HUNDREDTHS_MAX));
 }
 
 // Rounds the delta to whole steps, then adds. Rounding the delta rather than the sum
@@ -45,11 +45,8 @@ void add_hundredths(std::uint16_t& raw, float delta) noexcept {
     if (std::isnan(delta)) {
         return;
     }
-    // Clamp before converting: an out-of-range float-to-integer conversion is UB.
-    const double limit = static_cast<double>(HUNDREDTHS_MAX);
-    const double scaled = std::clamp(static_cast<double>(delta) * HUNDREDTHS_PER_UNIT, -limit, limit);
-    // std::round is half-away-from-zero regardless of the floating-point rounding mode.
-    const auto steps = static_cast<std::int64_t>(std::round(scaled));
+    const double scaled = static_cast<double>(delta) * HUNDREDTHS_PER_UNIT;
+    const std::int64_t steps = clamp_round(scaled, -HUNDREDTHS_MAX, HUNDREDTHS_MAX);
     const std::int64_t sum = static_cast<std::int64_t>(raw) + steps;
     raw = static_cast<std::uint16_t>(std::clamp<std::int64_t>(sum, 0, HUNDREDTHS_MAX));
 }
