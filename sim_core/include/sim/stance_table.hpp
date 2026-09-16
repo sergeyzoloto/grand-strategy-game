@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <optional>
+#include <span>
 #include <type_traits>
 #include <vector>
 
@@ -16,6 +17,9 @@ namespace sim {
 
 // A community plus at most 5 ancestors.
 inline constexpr std::size_t MAX_COMMUNITY_DEPTH = 6;
+
+// At most this many source chains per batched stance query (a character's involvement).
+inline constexpr std::size_t STANCE_BATCH_MAX_SOURCES = 8;
 
 // A community followed by its ancestors, nearest first.
 using CommunityChain = FixedVector<CommunityId, MAX_COMMUNITY_DEPTH>;
@@ -74,6 +78,12 @@ public:
     [[nodiscard]] int stance(CommunityId from, TargetId to) const noexcept;
     // Same resolution over prebuilt chains, so a caller can build each chain once.
     [[nodiscard]] int stance(const CommunityChain& from, const TargetChain& to) const noexcept;
+    // Resolves every (source, target) pair in one call: out[i * targets.size() + j] is
+    // stance(sources[i], targets[j]). Each distinct source community's block of entries
+    // is found once inside the call; positions are never stored or returned.
+    // Requires sources.size() <= STANCE_BATCH_MAX_SOURCES and a large enough `out`.
+    void stances(std::span<const CommunityChain> sources, std::span<const TargetChain> targets,
+                 std::span<int> out) const noexcept;
 
     // Empty for an invalid id.
     [[nodiscard]] CommunityChain chain(CommunityId community) const noexcept;

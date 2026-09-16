@@ -1,6 +1,8 @@
 #include "sim/stance_table.hpp"
 
 #include <algorithm>
+#include <array>
+#include <cstdint>
 #include <cassert>
 #include <cstddef>
 #include <tuple>
@@ -153,25 +155,72 @@ TargetChain StanceTable::target_chain(TargetId target) const noexcept {
     return result;
 }
 
-int StanceTable::stance(const CommunityChain& from, const TargetChain& to) const noexcept {
-    for (const CommunityId s : from) {
-        // All entries from s form one contiguous range.
-        const auto lo = std::lower_bound(stances_.begin(), stances_.end(), s,
-                                         [](const StanceEntry& e, CommunityId id) { return e.from < id; });
-        if (lo == stances_.end() || lo->from != s) {
-            continue;
-        }
-        const auto hi = std::upper_bound(lo, stances_.end(), s,
-                                         [](CommunityId id, const StanceEntry& e) { return id < e.from; });
-        for (const TargetId u : to) {
-            const auto it = std::lower_bound(lo, hi, u,
-                                             [](const StanceEntry& e, TargetId t) { return e.to.raw() < t.raw(); });
-            if (it != hi && it->to == u) {
-                return it->value;
+void StanceTable::stances(std::span<const CommunityChain> sources, std::span<const TargetChain> targets,
+                          std::span<int> out) const noexcept {
+    assert(sources.size() <= STANCE_BATCH_MAX_SOURCES);
+    assert(out.size() >= sources.size() * targets.size());
+    if (sources.size() > STANCE_BATCH_MAX_SOURCES || out.size() < sources.size() * targets.size()) {
+        return;
+    }
+
+    // Blocks of entries for the distinct source communities, found once in this call.
+    struct Block {
+        CommunityId community;
+        const StanceEntry* begin;
+        const StanceEntry* end; // equal to begin for a community without entries
+    };
+    std::array<Block, STANCE_BATCH_MAX_SOURCES * MAX_COMMUNITY_DEPTH> blocks{};
+    std::size_t block_count = 0;
+    // Per source chain: indices of its non-empty blocks, nearest community first.
+    std::array<std::array<std::uint8_t, MAX_COMMUNITY_DEPTH>, STANCE_BATCH_MAX_SOURCES> chain_blocks{};
+    std::array<std::size_t, STANCE_BATCH_MAX_SOURCES> chain_block_count{};
+
+    const StanceEntry* const first = stances_.data();
+    const StanceEntry* const last = first + stances_.size();
+    for (std::size_t i = 0; i < sources.size(); ++i) {
+        for (const CommunityId s : sources[i]) {
+            std::size_t index = 0;
+            while (index < block_count && blocks[index].community != s) {
+                ++index;
+            }
+            if (index == block_count) {
+                const StanceEntry* lo = std::lower_bound(first, last, s,
+                                                         [](const StanceEntry& e, CommunityId id) { return e.from < id; });
+                const StanceEntry* hi = std::upper_bound(lo, last, s,
+                                                         [](CommunityId id, const StanceEntry& e) { return id < e.from; });
+                blocks[block_count++] = Block{s, lo, hi};
+            }
+            if (blocks[index].begin != blocks[index].end) { // skip empty blocks
+                chain_blocks[i][chain_block_count[i]++] = static_cast<std::uint8_t>(index);
             }
         }
     }
-    return 0;
+
+    for (std::size_t i = 0; i < sources.size(); ++i) {
+        for (std::size_t j = 0; j < targets.size(); ++j) {
+            int value = 0;
+            bool found = false;
+            for (std::size_t b = 0; b < chain_block_count[i] && !found; ++b) {
+                const Block& block = blocks[chain_blocks[i][b]];
+                for (const TargetId u : targets[j]) {
+                    const StanceEntry* it = std::lower_bound(block.begin, block.end, u,
+                                                             [](const StanceEntry& e, TargetId t) { return e.to.raw() < t.raw(); });
+                    if (it != block.end && it->to == u) {
+                        value = it->value;
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            out[i * targets.size() + j] = value;
+        }
+    }
+}
+
+int StanceTable::stance(const CommunityChain& from, const TargetChain& to) const noexcept {
+    int value = 0;
+    stances(std::span(&from, 1), std::span(&to, 1), std::span(&value, 1));
+    return value;
 }
 
 int StanceTable::stance(CommunityId from, TargetId to) const noexcept {

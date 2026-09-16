@@ -1,10 +1,15 @@
 #include "sim/opinion.hpp"
 
 #include <algorithm>
+#include <array>
+#include <span>
 #include <cassert>
 #include <cstdint>
 
 namespace sim {
+
+// A character's involvement always fits one batched stance query.
+static_assert(INVOLVEMENT_CAP <= STANCE_BATCH_MAX_SOURCES);
 
 namespace {
 
@@ -76,13 +81,16 @@ WeakOpinionBreakdown weak_opinion_breakdown(const Character& a, const Character&
             const std::optional<TargetId> target = TargetId::from(e.community);
             targets.push_back(target ? stances.target_chain(*target) : TargetChain{});
         }
+        std::array<int, INVOLVEMENT_CAP * INVOLVEMENT_CAP> values{};
+        stances.stances(std::span(sources.data(), sources.size()), std::span(targets.data(), targets.size()),
+                        values);
         // Exact integer accumulation on raw weights; divide once.
         std::int64_t sum = 0;
         for (std::size_t i = 0; i < sources.size(); ++i) {
             const std::int64_t wa = a.involvement()[i].weight;
             for (std::size_t j = 0; j < targets.size(); ++j) {
                 const std::int64_t wb = b.involvement()[j].weight;
-                sum += wa * wb * stances.stance(sources[i], targets[j]);
+                sum += wa * wb * values[i * targets.size() + j];
             }
         }
         result.community = static_cast<double>(sum) / (static_cast<double>(total_a) * static_cast<double>(total_b));
@@ -107,10 +115,16 @@ WeakOpinionBreakdown weak_opinion_breakdown(const Character& a, TargetId target,
     WeakOpinionBreakdown result;
     const int total_a = a.involvement_total();
     if (total_a > 0) {
-        const TargetChain target_chain = stances.target_chain(target);
-        std::int64_t sum = 0;
+        FixedVector<CommunityChain, INVOLVEMENT_CAP> sources;
         for (const InvolvementEntry& e : a.involvement()) {
-            sum += static_cast<std::int64_t>(e.weight) * stances.stance(stances.chain(e.community), target_chain);
+            sources.push_back(stances.chain(e.community));
+        }
+        const TargetChain target_chain = stances.target_chain(target);
+        std::array<int, INVOLVEMENT_CAP> values{};
+        stances.stances(std::span(sources.data(), sources.size()), std::span(&target_chain, 1), values);
+        std::int64_t sum = 0;
+        for (std::size_t i = 0; i < sources.size(); ++i) {
+            sum += static_cast<std::int64_t>(a.involvement()[i].weight) * values[i];
         }
         result.community = static_cast<double>(sum) / static_cast<double>(total_a);
     }
