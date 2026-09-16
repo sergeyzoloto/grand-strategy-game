@@ -41,17 +41,21 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - The build has zero warnings and all tests pass at the end of every step.
 - No SoA, SIMD, pools or hot/cold splitting unless profiling asks for it.
 - Commit once at the end of each step, after the tests pass and the report is written.
+- Every bipolar scale in the model uses whole numbers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX`),
+  stored directly with raw == value, including scales added in later steps (reputation, opinions).
+- Fractional values reach bipolar scales only through explicit rounding by the caller. Bipolar
+  `set_`/`add_` accept integral types only (`BipolarInteger`: no floats, bool or character types);
+  a float argument matches no function and is a hard error regardless of warning flags.
 
 ## Design rules established so far
 
-- **Quantization** (`sim/quantize.hpp`): signed -R..+R stores raw in [-MAX, +MAX], never the
-  type minimum; unit 0..1 stores raw / MAX. Writes round to nearest (halves away from zero)
-  and saturate; infinities saturate; NaN leaves the field unchanged (asserted in debug).
-  Bounds are checked before any float-to-int conversion.
-- **Resolution rule:** int8 fields (step 1/127) are for rare, meaningful changes of at least one
-  step; an add smaller than half a step is a no-op by design. If a trait needs slow weekly
-  drift, widen that field to int16. No random rounding. The small rounding bias from repeated
-  adds on uint16 fields is accepted.
+- **Quantization** (`sim/quantize.hpp`) is only for the 0..1 range: unsigned raw / MAX. Writes
+  round to nearest and saturate; infinities saturate; NaN leaves the field unchanged (asserted
+  in debug). Bounds are checked before any float-to-int conversion. The small rounding bias
+  from repeated small adds on uint16 fields is accepted.
+- **Bipolar scales are whole numbers**, so they never round silently. `set_` clamps any integer
+  to -100..+100 with `std::cmp_less`/`std::cmp_greater`; `add_` clamps the delta to [-200, 200]
+  first, so no integer width or signedness can overflow. -128 is never stored.
 - **Derived values** (age, mortality) are free functions and never stored.
 - **Floating point** in getters and derived math is not bit-identical across platforms; fine for
   now, revisit (fixed-point) if lockstep multiplayer or replays are needed.

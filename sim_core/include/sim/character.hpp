@@ -1,12 +1,32 @@
 #pragma once
 
+#include <cassert>
+#include <concepts>
 #include <cstdint>
 #include <type_traits>
+#include <utility>
 
 #include "sim/date.hpp"
 #include "sim/ids.hpp"
 
 namespace sim {
+
+// Every bipolar scale in the model is a whole number in -100..+100.
+inline constexpr int BIPOLAR_MIN = -100;
+inline constexpr int BIPOLAR_MAX = 100;
+
+// Accepted argument types for bipolar mutators: any integer width and signedness.
+// Floating point is rejected so fractional values never truncate silently; the
+// caller rounds explicitly. bool and character types are rejected as well
+// (std::cmp_less/std::cmp_greater do not accept them).
+template<class T>
+concept BipolarInteger = std::integral<T>
+                      && !std::same_as<T, bool>
+                      && !std::same_as<T, char>
+                      && !std::same_as<T, wchar_t>
+                      && !std::same_as<T, char8_t>
+                      && !std::same_as<T, char16_t>
+                      && !std::same_as<T, char32_t>;
 
 // Extensible: append new values; never renumber existing ones (they are persisted).
 enum class Gender : std::uint8_t {
@@ -14,32 +34,34 @@ enum class Gender : std::uint8_t {
     Male = 1,
 };
 
-// Initial values for the quantized fields of a new Character, in value space.
-// Out-of-range values saturate; NaN leaves the field at raw 0 (asserted in debug).
+// Initial values for a new Character. 0..1 fields are in value space: out-of-range
+// values saturate, NaN leaves the field at raw 0 (asserted in debug). Bipolar
+// fields are whole numbers clamped to -100..+100.
 struct CharacterInit {
     float health = 1.0f;            // PLACEHOLDER default, 0..1
     float stress = 0.0f;            // PLACEHOLDER default, 0..1
     float capacity = 1.0f;          // PLACEHOLDER default, 0..1
-    float strength = 0.0f;          // PLACEHOLDER default, -1..+1
-    float intelligence = 0.0f;      // PLACEHOLDER default, -1..+1
-    float stability = 0.0f;         // PLACEHOLDER default, -1..+1
-    float openness = 0.0f;          // PLACEHOLDER default, -1..+1
-    float extraversion = 0.0f;      // PLACEHOLDER default, -1..+1
-    float conscientiousness = 0.0f; // PLACEHOLDER default, -1..+1
-    float agreeableness = 0.0f;     // PLACEHOLDER default, -1..+1
-    float attractiveness = 0.0f;    // PLACEHOLDER default, -1..+1
-    float height = 0.0f;            // PLACEHOLDER default, -1..+1
-    float shape = 0.0f;             // PLACEHOLDER default, -1..+1
-    float charisma = 0.0f;          // PLACEHOLDER default, -1..+1
+    int strength = 0;               // PLACEHOLDER default, -100..+100
+    int intelligence = 0;           // PLACEHOLDER default, -100..+100
+    int stability = 0;              // PLACEHOLDER default, -100..+100
+    int openness = 0;               // PLACEHOLDER default, -100..+100
+    int extraversion = 0;           // PLACEHOLDER default, -100..+100
+    int conscientiousness = 0;      // PLACEHOLDER default, -100..+100
+    int agreeableness = 0;          // PLACEHOLDER default, -100..+100
+    int attractiveness = 0;         // PLACEHOLDER default, -100..+100
+    int height = 0;                 // PLACEHOLDER default, -100..+100
+    int shape = 0;                  // PLACEHOLDER default, -100..+100
+    int charisma = 0;               // PLACEHOLDER default, -100..+100
 };
 
 // Persistent character state. Trivially copyable, no pointers, no floating point,
 // never allocates. Derived values (age, mortality) are free functions elsewhere.
 //
-// Getters return value space (float). set_* and add_* take value space, round to
-// nearest and saturate at the bounds; infinities saturate, NaN leaves the field
-// unchanged (asserted in debug). See quantize.hpp for the resolution rule on int8
-// fields: adds smaller than half a step (1/254) are no-ops by design.
+// 0..1 fields: float getters; set_* and add_* take float, round to nearest and
+// saturate; infinities saturate, NaN leaves the field unchanged (asserted in debug).
+//
+// Bipolar fields: int getters; set_* and add_* take any BipolarInteger and clamp
+// to -100..+100 without overflow for every input value.
 class Character {
 public:
     Character(CharacterId id, NameId name, Gender gender, Date birth, const CharacterInit& init) noexcept;
@@ -52,49 +74,79 @@ public:
     [[nodiscard]] float health() const noexcept;
     [[nodiscard]] float stress() const noexcept;
     [[nodiscard]] float capacity() const noexcept;
-    [[nodiscard]] float strength() const noexcept;
-    [[nodiscard]] float intelligence() const noexcept;
-    [[nodiscard]] float stability() const noexcept;
-    [[nodiscard]] float openness() const noexcept;
-    [[nodiscard]] float extraversion() const noexcept;
-    [[nodiscard]] float conscientiousness() const noexcept;
-    [[nodiscard]] float agreeableness() const noexcept;
-    [[nodiscard]] float attractiveness() const noexcept;
-    [[nodiscard]] float height() const noexcept;
-    [[nodiscard]] float shape() const noexcept;
-    [[nodiscard]] float charisma() const noexcept;
+
+    [[nodiscard]] int strength() const noexcept { return strength_; }
+    [[nodiscard]] int intelligence() const noexcept { return intelligence_; }
+    [[nodiscard]] int stability() const noexcept { return stability_; }
+    [[nodiscard]] int openness() const noexcept { return openness_; }
+    [[nodiscard]] int extraversion() const noexcept { return extraversion_; }
+    [[nodiscard]] int conscientiousness() const noexcept { return conscientiousness_; }
+    [[nodiscard]] int agreeableness() const noexcept { return agreeableness_; }
+    [[nodiscard]] int attractiveness() const noexcept { return attractiveness_; }
+    [[nodiscard]] int height() const noexcept { return height_; }
+    [[nodiscard]] int shape() const noexcept { return shape_; }
+    [[nodiscard]] int charisma() const noexcept { return charisma_; }
 
     void set_health(float v) noexcept;
     void set_stress(float v) noexcept;
     void set_capacity(float v) noexcept;
-    void set_strength(float v) noexcept;
-    void set_intelligence(float v) noexcept;
-    void set_stability(float v) noexcept;
-    void set_openness(float v) noexcept;
-    void set_extraversion(float v) noexcept;
-    void set_conscientiousness(float v) noexcept;
-    void set_agreeableness(float v) noexcept;
-    void set_attractiveness(float v) noexcept;
-    void set_height(float v) noexcept;
-    void set_shape(float v) noexcept;
-    void set_charisma(float v) noexcept;
 
     void add_health(float delta) noexcept;
     void add_stress(float delta) noexcept;
     void add_capacity(float delta) noexcept;
-    void add_strength(float delta) noexcept;
-    void add_intelligence(float delta) noexcept;
-    void add_stability(float delta) noexcept;
-    void add_openness(float delta) noexcept;
-    void add_extraversion(float delta) noexcept;
-    void add_conscientiousness(float delta) noexcept;
-    void add_agreeableness(float delta) noexcept;
-    void add_attractiveness(float delta) noexcept;
-    void add_height(float delta) noexcept;
-    void add_shape(float delta) noexcept;
-    void add_charisma(float delta) noexcept;
+
+    void set_strength(BipolarInteger auto v) noexcept { strength_ = clamp_bipolar(v); }
+    void set_intelligence(BipolarInteger auto v) noexcept { intelligence_ = clamp_bipolar(v); }
+    void set_stability(BipolarInteger auto v) noexcept { stability_ = clamp_bipolar(v); }
+    void set_openness(BipolarInteger auto v) noexcept { openness_ = clamp_bipolar(v); }
+    void set_extraversion(BipolarInteger auto v) noexcept { extraversion_ = clamp_bipolar(v); }
+    void set_conscientiousness(BipolarInteger auto v) noexcept { conscientiousness_ = clamp_bipolar(v); }
+    void set_agreeableness(BipolarInteger auto v) noexcept { agreeableness_ = clamp_bipolar(v); }
+    void set_attractiveness(BipolarInteger auto v) noexcept { attractiveness_ = clamp_bipolar(v); }
+    void set_height(BipolarInteger auto v) noexcept { height_ = clamp_bipolar(v); }
+    void set_shape(BipolarInteger auto v) noexcept { shape_ = clamp_bipolar(v); }
+    void set_charisma(BipolarInteger auto v) noexcept { charisma_ = clamp_bipolar(v); }
+
+    void add_strength(BipolarInteger auto d) noexcept { strength_ = add_bipolar(strength_, d); }
+    void add_intelligence(BipolarInteger auto d) noexcept { intelligence_ = add_bipolar(intelligence_, d); }
+    void add_stability(BipolarInteger auto d) noexcept { stability_ = add_bipolar(stability_, d); }
+    void add_openness(BipolarInteger auto d) noexcept { openness_ = add_bipolar(openness_, d); }
+    void add_extraversion(BipolarInteger auto d) noexcept { extraversion_ = add_bipolar(extraversion_, d); }
+    void add_conscientiousness(BipolarInteger auto d) noexcept { conscientiousness_ = add_bipolar(conscientiousness_, d); }
+    void add_agreeableness(BipolarInteger auto d) noexcept { agreeableness_ = add_bipolar(agreeableness_, d); }
+    void add_attractiveness(BipolarInteger auto d) noexcept { attractiveness_ = add_bipolar(attractiveness_, d); }
+    void add_height(BipolarInteger auto d) noexcept { height_ = add_bipolar(height_, d); }
+    void add_shape(BipolarInteger auto d) noexcept { shape_ = add_bipolar(shape_, d); }
+    void add_charisma(BipolarInteger auto d) noexcept { charisma_ = add_bipolar(charisma_, d); }
 
 private:
+    // Clamps any integer to -100..+100 using mixed-sign-safe comparisons.
+    [[nodiscard]] static constexpr std::int8_t clamp_bipolar(BipolarInteger auto v) noexcept {
+        if (std::cmp_less(v, BIPOLAR_MIN)) {
+            return static_cast<std::int8_t>(BIPOLAR_MIN);
+        }
+        if (std::cmp_greater(v, BIPOLAR_MAX)) {
+            return static_cast<std::int8_t>(BIPOLAR_MAX);
+        }
+        return static_cast<std::int8_t>(v);
+    }
+
+    // Adds a delta and clamps. The delta is first clamped to [-200, 200], which
+    // already spans the whole scale, so the int sum cannot overflow.
+    [[nodiscard]] static constexpr std::int8_t add_bipolar(std::int8_t current, BipolarInteger auto delta) noexcept {
+        assert(current >= BIPOLAR_MIN && current <= BIPOLAR_MAX);
+        const int span = BIPOLAR_MAX - BIPOLAR_MIN;
+        int d = 0;
+        if (std::cmp_less(delta, -span)) {
+            d = -span;
+        } else if (std::cmp_greater(delta, span)) {
+            d = span;
+        } else {
+            d = static_cast<int>(delta);
+        }
+        return clamp_bipolar(static_cast<int>(current) + d);
+    }
+
     // Field order is by alignment (4, 2, 1 bytes) for density; 2 bytes tail padding.
     CharacterId id_;             // u32 handle, 0 = invalid
     NameId name_;                // u32 handle, 0 = invalid
@@ -106,18 +158,19 @@ private:
 
     Gender gender_;              // u8 enum
 
-    std::int8_t strength_ = 0;          // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t intelligence_ = 0;      // -1..+1, raw in [-127, 127], value = raw / 127
+    // Bipolar fields: -100..+100, one unit per step, stored directly (raw == value).
+    std::int8_t strength_ = 0;          // -100..+100 units, stored directly
+    std::int8_t intelligence_ = 0;      // -100..+100 units, stored directly
     // Big Five; stability = -neuroticism.
-    std::int8_t stability_ = 0;         // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t openness_ = 0;          // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t extraversion_ = 0;      // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t conscientiousness_ = 0; // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t agreeableness_ = 0;     // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t attractiveness_ = 0;    // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t height_ = 0;            // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t shape_ = 0;             // -1..+1, raw in [-127, 127], value = raw / 127
-    std::int8_t charisma_ = 0;          // -1..+1, raw in [-127, 127], value = raw / 127
+    std::int8_t stability_ = 0;         // -100..+100 units, stored directly
+    std::int8_t openness_ = 0;          // -100..+100 units, stored directly
+    std::int8_t extraversion_ = 0;      // -100..+100 units, stored directly
+    std::int8_t conscientiousness_ = 0; // -100..+100 units, stored directly
+    std::int8_t agreeableness_ = 0;     // -100..+100 units, stored directly
+    std::int8_t attractiveness_ = 0;    // -100..+100 units, stored directly
+    std::int8_t height_ = 0;            // -100..+100 units, stored directly
+    std::int8_t shape_ = 0;             // -100..+100 units, stored directly
+    std::int8_t charisma_ = 0;          // -100..+100 units, stored directly
 };
 
 static_assert(std::is_trivially_copyable_v<Character>);
