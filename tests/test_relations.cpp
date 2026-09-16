@@ -357,6 +357,9 @@ constexpr std::array<PairedBits, 7> PAIRED_BITS = [] {
 }();
 static_assert(PAIRED_BITS[6].bit != 0 && PAIRED_BITS[6].complement_bit != 0); // all 7 paired types found
 
+constexpr std::array<std::uint8_t, 3> ONE_WAY_RAW{0, 1, 2};
+constexpr std::array<std::uint8_t, 7> PAIRED_RAW{3, 4, 5, 6, 7, 8, 9};
+
 const char* op_name(int op) {
     static constexpr std::array<const char*, 4> names{"set_relation", "clear_relation", "link", "unlink"};
     return names[static_cast<std::size_t>(op)];
@@ -372,13 +375,38 @@ TEST_CASE("property: random edits match a reference model and keep paired bits s
     // Raw mt19937 output only: standard distributions differ between standard libraries.
     std::mt19937 rng(20260916u);
 
-    int ok_count = 0;
     std::array<int, 6> result_counts{}; // indexed by EditResult
     for (int step = 0; step < STEPS; ++step) {
         const int op = static_cast<int>(rng() % 4);
-        const auto a = static_cast<std::uint32_t>(rng() % (COUNT + 2)); // 0 = invalid, COUNT + 1 = unknown
-        const auto b = static_cast<std::uint32_t>(rng() % (COUNT + 2));
-        const auto type_raw = static_cast<std::uint8_t>(rng() % 11); // 10 = unknown type
+
+        // a: a real id 96% of the time, otherwise 0 (invalid) or COUNT + 1 (unknown).
+        std::uint32_t a = 0;
+        const auto a_roll = rng() % 100;
+        if (a_roll < 96) {
+            a = 1 + static_cast<std::uint32_t>(rng() % COUNT);
+        } else {
+            a = a_roll < 98 ? 0 : COUNT + 1;
+        }
+        // b: differs from a 95% of the time.
+        std::uint32_t b = a;
+        if (rng() % 100 < 95) {
+            if (a >= 1 && a <= COUNT) {
+                b = 1 + static_cast<std::uint32_t>(rng() % (COUNT - 1));
+                if (b >= a) {
+                    ++b;
+                }
+            } else {
+                b = 1 + static_cast<std::uint32_t>(rng() % COUNT);
+            }
+        }
+        // type: of the right kind for the call 90% of the time, otherwise any raw value
+        // 0..10 (wrong kind or unknown).
+        std::uint8_t type_raw = 0;
+        if (rng() % 100 < 90) {
+            type_raw = op < 2 ? ONE_WAY_RAW[rng() % ONE_WAY_RAW.size()] : PAIRED_RAW[rng() % PAIRED_RAW.size()];
+        } else {
+            type_raw = static_cast<std::uint8_t>(rng() % 11); // 10 = unknown type
+        }
         const auto type = static_cast<RelationType>(type_raw);
 
         EditResult actual = EditResult::Invalid;
@@ -389,9 +417,6 @@ TEST_CASE("property: random edits match a reference model and keep paired bits s
         default: actual = r.unlink(CharacterId{a}, type, CharacterId{b}); break;
         }
         const EditResult expected = model.apply(op, a, type_raw, b);
-        if (actual == EditResult::Ok) {
-            ++ok_count;
-        }
         ++result_counts[static_cast<std::size_t>(actual)];
         if (actual != expected) {
             FAIL("step " << step << ": " << op_name(op) << "(" << a << ", " << int(type_raw) << ", " << b
@@ -446,7 +471,10 @@ TEST_CASE("property: random edits match a reference model and keep paired bits s
     MESSAGE("random edits: " << STEPS << " steps; Ok " << result_counts[0] << ", Full " << result_counts[1]
                               << ", Duplicate " << result_counts[2] << ", Conflict " << result_counts[3]
                               << ", NotFound " << result_counts[4] << ", Invalid " << result_counts[5]);
-    CHECK(ok_count > STEPS / 20); // the sequence exercises real edits, not only rejections
+    // Successful edits are the most frequent result, and every rule stays reachable.
+    for (std::size_t i = 1; i < result_counts.size(); ++i) {
+        CHECK(result_counts[0] > result_counts[i]);
+    }
     for (std::size_t i = 0; i < result_counts.size(); ++i) {
         CAPTURE(i);
         CHECK(result_counts[i] > 0); // every rule is exercised at least once
