@@ -41,11 +41,15 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - The build has zero warnings and all tests pass at the end of every step.
 - No SoA, SIMD, pools or hot/cold splitting unless profiling asks for it.
 - Commit once at the end of each step, after the tests pass and the report is written.
+- Never reset, rebase or amend commits (or otherwise rewrite history) without asking first.
 - Every bipolar trait scale in the model uses integers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX`),
   stored directly with raw == value, including scales added in later steps (reputation, opinions).
 - Fractional values reach bipolar scales only through explicit rounding by the caller. Bipolar
   `set_`/`add_` accept integral types only (`BipolarInteger`: no floats, bool or character types);
   a float argument matches no function and is a hard error regardless of warning flags.
+  Init structs hold bipolar fields as `BipolarInit` (same concept, clamps on conversion), so
+  designated initializers cannot truncate a float or wrap a wide integer either. Never close
+  such holes with compiler flags: the headers are included by targets with their own flags.
 - Condition scales (health, stress, capacity) are fractional 0..100 (`CONDITION_MIN`/`CONDITION_MAX`),
   stored in hundredths (uint16 raw 0..10000, value = raw / 100), with a float API on purpose.
 

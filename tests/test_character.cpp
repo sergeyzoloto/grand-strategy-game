@@ -51,12 +51,52 @@ static_assert(RejectedEverywhere<char>);
 static_assert(RejectedEverywhere<char8_t>);
 static_assert(RejectedEverywhere<wchar_t>);
 
+// Designated initializers are a second way into bipolar fields; they must accept
+// and reject exactly the same argument types as the mutators.
+template<class T>
+concept CanInitOpenness = requires(T v) { CharacterInit{.openness = v}; };
+template<class T>
+concept CanInitCharisma = requires(T v) { CharacterInit{.strength = v, .charisma = v}; };
+
+static_assert(CanInitOpenness<int> && CanInitCharisma<int>);
+static_assert(CanInitOpenness<std::int64_t> && CanInitCharisma<std::int64_t>);
+static_assert(CanInitOpenness<unsigned> && CanInitCharisma<unsigned>);
+static_assert(CanInitOpenness<std::uint64_t> && CanInitOpenness<std::int8_t>);
+
+static_assert(!CanInitOpenness<float> && !CanInitCharisma<float>);
+static_assert(!CanInitOpenness<double> && !CanInitCharisma<double>);
+static_assert(!CanInitOpenness<bool> && !CanInitCharisma<bool>);
+static_assert(!CanInitOpenness<char> && !CanInitCharisma<char>);
+
+static_assert(std::is_convertible_v<int, BipolarInit>);
+static_assert(!std::is_convertible_v<float, BipolarInit>);
+static_assert(!std::is_convertible_v<double, BipolarInit>);
+static_assert(!std::is_convertible_v<bool, BipolarInit>);
+static_assert(!std::is_convertible_v<char, BipolarInit>);
+
+// The wrapper clamps at compile time too, and never changes Character's layout.
+static_assert(BipolarInit{}.value() == 0);
+static_assert(BipolarInit{150}.value() == 100);
+static_assert(BipolarInit{-150}.value() == -100);
+static_assert(BipolarInit{std::numeric_limits<std::uint64_t>::max()}.value() == 100);
+static_assert(BipolarInit{std::numeric_limits<std::int64_t>::min()}.value() == -100);
+
 // ---- helpers -----------------------------------------------------------------
 
 namespace {
 
 Character make_default() {
     return Character(CharacterId{1}, NameId{2}, Gender::Male, Date{-1000}, CharacterInit{});
+}
+
+// Non-constexpr pass-throughs: their results are never constant expressions, so
+// the init tests exercise the non-constant path (narrowing rules differ for constants).
+int runtime_int(int v) {
+    return v;
+}
+
+std::int64_t runtime_int64(std::int64_t v) {
+    return v;
 }
 
 // Calls visit(name, get, set, add) for every bipolar field.
@@ -111,17 +151,17 @@ TEST_CASE("defaults match the init struct") {
     CHECK(c.health() == init.health);
     CHECK(c.stress() == init.stress);
     CHECK(c.capacity() == init.capacity);
-    CHECK(c.strength() == init.strength);
-    CHECK(c.intelligence() == init.intelligence);
-    CHECK(c.stability() == init.stability);
-    CHECK(c.openness() == init.openness);
-    CHECK(c.extraversion() == init.extraversion);
-    CHECK(c.conscientiousness() == init.conscientiousness);
-    CHECK(c.agreeableness() == init.agreeableness);
-    CHECK(c.attractiveness() == init.attractiveness);
-    CHECK(c.height() == init.height);
-    CHECK(c.shape() == init.shape);
-    CHECK(c.charisma() == init.charisma);
+    CHECK(c.strength() == init.strength.value());
+    CHECK(c.intelligence() == init.intelligence.value());
+    CHECK(c.stability() == init.stability.value());
+    CHECK(c.openness() == init.openness.value());
+    CHECK(c.extraversion() == init.extraversion.value());
+    CHECK(c.conscientiousness() == init.conscientiousness.value());
+    CHECK(c.agreeableness() == init.agreeableness.value());
+    CHECK(c.attractiveness() == init.attractiveness.value());
+    CHECK(c.height() == init.height.value());
+    CHECK(c.shape() == init.shape.value());
+    CHECK(c.charisma() == init.charisma.value());
 }
 
 TEST_CASE("non-default init values are applied and clamped") {
@@ -133,6 +173,34 @@ TEST_CASE("non-default init values are applied and clamped") {
     CHECK(c.charisma() == -100); // clamped
     CHECK(c.capacity() == 100.0f); // untouched default
     CHECK(c.intelligence() == 0);
+}
+
+TEST_CASE("init struct clamps non-constant out-of-range integers") {
+    const int high = runtime_int(150);
+    const int low = runtime_int(-150);
+    const Character c(CharacterId{7}, NameId{7}, Gender::Female, Date{0},
+                      CharacterInit{.strength = high, .intelligence = low, .stability = high,
+                                    .openness = low, .extraversion = high, .conscientiousness = low,
+                                    .agreeableness = high, .attractiveness = low, .height = high,
+                                    .shape = low, .charisma = high});
+    CHECK(c.strength() == 100);
+    CHECK(c.intelligence() == -100);
+    CHECK(c.stability() == 100);
+    CHECK(c.openness() == -100);
+    CHECK(c.extraversion() == 100);
+    CHECK(c.conscientiousness() == -100);
+    CHECK(c.agreeableness() == 100);
+    CHECK(c.attractiveness() == -100);
+    CHECK(c.height() == 100);
+    CHECK(c.shape() == -100);
+    CHECK(c.charisma() == 100);
+
+    // A wide integer whose low bits are in range must clamp, not wrap.
+    const std::int64_t wide = runtime_int64((std::int64_t{1} << 40) + 5);
+    const Character w(CharacterId{8}, NameId{8}, Gender::Male, Date{0},
+                      CharacterInit{.openness = wide, .charisma = -wide});
+    CHECK(w.openness() == 100);
+    CHECK(w.charisma() == -100);
 }
 
 // ---- condition fields (0..100 in hundredths) --------------------------------

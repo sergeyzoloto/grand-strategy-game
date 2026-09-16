@@ -60,17 +60,17 @@ Character::Character(CharacterId id, NameId name, Gender gender, Date birth, con
     set_health(init.health);
     set_stress(init.stress);
     set_capacity(init.capacity);
-    set_strength(init.strength);
-    set_intelligence(init.intelligence);
-    set_stability(init.stability);
-    set_openness(init.openness);
-    set_extraversion(init.extraversion);
-    set_conscientiousness(init.conscientiousness);
-    set_agreeableness(init.agreeableness);
-    set_attractiveness(init.attractiveness);
-    set_height(init.height);
-    set_shape(init.shape);
-    set_charisma(init.charisma);
+    set_strength(init.strength.value());
+    set_intelligence(init.intelligence.value());
+    set_stability(init.stability.value());
+    set_openness(init.openness.value());
+    set_extraversion(init.extraversion.value());
+    set_conscientiousness(init.conscientiousness.value());
+    set_agreeableness(init.agreeableness.value());
+    set_attractiveness(init.attractiveness.value());
+    set_height(init.height.value());
+    set_shape(init.shape.value());
+    set_charisma(init.charisma.value());
 }
 
 float Character::health() const noexcept { return get_hundredths(health_); }

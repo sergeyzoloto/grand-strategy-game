@@ -32,6 +32,36 @@ concept BipolarInteger = std::integral<T>
                       && !std::same_as<T, char16_t>
                       && !std::same_as<T, char32_t>;
 
+namespace detail {
+
+// Clamps any integer to -100..+100 using mixed-sign-safe comparisons.
+[[nodiscard]] constexpr std::int8_t clamp_bipolar(BipolarInteger auto v) noexcept {
+    if (std::cmp_less(v, BIPOLAR_MIN)) {
+        return static_cast<std::int8_t>(BIPOLAR_MIN);
+    }
+    if (std::cmp_greater(v, BIPOLAR_MAX)) {
+        return static_cast<std::int8_t>(BIPOLAR_MAX);
+    }
+    return static_cast<std::int8_t>(v);
+}
+
+} // namespace detail
+
+// Initial value of a bipolar field, used only in CharacterInit. Converts implicitly
+// from any BipolarInteger and clamps to -100..+100, so designated initializers
+// cannot truncate a float or wrap a wide integer. Not persistent state. Fully
+// constexpr so CharacterInit{} stays usable in constant expressions.
+class BipolarInit {
+public:
+    constexpr BipolarInit() noexcept = default;
+    constexpr BipolarInit(BipolarInteger auto v) noexcept : value_(detail::clamp_bipolar(v)) {}
+
+    [[nodiscard]] constexpr int value() const noexcept { return value_; }
+
+private:
+    std::int8_t value_ = 0; // -100..+100 units, already clamped
+};
+
 // Extensible: append new values; never renumber existing ones (they are persisted).
 enum class Gender : std::uint8_t {
     Female = 0,
@@ -40,22 +70,22 @@ enum class Gender : std::uint8_t {
 
 // Initial values for a new Character. Condition fields are 0..100: out-of-range
 // values saturate, NaN leaves the field at its default (asserted in debug). Bipolar
-// fields are whole numbers clamped to -100..+100.
+// fields accept integers only and clamp to -100..+100 (see BipolarInit).
 struct CharacterInit {
     float health = 100.0f;          // PLACEHOLDER default, 0..100
     float stress = 0.0f;            // PLACEHOLDER default, 0..100
     float capacity = 100.0f;        // PLACEHOLDER default, 0..100
-    int strength = 0;               // PLACEHOLDER default, -100..+100
-    int intelligence = 0;           // PLACEHOLDER default, -100..+100
-    int stability = 0;              // PLACEHOLDER default, -100..+100
-    int openness = 0;               // PLACEHOLDER default, -100..+100
-    int extraversion = 0;           // PLACEHOLDER default, -100..+100
-    int conscientiousness = 0;      // PLACEHOLDER default, -100..+100
-    int agreeableness = 0;          // PLACEHOLDER default, -100..+100
-    int attractiveness = 0;         // PLACEHOLDER default, -100..+100
-    int height = 0;                 // PLACEHOLDER default, -100..+100
-    int shape = 0;                  // PLACEHOLDER default, -100..+100
-    int charisma = 0;               // PLACEHOLDER default, -100..+100
+    BipolarInit strength{};          // PLACEHOLDER default, -100..+100
+    BipolarInit intelligence{};      // PLACEHOLDER default, -100..+100
+    BipolarInit stability{};         // PLACEHOLDER default, -100..+100
+    BipolarInit openness{};          // PLACEHOLDER default, -100..+100
+    BipolarInit extraversion{};      // PLACEHOLDER default, -100..+100
+    BipolarInit conscientiousness{}; // PLACEHOLDER default, -100..+100
+    BipolarInit agreeableness{};     // PLACEHOLDER default, -100..+100
+    BipolarInit attractiveness{};    // PLACEHOLDER default, -100..+100
+    BipolarInit height{};            // PLACEHOLDER default, -100..+100
+    BipolarInit shape{};             // PLACEHOLDER default, -100..+100
+    BipolarInit charisma{};          // PLACEHOLDER default, -100..+100
 };
 
 // Persistent character state. Trivially copyable, no pointers, no floating point,
@@ -101,17 +131,17 @@ public:
     void add_stress(float delta) noexcept;
     void add_capacity(float delta) noexcept;
 
-    void set_strength(BipolarInteger auto v) noexcept { strength_ = clamp_bipolar(v); }
-    void set_intelligence(BipolarInteger auto v) noexcept { intelligence_ = clamp_bipolar(v); }
-    void set_stability(BipolarInteger auto v) noexcept { stability_ = clamp_bipolar(v); }
-    void set_openness(BipolarInteger auto v) noexcept { openness_ = clamp_bipolar(v); }
-    void set_extraversion(BipolarInteger auto v) noexcept { extraversion_ = clamp_bipolar(v); }
-    void set_conscientiousness(BipolarInteger auto v) noexcept { conscientiousness_ = clamp_bipolar(v); }
-    void set_agreeableness(BipolarInteger auto v) noexcept { agreeableness_ = clamp_bipolar(v); }
-    void set_attractiveness(BipolarInteger auto v) noexcept { attractiveness_ = clamp_bipolar(v); }
-    void set_height(BipolarInteger auto v) noexcept { height_ = clamp_bipolar(v); }
-    void set_shape(BipolarInteger auto v) noexcept { shape_ = clamp_bipolar(v); }
-    void set_charisma(BipolarInteger auto v) noexcept { charisma_ = clamp_bipolar(v); }
+    void set_strength(BipolarInteger auto v) noexcept { strength_ = detail::clamp_bipolar(v); }
+    void set_intelligence(BipolarInteger auto v) noexcept { intelligence_ = detail::clamp_bipolar(v); }
+    void set_stability(BipolarInteger auto v) noexcept { stability_ = detail::clamp_bipolar(v); }
+    void set_openness(BipolarInteger auto v) noexcept { openness_ = detail::clamp_bipolar(v); }
+    void set_extraversion(BipolarInteger auto v) noexcept { extraversion_ = detail::clamp_bipolar(v); }
+    void set_conscientiousness(BipolarInteger auto v) noexcept { conscientiousness_ = detail::clamp_bipolar(v); }
+    void set_agreeableness(BipolarInteger auto v) noexcept { agreeableness_ = detail::clamp_bipolar(v); }
+    void set_attractiveness(BipolarInteger auto v) noexcept { attractiveness_ = detail::clamp_bipolar(v); }
+    void set_height(BipolarInteger auto v) noexcept { height_ = detail::clamp_bipolar(v); }
+    void set_shape(BipolarInteger auto v) noexcept { shape_ = detail::clamp_bipolar(v); }
+    void set_charisma(BipolarInteger auto v) noexcept { charisma_ = detail::clamp_bipolar(v); }
 
     void add_strength(BipolarInteger auto d) noexcept { strength_ = add_bipolar(strength_, d); }
     void add_intelligence(BipolarInteger auto d) noexcept { intelligence_ = add_bipolar(intelligence_, d); }
@@ -126,17 +156,6 @@ public:
     void add_charisma(BipolarInteger auto d) noexcept { charisma_ = add_bipolar(charisma_, d); }
 
 private:
-    // Clamps any integer to -100..+100 using mixed-sign-safe comparisons.
-    [[nodiscard]] static constexpr std::int8_t clamp_bipolar(BipolarInteger auto v) noexcept {
-        if (std::cmp_less(v, BIPOLAR_MIN)) {
-            return static_cast<std::int8_t>(BIPOLAR_MIN);
-        }
-        if (std::cmp_greater(v, BIPOLAR_MAX)) {
-            return static_cast<std::int8_t>(BIPOLAR_MAX);
-        }
-        return static_cast<std::int8_t>(v);
-    }
-
     // Adds a delta and clamps. The delta is first clamped to [-200, 200], which
     // already spans the whole scale, so the int sum cannot overflow.
     [[nodiscard]] static constexpr std::int8_t add_bipolar(std::int8_t current, BipolarInteger auto delta) noexcept {
@@ -150,7 +169,7 @@ private:
         } else {
             d = static_cast<int>(delta);
         }
-        return clamp_bipolar(static_cast<int>(current) + d);
+        return detail::clamp_bipolar(static_cast<int>(current) + d);
     }
 
     // Field order is by alignment (4, 2, 1 bytes) for density; 2 bytes tail padding.
@@ -183,6 +202,7 @@ private:
 
 static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f && CharacterInit{}.capacity == 100.0f,
               "CharacterInit condition defaults changed; update Character's starting raw values");
+static_assert(CharacterInit{}.strength.value() == 0);
 static_assert(std::is_trivially_copyable_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
 static_assert(sizeof(Character) == 32, "Character layout changed; update the plan and field comments");
