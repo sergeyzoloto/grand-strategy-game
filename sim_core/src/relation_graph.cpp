@@ -26,6 +26,22 @@ std::optional<RelationInfo> kind_checked(RelationType type, RelationKind expecte
     return info;
 }
 
+// Bits of all one-way types, and of all types that end at death.
+constexpr std::uint32_t mask_where(bool (*predicate)(RelationType)) noexcept {
+    std::uint32_t mask = 0;
+    for (unsigned t = 0; t < 32; ++t) {
+        const auto type = static_cast<RelationType>(t);
+        if (relation_info(type) && predicate(type)) {
+            mask |= relation_bit(type);
+        }
+    }
+    return mask;
+}
+
+constexpr std::uint32_t ONE_WAY_MASK =
+    mask_where([](RelationType t) { return relation_info(t)->kind == RelationKind::OneWay; });
+constexpr std::uint32_t NON_SURVIVING_MASK = mask_where([](RelationType t) { return !survives_death(t); });
+
 } // namespace
 
 void RelationGraph::reserve_node() {
@@ -233,6 +249,47 @@ int RelationGraph::shared_parents(CharacterId a, CharacterId b) const noexcept {
         }
     }
     return shared;
+}
+
+void RelationGraph::remove_non_surviving(CharacterId dead) noexcept {
+    assert(exists(dead));
+    EdgeList& edges = list(dead);
+    for (std::size_t i = edges.size(); i-- > 0;) { // backwards: remove_bits may erase edge i
+        const CharacterId other = edges[i].other;
+        const std::uint32_t ending = edges[i].mask & NON_SURVIVING_MASK;
+        if (ending == 0) {
+            continue;
+        }
+        std::uint32_t complements = 0;
+        for (unsigned t = 0; t < 32; ++t) {
+            const std::uint32_t bit = std::uint32_t{1} << t;
+            if ((ending & bit) == 0) {
+                continue;
+            }
+            const std::optional<RelationInfo> info = relation_info(static_cast<RelationType>(t));
+            assert(info.has_value());
+            if (info->kind == RelationKind::Paired) {
+                complements |= relation_bit(*info->complement);
+            }
+        }
+        if (complements != 0) {
+            remove_bits(other, dead, complements);
+        }
+        remove_bits(dead, other, ending);
+        assert(pair_valid(dead, other));
+    }
+}
+
+void RelationGraph::clear_one_way(CharacterId from, CharacterId to) noexcept {
+    const std::uint32_t bits = mask(from, to) & ONE_WAY_MASK;
+    if (bits != 0) {
+        remove_bits(from, to, bits);
+    }
+}
+
+bool RelationGraph::has_one_way_edges(CharacterId a) const noexcept {
+    return exists(a) && std::any_of(list(a).begin(), list(a).end(),
+                                    [](const RelationEdge& e) { return (e.mask & ONE_WAY_MASK) != 0; });
 }
 
 std::size_t RelationGraph::allocated_bytes() const noexcept {

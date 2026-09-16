@@ -46,6 +46,15 @@ public:
     [[nodiscard]] std::vector<CharacterId> siblings(CharacterId a) const;
     [[nodiscard]] int shared_parents(CharacterId a, CharacterId b) const noexcept;
 
+    // ---- death (CharacterRegistry::kill only) ----
+    // Removes every relation of `dead` whose type doesn't survive death: paired bits on
+    // both sides, one-way bits on dead's own edges. Surviving bits stay. Never allocates.
+    void remove_non_surviving(CharacterId dead) noexcept;
+    // Clears the one-way bits on the edge from -> to, removing the edge if it becomes empty.
+    void clear_one_way(CharacterId from, CharacterId to) noexcept;
+    // True if any edge from `a` carries a one-way bit.
+    [[nodiscard]] bool has_one_way_edges(CharacterId a) const noexcept;
+
     // Bytes held by the graph's vectors (capacity, not size), excluding allocator headers.
     [[nodiscard]] std::size_t allocated_bytes() const noexcept;
 

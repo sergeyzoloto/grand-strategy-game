@@ -1,6 +1,7 @@
 #pragma once
 
 #include "sim/character.hpp"
+#include "sim/dead_record.hpp"
 #include "sim/ids.hpp"
 #include "sim/noise.hpp"
 #include "sim/opinion_config.hpp"
@@ -49,6 +50,17 @@ struct WeakOpinionBreakdown {
 [[nodiscard]] double weak_opinion(const Character& a, TargetId target, const StanceTable& stances,
                                   const OpinionConfig& config, WorldSeed seed) noexcept;
 
+// weak(A -> D) for a dead character D:
+//   sum_c share_A(c) * stance(c -> main_community(D)) + k_rep * reputation(D) + k_noise * noise(A, D)
+// compat is 0. The noise inputs are the same as while D was alive. Without a main
+// community the community term is 0. A dead holder can't be passed: DeadRecord is not a
+// Character.
+[[nodiscard]] WeakOpinionBreakdown weak_opinion_breakdown(const Character& a, const DeadRecord& d,
+                                                          const StanceTable& stances, const OpinionConfig& config,
+                                                          WorldSeed seed) noexcept;
+[[nodiscard]] double weak_opinion(const Character& a, const DeadRecord& d, const StanceTable& stances,
+                                  const OpinionConfig& config, WorldSeed seed) noexcept;
+
 // ---- opinions with personal history -----------------------------------------------------
 
 // A weak opinion plus the personal terms. total = clamp(weak.total + long_term + short_term),
@@ -67,6 +79,11 @@ struct OpinionBreakdown {
 [[nodiscard]] OpinionBreakdown opinion_breakdown(const Character& a, const Character& b, const StanceTable& stances,
                                                  const OpinionConfig& config, WorldSeed seed) noexcept;
 [[nodiscard]] double opinion(const Character& a, const Character& b, const StanceTable& stances,
+                             const OpinionConfig& config, WorldSeed seed) noexcept;
+// A dead target: the dead-record weak opinion plus a's personal terms about it.
+[[nodiscard]] OpinionBreakdown opinion_breakdown(const Character& a, const DeadRecord& d, const StanceTable& stances,
+                                                 const OpinionConfig& config, WorldSeed seed) noexcept;
+[[nodiscard]] double opinion(const Character& a, const DeadRecord& d, const StanceTable& stances,
                              const OpinionConfig& config, WorldSeed seed) noexcept;
 [[nodiscard]] OpinionBreakdown opinion_breakdown(const Character& a, TargetId target, const StanceTable& stances,
                                                  const OpinionConfig& config, WorldSeed seed) noexcept;

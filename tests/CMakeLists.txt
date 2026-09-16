@@ -5,6 +5,7 @@ add_executable(sim_tests
     main.cpp
     test_ids.cpp
     test_date.cpp
+    test_death.cpp
     test_character.cpp
     test_character_lists.cpp
     test_fixed_vector.cpp

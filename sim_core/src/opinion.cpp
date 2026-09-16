@@ -6,7 +6,9 @@
 #include <array>
 #include <span>
 #include <cassert>
+#include <cstddef>
 #include <cstdint>
+#include <optional>
 
 namespace sim {
 
@@ -139,6 +141,60 @@ WeakOpinionBreakdown weak_opinion_breakdown(const Character& a, TargetId target,
 double weak_opinion(const Character& a, TargetId target, const StanceTable& stances, const OpinionConfig& config,
                     WorldSeed seed) noexcept {
     return weak_opinion_breakdown(a, target, stances, config, seed).total;
+}
+
+WeakOpinionBreakdown weak_opinion_breakdown(const Character& a, const DeadRecord& d, const StanceTable& stances,
+                                            const OpinionConfig& config, WorldSeed seed) noexcept {
+    assert(a.id() != d.id);
+    if (a.id() == d.id) {
+        return {};
+    }
+    WeakOpinionBreakdown result;
+    const int total_a = a.involvement_total();
+    const std::optional<TargetId> main = TargetId::from(d.main_community);
+    if (total_a > 0 && main) {
+        FixedVector<CommunityChain, INVOLVEMENT_CAP> sources;
+        for (const InvolvementEntry& e : a.involvement()) {
+            sources.push_back(stances.chain(e.community));
+        }
+        const TargetChain target = stances.target_chain(*main);
+        std::array<int, INVOLVEMENT_CAP> values{};
+        stances.stances(std::span(sources.data(), sources.size()), std::span(&target, 1), values);
+        // Exact integer accumulation on raw weights; divide once.
+        std::int64_t sum = 0;
+        for (std::size_t i = 0; i < sources.size(); ++i) {
+            sum += static_cast<std::int64_t>(a.involvement()[i].weight) * values[i];
+        }
+        result.community = static_cast<double>(sum) / static_cast<double>(total_a);
+    }
+    result.reputation = config.k_rep * static_cast<double>(d.reputation);
+    result.compat = 0.0;
+    result.noise = config.k_noise * noise(seed, a.id(), NoiseSubject::Person, d.id.value);
+    result.total = clamp_opinion(result.community + result.reputation + result.compat + result.noise);
+    return result;
+}
+
+double weak_opinion(const Character& a, const DeadRecord& d, const StanceTable& stances, const OpinionConfig& config,
+                    WorldSeed seed) noexcept {
+    return weak_opinion_breakdown(a, d, stances, config, seed).total;
+}
+
+OpinionBreakdown opinion_breakdown(const Character& a, const DeadRecord& d, const StanceTable& stances,
+                                   const OpinionConfig& config, WorldSeed seed) noexcept {
+    OpinionBreakdown result;
+    result.weak = weak_opinion_breakdown(a, d, stances, config, seed);
+    if (a.id() == d.id) {
+        return result;
+    }
+    result.long_term = long_opinion(a, d.id);
+    result.short_term = short_opinion(a, d.id);
+    result.total = clamp_opinion(result.weak.total + static_cast<double>(result.long_term + result.short_term));
+    return result;
+}
+
+double opinion(const Character& a, const DeadRecord& d, const StanceTable& stances, const OpinionConfig& config,
+               WorldSeed seed) noexcept {
+    return opinion_breakdown(a, d, stances, config, seed).total;
 }
 
 OpinionBreakdown opinion_breakdown(const Character& a, const Character& b, const StanceTable& stances,

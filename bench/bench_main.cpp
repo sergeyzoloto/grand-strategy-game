@@ -253,6 +253,130 @@ void bench_personal_opinions() {
                 passes.front() * 1e3, passes.back() * 1e3);
 }
 
+// A world for kills: 1,500 characters with full long-term people lists (40), 16 target
+// entries, 16 modifiers and about 22 relation edges each (4 vassals and 4 lieges, 4
+// employees and 4 employers, 2 friends, 2 spouses, a child and a parent).
+void build_kill_world(PersonalWorld& world, std::mt19937& rng) {
+    constexpr std::uint32_t N = 1500;
+    build_personal_world(world, rng, 100);
+    CharacterRegistry& r = world.registry;
+    const auto other = [](std::uint32_t a, std::uint32_t k) { return CharacterId{(a - 1 + k) % N + 1}; };
+    for (std::uint32_t a = 1; a <= N; ++a) {
+        const CharacterId id{a};
+        for (std::uint32_t k = 1; k <= PERSON_LIMIT_MAX; ++k) {
+            (void)r.add_long_opinion(id, other(a, k), random_nonzero(rng, 200));
+        }
+        for (std::uint32_t t = 1; t <= TARGET_LIMIT; ++t) {
+            (void)r.add_long_opinion(id, *TargetId::from(TopicId{t}), random_nonzero(rng, 200));
+        }
+        for (std::uint32_t k = 1; k <= 8; ++k) {
+            for (std::uint16_t m = 1; m <= 2; ++m) {
+                (void)r.add_modifier(id, other(a, k), ModifierId{m}, random_nonzero(rng, 100));
+            }
+        }
+        for (std::uint32_t k = 1; k <= 4; ++k) {
+            (void)r.link(id, RelationType::Vassal, other(a, k));
+            (void)r.link(id, RelationType::Employee, other(a, 4 + k));
+        }
+        for (std::uint32_t k = 9; k <= 10; ++k) {
+            (void)r.set_relation(id, RelationType::Friend, other(a, k));
+        }
+        (void)r.link(id, RelationType::Spouse, other(a, 13));
+        (void)r.link(id, RelationType::Child, other(a, 14));
+    }
+}
+
+// Kills every third character of the 1,500 in the kill world (500 kills), timing each pass.
+void time_kills(const char* name, PersonalWorld& world, const OpinionConfig& config, WorldSeed seed, Date death) {
+    std::size_t edges = 0;
+    for (std::uint32_t id = 3; id <= 1500; id += 3) {
+        edges += world.registry.relations(CharacterId{id}).size();
+    }
+    std::size_t killed = 0;
+    const auto start = Clock::now();
+    for (std::uint32_t id = 3; id <= 1500; id += 3) {
+        killed += world.registry.kill(CharacterId{id}, death, world.stances, config, seed) == EditResult::Ok;
+    }
+    const double elapsed = seconds_since(start);
+    std::printf("  %s: %zu kills in %.3f s = %.1f us per kill (%.1f edges per victim, %zu living, %zu dead after)\n",
+                name, killed, elapsed, elapsed * 1e6 / static_cast<double>(killed),
+                static_cast<double>(edges) / static_cast<double>(killed), world.registry.size(),
+                world.registry.dead_count());
+}
+
+void bench_death() {
+    const OpinionConfig config{};
+    const WorldSeed seed{0xDEADu};
+    std::printf("kill (1,500 living with full opinion lists and ~22 edges each; every third one killed):\n");
+    {
+        PersonalWorld world;
+        std::mt19937 rng(31u);
+        build_kill_world(world, rng);
+        time_kills("no dead yet   ", world, config, seed, Date{100});
+    }
+    {
+        // 450 rounds: create 1,000 characters (spouse pairs), then kill them from the back,
+        // so at most 2,500 are alive and batch kills never shift the base world.
+        PersonalWorld world;
+        std::mt19937 rng(31u);
+        build_kill_world(world, rng);
+        const auto setup = Clock::now();
+        for (int round = 0; round < 450; ++round) {
+            const auto first = static_cast<std::uint32_t>(world.registry.size() + world.registry.dead_count() + 1);
+            for (std::uint32_t i = 0; i < 1000; ++i) {
+                (void)world.registry.create(NameId{1}, Gender::Female, Date{0}, CharacterInit{});
+            }
+            for (std::uint32_t i = 0; i < 1000; i += 2) {
+                (void)world.registry.link(CharacterId{first + i}, RelationType::Spouse, CharacterId{first + i + 1});
+            }
+            for (std::uint32_t i = 1000; i-- > 0;) {
+                (void)world.registry.kill(CharacterId{first + i}, Date{50}, world.stances, config, seed);
+            }
+        }
+        const double setup_seconds = seconds_since(setup);
+        std::printf("  (setup: 450,000 create+kill in %.1f s = %.1f us per kill with 1,500 full characters alive)\n",
+                    setup_seconds, setup_seconds * 1e6 / 450'000.0);
+        time_kills("450,000 dead  ", world, config, seed, Date{100});
+        std::printf("  memory: dead records %.1f MB (%zu B each), slots %.1f MB, relation graph %.1f MB "
+                    "(%zu ids, %zu B per node outer vector), living %.1f MB\n",
+                    static_cast<double>(world.registry.dead_record_bytes()) / 1048576.0, sizeof(DeadRecord),
+                    static_cast<double>(world.registry.slot_bytes()) / 1048576.0,
+                    static_cast<double>(world.registry.relation_bytes()) / 1048576.0,
+                    world.registry.size() + world.registry.dead_count(), sizeof(std::vector<RelationEdge>),
+                    static_cast<double>(world.registry.allocated_bytes() - world.registry.dead_record_bytes()
+                                        - world.registry.slot_bytes() - world.registry.relation_bytes())
+                        / 1048576.0);
+    }
+    {
+        // Relocation alone: 15,000 living characters with empty lists; 500 kills spread over
+        // the id range (a kill near the front moves almost all of them).
+        constexpr std::uint32_t LIVING = 15'000;
+        CharacterRegistry registry;
+        const StanceTable stances;
+        for (std::uint32_t i = 0; i < LIVING; ++i) {
+            (void)registry.create(NameId{i + 1}, Gender::Female, Date{0}, CharacterInit{});
+        }
+        std::size_t moved = 0;
+        std::size_t killed = 0;
+        double elapsed = 0.0;
+        for (std::uint32_t id = 1; id <= LIVING; id += LIVING / 500) {
+            const std::span<const Character> living = registry.characters();
+            moved += static_cast<std::size_t>(
+                living.end() - std::find_if(living.begin(), living.end(), [&](const Character& c) {
+                                   return c.id().value > id;
+                               }));
+            const auto start = Clock::now();
+            killed += registry.kill(CharacterId{id}, Date{1}, stances, config, seed) == EditResult::Ok;
+            elapsed += seconds_since(start);
+        }
+        std::printf("kill relocation: %u living, %zu kills in %.3f s = %.1f us per kill (%.0f characters, %.2f MB moved "
+                    "per kill on average)\n",
+                    LIVING, killed, elapsed, elapsed * 1e6 / static_cast<double>(killed),
+                    static_cast<double>(moved) / static_cast<double>(killed),
+                    static_cast<double>(moved * sizeof(Character)) / static_cast<double>(killed) / 1048576.0);
+    }
+}
+
 // A structured world: 10 roots, 5 level-2 communities per root, 5 level-3 per level-2 and
 // 6 leaves per level-3 (1,810 communities, chains of depth 4). Stances sit on the upper
 // levels: every root towards every root including itself (in-group cohesion) and 20 topics,
@@ -419,5 +543,6 @@ int main() {
     bench_structured_world();
     bench_stance_inserts();
     bench_personal_opinions();
+    bench_death();
     return 0;
 }

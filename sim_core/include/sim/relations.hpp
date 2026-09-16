@@ -62,6 +62,28 @@ struct RelationInfo {
     return std::nullopt;
 }
 
+// Whether a relation stays when one of its participants dies. Family ties survive
+// (parents(), children() and siblings() keep working through the dead); service and
+// personal ties end. Values outside the enum: false.
+// No default: appending a RelationType triggers -Wswitch until it is handled here.
+[[nodiscard]] constexpr bool survives_death(RelationType type) noexcept {
+    switch (type) {
+    case RelationType::Parent:
+    case RelationType::Child:
+    case RelationType::Spouse:
+        return true;
+    case RelationType::Friend:
+    case RelationType::Rival:
+    case RelationType::Attraction:
+    case RelationType::Liege:
+    case RelationType::Vassal:
+    case RelationType::Employer:
+    case RelationType::Employee:
+        return false;
+    }
+    return false;
+}
+
 // Mask bit of a relation type. Requires a valid type (see relation_info).
 [[nodiscard]] constexpr std::uint32_t relation_bit(RelationType type) noexcept {
     return std::uint32_t{1} << static_cast<unsigned>(type);

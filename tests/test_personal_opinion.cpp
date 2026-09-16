@@ -466,6 +466,20 @@ TEST_CASE("personal opinions: golden values (identical in Debug and Release)") {
     CHECK(o_ca.weak.total == 0x1.4f25802f1e53p+3);  // 10.47332772448371
     CHECK((o_ca.long_term == 0 && o_ca.short_term == 7));
     CHECK(o_ca.total == 0x1.1792c0178f298p+4);      // 17.47332772448371
+
+    // Step 6: b dies at week 60. a's long entry about b is rebased by
+    // round(weak_before - weak_after) = round(3.1146... + 2.2853...) = 5; c has no entry about b.
+    const OpinionBreakdown c_b = opinion_breakdown(*reg.find(c), *reg.find(b), stances, CONFIG, seed);
+    CHECK(c_b.total == 0x1.1b10d07832da6p+3);        // 8.8458025310163286 (weak only)
+    REQUIRE(reg.kill(b, Date{60}, stances, CONFIG, seed) == EditResult::Ok);
+    const OpinionBreakdown d_ab = opinion_breakdown(*reg.find(a), *reg.find_dead(b), stances, CONFIG, seed);
+    CHECK(d_ab.weak.total == -0x1.2486a8719f69p+1);  // -2.2853594355390854
+    CHECK((d_ab.long_term == 55 && d_ab.short_term == -25));
+    CHECK(d_ab.total == 0x1.bb6f2af1cc12ep+4);       // 27.714640564460915, was 28.114640564460913
+    const OpinionBreakdown d_cb = opinion_breakdown(*reg.find(c), *reg.find_dead(b), stances, CONFIG, seed);
+    CHECK(d_cb.total == -0x1.5aacaf719c6p+0);        // -1.3541974689836707, was 8.8458...: the dead-record base
+    CHECK(opinion(*reg.find(a), topic7, stances, CONFIG, seed) == 0x1.6b2c8759f0d9ep+6); // unchanged
+    CHECK(opinion(*reg.find(c), *reg.find(a), stances, CONFIG, seed) == 0x1.1792c0178f298p+4);
 }
 
 // ---- property test against a reference model ----------------------------------------------

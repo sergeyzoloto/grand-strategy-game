@@ -30,7 +30,9 @@ cmake --build build/release --target sim_bench && ./build/release/bench/sim_benc
 (`typical`, `worst`; stances on every community, almost none match: the worst case for the
 block lookup) and a `structured` hierarchy (stances on upper levels, roots with self-stances,
 leaves without stances; random pairs and acquaintances reported separately). The `maintain`
-trimming benchmark runs every pass on a fresh copy of a filled template.
+trimming benchmark runs every pass on a fresh copy of a filled template. The kill benchmark
+measures kills with no dead and with 450,000 dead (created and killed in interleaved batches,
+never holding more than ~2,500 alive), and relocation alone at 15,000 living.
 
 CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_TESTS` (ON),
 `SIM_BUILD_BENCH` (ON).
@@ -96,11 +98,10 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   in a local registry and copy them (`tests/test_support.hpp`). Ids start at 1, increase by one
   and are never reused. `Character` has no default constructor; copy and move construction are
   public, copy and move assignment are deleted so a slot never takes another character's identity.
-  When characters can be removed later, relocate slots with `std::destroy_at` plus
-  `std::construct_at`.
+  Living slots are relocated with `std::destroy_at` plus `std::construct_at` (see Death).
 - **Lifetimes:** any pointer, reference or span obtained from the registry or from a Character is
-  valid only until the next registry mutation (create, any relation edit or personal opinion
-  edit): the registry may reallocate or shift list entries. Vectors returned by queries are independent copies.
+  valid only until the next registry mutation (create, kill, any relation edit or personal
+  opinion edit): the registry may reallocate, relocate characters or shift list entries. Vectors returned by queries are independent copies.
 - **Relations** live in `RelationGraph`, owned by the registry and edited only through it. One
   `RelationEdge {other, mask}` per ordered pair, stored per source and sorted by other; a bit on
   a -> b names b's role for a. `relation_info` is the single source of kind and complement:
@@ -110,8 +111,39 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   types only. Empty edges are removed. Siblings are derived from shared parents and never stored;
   at most `MAX_PARENTS` = 2 parents. Not checked yet: longer cycles and birth-date sanity.
 - **Edit results** are `EditResult` (`sim/edit_result.hpp`, formerly `ListResult`). Check order:
-  Invalid (id 0, a == b, unknown enum, wrong kind), NotFound (unknown character), then Duplicate /
+  Invalid (id 0, a == b, unknown enum, wrong kind), NotFound (an id never created), Invalid (a
+  dead participant where not allowed; needs a lookup, so after NotFound), then Duplicate /
   Conflict / NotFound against existing state, then Full. A failed edit changes nothing.
+  `kill` differs on purpose: it acts only on the living, so a dead id is NotFound (like an unknown
+  one), while other edits return Invalid for a dead participant.
+- **Death** (`CharacterRegistry::kill`, `sim/dead_record.hpp`). kill(id, death, stances, config,
+  seed) replaces a living Character with a 24-byte `DeadRecord` (id, name, birth, death,
+  main_community at death or invalid, reputation frozen at death, gender). No holders, fame or
+  deletion of dead records yet (Step 7); mortality never kills automatically.
+  - **Storage:** living characters in a vector sorted by id (`characters()` iterates the living in
+    id order); dead records append-only in order of death; one `u32` slot per id ever created
+    (living index, or top bit | dead index), so `find` (living only), `find_dead` and `exists`
+    are O(1) and ids stay below 2^31. A kill moves later living slots down with `destroy_at` +
+    `construct_at` (Characters are not assignable): cost grows with the living count (about
+    1.2 ms per kill at 15,000 living), not with the dead count. The relation graph keeps a node
+    for every id.
+  - **Opinions at death:** only existing long-term entries about the deceased are rebased, by
+    round(weak_before.total - weak_after.total) (clamped to +-200; 0 removes the entry), so those
+    opinions move by at most 0.5 unless long saturates. Without an entry the opinion moves to the
+    dead-record base; accepted. The deceased's own long entries and modifiers are discarded;
+    others' modifiers about it stay.
+  - **Dead-record base:** weak(A -> D) = sum_c share_A(c) * stance(c -> main_community(D)) +
+    k_rep * reputation(D) + k_noise * noise(A, D); compat 0; noise inputs as while alive.
+    `weak_opinion`/`opinion` take `const DeadRecord&` for dead targets; a dead holder is not a
+    Character, so it cannot be passed.
+  - **Relations:** `survives_death` (Parent, Child, Spouse) links stay on both sides; other paired
+    links are unlinked on both sides; one-way edges from and to the deceased are cleared (dead
+    nodes never hold one-way edges; asserted in debug). `parents()`, `children()` and
+    `siblings()` may return dead ids: check `find()` before treating one as living.
+  - **The dead in edits:** `link`/`unlink` accept a dead participant only for surviving types
+    (posthumous links, even between two dead; `MAX_PARENTS` and Conflict still apply);
+    `set_relation`/`clear_relation` with a dead participant are Invalid; modifiers and long
+    opinions accept a dead target and reject a dead holder (Invalid); `maintain()` skips the dead.
 - **Memory tests** bound each storage kind on its own (e.g. `relation_bytes()`) using what
   doubling guarantees, capacity <= max(minimum, 2 * size) with the minimums taken from the code
   (`RelationGraph::MIN_EDGE_CAPACITY`), so a change to `sizeof(Character)` cannot break them.
