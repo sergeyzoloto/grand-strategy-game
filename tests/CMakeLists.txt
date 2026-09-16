@@ -4,7 +4,6 @@ target_include_directories(doctest SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/third_
 add_executable(sim_tests
     main.cpp
     test_ids.cpp
-    test_quantize.cpp
     test_date.cpp
     test_character.cpp
     test_mortality.cpp

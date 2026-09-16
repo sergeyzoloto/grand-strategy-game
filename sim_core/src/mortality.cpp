@@ -35,12 +35,16 @@ double annual_mortality(const Character& character, Date now, const MortalityCon
         return 0.0;
     }
 
+    // Condition scales are 0..100; the model works on fractions 0..1.
+    const double health = static_cast<double>(character.health()) / static_cast<double>(CONDITION_MAX);
+    const double stress = static_cast<double>(character.stress()) / static_cast<double>(CONDITION_MAX);
+
     // Summed in log space so exp(b * age) cannot overflow into inf * 0 = NaN.
     const double log_hazard = std::log(config.gompertz_a)
                             + config.gompertz_b * age
                             + std::log(gender_multiplier(character.gender(), config))
-                            + config.health_weight * (1.0 - static_cast<double>(character.health()))
-                            + config.stress_weight * static_cast<double>(character.stress());
+                            + config.health_weight * (1.0 - health)
+                            + config.stress_weight * stress;
     const double hazard = std::exp(log_hazard);
     const double p = -std::expm1(-hazard);
 

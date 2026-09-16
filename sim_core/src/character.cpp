@@ -1,25 +1,58 @@
 #include "sim/character.hpp"
 
+#include <algorithm>
 #include <cassert>
+#include <cmath>
 #include <cstdint>
-
-#include "sim/quantize.hpp"
 
 namespace sim {
 
 namespace {
 
-void store_u16(std::uint16_t& field, float v) noexcept {
-    assert(!detail::is_nan(static_cast<double>(v)));
-    field = store_unit(field, static_cast<double>(v));
+// Hundredths helper shared by the condition fields: raw 0..10000, value = raw / 100.
+constexpr std::int64_t HUNDREDTHS_MAX = 10000;
+constexpr double HUNDREDTHS_PER_UNIT = 100.0;
+
+float get_hundredths(std::uint16_t raw) noexcept {
+    return static_cast<float>(static_cast<double>(raw) / HUNDREDTHS_PER_UNIT);
 }
 
-void add_u16(std::uint16_t& field, float delta) noexcept {
-    assert(!detail::is_nan(static_cast<double>(delta)));
-    field = add_unit(field, static_cast<double>(delta));
+void set_hundredths(std::uint16_t& raw, float value) noexcept {
+    assert(!std::isnan(value));
+    if (std::isnan(value)) {
+        return;
+    }
+    // Saturate before converting: an out-of-range float-to-integer conversion is UB.
+    const double scaled = static_cast<double>(value) * HUNDREDTHS_PER_UNIT;
+    if (scaled >= static_cast<double>(HUNDREDTHS_MAX)) {
+        raw = static_cast<std::uint16_t>(HUNDREDTHS_MAX);
+    } else if (scaled <= 0.0) {
+        raw = 0;
+    } else {
+        // std::round is half-away-from-zero regardless of the floating-point rounding mode.
+        raw = static_cast<std::uint16_t>(std::round(scaled));
+    }
+    assert(raw <= HUNDREDTHS_MAX);
 }
 
-float get_u16(std::uint16_t raw) noexcept { return dequantize_unit(raw); }
+// Rounds the delta to whole steps, then adds. Rounding the delta rather than the sum
+// means the same delta always adds the same number of raw steps, and add(d) followed
+// by add(-d) restores raw unless saturation intervened. Rounding the sum breaks this
+// near half steps (half-away-from-zero rounding is not shift-invariant) and would
+// accumulate float error across repeated adds.
+void add_hundredths(std::uint16_t& raw, float delta) noexcept {
+    assert(!std::isnan(delta));
+    if (std::isnan(delta)) {
+        return;
+    }
+    // Clamp before converting: an out-of-range float-to-integer conversion is UB.
+    const double limit = static_cast<double>(HUNDREDTHS_MAX);
+    const double scaled = std::clamp(static_cast<double>(delta) * HUNDREDTHS_PER_UNIT, -limit, limit);
+    // std::round is half-away-from-zero regardless of the floating-point rounding mode.
+    const auto steps = static_cast<std::int64_t>(std::round(scaled));
+    const std::int64_t sum = static_cast<std::int64_t>(raw) + steps;
+    raw = static_cast<std::uint16_t>(std::clamp<std::int64_t>(sum, 0, HUNDREDTHS_MAX));
+}
 
 } // namespace
 
@@ -43,16 +76,16 @@ Character::Character(CharacterId id, NameId name, Gender gender, Date birth, con
     set_charisma(init.charisma);
 }
 
-float Character::health() const noexcept { return get_u16(health_); }
-float Character::stress() const noexcept { return get_u16(stress_); }
-float Character::capacity() const noexcept { return get_u16(capacity_); }
+float Character::health() const noexcept { return get_hundredths(health_); }
+float Character::stress() const noexcept { return get_hundredths(stress_); }
+float Character::capacity() const noexcept { return get_hundredths(capacity_); }
 
-void Character::set_health(float v) noexcept { store_u16(health_, v); }
-void Character::set_stress(float v) noexcept { store_u16(stress_, v); }
-void Character::set_capacity(float v) noexcept { store_u16(capacity_, v); }
+void Character::set_health(float v) noexcept { set_hundredths(health_, v); }
+void Character::set_stress(float v) noexcept { set_hundredths(stress_, v); }
+void Character::set_capacity(float v) noexcept { set_hundredths(capacity_, v); }
 
-void Character::add_health(float delta) noexcept { add_u16(health_, delta); }
-void Character::add_stress(float delta) noexcept { add_u16(stress_, delta); }
-void Character::add_capacity(float delta) noexcept { add_u16(capacity_, delta); }
+void Character::add_health(float delta) noexcept { add_hundredths(health_, delta); }
+void Character::add_stress(float delta) noexcept { add_hundredths(stress_, delta); }
+void Character::add_capacity(float delta) noexcept { add_hundredths(capacity_, delta); }
 
 } // namespace sim

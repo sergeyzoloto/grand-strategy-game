@@ -41,18 +41,23 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - The build has zero warnings and all tests pass at the end of every step.
 - No SoA, SIMD, pools or hot/cold splitting unless profiling asks for it.
 - Commit once at the end of each step, after the tests pass and the report is written.
-- Every bipolar scale in the model uses whole numbers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX`),
+- Every bipolar trait scale in the model uses integers -100..+100 (`BIPOLAR_MIN`/`BIPOLAR_MAX`),
   stored directly with raw == value, including scales added in later steps (reputation, opinions).
 - Fractional values reach bipolar scales only through explicit rounding by the caller. Bipolar
   `set_`/`add_` accept integral types only (`BipolarInteger`: no floats, bool or character types);
   a float argument matches no function and is a hard error regardless of warning flags.
+- Condition scales (health, stress, capacity) are fractional 0..100 (`CONDITION_MIN`/`CONDITION_MAX`),
+  stored in hundredths (uint16 raw 0..10000, value = raw / 100), with a float API on purpose.
 
 ## Design rules established so far
 
-- **Quantization** (`sim/quantize.hpp`) is only for the 0..1 range: unsigned raw / MAX. Writes
-  round to nearest and saturate; infinities saturate; NaN leaves the field unchanged (asserted
-  in debug). Bounds are checked before any float-to-int conversion. The small rounding bias
-  from repeated small adds on uint16 fields is accepted.
+- **Condition scales** round to the nearest hundredth with `std::round` and saturate at 0 and
+  100; infinities saturate; NaN leaves the field unchanged (asserted in debug). Values are
+  clamped before any float-to-integer conversion. `add_` rounds the *delta* to whole steps, then
+  adds in a wide integer: the same delta always adds the same steps and add(d), add(-d) restores
+  raw unless saturated. A delta below 0.005 rounds away by design. Non-constant int arguments may
+  need an explicit cast under `-Wconversion`. The hundredths helper is private to `character.cpp`;
+  extract a shared one when a later step needs hundredths again.
 - **Bipolar scales are whole numbers**, so they never round silently. `set_` clamps any integer
   to -100..+100 with `std::cmp_less`/`std::cmp_greater`; `add_` clamps the delta to [-200, 200]
   first, so no integer width or signedness can overflow. -128 is never stored.

@@ -126,50 +126,149 @@ TEST_CASE("defaults match the init struct") {
 
 TEST_CASE("non-default init values are applied and clamped") {
     const Character c(CharacterId{5}, NameId{6}, Gender::Female, Date{0},
-                      CharacterInit{.health = 0.25f, .strength = 150, .openness = -100, .charisma = INT_MIN});
-    CHECK(c.health() == doctest::Approx(0.25).epsilon(1e-4));
+                      CharacterInit{.health = 25.0f, .strength = 150, .openness = -100, .charisma = INT_MIN});
+    CHECK(c.health() == 25.0f);
     CHECK(c.strength() == 100);  // clamped
     CHECK(c.openness() == -100); // exact
     CHECK(c.charisma() == -100); // clamped
-    CHECK(c.capacity() == 1.0f); // untouched default
+    CHECK(c.capacity() == 100.0f); // untouched default
     CHECK(c.intelligence() == 0);
 }
 
-// ---- 0..1 fields -------------------------------------------------------------
+// ---- condition fields (0..100 in hundredths) --------------------------------
 
-TEST_CASE("set_ saturates on 0..1 fields") {
+TEST_CASE("condition defaults are health 100, stress 0, capacity 100") {
+    const Character c = make_default();
+    CHECK(c.health() == 100.0f);
+    CHECK(c.stress() == 0.0f);
+    CHECK(c.capacity() == 100.0f);
+}
+
+TEST_CASE("condition set_ stores bounds exactly and saturates") {
     Character c = make_default();
     const float inf = std::numeric_limits<float>::infinity();
-    c.set_health(2.0f);
-    CHECK(c.health() == 1.0f);
-    c.set_stress(-3.0f);
-    CHECK(c.stress() == 0.0f);
-    c.set_capacity(inf);
-    CHECK(c.capacity() == 1.0f);
-}
 
-TEST_CASE("add_ saturates on 0..1 fields") {
-    Character c = make_default();
-    c.add_health(0.5f); // default 1.0
-    CHECK(c.health() == 1.0f);
-    c.add_stress(-0.5f); // default 0.0
+    c.set_health(0.0f);
+    CHECK(c.health() == CONDITION_MIN);
+    c.set_health(100.0f);
+    CHECK(c.health() == CONDITION_MAX);
+    c.set_health(150.0f);
+    CHECK(c.health() == 100.0f);
+    c.set_health(-150.0f);
+    CHECK(c.health() == 0.0f);
+
+    c.set_stress(inf);
+    CHECK(c.stress() == 100.0f);
+    c.set_stress(-inf);
     CHECK(c.stress() == 0.0f);
-    c.add_stress(0.75f);
-    c.add_stress(0.75f);
-    CHECK(c.stress() == 1.0f);
-    c.add_capacity(-5.0f);
+    c.set_stress(std::numeric_limits<float>::max());
+    CHECK(c.stress() == 100.0f);
+
+    c.set_capacity(-0.001f);
     CHECK(c.capacity() == 0.0f);
+    c.set_capacity(100.001f);
+    CHECK(c.capacity() == 100.0f);
 }
 
-TEST_CASE("accepted uint16 bias: 500 x add_health(0.001) lands within 0.5 +- 0.005") {
+TEST_CASE("condition set_ rounds to the nearest hundredth") {
+    Character c = make_default();
+    c.set_health(12.344f);
+    CHECK(c.health() == 12.34f);
+    c.set_health(12.346f);
+    CHECK(c.health() == 12.35f);
+}
+
+TEST_CASE("condition round trip of every raw value 0..10000") {
+    Character c = make_default();
+    for (int raw = 0; raw <= 10000; ++raw) {
+        const auto value = static_cast<float>(static_cast<double>(raw) / 100.0);
+        c.set_health(value);
+        c.set_stress(value);
+        c.set_capacity(value);
+        if (c.health() != value || c.stress() != value || c.capacity() != value) {
+            FAIL_CHECK("round trip failed at raw " << raw);
+        }
+    }
+}
+
+TEST_CASE("condition add_ saturates at 0 and 100") {
+    Character c = make_default();
+    const float inf = std::numeric_limits<float>::infinity();
+
+    c.add_health(0.5f); // default 100
+    CHECK(c.health() == 100.0f);
+    c.add_stress(-0.5f); // default 0
+    CHECK(c.stress() == 0.0f);
+    c.add_stress(75.0f);
+    c.add_stress(75.0f);
+    CHECK(c.stress() == 100.0f);
+    c.add_capacity(-500.0f);
+    CHECK(c.capacity() == 0.0f);
+
+    c.set_health(50.0f);
+    c.add_health(inf);
+    CHECK(c.health() == 100.0f);
+    c.add_health(-inf);
+    CHECK(c.health() == 0.0f);
+    c.set_health(50.0f);
+    c.add_health(std::numeric_limits<float>::max());
+    CHECK(c.health() == 100.0f);
+    c.add_health(std::numeric_limits<float>::lowest());
+    CHECK(c.health() == 0.0f);
+}
+
+TEST_CASE("500 x add_health(0.1) gives exactly raw 5000") {
     Character c = make_default();
     c.set_health(0.0f);
     for (int i = 0; i < 500; ++i) {
-        c.add_health(0.001f);
+        c.add_health(0.1f);
     }
-    MESSAGE("health after 500 x 0.001 = " << c.health());
-    CHECK(std::abs(static_cast<double>(c.health()) - 0.5) <= 0.005);
+    CHECK(c.health() == 50.0f); // only raw 5000 reads back as exactly 50
 }
+
+TEST_CASE("add_(d) then add_(-d) restores the value away from the bounds") {
+    Character c = make_default();
+    for (const float start : {0.37f, 12.34f, 50.0f, 99.63f}) {
+        CAPTURE(start);
+        c.set_health(start);
+        const float before = c.health();
+        c.add_health(0.37f);
+        c.add_health(-0.37f);
+        CHECK(c.health() == before);
+        c.add_health(-0.37f);
+        c.add_health(0.37f);
+        CHECK(c.health() == before);
+    }
+}
+
+// Resolution rule: add_ rounds the delta to whole hundredths, so a delta below half
+// a step rounds away. The exact 0.005 boundary is deliberately not tested: it depends
+// on float representation.
+TEST_CASE("resolution rule: add_health(0.004) is a no-op, add_health(0.006) is one step") {
+    Character c = make_default();
+    c.set_health(50.0f);
+    c.add_health(0.004f);
+    CHECK(c.health() == 50.0f);
+    c.add_health(-0.004f);
+    CHECK(c.health() == 50.0f);
+    c.add_health(0.006f);
+    CHECK(c.health() == 50.01f);
+    c.add_health(-0.006f);
+    CHECK(c.health() == 50.0f);
+}
+
+#ifdef NDEBUG
+// NaN is asserted in debug builds, so this runs in release only.
+TEST_CASE("condition NaN leaves the field unchanged") {
+    Character c = make_default();
+    const float nan = std::numeric_limits<float>::quiet_NaN();
+    c.set_health(42.5f);
+    c.set_health(nan);
+    CHECK(c.health() == 42.5f);
+    c.add_health(nan);
+    CHECK(c.health() == 42.5f);
+}
+#endif
 
 // ---- bipolar fields ----------------------------------------------------------
 

@@ -9,8 +9,8 @@ namespace sim {
 //
 // hazard(age) = gompertz_a * exp(gompertz_b * age)
 //             * gender_multiplier
-//             * exp(health_weight * (1 - health))
-//             * exp(stress_weight * stress)
+//             * exp(health_weight * (1 - health / 100))
+//             * exp(stress_weight * stress / 100)
 // annual probability = 1 - exp(-hazard)
 //
 // Known gap: plain Gompertz has no infant/child mortality peak.
@@ -20,7 +20,7 @@ struct MortalityConfig {
     double female_multiplier = 1.0;  // PLACEHOLDER: hazard multiplier, >= 0
     double male_multiplier = 1.1;    // PLACEHOLDER: hazard multiplier, >= 0
     double health_weight = 3.0;      // PLACEHOLDER: log-hazard added at health 0
-    double stress_weight = 1.0;      // PLACEHOLDER: log-hazard added at stress 1
+    double stress_weight = 1.0;      // PLACEHOLDER: log-hazard added at stress 100
 };
 
 // Age in years at `now`; negative if `now` is before birth.

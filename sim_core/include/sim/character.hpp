@@ -11,9 +11,13 @@
 
 namespace sim {
 
-// Every bipolar scale in the model is a whole number in -100..+100.
+// Every bipolar trait scale in the model is a whole number in -100..+100.
 inline constexpr int BIPOLAR_MIN = -100;
 inline constexpr int BIPOLAR_MAX = 100;
+
+// Condition scales (health, stress, capacity) are fractional 0..100, stored in hundredths.
+inline constexpr float CONDITION_MIN = 0.0f;
+inline constexpr float CONDITION_MAX = 100.0f;
 
 // Accepted argument types for bipolar mutators: any integer width and signedness.
 // Floating point is rejected so fractional values never truncate silently; the
@@ -34,13 +38,13 @@ enum class Gender : std::uint8_t {
     Male = 1,
 };
 
-// Initial values for a new Character. 0..1 fields are in value space: out-of-range
+// Initial values for a new Character. Condition fields are 0..100: out-of-range
 // values saturate, NaN leaves the field at raw 0 (asserted in debug). Bipolar
 // fields are whole numbers clamped to -100..+100.
 struct CharacterInit {
-    float health = 1.0f;            // PLACEHOLDER default, 0..1
-    float stress = 0.0f;            // PLACEHOLDER default, 0..1
-    float capacity = 1.0f;          // PLACEHOLDER default, 0..1
+    float health = 100.0f;          // PLACEHOLDER default, 0..100
+    float stress = 0.0f;            // PLACEHOLDER default, 0..100
+    float capacity = 100.0f;        // PLACEHOLDER default, 0..100
     int strength = 0;               // PLACEHOLDER default, -100..+100
     int intelligence = 0;           // PLACEHOLDER default, -100..+100
     int stability = 0;              // PLACEHOLDER default, -100..+100
@@ -57,8 +61,10 @@ struct CharacterInit {
 // Persistent character state. Trivially copyable, no pointers, no floating point,
 // never allocates. Derived values (age, mortality) are free functions elsewhere.
 //
-// 0..1 fields: float getters; set_* and add_* take float, round to nearest and
-// saturate; infinities saturate, NaN leaves the field unchanged (asserted in debug).
+// Condition fields (0..100): float getters; set_* and add_* take float, round to the
+// nearest hundredth and saturate; infinities saturate, NaN leaves the field unchanged
+// (asserted in debug). add_* rounds the delta to whole hundredths, so a delta below
+// 0.005 rounds away by design.
 //
 // Bipolar fields: int getters; set_* and add_* take any BipolarInteger and clamp
 // to -100..+100 without overflow for every input value.
@@ -152,9 +158,9 @@ private:
     NameId name_;                // u32 handle, 0 = invalid
     Date birth_;                 // i32 weeks since world start, may be negative
 
-    std::uint16_t health_ = 0;   // 0..1, value = raw / 65535
-    std::uint16_t stress_ = 0;   // 0..1, value = raw / 65535
-    std::uint16_t capacity_ = 0; // 0..1, value = raw / 65535
+    std::uint16_t health_ = 0;   // 0..100 in hundredths: raw 0..10000, value = raw / 100
+    std::uint16_t stress_ = 0;   // 0..100 in hundredths: raw 0..10000, value = raw / 100
+    std::uint16_t capacity_ = 0; // 0..100 in hundredths: raw 0..10000, value = raw / 100
 
     Gender gender_;              // u8 enum
 
