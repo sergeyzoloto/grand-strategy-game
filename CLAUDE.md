@@ -34,7 +34,10 @@ trimming benchmark runs every pass on a fresh copy of a filled template. The kil
 measures kills with no dead and after 450,000 interleaved create+kill rounds (never more than
 ~2,500 alive), and relocation alone at 15,000 living. The generational churn benchmark (newborn
 with two distinct living parents, oldest dies, 450,000 deaths) samples dead count and memory.
-Holders overhead is measured on modifier, long-term and link+unlink edits.
+Holders overhead is measured on modifier, long-term and link+unlink edits. Every section counts
+its operations by outcome and prints the counts; an operation that must succeed (setup edits,
+kills, timed edits that cannot legitimately fail) aborts its section with a message, and
+`sim_bench` exits with 1 if any section aborted.
 
 CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_TESTS` (ON),
 `SIM_BUILD_BENCH` (ON).
@@ -193,6 +196,11 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     headers for forgotten ids. Likely fix, when needed: graph nodes only for existing characters,
     reached through `slots_` (a node index next to the living/dead index), so forgetting frees the
     node. Not fixed now.
+  - **Known limit, kill relocation:** deaths mostly hit the oldest characters, which have the
+    lowest ids, so a kill in the id-sorted living storage shifts nearly the whole living vector,
+    not half of it on average: about 0.2 ms per death at 1,500 living and about 2 ms at 15,000.
+    Fine for ordinary mortality; mass deaths (plague, battle, massacre) will need a batch kill
+    with one compaction pass.
 - **Memory tests** bound each storage kind on its own (e.g. `relation_bytes()`) using what
   doubling guarantees, capacity <= max(minimum, 2 * size) with the minimums taken from the code
   (`RelationGraph::MIN_EDGE_CAPACITY`), so a change to `sizeof(Character)` cannot break them.
