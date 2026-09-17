@@ -198,8 +198,9 @@ public:
     }
     // Exact sum of raw weights, 0..8 * 255. Use for weighted sums; divide once.
     [[nodiscard]] int involvement_total() const noexcept;
-    // weight / total computed in double, 0 if absent. Never adjusted to force an
-    // exact sum, so equal weights give equal shares.
+    // weight / total computed in double and returned as float for display; 0 if absent. Never
+    // adjusted to force an exact sum, so equal weights give equal shares. Weighted sums use raw
+    // weights and involvement_total() instead (divide once).
     [[nodiscard]] float involvement_share(CommunityId community) const noexcept;
     // Largest weight, ties to the smaller id; empty when there is no involvement.
     [[nodiscard]] std::optional<CommunityId> main_community() const noexcept;
@@ -225,14 +226,15 @@ public:
 
     // Long-term opinions about people, sorted by CharacterId; size may exceed person_limit
     // after extraversion dropped, until the registry's maintain().
-    [[nodiscard]] std::span<const LongOpinion> long_people() const noexcept {
+    [[nodiscard]] std::span<const PersonLongOpinion> long_people() const noexcept {
         return {long_people_.data(), long_people_.size()};
     }
-    // Long-term opinions about communities and topics, sorted by TargetId raw value.
-    [[nodiscard]] std::span<const LongOpinion> long_targets() const noexcept {
+    // Long-term opinions about communities and topics, sorted by TargetId (raw order).
+    [[nodiscard]] std::span<const TargetLongOpinion> long_targets() const noexcept {
         return {long_targets_.data(), long_targets_.size()};
     }
-    // Active modifiers, sorted by (domain, target, modifier).
+    // Active modifiers, sorted by (domain, target, modifier). The target is stored raw next to
+    // its domain; OpinionModifier::person() and target_id() convert it.
     [[nodiscard]] std::span<const OpinionModifier> modifiers() const noexcept {
         return {modifiers_.data(), modifiers_.size()};
     }
@@ -317,10 +319,11 @@ private:
 
     // Appended in Step 4 so every earlier offset stays.
     std::int8_t reputation_ = 0;        // -100..+100 units, stored directly
+    std::uint8_t reserved_[3]{};        // always 0; explicit, so Character has no implicit padding
 
     // Appended in Step 5 (from offset 448) so every earlier offset stays.
-    FixedVector<LongOpinion, PERSON_LIMIT_MAX> long_people_;     // sorted by CharacterId, values != 0; 324 bytes
-    FixedVector<LongOpinion, TARGET_LIMIT> long_targets_;        // sorted by TargetId raw, values != 0; 132 bytes
+    FixedVector<PersonLongOpinion, PERSON_LIMIT_MAX> long_people_; // sorted by CharacterId, values != 0; 324 bytes
+    FixedVector<TargetLongOpinion, TARGET_LIMIT> long_targets_;    // sorted by TargetId (raw order), values != 0; 132 bytes
     FixedVector<OpinionModifier, MODIFIER_CAP> modifiers_;       // sorted by (domain, target, modifier); 260 bytes
 };
 
@@ -329,7 +332,19 @@ static_assert(CharacterInit{}.health == 100.0f && CharacterInit{}.stress == 0.0f
 static_assert(CharacterInit{}.strength.value() == 0);
 static_assert(std::is_trivially_copyable_v<Character>);
 static_assert(!std::is_copy_assignable_v<Character> && !std::is_move_assignable_v<Character>);
+static_assert(!std::is_default_constructible_v<Character>);
 static_assert(std::is_standard_layout_v<Character>);
 static_assert(sizeof(Character) == 1164, "Character layout changed; update the plan and field comments");
+// No implicit padding and no floating point: equal state means equal bytes.
+static_assert(std::has_unique_object_representations_v<Character>);
+// Every FixedVector inside Character keeps the sizeof it had with a uint8 counter.
+static_assert(sizeof(FixedVector<PractiseEntry, PRACTISE_CAP>) == 258);
+static_assert(sizeof(FixedVector<NameId, NICKNAME_CAP>) == 20);
+static_assert(sizeof(FixedVector<InvolvementEntry, INVOLVEMENT_CAP>) == 68);
+static_assert(sizeof(FixedVector<SacredEntry, SACRED_CAP>) == 68);
+static_assert(sizeof(FixedVector<PersonLongOpinion, PERSON_LIMIT_MAX>) == 324);
+static_assert(sizeof(FixedVector<TargetLongOpinion, TARGET_LIMIT>) == 132);
+static_assert(sizeof(FixedVector<OpinionModifier, MODIFIER_CAP>) == 260);
+static_assert(sizeof(FixedVector<CharacterId, PERSON_LIMIT_MAX>) == 164); // trim_long_opinions' evicted list
 
 } // namespace sim

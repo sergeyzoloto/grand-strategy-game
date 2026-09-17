@@ -1,10 +1,14 @@
 #include <doctest.h>
 
 #include <cstdint>
+#include <cstring>
 #include <type_traits>
 
 #include "sim/character.hpp"
 #include "sim/character_registry.hpp"
+#include "sim/personal_opinion.hpp"
+#include "sim/stance_table.hpp"
+#include "sim/world_context.hpp"
 
 using namespace sim;
 
@@ -100,4 +104,125 @@ TEST_CASE("registry: early characters keep their data after many creates") {
     CHECK(c->involvement_total() == 17);
     CHECK(registry.has_relation(first, RelationType::Friend, second));
     CHECK(registry.find(CharacterId{5002})->birth() == Date{4999});
+}
+
+// ---- byte determinism ----------------------------------------------------------------------
+
+namespace {
+
+TargetId topic_id(std::uint32_t id) {
+    return *TargetId::from(TopicId{id});
+}
+
+} // namespace
+
+static_assert(std::has_unique_object_representations_v<Character>);
+static_assert(!std::is_default_constructible_v<Character>);
+
+TEST_CASE("byte determinism: the same logical Character through two edit histories is byte-identical") {
+    const StanceTable stances;
+    const OpinionConfig opinion_config{};
+    const LifecycleConfig lifecycle{};
+    constexpr std::uint32_t COUNT = 14;
+    const CharacterId t{2}; // the character compared; id 1 dies in the second registry, relocating it
+
+    // Direct: every value set once, in its final form.
+    CharacterRegistry direct;
+    for (std::uint32_t i = 1; i <= COUNT; ++i) {
+        (void)direct.create(NameId{i}, Gender::Male, Date{-40},
+                            i == t.value ? CharacterInit{.health = 55.5f, .strength = 20, .extraversion = -100,
+                                                         .reputation = 15}
+                                         : CharacterInit{});
+    }
+    {
+        Character& c = *direct.find(t);
+        REQUIRE(c.add_nickname(NameId{51}) == EditResult::Ok);
+        REQUIRE(c.add_nickname(NameId{52}) == EditResult::Ok);
+        REQUIRE(c.add_nickname(NameId{53}) == EditResult::Ok);
+        REQUIRE(c.add_skill(SkillKind::Education, SkillId{2}) == EditResult::Ok);
+        REQUIRE(c.add_skill(SkillKind::Language, SkillId{9}) == EditResult::Ok);
+        REQUIRE(c.set_involvement(CommunityId{3}, 10) == EditResult::Ok);
+        REQUIRE(c.set_involvement(CommunityId{7}, 40) == EditResult::Ok);
+        REQUIRE(c.add_sacred(topic_id(6), SacredSign::Minus) == EditResult::Ok);
+    }
+    for (std::uint32_t k = 3; k <= 10; ++k) {
+        REQUIRE(direct.add_long_opinion(t, CharacterId{k}, static_cast<int>(100 + k)).outcome
+                == LongOpinionOutcome::Created);
+    }
+    for (std::uint32_t k = 1; k <= 15; ++k) {
+        REQUIRE(direct.add_long_opinion(t, topic_id(k), 50).outcome == LongOpinionOutcome::Created);
+    }
+    REQUIRE(direct.add_long_opinion(t, topic_id(20), 60).outcome == LongOpinionOutcome::Created);
+    REQUIRE(direct.add_modifier(t, CharacterId{5}, ModifierId{2}, -20) == EditResult::Ok);
+    REQUIRE(direct.add_modifier(t, topic_id(8), ModifierId{3}, 7) == EditResult::Ok);
+
+    // Detours: inserts and erases, a kill that relocates t, a maintain trim and evictions.
+    CharacterRegistry detour;
+    for (std::uint32_t i = 1; i <= COUNT; ++i) {
+        (void)detour.create(NameId{i}, Gender::Male, Date{-40},
+                            i == t.value ? CharacterInit{.health = 30.0f, .extraversion = 100} : CharacterInit{});
+    }
+    REQUIRE(detour.kill(CharacterId{1}, Date{0}, WorldContext{stances, opinion_config, lifecycle, WorldSeed{9}}).result
+            == EditResult::Ok);
+    REQUIRE(detour.characters()[0].id() == t); // relocated from slot 1 to slot 0
+    {
+        Character& c = *detour.find(t);
+        c.set_health(55.5f);
+        c.add_strength(30);
+        c.add_strength(-10);
+        c.set_reputation(5);
+        c.add_reputation(10);
+        REQUIRE(c.add_nickname(NameId{50}) == EditResult::Ok);
+        REQUIRE(c.add_nickname(NameId{51}) == EditResult::Ok);
+        REQUIRE(c.add_nickname(NameId{52}) == EditResult::Ok);
+        REQUIRE(c.remove_nickname(NameId{50}) == EditResult::Ok);
+        REQUIRE(c.add_nickname(NameId{53}) == EditResult::Ok);
+        REQUIRE(c.add_skill(SkillKind::Language, SkillId{9}) == EditResult::Ok);
+        REQUIRE(c.add_skill(SkillKind::Ability, SkillId{4}) == EditResult::Ok);
+        REQUIRE(c.add_skill(SkillKind::Education, SkillId{2}) == EditResult::Ok);
+        REQUIRE(c.remove_skill(SkillKind::Ability, SkillId{4}) == EditResult::Ok);
+        REQUIRE(c.set_involvement(CommunityId{7}, 30) == EditResult::Ok);
+        REQUIRE(c.set_involvement(CommunityId{3}, 10) == EditResult::Ok);
+        REQUIRE(c.set_involvement(CommunityId{9}, 200) == EditResult::Ok);
+        REQUIRE(c.set_involvement(CommunityId{9}, 0) == EditResult::Ok);
+        REQUIRE(c.set_involvement(CommunityId{7}, 40) == EditResult::Ok);
+        REQUIRE(c.add_sacred(topic_id(5), SacredSign::Plus) == EditResult::Ok);
+        REQUIRE(c.add_sacred(topic_id(6), SacredSign::Minus) == EditResult::Ok);
+        REQUIRE(c.remove_sacred(topic_id(5)) == EditResult::Ok);
+    }
+    // People list: the final entries in reverse order plus two weak ones, then a trim to limit 8
+    // (removes 11), then an eviction by 10 (removes 12), then a removal and re-creation of 3.
+    for (std::uint32_t k = 9; k >= 3; --k) {
+        REQUIRE(detour.add_long_opinion(t, CharacterId{k}, static_cast<int>(100 + k)).outcome
+                == LongOpinionOutcome::Created);
+    }
+    REQUIRE(detour.add_long_opinion(t, CharacterId{11}, 5).outcome == LongOpinionOutcome::Created);
+    REQUIRE(detour.add_long_opinion(t, CharacterId{12}, 6).outcome == LongOpinionOutcome::Created);
+    detour.find(t)->set_extraversion(-100);
+    REQUIRE(detour.maintain() == 1);
+    const LongOpinionResult<CharacterId> evicting = detour.add_long_opinion(t, CharacterId{10}, 110);
+    REQUIRE(evicting.outcome == LongOpinionOutcome::CreatedWithEviction);
+    REQUIRE(evicting.evicted == CharacterId{12});
+    REQUIRE(detour.add_long_opinion(t, CharacterId{3}, -103).outcome == LongOpinionOutcome::Removed);
+    REQUIRE(detour.add_long_opinion(t, CharacterId{3}, 103).outcome == LongOpinionOutcome::Created);
+    // Target list: full at TARGET_LIMIT with one weak entry, evicted by topic 20.
+    for (std::uint32_t k = 16; k >= 1; --k) {
+        REQUIRE(detour.add_long_opinion(t, topic_id(k), k == 16 ? 2 : 50).outcome == LongOpinionOutcome::Created);
+    }
+    REQUIRE(detour.add_long_opinion(t, topic_id(20), 60).outcome == LongOpinionOutcome::CreatedWithEviction);
+    // Modifiers: an extra one added and removed.
+    REQUIRE(detour.add_modifier(t, topic_id(8), ModifierId{3}, 7) == EditResult::Ok);
+    REQUIRE(detour.add_modifier(t, CharacterId{4}, ModifierId{1}, 10) == EditResult::Ok);
+    REQUIRE(detour.add_modifier(t, CharacterId{5}, ModifierId{2}, -20) == EditResult::Ok);
+    REQUIRE(detour.remove_modifier(t, CharacterId{4}, ModifierId{1}) == EditResult::Ok);
+
+    const Character& a = *direct.find(t);
+    const Character& b = *detour.find(t);
+    // Logical equality first (a clearer failure), then the bytes.
+    REQUIRE(a.health() == b.health());
+    REQUIRE((a.strength() == b.strength() && a.reputation() == b.reputation() && a.extraversion() == b.extraversion()));
+    REQUIRE(a.long_people().size() == b.long_people().size());
+    REQUIRE(a.long_targets().size() == b.long_targets().size());
+    REQUIRE(a.modifiers().size() == b.modifiers().size());
+    CHECK(std::memcmp(&a, &b, sizeof(Character)) == 0);
 }

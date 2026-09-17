@@ -40,10 +40,20 @@ CharacterRegistry make_registry(std::uint32_t count, const CharacterInit& init =
     return registry;
 }
 
-std::vector<std::uint32_t> targets_of(std::span<const LongOpinion> list) {
+// The stored order key: CharacterId value, or TargetId raw value.
+std::uint32_t key_of(CharacterId id) {
+    return id.value;
+}
+
+std::uint32_t key_of(TargetId id) {
+    return id.raw();
+}
+
+template<class Target>
+std::vector<std::uint32_t> targets_of(std::span<const LongOpinion<Target>> list) {
     std::vector<std::uint32_t> out;
-    for (const LongOpinion& e : list) {
-        out.push_back(e.target);
+    for (const LongOpinion<Target>& e : list) {
+        out.push_back(key_of(e.target));
     }
     return out;
 }
@@ -73,7 +83,8 @@ using O = LongOpinionOutcome;
 
 // ---- layout --------------------------------------------------------------------------------
 
-static_assert(sizeof(LongOpinion) == 8 && std::has_unique_object_representations_v<LongOpinion>);
+static_assert(sizeof(PersonLongOpinion) == 8 && std::has_unique_object_representations_v<PersonLongOpinion>);
+static_assert(sizeof(TargetLongOpinion) == 8 && std::has_unique_object_representations_v<TargetLongOpinion>);
 static_assert(sizeof(OpinionModifier) == 8 && std::has_unique_object_representations_v<OpinionModifier>);
 // Offsets (long_people_ 448, long_targets_ 772, modifiers_ 904 and every earlier one) are
 // pinned by static_asserts in the Character constructor.
@@ -88,7 +99,7 @@ static_assert(CanAddPersonLong<int> && CanAddTargetLong<std::uint64_t>);
 static_assert(!CanAddPersonLong<float> && !CanAddTargetLong<double> && !CanAddTargetLong<bool>);
 
 TEST_CASE("personal opinions: sizes") {
-    MESSAGE("sizeof(LongOpinion) = " << sizeof(LongOpinion) << ", sizeof(OpinionModifier) = "
+    MESSAGE("sizeof(LongOpinion) = " << sizeof(PersonLongOpinion) << ", sizeof(OpinionModifier) = "
                                      << sizeof(OpinionModifier) << ", sizeof(Character) = " << sizeof(Character));
     CHECK(sizeof(Character) == 1164);
 }
@@ -418,6 +429,77 @@ TEST_CASE("opinion: personal terms pull back from a saturated weak opinion (clam
     CHECK(o.total == 65.0);
 }
 
+TEST_CASE("opinion: relations don't change opinions in either direction") {
+    StanceTable stances;
+    REQUIRE(stances.set_stance(CommunityId{1}, community(2), 35) == EditResult::Ok);
+    REQUIRE(stances.set_stance(CommunityId{2}, community(1), -60) == EditResult::Ok);
+    CharacterRegistry r;
+    const CharacterId a = r.create(NameId{1}, Gender::Female, Date{0},
+                                   CharacterInit{.stability = 30, .openness = -20, .extraversion = 50, .reputation = 12});
+    const CharacterId b = r.create(NameId{2}, Gender::Male, Date{0},
+                                   CharacterInit{.stability = -70, .agreeableness = 40, .reputation = -33});
+    REQUIRE(r.find(a)->set_involvement(CommunityId{1}, 9) == EditResult::Ok);
+    REQUIRE(r.find(b)->set_involvement(CommunityId{2}, 4) == EditResult::Ok);
+    REQUIRE(r.add_long_opinion(a, b, 17).outcome == O::Created);
+    REQUIRE(r.add_modifier(b, a, ModifierId{1}, -8) == EditResult::Ok);
+    const WorldSeed seed{4242};
+    const auto ab = [&] { return opinion(*r.find(a), *r.find(b), stances, CONFIG, seed); };
+    const auto ba = [&] { return opinion(*r.find(b), *r.find(a), stances, CONFIG, seed); };
+    const double ab_before = ab();
+    const double ba_before = ba();
+
+    REQUIRE(r.set_relation(a, RelationType::Friend, b) == EditResult::Ok);
+    CHECK(ab() == ab_before);
+    CHECK(ba() == ba_before);
+    REQUIRE(r.set_relation(b, RelationType::Rival, a) == EditResult::Ok);
+    REQUIRE(r.link(a, RelationType::Spouse, b) == EditResult::Ok);
+    CHECK(ab() == ab_before);
+    CHECK(ba() == ba_before);
+    REQUIRE(r.link(a, RelationType::Employer, b) == EditResult::Ok);
+    CHECK(ab() == ab_before);
+    CHECK(ba() == ba_before);
+    REQUIRE(r.unlink(b, RelationType::Spouse, a) == EditResult::Ok);
+    REQUIRE(r.unlink(a, RelationType::Employer, b) == EditResult::Ok);
+    REQUIRE(r.clear_relation(a, RelationType::Friend, b) == EditResult::Ok);
+    CHECK(ab() == ab_before);
+    CHECK(ba() == ba_before);
+}
+
+TEST_CASE("typed reads: long-term entries hold typed ids; modifiers convert through their domain") {
+    CharacterRegistry r = make_registry(6, CharacterInit{.extraversion = 100});
+    const CharacterId a{1};
+    REQUIRE(r.add_long_opinion(a, CharacterId{5}, 40).outcome == O::Created);
+    REQUIRE(r.add_long_opinion(a, community(5), -30).outcome == O::Created);
+    REQUIRE(r.add_long_opinion(a, topic(5), 20).outcome == O::Created);
+    REQUIRE(r.add_modifier(a, CharacterId{5}, ModifierId{1}, 9) == EditResult::Ok);
+    REQUIRE(r.add_modifier(a, topic(5), ModifierId{1}, -9) == EditResult::Ok);
+    const Character& c = *r.find(a);
+
+    REQUIRE(c.long_people().size() == 1);
+    CHECK(c.long_people()[0].target == CharacterId{5});
+    REQUIRE(c.long_targets().size() == 2);
+    CHECK(c.long_targets()[0].target == community(5)); // TargetId order: communities before topics
+    CHECK(c.long_targets()[1].target == topic(5));
+    CHECK(c.long_targets()[1].target.as_topic() == TopicId{5});
+
+    REQUIRE(c.modifiers().size() == 2);
+    const OpinionModifier& person = c.modifiers()[0];
+    const OpinionModifier& target = c.modifiers()[1];
+    CHECK(person.person() == CharacterId{5});
+    CHECK(!person.target_id().has_value());
+    CHECK(target.target_id() == topic(5));
+    CHECK(!target.person().has_value());
+    // A raw value with a reserved kind never decodes.
+    const OpinionModifier forged{.target = (std::uint32_t{2} << TargetId::INDEX_BITS) | 5,
+                                 .modifier = ModifierId{1},
+                                 .effect = 0,
+                                 .domain = ModifierDomain::Target};
+    CHECK(!forged.target_id().has_value());
+    // Value-initialized long-term slots hold the invalid ids.
+    CHECK(!PersonLongOpinion{}.target.valid());
+    CHECK(!TargetLongOpinion{}.target.valid());
+}
+
 // ---- golden values ---------------------------------------------------------------------------------------
 
 TEST_CASE("personal opinions: golden values (identical in Debug and Release)") {
@@ -625,13 +707,14 @@ TargetId target_from_raw(std::uint32_t raw) {
     return (raw >> TargetId::INDEX_BITS) == 0 ? community(index) : topic(index);
 }
 
-bool same_long(std::span<const LongOpinion> actual, const std::map<std::uint32_t, int>& expected) {
+template<class Target>
+bool same_long(std::span<const LongOpinion<Target>> actual, const std::map<std::uint32_t, int>& expected) {
     if (actual.size() != expected.size()) {
         return false;
     }
     auto it = expected.begin();
-    for (const LongOpinion& e : actual) {
-        if (e.target != it->first || e.value != it->second || e.reserved != 0) {
+    for (const LongOpinion<Target>& e : actual) {
+        if (key_of(e.target) != it->first || e.value != it->second || e.reserved != 0) {
             return false;
         }
         ++it;

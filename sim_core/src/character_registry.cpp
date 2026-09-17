@@ -146,8 +146,8 @@ KillResult CharacterRegistry::kill(CharacterId id, Date death, const WorldContex
     const std::size_t holder_end = scratch_.size();
 
     // The deceased's references stop counting: its distinct targets, sorted by id, after the holders.
-    for (const LongOpinion& e : victim.long_people()) {
-        scratch_.push_back(CharacterId{e.target});
+    for (const PersonLongOpinion& e : victim.long_people()) {
+        scratch_.push_back(e.target);
     }
     for (const OpinionModifier& m : victim.modifiers()) {
         if (m.domain == ModifierDomain::Person) {

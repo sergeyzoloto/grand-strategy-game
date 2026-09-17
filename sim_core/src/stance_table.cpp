@@ -160,6 +160,7 @@ void StanceTable::stances(std::span<const CommunityChain> sources, std::span<con
     assert(sources.size() <= STANCE_BATCH_MAX_SOURCES);
     assert(out.size() >= sources.size() * targets.size());
     if (sources.size() > STANCE_BATCH_MAX_SOURCES || out.size() < sources.size() * targets.size()) {
+        std::fill(out.begin(), out.end(), 0); // release: a defined result (no stances) instead of stale values
         return;
     }
 

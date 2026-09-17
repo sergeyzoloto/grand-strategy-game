@@ -500,11 +500,13 @@ void bench_death() {
         PersonalWorld world;
         std::mt19937 rng(31u);
         build_kill_world(world, rng);
-        time_kills("no dead yet   ", world, config, seed, Date{100});
+        time_kills("no dead yet       ", world, config, seed, Date{100});
     }
     {
         // 450 rounds: create 1,000 characters (spouse pairs), then kill them from the back,
-        // so at most 2,500 are alive and batch kills never shift the base world.
+        // so at most 2,500 are alive and batch kills never shift the base world. Every setup
+        // character is forgotten (no living holder), so this measures kills after 450,000 ids
+        // were created, not kills with 450,000 dead records.
         PersonalWorld world;
         std::mt19937 rng(31u);
         build_kill_world(world, rng);
@@ -544,7 +546,7 @@ void bench_death() {
         std::printf("  (setup: 450,000 create+kill in %.1f s = %.1f us per kill with 1,500 full characters alive)\n",
                     setup_seconds, setup_seconds * 1e6 / 450'000.0);
         print_outcomes({&setup_creates, &setup_links, &setup_kills});
-        time_kills("450,000 dead  ", world, config, seed, Date{100});
+        time_kills("after 450,000 ids ", world, config, seed, Date{100});
         std::printf("  memory: dead records %.1f MB (%zu B each), slots+holders %.1f MB, relation graph %.1f MB "
                     "(%zu ids, %zu B per node outer vector), living %.1f MB\n",
                     static_cast<double>(world.registry.dead_record_bytes()) / 1048576.0, sizeof(DeadRecord),

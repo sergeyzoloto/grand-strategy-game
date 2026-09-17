@@ -15,8 +15,8 @@ namespace {
 
 // Index of the entry with the smallest |value|, ties to the smaller target (the list is
 // sorted by target, so a strict comparison keeps the first). Requires a non-empty list.
-template<std::size_t N>
-std::size_t weakest_index(const FixedVector<LongOpinion, N>& list) noexcept {
+template<class Target, std::size_t N>
+std::size_t weakest_index(const FixedVector<LongOpinion<Target>, N>& list) noexcept {
     assert(!list.empty());
     std::size_t weakest = 0;
     for (std::size_t i = 1; i < list.size(); ++i) {
@@ -27,58 +27,42 @@ std::size_t weakest_index(const FixedVector<LongOpinion, N>& list) noexcept {
     return weakest;
 }
 
-// Converts a stored raw value back to a typed TargetId at the boundary. Stored values
-// always came from valid TargetIds; anything else yields an invalid TargetId.
-TargetId target_from_raw(std::uint32_t raw) noexcept {
-    const std::uint32_t index = raw & (TargetId::INDEX_LIMIT - 1);
-    // No default: appending a TargetKind triggers -Wswitch here.
-    switch (static_cast<TargetKind>(raw >> TargetId::INDEX_BITS)) {
-    case TargetKind::Community:
-        return TargetId::from(CommunityId{index}).value_or(TargetId{});
-    case TargetKind::Topic:
-        return TargetId::from(TopicId{index}).value_or(TargetId{});
-    }
-    return TargetId{};
-}
-
-struct LongCore {
-    LongOpinionOutcome outcome;
-    std::uint32_t evicted; // raw target, 0 if none
-};
-
 // Shared logic for both long-term lists. `limit` may be below the list's capacity; a list
 // already above its limit still evicts only one entry per call (maintain trims the rest).
-template<std::size_t N>
-LongCore add_long(FixedVector<LongOpinion, N>& list, std::size_t limit, std::uint32_t target, int delta) noexcept {
+// `evicted` is invalid unless the outcome is CreatedWithEviction.
+template<class Target, std::size_t N>
+LongOpinionResult<Target> add_long(FixedVector<LongOpinion<Target>, N>& list, std::size_t limit, Target target,
+                                   int delta) noexcept {
     assert(delta >= -LONG_DELTA_MAX && delta <= LONG_DELTA_MAX);
     assert(limit >= 1 && limit <= list.capacity());
+    assert(target.valid());
     auto* it = std::lower_bound(list.begin(), list.end(), target,
-                                [](const LongOpinion& e, std::uint32_t t) { return e.target < t; });
+                                [](const LongOpinion<Target>& e, Target t) { return e.target < t; });
     if (it != list.end() && it->target == target) {
         const int next = std::clamp(it->value + delta, -LONG_VALUE_MAX, LONG_VALUE_MAX);
         if (next == it->value) {
-            return {LongOpinionOutcome::Unchanged, 0};
+            return {LongOpinionOutcome::Unchanged, Target{}};
         }
         if (next == 0) {
             list.erase(static_cast<std::size_t>(it - list.begin()));
-            return {LongOpinionOutcome::Removed, 0};
+            return {LongOpinionOutcome::Removed, Target{}};
         }
         it->value = static_cast<std::int16_t>(next);
-        return {LongOpinionOutcome::Updated, 0};
+        return {LongOpinionOutcome::Updated, Target{}};
     }
     if (delta == 0) {
-        return {LongOpinionOutcome::Unchanged, 0};
+        return {LongOpinionOutcome::Unchanged, Target{}};
     }
     const int value = std::clamp(delta, -LONG_VALUE_MAX, LONG_VALUE_MAX);
-    const LongOpinion entry{.target = target, .value = static_cast<std::int16_t>(value), .reserved = 0};
+    const LongOpinion<Target> entry{.target = target, .value = static_cast<std::int16_t>(value), .reserved = 0};
     auto index = static_cast<std::size_t>(it - list.begin());
     if (list.size() >= limit) {
         const std::size_t weakest = weakest_index(list);
         // Evict only if the new entry is strictly stronger.
         if (!(std::abs(value) > std::abs(list[weakest].value))) {
-            return {LongOpinionOutcome::Dropped, 0};
+            return {LongOpinionOutcome::Dropped, Target{}};
         }
-        const std::uint32_t evicted = list[weakest].target;
+        const Target evicted = list[weakest].target;
         list.erase(weakest);
         if (weakest < index) {
             --index;
@@ -87,9 +71,8 @@ LongCore add_long(FixedVector<LongOpinion, N>& list, std::size_t limit, std::uin
         return {LongOpinionOutcome::CreatedWithEviction, evicted};
     }
     list.insert(index, entry);
-    return {LongOpinionOutcome::Created, 0};
+    return {LongOpinionOutcome::Created, Target{}};
 }
-
 
 // Modifiers are sorted by (domain, target, modifier).
 bool modifier_less(const OpinionModifier& m, ModifierDomain domain, std::uint32_t target,
@@ -166,9 +149,10 @@ int sum_effects(std::span<const OpinionModifier> list, ModifierDomain domain, st
     return sum;
 }
 
-int long_value(std::span<const LongOpinion> list, std::uint32_t target) noexcept {
+template<class Target>
+int long_value(std::span<const LongOpinion<Target>> list, Target target) noexcept {
     const auto it = std::lower_bound(list.begin(), list.end(), target,
-                                      [](const LongOpinion& e, std::uint32_t t) { return e.target < t; });
+                                      [](const LongOpinion<Target>& e, Target t) { return e.target < t; });
     return (it != list.end() && it->target == target) ? it->value : 0;
 }
 
@@ -183,11 +167,11 @@ std::size_t person_limit(const Character& a) noexcept {
 }
 
 int long_opinion(const Character& a, CharacterId target) noexcept {
-    return long_value(a.long_people(), target.value);
+    return long_value(a.long_people(), target);
 }
 
 int long_opinion(const Character& a, TargetId target) noexcept {
-    return long_value(a.long_targets(), target.raw());
+    return long_value(a.long_targets(), target);
 }
 
 bool has_modifier(const Character& a, CharacterId target) noexcept {
@@ -255,20 +239,20 @@ LongOpinionResult<CharacterId> Character::add_long_opinion(CharacterKey /*key*/,
     if (!target.valid() || target == id_) {
         return {LongOpinionOutcome::Invalid, CharacterId{}};
     }
-    const LongCore core = add_long(long_people_, person_limit(*this), target.value,
-                                   std::clamp(delta, -LONG_DELTA_MAX, LONG_DELTA_MAX));
+    const LongOpinionResult<CharacterId> result =
+        add_long(long_people_, person_limit(*this), target, std::clamp(delta, -LONG_DELTA_MAX, LONG_DELTA_MAX));
     assert(lists_valid());
-    return {core.outcome, CharacterId{core.evicted}};
+    return result;
 }
 
 LongOpinionResult<TargetId> Character::add_long_opinion(CharacterKey /*key*/, TargetId target, int delta) noexcept {
     if (!target.valid()) {
         return {LongOpinionOutcome::Invalid, TargetId{}};
     }
-    const LongCore core = add_long(long_targets_, TARGET_LIMIT, target.raw(),
-                                   std::clamp(delta, -LONG_DELTA_MAX, LONG_DELTA_MAX));
+    const LongOpinionResult<TargetId> result =
+        add_long(long_targets_, TARGET_LIMIT, target, std::clamp(delta, -LONG_DELTA_MAX, LONG_DELTA_MAX));
     assert(lists_valid());
-    return {core.outcome, core.evicted != 0 ? target_from_raw(core.evicted) : TargetId{}};
+    return result;
 }
 
 std::size_t Character::trim_long_opinions(CharacterKey /*key*/,
@@ -280,7 +264,7 @@ std::size_t Character::trim_long_opinions(CharacterKey /*key*/,
     const std::size_t limit = person_limit(*this);
     while (long_people_.size() > limit) {
         const std::size_t weakest = weakest_index(long_people_);
-        evicted.push_back(CharacterId{long_people_[weakest].target});
+        evicted.push_back(long_people_[weakest].target);
         long_people_.erase(weakest);
     }
     assert(lists_valid());

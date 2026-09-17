@@ -15,8 +15,9 @@
 
 namespace sim {
 
-// A community plus at most 5 ancestors.
-inline constexpr std::size_t MAX_COMMUNITY_DEPTH = 6;
+// A community plus at most 5 ancestors. A gameplay limit, but a compile-time constant rather
+// than a config field because it sizes the chain storage (CommunityChain, TargetChain).
+inline constexpr std::size_t MAX_COMMUNITY_DEPTH = 6; // PLACEHOLDER: longest community chain
 
 // At most this many source chains per batched stance query (a character's involvement).
 inline constexpr std::size_t STANCE_BATCH_MAX_SOURCES = 8;
@@ -26,6 +27,8 @@ using CommunityChain = FixedVector<CommunityId, MAX_COMMUNITY_DEPTH>;
 // Targets to try for a stance, nearest first: a topic alone, or a community and its
 // ancestors as TargetIds.
 using TargetChain = FixedVector<TargetId, MAX_COMMUNITY_DEPTH>;
+
+static_assert(sizeof(CommunityChain) == 28 && sizeof(TargetChain) == 28);
 
 // An explicit stance of a community towards a target. Sorted by (from, to.raw()).
 struct StanceEntry {
@@ -81,7 +84,8 @@ public:
     // Resolves every (source, target) pair in one call: out[i * targets.size() + j] is
     // stance(sources[i], targets[j]). Each distinct source community's block of entries
     // is found once inside the call; positions are never stored or returned.
-    // Requires sources.size() <= STANCE_BATCH_MAX_SOURCES and a large enough `out`.
+    // Requires sources.size() <= STANCE_BATCH_MAX_SOURCES and a large enough `out` (asserted);
+    // if either fails in a release build, every element of `out` is set to 0.
     void stances(std::span<const CommunityChain> sources, std::span<const TargetChain> targets,
                  std::span<int> out) const noexcept;
 

@@ -29,6 +29,20 @@ static_assert(FixedVectorAccepted<int, 1> && FixedVectorAccepted<int, 255>);
 static_assert(!FixedVectorAccepted<int, 0> && !FixedVectorAccepted<int, 256>);
 static_assert(FixedVector<int, 255>::capacity() == 255);
 
+// The size counter is as wide as alignof(T): sizeof is what a uint8 counter plus tail padding
+// gave, and there is no implicit padding left.
+template<class T, std::size_t N>
+constexpr bool padding_free_same_size() {
+    const std::size_t with_uint8 = (N * sizeof(T) + 1 + alignof(T) - 1) / alignof(T) * alignof(T);
+    return sizeof(FixedVector<T, N>) == with_uint8 && std::has_unique_object_representations_v<FixedVector<T, N>>;
+}
+static_assert(padding_free_same_size<std::uint8_t, 7>());
+static_assert(padding_free_same_size<std::uint16_t, 3>());
+static_assert(padding_free_same_size<std::int32_t, 5>());
+static_assert(padding_free_same_size<std::uint64_t, 2>());
+static_assert(padding_free_same_size<sim::PractiseEntry, sim::PRACTISE_CAP>());
+static_assert(padding_free_same_size<sim::InvolvementEntry, 255>());
+
 TEST_CASE("FixedVector: bounds") {
     FixedVector<int, 3> v;
     CHECK(v.empty());

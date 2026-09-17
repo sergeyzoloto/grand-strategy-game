@@ -59,6 +59,7 @@ Character::Character(CharacterKey /*key*/, CharacterId id, NameId name, Gender g
     static_assert(offsetof(Character, practise_) == 30 && offsetof(Character, nicknames_) == 288
                   && offsetof(Character, involvement_) == 308 && offsetof(Character, sacred_) == 376);
     static_assert(offsetof(Character, reputation_) == 444);
+    static_assert(offsetof(Character, reserved_) == 445);
     static_assert(offsetof(Character, long_people_) == 448 && offsetof(Character, long_targets_) == 772
                   && offsetof(Character, modifiers_) == 904);
 

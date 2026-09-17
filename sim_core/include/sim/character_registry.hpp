@@ -52,9 +52,9 @@ struct KillResult {
 // find_dead() and holders() are O(1). The relation graph keeps a node for every id.
 //
 // Lifetimes: any pointer, reference or span obtained from the registry or from a
-// Character is valid only until the next registry mutation (create, kill, or any
+// Character is valid only until the next registry mutation (create, kill, maintain, or any
 // relation or personal opinion edit), because the registry may reallocate or relocate
-// characters. Returned vectors are independent copies.
+// characters or shift list entries. Returned vectors are independent copies.
 class CharacterRegistry {
 public:
     // Creates a living character and returns its id. Returns CharacterId{} only if ids are

@@ -22,6 +22,15 @@ ctest --test-dir build/release --output-on-failure
 # Verbose test output (shows MESSAGE lines such as sizeof(Character))
 ./build/debug-asan/tests/sim_tests -s
 
+# FMA contraction check (needs a CPU with FMA): the golden values must still match exactly.
+# The preprocessor cannot see -ffp-contract=off; if it were lost, FMA contraction would
+# change opinion math and "weak opinion: golden values with non-dyadic coefficients" would fail
+# (verified by removing the flag in a scratch copy). The other goldens use exact products
+# (default config) and do not notice contraction.
+cmake -S . -B build/release-fma -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=-mfma
+cmake --build build/release-fma
+ctest --test-dir build/release-fma --output-on-failure
+
 # Manual benchmarks (Release only; not part of ctest; timings reported, never asserted)
 cmake --build build/release --target sim_bench && ./build/release/bench/sim_bench
 ```
@@ -31,8 +40,9 @@ cmake --build build/release --target sim_bench && ./build/release/bench/sim_benc
 block lookup) and a `structured` hierarchy (stances on upper levels, roots with self-stances,
 leaves without stances; random pairs and acquaintances reported separately). The `maintain`
 trimming benchmark runs every pass on a fresh copy of a filled template. The kill benchmark
-measures kills with no dead and after 450,000 interleaved create+kill rounds (never more than
-~2,500 alive), and relocation alone at 15,000 living. The generational churn benchmark (newborn
+measures kills with no dead and after 450,000 ids created by interleaved create+kill rounds (never
+more than ~2,500 alive; every setup character is forgotten, so this is not a world with 450,000
+dead records), and relocation alone at 15,000 living. The generational churn benchmark (newborn
 with two distinct living parents, oldest dies, 450,000 deaths) samples dead count and memory.
 Holders overhead is measured on modifier, long-term and link+unlink edits. Every section counts
 its operations by outcome and prints the counts; an operation that must succeed (setup edits,
@@ -44,6 +54,10 @@ CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_T
 Warnings: `-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Werror`
 (MSVC: `/W4 /WX /permissive-`), applied to our own targets only via `sim_configure_target`;
 doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; never `-ffast-math`.
+`sim_core/src/build_guards.cpp` stops the build with `#error` below C++20 (MSVC: `_MSVC_LANG`), in a
+GNU dialect (GCC/Clang without `__STRICT_ANSI__`) or with `__FAST_MATH__`; it is a source file, not
+a header, because other targets include the headers with their own flags. `-ffp-contract=off`
+is covered by the FMA check above instead.
 
 ## Standing rules
 
@@ -101,13 +115,16 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   constructor only the registry can call; this relies on C++20, where a class with a user-declared
   constructor is not an aggregate, so `CharacterKey{}` cannot bypass it). Tests create characters
   in a local registry and copy them (`tests/test_support.hpp`). Ids start at 1, increase by one
-  and are never reused. `Character` has no default constructor; copy and move construction are
+  and are never reused (`create` returns an invalid id once 2^31 - 1 ids are used). `Character` has no default constructor; copy and move construction are
   public, copy and move assignment are deleted so a slot never takes another character's identity.
   Living slots are relocated with `std::destroy_at` plus `std::construct_at` (see Death).
+  The passkey prevents accidental desync of registry state (holders, lists); it is not a security
+  boundary: a forged key (for example through `std::bit_cast<CharacterKey>`) bypasses it.
 - **Lifetimes:** any pointer, reference or span obtained from the registry or from a Character is
-  valid only until the next registry mutation (create, kill, any relation edit or personal
-  opinion edit): the registry may reallocate, relocate characters or shift list entries. Vectors returned by queries are independent copies.
-- **Relations** live in `RelationGraph`, owned by the registry and edited only through it. One
+  valid only until the next registry mutation (create, kill, maintain, any relation edit or
+  personal opinion edit): the registry may reallocate, relocate characters or shift list entries. Vectors returned by queries are independent copies.
+- **Relations** live in `RelationGraph`; the registry's own graph is edited only through the
+  registry (`RelationGraph` itself is a public class whose mutators don't maintain holders). One
   `RelationEdge {other, mask}` per ordered pair, stored per source and sorted by other; a bit on
   a -> b names b's role for a. `relation_info` is the single source of kind and complement:
   one-way types (Friend, Rival, Attraction) have no complement and touch only a -> b via
@@ -120,7 +137,8 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   dead participant where not allowed; needs a lookup, so after NotFound), then Duplicate /
   Conflict / NotFound against existing state, then Full. A failed edit changes nothing.
   `kill` differs on purpose: it acts only on the living, so a dead id is NotFound (like an unknown
-  one), while other edits return Invalid for a dead participant.
+  one), while other edits return Invalid for a dead participant. kill's own order: Invalid (id 0),
+  NotFound, then Invalid for death < birth (death == birth is allowed).
 - **Death** (`CharacterRegistry::kill`, `sim/dead_record.hpp`). kill(id, death, WorldContext)
   replaces a living Character with a 24-byte `DeadRecord` (id, name, birth, death,
   main_community at death or invalid, reputation frozen at death, gender, fame) and returns
@@ -133,8 +151,8 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     slot per id ever created (living index, top bit | dead index, or FORGOTTEN) and one `u32`
     holders count per id, so `find` (living only), `find_dead`, `exists` and `holders` are O(1)
     and ids stay below 2^31. A kill moves later living slots down with `destroy_at` +
-    `construct_at` (Characters are not assignable): cost grows with the living count (about
-    1.2 ms per kill at 15,000 living), not with the dead count. The relation graph keeps a node
+    `construct_at` (Characters are not assignable): cost grows with the living count, not with
+    the dead count (see the kill relocation limit for measured figures). The relation graph keeps a node
     for every id.
   - **Opinions at death:** only existing long-term entries about the deceased are rebased, by
     round(weak_before.total - weak_after.total) (clamped to +-200; 0 removes the entry), so those
@@ -165,7 +183,7 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     neighbours), a long entry Created, Removed or evicted (from the outcome), or trimmed by
     `maintain`. Changing bits on an existing edge or adding a second modifier on the same target
     costs no lookups. All reference-changing mutations are registry-only or `CharacterKey`-gated,
-    so holders cannot go out of sync; the lifecycle property test compares them with a full
+    so holders cannot go out of sync by accident (a forged `CharacterKey` bypasses this); the lifecycle property test compares them with a full
     recount after every step.
   - **Kill is confined by holders:** before any write it collects the living characters that
     reference the deceased, stopping once holders(id) of them are found (no scan at all when
@@ -198,7 +216,10 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     node. Not fixed now.
   - **Known limit, kill relocation:** deaths mostly hit the oldest characters, which have the
     lowest ids, so a kill in the id-sorted living storage shifts nearly the whole living vector,
-    not half of it on average: about 0.2 ms per death at 1,500 living and about 2 ms at 15,000.
+    not half of it on average. Measured (sim_bench, Release): about 0.8-1.0 ms per kill at 15,000
+    living with empty lists and victims spread across the id range (half the vector moved on
+    average); an oldest-first death moves nearly all of it, roughly twice that. About 0.2 ms per
+    generational-churn step (create, link, oldest dies) at 1,500 living.
     Fine for ordinary mortality; mass deaths (plague, battle, massacre) will need a batch kill
     with one compaction pass.
 - **Memory tests** bound each storage kind on its own (e.g. `relation_bytes()`) using what
@@ -210,39 +231,53 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - `Character` layout is pinned by `static_assert(sizeof(Character) == 1164)` and by `offsetof`
   static_asserts in the constructor. The 30-byte core (id, name, birth, conditions, gender,
   traits) keeps offsets 0..29; practise (the only align-2 list) sits at 30, then nicknames (288),
-  involvement (308), sacred (376), reputation (444, Step 4), then long-term people opinions (448),
+  involvement (308), sacred (376), reputation (444, Step 4), 3 reserved bytes (445), then long-term people opinions (448),
   long-term target opinions (772) and modifiers (904), sizeof 1164 (Step 5 rework). New fields are appended so existing offsets stay. Don't
   reorder without flagging it.
-- **Per-character lists** (`sim/character_lists.hpp`) are `FixedVector`s inside Character; the
-  public API never exposes `FixedVector`. Reads return `std::span<const Entry>`, valid only until
+- **Per-character lists** (`sim/character_lists.hpp`) are `FixedVector`s inside Character; list
+  reads never expose `FixedVector`. Small fixed-size results elsewhere may use it (`parents()`,
+  `CommunityChain`/`TargetChain`, the keyed `trim_long_opinions` out-parameter). Reads return `std::span<const Entry>`, valid only until
   the next mutation of that Character or until it is copied, moved or destroyed (Step 3 stores
   characters in a container). Every mutator returns a `[[nodiscard]] EditResult`. Check order:
   `Invalid` (invalid id or enum value) first, then `Duplicate`/`Conflict`/`NotFound` against
   existing entries, then `Full`. A set to 0 on an absent entry is `Ok` with no change; a remove of
   an absent entry is `NotFound`. List caps are storage bounds, not gameplay rules: never evict to
-  make room. Entry structs have no implicit padding (explicit zeroed bytes, pinned with
+  make room. `add_nickname`, `add_skill` and `add_sacred` return Invalid for id 0 (and an unknown
+  enum value). Entry structs have no implicit padding (explicit zeroed bytes, pinned with
   `std::has_unique_object_representations_v`), and FixedVector value-initializes freed slots.
+- **Byte determinism:** `Character` has unique object representations (static_assert): no
+  implicit padding, no floating point. FixedVector's size counter is as wide as `alignof(T)`
+  (alignments 1, 2, 4, 8 only), so it has no tail padding and keeps the sizeof a uint8 counter
+  gave; `reputation_` is followed by 3 explicit zeroed reserved bytes. Equal logical state means
+  equal bytes whatever the edit history (tested with `std::memcmp`).
 - **Skills are capabilities**: a character has one or doesn't; `PractiseEntry` has no value (its
   reserved byte may hold a mastery level later). Capabilities granted by membership in a structure
   are derived from the character's communities and never stored on Character.
 - **Involvement shares** are `weight / total` computed in double and never adjusted to force an
-  exact sum, so equal weights give equal shares. For weighted sums use raw weights and
-  `involvement_total()` and divide once. A share is not a scale: the -100..+100 and 0..100 rules
+  exact sum, so equal weights give equal shares; `involvement_share` returns the result as float
+  for display. For weighted sums use raw weights and `involvement_total()` and divide once
+  (opinion math does). `set_involvement` clamps the weight to 0..255, so a negative weight removes
+  the entry. A share is not a scale: the -100..+100 and 0..100 rules
   don't apply to it.
 - **TargetId** packs 2 bits of kind and 30 bits of index into u32; valid iff index != 0, built only
-  via `TargetId::from`, which rejects invalid ids and indices >= 2^30. `TargetKind` is
+  via `TargetId::from`, which rejects invalid ids and indices >= 2^30. `TargetId::from_raw` decodes
+  a `raw()` value held elsewhere (modifiers), rejecting index 0 and unknown kinds. `TargetKind` is
   append-only: Community = 0, Topic = 1, 2 reserved for persons, 3 free.
 - Adding a `Gender` value: append (never renumber) and handle it in every `switch`
   (no `default:`, so `-Wswitch` flags omissions, e.g. in `mortality.cpp`).
 
 - **StanceTable** (`sim/stance_table.hpp`) stores explicit stances from a community towards a
   TargetId (community or topic), -100..+100, and the community hierarchy (at most
-  `MAX_COMMUNITY_DEPTH` = 6 per chain). An explicit 0 is a real value, not a removal. Resolution:
+  `MAX_COMMUNITY_DEPTH` = 6 per chain; PLACEHOLDER, compile-time because it sizes the chains).
+  An explicit 0 is a real value, not a removal. `set_parent` to the current parent is Ok with no
+  change. Resolution:
   for each source in chain(from), nearest first, try each target in chain(to), nearest first (a
   topic walks no chain); the first explicit entry wins, else 0. Storage is two sorted vectors
   with binary search; lookups never allocate. Public chain APIs return ids only: never expose
   index ranges into the vectors (they go stale after any edit). Caching index ranges waits
-  until the benchmark shows it's needed, and then stays private. Bulk loading one insert at a
+  until the benchmark shows it's needed, and then stays private. The batch `stances()` asserts its
+  preconditions (at most `STANCE_BATCH_MAX_SOURCES` sources, a large enough output) and in
+  release fills the whole output with 0 if they fail. Bulk loading one insert at a
   time is O(n^2); a sort-once bulk loader comes later.
 - **Noise** (`sim/noise.hpp`): full SplitMix64 steps over (world seed, source id, NoiseSubject,
   target id), mapped to [-1, 1]. `WorldSeed` is always passed explicitly. The hash and
@@ -259,11 +294,16 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     (-100..+100, int8; 0 is allowed). short = raw sum of the active modifiers' effects on X (not
     clamped; only the total is), computed on read, never stored. Ticks only add or remove modifiers. At most one per (domain, target,
     ModifierId): no stacking, a repeat is Duplicate. `ModifierDomain` keeps a CharacterId and a
-    TargetId with the same number apart. `MODIFIER_CAP` = 32 is a storage bound: Full, never
+    TargetId with the same number apart; the target is stored raw next to its domain, and
+    `OpinionModifier::person()` / `target_id()` convert it (empty for the other domain). `MODIFIER_CAP` = 32 is a storage bound: Full, never
     evicted. Adds and removes are symmetric, so code that added a circumstance can remove it.
   - **Long-term values** are stored whole numbers (-200..+200, 0 never stored), changed only
-    through `add_long_opinion` for now. Only these are limited (people: `person_limit` by
-    extraversion; targets: `TARGET_LIMIT`). A new entry at the limit evicts the weakest |long|
+    through `add_long_opinion` for now. Records are typed: `LongOpinion<CharacterId>`
+    (`PersonLongOpinion`, `long_people()`) and `LongOpinion<TargetId>` (`TargetLongOpinion`,
+    `long_targets()`), 8 bytes {target, int16 value, uint16 reserved}, sorted by the id's own
+    ordering; long opinions have no raw encoding. Only these are limited (people: `person_limit`
+    by extraversion, 8..40; targets: `TARGET_LIMIT` = 16; all PLACEHOLDER, compile-time because
+    they size storage). A new entry at the limit evicts the weakest |long|
     (ties to the smaller target) only if strictly stronger, else Dropped; one eviction per call
     even above the limit; `maintain()` trims people lists above their limit (target lists never
     exceed the fixed `TARGET_LIMIT`; asserted). Unchanged means nothing
@@ -271,13 +311,16 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     Modifiers count towards neither limits nor strength.
   - Short-to-long conversion is a later step; so are modifier durations or expiry.
   - Mutations go only through `CharacterRegistry`; the Character members they call require the
-    `CharacterKey` passkey. Stored targets are raw; every API converts to `CharacterId` or
-    `TargetId` at the boundary (e.g. evicted targets).
+    `CharacterKey` passkey. Raw target values appear only inside stored `OpinionModifier` records,
+    and its typed accessors convert them; every other API takes and returns `CharacterId` or
+    `TargetId` (e.g. evicted targets).
 - **Weak opinions** (`sim/opinion.hpp`) are computed, never stored or cached: community stances
   weighted by raw involvement weights (integer accumulation, one division; stances for all
   community pairs are resolved in one `StanceTable::stances` batch), plus reputation,
-  personality compatibility and noise; every coefficient is in `OpinionConfig`. Relations don't
-  affect weak opinions.
+  personality compatibility and noise; every coefficient is in `OpinionConfig`. Noise is scaled by
+  `openness_factor` (openness of the holder) only for community and topic targets, not for
+  persons. `compat` asserts a positive weight sum in debug (release returns 0). Relations don't
+  affect weak or personal opinions (tested).
 
 ## Conventions
 
@@ -293,6 +336,9 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
 - Comments in English. Placeholder coefficients and defaults are marked `PLACEHOLDER`.
 - Randomized tests use `std::mt19937` with a fixed seed and derive values from its raw output
   (e.g. `rng() % n`); standard distributions differ between standard libraries. Property tests
-  compare against a naive reference model and must stay fast in the Debug + ASan build.
+  compare against a naive reference model and must stay fast in the Debug + ASan build. The
+  lifecycle property test puts pressure on people lists (weak entries about dead characters
+  whose only holder is the list's owner, filled lists, extraversion lowered just enough) and
+  requires at least 5 forgettings each by eviction and by maintain trim.
 - Tests must follow the lifetime rule too: create every character first, then take references
   (a reference into the registry dangles after the next create once the vector reallocates).

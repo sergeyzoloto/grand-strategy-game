@@ -227,6 +227,9 @@ std::optional<SacredSign> Character::sacred_sign(TargetId target) const noexcept
 // ---- invariants -----------------------------------------------------------------
 
 bool Character::lists_valid() const noexcept {
+    if (reserved_[0] != 0 || reserved_[1] != 0 || reserved_[2] != 0) {
+        return false;
+    }
     for (std::size_t i = 0; i < nicknames_.size(); ++i) {
         if (!nicknames_[i].valid() || std::find(nicknames_.begin() + i + 1, nicknames_.end(), nicknames_[i]) != nicknames_.end()) {
             return false;
@@ -253,14 +256,18 @@ bool Character::lists_valid() const noexcept {
             return false;
         }
     }
-    for (const auto list : {long_people(), long_targets()}) {
+    const auto long_list_valid = [](const auto list) {
         for (std::size_t i = 0; i < list.size(); ++i) {
-            const LongOpinion& e = list[i];
-            if (e.target == 0 || e.value == 0 || e.value < -LONG_VALUE_MAX || e.value > LONG_VALUE_MAX
+            const auto& e = list[i];
+            if (!e.target.valid() || e.value == 0 || e.value < -LONG_VALUE_MAX || e.value > LONG_VALUE_MAX
                 || e.reserved != 0 || (i > 0 && !(list[i - 1].target < e.target))) {
                 return false;
             }
         }
+        return true;
+    };
+    if (!long_list_valid(long_people()) || !long_list_valid(long_targets())) {
+        return false;
     }
     for (std::size_t i = 0; i < modifiers_.size(); ++i) {
         const OpinionModifier& m = modifiers_[i];

@@ -60,6 +60,19 @@ public:
         return make(TargetKind::Topic, id.value);
     }
 
+    // Decodes a raw() value: a TargetId only if the kind bits name a known TargetKind and the
+    // index is not 0. For raw values held outside TargetId (e.g. OpinionModifier::target).
+    [[nodiscard]] static constexpr std::optional<TargetId> from_raw(std::uint32_t raw) noexcept {
+        const std::uint32_t index = raw & (INDEX_LIMIT - 1);
+        // No default: appending a TargetKind triggers -Wswitch here.
+        switch (static_cast<TargetKind>(raw >> INDEX_BITS)) {
+        case TargetKind::Community:
+        case TargetKind::Topic:
+            return make(static_cast<TargetKind>(raw >> INDEX_BITS), index);
+        }
+        return std::nullopt;
+    }
+
     [[nodiscard]] constexpr TargetKind kind() const noexcept {
         return static_cast<TargetKind>(value_ >> INDEX_BITS);
     }

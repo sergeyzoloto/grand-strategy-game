@@ -12,9 +12,12 @@
 
 namespace sim {
 
-// Relations between characters, one sorted edge list per character. Owned by
-// CharacterRegistry, which adds a node for every character it creates; all other
-// access goes through the registry. Node ids are 1..node_count().
+static_assert(sizeof(FixedVector<CharacterId, MAX_PARENTS>) == 12); // parents()
+
+// Relations between characters, one sorted edge list per character. The registry owns one,
+// adds a node for every character it creates, and is the only editor of that graph (its
+// edits also maintain holders). The class itself is public; a standalone graph is not tied
+// to any registry. Node ids are 1..node_count().
 //
 // Edits check everything before the first write and reserve room in every list they
 // grow, so a failed call (including bad_alloc) leaves both sides unchanged.

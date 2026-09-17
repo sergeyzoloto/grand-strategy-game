@@ -1,4 +1,5 @@
 add_library(sim_core STATIC
+    src/build_guards.cpp
     src/character.cpp
     src/character_lists.cpp
     src/character_registry.cpp

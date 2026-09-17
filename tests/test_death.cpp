@@ -725,14 +725,16 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
     const auto create = [&] {
         const auto trait = [&] { return static_cast<int>(pick(201)) - 100; };
         const int reputation = trait();
+        const int extraversion = trait(); // people limits from 8 to 40
         const CharacterId id = reg.create(NameId{static_cast<std::uint32_t>(model.persons.size() + 1)}, Gender::Female,
                                           Date{0},
-                                          CharacterInit{.stability = trait(), .openness = trait(), .extraversion = 100,
-                                                        .conscientiousness = trait(), .agreeableness = trait(),
-                                                        .reputation = reputation});
+                                          CharacterInit{.stability = trait(), .openness = trait(),
+                                                        .extraversion = extraversion, .conscientiousness = trait(),
+                                                        .agreeableness = trait(), .reputation = reputation});
         REQUIRE(id.value == model.persons.size() + 1);
         model.persons.emplace_back();
         model.persons.back().reputation = reputation;
+        model.persons.back().extraversion = extraversion;
         Character& c = *reg.find(id);
         for (std::uint32_t k = 0, n = pick(3); k < n; ++k) {
             (void)c.set_involvement(CommunityId{1 + pick(4)}, 1 + pick(255));
@@ -786,8 +788,8 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
             return false;
         }
         auto lit = p.longs.begin();
-        for (const LongOpinion& e : c.long_people()) {
-            if (e.target != lit->first || e.value != lit->second) {
+        for (const PersonLongOpinion& e : c.long_people()) {
+            if (e.target.value != lit->first || e.value != lit->second) {
                 return false;
             }
             ++lit;
@@ -929,7 +931,7 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
             kills_clearing_one_way += clearing;
             killed = a;
             forget_counter = &forgotten_by_kill;
-        } else if (op < 36) { // link or unlink, mostly surviving types
+        } else if (op < 34) { // link or unlink, mostly surviving types
             const std::array<R, 7> types{R::Child, R::Parent, R::Spouse, R::Spouse, R::Liege, R::Employer, R::Friend};
             const R type = types[pick(7)];
             if (pick(4) == 0) {
@@ -957,7 +959,7 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
                     ++dead_rejections;
                 }
             }
-        } else if (op < 52) { // one-way relations
+        } else if (op < 48) { // one-way relations
             const R type = static_cast<R>(pick(3));
             if (pick(4) == 0) {
                 EditResult expected = model.precheck(a, type, b, RelationKind::OneWay);
@@ -977,7 +979,7 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
                     ++dead_rejections;
                 }
             }
-        } else if (op < 68) { // modifiers
+        } else if (op < 64) { // modifiers
             const ModifierId m{static_cast<std::uint16_t>(1 + pick(2))};
             const int effect = static_cast<int>(pick(201)) - 100;
             const bool remove = pick(3) == 0;
@@ -1009,7 +1011,7 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
             } else {
                 REQUIRE(reg.add_modifier(a, b, m, effect) == expected);
             }
-        } else if (op < 92) { // long opinions
+        } else if (op < 84) { // long opinions
             const int delta = pick(10) == 0 ? 0 : static_cast<int>(pick(161)) - 80;
             O expected = O::Invalid;
             std::uint32_t evicted = 0;
@@ -1029,6 +1031,113 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
             REQUIRE(actual.outcome == expected);
             REQUIRE(actual.evicted.value == evicted);
             forget_counter = expected == O::CreatedWithEviction ? &forgotten_by_eviction : &forgotten_by_long;
+        } else if (op < 92) { // pressure on a people list holding the last reference to a dead character
+            // Candidates: a dead character with exactly one (living) holder.
+            const std::vector<std::uint32_t> counts_now = model.recount();
+            std::vector<std::pair<CharacterId, CharacterId>> candidates; // (holder, dead)
+            for (std::uint32_t id = 1; id <= model.persons.size(); ++id) {
+                const LifecycleModel::Person& p = model.persons[id - 1];
+                if (!p.dead || p.forgotten || counts_now[id - 1] != 1) {
+                    continue;
+                }
+                for (const Character& c : reg.characters()) {
+                    const LifecycleModel::Person& h = model.persons[c.id().value - 1];
+                    const bool modifier = std::any_of(h.modifiers.begin(), h.modifiers.end(),
+                                                      [&](const auto& kv) { return kv.first.first == id; });
+                    if (h.longs.count(id) != 0 || model.mask(c.id().value, id) != 0 || modifier) {
+                        candidates.emplace_back(c.id(), CharacterId{id});
+                        break;
+                    }
+                }
+            }
+            if (candidates.empty()) {
+                continue;
+            }
+            const auto [holder, dead_id] = candidates[pick(static_cast<std::uint32_t>(candidates.size()))];
+            LifecycleModel::Person& h = model.persons[holder.value - 1];
+            // One long-term edit by the holder, compared with the model, then a sweep.
+            const auto edit = [&](CharacterId target, int delta) {
+                std::uint32_t evicted = 0;
+                const O expected =
+                    LifecycleModel::add_long(h.longs, LifecycleModel::limit(h.extraversion), target.value, delta, evicted);
+                const LongOpinionResult<CharacterId> actual = reg.add_long_opinion(holder, target, delta);
+                REQUIRE(actual.outcome == expected);
+                REQUIRE(actual.evicted.value == evicted);
+                std::vector<std::uint32_t> after;
+                (expected == O::CreatedWithEviction ? forgotten_by_eviction : forgotten_by_long) += model.sweep(after).size();
+                check_all(after);
+            };
+            // The long entry becomes the holder's only reference to the dead character.
+            if (h.longs.count(dead_id.value) == 0) {
+                edit(dead_id, static_cast<int>(1 + pick(3)));
+                if (h.longs.count(dead_id.value) == 0) {
+                    continue; // Dropped: the list is full of stronger entries
+                }
+            }
+            for (auto it = h.modifiers.begin(); it != h.modifiers.end();) {
+                if (it->first.first == dead_id.value) {
+                    REQUIRE(reg.remove_modifier(holder, dead_id, ModifierId{it->first.second}) == EditResult::Ok);
+                    it = h.modifiers.erase(it);
+                } else {
+                    ++it;
+                }
+            }
+            const std::uint32_t bits = model.mask(holder.value, dead_id.value);
+            for (unsigned t = 0; t < 32; ++t) {
+                if ((bits & (std::uint32_t{1} << t)) != 0) {
+                    const auto type = static_cast<R>(t);
+                    REQUIRE(reg.unlink(holder, type, dead_id) == EditResult::Ok);
+                    model.clear_bits(holder.value, dead_id.value, relation_bit(type));
+                    model.clear_bits(dead_id.value, holder.value, relation_bit(*relation_info(type)->complement));
+                }
+            }
+            {
+                std::vector<std::uint32_t> after;
+                REQUIRE(model.sweep(after).empty()); // the long entry still holds it
+                check_all(after);
+            }
+            const auto strong = [&] { return static_cast<int>(100 + pick(101)) * (pick(2) == 0 ? 1 : -1); };
+            // Make the entry about the dead character weak: |value| 1..3.
+            const int current = h.longs[dead_id.value];
+            const int weak = static_cast<int>(1 + pick(3)) * (current > 0 ? 1 : -1);
+            if (weak != current) {
+                edit(dead_id, weak - current);
+            }
+            // Fill the list up to its limit with strong entries about living characters.
+            const auto new_living_target = [&]() -> CharacterId {
+                for (int attempt = 0; attempt < 20; ++attempt) {
+                    const CharacterId t{1 + pick(static_cast<std::uint32_t>(model.persons.size()))};
+                    if (model.living(t) && t != holder && h.longs.count(t.value) == 0) {
+                        return t;
+                    }
+                }
+                return CharacterId{};
+            };
+            while (h.longs.size() < LifecycleModel::limit(h.extraversion)) {
+                const CharacterId t = new_living_target();
+                if (!t.valid()) {
+                    break;
+                }
+                edit(t, strong());
+            }
+            if (pick(2) == 0) { // one more strong entry evicts the weakest
+                if (const CharacterId t = new_living_target(); t.valid()) {
+                    edit(t, strong());
+                }
+            } else { // lower extraversion just enough to put the list over its limit, then trim
+                int extraversion = h.extraversion;
+                while (extraversion > -100 && LifecycleModel::limit(extraversion) >= h.longs.size()) {
+                    --extraversion;
+                }
+                if (LifecycleModel::limit(extraversion) < h.longs.size()) {
+                    reg.find(holder)->set_extraversion(extraversion);
+                    h.extraversion = extraversion;
+                    REQUIRE(reg.maintain() == model.maintain());
+                    std::vector<std::uint32_t> after;
+                    forgotten_by_trim += model.sweep(after).size();
+                    check_all(after);
+                }
+            }
         } else if (op < 96) { // remove every reference to a remembered dead character, kind by kind
             const std::vector<std::uint32_t> counts = model.recount();
             std::vector<std::uint32_t> candidates;
@@ -1097,9 +1206,11 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
                 }
                 REQUIRE(!reg.exists(dead_id));
             }
-        } else if (op < 97) { // extraversion change
+        } else if (op < 98) { // extraversion change: a step up or down, so limits keep moving both ways
             if (model.living(a)) {
-                const int extraversion = static_cast<int>(pick(201)) - 100;
+                const int current = model.persons[a.value - 1].extraversion;
+                const int change = static_cast<int>(20 + pick(61)) * (pick(2) == 0 ? 1 : -1);
+                const int extraversion = std::clamp(current + change, -100, 100);
                 reg.find(a)->set_extraversion(extraversion);
                 model.persons[a.value - 1].extraversion = extraversion;
             }
@@ -1146,6 +1257,8 @@ TEST_CASE("property: lifecycle (creates, kills, links, opinions, holders, forget
                                + forgotten_by_modifier + forgotten_by_unlink;
     CHECK(deferred > 0);
     CHECK(forgotten_by_long + forgotten_by_eviction + forgotten_by_trim > 0); // long entries
+    CHECK(forgotten_by_eviction >= 5);
+    CHECK(forgotten_by_trim >= 5);
     CHECK(forgotten_by_modifier > 0);                                          // modifiers
     CHECK(forgotten_by_unlink + forgotten_by_kill > 0);                        // edges
 }

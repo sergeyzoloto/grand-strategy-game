@@ -8,7 +8,7 @@ namespace sim {
 
 // Seed of all deterministic noise in a world. Passed explicitly; never global.
 struct WorldSeed {
-    std::uint64_t value = 0;
+    std::uint64_t value = 0; // opaque 64-bit seed, no units; persistent world state (changing it changes all noise)
 };
 
 // Kind of the noise target. Part of the hash input: append-only, never renumber,

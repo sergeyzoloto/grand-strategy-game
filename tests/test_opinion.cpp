@@ -259,3 +259,48 @@ TEST_CASE("weak opinion: golden values (identical in Debug and Release)") {
 
     CHECK(weak_opinion(c, ct(21), t, config, seed) == 0x1.2f8136df2c231p+2); // 4.742261617605025
 }
+
+TEST_CASE("weak opinion: golden values with non-dyadic coefficients (FMA-contraction sensitive)") {
+    // The default config's products are exact (weights 1.0, k_rep 0.25, integer distances), so
+    // FMA contraction would not change the goldens above. These coefficients make the products
+    // inexact: a build that loses -ffp-contract=off and targets FMA (-mfma) changes compat and
+    // the topic noise in their last bits, and this test fails. See the FMA check in CLAUDE.md.
+    CharacterRegistry r;
+    const CharacterId a_id = r.create(NameId{1}, Gender::Female, Date{0},
+                                      CharacterInit{.stability = 37, .openness = -61, .extraversion = 13,
+                                                    .conscientiousness = 88, .agreeableness = -29, .reputation = -47});
+    const CharacterId b_id = r.create(NameId{2}, Gender::Male, Date{0},
+                                      CharacterInit{.stability = -52, .openness = 71, .extraversion = -9,
+                                                    .conscientiousness = 3, .agreeableness = 66, .reputation = 83});
+    StanceTable t;
+    REQUIRE(t.set_stance(CommunityId{1}, ct(2), 37) == EditResult::Ok);
+    REQUIRE(t.set_stance(CommunityId{1}, tt(3), -71) == EditResult::Ok);
+    REQUIRE(r.find(a_id)->set_involvement(CommunityId{1}, 7) == EditResult::Ok);
+    REQUIRE(r.find(a_id)->set_involvement(CommunityId{4}, 3) == EditResult::Ok);
+    REQUIRE(r.find(b_id)->set_involvement(CommunityId{2}, 11) == EditResult::Ok);
+    OpinionConfig config;
+    config.k_rep = 0.137;
+    config.k_compat = 17.3;
+    config.w_stability = 0.9;
+    config.w_openness = 1.3;
+    config.w_extraversion = 0.7;
+    config.w_conscientiousness = 1.1;
+    config.w_agreeableness = 0.3;
+    config.k_noise = 7.9;
+    config.openness_factor_min = 0.37;
+    config.openness_factor_max = 1.83;
+    const WorldSeed seed{0xF0Au};
+    const Character& a = *r.find(a_id);
+    const Character& b = *r.find(b_id);
+
+    const WeakOpinionBreakdown ab = weak_opinion_breakdown(a, b, t, config, seed);
+    CHECK(ab.community == 0x1.9e66666666666p+4);
+    CHECK(ab.reputation == 0x1.6bdf3b645a1cbp+3);
+    CHECK(ab.compat == 0x1.a54040030c563p+0);
+    CHECK(ab.noise == -0x1.7ad2ae286edacp+1);
+    CHECK(ab.total == 0x1.1fa7d929db2f6p+5);
+
+    const WeakOpinionBreakdown at = weak_opinion_breakdown(a, tt(3), t, config, seed);
+    CHECK(at.noise == -0x1.b3ec388369a27p+1);
+    CHECK(at.total == -0x1.a8d85d21d033cp+5);
+}

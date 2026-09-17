@@ -110,3 +110,20 @@ TEST_CASE("TargetId orders by kind, then index") {
     CHECK(c_small < c_large);
     CHECK(c_large < t_small);
 }
+
+static_assert(TargetId::from_raw(TargetId::from(TopicId{9})->raw()) == TargetId::from(TopicId{9}));
+static_assert(!TargetId::from_raw(0).has_value());
+
+TEST_CASE("TargetId::from_raw decodes raw() values and rejects index 0 and unknown kinds") {
+    for (const std::uint32_t index : {std::uint32_t{1}, std::uint32_t{777}, TargetId::INDEX_LIMIT - 1}) {
+        CAPTURE(index);
+        const TargetId community = *TargetId::from(CommunityId{index});
+        const TargetId topic = *TargetId::from(TopicId{index});
+        CHECK(TargetId::from_raw(community.raw()) == community);
+        CHECK(TargetId::from_raw(topic.raw()) == topic);
+    }
+    CHECK(!TargetId::from_raw(0).has_value());                                          // community kind, index 0
+    CHECK(!TargetId::from_raw(std::uint32_t{1} << TargetId::INDEX_BITS).has_value());   // topic kind, index 0
+    CHECK(!TargetId::from_raw((std::uint32_t{2} << TargetId::INDEX_BITS) | 5).has_value()); // kind 2 (reserved)
+    CHECK(!TargetId::from_raw((std::uint32_t{3} << TargetId::INDEX_BITS) | 5).has_value()); // kind 3 (free)
+}
