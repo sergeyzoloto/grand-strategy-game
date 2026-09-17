@@ -59,6 +59,8 @@ GNU dialect (GCC/Clang without `__STRICT_ANSI__`) or with `__FAST_MATH__`; it is
 a header, because other targets include the headers with their own flags. `-ffp-contract=off`
 is covered by the FMA check above instead.
 
+Engine integration: `-ffp-contract=off` comes from our CMake, and GCC contracts a\*b+c by default (verified here). If another build system compiles sim_core's sources, for example an engine extension built with SCons, the flag is lost silently: build_guards.cpp catches `-ffast-math` and GNU dialects, not contraction. Either link sim_core as a library built by this CMake project, or carry `-ffp-contract=off` into that build and run "weak opinion: golden values with non-dyadic coefficients" there.
+
 ## Standing rules
 
 - Work only on the current step. Plan first, with no code, then stop and wait for confirmation.
@@ -93,7 +95,7 @@ is covered by the FMA check above instead.
 
 - **Condition scales** round to the nearest hundredth with `std::round` and saturate at 0 and
   100; infinities saturate; NaN leaves the field unchanged (asserted in debug). Values are
-  clamped before any float-to-integer conversion. `add_` rounds the *delta* to whole steps, then
+  clamped before any float-to-integer conversion. `add_` rounds the _delta_ to whole steps, then
   adds in a wide integer: the same delta always adds the same steps and add(d), add(-d) restores
   raw unless saturated. A delta below 0.005 rounds away by design. Fields start at the
   `CharacterInit` defaults, so a NaN init value in release still yields a defined value. Non-constant int arguments may
@@ -108,7 +110,7 @@ is covered by the FMA check above instead.
 - **Derived values** (age, mortality) are free functions and never stored.
 - **Floating point** in getters and derived math is not bit-identical across platforms; fine for
   now, revisit (fixed-point) if lockstep multiplayer or replays are needed. Exception: opinion
-  math (`sim/opinion.hpp`, `sim/noise.hpp`) uses only + - * / and comparisons on doubles, never
+  math (`sim/opinion.hpp`, `sim/noise.hpp`) uses only + - \* / and comparisons on doubles, never
   exp, log or pow, so its results are identical across platforms under our flags; golden values
   (exact hexfloat comparisons) pin them in both builds.
 - **CharacterRegistry is the only creator of characters** (passkey `CharacterKey`, whose private
@@ -159,8 +161,8 @@ is covered by the FMA check above instead.
     opinions move by at most 0.5 unless long saturates. Without an entry the opinion moves to the
     dead-record base; accepted. The deceased's own long entries and modifiers are discarded;
     others' modifiers about it stay.
-  - **Dead-record base:** weak(A -> D) = sum_c share_A(c) * stance(c -> main_community(D)) +
-    k_rep * reputation(D) + k_noise * noise(A, D); compat 0; noise inputs as while alive.
+  - **Dead-record base:** weak(A -> D) = sum*c share_A(c) * stance(c -> main*community(D)) +
+    k_rep * reputation(D) + k_noise \* noise(A, D); compat 0; noise inputs as while alive.
     `weak_opinion`/`opinion` take `const DeadRecord&` for dead targets; a dead holder is not a
     Character, so it cannot be passed.
   - **Relations:** `survives_death` (Parent, Child, Spouse) links stay on both sides; other paired
@@ -204,7 +206,7 @@ is covered by the FMA check above instead.
     Ids are still never reused. A dead parent is remembered while any of its children lives, so
     siblings through a dead parent keep working.
   - **Fame and legendary** (`LifecycleConfig`, `sim/lifecycle_config.hpp`, PLACEHOLDER integers):
-    fame = holders immediately before the kill + fame_per_reputation * |reputation|, saturating
+    fame = holders immediately before the kill + fame_per_reputation \* |reputation|, saturating
     at 65535, stored in `DeadRecord::fame`; legendary = fame >= legendary_fame, reported by kill
     only (for a later chronicle system to react to).
   - **Known limit, per-id growth:** slots (4 B), holders (4 B) and the graph node header
@@ -223,7 +225,7 @@ is covered by the FMA check above instead.
     Fine for ordinary mortality; mass deaths (plague, battle, massacre) will need a batch kill
     with one compaction pass.
 - **Memory tests** bound each storage kind on its own (e.g. `relation_bytes()`) using what
-  doubling guarantees, capacity <= max(minimum, 2 * size) with the minimums taken from the code
+  doubling guarantees, capacity <= max(minimum, 2 \* size) with the minimums taken from the code
   (`RelationGraph::MIN_EDGE_CAPACITY`), so a change to `sizeof(Character)` cannot break them.
 - **Atomicity under allocation:** check everything first, then reserve room in every container
   an edit will grow (`detail::reserve_one_more`, geometric doubling), then write. Never
@@ -245,11 +247,11 @@ is covered by the FMA check above instead.
   make room. `add_nickname`, `add_skill` and `add_sacred` return Invalid for id 0 (and an unknown
   enum value). Entry structs have no implicit padding (explicit zeroed bytes, pinned with
   `std::has_unique_object_representations_v`), and FixedVector value-initializes freed slots.
-- **Byte determinism:** `Character` has unique object representations (static_assert): no
+- **Byte determinism:** `Character` has unique object representations (static*assert): no
   implicit padding, no floating point. FixedVector's size counter is as wide as `alignof(T)`
   (alignments 1, 2, 4, 8 only), so it has no tail padding and keeps the sizeof a uint8 counter
-  gave; `reputation_` is followed by 3 explicit zeroed reserved bytes. Equal logical state means
-  equal bytes whatever the edit history (tested with `std::memcmp`).
+  gave; `reputation*`is followed by 3 explicit zeroed reserved bytes. Equal logical state means
+equal bytes whatever the edit history (tested with`std::memcmp`).
 - **Skills are capabilities**: a character has one or doesn't; `PractiseEntry` has no value (its
   reserved byte may hold a mastery level later). Capabilities granted by membership in a structure
   are derived from the character's communities and never stored on Character.
