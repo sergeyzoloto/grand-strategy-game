@@ -239,12 +239,15 @@ public:
 
     // Registry only (CharacterKey). Unknown characters are the registry's NotFound.
     // Invalid: an invalid target, target == id(), or ModifierId 0. `effect` is clamped to
-    // -100..+100. Then Duplicate, then Full (MODIFIER_CAP; never evicts).
-    [[nodiscard]] EditResult add_modifier(CharacterKey key, CharacterId target, ModifierId modifier,
-                                          int effect) noexcept;
+    // -100..+100. Then Duplicate, then Full (MODIFIER_CAP; never evicts). For a person target,
+    // `target_changed` reports whether this add created the first modifier on it (and a
+    // remove whether it took the last one), for the registry's holders count.
+    [[nodiscard]] EditResult add_modifier(CharacterKey key, CharacterId target, ModifierId modifier, int effect,
+                                          bool& target_changed) noexcept;
     [[nodiscard]] EditResult add_modifier(CharacterKey key, TargetId target, ModifierId modifier, int effect) noexcept;
     // Ok, Invalid or NotFound.
-    [[nodiscard]] EditResult remove_modifier(CharacterKey key, CharacterId target, ModifierId modifier) noexcept;
+    [[nodiscard]] EditResult remove_modifier(CharacterKey key, CharacterId target, ModifierId modifier,
+                                             bool& target_changed) noexcept;
     [[nodiscard]] EditResult remove_modifier(CharacterKey key, TargetId target, ModifierId modifier) noexcept;
 
     // Registry only (CharacterKey). `delta` is clamped to -400..+400, the result to
@@ -253,9 +256,10 @@ public:
                                                                   int delta) noexcept;
     [[nodiscard]] LongOpinionResult<TargetId> add_long_opinion(CharacterKey key, TargetId target, int delta) noexcept;
     // Registry only (CharacterKey). Evicts the weakest long-term people entries until the
-    // list fits person_limit; returns the number evicted. Idempotent. Target lists never
-    // exceed TARGET_LIMIT (asserted).
-    [[nodiscard]] std::size_t trim_long_opinions(CharacterKey key) noexcept;
+    // list fits person_limit; returns the number evicted and names them in `evicted`, in
+    // eviction order. Idempotent. Target lists never exceed TARGET_LIMIT (asserted).
+    [[nodiscard]] std::size_t trim_long_opinions(CharacterKey key,
+                                                 FixedVector<CharacterId, PERSON_LIMIT_MAX>& evicted) noexcept;
 
 private:
     [[nodiscard]] EditResult set_involvement_weight(CommunityId community, std::uint8_t weight) noexcept;

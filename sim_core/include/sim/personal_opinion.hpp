@@ -20,6 +20,10 @@ namespace sim {
 [[nodiscard]] int long_opinion(const Character& a, CharacterId target) noexcept;
 [[nodiscard]] int long_opinion(const Character& a, TargetId target) noexcept;
 
+// True if a has at least one modifier whose person target is `target` (any effect,
+// including 0).
+[[nodiscard]] bool has_modifier(const Character& a, CharacterId target) noexcept;
+
 // Sum of the effects of a's modifiers on the target; 0 without any. At most
 // MODIFIER_CAP * 100 in magnitude.
 [[nodiscard]] int short_opinion(const Character& a, CharacterId target) noexcept;

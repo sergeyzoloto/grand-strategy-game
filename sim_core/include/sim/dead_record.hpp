@@ -9,8 +9,8 @@
 
 namespace sim {
 
-// What remains of a character after death: identity, dates and the few values a weak
-// opinion of the deceased needs. Parents, children and spouses stay in the relation
+// What remains of a character after death: identity, dates, fame and the few values a weak
+// opinion of the deceased needs. Deleted when no living character remembers it any more. Parents, children and spouses stay in the relation
 // graph and are not copied here. Written once by CharacterRegistry::kill, never changed.
 struct DeadRecord {
     CharacterId id;             // u32 handle, always valid
@@ -20,7 +20,7 @@ struct DeadRecord {
     CommunityId main_community; // u32 handle: Character::main_community() at death; invalid if none
     std::int8_t reputation = 0; // -100..+100 units, stored directly; frozen at death
     Gender gender = Gender::Female; // u8 enum
-    std::uint16_t reserved = 0; // always 0
+    std::uint16_t fame = 0;     // holders just before death + fame_per_reputation * |reputation|, saturating at 65535
 };
 
 static_assert(sizeof(DeadRecord) == 24 && alignof(DeadRecord) == 4);

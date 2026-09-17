@@ -66,6 +66,7 @@ concept CanAddTargetLong = requires(CharacterRegistry& r, T delta) {
 };
 
 const OpinionConfig CONFIG{};
+const LifecycleConfig LIFECYCLE{};
 using O = LongOpinionOutcome;
 
 } // namespace
@@ -471,7 +472,17 @@ TEST_CASE("personal opinions: golden values (identical in Debug and Release)") {
     // round(weak_before - weak_after) = round(3.1146... + 2.2853...) = 5; c has no entry about b.
     const OpinionBreakdown c_b = opinion_breakdown(*reg.find(c), *reg.find(b), stances, CONFIG, seed);
     CHECK(c_b.total == 0x1.1b10d07832da6p+3);        // 8.8458025310163286 (weak only)
-    REQUIRE(reg.kill(b, Date{60}, stances, CONFIG, seed) == EditResult::Ok);
+    // Step 7: holders and fame. a remembers b (long entry and modifiers); b and c remember a.
+    CHECK(reg.holders(b) == 1);
+    CHECK(reg.holders(a) == 2);
+    CHECK(reg.holders(c) == 0);
+    const KillResult death_b = reg.kill(b, Date{60}, WorldContext{stances, CONFIG, LIFECYCLE, seed});
+    REQUIRE(death_b.result == EditResult::Ok);
+    CHECK(death_b.fame == 46); // 1 holder + |reputation -45|
+    CHECK(!death_b.legendary);
+    CHECK(reg.find_dead(b)->fame == 46);
+    CHECK(reg.holders(b) == 1); // a still remembers b
+    CHECK(reg.holders(a) == 1); // b's references stopped counting
     const OpinionBreakdown d_ab = opinion_breakdown(*reg.find(a), *reg.find_dead(b), stances, CONFIG, seed);
     CHECK(d_ab.weak.total == -0x1.2486a8719f69p+1);  // -2.2853594355390854
     CHECK((d_ab.long_term == 55 && d_ab.short_term == -25));
@@ -480,6 +491,18 @@ TEST_CASE("personal opinions: golden values (identical in Debug and Release)") {
     CHECK(d_cb.total == -0x1.5aacaf719c6p+0);        // -1.3541974689836707, was 8.8458...: the dead-record base
     CHECK(opinion(*reg.find(a), topic7, stances, CONFIG, seed) == 0x1.6b2c8759f0d9ep+6); // unchanged
     CHECK(opinion(*reg.find(c), *reg.find(a), stances, CONFIG, seed) == 0x1.1792c0178f298p+4);
+
+    // Step 7: removing a's last reference forgets b.
+    CHECK(reg.remove_modifier(a, b, ModifierId{1}) == EditResult::Ok);
+    CHECK(reg.remove_modifier(a, b, ModifierId{2}) == EditResult::Ok);
+    CHECK(reg.holders(b) == 1);
+    CHECK(reg.find_dead(b) != nullptr);
+    CHECK(reg.add_long_opinion(a, b, -55).outcome == O::Removed);
+    CHECK(!reg.exists(b));
+    CHECK(reg.holders(b) == 0);
+    CHECK(reg.dead_count() == 0);
+    CHECK(reg.add_modifier(a, b, ModifierId{1}, 1) == EditResult::NotFound);
+    CHECK(opinion(*reg.find(a), topic7, stances, CONFIG, seed) == 0x1.6b2c8759f0d9ep+6); // unchanged
 }
 
 // ---- property test against a reference model ----------------------------------------------

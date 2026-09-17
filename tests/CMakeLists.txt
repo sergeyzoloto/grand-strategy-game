@@ -9,6 +9,7 @@ add_executable(sim_tests
     test_character.cpp
     test_character_lists.cpp
     test_fixed_vector.cpp
+    test_memory.cpp
     test_mortality.cpp
     test_noise.cpp
     test_opinion.cpp

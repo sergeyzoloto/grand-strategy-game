@@ -90,15 +90,6 @@ LongCore add_long(FixedVector<LongOpinion, N>& list, std::size_t limit, std::uin
     return {LongOpinionOutcome::Created, 0};
 }
 
-template<std::size_t N>
-std::size_t trim_to(FixedVector<LongOpinion, N>& list, std::size_t limit) noexcept {
-    std::size_t evicted = 0;
-    while (list.size() > limit) {
-        list.erase(weakest_index(list));
-        ++evicted;
-    }
-    return evicted;
-}
 
 // Modifiers are sorted by (domain, target, modifier).
 bool modifier_less(const OpinionModifier& m, ModifierDomain domain, std::uint32_t target,
@@ -126,8 +117,16 @@ bool matches(const OpinionModifier& m, ModifierDomain domain, std::uint32_t targ
     return m.domain == domain && m.target == target;
 }
 
+// `target_changed`: true if this add made the first modifier on the target, or this remove
+// took the last one (checked on the sorted neighbours, no extra search).
+bool alone_at(const ModifierList& list, std::size_t i, ModifierDomain domain, std::uint32_t target) noexcept {
+    return !(i > 0 && matches(list[i - 1], domain, target))
+        && !(i + 1 < list.size() && matches(list[i + 1], domain, target));
+}
+
 EditResult add_to(ModifierList& list, ModifierDomain domain, std::uint32_t target, ModifierId modifier,
-                  int effect) noexcept {
+                  int effect, bool& target_changed) noexcept {
+    target_changed = false;
     const std::size_t i = modifier_lower(list, domain, target, modifier.value);
     if (i < list.size() && matches(list[i], domain, target) && list[i].modifier == modifier) {
         return EditResult::Duplicate;
@@ -140,14 +139,18 @@ EditResult add_to(ModifierList& list, ModifierDomain domain, std::uint32_t targe
                                    .modifier = modifier,
                                    .effect = detail::clamp_bipolar(effect),
                                    .domain = domain});
+    target_changed = alone_at(list, i, domain, target);
     return EditResult::Ok;
 }
 
-EditResult remove_from(ModifierList& list, ModifierDomain domain, std::uint32_t target, ModifierId modifier) noexcept {
+EditResult remove_from(ModifierList& list, ModifierDomain domain, std::uint32_t target, ModifierId modifier,
+                       bool& target_changed) noexcept {
+    target_changed = false;
     const std::size_t i = modifier_lower(list, domain, target, modifier.value);
     if (i == list.size() || !matches(list[i], domain, target) || list[i].modifier != modifier) {
         return EditResult::NotFound;
     }
+    target_changed = alone_at(list, i, domain, target);
     list.erase(i);
     return EditResult::Ok;
 }
@@ -187,6 +190,14 @@ int long_opinion(const Character& a, TargetId target) noexcept {
     return long_value(a.long_targets(), target.raw());
 }
 
+bool has_modifier(const Character& a, CharacterId target) noexcept {
+    const std::span<const OpinionModifier> list = a.modifiers();
+    const auto it = std::lower_bound(list.begin(), list.end(), 0, [&](const OpinionModifier& m, int /*unused*/) {
+        return modifier_less(m, ModifierDomain::Person, target.value, 0);
+    });
+    return it != list.end() && matches(*it, ModifierDomain::Person, target.value);
+}
+
 int short_opinion(const Character& a, CharacterId target) noexcept {
     return sum_effects(a.modifiers(), ModifierDomain::Person, target.value);
 }
@@ -197,12 +208,13 @@ int short_opinion(const Character& a, TargetId target) noexcept {
 
 // ---- keyed Character members ----------------------------------------------------------
 
-EditResult Character::add_modifier(CharacterKey /*key*/, CharacterId target, ModifierId modifier,
-                                   int effect) noexcept {
+EditResult Character::add_modifier(CharacterKey /*key*/, CharacterId target, ModifierId modifier, int effect,
+                                   bool& target_changed) noexcept {
+    target_changed = false;
     if (!target.valid() || target == id_ || !modifier.valid()) {
         return EditResult::Invalid;
     }
-    const EditResult result = add_to(modifiers_, ModifierDomain::Person, target.value, modifier, effect);
+    const EditResult result = add_to(modifiers_, ModifierDomain::Person, target.value, modifier, effect, target_changed);
     assert(lists_valid());
     return result;
 }
@@ -211,16 +223,19 @@ EditResult Character::add_modifier(CharacterKey /*key*/, TargetId target, Modifi
     if (!target.valid() || !modifier.valid()) {
         return EditResult::Invalid;
     }
-    const EditResult result = add_to(modifiers_, ModifierDomain::Target, target.raw(), modifier, effect);
+    bool unused = false;
+    const EditResult result = add_to(modifiers_, ModifierDomain::Target, target.raw(), modifier, effect, unused);
     assert(lists_valid());
     return result;
 }
 
-EditResult Character::remove_modifier(CharacterKey /*key*/, CharacterId target, ModifierId modifier) noexcept {
+EditResult Character::remove_modifier(CharacterKey /*key*/, CharacterId target, ModifierId modifier,
+                                      bool& target_changed) noexcept {
+    target_changed = false;
     if (!target.valid() || target == id_ || !modifier.valid()) {
         return EditResult::Invalid;
     }
-    const EditResult result = remove_from(modifiers_, ModifierDomain::Person, target.value, modifier);
+    const EditResult result = remove_from(modifiers_, ModifierDomain::Person, target.value, modifier, target_changed);
     assert(lists_valid());
     return result;
 }
@@ -229,7 +244,8 @@ EditResult Character::remove_modifier(CharacterKey /*key*/, TargetId target, Mod
     if (!target.valid() || !modifier.valid()) {
         return EditResult::Invalid;
     }
-    const EditResult result = remove_from(modifiers_, ModifierDomain::Target, target.raw(), modifier);
+    bool unused = false;
+    const EditResult result = remove_from(modifiers_, ModifierDomain::Target, target.raw(), modifier, unused);
     assert(lists_valid());
     return result;
 }
@@ -255,13 +271,20 @@ LongOpinionResult<TargetId> Character::add_long_opinion(CharacterKey /*key*/, Ta
     return {core.outcome, core.evicted != 0 ? target_from_raw(core.evicted) : TargetId{}};
 }
 
-std::size_t Character::trim_long_opinions(CharacterKey /*key*/) noexcept {
+std::size_t Character::trim_long_opinions(CharacterKey /*key*/,
+                                          FixedVector<CharacterId, PERSON_LIMIT_MAX>& evicted) noexcept {
     // TARGET_LIMIT is fixed and every insert respects it, so only people lists can exceed
     // their limit (after extraversion dropped).
     assert(long_targets_.size() <= TARGET_LIMIT);
-    const std::size_t evicted = trim_to(long_people_, person_limit(*this));
+    evicted = {};
+    const std::size_t limit = person_limit(*this);
+    while (long_people_.size() > limit) {
+        const std::size_t weakest = weakest_index(long_people_);
+        evicted.push_back(CharacterId{long_people_[weakest].target});
+        long_people_.erase(weakest);
+    }
     assert(lists_valid());
-    return evicted;
+    return evicted.size();
 }
 
 } // namespace sim

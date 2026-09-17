@@ -199,6 +199,38 @@ void bench_personal_opinions() {
                 "per character)\n",
                 PAIRS, elapsed, elapsed * 1e9 / PAIRS, added, removed);
 
+    // 1,000,000 long-term changes on the 20 people each character already has an opinion of
+    // (small deltas: mostly Updated, sometimes Removed and later Created again).
+    constexpr std::uint32_t LONG_CHANGES = 1'000'000;
+    std::array<std::size_t, 8> long_outcomes{};
+    start = Clock::now();
+    for (std::uint32_t i = 0; i < LONG_CHANGES; ++i) {
+        const CharacterId a{1 + pick(rng, CHARACTERS)};
+        const CharacterId b = other(a.value, 1 + pick(rng, 20));
+        ++long_outcomes[static_cast<std::size_t>(
+            world.registry.add_long_opinion(a, b, static_cast<int>(pick(rng, 41)) - 20).outcome)];
+    }
+    elapsed = seconds_since(start);
+    std::printf("long-term changes: %u in %.3f s = %.1f ns each (updated %zu, created %zu, removed %zu, unchanged %zu)\n",
+                LONG_CHANGES, elapsed, elapsed * 1e9 / LONG_CHANGES, long_outcomes[0], long_outcomes[1],
+                long_outcomes[3], long_outcomes[4]);
+
+    // 1,000,000 link-and-unlink pairs (Employee) between random characters.
+    constexpr std::uint32_t LINKS = 1'000'000;
+    std::size_t linked = 0;
+    start = Clock::now();
+    for (std::uint32_t i = 0; i < LINKS; ++i) {
+        const CharacterId a{1 + pick(rng, CHARACTERS)};
+        const CharacterId b = other(a.value, 1 + pick(rng, CHARACTERS - 1));
+        if (world.registry.link(a, RelationType::Employee, b) == EditResult::Ok) {
+            ++linked;
+            (void)world.registry.unlink(a, RelationType::Employee, b);
+        }
+    }
+    elapsed = seconds_since(start);
+    std::printf("link+unlink: %u pairs in %.3f s = %.1f ns per pair (%zu linked)\n", LINKS, elapsed,
+                elapsed * 1e9 / LINKS, linked);
+
     // 1,000,000 opinion reads for pairs with a long-term entry and two modifiers.
     std::vector<std::pair<const Character*, const Character*>> pairs;
     for (std::uint32_t a = 1; a <= CHARACTERS; ++a) {
@@ -288,6 +320,7 @@ void build_kill_world(PersonalWorld& world, std::mt19937& rng) {
 
 // Kills every third character of the 1,500 in the kill world (500 kills), timing each pass.
 void time_kills(const char* name, PersonalWorld& world, const OpinionConfig& config, WorldSeed seed, Date death) {
+    const LifecycleConfig lifecycle{};
     std::size_t edges = 0;
     for (std::uint32_t id = 3; id <= 1500; id += 3) {
         edges += world.registry.relations(CharacterId{id}).size();
@@ -295,7 +328,7 @@ void time_kills(const char* name, PersonalWorld& world, const OpinionConfig& con
     std::size_t killed = 0;
     const auto start = Clock::now();
     for (std::uint32_t id = 3; id <= 1500; id += 3) {
-        killed += world.registry.kill(CharacterId{id}, death, world.stances, config, seed) == EditResult::Ok;
+        killed += world.registry.kill(CharacterId{id}, death, WorldContext{world.stances, config, lifecycle, seed}).result == EditResult::Ok;
     }
     const double elapsed = seconds_since(start);
     std::printf("  %s: %zu kills in %.3f s = %.1f us per kill (%.1f edges per victim, %zu living, %zu dead after)\n",
@@ -306,6 +339,7 @@ void time_kills(const char* name, PersonalWorld& world, const OpinionConfig& con
 
 void bench_death() {
     const OpinionConfig config{};
+    const LifecycleConfig lifecycle{};
     const WorldSeed seed{0xDEADu};
     std::printf("kill (1,500 living with full opinion lists and ~22 edges each; every third one killed):\n");
     {
@@ -321,28 +355,37 @@ void bench_death() {
         std::mt19937 rng(31u);
         build_kill_world(world, rng);
         const auto setup = Clock::now();
+        auto chunk = Clock::now();
+        std::printf("  setup chunks, us per kill for each 50,000 rounds' kills:");
         for (int round = 0; round < 450; ++round) {
-            const auto first = static_cast<std::uint32_t>(world.registry.size() + world.registry.dead_count() + 1);
-            for (std::uint32_t i = 0; i < 1000; ++i) {
+            // Ids come from create: forgotten ids leave no trace in size() or dead_count().
+            const std::uint32_t first = world.registry.create(NameId{1}, Gender::Female, Date{0}, CharacterInit{}).value;
+            for (std::uint32_t i = 1; i < 1000; ++i) {
                 (void)world.registry.create(NameId{1}, Gender::Female, Date{0}, CharacterInit{});
             }
             for (std::uint32_t i = 0; i < 1000; i += 2) {
                 (void)world.registry.link(CharacterId{first + i}, RelationType::Spouse, CharacterId{first + i + 1});
             }
             for (std::uint32_t i = 1000; i-- > 0;) {
-                (void)world.registry.kill(CharacterId{first + i}, Date{50}, world.stances, config, seed);
+                (void)world.registry.kill(CharacterId{first + i}, Date{50}, WorldContext{world.stances, config, lifecycle, seed}).result;
+            }
+            if ((round + 1) % 50 == 0) {
+                std::printf(" %.1f", seconds_since(chunk) * 1e6 / 50'000.0);
+                std::fflush(stdout);
+                chunk = Clock::now();
             }
         }
+        std::printf("\n");
         const double setup_seconds = seconds_since(setup);
         std::printf("  (setup: 450,000 create+kill in %.1f s = %.1f us per kill with 1,500 full characters alive)\n",
                     setup_seconds, setup_seconds * 1e6 / 450'000.0);
         time_kills("450,000 dead  ", world, config, seed, Date{100});
-        std::printf("  memory: dead records %.1f MB (%zu B each), slots %.1f MB, relation graph %.1f MB "
+        std::printf("  memory: dead records %.1f MB (%zu B each), slots+holders %.1f MB, relation graph %.1f MB "
                     "(%zu ids, %zu B per node outer vector), living %.1f MB\n",
                     static_cast<double>(world.registry.dead_record_bytes()) / 1048576.0, sizeof(DeadRecord),
                     static_cast<double>(world.registry.slot_bytes()) / 1048576.0,
                     static_cast<double>(world.registry.relation_bytes()) / 1048576.0,
-                    world.registry.size() + world.registry.dead_count(), sizeof(std::vector<RelationEdge>),
+                    std::size_t{1500 + 450 * 1000}, sizeof(std::vector<RelationEdge>),
                     static_cast<double>(world.registry.allocated_bytes() - world.registry.dead_record_bytes()
                                         - world.registry.slot_bytes() - world.registry.relation_bytes())
                         / 1048576.0);
@@ -366,7 +409,7 @@ void bench_death() {
                                    return c.id().value > id;
                                }));
             const auto start = Clock::now();
-            killed += registry.kill(CharacterId{id}, Date{1}, stances, config, seed) == EditResult::Ok;
+            killed += registry.kill(CharacterId{id}, Date{1}, WorldContext{stances, config, lifecycle, seed}).result == EditResult::Ok;
             elapsed += seconds_since(start);
         }
         std::printf("kill relocation: %u living, %zu kills in %.3f s = %.1f us per kill (%.0f characters, %.2f MB moved "
@@ -375,6 +418,64 @@ void bench_death() {
                     static_cast<double>(moved) / static_cast<double>(killed),
                     static_cast<double>(moved * sizeof(Character)) / static_cast<double>(killed) / 1048576.0);
     }
+}
+
+// Generational churn: 1,500 living characters; each step a newborn gets two distinct living
+// parents and the oldest living character dies, for 450,000 deaths. A dead parent is
+// remembered only while one of its children lives, so the dead count should stay bounded;
+// the per-id arrays (slots, holders, graph node headers) grow with every id.
+void bench_churn() {
+    constexpr std::uint32_t LIVING = 1500;
+    constexpr std::uint32_t DEATHS = 450'000;
+    constexpr std::uint32_t SAMPLE = 50'000;
+    const OpinionConfig config{};
+    const LifecycleConfig lifecycle{};
+    const StanceTable stances;
+    const WorldContext context{stances, config, lifecycle, WorldSeed{0xC4u}};
+    CharacterRegistry registry;
+    std::mt19937 rng(8080u);
+    for (std::uint32_t i = 0; i < LIVING; ++i) {
+        (void)registry.create(NameId{1}, Gender::Female, Date{0}, CharacterInit{});
+    }
+    const auto mib = [](std::size_t bytes) { return static_cast<double>(bytes) / 1048576.0; };
+    std::printf("generational churn: %u living, newborn with two distinct living parents, oldest dies:\n", LIVING);
+    std::size_t max_dead = 0;
+    std::size_t forgotten_at_kill = 0;
+    auto interval = Clock::now();
+    for (std::uint32_t death = 1; death <= DEATHS; ++death) {
+        const std::span<const Character> living = registry.characters();
+        const auto first = static_cast<std::uint32_t>(pick(rng, static_cast<std::uint32_t>(living.size())));
+        auto second = static_cast<std::uint32_t>(pick(rng, static_cast<std::uint32_t>(living.size() - 1)));
+        second += second >= first ? 1u : 0u;
+        const CharacterId mother = living[first].id();
+        const CharacterId father = living[second].id();
+        const CharacterId oldest = living[0].id();
+        const CharacterId child = registry.create(NameId{1}, Gender::Female, Date{static_cast<std::int32_t>(death)},
+                                                  CharacterInit{});
+        (void)registry.link(mother, RelationType::Child, child);
+        (void)registry.link(father, RelationType::Child, child);
+        const std::size_t dead_before = registry.dead_count();
+        (void)registry.kill(oldest, Date{static_cast<std::int32_t>(death)}, context);
+        forgotten_at_kill += dead_before + 1 - registry.dead_count();
+        max_dead = std::max(max_dead, registry.dead_count());
+        if (death % SAMPLE == 0) {
+            const double seconds = seconds_since(interval);
+            std::printf("  %6u deaths: dead %4zu (max so far %4zu), dead records %.3f MB, slots+holders %.1f MB, "
+                        "graph %.1f MB, %.1f us per step\n",
+                        death, registry.dead_count(), max_dead, mib(registry.dead_record_bytes()),
+                        mib(registry.slot_bytes()), mib(registry.relation_bytes()), seconds * 1e6 / SAMPLE);
+            interval = Clock::now();
+        }
+    }
+    const std::size_t ids = LIVING + DEATHS;
+    const std::size_t per_id = 2 * sizeof(std::uint32_t) + sizeof(std::vector<RelationEdge>);
+    std::printf("  max dead count %zu over %u deaths (%zu forgotten); %zu ids created\n", max_dead, DEATHS,
+                forgotten_at_kill, ids);
+    std::printf("  per-id arrays: %zu B per id (slot %zu, holders %zu, graph node header %zu); %.1f MB at %zu ids, "
+                "projected %.1f MB at 4,500,000 ids (15,000 living over the timeline), of which %.1f MB graph node "
+                "headers\n",
+                per_id, sizeof(std::uint32_t), sizeof(std::uint32_t), sizeof(std::vector<RelationEdge>),
+                mib(per_id * ids), ids, mib(per_id * 4'500'000), mib(sizeof(std::vector<RelationEdge>) * 4'500'000));
 }
 
 // A structured world: 10 roots, 5 level-2 communities per root, 5 level-3 per level-2 and
@@ -544,5 +645,6 @@ int main() {
     bench_stance_inserts();
     bench_personal_opinions();
     bench_death();
+    bench_churn();
     return 0;
 }

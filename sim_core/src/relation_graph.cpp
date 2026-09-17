@@ -76,7 +76,7 @@ void RelationGraph::add_bits(CharacterId a, CharacterId b, std::uint32_t bits) n
     edges.insert(it, RelationEdge{.other = b, .mask = bits});
 }
 
-void RelationGraph::remove_bits(CharacterId a, CharacterId b, std::uint32_t bits) noexcept {
+bool RelationGraph::remove_bits(CharacterId a, CharacterId b, std::uint32_t bits) noexcept {
     EdgeList& edges = list(a);
     auto it = std::lower_bound(edges.begin(), edges.end(), b,
                                [](const RelationEdge& e, CharacterId id) { return e.other < id; });
@@ -84,10 +84,13 @@ void RelationGraph::remove_bits(CharacterId a, CharacterId b, std::uint32_t bits
     it->mask &= ~bits;
     if (it->mask == 0) {
         edges.erase(it); // erase does not allocate
+        return true;
     }
+    return false;
 }
 
-EditResult RelationGraph::set_relation(CharacterId a, RelationType type, CharacterId b) {
+EditResult RelationGraph::set_relation(CharacterId a, RelationType type, CharacterId b, EdgeFlips& flips) {
+    flips = EdgeFlips{};
     if (!a.valid() || !b.valid() || a == b || !kind_checked(type, RelationKind::OneWay)) {
         return EditResult::Invalid;
     }
@@ -103,11 +106,13 @@ EditResult RelationGraph::set_relation(CharacterId a, RelationType type, Charact
         detail::reserve_one_more(list(a), MIN_EDGE_CAPACITY);
     }
     add_bits(a, b, bit);
+    flips = EdgeFlips{.forward = current == 0, .backward = false};
     assert(pair_valid(a, b));
     return EditResult::Ok;
 }
 
-EditResult RelationGraph::clear_relation(CharacterId a, RelationType type, CharacterId b) noexcept {
+EditResult RelationGraph::clear_relation(CharacterId a, RelationType type, CharacterId b, EdgeFlips& flips) noexcept {
+    flips = EdgeFlips{};
     if (!a.valid() || !b.valid() || a == b || !kind_checked(type, RelationKind::OneWay)) {
         return EditResult::Invalid;
     }
@@ -118,12 +123,13 @@ EditResult RelationGraph::clear_relation(CharacterId a, RelationType type, Chara
     if ((mask(a, b) & bit) == 0) {
         return EditResult::NotFound;
     }
-    remove_bits(a, b, bit);
+    flips = EdgeFlips{.forward = remove_bits(a, b, bit), .backward = false};
     assert(pair_valid(a, b));
     return EditResult::Ok;
 }
 
-EditResult RelationGraph::link(CharacterId a, RelationType type, CharacterId b) {
+EditResult RelationGraph::link(CharacterId a, RelationType type, CharacterId b, EdgeFlips& flips) {
+    flips = EdgeFlips{};
     const std::optional<RelationInfo> info = kind_checked(type, RelationKind::Paired);
     if (!a.valid() || !b.valid() || a == b || !info) {
         return EditResult::Invalid;
@@ -159,11 +165,13 @@ EditResult RelationGraph::link(CharacterId a, RelationType type, CharacterId b) 
     }
     add_bits(a, b, bit);
     add_bits(b, a, complement_bit);
+    flips = EdgeFlips{.forward = forward == 0, .backward = backward == 0};
     assert(pair_valid(a, b));
     return EditResult::Ok;
 }
 
-EditResult RelationGraph::unlink(CharacterId a, RelationType type, CharacterId b) noexcept {
+EditResult RelationGraph::unlink(CharacterId a, RelationType type, CharacterId b, EdgeFlips& flips) noexcept {
+    flips = EdgeFlips{};
     const std::optional<RelationInfo> info = kind_checked(type, RelationKind::Paired);
     if (!a.valid() || !b.valid() || a == b || !info) {
         return EditResult::Invalid;
@@ -177,8 +185,9 @@ EditResult RelationGraph::unlink(CharacterId a, RelationType type, CharacterId b
     }
     const std::uint32_t complement_bit = relation_bit(*info->complement);
     assert((mask(b, a) & complement_bit) != 0);
-    remove_bits(a, b, bit);
-    remove_bits(b, a, complement_bit);
+    const bool forward_erased = remove_bits(a, b, bit);
+    const bool backward_erased = remove_bits(b, a, complement_bit);
+    flips = EdgeFlips{.forward = forward_erased, .backward = backward_erased};
     assert(pair_valid(a, b));
     return EditResult::Ok;
 }
@@ -280,11 +289,31 @@ void RelationGraph::remove_non_surviving(CharacterId dead) noexcept {
     }
 }
 
-void RelationGraph::clear_one_way(CharacterId from, CharacterId to) noexcept {
-    const std::uint32_t bits = mask(from, to) & ONE_WAY_MASK;
+bool RelationGraph::clear_one_way(CharacterId from, CharacterId to) noexcept {
+    const std::uint32_t current = mask(from, to);
+    const std::uint32_t bits = current & ONE_WAY_MASK;
     if (bits != 0) {
         remove_bits(from, to, bits);
     }
+    return (current & ~ONE_WAY_MASK) != 0;
+}
+
+bool RelationGraph::has_edge(CharacterId a, CharacterId b) const noexcept {
+    return exists(a) && exists(b) && a != b && mask(a, b) != 0;
+}
+
+void RelationGraph::forget_node(CharacterId id) noexcept {
+    assert(exists(id));
+    for (const RelationEdge& e : list(id)) {
+        EdgeList& reverse = list(e.other);
+        const auto it = std::lower_bound(reverse.begin(), reverse.end(), id,
+                                         [](const RelationEdge& r, CharacterId x) { return r.other < x; });
+        assert(it != reverse.end() && it->other == id); // paired edges only
+        if (it != reverse.end() && it->other == id) {
+            reverse.erase(it); // erase does not allocate
+        }
+    }
+    EdgeList().swap(list(id)); // frees the storage
 }
 
 bool RelationGraph::has_one_way_edges(CharacterId a) const noexcept {

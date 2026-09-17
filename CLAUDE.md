@@ -31,8 +31,10 @@ cmake --build build/release --target sim_bench && ./build/release/bench/sim_benc
 block lookup) and a `structured` hierarchy (stances on upper levels, roots with self-stances,
 leaves without stances; random pairs and acquaintances reported separately). The `maintain`
 trimming benchmark runs every pass on a fresh copy of a filled template. The kill benchmark
-measures kills with no dead and with 450,000 dead (created and killed in interleaved batches,
-never holding more than ~2,500 alive), and relocation alone at 15,000 living.
+measures kills with no dead and after 450,000 interleaved create+kill rounds (never more than
+~2,500 alive), and relocation alone at 15,000 living. The generational churn benchmark (newborn
+with two distinct living parents, oldest dies, 450,000 deaths) samples dead count and memory.
+Holders overhead is measured on modifier, long-term and link+unlink edits.
 
 CMake options: `SIM_SANITIZE` (OFF), `SIM_WARNINGS_AS_ERRORS` (ON), `SIM_BUILD_TESTS` (ON),
 `SIM_BUILD_BENCH` (ON).
@@ -111,19 +113,23 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
   types only. Empty edges are removed. Siblings are derived from shared parents and never stored;
   at most `MAX_PARENTS` = 2 parents. Not checked yet: longer cycles and birth-date sanity.
 - **Edit results** are `EditResult` (`sim/edit_result.hpp`, formerly `ListResult`). Check order:
-  Invalid (id 0, a == b, unknown enum, wrong kind), NotFound (an id never created), Invalid (a
+  Invalid (id 0, a == b, unknown enum, wrong kind), NotFound (an id never created or forgotten), Invalid (a
   dead participant where not allowed; needs a lookup, so after NotFound), then Duplicate /
   Conflict / NotFound against existing state, then Full. A failed edit changes nothing.
   `kill` differs on purpose: it acts only on the living, so a dead id is NotFound (like an unknown
   one), while other edits return Invalid for a dead participant.
-- **Death** (`CharacterRegistry::kill`, `sim/dead_record.hpp`). kill(id, death, stances, config,
-  seed) replaces a living Character with a 24-byte `DeadRecord` (id, name, birth, death,
-  main_community at death or invalid, reputation frozen at death, gender). No holders, fame or
-  deletion of dead records yet (Step 7); mortality never kills automatically.
+- **Death** (`CharacterRegistry::kill`, `sim/dead_record.hpp`). kill(id, death, WorldContext)
+  replaces a living Character with a 24-byte `DeadRecord` (id, name, birth, death,
+  main_community at death or invalid, reputation frozen at death, gender, fame) and returns
+  `KillResult {result, fame, legendary}`. Mortality never kills automatically; no batch kills.
+  - **WorldContext** (`sim/world_context.hpp`) bundles references to the stance table, the
+    opinion and lifecycle configs, plus the world seed. It is only ever passed as a parameter,
+    built at the call site, and never stored (its references would dangle).
   - **Storage:** living characters in a vector sorted by id (`characters()` iterates the living in
-    id order); dead records append-only in order of death; one `u32` slot per id ever created
-    (living index, or top bit | dead index), so `find` (living only), `find_dead` and `exists`
-    are O(1) and ids stay below 2^31. A kill moves later living slots down with `destroy_at` +
+    id order); dead records in an unordered vector (forgetting swaps the last record in); one `u32`
+    slot per id ever created (living index, top bit | dead index, or FORGOTTEN) and one `u32`
+    holders count per id, so `find` (living only), `find_dead`, `exists` and `holders` are O(1)
+    and ids stay below 2^31. A kill moves later living slots down with `destroy_at` +
     `construct_at` (Characters are not assignable): cost grows with the living count (about
     1.2 ms per kill at 15,000 living), not with the dead count. The relation graph keeps a node
     for every id.
@@ -144,6 +150,49 @@ doctest is a SYSTEM include. `CMAKE_CXX_EXTENSIONS OFF`, `-ffp-contract=off`; ne
     (posthumous links, even between two dead; `MAX_PARENTS` and Conflict still apply);
     `set_relation`/`clear_relation` with a dead participant are Invalid; modifiers and long
     opinions accept a dead target and reject a dead holder (Invalid); `maintain()` skips the dead.
+- **Memory and forgetting** (Step 7). holders(X) = the number of distinct living characters
+  holding at least one reference to X: a long-term entry about X, a modifier with X as its person
+  target, or an edge in their own edge list pointing at X (so a paired link makes each living side
+  a holder of the other). Several references from one holder count once; the dead hold no
+  references; target-domain opinions are not references to characters.
+  - **Incremental, flip-driven:** an edit looks at the other reference kinds only when it flips
+    the existence of its own kind for that pair: an edge created from nothing or erased entirely
+    (`RelationGraph::EdgeFlips`), the first person modifier on X added or the last one removed
+    (reported by the keyed `Character::add_modifier`/`remove_modifier` from the sorted
+    neighbours), a long entry Created, Removed or evicted (from the outcome), or trimmed by
+    `maintain`. Changing bits on an existing edge or adding a second modifier on the same target
+    costs no lookups. All reference-changing mutations are registry-only or `CharacterKey`-gated,
+    so holders cannot go out of sync; the lifecycle property test compares them with a full
+    recount after every step.
+  - **Kill is confined by holders:** before any write it collects the living characters that
+    reference the deceased, stopping once holders(id) of them are found (no scan at all when
+    holders is 0); only those are rebased, have their one-way edges cleared and are recounted.
+    Non-surviving paired links go through the deceased's own edge list. The deceased's distinct
+    targets are decremented. Scratch for holders(id) + degree + 1 is reserved up front.
+  - **Forgetting:** a dead character is forgotten as soon as its holders reach 0, including at
+    its own death, and when a kill releases dead characters only the deceased held. Triggers:
+    removing the last long entry (Removed, eviction, maintain trim), modifier or edge (unlink,
+    kill). One change forgetting several processes them in id order (maintain reserves scratch
+    first and so may throw bad_alloc before any write). Forgetting deletes the DeadRecord, removes
+    its remaining edges on both sides (they can only be with other dead characters: a living
+    partner would hold the reverse edge), frees its edge storage and marks its slot FORGOTTEN; the
+    graph's per-id node slot stays. It never cascades (no living holder changes) and never
+    allocates. Legendary characters are forgotten like everyone else; chronicles come later.
+  - **Forgotten ids** behave like ids never created: `exists()` is false, `find`/`find_dead` are
+    null, `holders()` is 0, queries return empty results, edits (including kill) return NotFound.
+    Ids are still never reused. A dead parent is remembered while any of its children lives, so
+    siblings through a dead parent keep working.
+  - **Fame and legendary** (`LifecycleConfig`, `sim/lifecycle_config.hpp`, PLACEHOLDER integers):
+    fame = holders immediately before the kill + fame_per_reputation * |reputation|, saturating
+    at 65535, stored in `DeadRecord::fame`; legendary = fame >= legendary_fame, reported by kill
+    only (for a later chronicle system to react to).
+  - **Known limit, per-id growth:** slots (4 B), holders (4 B) and the graph node header
+    (`sizeof(std::vector<RelationEdge>)`, 24 B) exist for every id ever created, forgotten or
+    not: 32 B per id. At 1,500 living over the full timeline that is about 450,000 ids and 14 MB;
+    at 15,000 living about 4.5 million ids and 144 MB, of which about 108 MB are empty graph node
+    headers for forgotten ids. Likely fix, when needed: graph nodes only for existing characters,
+    reached through `slots_` (a node index next to the living/dead index), so forgetting frees the
+    node. Not fixed now.
 - **Memory tests** bound each storage kind on its own (e.g. `relation_bytes()`) using what
   doubling guarantees, capacity <= max(minimum, 2 * size) with the minimums taken from the code
   (`RelationGraph::MIN_EDGE_CAPACITY`), so a change to `sizeof(Character)` cannot break them.
