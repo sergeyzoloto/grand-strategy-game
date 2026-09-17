@@ -660,6 +660,11 @@ TEST_CASE("property: creates, kills, links, one-way relations and opinions match
                 REQUIRE(edges[i].mask == expected[i].second);
             }
             if (p.dead) {
+                // The dead never hold one-way edges.
+                const std::uint32_t one_way = relation_bit(R::Friend) | relation_bit(R::Rival)
+                                            | relation_bit(R::Attraction);
+                REQUIRE(std::none_of(edges.begin(), edges.end(),
+                                     [&](const RelationEdge& e) { return (e.mask & one_way) != 0; }));
                 continue;
             }
             living.push_back(CharacterId{id});

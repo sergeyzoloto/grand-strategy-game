@@ -77,19 +77,21 @@ EditResult CharacterRegistry::kill(CharacterId id, Date death, const StanceTable
     }
 
     // 2. Relations: non-surviving types on the deceased's own edges (paired on both sides),
-    //    then one-way edges of the living towards it. The dead hold no one-way edges.
+    //    then one-way edges of the living towards it. The dead hold no one-way edges; kill
+    //    never adds any, so checking the dead neighbours before the removals is enough
+    //    (the property test checks every dead node).
+#ifndef NDEBUG
+    for (const RelationEdge& e : relations_.relations(id)) {
+        assert(!is_dead(e.other) || !relations_.has_one_way_edges(e.other));
+    }
+#endif
     relations_.remove_non_surviving(id);
     for (const Character& holder : living_) {
         if (holder.id() != id) {
             relations_.clear_one_way(holder.id(), id);
         }
     }
-#ifndef NDEBUG
     assert(!relations_.has_one_way_edges(id));
-    for (const DeadRecord& dead : dead_) {
-        assert(!relations_.has_one_way_edges(dead.id));
-    }
-#endif
 
     // 3 and 4. The Character (with its own opinions and modifiers) is replaced by the record;
     // later living slots move down by one. Characters are not assignable, so each slot is
