@@ -21,7 +21,7 @@ absence:
     note: Passport and visa requirements between many European states were comparatively light or unenforced through the 19th century (a genuine "passport-free" era of mass transatlantic and intra-European movement is well documented up to 1914), making the sharp early-20th-century tightening a real regime change within a single region's own history rather than a continuous, ever-tightening trend from time immemorial — the freer regime existed and was later actively closed off, primarily under wartime security pressure.
 prereqs: [MIG-180]
 enables: [MIG-250, MIG-260, MIG-280, MIG-270, MIG-240]
-see_also: [MIG-220]
+see_also: [MIG-220, MED-105]
 contested: false
 contested_note: ""
 stats_touched: [migration cost, border friction]

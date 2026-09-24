@@ -36,7 +36,7 @@ region_variants:
 absence:
   - region: middle-east
     note: Saudi Arabia shut its public cinemas in the early 1980s and did not reopen them until 2018. The films came anyway, on videocassette and then by satellite, into homes and private gatherings, so the absence was of the public venue rather than of the medium. Once copying is cheap, prohibition removes the place where people watch together, not the watching.
-prereqs: [ENG-285]
+prereqs: [ENG-285, MED-105]
 enables: []
 see_also: [MED-080, MED-110, MED-130, MED-140, MED-150, REL-258, PHI-410, WAR-280, COM-180]
 contested: true
@@ -57,8 +57,9 @@ Edison's phonograph (1877) grows out of his work on the telegraph and
 telephone (MED-110) and records and plays back sound. Berliner's gramophone
 (1887) puts sound on flat discs that can be pressed from a master by the
 thousand. Eastman's celluloid roll film (1889), ENG-285's first plastic put
-to a new use, supplies the substrate for moving pictures. The Lumières show
-them to a paying audience in Paris in December 1895. Recording companies send
+to a new use, supplies the substrate for moving pictures, which are MED-105's
+photographs taken in rapid sequence. The Lumières show them to a paying
+audience in Paris in December 1895. Recording companies send
 engineers around the world from the 1900s; Fred Gaisberg records in Calcutta
 in 1902. Electrical recording (1925) and synchronised sound film (1927)
 follow. Magnetic tape arrives in the 1930s and becomes a studio medium after

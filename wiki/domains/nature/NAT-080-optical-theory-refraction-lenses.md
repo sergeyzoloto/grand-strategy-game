@@ -18,7 +18,7 @@ region_variants:
     note: Kepler's Dioptrice (1611) works out the mathematics of image formation through pairs of convex lenses, converting the telescope from a lucky combination of ground glass (empirically arrived at by Dutch spectacle-makers a few years earlier) into an understood, deliberately improvable optical instrument.
 absence: []
 prereqs: [NAT-090]
-enables: [NAT-120, NAT-130]
+enables: [NAT-120, NAT-130, MED-105]
 see_also: []
 contested: false
 contested_note: ""

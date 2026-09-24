@@ -37,7 +37,7 @@ absence:
     note: Japan grew no rubber and held no territory that did. An industrial and naval power dependent on imported rubber as on imported oil, it made the rubber of Malaya and the Netherlands East Indies part of the southern resource objective behind its 1941 decision (WAR-275), and held the world's plantations from 1942 to 1945 while the United States replaced them by synthesis (ENG-285). The absence shows the transfer's other face — moving the plant created a monopoly that a state without it could break only by conquest or by chemistry.
 prereqs: [AGR-210]
 enables: []
-see_also: [HLT-265, WAR-035, AGR-220, AGR-270, COM-160, ENG-265, ENG-285, LAW-175, WAR-275]
+see_also: [HLT-265, WAR-035, AGR-220, AGR-270, COM-160, ENG-265, ENG-285, LAW-175, WAR-275, MED-105]
 contested: true
 contested_note: "Two disputes. First, why the Amazon never became a plantation region. Dean (Brazil and the Struggle for Rubber, 1987) makes South American leaf blight decisive; Weinstein (The Amazon Rubber Boom, 1850-1920, 1983) points to an extraction economy whose merchants and patrons gained nothing from planting, and to scarce labour. Model plantation in the homeland as blocked by either of two independent conditions, the pathogen's presence and an extraction economy whose creditors do not gain from planting, so that removing one does not open the path. Second, the Congo Free State's death toll. Hochschild (King Leopold's Ghost, 1998) follows estimates that the population fell by about half; critics answer that the earlier population is unknown and that sleeping sickness and other epidemics caused much of the loss. Model the regime's mortality as large and uncertain, divided among violence, famine, flight and disease spread along the rubber routes, and never fixed as one number."
 stats_touched: [supervision cost, pathogen escape, crop failure correlation, stranded capital, strategic input dependency]
@@ -132,9 +132,9 @@ In the Congo the quota fell on the village. Men went into the forest for
 weeks while women were held as hostages until they returned, and the fields
 went unplanted, so famine followed the rubber. The campaign against it began
 with Casement's report of 1904 and was carried by the Congo Reform
-Association, using photographs of mutilated people as evidence. It is often
-counted among the first international human-rights campaigns, and it ended
-Leopold II's personal rule with Belgian annexation in 1908.
+Association, using photographs of mutilated people as evidence (MED-105).
+It is often counted among the first international human-rights campaigns,
+and it ended Leopold II's personal rule with Belgian annexation in 1908.
 
 On the Asian estates supervision was cheap and coercion moved into the
 contract. Tamil workers came to Malaya through kangani recruiters from their
