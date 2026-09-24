@@ -92,7 +92,7 @@ ENG-120,Windmill and Watermill Construction,engineering,agriculture,standard,dra
 ENG-130,Roman Concrete's Lost Recipe,engineering,,core,drafted,medium,476,1824,era,1,ENG-110,0,,TRUE,roman-concrete; pozzolana; opus-caementicium; knowledge-loss
 ENG-140,Gunpowder Engineering and Explosives,engineering,,core,drafted,high,850,1450,century,0,,2,WAR-130; ENG-280,FALSE,gunpowder; saltpeter; corning-process; explosives
 ENG-160,Mechanical Clockwork and the Escapement,engineering,,standard,drafted,medium,1092,1400,era,0,,1,MAR-250,TRUE,clockwork; escapement; su-song; al-jazari; verge-and-foliot
-ENG-165,The Coal Economy,engineering,commerce; health; war; nature,core,drafted,high,1550,1900,decade,1,ENG-055,3,ENG-170; ENG-300; ENG-260,TRUE,coal; coalfield; drainage; pomeranz; great-divergence; anthracite
+ENG-165,The Coal Economy,engineering,commerce; health; war; nature,core,drafted,high,1550,1900,decade,1,ENG-055,4,ENG-170; ENG-300; ENG-260; ENG-285,TRUE,coal; coalfield; drainage; pomeranz; great-divergence; anthracite
 ENG-166,Disaster and the Building Code,engineering,law; finance; migration; health,core,drafted,medium,1666,1970,era,0,,0,,TRUE,building-code; fire; earthquake; great-fire-of-london; meireki-fire; lisbon-1755; kanto-earthquake; chicago-fire; triangle-shirtwaist; boiler-inspection; mine-inspectorate; informal-housing
 ENG-170,The Steam Engine,engineering,nature; commerce; health,core,drafted,high,1712,1830,decade,2,NAT-040; ENG-165,7,COM-170; COM-200; ENG-190; ENG-250; ENG-300; ENG-220; MAR-260,FALSE,steam-engine; watt-engine; newcomen-engine; mechanical-power
 ENG-180,Weaving Looms and Textile Mechanization,engineering,commerce,core,drafted,high,1733,1830,century,0,,1,MTH-065,FALSE,loom; spinning-jenny; power-loom; textile-machinery
@@ -107,8 +107,9 @@ ENG-250,The Elevator and Safety Brake,engineering,,standard,drafted,high,1852,18
 ENG-260,The Bessemer Process and Steel Commodification,engineering,commerce,core,drafted,high,1856,1880,decade,2,COM-020; ENG-165,2,COM-200; ENG-310,FALSE,bessemer-process; steelmaking; decarburization; carnegie
 ENG-265,Petroleum Extraction,engineering,commerce; war; maritime; finance,core,drafted,high,1859,1911,decade,2,ENG-280; MAR-100,3,ENG-275; WAR-275; LAW-215,FALSE,petroleum; drake-well; baku; yenangyaung; spindletop; rule-of-capture; kerosene
 ENG-270,The Subway,engineering,commerce; migration,standard,drafted,high,1863,1927,century,1,ENG-080,0,,FALSE,subway; underground-railway; tunneling; urban-transit
-ENG-275,Refining and the Fixed-Ratio Problem,engineering,war; commerce; nature; maritime,core,drafted,high,1863,1937,decade,2,ENG-265; NAT-160,2,ENG-290; WAR-275,FALSE,refining; fractional-distillation; cracking; octane; fischer-tropsch; kerosene; gasoline
+ENG-275,Refining and the Fixed-Ratio Problem,engineering,war; commerce; nature; maritime,core,drafted,high,1863,1937,decade,2,ENG-265; NAT-160,3,ENG-290; WAR-275; ENG-285,FALSE,refining; fractional-distillation; cracking; octane; fischer-tropsch; kerosene; gasoline
 ENG-280,Dynamite and Industrial Blasting,engineering,commerce; war,core,drafted,high,1866,1914,century,1,ENG-140,2,COM-130; ENG-265,FALSE,dynamite; blasting; nobel; tunneling
+ENG-285,Plastics and Synthetic Polymers,engineering,commerce; health; war; maritime; agriculture; diplomacy,core,drafted,medium,1870,2019,decade,3,ENG-275; ENG-165; NAT-160,0,,TRUE,plastics; polymers; celluloid; bakelite; nylon; polyethylene; synthetic-rubber; camphor; shellac; petrochemicals; microplastics; disposability; recycling; waste-trade
 ENG-290,The Internal Combustion Engine,engineering,war; commerce; agriculture,core,drafted,high,1876,1913,decade,2,ENG-190; ENG-275,3,AGR-260; MAR-320; WAR-270,FALSE,internal-combustion-engine; automobile; model-t; diesel-engine
 ENG-300,Electrification,engineering,commerce; nature,core,drafted,high,1882,1935,decade,3,ENG-170; NAT-170; ENG-165,2,MED-130; MED-140,TRUE,electrification; power-grid; alternating-current; rural-electrification
 ENG-310,Steel-Frame Construction and the Skyscraper,engineering,,core,drafted,medium,1885,1900,decade,1,ENG-260,0,,TRUE,steel-frame; skyscraper; home-insurance-building; curtain-wall
@@ -328,7 +329,7 @@ NAT-120,Heliocentrism,nature,religion,core,drafted,high,1259,1687,century,3,NAT-
 NAT-130,Germ Theory,nature,health,core,drafted,high,1348,1884,era,2,NAT-090; NAT-080,1,HLT-310,FALSE,germ-theory; pasteur; koch; contagion
 NAT-140,Taxonomy and Systematic Classification,nature,health,standard,drafted,high,1550,1758,century,0,,0,,FALSE,taxonomy; linnaeus; li-shizhen; classification
 NAT-150,The Scientific Society and Peer Review,nature,,core,drafted,high,1660,1900,century,1,NAT-090,1,NAT-250,TRUE,royal-society; peer-review; scientific-institution; priority-dispute
-NAT-160,The Chemical Revolution,nature,engineering,standard,drafted,high,1661,1789,century,1,NAT-090,2,NAT-200; ENG-275,FALSE,chemistry; lavoisier; phlogiston; alchemy
+NAT-160,The Chemical Revolution,nature,engineering,standard,drafted,high,1661,1789,century,1,NAT-090,3,NAT-200; ENG-275; ENG-285,FALSE,chemistry; lavoisier; phlogiston; alchemy
 NAT-170,Electromagnetism,nature,engineering,core,drafted,high,1820,1888,century,2,NAT-040; MTH-045,7,MED-100; ENG-300; NAT-220; MED-120; WAR-315; MED-110; MAR-335,FALSE,electromagnetism; maxwell; faraday; hertz; telegraph-theory
 NAT-180,Thermodynamics,nature,engineering,core,drafted,high,1824,1865,century,3,NAT-040; MTH-040; MTH-045,1,NAT-210,FALSE,thermodynamics; carnot; entropy; heat-engine
 NAT-190,The Theory of Evolution,nature,health; religion,core,drafted,high,1859,1900,century,2,NAT-090; NAT-100,0,,TRUE,evolution; natural-selection; darwin; common-descent
