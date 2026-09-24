@@ -39,8 +39,8 @@ absence:
   - region: middle-east
     note: The cheapest polymer feedstock on earth was burned at the wellhead for decades. Gas produced alongside Gulf crude was flared because the capability to turn it into polymer lay elsewhere, until Saudi Arabia's gas-gathering system from 1975 and SABIC, founded in 1976, built an industry on it from the 1980s. The Gulf then became one of the lowest-cost producers of the commodity plastics, which makes the earlier absence one of capability rather than of resource, the same shape as the refining absences in ENG-275.
 prereqs: [ENG-275, ENG-165, NAT-160]
-enables: []
-see_also: [ENG-055, ENG-265, ENG-320, HLT-085, WAR-275, FIN-205, COM-180, MAR-337]
+enables: [MED-115]
+see_also: [ENG-055, ENG-265, ENG-320, HLT-085, WAR-275, FIN-205, COM-180, MAR-337, AGR-265]
 contested: true
 contested_note: "Two disputes. First, harm: plastic particles and additives are measurable in water, food and human tissue, but whether they damage health at population exposure levels is unsettled. The evidence is associational (Marfella et al., NEJM, 2024, linking particles in carotid plaque to later heart attack, stroke and death), the measurement methods are themselves disputed, and regulators disagree about additives such as bisphenol A. Model the stock's size as known and its per-unit penalty as a hidden, world-specific draw from a wide range, narrowed but never fixed by detection research, and never scripted as either harmless or a collapse. Second, comparison: life-cycle assessments often find plastic bags and packaging lower in energy and carbon than their glass, metal, paper or cotton substitutes (UK Environment Agency, Life cycle assessment of supermarket carrier bags, 2011) while counting persistence poorly or not at all, so the verdict depends on how impact categories are weighted. Track energy and persistence as separate stats and never net them into one environmental score."
 stats_touched: [disposability, persistent contaminant stock, toxic burden, stranded capital, strategic input dependency, regulatory arbitrage]

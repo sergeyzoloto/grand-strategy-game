@@ -40,7 +40,7 @@ absence:
     note: No malaria before 1492. The indigenous Americas had anopheline vectors but no parasite, so the disease that later defined the Caribbean, Amazonian and southern North American lowlands was absent until carried in by European colonists and enslaved Africans. Highland zones across every region — the Andean altiplano, the Ethiopian and East African highlands, the Kathmandu valley — are also absent, because transmission needs temperatures the parasite cannot complete its cycle below.
 prereqs: []
 enables: [HLT-280]
-see_also: [HLT-240, COM-160, AGR-100, AGR-210, DIP-090, HLT-110, PHI-305]
+see_also: [HLT-240, COM-160, AGR-100, AGR-210, DIP-090, HLT-110, PHI-305, AGR-265]
 contested: true
 contested_note: "Two disputes. First, how much the partition of Africa owed to quinine. Headrick (The Tools of Empire, 1981, ch. 3) makes prophylaxis the enabling technology of interior penetration; Curtin (Death by Migration, 1989) shows European tropical mortality falling from the 1840s through several causes at once — quinine, but also better siting, sanitation and shorter tours — and the three-decade lag between the Pleiad expedition and the Scramble shows steamers, breech-loading rifles and machine guns mattered too. Model prophylaxis as a necessary gate, without which tropical establishment fails, and not a sufficient one, since the gate opening does not itself trigger expansion. Second, how far differential immunity was real versus a planter ideology. Acquired and genetic resistance are documented, but enslaved Africans still suffered heavy malaria and yellow fever mortality, and resistance was used to justify coerced labour far beyond what the biology supported. Model the immunity differential as a real, partial reduction in mortality for exposed populations, and keep it separate from the labour ideology built on top of it."
 stats_touched: [immunological capital, strategic input dependency, medical efficacy, yield ceiling]
@@ -87,9 +87,9 @@ monopoly in the 1850s and 1860s. Botanical transfer converted a scarce import in
 a colonial plantation crop, and it moved the dependency rather than ending it.
 Java came to dominate world supply so completely that its loss to Japan in 1942
 cut the Allies off and forced synthetic substitutes into mass production. COM-160
-carries the monoculture dependency that plantation crops create. The
-crop-transfer act itself, a state seizing a monopoly by moving the plant, is not
-yet carried anywhere in the corpus.
+carries the monoculture dependency that plantation crops create. AGR-265 carries
+the crop-transfer act itself, a state seizing a monopoly by moving the plant,
+with rubber as its central case.
 
 **The differential is what makes malaria strategic.** A disease that killed
 everyone equally would be a uniform burden. Malaria kills outsiders and spares,

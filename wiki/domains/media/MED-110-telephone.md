@@ -35,7 +35,7 @@ absence:
     note: For the same reason, more starkly. The technology's cost scales with the number of premises to be individually wired within a small radius, and a dispersed pastoral population presents the worst possible case for that cost structure — there is no radius within which enough premises exist. This is a genuinely different failure from the telegraph's here, which failed on guarding a long line rather than on local density.
 prereqs: [MED-100, NAT-170]
 enables: []
-see_also: [MED-030, ENG-300, MED-120, COM-220, FIN-210, MIG-170, ENG-310, MED-150]
+see_also: [MED-030, ENG-300, MED-120, COM-220, FIN-210, MIG-170, ENG-310, MED-150, MED-115]
 contested: false
 contested_note: ""
 stats_touched: [information speed, contract enforcement, legibility]

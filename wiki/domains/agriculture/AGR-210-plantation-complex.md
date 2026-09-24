@@ -20,7 +20,7 @@ absence:
   - region: southeast-asia
     note: The Dutch Cultivation System's Java coffee and sugar estates (COM-160) achieve comparable export-monoculture output through compelled peasant smallholder labor integrated into existing village landholding, rather than through the plantation complex's characteristic large consolidated estate worked by a resident enslaved or indentured gang labor force — a structurally distinct production system reaching a broadly similar commodity-export outcome.
 prereqs: [MIG-160, WAR-035]
-enables: []
+enables: [AGR-265]
 see_also: [COM-160, HLT-265, LAW-175]
 contested: false
 contested_note: ""

@@ -21,7 +21,7 @@ absence:
     note: Phytophthora infestans is now believed to have originated in the Americas, and the eastern United States also loses substantial potato acreage to blight in the same 1840s window, but without anything resembling Ireland's mortality — American diets were never comparably dependent on the potato as a near-sole staple the way rural Ireland's had become, so the same pathogen striking the same crop produced ordinary agricultural loss rather than demographic catastrophe.
 prereqs: [AGR-220]
 enables: []
-see_also: [AGR-200]
+see_also: [AGR-200, AGR-265]
 contested: true
 contested_note: "How much of the roughly one million deaths and one-to-two million emigrants should be attributed to the blight itself versus the contemporary political and economic response (continued food exports from Ireland during the worst famine years, the character and adequacy of relief efforts under the prevailing administration) is a genuine, long-running historiographical dispute — sharp enough that 'Famine' versus 'Great Hunger' is itself a contested naming choice in the literature, with the latter term specifically foregrounding policy responsibility over natural disaster framing. Model the blight as the triggering shock and the political/market response as an independently-weighted multiplier on the resulting death toll, rather than treating the outcome as a fixed, natural consequence of the pathogen alone."
 stats_touched: [crop failure correlation]
