@@ -1,0 +1,4045 @@
+{
+  "meta": {
+    "model_version": "0.1.0-draft",
+    "generated_from_commit": "9ded765f2d351b10544bf34c048fa2cf40363562",
+    "generated_on": "2026-10-24",
+    "status_vocabulary": {
+      "implemented": "Modelled in sim_core: the code stores or computes it and enforces its rules.",
+      "referenced": "The code uses its id but does not model it: no table, no attributes, no rules of its own.",
+      "planned": "Named as a future layer of the game; no code and no fields yet."
+    },
+    "sources": [
+      "1. Code in sim_core/include and sim_core/src, and the tests in tests/",
+      "2. docs/audit/character-core-018724d.md (audit of 018724d); findings fixed in 5847252 are recorded as resolved",
+      "3. CLAUDE.md"
+    ],
+    "id_policy": "Every element has a stable dotted id in lowercase snake_case. Once published, ids are never renamed or reused.",
+    "scope": "Describes the character core as it stands. The rest of the game is named under entities as planned layers and left empty.",
+    "notation": "Formulas are plain text over element ids or short names. clamp(x, lo, hi) bounds x; round() is std::round (half away from zero). Integer division truncates."
+  },
+  "conventions": [
+    {
+      "id": "conv.time.date",
+      "status": "implemented",
+      "description": "Time is counted in whole weeks since world start; dates before world start are negative. A date has no calendar beyond that.",
+      "source": "sim_core/include/sim/date.hpp#Date",
+      "storage": "stored",
+      "type": "std::int32_t",
+      "quantization": "1 unit = 1 week",
+      "unit": "weeks since world start",
+      "range": "unenforced (full int32)"
+    },
+    {
+      "id": "conv.time.weeks_per_year",
+      "status": "implemented",
+      "description": "Length of a year in weeks, the mean Gregorian year. A calendar constant, not a gameplay coefficient.",
+      "source": "sim_core/include/sim/date.hpp#WEEKS_PER_YEAR",
+      "value": 52.1775,
+      "unit": "weeks per year",
+      "used_by": ["rule.age", "rule.mortality.weekly"]
+    },
+    {
+      "id": "conv.time.conversions",
+      "status": "implemented",
+      "description": "Durations between dates are signed week counts (positive when the second date is later); years are weeks / WEEKS_PER_YEAR as a double.",
+      "source": "sim_core/include/sim/date.hpp#weeks_between",
+      "formula": "weeks_between(from, to) = to.weeks - from.weeks; weeks_to_years(w) = w / WEEKS_PER_YEAR",
+      "clamps": "none; weeks_between asserts in debug that the difference fits int32"
+    },
+    {
+      "id": "conv.scale.bipolar",
+      "status": "implemented",
+      "description": "Traits, reputation, stances and modifier effects are whole numbers from -100 to +100, stored as the value itself. Fractions never reach them silently: callers round explicitly.",
+      "source": "sim_core/include/sim/bipolar.hpp#BIPOLAR_MIN",
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp"
+      },
+      "unit": "points",
+      "details": [
+        "set_ clamps any integer argument to -100..+100 with mixed-sign-safe comparisons, so no width or signedness overflows.",
+        "add_ clamps the delta to -200..+200 first, then clamps the sum to -100..+100.",
+        "Inputs must be StrictIntegral (type.strict_integral): a float, bool or character argument matches no function and does not compile.",
+        "-128 is never stored."
+      ]
+    },
+    {
+      "id": "conv.scale.condition",
+      "status": "implemented",
+      "description": "Health, stress and capacity are fractional from 0 to 100, kept to the hundredth. They are the only scales with a float interface.",
+      "source": "sim_core/src/character.cpp#set_hundredths",
+      "storage": "stored",
+      "type": "std::uint16_t",
+      "quantization": "hundredths: raw 0..10000, value = raw / 100",
+      "range": {
+        "min": 0,
+        "max": 100,
+        "enforced_by": "saturate"
+      },
+      "unit": "points",
+      "details": [
+        "set rounds value * 100 to the nearest integer with std::round (half away from zero) after clamping to 0..10000.",
+        "Infinities saturate at 0 or 100. NaN leaves the field unchanged (asserted in debug).",
+        "add rounds the delta to whole hundredths first (clamped to -10000..+10000), then adds in a wide integer and saturates: the same delta always adds the same steps, and add(d) then add(-d) restores the value unless saturation intervened.",
+        "A delta below 0.005 in magnitude rounds away by design.",
+        "Getters return raw / 100 as float."
+      ]
+    },
+    {
+      "id": "conv.scale.long_opinion",
+      "status": "implemented",
+      "description": "Long-term personal opinions are whole numbers from -200 to +200 so that a strong personal history can outweigh a saturated community stance. 0 means no entry.",
+      "source": "sim_core/include/sim/opinion_records.hpp#LONG_VALUE_MAX",
+      "range": {
+        "min": -200,
+        "max": 200,
+        "enforced_by": "clamp"
+      },
+      "unit": "points",
+      "details": [
+        "A single delta is clamped to -400..+400 (LONG_DELTA_MAX) on entry, so one call can cross the whole range.",
+        "The stored result is clamped to -200..+200; a result of 0 removes the entry."
+      ]
+    },
+    {
+      "id": "conv.scale.modifier_effect",
+      "status": "implemented",
+      "description": "A modifier's effect is a whole number from -100 to +100, fixed when the modifier is added; 0 is allowed.",
+      "source": "sim_core/include/sim/opinion_records.hpp#MODIFIER_EFFECT_MAX",
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp"
+      },
+      "unit": "points"
+    },
+    {
+      "id": "conv.scale.computed_opinion",
+      "status": "implemented",
+      "description": "Computed opinions are doubles on the -100..+100 scale. Their terms are not clamped individually; only the totals are. Rounding to whole numbers is the caller's choice.",
+      "source": "sim_core/include/sim/opinion.hpp#WeakOpinionBreakdown",
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp of totals"
+      },
+      "unit": "points"
+    },
+    {
+      "id": "conv.scale.share",
+      "status": "implemented",
+      "description": "An involvement share is a fraction weight / total, not a scale; the bipolar and condition rules do not apply to it.",
+      "source": "sim_core/include/sim/character.hpp#Character::involvement_share",
+      "range": {
+        "min": 0,
+        "max": 1,
+        "enforced_by": "construction"
+      },
+      "unit": "fraction"
+    },
+    {
+      "id": "conv.ids.handles",
+      "status": "implemented",
+      "description": "Every id is an opaque unsigned handle of its own type; 0 is the invalid id. Ids of different types never convert into each other or into integers implicitly.",
+      "source": "sim_core/include/sim/ids.hpp#Id",
+      "details": ["CharacterId, NameId, CommunityId and TopicId are u32; SkillId and ModifierId are u16.", "valid() is value != 0."]
+    },
+    {
+      "id": "conv.ids.character",
+      "status": "implemented",
+      "description": "Character ids start at 1, increase by one per created character and are never reused, even after a character is forgotten.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::create",
+      "details": [
+        "create returns the invalid id once 2^31 - 1 ids have been used.",
+        "A forgotten id behaves like one never created: exists() is false, queries are empty, edits return NotFound."
+      ]
+    },
+    {
+      "id": "conv.ids.target_id",
+      "status": "implemented",
+      "description": "A TargetId names a community or a topic as the target of a stance, long opinion, modifier or sacred entry.",
+      "source": "sim_core/include/sim/ids.hpp#TargetId",
+      "storage": "stored",
+      "type": "std::uint32_t",
+      "quantization": "2 high bits kind, 30 low bits index",
+      "range": "index 1..2^30-1 and a known kind (enforced by TargetId::from and from_raw)",
+      "details": [
+        "Valid iff index != 0; the default TargetId is invalid.",
+        "Built only by TargetId::from, which rejects an invalid id and an index >= 2^30 (INDEX_LIMIT).",
+        "TargetId::from_raw decodes a stored raw value, rejecting index 0 and unknown kinds.",
+        "Ordering is by raw value: grouped by kind, then by index."
+      ]
+    },
+    {
+      "id": "conv.edit.check_order",
+      "status": "implemented",
+      "description": "Every edit checks its inputs in a fixed order and reports the first failure. A failed edit changes nothing.",
+      "source": "sim_core/include/sim/edit_result.hpp#EditResult",
+      "order": [
+        "Invalid: id 0, a == b, unknown enum value, wrong relation kind, invalid TargetId or ModifierId 0",
+        "NotFound: a character id never created or forgotten",
+        "Invalid: a dead participant where the edit does not allow one (needs a lookup, so it follows NotFound)",
+        "Duplicate / Conflict / NotFound against existing state",
+        "Full: a storage bound or limit is reached"
+      ],
+      "exceptions": [
+        "op.kill: a dead id is NotFound, not Invalid; death < birth is Invalid after NotFound.",
+        "Long-opinion edits report a LongOpinionOutcome instead of an EditResult."
+      ]
+    },
+    {
+      "id": "conv.edit.atomicity",
+      "status": "implemented",
+      "description": "Edits check everything first, then reserve room in every container they will grow, then write. An allocation failure (std::bad_alloc) is thrown before any write and leaves the world unchanged.",
+      "source": "sim_core/include/sim/vector_growth.hpp#reserve_one_more",
+      "may_throw": ["op.create", "op.kill", "op.maintain", "op.set_relation", "op.link", "op.set_stance", "op.set_community_parent"]
+    },
+    {
+      "id": "conv.edit.storage_bounds",
+      "status": "implemented",
+      "description": "A full list returns Full and is never emptied to make room. Only the long-term opinion lists have gameplay limits with eviction (rule.long.eviction).",
+      "source": "CLAUDE.md#Design rules established so far / Per-character lists"
+    },
+    {
+      "id": "conv.lifetime",
+      "status": "implemented",
+      "description": "Anything read from the registry by reference (pointers, references, spans) is valid only until the next registry mutation: create, kill, maintain, any relation edit or personal opinion edit. Spans into a Character's lists are valid only until the next mutation of that Character. Vectors returned by queries are independent copies.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry"
+    },
+    {
+      "id": "conv.determinism.opinion_math",
+      "status": "implemented",
+      "description": "Opinion math uses only + - * / and comparisons on doubles, never exp, log or pow, so the same world yields bit-identical opinions on every platform under the project's flags (-ffp-contract=off, no fast-math). Golden values in the tests pin it.",
+      "source": "sim_core/include/sim/opinion.hpp#weak_opinion"
+    },
+    {
+      "id": "conv.determinism.noise",
+      "status": "implemented",
+      "description": "All randomness is deterministic noise derived from an explicit world seed and ids; there is no global or hidden random state.",
+      "source": "sim_core/include/sim/noise.hpp#noise"
+    },
+    {
+      "id": "conv.determinism.other_float",
+      "status": "implemented",
+      "description": "Mortality (exp, log, expm1, log1p), condition getters and involvement_share use float or transcendental math and are not guaranteed bit-identical across platforms.",
+      "source": "sim_core/src/mortality.cpp#annual_mortality"
+    },
+    {
+      "id": "conv.determinism.no_time",
+      "status": "implemented",
+      "description": "Nothing in personal or weak opinions depends on time: no dates, no decay, no recalculation. Opinions change only when their inputs are edited.",
+      "source": "sim_core/include/sim/personal_opinion.hpp#person_limit"
+    }
+  ],
+  "types": [
+    {
+      "id": "type.character_id",
+      "status": "implemented",
+      "description": "Handle of a character, living, dead or forgotten.",
+      "source": "sim_core/include/sim/ids.hpp#CharacterId",
+      "storage": "stored",
+      "type": "u32",
+      "range": "valid ids 1..2^31-1 (enforced by op.create)"
+    },
+    {
+      "id": "type.name_id",
+      "status": "implemented",
+      "description": "Handle of a name or nickname. Names themselves are not modelled.",
+      "source": "sim_core/include/sim/ids.hpp#NameId",
+      "storage": "stored",
+      "type": "u32",
+      "range": "unenforced"
+    },
+    {
+      "id": "type.community_id",
+      "status": "implemented",
+      "description": "Handle of a community.",
+      "source": "sim_core/include/sim/ids.hpp#CommunityId",
+      "storage": "stored",
+      "type": "u32",
+      "range": "unenforced; ids >= 2^30 cannot become TargetIds"
+    },
+    {
+      "id": "type.topic_id",
+      "status": "implemented",
+      "description": "Handle of a topic.",
+      "source": "sim_core/include/sim/ids.hpp#TopicId",
+      "storage": "stored",
+      "type": "u32",
+      "range": "unenforced; ids >= 2^30 cannot become TargetIds"
+    },
+    {
+      "id": "type.skill_id",
+      "status": "implemented",
+      "description": "Handle of a skill within a skill kind.",
+      "source": "sim_core/include/sim/ids.hpp#SkillId",
+      "storage": "stored",
+      "type": "u16",
+      "range": "unenforced"
+    },
+    {
+      "id": "type.modifier_id",
+      "status": "implemented",
+      "description": "Kind of opinion modifier (an insult, a gift, ...).",
+      "source": "sim_core/include/sim/ids.hpp#ModifierId",
+      "storage": "stored",
+      "type": "u16",
+      "range": "unenforced; 0 is Invalid in edits"
+    },
+    {
+      "id": "type.target_id",
+      "status": "implemented",
+      "description": "Community or topic as a target; see conv.ids.target_id.",
+      "source": "sim_core/include/sim/ids.hpp#TargetId",
+      "storage": "stored",
+      "type": "u32",
+      "range": "see conv.ids.target_id"
+    },
+    {
+      "id": "type.date",
+      "status": "implemented",
+      "description": "A point in time; see conv.time.date.",
+      "source": "sim_core/include/sim/date.hpp#Date",
+      "storage": "stored",
+      "type": "std::int32_t",
+      "range": "unenforced (full int32)"
+    },
+    {
+      "id": "type.world_seed",
+      "status": "implemented",
+      "description": "Seed of all noise in a world. Persistent world state: changing it changes every noise value.",
+      "source": "sim_core/include/sim/noise.hpp#WorldSeed",
+      "storage": "stored",
+      "type": "std::uint64_t",
+      "quantization": "opaque, no units",
+      "range": "unenforced",
+      "used_by": ["rule.opinion.noise"]
+    },
+    {
+      "id": "type.strict_integral",
+      "status": "implemented",
+      "description": "The integer types the model accepts wherever it takes whole numbers: any width and signedness, but no floating point, bool or character types.",
+      "source": "sim_core/include/sim/integral.hpp#StrictIntegral"
+    },
+    {
+      "id": "type.gender",
+      "status": "implemented",
+      "description": "Gender of a character. Persisted: append-only.",
+      "source": "sim_core/include/sim/character.hpp#Gender",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Female", "Male"]
+    },
+    {
+      "id": "type.skill_kind",
+      "status": "implemented",
+      "description": "Kind of skill. Persisted: append-only.",
+      "source": "sim_core/include/sim/character_lists.hpp#SkillKind",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Ability", "Education", "Language"]
+    },
+    {
+      "id": "type.sacred_sign",
+      "status": "implemented",
+      "description": "Whether a sacred target is revered (Plus) or abhorred (Minus). Persisted: append-only.",
+      "source": "sim_core/include/sim/character_lists.hpp#SacredSign",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Plus", "Minus"]
+    },
+    {
+      "id": "type.relation_type",
+      "status": "implemented",
+      "description": "Relation between two characters; the value is also its bit in the edge mask, so at most 32 types. Persisted: append-only. Each value is described under relations.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Friend", "Rival", "Attraction", "Parent", "Child", "Liege", "Vassal", "Employer", "Employee", "Spouse"]
+    },
+    {
+      "id": "type.relation_kind",
+      "status": "implemented",
+      "description": "Whether a relation type is set on one edge or on both.",
+      "source": "sim_core/include/sim/relations.hpp#RelationKind",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["OneWay", "Paired"],
+      "value_notes": {
+        "OneWay": "set on the source edge only",
+        "Paired": "always set on both edges, with the complement on the reverse edge"
+      }
+    },
+    {
+      "id": "type.target_kind",
+      "status": "implemented",
+      "description": "Kind of entity a TargetId names. Stored in 2 bits: append-only, at most 4 kinds; value 2 is intended for persons, 3 is free.",
+      "source": "sim_core/include/sim/ids.hpp#TargetKind",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Community", "Topic"]
+    },
+    {
+      "id": "type.modifier_domain",
+      "status": "implemented",
+      "description": "Which id space a modifier's target belongs to, so a character and a community with the same number never collide. Persisted: append-only.",
+      "source": "sim_core/include/sim/opinion_records.hpp#ModifierDomain",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Person", "Target"],
+      "value_notes": {
+        "Person": "target is a CharacterId",
+        "Target": "target is a TargetId (community or topic)"
+      }
+    },
+    {
+      "id": "type.noise_subject",
+      "status": "implemented",
+      "description": "Kind of noise target, part of the hash input. Frozen: renumbering shifts the noise of the whole world.",
+      "source": "sim_core/include/sim/noise.hpp#NoiseSubject",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Person", "Community", "Topic"],
+      "used_by": ["rule.opinion.noise"]
+    },
+    {
+      "id": "type.edit_result",
+      "status": "implemented",
+      "description": "Result of every list, relation and stance edit. Every non-Ok result leaves state unchanged.",
+      "source": "sim_core/include/sim/edit_result.hpp#EditResult",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Ok", "Full", "Duplicate", "Conflict", "NotFound", "Invalid"],
+      "value_notes": {
+        "Ok": "the edit was applied (or was a no-op where stated)",
+        "Full": "a new entry was needed but a capacity or limit was reached",
+        "Duplicate": "the entry or bit already exists",
+        "Conflict": "an existing entry or bit contradicts the edit",
+        "NotFound": "unknown character, or removal of an absent entry or bit",
+        "Invalid": "invalid id, enum value or kind, or a dead participant where not allowed"
+      }
+    },
+    {
+      "id": "type.long_opinion_outcome",
+      "status": "implemented",
+      "description": "Result of a long-term opinion edit.",
+      "source": "sim_core/include/sim/opinion_records.hpp#LongOpinionOutcome",
+      "underlying": "std::uint8_t",
+      "numbering": "declaration order, from 0",
+      "values": ["Updated", "Created", "CreatedWithEviction", "Removed", "Unchanged", "Dropped", "Invalid", "NotFound"],
+      "value_notes": {
+        "Updated": "an existing entry changed to another nonzero value",
+        "Created": "a new entry was stored",
+        "CreatedWithEviction": "a new entry replaced the weakest one; evicted names it",
+        "Removed": "an existing entry reached 0 and was removed",
+        "Unchanged": "nothing written: a delta of 0, or a value already saturated in that direction",
+        "Dropped": "the list is at its limit and the new entry is not stronger than the weakest",
+        "Invalid": "id 0, a == b, an invalid TargetId, or a dead holder",
+        "NotFound": "an unknown or forgotten character"
+      }
+    },
+    {
+      "id": "type.character_init",
+      "status": "implemented",
+      "description": "Initial values of a new character: three condition values and twelve bipolar values. Lists are not part of it and start empty. Defaults are under config.character_init.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit",
+      "fields": [
+        "health",
+        "stress",
+        "capacity",
+        "strength",
+        "intelligence",
+        "stability",
+        "openness",
+        "extraversion",
+        "conscientiousness",
+        "agreeableness",
+        "attractiveness",
+        "height",
+        "shape",
+        "charisma",
+        "reputation"
+      ],
+      "details": ["Condition values saturate at 0..100; NaN leaves the field at its default (asserted in debug).", "Bipolar values are type.bipolar_init."]
+    },
+    {
+      "id": "type.bipolar_init",
+      "status": "implemented",
+      "description": "Initial value of a bipolar field in CharacterInit. Converts from any StrictIntegral and clamps to -100..+100, so designated initializers cannot truncate a float or wrap a wide integer. Not persistent.",
+      "source": "sim_core/include/sim/character.hpp#BipolarInit",
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp"
+      }
+    },
+    {
+      "id": "type.world_context",
+      "status": "implemented",
+      "description": "The world-wide inputs an operation reads besides the registry: the stance table, the opinion and lifecycle configs and the world seed. Built at the call site and never stored. MortalityConfig is not part of it.",
+      "source": "sim_core/include/sim/world_context.hpp#WorldContext",
+      "fields": ["stances (community.stances, community.hierarchy)", "opinion (config.opinion.*)", "lifecycle (config.lifecycle.*)", "seed (type.world_seed)"]
+    },
+    {
+      "id": "type.kill_result",
+      "status": "implemented",
+      "description": "Result of op.kill: the edit result, the fame stored in the dead record and whether the death is legendary; fame and legendary are meaningful only when result is Ok.",
+      "source": "sim_core/include/sim/character_registry.hpp#KillResult",
+      "fields": ["result (type.edit_result)", "fame (u16, dead_record.fame)", "legendary (bool, rule.lifecycle.legendary)"]
+    },
+    {
+      "id": "type.long_opinion_result",
+      "status": "implemented",
+      "description": "Result of a long-opinion edit: the outcome and, for CreatedWithEviction only, the evicted target (typed like the target; invalid otherwise).",
+      "source": "sim_core/include/sim/opinion_records.hpp#LongOpinionResult",
+      "fields": ["outcome (type.long_opinion_outcome)", "evicted (CharacterId or TargetId)"]
+    },
+    {
+      "id": "type.weak_opinion_breakdown",
+      "status": "implemented",
+      "description": "The terms of a weak opinion and their clamped total, for tuning and tooltips.",
+      "source": "sim_core/include/sim/opinion.hpp#WeakOpinionBreakdown",
+      "fields": ["community", "reputation (0 for non-person targets)", "compat (0 for non-person and dead targets)", "noise", "total (clamped to -100..+100)"]
+    },
+    {
+      "id": "type.opinion_breakdown",
+      "status": "implemented",
+      "description": "A weak opinion plus the personal terms and the clamped total.",
+      "source": "sim_core/include/sim/opinion.hpp#OpinionBreakdown",
+      "fields": [
+        "weak (type.weak_opinion_breakdown)",
+        "long_term (int, -200..+200, 0 without entry)",
+        "short_term (int, sum of effects, 0 without modifiers)",
+        "total (clamped to -100..+100)"
+      ]
+    },
+    {
+      "id": "type.relation_info",
+      "status": "implemented",
+      "description": "Kind and complement of a relation type: the single source of both. Empty for values outside the enum.",
+      "source": "sim_core/include/sim/relations.hpp#relation_info",
+      "fields": ["kind (type.relation_kind)", "complement (empty for one-way types; Spouse is its own complement)"]
+    },
+    {
+      "id": "type.relation_edge",
+      "status": "implemented",
+      "description": "Relations from one character to another, as returned by relations(a): the other character and a bit mask of the roles the other has for a.",
+      "source": "sim_core/include/sim/relations.hpp#RelationEdge",
+      "fields": ["other (CharacterId, always valid)", "mask (u32, bit relation_bit(t) set when other has role t for a; never 0 when stored)"]
+    }
+  ],
+  "entities": [
+    {
+      "id": "character",
+      "status": "implemented",
+      "description": "A person in the world: identity, condition, personality, skills, memberships, sacred values and personal opinions. Only the living are characters; at death a character becomes a dead_record.",
+      "source": "sim_core/include/sim/character.hpp#Character",
+      "created_by": "op.create",
+      "fields": [
+        {
+          "id": "character.id",
+          "status": "implemented",
+          "description": "Identity of the character, unique for the whole timeline.",
+          "source": "sim_core/include/sim/character.hpp#Character::id",
+          "storage": "stored",
+          "type": "CharacterId (u32)",
+          "quantization": "handle",
+          "range": "valid ids 1..2^31-1 (enforced by op.create)",
+          "unit": "handle",
+          "used_by": ["rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+        },
+        {
+          "id": "character.name",
+          "status": "implemented",
+          "description": "The character's name.",
+          "source": "sim_core/include/sim/character.hpp#Character::name",
+          "storage": "stored",
+          "type": "NameId (u32)",
+          "quantization": "handle",
+          "range": "unenforced (op.create accepts any NameId, including 0)",
+          "unit": "handle",
+          "used_by": ["op.kill"]
+        },
+        {
+          "id": "character.gender",
+          "status": "implemented",
+          "description": "The character's gender; affects mortality.",
+          "source": "sim_core/include/sim/character.hpp#Character::gender",
+          "storage": "stored",
+          "type": "Gender (u8 enum)",
+          "quantization": "enum value",
+          "range": "unenforced (op.create does not validate it; rule.mortality.annual asserts a known value in debug)",
+          "unit": "enum",
+          "used_by": ["op.kill", "rule.mortality.annual"]
+        },
+        {
+          "id": "character.birth",
+          "status": "implemented",
+          "description": "Date of birth; may be before world start.",
+          "source": "sim_core/include/sim/character.hpp#Character::birth",
+          "storage": "stored",
+          "type": "Date (i32)",
+          "quantization": "1 unit = 1 week",
+          "range": "unenforced",
+          "unit": "weeks since world start",
+          "used_by": ["op.kill", "rule.age"]
+        },
+        {
+          "id": "character.health",
+          "status": "implemented",
+          "description": "Physical health; low health raises mortality.",
+          "source": "sim_core/include/sim/character.hpp#Character::health",
+          "storage": "stored",
+          "type": "std::uint16_t",
+          "quantization": "hundredths: raw 0..10000, value = raw / 100",
+          "range": {
+            "min": 0,
+            "max": 100,
+            "enforced_by": "saturate (conv.scale.condition)"
+          },
+          "unit": "points",
+          "default": 100,
+          "default_from": "config.character_init.health",
+          "used_by": ["rule.mortality.annual"]
+        },
+        {
+          "id": "character.stress",
+          "status": "implemented",
+          "description": "Accumulated stress; high stress raises mortality.",
+          "source": "sim_core/include/sim/character.hpp#Character::stress",
+          "storage": "stored",
+          "type": "std::uint16_t",
+          "quantization": "hundredths: raw 0..10000, value = raw / 100",
+          "range": {
+            "min": 0,
+            "max": 100,
+            "enforced_by": "saturate (conv.scale.condition)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.stress",
+          "used_by": ["rule.mortality.annual"]
+        },
+        {
+          "id": "character.capacity",
+          "status": "implemented",
+          "description": "Capacity to act.",
+          "source": "sim_core/include/sim/character.hpp#Character::capacity",
+          "storage": "stored",
+          "type": "std::uint16_t",
+          "quantization": "hundredths: raw 0..10000, value = raw / 100",
+          "range": {
+            "min": 0,
+            "max": 100,
+            "enforced_by": "saturate (conv.scale.condition)"
+          },
+          "unit": "points",
+          "default": 100,
+          "default_from": "config.character_init.capacity",
+          "used_by": []
+        },
+        {
+          "id": "character.strength",
+          "status": "implemented",
+          "description": "Physical strength.",
+          "source": "sim_core/include/sim/character.hpp#Character::strength",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.strength",
+          "used_by": []
+        },
+        {
+          "id": "character.intelligence",
+          "status": "implemented",
+          "description": "Intelligence.",
+          "source": "sim_core/include/sim/character.hpp#Character::intelligence",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.intelligence",
+          "used_by": []
+        },
+        {
+          "id": "character.stability",
+          "status": "implemented",
+          "description": "Emotional stability (Big Five; the opposite of neuroticism).",
+          "source": "sim_core/include/sim/character.hpp#Character::stability",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.stability",
+          "used_by": ["rule.opinion.compat"]
+        },
+        {
+          "id": "character.openness",
+          "status": "implemented",
+          "description": "Openness to experience (Big Five). Makes opinions of communities and topics more varied.",
+          "source": "sim_core/include/sim/character.hpp#Character::openness",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.openness",
+          "used_by": ["rule.opinion.compat", "rule.opinion.openness_factor"]
+        },
+        {
+          "id": "character.extraversion",
+          "status": "implemented",
+          "description": "Extraversion (Big Five). Sets how many people a character keeps long-term opinions about.",
+          "source": "sim_core/include/sim/character.hpp#Character::extraversion",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.extraversion",
+          "used_by": ["op.add_long_opinion.person", "op.maintain", "rule.long.person_limit", "rule.opinion.compat"]
+        },
+        {
+          "id": "character.conscientiousness",
+          "status": "implemented",
+          "description": "Conscientiousness (Big Five).",
+          "source": "sim_core/include/sim/character.hpp#Character::conscientiousness",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.conscientiousness",
+          "used_by": ["rule.opinion.compat"]
+        },
+        {
+          "id": "character.agreeableness",
+          "status": "implemented",
+          "description": "Agreeableness (Big Five).",
+          "source": "sim_core/include/sim/character.hpp#Character::agreeableness",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.agreeableness",
+          "used_by": ["rule.opinion.compat"]
+        },
+        {
+          "id": "character.attractiveness",
+          "status": "implemented",
+          "description": "Physical attractiveness.",
+          "source": "sim_core/include/sim/character.hpp#Character::attractiveness",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.attractiveness",
+          "used_by": []
+        },
+        {
+          "id": "character.height",
+          "status": "implemented",
+          "description": "Height relative to the norm.",
+          "source": "sim_core/include/sim/character.hpp#Character::height",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.height",
+          "used_by": []
+        },
+        {
+          "id": "character.shape",
+          "status": "implemented",
+          "description": "Body shape relative to the norm.",
+          "source": "sim_core/include/sim/character.hpp#Character::shape",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.shape",
+          "used_by": []
+        },
+        {
+          "id": "character.charisma",
+          "status": "implemented",
+          "description": "Charisma.",
+          "source": "sim_core/include/sim/character.hpp#Character::charisma",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.charisma",
+          "used_by": []
+        },
+        {
+          "id": "character.reputation",
+          "status": "implemented",
+          "description": "How the world regards the character. Feeds everyone's weak opinion of them and their fame at death.",
+          "source": "sim_core/include/sim/character.hpp#Character::reputation",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "clamp (conv.scale.bipolar)"
+          },
+          "unit": "points",
+          "default": 0,
+          "default_from": "config.character_init.reputation",
+          "used_by": ["op.kill", "rule.lifecycle.fame", "rule.opinion.weak_person"]
+        },
+        {
+          "id": "character.holders",
+          "status": "implemented",
+          "description": "How many living characters remember this character. A dead character nobody remembers is forgotten; at death it sets the base of fame.",
+          "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::holders",
+          "storage": "stored",
+          "type": "std::uint32_t per id, held by the registry (not in Character)",
+          "quantization": "count",
+          "range": "0..living count by construction; unenforced",
+          "unit": "living characters",
+          "note": "Maintained incrementally by every reference-changing edit; must equal rule.memory.holders. Kept for living and dead ids; reads 0 for forgotten and unknown ids.",
+          "must_equal": "rule.memory.holders",
+          "used_by": ["op.kill", "rule.death.discard_own", "rule.lifecycle.fame", "rule.memory.forgetting"]
+        }
+      ],
+      "lists": [
+        {
+          "id": "character.list.nicknames",
+          "status": "implemented",
+          "description": "Names the character is also known by.",
+          "source": "sim_core/include/sim/character.hpp#Character::nicknames",
+          "capacity": 4,
+          "capacity_from": "config.constant.nickname_cap",
+          "limit_kind": "storage",
+          "ordering": "insertion order (remove keeps the order of the rest)",
+          "duplicates": "rejected: Duplicate",
+          "eviction": "none: Full",
+          "entry": [
+            {
+              "id": "character.list.nicknames.name",
+              "status": "implemented",
+              "description": "A nickname.",
+              "source": "sim_core/include/sim/character.hpp#Character::add_nickname",
+              "storage": "stored",
+              "type": "NameId (u32)",
+              "quantization": "handle",
+              "range": "valid NameId (0 is Invalid)",
+              "unit": "handle",
+              "used_by": ["op.character.add_nickname", "op.character.remove_nickname"]
+            }
+          ],
+          "used_by": ["op.character.add_nickname", "op.character.remove_nickname"]
+        },
+        {
+          "id": "character.list.practise",
+          "status": "implemented",
+          "description": "Skills the character has. Skills are capabilities: present or absent, without a level. Query: has_skill(kind, skill).",
+          "source": "sim_core/include/sim/character.hpp#Character::practise",
+          "capacity": 64,
+          "capacity_from": "config.constant.practise_cap",
+          "limit_kind": "storage",
+          "ordering": "sorted by (kind, skill)",
+          "duplicates": "rejected: Duplicate",
+          "eviction": "none: Full",
+          "entry": [
+            {
+              "id": "character.list.practise.skill",
+              "status": "implemented",
+              "description": "The skill.",
+              "source": "sim_core/include/sim/character_lists.hpp#PractiseEntry::skill",
+              "storage": "stored",
+              "type": "SkillId (u16)",
+              "quantization": "handle",
+              "range": "valid SkillId (0 is Invalid)",
+              "unit": "handle",
+              "used_by": ["op.character.add_skill", "op.character.remove_skill"]
+            },
+            {
+              "id": "character.list.practise.kind",
+              "status": "implemented",
+              "description": "Kind of the skill.",
+              "source": "sim_core/include/sim/character_lists.hpp#PractiseEntry::kind",
+              "storage": "stored",
+              "type": "SkillKind (u8 enum)",
+              "quantization": "enum value",
+              "range": "known SkillKind (else Invalid)",
+              "unit": "enum",
+              "used_by": ["op.character.add_skill", "op.character.remove_skill"]
+            }
+          ],
+          "used_by": ["op.character.add_skill", "op.character.remove_skill"]
+        },
+        {
+          "id": "character.list.involvement",
+          "status": "implemented",
+          "description": "The communities the character belongs to and how strongly. Weights are relative; the share of a community is its weight over the sum.",
+          "source": "sim_core/include/sim/character.hpp#Character::involvement",
+          "capacity": 8,
+          "capacity_from": "config.constant.involvement_cap",
+          "limit_kind": "storage",
+          "ordering": "sorted by community id",
+          "duplicates": "one entry per community: setting again overwrites the weight",
+          "eviction": "none: Full when a ninth community is added",
+          "entry": [
+            {
+              "id": "character.list.involvement.community",
+              "status": "implemented",
+              "description": "The community.",
+              "source": "sim_core/include/sim/character_lists.hpp#InvolvementEntry::community",
+              "storage": "stored",
+              "type": "CommunityId (u32)",
+              "quantization": "handle",
+              "range": "valid CommunityId (0 is Invalid)",
+              "unit": "handle",
+              "used_by": ["op.character.set_involvement", "rule.involvement.main_community", "rule.involvement.share", "rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+            },
+            {
+              "id": "character.list.involvement.weight",
+              "status": "implemented",
+              "description": "Relative strength of membership.",
+              "source": "sim_core/include/sim/character_lists.hpp#InvolvementEntry::weight",
+              "storage": "stored",
+              "type": "std::uint8_t",
+              "quantization": "whole units",
+              "range": {
+                "min": 1,
+                "max": 255,
+                "enforced_by": "set_involvement clamps to 0..255; 0 (or a negative weight) removes the entry"
+              },
+              "unit": "relative weight",
+              "used_by": ["rule.involvement.main_community", "rule.involvement.share", "rule.involvement.total", "rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+            }
+          ],
+          "used_by": ["op.character.set_involvement", "rule.involvement.main_community", "rule.involvement.share", "rule.involvement.total", "rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+        },
+        {
+          "id": "character.list.sacred",
+          "status": "implemented",
+          "description": "Communities or topics the character holds sacred (Plus) or abhors (Minus). Flipping a sign takes an explicit removal first. Query: sacred_sign(target).",
+          "source": "sim_core/include/sim/character.hpp#Character::sacred",
+          "capacity": 8,
+          "capacity_from": "config.constant.sacred_cap",
+          "limit_kind": "storage",
+          "ordering": "sorted by target (raw order)",
+          "duplicates": "same sign: Duplicate; opposite sign: Conflict",
+          "eviction": "none: Full",
+          "entry": [
+            {
+              "id": "character.list.sacred.target",
+              "status": "implemented",
+              "description": "The sacred target.",
+              "source": "sim_core/include/sim/character_lists.hpp#SacredEntry::target",
+              "storage": "stored",
+              "type": "TargetId (u32)",
+              "quantization": "kind + index",
+              "range": "valid TargetId (else Invalid)",
+              "unit": "handle",
+              "used_by": ["op.character.add_sacred", "op.character.remove_sacred"]
+            },
+            {
+              "id": "character.list.sacred.sign",
+              "status": "implemented",
+              "description": "Reverence or abhorrence.",
+              "source": "sim_core/include/sim/character_lists.hpp#SacredEntry::sign",
+              "storage": "stored",
+              "type": "SacredSign (u8 enum)",
+              "quantization": "enum value",
+              "range": "known SacredSign (else Invalid)",
+              "unit": "enum",
+              "used_by": ["op.character.add_sacred", "op.character.remove_sacred"]
+            }
+          ],
+          "used_by": ["op.character.add_sacred", "op.character.remove_sacred"]
+        },
+        {
+          "id": "character.list.long_opinions_people",
+          "status": "implemented",
+          "description": "What the character has come to think of particular people through personal history. Extraverts remember more people; the weakest memories make way for stronger ones. Entries about the dead are kept and keep them remembered.",
+          "source": "sim_core/include/sim/character.hpp#Character::long_people",
+          "capacity": 40,
+          "capacity_from": "config.constant.person_limit_max",
+          "limit": "character.derived.person_limit",
+          "limit_kind": "gameplay",
+          "ordering": "sorted by CharacterId",
+          "duplicates": "one entry per target: a new delta adds to the existing value",
+          "eviction": "rule.long.eviction on insert (one per call); rule.long.trim in op.maintain when the list is above person_limit",
+          "note": "May exceed person_limit after extraversion is lowered, until op.maintain runs.",
+          "entry": [
+            {
+              "id": "character.list.long_opinions_people.target",
+              "status": "implemented",
+              "description": "The person; living or dead, never the owner.",
+              "source": "sim_core/include/sim/opinion_records.hpp#LongOpinion::target",
+              "storage": "stored",
+              "type": "CharacterId (u32)",
+              "quantization": "handle",
+              "range": "valid, != owner, existing (edits reject others)",
+              "unit": "handle",
+              "used_by": ["op.add_long_opinion.person", "op.kill", "op.maintain", "rule.death.discard_own", "rule.death.rebase", "rule.long.eviction", "rule.long.trim", "rule.long.update", "rule.memory.holders", "rule.opinion.long"]
+            },
+            {
+              "id": "character.list.long_opinions_people.value",
+              "status": "implemented",
+              "description": "The long-term opinion of that person.",
+              "source": "sim_core/include/sim/opinion_records.hpp#LongOpinion::value",
+              "storage": "stored",
+              "type": "std::int16_t",
+              "quantization": "whole units, raw == value",
+              "range": {
+                "min": -200,
+                "max": 200,
+                "enforced_by": "clamp; 0 is never stored"
+              },
+              "unit": "points",
+              "used_by": ["op.add_long_opinion.person", "op.maintain", "rule.death.rebase", "rule.long.eviction", "rule.long.trim", "rule.long.update", "rule.opinion.long"]
+            }
+          ],
+          "used_by": ["op.add_long_opinion.person", "op.kill", "op.maintain", "rule.death.discard_own", "rule.death.rebase", "rule.long.eviction", "rule.long.trim", "rule.long.update", "rule.memory.holders", "rule.opinion.long"]
+        },
+        {
+          "id": "character.list.long_opinions_targets",
+          "status": "implemented",
+          "description": "What the character has come to think of particular communities and topics through personal history.",
+          "source": "sim_core/include/sim/character.hpp#Character::long_targets",
+          "capacity": 16,
+          "capacity_from": "config.constant.target_limit",
+          "limit": "config.constant.target_limit",
+          "limit_kind": "gameplay",
+          "ordering": "sorted by TargetId (raw order)",
+          "duplicates": "one entry per target: a new delta adds to the existing value",
+          "eviction": "rule.long.eviction on insert (one per call); never above the limit (asserted)",
+          "entry": [
+            {
+              "id": "character.list.long_opinions_targets.target",
+              "status": "implemented",
+              "description": "The community or topic.",
+              "source": "sim_core/include/sim/opinion_records.hpp#LongOpinion::target",
+              "storage": "stored",
+              "type": "TargetId (u32)",
+              "quantization": "kind + index",
+              "range": "valid TargetId (else Invalid)",
+              "unit": "handle",
+              "used_by": ["op.add_long_opinion.target", "rule.long.eviction", "rule.long.update", "rule.opinion.long"]
+            },
+            {
+              "id": "character.list.long_opinions_targets.value",
+              "status": "implemented",
+              "description": "The long-term opinion of that target.",
+              "source": "sim_core/include/sim/opinion_records.hpp#LongOpinion::value",
+              "storage": "stored",
+              "type": "std::int16_t",
+              "quantization": "whole units, raw == value",
+              "range": {
+                "min": -200,
+                "max": 200,
+                "enforced_by": "clamp; 0 is never stored"
+              },
+              "unit": "points",
+              "used_by": ["op.add_long_opinion.target", "rule.long.eviction", "rule.long.update", "rule.opinion.long"]
+            }
+          ],
+          "used_by": ["op.add_long_opinion.target", "rule.long.eviction", "rule.long.update", "rule.opinion.long"]
+        },
+        {
+          "id": "character.list.modifiers",
+          "status": "implemented",
+          "description": "Active circumstances shaping the character's short-term opinion of a person, community or topic (an insult, a gift). Each has an effect fixed when it is added; the same circumstance cannot stack on the same target.",
+          "source": "sim_core/include/sim/character.hpp#Character::modifiers",
+          "capacity": 32,
+          "capacity_from": "config.constant.modifier_cap",
+          "limit_kind": "storage",
+          "ordering": "sorted by (domain, target, modifier)",
+          "duplicates": "one per (domain, target, modifier): Duplicate",
+          "eviction": "none: Full",
+          "entry": [
+            {
+              "id": "character.list.modifiers.domain",
+              "status": "implemented",
+              "description": "Whether the target is a person or a community/topic.",
+              "source": "sim_core/include/sim/opinion_records.hpp#OpinionModifier::domain",
+              "storage": "stored",
+              "type": "ModifierDomain (u8 enum)",
+              "quantization": "enum value",
+              "range": "set by the edit (person or target overload)",
+              "unit": "enum",
+              "used_by": ["op.add_modifier.person", "op.add_modifier.target", "op.kill", "op.remove_modifier.person", "op.remove_modifier.target", "rule.death.discard_own", "rule.memory.holders", "rule.opinion.short"]
+            },
+            {
+              "id": "character.list.modifiers.target",
+              "status": "implemented",
+              "description": "The target: a CharacterId (domain Person) or a TargetId (domain Target), read back through person() or target_id().",
+              "source": "sim_core/include/sim/opinion_records.hpp#OpinionModifier::target",
+              "storage": "stored",
+              "type": "std::uint32_t",
+              "quantization": "CharacterId value or TargetId raw, per domain",
+              "range": "never 0; Person: valid, != owner, existing; Target: valid TargetId",
+              "unit": "handle",
+              "used_by": ["op.add_modifier.person", "op.add_modifier.target", "op.kill", "op.remove_modifier.person", "op.remove_modifier.target", "rule.death.discard_own", "rule.memory.holders", "rule.opinion.short"]
+            },
+            {
+              "id": "character.list.modifiers.modifier",
+              "status": "implemented",
+              "description": "Which kind of circumstance.",
+              "source": "sim_core/include/sim/opinion_records.hpp#OpinionModifier::modifier",
+              "storage": "stored",
+              "type": "ModifierId (u16)",
+              "quantization": "handle",
+              "range": "valid ModifierId (0 is Invalid)",
+              "unit": "handle",
+              "used_by": ["op.add_modifier.person", "op.add_modifier.target", "op.remove_modifier.person", "op.remove_modifier.target"]
+            },
+            {
+              "id": "character.list.modifiers.effect",
+              "status": "implemented",
+              "description": "The modifier's effect on the opinion.",
+              "source": "sim_core/include/sim/opinion_records.hpp#OpinionModifier::effect",
+              "storage": "stored",
+              "type": "std::int8_t",
+              "quantization": "whole units, raw == value",
+              "range": {
+                "min": -100,
+                "max": 100,
+                "enforced_by": "clamp at add; 0 allowed"
+              },
+              "unit": "points",
+              "used_by": ["rule.opinion.short"]
+            }
+          ],
+          "used_by": ["op.add_modifier.person", "op.add_modifier.target", "op.kill", "op.remove_modifier.person", "op.remove_modifier.target", "rule.death.discard_own", "rule.memory.holders", "rule.opinion.short"]
+        }
+      ],
+      "derived": [
+        {
+          "id": "character.derived.age_years",
+          "status": "implemented",
+          "description": "Age in years at a given date; negative before birth.",
+          "source": "sim_core/include/sim/mortality.hpp#age_years",
+          "storage": "derived",
+          "rule": "rule.age",
+          "range": "unenforced",
+          "unit": "years",
+          "used_by": ["rule.mortality.annual"]
+        },
+        {
+          "id": "character.derived.annual_mortality",
+          "status": "implemented",
+          "description": "Probability of dying within one year at a given date.",
+          "source": "sim_core/include/sim/mortality.hpp#annual_mortality",
+          "storage": "derived",
+          "rule": "rule.mortality.annual",
+          "range": {
+            "min": 0,
+            "max": 1,
+            "enforced_by": "clamp; NaN maps to 0"
+          },
+          "unit": "probability",
+          "used_by": []
+        },
+        {
+          "id": "character.derived.involvement_total",
+          "status": "implemented",
+          "description": "Sum of the character's involvement weights.",
+          "source": "sim_core/include/sim/character.hpp#Character::involvement_total",
+          "storage": "derived",
+          "rule": "rule.involvement.total",
+          "range": {
+            "min": 0,
+            "max": 2040,
+            "enforced_by": "construction"
+          },
+          "unit": "relative weight",
+          "used_by": ["rule.involvement.share", "rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+        },
+        {
+          "id": "character.derived.involvement_share",
+          "status": "implemented",
+          "description": "Share of one community in the character's involvement, for display.",
+          "source": "sim_core/include/sim/character.hpp#Character::involvement_share",
+          "storage": "derived",
+          "rule": "rule.involvement.share",
+          "range": {
+            "min": 0,
+            "max": 1,
+            "enforced_by": "construction"
+          },
+          "unit": "fraction",
+          "used_by": []
+        },
+        {
+          "id": "character.derived.main_community",
+          "status": "implemented",
+          "description": "The community the character belongs to most; none without involvement. Recorded at death.",
+          "source": "sim_core/include/sim/character.hpp#Character::main_community",
+          "storage": "derived",
+          "rule": "rule.involvement.main_community",
+          "range": "a CommunityId from the involvement list, or none",
+          "unit": "handle",
+          "used_by": ["op.kill"]
+        },
+        {
+          "id": "character.derived.person_limit",
+          "status": "implemented",
+          "description": "How many people the character keeps long-term opinions about.",
+          "source": "sim_core/include/sim/personal_opinion.hpp#person_limit",
+          "storage": "derived",
+          "rule": "rule.long.person_limit",
+          "range": {
+            "min": 8,
+            "max": 40,
+            "enforced_by": "construction"
+          },
+          "unit": "entries",
+          "used_by": ["op.add_long_opinion.person", "op.maintain", "rule.long.eviction", "rule.long.trim"]
+        }
+      ]
+    },
+    {
+      "id": "dead_record",
+      "status": "implemented",
+      "description": "What remains of a character after death: identity, dates, fame and the few values others' opinions of the deceased need. Written once at death and never changed; deleted when nobody remembers the character.",
+      "source": "sim_core/include/sim/dead_record.hpp#DeadRecord",
+      "created_by": "op.kill",
+      "fields": [
+        {
+          "id": "dead_record.id",
+          "status": "implemented",
+          "description": "Identity of the deceased; same id as in life.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::id",
+          "storage": "stored",
+          "type": "CharacterId (u32)",
+          "quantization": "handle",
+          "range": "always valid",
+          "unit": "handle",
+          "used_by": ["rule.opinion.total", "rule.opinion.weak_dead"]
+        },
+        {
+          "id": "dead_record.name",
+          "status": "implemented",
+          "description": "Name at death.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::name",
+          "storage": "stored",
+          "type": "NameId (u32)",
+          "quantization": "handle",
+          "range": "copied from character.name; unenforced",
+          "unit": "handle",
+          "used_by": []
+        },
+        {
+          "id": "dead_record.birth",
+          "status": "implemented",
+          "description": "Date of birth.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::birth",
+          "storage": "stored",
+          "type": "Date (i32)",
+          "quantization": "1 unit = 1 week",
+          "range": "copied from character.birth",
+          "unit": "weeks since world start",
+          "used_by": []
+        },
+        {
+          "id": "dead_record.death",
+          "status": "implemented",
+          "description": "Date of death.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::death",
+          "storage": "stored",
+          "type": "Date (i32)",
+          "quantization": "1 unit = 1 week",
+          "range": ">= birth (op.kill returns Invalid otherwise)",
+          "unit": "weeks since world start",
+          "used_by": []
+        },
+        {
+          "id": "dead_record.main_community",
+          "status": "implemented",
+          "description": "The community the character belonged to most at death; invalid if none. Gives the dead a community for others' opinions.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::main_community",
+          "storage": "stored",
+          "type": "CommunityId (u32)",
+          "quantization": "handle; 0 = none",
+          "range": "character.derived.main_community at death",
+          "unit": "handle",
+          "used_by": ["rule.opinion.weak_dead"]
+        },
+        {
+          "id": "dead_record.reputation",
+          "status": "implemented",
+          "description": "Reputation frozen at death.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::reputation",
+          "storage": "stored",
+          "type": "std::int8_t",
+          "quantization": "whole units, raw == value",
+          "range": {
+            "min": -100,
+            "max": 100,
+            "enforced_by": "copied from character.reputation"
+          },
+          "unit": "points",
+          "used_by": ["rule.opinion.weak_dead"]
+        },
+        {
+          "id": "dead_record.gender",
+          "status": "implemented",
+          "description": "Gender.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::gender",
+          "storage": "stored",
+          "type": "Gender (u8 enum)",
+          "quantization": "enum value",
+          "range": "copied from character.gender",
+          "unit": "enum",
+          "used_by": []
+        },
+        {
+          "id": "dead_record.fame",
+          "status": "implemented",
+          "description": "How famous the deceased was at death.",
+          "source": "sim_core/include/sim/dead_record.hpp#DeadRecord::fame",
+          "storage": "stored",
+          "type": "std::uint16_t",
+          "quantization": "whole units",
+          "range": {
+            "min": 0,
+            "max": 65535,
+            "enforced_by": "saturate (rule.lifecycle.fame)"
+          },
+          "unit": "fame points",
+          "storage_rule": "rule.lifecycle.fame",
+          "used_by": ["rule.lifecycle.legendary"]
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "status": "referenced",
+      "description": "A group a character can belong to (a family, a tribe, a faith). Exists only as an id, its place in the hierarchy and its stances; it has no attributes and no lifecycle (it is never created, killed or forgotten).",
+      "source": "sim_core/include/sim/ids.hpp#CommunityId",
+      "parts": [
+        {
+          "id": "community.hierarchy",
+          "status": "implemented",
+          "description": "Communities nest: each has at most one parent, and a community inherits its ancestors' stances where it has none of its own.",
+          "source": "sim_core/include/sim/stance_table.hpp#StanceTable::set_parent",
+          "capacity": "unbounded",
+          "limit_kind": "storage",
+          "ordering": "sorted by child",
+          "duplicates": "one parent per child: op.set_community_parent replaces it",
+          "eviction": "none",
+          "entry": [
+            {
+              "id": "community.hierarchy.child",
+              "status": "implemented",
+              "description": "The community being placed under a parent.",
+              "source": "sim_core/include/sim/stance_table.hpp#ParentEntry::child",
+              "storage": "stored",
+              "type": "CommunityId (u32)",
+              "quantization": "handle",
+              "range": "valid (else Invalid)",
+              "unit": "handle",
+              "used_by": ["op.clear_community_parent", "op.set_community_parent", "rule.stance.chain"]
+            },
+            {
+              "id": "community.hierarchy.parent",
+              "status": "implemented",
+              "description": "The parent of a community.",
+              "source": "sim_core/include/sim/stance_table.hpp#ParentEntry::parent",
+              "storage": "stored",
+              "type": "CommunityId (u32)",
+              "quantization": "handle",
+              "range": "valid, != child, no cycle, every chain at most MAX_COMMUNITY_DEPTH long (enforced by op.set_community_parent)",
+              "unit": "handle",
+              "used_by": ["op.set_community_parent", "rule.stance.chain"]
+            }
+          ]
+        },
+        {
+          "id": "community.stances",
+          "status": "implemented",
+          "description": "Explicit attitudes of a community towards another community (including itself, for in-group cohesion) or a topic. An explicit 0 is a real attitude, not an absence.",
+          "source": "sim_core/include/sim/stance_table.hpp#StanceTable::set_stance",
+          "capacity": "unbounded",
+          "limit_kind": "storage",
+          "ordering": "sorted by (from, to raw)",
+          "duplicates": "one per (from, to): op.set_stance overwrites",
+          "eviction": "none",
+          "entry": [
+            {
+              "id": "community.stances.from",
+              "status": "implemented",
+              "description": "The community holding the stance.",
+              "source": "sim_core/include/sim/stance_table.hpp#StanceEntry::from",
+              "storage": "stored",
+              "type": "CommunityId (u32)",
+              "quantization": "handle",
+              "range": "valid (else Invalid)",
+              "unit": "handle",
+              "used_by": ["op.clear_stance", "op.set_stance", "rule.stance.resolution"]
+            },
+            {
+              "id": "community.stances.to",
+              "status": "implemented",
+              "description": "The community or topic the stance is about.",
+              "source": "sim_core/include/sim/stance_table.hpp#StanceEntry::to",
+              "storage": "stored",
+              "type": "TargetId (u32)",
+              "quantization": "kind + index",
+              "range": "valid (else Invalid)",
+              "unit": "handle",
+              "used_by": ["op.clear_stance", "op.set_stance", "rule.stance.resolution"]
+            },
+            {
+              "id": "community.stances.value",
+              "status": "implemented",
+              "description": "The attitude.",
+              "source": "sim_core/include/sim/stance_table.hpp#StanceEntry::value",
+              "storage": "stored",
+              "type": "std::int8_t",
+              "quantization": "whole units, raw == value",
+              "range": {
+                "min": -100,
+                "max": 100,
+                "enforced_by": "clamp (op.set_stance)"
+              },
+              "unit": "points",
+              "used_by": ["rule.stance.resolution"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic",
+      "status": "referenced",
+      "description": "A subject characters and communities hold views on. Exists only as an id inside a TargetId; it has no hierarchy (it walks no chain), no attributes and no lifecycle.",
+      "source": "sim_core/include/sim/ids.hpp#TopicId"
+    },
+    {
+      "id": "name",
+      "status": "referenced",
+      "description": "A name or nickname. Characters carry NameIds; the names themselves are not modelled.",
+      "source": "sim_core/include/sim/ids.hpp#NameId"
+    },
+    {
+      "id": "skill",
+      "status": "referenced",
+      "description": "A skill, identified by its kind and id. There is no skill table; a character either has a skill or not.",
+      "source": "sim_core/include/sim/ids.hpp#SkillId"
+    },
+    {
+      "id": "modifier",
+      "status": "referenced",
+      "description": "A kind of circumstance that shapes short-term opinion (an insult, a gift). Only its id exists; there is no type table, and each use gives its own effect. The active instances are character.list.modifiers.",
+      "source": "sim_core/include/sim/ids.hpp#ModifierId"
+    },
+    {
+      "id": "geography",
+      "status": "planned",
+      "description": "Permanent base layer: terrain, elevation, drainage basins.",
+      "source": "model/game-model.json#entities (PLANNED_LAYERS)"
+    },
+    {
+      "id": "provinces",
+      "status": "planned",
+      "description": "Time-varying layer on top of geography.",
+      "source": "model/game-model.json#entities (PLANNED_LAYERS)"
+    },
+    {
+      "id": "documents",
+      "status": "planned",
+      "description": "Material records that can preserve the memory of dead characters, mostly famous ones.",
+      "source": "model/game-model.json#entities (PLANNED_LAYERS)"
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation.edge",
+      "status": "implemented",
+      "description": "Relations between two characters live on one edge per ordered pair. A bit on the edge a -> b names b's role for a (Child: b is a's child). Every edge, whatever its bits, makes its living source remember its target.",
+      "source": "sim_core/include/sim/relations.hpp#RelationEdge",
+      "details": [
+        "Empty edges are removed.",
+        "One-way types touch only a -> b; paired types always change both edges, with the complement on b -> a.",
+        "Queries (relations, has_relation, parents, children, siblings, shared_parents) work for living and dead ids and may return dead ids; they are empty for forgotten ids."
+      ],
+      "used_by": ["op.clear_relation", "op.kill", "op.link", "op.set_relation", "op.unlink", "rule.death.discard_own", "rule.death.relation_fates", "rule.memory.holders"]
+    },
+    {
+      "id": "relation.friend",
+      "status": "implemented",
+      "description": "a considers b a friend.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Friend",
+      "value": 0,
+      "kind": "OneWay",
+      "complement": null,
+      "exclusivity": "none: one-way types never conflict, with each other or with paired types",
+      "survives_death": false,
+      "edited_by": ["op.set_relation", "op.clear_relation"],
+      "dead_participants": "never: a dead participant is Invalid; edges from and to the deceased are cleared at death",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.rival",
+      "status": "implemented",
+      "description": "a considers b a rival.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Rival",
+      "value": 1,
+      "kind": "OneWay",
+      "complement": null,
+      "exclusivity": "none: one-way types never conflict, with each other or with paired types",
+      "survives_death": false,
+      "edited_by": ["op.set_relation", "op.clear_relation"],
+      "dead_participants": "never: a dead participant is Invalid; edges from and to the deceased are cleared at death",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.attraction",
+      "status": "implemented",
+      "description": "a is attracted to b.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Attraction",
+      "value": 2,
+      "kind": "OneWay",
+      "complement": null,
+      "exclusivity": "none: one-way types never conflict, with each other or with paired types",
+      "survives_death": false,
+      "edited_by": ["op.set_relation", "op.clear_relation"],
+      "dead_participants": "never: a dead participant is Invalid; edges from and to the deceased are cleared at death",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.parent",
+      "status": "implemented",
+      "description": "b is a's parent. Query: parents(a), in id order, may include the dead.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Parent",
+      "value": 3,
+      "kind": "Paired",
+      "complement": "relation.child",
+      "exclusivity": "only with its complement on the same edge (Conflict); no limit on how many characters hold this relation",
+      "survives_death": true,
+      "edited_by": ["op.link", "op.unlink"],
+      "dead_participants": "allowed: posthumous links, even between two dead",
+      "limits": "a has at most MAX_PARENTS (config.constant.max_parents) parents, dead ones included: Full",
+      "used_by": ["relation.derived.shared_parents", "relation.derived.siblings", "rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.child",
+      "status": "implemented",
+      "description": "b is a's child. Query: children(a), in id order, may include the dead.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Child",
+      "value": 4,
+      "kind": "Paired",
+      "complement": "relation.parent",
+      "exclusivity": "only with its complement on the same edge (Conflict); no limit on how many characters hold this relation",
+      "survives_death": true,
+      "edited_by": ["op.link", "op.unlink"],
+      "dead_participants": "allowed: posthumous links, even between two dead",
+      "limits": "b has at most MAX_PARENTS (config.constant.max_parents) parents, dead ones included: Full",
+      "used_by": ["relation.derived.siblings", "rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.liege",
+      "status": "implemented",
+      "description": "b is a's liege.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Liege",
+      "value": 5,
+      "kind": "Paired",
+      "complement": "relation.vassal",
+      "exclusivity": "only with its complement on the same edge (Conflict); no limit on how many characters hold this relation",
+      "survives_death": false,
+      "edited_by": ["op.link", "op.unlink"],
+      "dead_participants": "not allowed (Invalid); unlinked on both sides at death",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.vassal",
+      "status": "implemented",
+      "description": "b is a's vassal.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Vassal",
+      "value": 6,
+      "kind": "Paired",
+      "complement": "relation.liege",
+      "exclusivity": "only with its complement on the same edge (Conflict); no limit on how many characters hold this relation",
+      "survives_death": false,
+      "edited_by": ["op.link", "op.unlink"],
+      "dead_participants": "not allowed (Invalid); unlinked on both sides at death",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.employer",
+      "status": "implemented",
+      "description": "b employs a.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Employer",
+      "value": 7,
+      "kind": "Paired",
+      "complement": "relation.employee",
+      "exclusivity": "only with its complement on the same edge (Conflict); no limit on how many characters hold this relation",
+      "survives_death": false,
+      "edited_by": ["op.link", "op.unlink"],
+      "dead_participants": "not allowed (Invalid); unlinked on both sides at death",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.employee",
+      "status": "implemented",
+      "description": "b is a's employee.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Employee",
+      "value": 8,
+      "kind": "Paired",
+      "complement": "relation.employer",
+      "exclusivity": "only with its complement on the same edge (Conflict); no limit on how many characters hold this relation",
+      "survives_death": false,
+      "edited_by": ["op.link", "op.unlink"],
+      "dead_participants": "not allowed (Invalid); unlinked on both sides at death",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.spouse",
+      "status": "implemented",
+      "description": "a and b are married. Spouse is its own complement.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType::Spouse",
+      "value": 9,
+      "kind": "Paired",
+      "complement": "relation.spouse",
+      "exclusivity": "none: Spouse is its own complement, so it never conflicts; no limit on the number of spouses",
+      "survives_death": true,
+      "edited_by": ["op.link", "op.unlink"],
+      "dead_participants": "allowed: posthumous links, even between two dead",
+      "used_by": ["rule.death.relation_fates"]
+    },
+    {
+      "id": "relation.derived.siblings",
+      "status": "implemented",
+      "description": "Characters sharing at least one parent with a. Never stored; derived from parent links, so siblings through a dead parent keep working while the parent is remembered.",
+      "source": "sim_core/include/sim/relation_graph.hpp#RelationGraph::siblings",
+      "storage": "derived",
+      "formula": "siblings(a) = sorted unique { c : c != a and c is a Child of some p in parents(a) }",
+      "uses": ["relation.parent", "relation.child"],
+      "used_by": []
+    },
+    {
+      "id": "relation.derived.shared_parents",
+      "status": "implemented",
+      "description": "How many parents two characters share: 2 for full siblings, 1 for half siblings, 0 otherwise (also for a == b or unknown ids).",
+      "source": "sim_core/include/sim/relation_graph.hpp#RelationGraph::shared_parents",
+      "storage": "derived",
+      "formula": "shared_parents(a, b) = |{ p in parents(a) : p in parents(b) }|",
+      "range": {
+        "min": 0,
+        "max": 2,
+        "enforced_by": "construction"
+      },
+      "uses": ["relation.parent"],
+      "used_by": []
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule.stance.chain",
+      "status": "implemented",
+      "description": "Where a community looks for stances: itself first, then its parent, grandparent and so on. A topic has no chain.",
+      "source": "sim_core/include/sim/stance_table.hpp#StanceTable::chain",
+      "formula": "chain(c) = [c, parent(c), parent(parent(c)), ...] (at most MAX_COMMUNITY_DEPTH); target_chain(community t) = chain(t) as TargetIds, skipping ancestors with id >= 2^30; target_chain(topic t) = [t]; invalid id -> []",
+      "clamps": "length at most MAX_COMMUNITY_DEPTH (guaranteed by op.set_community_parent)",
+      "uses": ["community.hierarchy.child", "community.hierarchy.parent", "config.constant.max_community_depth"],
+      "used_by": ["op.set_community_parent", "rule.stance.resolution"]
+    },
+    {
+      "id": "rule.stance.resolution",
+      "status": "implemented",
+      "description": "The stance of a community towards a target is the nearest explicit attitude, looking first through the holder's own ancestry and, for each, through the target's ancestry. The source side wins: a family's own feud overrides its tribe's attitude, and a tribe's stance towards another tribe reaches that tribe's families.",
+      "source": "sim_core/include/sim/stance_table.hpp#StanceTable::stance",
+      "formula": "stance(from, to) = for s in chain(from), nearest first: for u in target_chain(to), nearest first: if explicit(s, u) exists return it; else 0",
+      "clamps": "none needed: stored values are already -100..+100; an invalid id yields 0",
+      "uses": ["community.stances.value", "community.stances.from", "community.stances.to", "rule.stance.chain"],
+      "used_by": ["rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+    },
+    {
+      "id": "rule.opinion.compat",
+      "status": "implemented",
+      "description": "How well two personalities fit: identical personalities like each other most, opposite extremes least.",
+      "source": "sim_core/include/sim/opinion.hpp#compat",
+      "formula": "compat(A, B) = k_compat * (1 - 2 * D / (200 * W)), D = sum_t w_t * |A.t - B.t|, W = sum_t w_t, t in {stability, openness, extraversion, conscientiousness, agreeableness}",
+      "clamps": "none; with weights >= 0 the result lies in -k_compat..+k_compat. Weights >= 0 and W > 0 are asserted in debug; in release W <= 0 returns 0",
+      "uses": ["character.stability", "character.openness", "character.extraversion", "character.conscientiousness", "character.agreeableness", "config.opinion.w_stability", "config.opinion.w_openness", "config.opinion.w_extraversion", "config.opinion.w_conscientiousness", "config.opinion.w_agreeableness", "config.opinion.k_compat"],
+      "used_by": ["rule.opinion.weak_person"]
+    },
+    {
+      "id": "rule.opinion.openness_factor",
+      "status": "implemented",
+      "description": "Open characters hold more varied views of communities and topics: their noise is scaled up.",
+      "source": "sim_core/include/sim/opinion.hpp#openness_factor",
+      "formula": "openness_factor(A) = openness_factor_min + (openness_factor_max - openness_factor_min) * (A.openness + 100) / 200",
+      "clamps": "none",
+      "uses": ["character.openness", "config.opinion.openness_factor_min", "config.opinion.openness_factor_max"],
+      "used_by": ["rule.opinion.weak_target"]
+    },
+    {
+      "id": "rule.opinion.noise",
+      "status": "implemented",
+      "description": "Individual variation: a fixed, directed pseudo-random value per (world, holder, target), so two characters with the same background still differ, and A's view of B differs from B's view of A.",
+      "source": "sim_core/include/sim/noise.hpp#noise",
+      "formula": "h = splitmix64(seed); h = splitmix64(h xor source_id); h = splitmix64(h xor ((subject << 32) | target)); noise = (h >> 11) / (2^53 - 1) * 2 - 1",
+      "clamps": "result in [-1, 1] by construction",
+      "uses": ["type.world_seed", "type.noise_subject"],
+      "frozen": "The hash and the NoiseSubject values are frozen: changing either shifts the noise of the whole world; golden values in the tests pin it.",
+      "used_by": ["rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+    },
+    {
+      "id": "rule.opinion.weak_person",
+      "status": "implemented",
+      "description": "What a living character thinks of another living character without personal history: their communities' stances towards each other, the target's reputation, personality fit and individual noise.",
+      "source": "sim_core/include/sim/opinion.hpp#weak_opinion_breakdown",
+      "formula": "community = sum_i sum_j wA_i * wB_j * stance(cA_i -> cB_j) / (totalA * totalB) (0 if either total is 0; a target community id >= 2^30 contributes 0); reputation = k_rep * B.reputation; compat = compat(A, B); noise = k_noise * noise(seed, A.id, Person, B.id); total = clamp(community + reputation + compat + noise, -100, 100)",
+      "clamps": "only the total, to -100..+100; the community sum is exact integer arithmetic divided once; A == B is asserted in debug and returns all zeros",
+      "uses": ["character.id", "character.list.involvement", "rule.involvement.total", "character.reputation", "rule.opinion.compat", "rule.opinion.noise", "rule.stance.resolution", "config.opinion.k_rep", "config.opinion.k_noise"],
+      "used_by": ["rule.death.rebase", "rule.opinion.total"]
+    },
+    {
+      "id": "rule.opinion.weak_dead",
+      "status": "implemented",
+      "description": "What a living character thinks of a dead one without personal history: stances towards the deceased's main community, frozen reputation and the same noise as in life; personality fit no longer counts.",
+      "source": "sim_core/include/sim/opinion.hpp#weak_opinion_breakdown",
+      "formula": "community = sum_i wA_i * stance(cA_i -> D.main_community) / totalA (0 without a main community or involvement); reputation = k_rep * D.reputation; compat = 0; noise = k_noise * noise(seed, A.id, Person, D.id); total = clamp(sum, -100, 100)",
+      "clamps": "only the total, to -100..+100; A.id == D.id is asserted in debug and returns all zeros",
+      "uses": ["character.id", "character.list.involvement", "rule.involvement.total", "dead_record.id", "dead_record.main_community", "dead_record.reputation", "rule.opinion.noise", "rule.stance.resolution", "config.opinion.k_rep", "config.opinion.k_noise"],
+      "note": "A dead holder cannot be passed: a DeadRecord is not a Character.",
+      "used_by": ["rule.death.rebase", "rule.opinion.total"]
+    },
+    {
+      "id": "rule.opinion.weak_target",
+      "status": "implemented",
+      "description": "What a character thinks of a community or topic without personal history: its communities' stances, plus noise scaled by its openness.",
+      "source": "sim_core/include/sim/opinion.hpp#weak_opinion_breakdown",
+      "formula": "community = sum_i wA_i * stance(cA_i -> T) / totalA (0 without involvement); reputation = 0; compat = 0; noise = k_noise * openness_factor(A) * noise(seed, A.id, Community|Topic, T.index); total = clamp(sum, -100, 100)",
+      "clamps": "only the total, to -100..+100; an invalid target returns all zeros",
+      "uses": ["character.id", "character.list.involvement", "rule.involvement.total", "rule.opinion.openness_factor", "rule.opinion.noise", "rule.stance.resolution", "config.opinion.k_noise"],
+      "used_by": ["rule.opinion.total"]
+    },
+    {
+      "id": "rule.opinion.long",
+      "status": "implemented",
+      "description": "The stored long-term opinion of a target, or 0 without an entry.",
+      "source": "sim_core/include/sim/personal_opinion.hpp#long_opinion",
+      "formula": "long(A, X) = value of A's entry about X in long_opinions_people (persons, living or dead) or long_opinions_targets (communities, topics), else 0",
+      "clamps": "stored values are -200..+200",
+      "uses": ["character.list.long_opinions_people", "character.list.long_opinions_targets"],
+      "used_by": ["rule.opinion.total"]
+    },
+    {
+      "id": "rule.opinion.short",
+      "status": "implemented",
+      "description": "The combined effect of the character's active modifiers on a target.",
+      "source": "sim_core/include/sim/personal_opinion.hpp#short_opinion",
+      "formula": "short(A, X) = sum of effect over A's modifiers with (domain, target) = X",
+      "clamps": "none: a raw sum, at most MODIFIER_CAP * 100 in magnitude; only the total opinion is clamped",
+      "uses": ["character.list.modifiers"],
+      "used_by": ["rule.opinion.total"]
+    },
+    {
+      "id": "rule.opinion.total",
+      "status": "implemented",
+      "description": "A character's full opinion of a person (living or dead), community or topic: the weak opinion plus personal history. Because the weak total is clamped first, personal history can pull an opinion back from a saturated community stance.",
+      "source": "sim_core/include/sim/opinion.hpp#opinion_breakdown",
+      "formula": "opinion(A, X) = clamp(weak(A -> X).total + long(A, X) + short(A, X), -100, 100), with weak = rule.opinion.weak_person, rule.opinion.weak_dead or rule.opinion.weak_target by target",
+      "clamps": "weak total clamped to -100..+100, then the sum clamped to -100..+100; A == X or an invalid target returns the (zero) weak breakdown",
+      "uses": ["rule.opinion.weak_person", "rule.opinion.weak_dead", "rule.opinion.weak_target", "rule.opinion.long", "rule.opinion.short", "dead_record.id"],
+      "note": "Nothing is stored or cached. Relations do not affect weak or personal opinions.",
+      "used_by": []
+    },
+    {
+      "id": "rule.long.person_limit",
+      "status": "implemented",
+      "description": "Extraverts keep long-term opinions about more people: 8 at extraversion -100, 24 at 0, 40 at +100.",
+      "source": "sim_core/include/sim/personal_opinion.hpp#person_limit",
+      "formula": "person_limit(A) = PERSON_LIMIT_MIN + (32 * (A.extraversion + 100) + 100) / 200, with 32 = PERSON_LIMIT_MAX - PERSON_LIMIT_MIN (integer arithmetic, round half up)",
+      "clamps": "none needed: 8..40 by construction",
+      "uses": ["character.extraversion", "config.constant.person_limit_min", "config.constant.person_limit_max"],
+      "used_by": ["op.add_long_opinion.person", "op.maintain", "rule.long.eviction", "rule.long.trim"]
+    },
+    {
+      "id": "rule.long.update",
+      "status": "implemented",
+      "description": "How a long-term opinion changes: deltas add up, saturate at +-200, and an opinion that returns to 0 is forgotten as an entry.",
+      "source": "sim_core/src/personal_opinion.cpp#add_long",
+      "formula": "existing entry: next = clamp(value + delta, -200, 200); next == value -> Unchanged; next == 0 -> Removed; else Updated. No entry: delta == 0 -> Unchanged; value = clamp(delta, -200, 200); list below its limit -> Created; else rule.long.eviction",
+      "clamps": "delta clamped to -400..+400 on entry; value clamped to -200..+200",
+      "uses": ["character.list.long_opinions_people", "character.list.long_opinions_targets", "rule.long.eviction"],
+      "used_by": ["op.add_long_opinion.person", "op.add_long_opinion.target", "rule.death.rebase"]
+    },
+    {
+      "id": "rule.long.eviction",
+      "status": "implemented",
+      "description": "When a character's long-term list is full, a new opinion replaces the weakest one only if it is strictly stronger; otherwise it is dropped.",
+      "source": "sim_core/src/personal_opinion.cpp#add_long",
+      "formula": "if size >= limit: w = entry with smallest |value| (ties to the smaller target); if |new| > |w.value|: remove w, insert new -> CreatedWithEviction (evicted = w.target); else Dropped. limit = person_limit (people) or TARGET_LIMIT (targets)",
+      "clamps": "one eviction per call, even if the list is above its limit",
+      "uses": ["character.list.long_opinions_people", "character.list.long_opinions_targets", "rule.long.person_limit", "config.constant.target_limit"],
+      "note": "Modifiers count towards neither the limits nor an entry's strength.",
+      "used_by": ["op.add_long_opinion.person", "op.add_long_opinion.target", "rule.long.update"]
+    },
+    {
+      "id": "rule.long.trim",
+      "status": "implemented",
+      "description": "Brings a people list back within its limit after extraversion dropped, forgetting the weakest opinions first.",
+      "source": "sim_core/include/sim/character.hpp#Character::trim_long_opinions",
+      "formula": "while size > person_limit(A): remove the entry with smallest |value| (ties to the smaller target); report evicted targets in eviction order",
+      "clamps": "idempotent; target lists never exceed TARGET_LIMIT (asserted)",
+      "uses": ["character.list.long_opinions_people", "rule.long.person_limit"],
+      "used_by": ["op.maintain"]
+    },
+    {
+      "id": "rule.involvement.total",
+      "status": "implemented",
+      "description": "Total weight of a character's memberships.",
+      "source": "sim_core/include/sim/character.hpp#Character::involvement_total",
+      "formula": "involvement_total(A) = sum of weights",
+      "clamps": "none: 0..8*255 by construction",
+      "uses": ["character.list.involvement"],
+      "used_by": ["rule.involvement.share", "rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+    },
+    {
+      "id": "rule.involvement.share",
+      "status": "implemented",
+      "description": "The share of one community in a character's memberships, for display. Weighted sums elsewhere use raw weights and divide once.",
+      "source": "sim_core/include/sim/character.hpp#Character::involvement_share",
+      "formula": "share(A, c) = weight(c) / involvement_total(A), computed in double and returned as float; 0 if absent",
+      "clamps": "never adjusted to force an exact sum, so equal weights give equal shares",
+      "uses": ["character.list.involvement", "rule.involvement.total"],
+      "used_by": []
+    },
+    {
+      "id": "rule.involvement.main_community",
+      "status": "implemented",
+      "description": "The community a character belongs to most.",
+      "source": "sim_core/include/sim/character.hpp#Character::main_community",
+      "formula": "main_community(A) = community with the largest weight, ties to the smaller id; none without involvement",
+      "clamps": "none",
+      "uses": ["character.list.involvement"],
+      "used_by": ["op.kill"]
+    },
+    {
+      "id": "rule.age",
+      "status": "implemented",
+      "description": "A character's age at a date.",
+      "source": "sim_core/include/sim/mortality.hpp#age_years",
+      "formula": "age_years(A, now) = weeks_between(A.birth, now) / WEEKS_PER_YEAR",
+      "clamps": "none; negative before birth",
+      "uses": ["character.birth", "conv.time.weeks_per_year"],
+      "used_by": ["rule.mortality.annual"]
+    },
+    {
+      "id": "rule.mortality.annual",
+      "status": "implemented",
+      "description": "The yearly chance of death grows exponentially with age (Gompertz), differs by gender and rises with poor health and high stress. Mortality never kills anyone by itself: the caller rolls and calls op.kill.",
+      "source": "sim_core/src/mortality.cpp#annual_mortality",
+      "formula": "if age < 0: 0. hazard = gompertz_a * exp(gompertz_b * age) * gender_multiplier * exp(health_weight * (1 - health / 100)) * exp(stress_weight * stress / 100), summed in log space; p = 1 - exp(-hazard)",
+      "clamps": "NaN (only from an invalid config) maps to 0; p is capped at 1; gompertz_a >= 0 and multipliers >= 0 are asserted in debug",
+      "uses": ["rule.age", "character.gender", "character.health", "character.stress", "config.mortality.gompertz_a", "config.mortality.gompertz_b", "config.mortality.female_multiplier", "config.mortality.male_multiplier", "config.mortality.health_weight", "config.mortality.stress_weight"],
+      "note": "An unknown Gender asserts in debug and uses multiplier 1.0 in release. Plain Gompertz has no infant or child mortality peak.",
+      "used_by": []
+    },
+    {
+      "id": "rule.mortality.weekly",
+      "status": "implemented",
+      "description": "Converts a yearly death probability to a weekly one with the same compounded risk.",
+      "source": "sim_core/src/mortality.cpp#weekly_mortality",
+      "formula": "weekly(annual) = 1 - (1 - annual)^(1 / WEEKS_PER_YEAR)",
+      "clamps": "annual <= 0 -> 0; annual >= 1 -> 1; NaN asserted in debug and maps to 0 in release",
+      "uses": ["conv.time.weeks_per_year"],
+      "used_by": []
+    },
+    {
+      "id": "rule.memory.holders",
+      "status": "implemented",
+      "description": "Who remembers a character: the living characters with a long-term opinion of them, a modifier about them, or any relation edge towards them. Several references from one holder count once; the dead remember nobody; opinions of communities and topics are not references to characters.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::holders",
+      "formula": "holders(X) = |{ living H != X : X in H.long_opinions_people or H has a Person modifier on X or edge H -> X exists }|",
+      "clamps": "none",
+      "uses": ["character.list.long_opinions_people", "character.list.modifiers", "relation.edge"],
+      "maintenance": "Incremental and flip-driven: an edit consults the other reference kinds only when it creates or removes the first or last reference of its own kind for that pair (an edge created or erased, the first or last person modifier on X, a long entry created, removed or evicted). Changing bits on an existing edge or adding a second modifier costs no lookups.",
+      "used_by": ["op.add_long_opinion.person", "op.add_modifier.person", "op.clear_relation", "op.link", "op.maintain", "op.remove_modifier.person", "op.set_relation", "op.unlink"]
+    },
+    {
+      "id": "rule.memory.forgetting",
+      "status": "implemented",
+      "description": "A dead character nobody living remembers is forgotten at once: its record is deleted and its id behaves as if it had never existed. A dead parent is remembered while any of its children lives.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::forget",
+      "formula": "when holders(X) reaches 0 and X is dead: delete X's dead_record, remove X's remaining edges on both sides (only with other dead characters), mark X forgotten",
+      "clamps": "several forgettings caused by one change happen in id order; forgetting never cascades (no living holder changes) and never allocates",
+      "uses": ["character.holders"],
+      "triggers": [
+        "op.kill (the deceased itself if nobody holds it, and dead characters only the deceased held)",
+        "op.unlink (last edge)",
+        "op.remove_modifier.person (last reference)",
+        "op.add_long_opinion.person (Removed, or an eviction)",
+        "op.maintain (trim)"
+      ],
+      "note": "Legendary characters are forgotten like everyone else.",
+      "used_by": ["op.add_long_opinion.person", "op.kill", "op.maintain", "op.remove_modifier.person", "op.unlink"]
+    },
+    {
+      "id": "rule.lifecycle.fame",
+      "status": "implemented",
+      "description": "How famous a character was at death: how many people remembered them, plus how far their reputation was from neutral.",
+      "source": "sim_core/src/character_registry.cpp#CharacterRegistry::kill",
+      "formula": "fame = min(holders(X) just before the kill + fame_per_reputation * |X.reputation|, 65535)",
+      "clamps": "saturates at 65535",
+      "uses": ["character.holders", "character.reputation", "config.lifecycle.fame_per_reputation"],
+      "used_by": ["op.kill"]
+    },
+    {
+      "id": "rule.lifecycle.legendary",
+      "status": "implemented",
+      "description": "A death is legendary when fame reaches a threshold. Only reported by op.kill, for a later system to react to; it changes nothing in the core.",
+      "source": "sim_core/src/character_registry.cpp#CharacterRegistry::kill",
+      "formula": "legendary = fame >= legendary_fame",
+      "clamps": "none",
+      "uses": ["dead_record.fame", "config.lifecycle.legendary_fame"],
+      "used_by": ["op.kill"]
+    },
+    {
+      "id": "rule.death.rebase",
+      "status": "implemented",
+      "description": "Opinions do not jump at death: each living character with a long-term opinion of the deceased has it shifted by the change in their weak opinion, so the total stays within half a point unless the long value saturates. Without a long entry the opinion moves to the dead-record base.",
+      "source": "sim_core/src/character_registry.cpp#CharacterRegistry::kill",
+      "formula": "for each living holder H with a long entry about X: delta = round(weak_person(H, X alive).total - weak_dead(H, X record).total), clamped to -400..+400; apply rule.long.update (a result of 0 removes the entry; a saturated value is Unchanged)",
+      "clamps": "delta rounded with std::round and clamped to -400..+400; long value clamped to -200..+200",
+      "uses": ["rule.opinion.weak_person", "rule.opinion.weak_dead", "rule.long.update", "character.list.long_opinions_people"],
+      "used_by": ["op.kill"]
+    },
+    {
+      "id": "rule.death.relation_fates",
+      "status": "implemented",
+      "description": "At death family ties stay; service and personal ties end.",
+      "source": "sim_core/include/sim/relation_graph.hpp#RelationGraph::remove_non_surviving",
+      "formula": "survives_death (Parent, Child, Spouse): kept on both sides; other paired types (Liege, Vassal, Employer, Employee): unlinked on both sides; one-way types from and to the deceased: cleared",
+      "clamps": "none",
+      "uses": ["relation.edge", "relation.parent", "relation.child", "relation.spouse", "relation.liege", "relation.vassal", "relation.employer", "relation.employee", "relation.friend", "relation.rival", "relation.attraction"],
+      "used_by": ["op.kill"]
+    },
+    {
+      "id": "rule.death.discard_own",
+      "status": "implemented",
+      "description": "The dead remember nobody: the deceased's own long-term opinions and modifiers are discarded and stop counting towards others' holders. Others' modifiers about the deceased stay.",
+      "source": "sim_core/src/character_registry.cpp#CharacterRegistry::kill",
+      "formula": "for each distinct person target Y of X's long entries, person modifiers and edges: holders(Y) -= 1; then X's Character, with its lists, is replaced by its dead_record",
+      "clamps": "none",
+      "uses": ["character.list.long_opinions_people", "character.list.modifiers", "relation.edge", "character.holders"],
+      "used_by": ["op.kill"]
+    }
+  ],
+  "operations": [
+    {
+      "id": "op.create",
+      "status": "implemented",
+      "description": "Brings a new living character into the world with the given name, gender, birth date and initial values. It knows nobody and nobody knows it.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::create",
+      "inputs": [
+        {
+          "name": "name",
+          "type": "NameId",
+          "handling": "stored as given, not validated"
+        },
+        {
+          "name": "gender",
+          "type": "Gender",
+          "handling": "stored as given, not validated"
+        },
+        {
+          "name": "birth",
+          "type": "Date",
+          "handling": "stored as given"
+        },
+        {
+          "name": "init",
+          "type": "CharacterInit",
+          "handling": "conditions saturate (NaN keeps the default), bipolar values clamped"
+        }
+      ],
+      "results": [
+        {
+          "code": "valid CharacterId",
+          "when": "the next id"
+        },
+        {
+          "code": "invalid CharacterId",
+          "when": "2^31 - 1 ids have been used; nothing created"
+        }
+      ],
+      "effects": ["A living Character with empty lists, holders 0 and an empty relation node.", "May throw std::bad_alloc, in which case nothing is created."],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime) (the living storage may reallocate)",
+      "affects_holders": "no: the new id starts with 0 holders and holds no references",
+      "reads": ["config.character_init.health", "config.character_init.stress", "config.character_init.capacity", "config.character_init.strength", "config.character_init.intelligence", "config.character_init.stability", "config.character_init.openness", "config.character_init.extraversion", "config.character_init.conscientiousness", "config.character_init.agreeableness", "config.character_init.attractiveness", "config.character_init.height", "config.character_init.shape", "config.character_init.charisma", "config.character_init.reputation"],
+      "rules": [],
+      "writes": ["character"]
+    },
+    {
+      "id": "op.kill",
+      "status": "implemented",
+      "description": "A living character dies on a date. It becomes a dead record; opinions of it are rebased so they do not jump; non-family ties end; its own memories are discarded; anyone nobody remembers any more is forgotten. Returns the fame and whether the death is legendary.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::kill",
+      "inputs": [
+        {
+          "name": "id",
+          "type": "CharacterId",
+          "handling": "must be living"
+        },
+        {
+          "name": "death",
+          "type": "Date",
+          "handling": "must be >= birth"
+        },
+        {
+          "name": "context",
+          "type": "WorldContext",
+          "handling": "stances, opinion and lifecycle configs, seed"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "id 0"
+        },
+        {
+          "code": "NotFound",
+          "when": "never created, forgotten, or already dead (kill acts only on the living)"
+        },
+        {
+          "code": "Invalid",
+          "when": "death < birth (death == birth is allowed)"
+        },
+        {
+          "code": "Ok",
+          "when": "the character died; fame and legendary are set"
+        }
+      ],
+      "effects": [
+        "fame = rule.lifecycle.fame, using holders just before the kill.",
+        "Every living character with a long entry about the deceased is rebased (rule.death.rebase).",
+        "Relations follow rule.death.relation_fates; holders' one-way edges towards the deceased are cleared.",
+        "The deceased's own long entries and modifiers are discarded and stop counting (rule.death.discard_own); others' modifiers about it stay.",
+        "The Character is replaced by a dead_record holding name, birth, death, main community, reputation, gender and fame.",
+        "holders(deceased) is recounted from the characters that still reference it (long entry kept, modifier, surviving edge).",
+        "The deceased, if nobody holds it, and dead characters only it held are forgotten, in id order (rule.memory.forgetting).",
+        "May throw std::bad_alloc before any write, in which case nothing changes."
+      ],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime) (later living characters are relocated)",
+      "affects_holders": "yes: decrements the deceased's targets, recounts the deceased, may forget",
+      "reads": ["character.name", "character.gender", "character.birth", "character.reputation", "character.derived.main_community", "character.holders", "character.list.long_opinions_people", "character.list.modifiers", "relation.edge", "config.lifecycle.fame_per_reputation", "config.lifecycle.legendary_fame"],
+      "rules": ["rule.lifecycle.fame", "rule.lifecycle.legendary", "rule.death.rebase", "rule.death.relation_fates", "rule.death.discard_own", "rule.memory.forgetting"],
+      "writes": ["dead_record"]
+    },
+    {
+      "id": "op.set_relation",
+      "status": "implemented",
+      "description": "a starts to regard b as a friend, rival or object of attraction. Only a's side changes.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::set_relation",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living"
+        },
+        {
+          "name": "type",
+          "type": "RelationType",
+          "handling": "Friend, Rival or Attraction"
+        },
+        {
+          "name": "b",
+          "type": "CharacterId",
+          "handling": "living"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a or b is id 0, a == b, unknown type, or a paired type"
+        },
+        {
+          "code": "NotFound",
+          "when": "a or b never created or forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a or b is dead"
+        },
+        {
+          "code": "Duplicate",
+          "when": "the bit is already set"
+        },
+        {
+          "code": "Ok",
+          "when": "the bit is set on a -> b"
+        }
+      ],
+      "effects": [
+        "Sets the bit on a -> b, creating the edge if absent.",
+        "A new edge makes a a holder of b if it was not already.",
+        "May throw std::bad_alloc (new edge) before any write."
+      ],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "yes: holders(b) +1 if the edge is new and a held no other reference to b; never forgets",
+      "reads": ["relation.edge"],
+      "rules": ["rule.memory.holders"],
+      "writes": ["relation.friend", "relation.rival", "relation.attraction"]
+    },
+    {
+      "id": "op.clear_relation",
+      "status": "implemented",
+      "description": "a stops regarding b as a friend, rival or object of attraction.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::clear_relation",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living"
+        },
+        {
+          "name": "type",
+          "type": "RelationType",
+          "handling": "Friend, Rival or Attraction"
+        },
+        {
+          "name": "b",
+          "type": "CharacterId",
+          "handling": "living"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a or b is id 0, a == b, unknown type, or a paired type"
+        },
+        {
+          "code": "NotFound",
+          "when": "a or b never created or forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a or b is dead"
+        },
+        {
+          "code": "NotFound",
+          "when": "the bit is not set"
+        },
+        {
+          "code": "Ok",
+          "when": "the bit is cleared"
+        }
+      ],
+      "effects": ["Clears the bit; an edge left empty is removed."],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "yes: holders(b) -1 if the edge is erased and a holds no other reference to b; never forgets (b is living)",
+      "reads": ["relation.edge"],
+      "rules": ["rule.memory.holders"],
+      "writes": ["relation.friend", "relation.rival", "relation.attraction"]
+    },
+    {
+      "id": "op.link",
+      "status": "implemented",
+      "description": "Creates a paired tie: link(a, Child, b) reads 'b is a's child' and also makes a b's parent. Family ties may be made with or between the dead.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::link",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living, or dead for Parent, Child, Spouse"
+        },
+        {
+          "name": "type",
+          "type": "RelationType",
+          "handling": "a paired type"
+        },
+        {
+          "name": "b",
+          "type": "CharacterId",
+          "handling": "living, or dead for Parent, Child, Spouse"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a or b is id 0, a == b, unknown type, or a one-way type"
+        },
+        {
+          "code": "NotFound",
+          "when": "a or b never created or forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a or b is dead and the type does not survive death (Liege, Vassal, Employer, Employee)"
+        },
+        {
+          "code": "Duplicate",
+          "when": "the bit is already set on a -> b"
+        },
+        {
+          "code": "Conflict",
+          "when": "b would be both the type and its complement for a (e.g. both parent and child); never for Spouse"
+        },
+        {
+          "code": "Full",
+          "when": "the child would get more than MAX_PARENTS parents, dead parents included"
+        },
+        {
+          "code": "Ok",
+          "when": "type set on a -> b and its complement on b -> a"
+        }
+      ],
+      "effects": [
+        "Sets type on a -> b and the complement on b -> a, creating edges if absent.",
+        "Each living side with a new edge becomes a holder of the other.",
+        "May throw std::bad_alloc before any write."
+      ],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "yes: may add one holder on each side; never forgets",
+      "reads": ["relation.edge", "config.constant.max_parents"],
+      "rules": ["rule.memory.holders"],
+      "writes": ["relation.parent", "relation.child", "relation.liege", "relation.vassal", "relation.employer", "relation.employee", "relation.spouse"]
+    },
+    {
+      "id": "op.unlink",
+      "status": "implemented",
+      "description": "Ends a paired tie on both sides.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::unlink",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "as for op.link"
+        },
+        {
+          "name": "type",
+          "type": "RelationType",
+          "handling": "a paired type"
+        },
+        {
+          "name": "b",
+          "type": "CharacterId",
+          "handling": "as for op.link"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a or b is id 0, a == b, unknown type, or a one-way type"
+        },
+        {
+          "code": "NotFound",
+          "when": "a or b never created or forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a or b is dead and the type does not survive death"
+        },
+        {
+          "code": "NotFound",
+          "when": "the bit is not set on a -> b"
+        },
+        {
+          "code": "Ok",
+          "when": "type and complement removed"
+        }
+      ],
+      "effects": [
+        "Clears the type on a -> b and the complement on b -> a; edges left empty are removed.",
+        "A living side whose edge was erased stops holding the other; a dead other side left with 0 holders is forgotten (both in id order)."
+      ],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "yes: may remove one holder on each side and forget a dead side",
+      "reads": ["relation.edge"],
+      "rules": ["rule.memory.holders", "rule.memory.forgetting"],
+      "writes": ["relation.parent", "relation.child", "relation.liege", "relation.vassal", "relation.employer", "relation.employee", "relation.spouse"]
+    },
+    {
+      "id": "op.add_modifier.person",
+      "status": "implemented",
+      "description": "Something happens that colours a's view of person b (living or dead): a modifier with a fixed effect.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::add_modifier",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living holder"
+        },
+        {
+          "name": "b",
+          "type": "CharacterId",
+          "handling": "living or dead target"
+        },
+        {
+          "name": "modifier",
+          "type": "ModifierId",
+          "handling": "nonzero"
+        },
+        {
+          "name": "effect",
+          "type": "StrictIntegral",
+          "handling": "clamped to -100..+100"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a or b is id 0, a == b, or ModifierId 0"
+        },
+        {
+          "code": "NotFound",
+          "when": "a or b was never created or is forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a is dead (the dead hold no opinions); a dead b is allowed"
+        },
+        {
+          "code": "Duplicate",
+          "when": "a already has this modifier on b"
+        },
+        {
+          "code": "Full",
+          "when": "a has MODIFIER_CAP modifiers (never evicts)"
+        },
+        {
+          "code": "Ok",
+          "when": "the modifier is added"
+        }
+      ],
+      "effects": ["Inserts the modifier in order.", "The first modifier on b may make a a holder of b."],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "yes: holders(b) +1 if this is a's first reference to b; never forgets",
+      "reads": ["character.list.modifiers", "config.constant.modifier_cap"],
+      "rules": ["rule.memory.holders"],
+      "writes": ["character.list.modifiers"]
+    },
+    {
+      "id": "op.add_modifier.target",
+      "status": "implemented",
+      "description": "Something happens that colours a's view of a community or topic.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::add_modifier",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living holder"
+        },
+        {
+          "name": "target",
+          "type": "TargetId",
+          "handling": "valid"
+        },
+        {
+          "name": "modifier",
+          "type": "ModifierId",
+          "handling": "nonzero"
+        },
+        {
+          "name": "effect",
+          "type": "StrictIntegral",
+          "handling": "clamped to -100..+100"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a is id 0, the TargetId is invalid, or ModifierId 0"
+        },
+        {
+          "code": "NotFound",
+          "when": "a was never created or is forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a is dead"
+        },
+        {
+          "code": "Duplicate",
+          "when": "a already has this modifier on the target"
+        },
+        {
+          "code": "Full",
+          "when": "a has MODIFIER_CAP modifiers"
+        },
+        {
+          "code": "Ok",
+          "when": "the modifier is added"
+        }
+      ],
+      "effects": ["Inserts the modifier in order."],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "no: target-domain modifiers are not references to characters",
+      "reads": ["character.list.modifiers", "config.constant.modifier_cap"],
+      "rules": [],
+      "writes": ["character.list.modifiers"]
+    },
+    {
+      "id": "op.remove_modifier.person",
+      "status": "implemented",
+      "description": "A circumstance about person b no longer applies to a.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::remove_modifier",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living holder"
+        },
+        {
+          "name": "b",
+          "type": "CharacterId",
+          "handling": "living or dead target"
+        },
+        {
+          "name": "modifier",
+          "type": "ModifierId",
+          "handling": "nonzero"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a or b is id 0, a == b, or ModifierId 0"
+        },
+        {
+          "code": "NotFound",
+          "when": "a or b was never created or is forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a is dead (the dead hold no opinions); a dead b is allowed"
+        },
+        {
+          "code": "NotFound",
+          "when": "a has no such modifier on b"
+        },
+        {
+          "code": "Ok",
+          "when": "the modifier is removed"
+        }
+      ],
+      "effects": ["Removes the modifier.", "Removing a's last reference to a dead b with no other holders forgets b."],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "yes: holders(b) -1 if this was a's last reference to b; may forget b",
+      "reads": ["character.list.modifiers"],
+      "rules": ["rule.memory.holders", "rule.memory.forgetting"],
+      "writes": ["character.list.modifiers"]
+    },
+    {
+      "id": "op.remove_modifier.target",
+      "status": "implemented",
+      "description": "A circumstance about a community or topic no longer applies to a.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::remove_modifier",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living holder"
+        },
+        {
+          "name": "target",
+          "type": "TargetId",
+          "handling": "valid"
+        },
+        {
+          "name": "modifier",
+          "type": "ModifierId",
+          "handling": "nonzero"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a is id 0, the TargetId is invalid, or ModifierId 0"
+        },
+        {
+          "code": "NotFound",
+          "when": "a was never created or is forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a is dead"
+        },
+        {
+          "code": "NotFound",
+          "when": "a has no such modifier on the target"
+        },
+        {
+          "code": "Ok",
+          "when": "the modifier is removed"
+        }
+      ],
+      "effects": ["Removes the modifier."],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "no",
+      "reads": ["character.list.modifiers"],
+      "rules": [],
+      "writes": ["character.list.modifiers"]
+    },
+    {
+      "id": "op.add_long_opinion.person",
+      "status": "implemented",
+      "description": "a's lasting opinion of person b (living or dead) shifts by delta.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::add_long_opinion",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living holder"
+        },
+        {
+          "name": "b",
+          "type": "CharacterId",
+          "handling": "living or dead target"
+        },
+        {
+          "name": "delta",
+          "type": "StrictIntegral",
+          "handling": "clamped to -400..+400"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a or b is id 0, or a == b"
+        },
+        {
+          "code": "NotFound",
+          "when": "a or b was never created or is forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a is dead; a dead b is allowed"
+        },
+        {
+          "code": "Updated",
+          "when": "an existing entry changed to another nonzero value"
+        },
+        {
+          "code": "Created",
+          "when": "a new entry was stored below the limit"
+        },
+        {
+          "code": "CreatedWithEviction",
+          "when": "a new entry replaced the weakest one at the limit; evicted names it"
+        },
+        {
+          "code": "Removed",
+          "when": "an existing entry reached 0"
+        },
+        {
+          "code": "Unchanged",
+          "when": "delta 0, or the value is saturated in that direction"
+        },
+        {
+          "code": "Dropped",
+          "when": "at the limit and the new entry is not strictly stronger than the weakest"
+        }
+      ],
+      "effects": [
+        "Applies rule.long.update with limit person_limit(a).",
+        "Created makes a a holder of b; Removed or an eviction may release a dead character, which is then forgotten (in id order)."
+      ],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "yes: Created may add a holder of b; Removed and CreatedWithEviction may remove one and forget a dead character",
+      "reads": ["character.list.long_opinions_people", "character.derived.person_limit", "character.extraversion"],
+      "rules": ["rule.long.update", "rule.long.eviction", "rule.memory.holders", "rule.memory.forgetting"],
+      "writes": ["character.list.long_opinions_people"]
+    },
+    {
+      "id": "op.add_long_opinion.target",
+      "status": "implemented",
+      "description": "a's lasting opinion of a community or topic shifts by delta.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::add_long_opinion",
+      "inputs": [
+        {
+          "name": "a",
+          "type": "CharacterId",
+          "handling": "living holder"
+        },
+        {
+          "name": "target",
+          "type": "TargetId",
+          "handling": "valid"
+        },
+        {
+          "name": "delta",
+          "type": "StrictIntegral",
+          "handling": "clamped to -400..+400"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "a is id 0 or the TargetId is invalid"
+        },
+        {
+          "code": "NotFound",
+          "when": "a never created or forgotten"
+        },
+        {
+          "code": "Invalid",
+          "when": "a is dead"
+        },
+        {
+          "code": "Updated",
+          "when": "an existing entry changed to another nonzero value"
+        },
+        {
+          "code": "Created",
+          "when": "a new entry was stored below the limit"
+        },
+        {
+          "code": "CreatedWithEviction",
+          "when": "a new entry replaced the weakest one at the limit; evicted names it"
+        },
+        {
+          "code": "Removed",
+          "when": "an existing entry reached 0"
+        },
+        {
+          "code": "Unchanged",
+          "when": "delta 0, or the value is saturated in that direction"
+        },
+        {
+          "code": "Dropped",
+          "when": "at the limit and the new entry is not strictly stronger than the weakest"
+        }
+      ],
+      "effects": ["Applies rule.long.update with limit TARGET_LIMIT."],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime)",
+      "affects_holders": "no",
+      "reads": ["character.list.long_opinions_targets", "config.constant.target_limit"],
+      "rules": ["rule.long.update", "rule.long.eviction"],
+      "writes": ["character.list.long_opinions_targets"]
+    },
+    {
+      "id": "op.maintain",
+      "status": "implemented",
+      "description": "Housekeeping pass: characters whose people lists grew beyond their (lowered) limit forget their weakest opinions, and dead characters nobody remembers any more are forgotten. Returns the number of entries evicted.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::maintain",
+      "inputs": [],
+      "results": [
+        {
+          "code": "count",
+          "when": "number of long-term people entries evicted; 0 if no list is above its limit"
+        }
+      ],
+      "effects": [
+        "One pass over the living in id order applying rule.long.trim.",
+        "Dead characters whose last holder was evicted are forgotten, in id order.",
+        "Idempotent. May throw std::bad_alloc before any write."
+      ],
+      "invalidates": "all pointers, references and spans obtained from the registry or its characters (conv.lifetime) (including spans into long_opinions_people)",
+      "affects_holders": "yes: evictions remove holders and may forget dead characters",
+      "reads": ["character.list.long_opinions_people", "character.derived.person_limit", "character.extraversion"],
+      "rules": ["rule.long.trim", "rule.memory.holders", "rule.memory.forgetting"],
+      "writes": ["character.list.long_opinions_people"]
+    },
+    {
+      "id": "op.set_stance",
+      "status": "implemented",
+      "description": "Sets a community's explicit attitude towards a community or topic, overwriting any previous one.",
+      "source": "sim_core/include/sim/stance_table.hpp#StanceTable::set_stance",
+      "inputs": [
+        {
+          "name": "from",
+          "type": "CommunityId",
+          "handling": "valid"
+        },
+        {
+          "name": "to",
+          "type": "TargetId",
+          "handling": "valid; may be from itself"
+        },
+        {
+          "name": "value",
+          "type": "StrictIntegral",
+          "handling": "clamped to -100..+100"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "from or to invalid"
+        },
+        {
+          "code": "Ok",
+          "when": "stored (inserted or overwritten)"
+        }
+      ],
+      "effects": ["Stores the stance. Every opinion computed afterwards sees it; nothing is cached.", "May throw std::bad_alloc (new entry) before any write."],
+      "invalidates": "nothing held by callers: stance queries return copies",
+      "affects_holders": "no",
+      "reads": ["community.stances.from", "community.stances.to"],
+      "rules": [],
+      "writes": ["community.stances.value"]
+    },
+    {
+      "id": "op.clear_stance",
+      "status": "implemented",
+      "description": "Removes a community's explicit attitude, so it inherits again.",
+      "source": "sim_core/include/sim/stance_table.hpp#StanceTable::clear_stance",
+      "inputs": [
+        {
+          "name": "from",
+          "type": "CommunityId",
+          "handling": "valid"
+        },
+        {
+          "name": "to",
+          "type": "TargetId",
+          "handling": "valid"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "from or to invalid"
+        },
+        {
+          "code": "NotFound",
+          "when": "no explicit stance"
+        },
+        {
+          "code": "Ok",
+          "when": "removed; inheritance restored"
+        }
+      ],
+      "effects": ["Removes the entry."],
+      "invalidates": "nothing held by callers",
+      "affects_holders": "no",
+      "reads": ["community.stances.from", "community.stances.to"],
+      "rules": [],
+      "writes": ["community.stances.value"]
+    },
+    {
+      "id": "op.set_community_parent",
+      "status": "implemented",
+      "description": "Places a community under a parent community, replacing any previous parent.",
+      "source": "sim_core/include/sim/stance_table.hpp#StanceTable::set_parent",
+      "inputs": [
+        {
+          "name": "child",
+          "type": "CommunityId",
+          "handling": "valid"
+        },
+        {
+          "name": "parent",
+          "type": "CommunityId",
+          "handling": "valid, != child"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "an id is 0 or child == parent"
+        },
+        {
+          "code": "Ok",
+          "when": "parent is already child's parent (no change)"
+        },
+        {
+          "code": "Conflict",
+          "when": "child is in parent's chain (would create a cycle)"
+        },
+        {
+          "code": "Full",
+          "when": "a chain through child's subtree would exceed MAX_COMMUNITY_DEPTH"
+        },
+        {
+          "code": "Ok",
+          "when": "parent set or replaced"
+        }
+      ],
+      "effects": ["Stores or replaces the parent. Every stance resolved afterwards follows the new chain.", "May throw std::bad_alloc (new entry) before any write."],
+      "invalidates": "nothing held by callers: chains are returned as copies",
+      "affects_holders": "no",
+      "reads": ["community.hierarchy.child", "community.hierarchy.parent", "config.constant.max_community_depth"],
+      "rules": ["rule.stance.chain"],
+      "writes": ["community.hierarchy.parent"]
+    },
+    {
+      "id": "op.clear_community_parent",
+      "status": "implemented",
+      "description": "Detaches a community from its parent.",
+      "source": "sim_core/include/sim/stance_table.hpp#StanceTable::clear_parent",
+      "inputs": [
+        {
+          "name": "child",
+          "type": "CommunityId",
+          "handling": "valid"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "child is 0"
+        },
+        {
+          "code": "NotFound",
+          "when": "child has no parent"
+        },
+        {
+          "code": "Ok",
+          "when": "removed"
+        }
+      ],
+      "effects": ["Removes the parent entry."],
+      "invalidates": "nothing held by callers",
+      "affects_holders": "no",
+      "reads": ["community.hierarchy.child"],
+      "rules": [],
+      "writes": ["community.hierarchy.parent"]
+    },
+    {
+      "id": "op.character.set_condition",
+      "status": "implemented",
+      "description": "Sets health, stress or capacity.",
+      "source": "sim_core/include/sim/character.hpp#Character::set_health",
+      "inputs": [
+        {
+          "name": "value",
+          "type": "float",
+          "handling": "rounded to the nearest hundredth and saturated at 0..100; NaN leaves the field unchanged (asserted in debug)"
+        }
+      ],
+      "results": [
+        {
+          "code": "none",
+          "when": "no result value"
+        }
+      ],
+      "effects": ["Members: set_health, set_stress, set_capacity."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": [],
+      "rules": [],
+      "writes": ["character.health", "character.stress", "character.capacity"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.add_condition",
+      "status": "implemented",
+      "description": "Adds to health, stress or capacity.",
+      "source": "sim_core/include/sim/character.hpp#Character::add_health",
+      "inputs": [
+        {
+          "name": "delta",
+          "type": "float",
+          "handling": "rounded to whole hundredths first, then added and saturated; NaN leaves the field unchanged (asserted in debug)"
+        }
+      ],
+      "results": [
+        {
+          "code": "none",
+          "when": "no result value"
+        }
+      ],
+      "effects": ["Members: add_health, add_stress, add_capacity."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": [],
+      "rules": [],
+      "writes": ["character.health", "character.stress", "character.capacity"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.set_trait",
+      "status": "implemented",
+      "description": "Sets a bipolar trait or reputation.",
+      "source": "sim_core/include/sim/character.hpp#Character::set_strength",
+      "inputs": [
+        {
+          "name": "value",
+          "type": "StrictIntegral",
+          "handling": "clamped to -100..+100"
+        }
+      ],
+      "results": [
+        {
+          "code": "none",
+          "when": "no result value"
+        }
+      ],
+      "effects": [
+        "Members: set_<field> for strength, intelligence, stability, openness, extraversion, conscientiousness, agreeableness, attractiveness, height, shape, charisma, reputation.",
+        "Lowering extraversion lowers person_limit at once but evicts nothing: long_opinions_people can stay above the limit until op.maintain runs (a later op.add_long_opinion.person evicts at most one entry per call).",
+        "Changing reputation or a personality trait changes computed opinions at once; reputation at the moment of death also sets fame and the rebase."
+      ],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": [],
+      "rules": [],
+      "writes": ["character.strength", "character.intelligence", "character.stability", "character.openness", "character.extraversion", "character.conscientiousness", "character.agreeableness", "character.attractiveness", "character.height", "character.shape", "character.charisma", "character.reputation"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited",
+      "see_also": ["op.maintain", "rule.long.person_limit"]
+    },
+    {
+      "id": "op.character.add_trait",
+      "status": "implemented",
+      "description": "Adds to a bipolar trait or reputation.",
+      "source": "sim_core/include/sim/character.hpp#Character::add_strength",
+      "inputs": [
+        {
+          "name": "delta",
+          "type": "StrictIntegral",
+          "handling": "clamped to -200..+200, then the sum to -100..+100"
+        }
+      ],
+      "results": [
+        {
+          "code": "none",
+          "when": "no result value"
+        }
+      ],
+      "effects": [
+        "Members: add_<field> for the same twelve fields as op.character.set_trait.",
+        "Lowering extraversion lowers person_limit at once but evicts nothing: long_opinions_people can stay above the limit until op.maintain runs (a later op.add_long_opinion.person evicts at most one entry per call)."
+      ],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": [],
+      "rules": [],
+      "writes": ["character.strength", "character.intelligence", "character.stability", "character.openness", "character.extraversion", "character.conscientiousness", "character.agreeableness", "character.attractiveness", "character.height", "character.shape", "character.charisma", "character.reputation"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited",
+      "see_also": ["op.maintain", "rule.long.person_limit"]
+    },
+    {
+      "id": "op.character.add_nickname",
+      "status": "implemented",
+      "description": "Gives the character a nickname.",
+      "source": "sim_core/include/sim/character.hpp#Character::add_nickname",
+      "inputs": [
+        {
+          "name": "name",
+          "type": "NameId",
+          "handling": "nonzero"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "name is 0"
+        },
+        {
+          "code": "Duplicate",
+          "when": "already a nickname"
+        },
+        {
+          "code": "Full",
+          "when": "NICKNAME_CAP reached"
+        },
+        {
+          "code": "Ok",
+          "when": "appended"
+        }
+      ],
+      "effects": ["Appends."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": ["character.list.nicknames", "config.constant.nickname_cap"],
+      "rules": [],
+      "writes": ["character.list.nicknames"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.remove_nickname",
+      "status": "implemented",
+      "description": "Removes a nickname.",
+      "source": "sim_core/include/sim/character.hpp#Character::remove_nickname",
+      "inputs": [
+        {
+          "name": "name",
+          "type": "NameId",
+          "handling": "nonzero"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "name is 0"
+        },
+        {
+          "code": "NotFound",
+          "when": "not a nickname"
+        },
+        {
+          "code": "Ok",
+          "when": "removed, order of the rest kept"
+        }
+      ],
+      "effects": ["Removes."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": ["character.list.nicknames"],
+      "rules": [],
+      "writes": ["character.list.nicknames"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.add_skill",
+      "status": "implemented",
+      "description": "The character acquires a skill.",
+      "source": "sim_core/include/sim/character.hpp#Character::add_skill",
+      "inputs": [
+        {
+          "name": "kind",
+          "type": "SkillKind",
+          "handling": "known value"
+        },
+        {
+          "name": "skill",
+          "type": "SkillId",
+          "handling": "nonzero"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "skill is 0 or kind unknown"
+        },
+        {
+          "code": "Duplicate",
+          "when": "already has it"
+        },
+        {
+          "code": "Full",
+          "when": "PRACTISE_CAP reached"
+        },
+        {
+          "code": "Ok",
+          "when": "inserted in order"
+        }
+      ],
+      "effects": ["Inserts in (kind, skill) order."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": ["character.list.practise", "config.constant.practise_cap"],
+      "rules": [],
+      "writes": ["character.list.practise"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.remove_skill",
+      "status": "implemented",
+      "description": "The character loses a skill.",
+      "source": "sim_core/include/sim/character.hpp#Character::remove_skill",
+      "inputs": [
+        {
+          "name": "kind",
+          "type": "SkillKind",
+          "handling": "known value"
+        },
+        {
+          "name": "skill",
+          "type": "SkillId",
+          "handling": "nonzero"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "skill is 0 or kind unknown"
+        },
+        {
+          "code": "NotFound",
+          "when": "does not have it"
+        },
+        {
+          "code": "Ok",
+          "when": "removed"
+        }
+      ],
+      "effects": ["Removes."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": ["character.list.practise"],
+      "rules": [],
+      "writes": ["character.list.practise"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.set_involvement",
+      "status": "implemented",
+      "description": "Sets how strongly the character belongs to a community; weight 0 leaves it.",
+      "source": "sim_core/include/sim/character.hpp#Character::set_involvement",
+      "inputs": [
+        {
+          "name": "community",
+          "type": "CommunityId",
+          "handling": "nonzero"
+        },
+        {
+          "name": "weight",
+          "type": "StrictIntegral",
+          "handling": "clamped to 0..255; 0 (or a negative weight) removes the entry"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "community is 0"
+        },
+        {
+          "code": "Full",
+          "when": "a ninth community would be added"
+        },
+        {
+          "code": "Ok",
+          "when": "inserted, updated or removed; also Ok for weight 0 on an absent entry (no change)"
+        }
+      ],
+      "effects": ["Changes the character's community terms in every weak opinion at once, and its main community (recorded at death)."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": ["character.list.involvement", "config.constant.involvement_cap", "config.constant.involvement_weight_max"],
+      "rules": [],
+      "writes": ["character.list.involvement"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.add_sacred",
+      "status": "implemented",
+      "description": "The character comes to hold a community or topic sacred or abhorrent.",
+      "source": "sim_core/include/sim/character.hpp#Character::add_sacred",
+      "inputs": [
+        {
+          "name": "target",
+          "type": "TargetId",
+          "handling": "valid"
+        },
+        {
+          "name": "sign",
+          "type": "SacredSign",
+          "handling": "known value"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "target invalid or sign unknown"
+        },
+        {
+          "code": "Duplicate",
+          "when": "same sign already"
+        },
+        {
+          "code": "Conflict",
+          "when": "opposite sign already (remove first)"
+        },
+        {
+          "code": "Full",
+          "when": "SACRED_CAP reached"
+        },
+        {
+          "code": "Ok",
+          "when": "inserted in order"
+        }
+      ],
+      "effects": ["Inserts in target order."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": ["character.list.sacred", "config.constant.sacred_cap"],
+      "rules": [],
+      "writes": ["character.list.sacred"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    },
+    {
+      "id": "op.character.remove_sacred",
+      "status": "implemented",
+      "description": "The character no longer holds a target sacred or abhorrent.",
+      "source": "sim_core/include/sim/character.hpp#Character::remove_sacred",
+      "inputs": [
+        {
+          "name": "target",
+          "type": "TargetId",
+          "handling": "valid"
+        }
+      ],
+      "results": [
+        {
+          "code": "Invalid",
+          "when": "target invalid"
+        },
+        {
+          "code": "NotFound",
+          "when": "not sacred"
+        },
+        {
+          "code": "Ok",
+          "when": "removed"
+        }
+      ],
+      "effects": ["Removes."],
+      "invalidates": "spans into this Character's lists (contract: any mutation of this Character); not a registry mutation, so pointers from find() and other characters' spans stay valid",
+      "affects_holders": "no: holders depend only on long_opinions_people, person modifiers and relation edges, which these members do not touch",
+      "reads": ["character.list.sacred"],
+      "rules": [],
+      "writes": ["character.list.sacred"],
+      "reached_through": "CharacterRegistry::find(id) (or characters()) on a living character, not a registry operation; the dead have no Character and cannot be edited"
+    }
+  ],
+  "lifecycle": {
+    "states": [
+      {
+        "id": "lifecycle.living",
+        "status": "implemented",
+        "description": "An active character: it can be edited, holds and receives references, and appears in characters() in id order.",
+        "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::find",
+        "kept": ["the whole character entity (fields, lists)", "character.holders", "its relation edges"],
+        "queries": "find() returns it; find_dead() is null; exists() is true"
+      },
+      {
+        "id": "lifecycle.dead",
+        "status": "implemented",
+        "description": "A remembered dead character: a dead_record that others may still hold opinions, modifiers and family ties about. It can no longer act or hold references.",
+        "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::find_dead",
+        "kept": [
+          "dead_record (id, name, birth, death, main_community, reputation, gender, fame)",
+          "character.holders",
+          "surviving relation edges (Parent, Child, Spouse) to the living and the dead",
+          "others' long-term entries and modifiers about it"
+        ],
+        "lost": ["condition, traits, personality and every list", "its own long-term opinions and modifiers", "non-surviving relations"],
+        "queries": "find() is null; find_dead() returns the record; exists() is true; relation queries keep working; edits: Invalid as holder or for non-surviving relation types, allowed as a target and for posthumous family links"
+      },
+      {
+        "id": "lifecycle.forgotten",
+        "status": "implemented",
+        "description": "A dead character nobody remembers: gone from the world. Its id behaves as if it had never been created, but is never reused.",
+        "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::exists",
+        "kept": ["nothing that gameplay can read"],
+        "queries": "exists() is false; find() and find_dead() are null; holders() is 0; queries are empty; every edit, kill included, returns NotFound"
+      }
+    ],
+    "transitions": [
+      {
+        "id": "lifecycle.transition.create",
+        "status": "implemented",
+        "description": "A new character is created living.",
+        "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::create",
+        "from": null,
+        "to": "lifecycle.living",
+        "op": "op.create"
+      },
+      {
+        "id": "lifecycle.transition.die",
+        "status": "implemented",
+        "description": "A living character dies and becomes a dead record.",
+        "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::kill",
+        "from": "lifecycle.living",
+        "to": "lifecycle.dead",
+        "op": "op.kill"
+      },
+      {
+        "id": "lifecycle.transition.die_unremembered",
+        "status": "implemented",
+        "description": "A character nobody holds after its death is forgotten within the same kill.",
+        "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::kill",
+        "from": "lifecycle.living",
+        "to": "lifecycle.forgotten",
+        "op": "op.kill"
+      },
+      {
+        "id": "lifecycle.transition.forget",
+        "status": "implemented",
+        "description": "A dead character whose holders reach 0 is forgotten at once.",
+        "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::forget",
+        "from": "lifecycle.dead",
+        "to": "lifecycle.forgotten",
+        "rule": "rule.memory.forgetting",
+        "triggered_by": ["op.kill", "op.unlink", "op.remove_modifier.person", "op.add_long_opinion.person", "op.maintain"]
+      }
+    ],
+    "no_other_transitions": "There is no resurrection and no way back from forgotten; a living character cannot be forgotten without dying."
+  },
+  "config": [
+    {
+      "id": "config.opinion.k_rep",
+      "status": "implemented",
+      "description": "Opinion per point of the target's reputation.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::k_rep",
+      "value": 0.25,
+      "unit": "opinion points per reputation point",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.opinion.weak_dead", "rule.opinion.weak_person"]
+    },
+    {
+      "id": "config.opinion.k_compat",
+      "status": "implemented",
+      "description": "Range of personality compatibility: -k_compat..+k_compat.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::k_compat",
+      "value": 20.0,
+      "unit": "opinion points",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.opinion.compat"]
+    },
+    {
+      "id": "config.opinion.w_stability",
+      "status": "implemented",
+      "description": "Weight of stability in compatibility.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::w_stability",
+      "value": 1.0,
+      "unit": "relative weight",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.opinion.compat"]
+    },
+    {
+      "id": "config.opinion.w_openness",
+      "status": "implemented",
+      "description": "Weight of openness in compatibility.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::w_openness",
+      "value": 1.0,
+      "unit": "relative weight",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.opinion.compat"]
+    },
+    {
+      "id": "config.opinion.w_extraversion",
+      "status": "implemented",
+      "description": "Weight of extraversion in compatibility.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::w_extraversion",
+      "value": 1.0,
+      "unit": "relative weight",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.opinion.compat"]
+    },
+    {
+      "id": "config.opinion.w_conscientiousness",
+      "status": "implemented",
+      "description": "Weight of conscientiousness in compatibility.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::w_conscientiousness",
+      "value": 1.0,
+      "unit": "relative weight",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.opinion.compat"]
+    },
+    {
+      "id": "config.opinion.w_agreeableness",
+      "status": "implemented",
+      "description": "Weight of agreeableness in compatibility.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::w_agreeableness",
+      "value": 1.0,
+      "unit": "relative weight",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.opinion.compat"]
+    },
+    {
+      "id": "config.opinion.k_noise",
+      "status": "implemented",
+      "description": "Amplitude of individual noise in weak opinions.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::k_noise",
+      "value": 10.0,
+      "unit": "opinion points",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.opinion.weak_dead", "rule.opinion.weak_person", "rule.opinion.weak_target"]
+    },
+    {
+      "id": "config.opinion.openness_factor_min",
+      "status": "implemented",
+      "description": "Noise factor for community and topic targets at openness -100.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::openness_factor_min",
+      "value": 0.5,
+      "unit": "factor",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.opinion.openness_factor"]
+    },
+    {
+      "id": "config.opinion.openness_factor_max",
+      "status": "implemented",
+      "description": "Noise factor for community and topic targets at openness +100.",
+      "source": "sim_core/include/sim/opinion_config.hpp#OpinionConfig::openness_factor_max",
+      "value": 1.5,
+      "unit": "factor",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.opinion.openness_factor"]
+    },
+    {
+      "id": "config.lifecycle.fame_per_reputation",
+      "status": "implemented",
+      "description": "Fame per point of |reputation| at death.",
+      "source": "sim_core/include/sim/lifecycle_config.hpp#LifecycleConfig::fame_per_reputation",
+      "value": 1,
+      "unit": "fame points per reputation point",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "max": 65535,
+        "enforced_by": "type (u16)"
+      },
+      "used_by": ["op.kill", "rule.lifecycle.fame"]
+    },
+    {
+      "id": "config.lifecycle.legendary_fame",
+      "status": "implemented",
+      "description": "Fame at or above which a death is legendary.",
+      "source": "sim_core/include/sim/lifecycle_config.hpp#LifecycleConfig::legendary_fame",
+      "value": 100,
+      "unit": "fame points",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "max": 65535,
+        "enforced_by": "type (u16)"
+      },
+      "used_by": ["op.kill", "rule.lifecycle.legendary"]
+    },
+    {
+      "id": "config.mortality.gompertz_a",
+      "status": "implemented",
+      "description": "Annual hazard at age 0.",
+      "source": "sim_core/include/sim/mortality.hpp#MortalityConfig::gompertz_a",
+      "value": 0.0025,
+      "unit": "hazard per year",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.mortality.annual"]
+    },
+    {
+      "id": "config.mortality.gompertz_b",
+      "status": "implemented",
+      "description": "Growth of the log-hazard per year of age.",
+      "source": "sim_core/include/sim/mortality.hpp#MortalityConfig::gompertz_b",
+      "value": 0.07,
+      "unit": "per year",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.mortality.annual"]
+    },
+    {
+      "id": "config.mortality.female_multiplier",
+      "status": "implemented",
+      "description": "Hazard multiplier for women.",
+      "source": "sim_core/include/sim/mortality.hpp#MortalityConfig::female_multiplier",
+      "value": 1.0,
+      "unit": "factor",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.mortality.annual"]
+    },
+    {
+      "id": "config.mortality.male_multiplier",
+      "status": "implemented",
+      "description": "Hazard multiplier for men.",
+      "source": "sim_core/include/sim/mortality.hpp#MortalityConfig::male_multiplier",
+      "value": 1.1,
+      "unit": "factor",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "enforced_by": "assert in debug"
+      },
+      "used_by": ["rule.mortality.annual"]
+    },
+    {
+      "id": "config.mortality.health_weight",
+      "status": "implemented",
+      "description": "Log-hazard added at health 0.",
+      "source": "sim_core/include/sim/mortality.hpp#MortalityConfig::health_weight",
+      "value": 3.0,
+      "unit": "log-hazard",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.mortality.annual"]
+    },
+    {
+      "id": "config.mortality.stress_weight",
+      "status": "implemented",
+      "description": "Log-hazard added at stress 100.",
+      "source": "sim_core/include/sim/mortality.hpp#MortalityConfig::stress_weight",
+      "value": 1.0,
+      "unit": "log-hazard",
+      "placeholder": true,
+      "range": "unenforced",
+      "used_by": ["rule.mortality.annual"]
+    },
+    {
+      "id": "config.character_init.health",
+      "status": "implemented",
+      "description": "Default initial health of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::health",
+      "value": 100.0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "max": 100,
+        "enforced_by": "saturate at creation"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.stress",
+      "status": "implemented",
+      "description": "Default initial stress of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::stress",
+      "value": 0.0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "max": 100,
+        "enforced_by": "saturate at creation"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.capacity",
+      "status": "implemented",
+      "description": "Default initial capacity of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::capacity",
+      "value": 100.0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": 0,
+        "max": 100,
+        "enforced_by": "saturate at creation"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.strength",
+      "status": "implemented",
+      "description": "Default initial strength of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::strength",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.intelligence",
+      "status": "implemented",
+      "description": "Default initial intelligence of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::intelligence",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.stability",
+      "status": "implemented",
+      "description": "Default initial stability of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::stability",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.openness",
+      "status": "implemented",
+      "description": "Default initial openness of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::openness",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.extraversion",
+      "status": "implemented",
+      "description": "Default initial extraversion of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::extraversion",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.conscientiousness",
+      "status": "implemented",
+      "description": "Default initial conscientiousness of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::conscientiousness",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.agreeableness",
+      "status": "implemented",
+      "description": "Default initial agreeableness of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::agreeableness",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.attractiveness",
+      "status": "implemented",
+      "description": "Default initial attractiveness of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::attractiveness",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.height",
+      "status": "implemented",
+      "description": "Default initial height of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::height",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.shape",
+      "status": "implemented",
+      "description": "Default initial shape of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::shape",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.charisma",
+      "status": "implemented",
+      "description": "Default initial charisma of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::charisma",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.character_init.reputation",
+      "status": "implemented",
+      "description": "Default initial reputation of a new character.",
+      "source": "sim_core/include/sim/character.hpp#CharacterInit::reputation",
+      "value": 0,
+      "unit": "points",
+      "placeholder": true,
+      "range": {
+        "min": -100,
+        "max": 100,
+        "enforced_by": "clamp (type.bipolar_init)"
+      },
+      "used_by": ["op.create"]
+    },
+    {
+      "id": "config.constant.person_limit_min",
+      "status": "implemented",
+      "description": "People limit at extraversion -100. Compile-time because it shapes storage.",
+      "source": "sim_core/include/sim/opinion_records.hpp#PERSON_LIMIT_MIN",
+      "value": 8,
+      "unit": "entries",
+      "placeholder": true,
+      "range": "unenforced",
+      "kind": "gameplay",
+      "used_by": ["rule.long.person_limit"]
+    },
+    {
+      "id": "config.constant.person_limit_max",
+      "status": "implemented",
+      "description": "People limit at extraversion +100; also the storage capacity of the people list.",
+      "source": "sim_core/include/sim/opinion_records.hpp#PERSON_LIMIT_MAX",
+      "value": 40,
+      "unit": "entries",
+      "placeholder": true,
+      "range": "unenforced",
+      "kind": "gameplay",
+      "used_by": ["rule.long.person_limit"]
+    },
+    {
+      "id": "config.constant.target_limit",
+      "status": "implemented",
+      "description": "Limit of long-term opinions about communities and topics; also their storage capacity.",
+      "source": "sim_core/include/sim/opinion_records.hpp#TARGET_LIMIT",
+      "value": 16,
+      "unit": "entries",
+      "placeholder": true,
+      "range": "unenforced",
+      "kind": "gameplay",
+      "used_by": ["op.add_long_opinion.target", "rule.long.eviction"]
+    },
+    {
+      "id": "config.constant.max_community_depth",
+      "status": "implemented",
+      "description": "Longest community chain: a community plus at most 5 ancestors. Compile-time because it sizes the chains.",
+      "source": "sim_core/include/sim/stance_table.hpp#MAX_COMMUNITY_DEPTH",
+      "value": 6,
+      "unit": "communities",
+      "placeholder": true,
+      "range": "unenforced",
+      "kind": "gameplay",
+      "used_by": ["op.set_community_parent", "rule.stance.chain"]
+    },
+    {
+      "id": "config.constant.max_parents",
+      "status": "implemented",
+      "description": "Most parents a character can have.",
+      "source": "sim_core/include/sim/relations.hpp#MAX_PARENTS",
+      "value": 2,
+      "unit": "characters",
+      "placeholder": false,
+      "range": "unenforced",
+      "kind": "gameplay",
+      "used_by": ["op.link"]
+    },
+    {
+      "id": "config.constant.nickname_cap",
+      "status": "implemented",
+      "description": "Storage bound of the nickname list.",
+      "source": "sim_core/include/sim/character_lists.hpp#NICKNAME_CAP",
+      "value": 4,
+      "unit": "entries",
+      "placeholder": false,
+      "range": "unenforced",
+      "kind": "storage",
+      "used_by": ["op.character.add_nickname"]
+    },
+    {
+      "id": "config.constant.practise_cap",
+      "status": "implemented",
+      "description": "Storage bound of the skill list.",
+      "source": "sim_core/include/sim/character_lists.hpp#PRACTISE_CAP",
+      "value": 64,
+      "unit": "entries",
+      "placeholder": false,
+      "range": "unenforced",
+      "kind": "storage",
+      "used_by": ["op.character.add_skill"]
+    },
+    {
+      "id": "config.constant.involvement_cap",
+      "status": "implemented",
+      "description": "Storage bound of the involvement list.",
+      "source": "sim_core/include/sim/character_lists.hpp#INVOLVEMENT_CAP",
+      "value": 8,
+      "unit": "entries",
+      "placeholder": false,
+      "range": "unenforced",
+      "kind": "storage",
+      "used_by": ["op.character.set_involvement"]
+    },
+    {
+      "id": "config.constant.sacred_cap",
+      "status": "implemented",
+      "description": "Storage bound of the sacred list.",
+      "source": "sim_core/include/sim/character_lists.hpp#SACRED_CAP",
+      "value": 8,
+      "unit": "entries",
+      "placeholder": false,
+      "range": "unenforced",
+      "kind": "storage",
+      "used_by": ["op.character.add_sacred"]
+    },
+    {
+      "id": "config.constant.modifier_cap",
+      "status": "implemented",
+      "description": "Storage bound of the modifier list.",
+      "source": "sim_core/include/sim/opinion_records.hpp#MODIFIER_CAP",
+      "value": 32,
+      "unit": "entries",
+      "placeholder": false,
+      "range": "unenforced",
+      "kind": "storage",
+      "used_by": ["op.add_modifier.person", "op.add_modifier.target"]
+    },
+    {
+      "id": "config.constant.involvement_weight_max",
+      "status": "implemented",
+      "description": "Largest involvement weight.",
+      "source": "sim_core/include/sim/character_lists.hpp#INVOLVEMENT_WEIGHT_MAX",
+      "value": 255,
+      "unit": "relative weight",
+      "placeholder": false,
+      "range": "unenforced",
+      "kind": "storage",
+      "used_by": ["op.character.set_involvement"]
+    }
+  ],
+  "extension_points": [
+    {
+      "id": "ext.generator",
+      "description": "Character and world generation. The core only creates characters from explicit initial values; seeds and configs are always passed in, never drawn from hidden state.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::create ; CLAUDE.md#Standing rules"
+    },
+    {
+      "id": "ext.tick_and_events",
+      "description": "Time advancing and events. Nothing in the core runs on its own: mortality produces probabilities but never kills, and ticks are expected only to add or remove modifiers.",
+      "source": "CLAUDE.md#Design rules established so far / Death ; CLAUDE.md#Design rules established so far / Personal opinions"
+    },
+    {
+      "id": "ext.save_format",
+      "description": "Saving and loading. Persisted enums are marked append-only and persistent state is kept free of pointers and floating point, but there is no save or load code.",
+      "source": "sim_core/include/sim/relations.hpp#RelationType ; CLAUDE.md#Standing rules"
+    },
+    {
+      "id": "ext.engine_binding",
+      "description": "Binding to a game engine. No engine is chosen; the core uses no engine types.",
+      "source": "CLAUDE.md#Grand strategy simulation core"
+    },
+    {
+      "id": "ext.name_pool",
+      "description": "Names. Characters carry NameIds only; there is no name table or pool.",
+      "source": "sim_core/include/sim/ids.hpp#NameId"
+    },
+    {
+      "id": "ext.short_to_long",
+      "description": "Conversion of short-term modifiers into long-term opinion. Long values change only through add_long_opinion for now.",
+      "source": "CLAUDE.md#Design rules established so far / Personal opinions"
+    },
+    {
+      "id": "ext.modifier_expiry",
+      "description": "Modifier durations or expiry. Modifiers last until removed.",
+      "source": "CLAUDE.md#Design rules established so far / Personal opinions"
+    },
+    {
+      "id": "ext.modifier_type_table",
+      "description": "A table of modifier kinds. ModifierId names a kind of circumstance, but there is no table: every add supplies its own effect.",
+      "source": "sim_core/include/sim/ids.hpp#ModifierId"
+    },
+    {
+      "id": "ext.person_target_kind",
+      "description": "TargetKind value 2 is intended for persons in a later step.",
+      "source": "sim_core/include/sim/ids.hpp#TargetKind"
+    },
+    {
+      "id": "ext.chronicles",
+      "description": "A chronicle system reacting to legendary deaths. kill only reports legendary; legendary characters are forgotten like everyone else.",
+      "source": "sim_core/include/sim/character_registry.hpp#KillResult::legendary ; CLAUDE.md#Design rules established so far / Memory and forgetting"
+    },
+    {
+      "id": "ext.membership_capabilities",
+      "description": "Capabilities granted by membership in a structure, to be derived from a character's communities and never stored on Character.",
+      "source": "CLAUDE.md#Design rules established so far / Skills are capabilities"
+    },
+    {
+      "id": "ext.infant_mortality",
+      "description": "Infant and child mortality. Plain Gompertz has no peak in early life.",
+      "source": "sim_core/include/sim/mortality.hpp#MortalityConfig"
+    },
+    {
+      "id": "ext.relation_sanity_checks",
+      "description": "Longer family cycles (e.g. a grandparent becoming a grandchild) and birth-date sanity of relations are not checked yet.",
+      "source": "CLAUDE.md#Design rules established so far / Relations"
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "disc.character_ctor_comment",
+      "description": "A comment in the Character constructor says the registry is 'a later step'. The registry exists and is the only creator of characters.",
+      "source": "sim_core/src/character.cpp#Character::Character"
+    },
+    {
+      "id": "disc.bipolar_comment_later_opinions",
+      "description": "bipolar.hpp says every bipolar scale, including 'later opinions', is a whole number in -100..+100 stored directly. In the code, computed opinions are doubles that are never stored, and long-term values are whole numbers in -200..+200.",
+      "source": "sim_core/include/sim/bipolar.hpp#BIPOLAR_MIN"
+    },
+    {
+      "id": "disc.edit_result_check_order",
+      "description": "The EditResult comment gives the check order as Invalid, NotFound, Duplicate/Conflict/NotFound, Full. The registry also returns Invalid for a dead participant between NotFound and the state checks.",
+      "source": "sim_core/include/sim/edit_result.hpp#EditResult"
+    },
+    {
+      "id": "disc.long_outcome_invalid_comment",
+      "description": "The LongOpinionOutcome::Invalid comment lists 'id 0, a == b, or an invalid TargetId'. The registry also returns Invalid for a dead holder.",
+      "source": "sim_core/include/sim/opinion_records.hpp#LongOpinionOutcome::Invalid"
+    },
+    {
+      "id": "disc.registry_opinion_notfound_comment",
+      "description": "The registry's personal-opinion comment gives NotFound as 'an id never created'. The code also returns NotFound for forgotten ids, as CLAUDE.md states.",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::add_modifier"
+    },
+    {
+      "id": "disc.claude_md_markdown",
+      "description": "Two CLAUDE.md paragraphs are corrupted by markdown: the dead-record base formula renders as 'sum*c share_A(c) ... main*community(D) ... k_noise \\* noise' and the byte-determinism paragraph has a misplaced backtick. The intended text matches the code.",
+      "source": "CLAUDE.md#Design rules established so far / Death ; CLAUDE.md#Design rules established so far / Byte determinism"
+    },
+    {
+      "id": "disc.audit_resolved",
+      "description": "Audit findings at 018724d that 5847252 resolved: R8 (WorldSeed now has a units comment), R21 (involvement_share returning float is now documented in CLAUDE.md), R23 (CLAUDE.md now scopes the FixedVector rule to per-character list reads), R26 (maintain is in the lifetime contract), R37 (a test now shows relations leave opinions unchanged), the 22 padding bytes in Character (now explicit reserved bytes, unique object representations asserted), the raw targets in long opinions (now typed), and CLAUDE.md items 7 and 8 (the public RelationGraph and the forgeable passkey are now documented). Recorded as resolved.",
+      "source": "docs/audit/character-core-018724d.md#0. Summary"
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "oq.practise_mastery_comment",
+      "description": "The comment on PractiseEntry::reserved says 'a mastery level may go here later', and CLAUDE.md repeats it ('its reserved byte may hold a mastery level later'). This conflicts with the agreed design that skills are capabilities without values.",
+      "source": "sim_core/include/sim/character_lists.hpp#PractiseEntry::reserved ; CLAUDE.md#Design rules established so far / Skills are capabilities"
+    },
+    {
+      "id": "oq.mortality_config_context",
+      "description": "MortalityConfig is passed to annual_mortality on its own and is not part of WorldContext, unlike the opinion and lifecycle configs. Is this intended?",
+      "source": "sim_core/include/sim/world_context.hpp#WorldContext ; sim_core/include/sim/mortality.hpp#annual_mortality"
+    },
+    {
+      "id": "oq.relation_exclusivity",
+      "description": "Paired types conflict only with their own complement on the same edge. A character can have any number of spouses, lieges or employers, a pair can be spouses and liege/vassal at once, and one-way Friend and Rival can sit on the same edge. Is that intended?",
+      "source": "sim_core/src/relation_graph.cpp#RelationGraph::link"
+    },
+    {
+      "id": "oq.create_unvalidated_inputs",
+      "description": "create accepts NameId 0 and any Gender value without a check, while nickname edits reject NameId 0 and annual_mortality asserts a known Gender. Is that intended?",
+      "source": "sim_core/include/sim/character_registry.hpp#CharacterRegistry::create"
+    },
+    {
+      "id": "oq.weekly_from_annual",
+      "description": "weekly_mortality converts an annual probability, but the code never connects it to annual_mortality: the caller does. character.derived.annual_mortality therefore lists no user, and rule.mortality.weekly does not list it as an input.",
+      "source": "sim_core/include/sim/mortality.hpp#weekly_mortality"
+    },
+    {
+      "id": "oq.modifiers_keep_dead_remembered",
+      "description": "Modifiers do not expire, and others' modifiers about the deceased stay at death, so a single modifier keeps a dead character remembered for as long as its holder lives. Is that intended?",
+      "source": "sim_core/src/character_registry.cpp#CharacterRegistry::kill"
+    }
+  ]
+}
