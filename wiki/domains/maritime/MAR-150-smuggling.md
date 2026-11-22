@@ -21,7 +21,7 @@ absence:
     note: Colonial-era smuggling against mercantilist trade restrictions (British North American trade with non-British Caribbean colonies, for instance) is so pervasive and locally tolerated in some ports that enforcement becomes selectively symbolic rather than genuinely suppressive — a case where smuggling's scale effectively renegotiates the enforced trade policy without ever formally changing the law itself.
 prereqs: [MAR-020]
 enables: []
-see_also: [MAR-030, COM-190, DIP-075, FIN-065]
+see_also: [MAR-030, COM-190, DIP-075, FIN-065, FIN-066, FIN-068]
 contested: false
 contested_note: ""
 stats_touched: []

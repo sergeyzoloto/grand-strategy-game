@@ -41,7 +41,7 @@ absence:
     note: The 1857 rebellion in northern India drew no foreign sponsor. Britain's rivals could not reach India against British naval control, Persia had just been defeated by Britain in the war of 1856-57, and no European power was at war with Britain. A revolt is internationalised only when a rival can both reach it and gain from supporting it; with neither condition present, one of the largest colonial revolts of the century remained a contest between the rebels and the colonial state alone, and was suppressed by it.
 prereqs: [DIP-100]
 enables: []
-see_also: [DIP-120, WAR-340, WAR-240, DIP-180, FIN-110]
+see_also: [DIP-120, WAR-340, WAR-240, DIP-180, FIN-110, LAW-076]
 contested: true
 contested_note: "How far sponsorship shapes, rather than merely assists, a revolt is disputed. One reading treats peripheral revolts as primarily internal, driven by local grievance and leadership, with foreign support as a marginal input that changes timing and outcome but not character. The other holds that the need for a sponsor reshapes a movement's leadership, ideology and aims around what the sponsor will fund, so that the movement becomes partly the sponsor's instrument, and that independence achieved with foreign help frequently arrives with dependency attached. The cases support both: Aung San's army turned on its sponsor, while Greece and the new Spanish American republics remained bound to theirs for decades. Model sponsorship as raising a revolt's probability of success while adding a standing obligation to the sponsor, and let the size of that obligation depend on how much of the revolt's capacity the sponsor supplied and whether the sponsor remains strong once independence arrives."
 stats_touched: [protection rent, sovereign credit capacity]
